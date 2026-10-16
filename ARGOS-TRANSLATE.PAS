@@ -17,7 +17,9 @@
     anglais,
   espagnol -> francais, albanais -> anglais, albanais -> francais, portugais ->
     anglais,
-  portugais -> francais, suedois -> anglais, suedois -> francais et innu-aimun
+  portugais -> francais, suedois -> anglais, suedois -> francais, danois ->
+    anglais, danois -> francais, italien -> anglais, italien -> francais
+  et innu-aimun
   (montagnais) -> francais (mots et phrases connus seulement).
     - lexique d'environ 600 mots (noms avec genre, adjectifs avec accord et
       place,
@@ -84,6 +86,20 @@
         et le
       portugais, le suedois reutilise l'analyse de l'espagnol puis passe par
         l'anglais.
+    - danois : meme principe que le suedois (article defini en suffixe, ikke
+      apres le
+      verbe, verbe en 2e position, genitif en -s, der er, at) ; lexique
+        d'environ 399
+      mots, analyse de l'espagnol puis anglais.
+    - italien : contractions (del, nel, sul...), articles elides (l', dell'),
+      conjugaisons
+      regulieres (-are, -ere, -ire, -isco) et irregulieres, passe compose rendu
+        par un
+      preterit anglais, ci + essere (il y a), partitif (del pane), fa freddo, ho
+        fame,
+      enclitiques (vederlo) ; lexique d'environ 441 mots ; analyse de l'espagnol
+        puis
+      anglais.
   Il traduit correctement des phrases simples ; une phrase complexe peut donner
     une
   traduction approximative, et un mot inconnu est conserve tel quel.
@@ -469,7 +485,7 @@ Const
         'ette année:r~dieses Jahr;this month=ce mois-ci:r~diesen Monat;',
     'pizza=pizza:nf~Pizza|f/Pizzen;sandwich=sandwich:nm~Sandwich|n/Sandwiches;'+
         'hamburger=hamburger:nm~Hamburger|m/-;to=à:p~zu|d;swedish=suédois:nm'+
-        ';'
+        ';danish=danois:nm;'
   );
 
   { Verbes francais irreguliers :
@@ -1246,6 +1262,298 @@ Const
     'minnas=remember:v2;hoppas=hope:v1;fungera=work:v1;hända=happen:v2;förs'+
         'öka=try:v2;handla=shop:v1;hålla/håller/höll/hållit=hold:v4;gift='+
         'married:a;'
+  );
+
+  { Danois : danois=anglais:categorie }
+  DaData: Array[0..40] Of String = (
+    'dreng/drenge=boy:nu;pige/piger=girl:nu;mand/mænd=man:nu;kvinde/kvinder=w'+
+        'oman:nu;barn/børn=child:nn;ven/venner=friend:nu;veninde/veninder=fri'+
+        'end:nu;familie/familier=family:nu;mor/mødre=mother:nu;far/fædre=fat'+
+        'her:nu;',
+    'bror/brødre=brother:nu;søster/søstre=sister:nu;søn/sønner=son:nu;dat'+
+        'ter/døtre=daughter:nu;kone/koner=wife:nu;lærer/lærere=teacher:nu;s'+
+        'tuderende/studerende=student:nu;elev/elever=student:nu;læge/læger=d'+
+        'octor:nu;',
+    'sygeplejerske/sygeplejersker=nurse:nu;person/personer=person:nu;menneske/'+
+        'mennesker=person:nu;hus/huse=house:nn;værelse/værelser=room:nn;køk'+
+        'ken/køkkener=kitchen:nn;badeværelse/badeværelser=bathroom:nn;',
+    'soveværelse/soveværelser=bedroom:nn;dør/døre=door:nu;vindue/vinduer=w'+
+        'indow:nn;bord/borde=table:nn;stol/stole=chair:nu;seng/senge=bed:nu;sk'+
+        'ole/skoler=school:nu;universitet/universiteter=university:nn;klasse/k'+
+        'lasser=class:nu;',
+    'kontor/kontorer=office:nn;butik/butikker=shop:nu;marked/markeder=market:n'+
+        'n;restaurant/restauranter=restaurant:nu;hotel/hoteller=hotel:nn;hospi'+
+        'tal/hospitaler=hospital:nn;bibliotek/biblioteker=library:nn;bank/bank'+
+        'er=bank:nu;',
+    'lufthavn/lufthavne=airport:nu;station/stationer=station:nu;museum/museer='+
+        'museum:nn;kirke/kirker=church:nu;biograf/biografer=cinema:nu;teater/t'+
+        'eatre=theater:nn;strand/strande=beach:nu;hav/have=sea:nn;flod/floder='+
+        'river:nu;',
+    'bjerg/bjerge=mountain:nn;skov/skove=forest:nu;have/haver=garden:nu;park/p'+
+        'arker=park:nu;træ/træer=tree:nn;blomst/blomster=flower:nu;by/byer=c'+
+        'ity:nu;landsby/landsbyer=village:nu;land/lande=country:nn;gade/gader='+
+        'street:nu;',
+    'vej/veje=road:nu;verden/verdener=world:nu;lejlighed/lejligheder=apartment'+
+        ':nu;tavle/tavler=board:nu;tog/tog=train:nn;bus/busser=bus:nu;bil/bile'+
+        'r=car:nu;cykel/cykler=bicycle:nu;fly/fly=plane:nn;båd/både=boat:nu;',
+    'taxa/taxaer=taxi:nu;rejse/rejser=trip:nu;mad/mad=food:nu;vand/vand=water:'+
+        'nn;mælk/mælk=milk:nu;brød/brød=bread:nn;kød/kød=meat:nn;fisk/fi'+
+        'sk=fish:nu;ost/oste=cheese:nu;æg/æg=egg:nn;frugt/frugter=fruit:nu;t'+
+        'e/te=tea:nu;',
+    'øl/øl=beer:nn;vin/vine=wine:nu;kaffe/kaffe=coffee:nu;æble/æbler=apple'+
+        ':nn;pizza/pizzaer=pizza:nu;middag/middage=dinner:nu;morgenmad/morgenm'+
+        'ad=breakfast:nu;frokost/frokoster=lunch:nu;penge/penge=money:nu;tid/t'+
+        'ider=time:nu;',
+    'dag/dage=day:nu;nat/nætter=night:nu;uge/uger=week:nu;måned/måneder=mon'+
+        'th:nu;år/år=year:nn;time/timer=hour:nu;minut/minutter=minute:nn;mor'+
+        'gen/morgener=morning:nu;aften/aftener=evening:nu;eftermiddag/eftermid'+
+        'dage=afternoon:nu;',
+    'mandag=Monday:nu;tirsdag=Tuesday:nu;onsdag=Wednesday:nu;torsdag=Thursday:'+
+        'nu;fredag=Friday:nu;lørdag=Saturday:nu;søndag=Sunday:nu;bog/bøger='+
+        'book:nu;avis/aviser=newspaper:nu;brev/breve=letter:nn;telefon/telefon'+
+        'er=telephone:nu;',
+    'computer/computere=computer:nu;film/film=movie:nu;musik/musik=music:nu;sp'+
+        'il/spil=game:nn;arbejde/arbejder=work:nn;job/job=job:nn;gave/gaver=gi'+
+        'ft:nu;hund/hunde=dog:nu;kat/katte=cat:nu;fugl/fugle=bird:nu;hest/hest'+
+        'e=horse:nu;',
+    'ko/køer=cow:nu;hånd/hænder=hand:nu;hoved/hoveder=head:nn;øje/øjne=ey'+
+        'e:nn;fod/fødder=foot:nu;hjerte/hjerter=heart:nn;sprog/sprog=language'+
+        ':nn;navn/navne=name:nn;problem/problemer=problem:nn;spørgsmål/spør'+
+        'gsmål=question:nn;',
+    'svar/svar=answer:nn;idé/idéer=idea:nu;ting/ting=thing:nu;sted/steder=pl'+
+        'ace:nn;dansk=Danish:nu;svensk=Swedish:nu;engelsk=English:nu;tysk=Germ'+
+        'an:nu;fransk=French:nu;spansk=Spanish:nu;italiensk=Italian:nu;',
+    'være/er/var/været=be:v4:ser;have/har/havde/haft=have:v4:tener;gå/går/'+
+        'gik/gået=go:v4:ir;se/ser/så/set=see:v4:ver;tage/tager/tog/taget=tak'+
+        'e:v4;give/giver/gav/givet=give:v4:dar;komme/kommer/kom/kommet=come:v4'+
+        ':venir;',
+    'blive/bliver/blev/blevet=become:v4;gøre/gør/gjorde/gjort=do:v4:hacer;si'+
+        'ge/siger/sagde/sagt=say:v4:decir;ligge/ligger/lå/ligget=lie:v4;sidde'+
+        '/sidder/sad/siddet=sit:v4;stå/står/stod/stået=stand:v4;',
+    'spise/spiser/spiste/spist=eat:v4;drikke/drikker/drak/drukket=drink:v4;sov'+
+        'e/sover/sov/sovet=sleep:v4;vinde/vinder/vandt/vundet=win:v4;løbe/lø'+
+        'ber/løb/løbet=run:v4;skrive/skriver/skrev/skrevet=write:v4;få/får'+
+        '/fik/fået=get:v4;',
+    'vide/ved/vidste/vidst=know:v4:saber;kunne/kan/kunne/kunnet=can:v4:poder;v'+
+        'ille/vil/ville/villet=want:v4:querer;måtte/må/måtte/måttet=must:v'+
+        '4:deber;skulle/skal/skulle/skullet=shall:v4:ir;',
+    'findes/findes/fandtes/fundtes=exist:v4:haber;hedde/hedder/hed/heddet=be_c'+
+        'alled:v4:llamar;sælge/sælger/solgte/solgt=sell:v4;synge/synger/sang'+
+        '/sunget=sing:v4;vælge/vælger/valgte/valgt=choose:v4;bære/bærer/ba'+
+        'r/båret=carry:v4;',
+    'græde/græder/græd/grædt=cry:v4;dø/dør/døde/død=die:v4;bygge/bygge'+
+        'r/byggede/bygget=build:v4;forstå/forstår/forstod/forstået=understa'+
+        'nd:v4;finde/finder/fandt/fundet=find:v4;hjælpe/hjælper/hjalp/hjulpe'+
+        't=help:v4;',
+    'holde/holder/holdt/holdt=hold:v4;flyve/flyver/fløj/fløjet=fly:v4;tale=s'+
+        'peak:v2;købe=buy:v2;læse=read:v2;høre=hear:v2;køre=drive:v2;rejse'+
+        '=travel:v2;glemme=forget:v2;begynde=begin:v2;kende=know:v2;lære=lear'+
+        'n:v2;mene=think:v2;',
+    'tænke=think:v2;føle=feel:v2;arbejde=work:v1;elske=love:v1;lave=make:v1;'+
+        'kalde=call:v1;svare=answer:v1;vente=wait:v1;betale=pay:v1;bruge=use:v'+
+        '1;regne=rain:v1:llover;besøge=visit:v1;huske=remember:v1;åbne=open:'+
+        'v1;lukke=close:v1;',
+    'leve=live:v1;danse=dance:v1;lytte=listen:v1;kigge=look:v1;spille=play:v1;'+
+        'studere=study:v1;vaske=wash:v1;lege=play:v1;cykle=cycle:v1;svømme=sw'+
+        'im:v1;ønske=wish:v1;håbe=hope:v1;stoppe=stop:v1;prøve=try:v1;',
+    'behøve=need:v1:necesitar;ringe=call:v1;spørge=ask:v1;vise=show:v1;rydde'+
+        '=clean:v1;handle=shop:v1;synes/synes/syntes/syntes=think:v4;bo=live:v'+
+        '3;tro=believe:v3;stor/stort/store=big:a;lille/lille/små=small:a;',
+    'lang/langt/lange=long:a;kort/kort/korte=short:a;ny/nyt/nye=new:a;gammel/g'+
+        'ammelt/gamle=old:a;ung/ungt/unge=young:a;smuk/smukt/smukke=beautiful:'+
+        'a;pæn/pænt/pæne=pretty:a;glad/glad/glade=happy:a;ked/ked/kede=sad:'+
+        'a;',
+    'træt/træt/trætte=tired:a;syg/sygt/syge=sick:a;varm/varmt/varme=hot:a;k'+
+        'old/koldt/kolde=cold:a;dyr/dyrt/dyre=expensive:a;billig/billigt/billi'+
+        'ge=cheap:a;let/let/lette=easy:a;svær/svært/svære=difficult:a;',
+    'vigtig/vigtigt/vigtige=important:a;interessant/interessant/interessante=i'+
+        'nteresting:a;kedelig/kedeligt/kedelige=boring:a;sjov/sjovt/sjove=funn'+
+        'y:a;hurtig/hurtigt/hurtige=fast:a;langsom/langsomt/langsomme=slow:a;',
+    'stærk/stærkt/stærke=strong:a;svag/svagt/svage=weak:a;rig/rigt/rige=ric'+
+        'h:a;fattig/fattigt/fattige=poor:a;ren/rent/rene=clean:a;beskidt/beski'+
+        'dt/beskidte=dirty:a;fuld/fuldt/fulde=full:a;tom/tomt/tomme=empty:a;',
+    'åben/åbent/åbne=open:a;lukket/lukket/lukkede=closed:a;færdig/færdigt'+
+        '/færdige=ready:a;optaget/optaget/optagede=busy:a;fri/frit/frie=free:'+
+        'a;rød/rødt/røde=red:a;blå/blåt/blå=blue:a;grøn/grønt/grønne='+
+        'green:a;',
+    'gul/gult/gule=yellow:a;sort/sort/sorte=black:a;hvid/hvidt/hvide=white:a;b'+
+        'run/brunt/brune=brown:a;grå/gråt/grå=gray:a;lyserød/lyserødt/lys'+
+        'erøde=pink:a;samme/samme/samme=same:a;anderledes/anderledes/anderled'+
+        'es=different:a;',
+    'anden/andet/andre=other:a;første/første/første=first:a;sidste/sidste/s'+
+        'idste=last:a;næste/næste/næste=next:a;god/godt/gode=good:a;dårlig'+
+        '/dårligt/dårlige=bad:a;sulten/sultent/sultne=hungry:a;',
+    'tørstig/tørstigt/tørstige=thirsty:a;tilfreds/tilfreds/tilfredse=satisf'+
+        'ied:a;flink/flinkt/flinke=kind:a;rar/rart/rare=nice:a;sikker/sikkert/'+
+        'sikre=sure:a;sand/sandt/sande=true:a;kendt/kendt/kendte=famous:a;',
+    'særlig/særligt/særlige=special:a;rolig/roligt/rolige=quiet:a;gift/gift'+
+        '/gifte=married:a;meget=very:r;også=also:r;altid=always:r;ofte=often:'+
+        'r;nu=now:r;her=here:r;der=there:r;dårligt=badly:r;langsomt=slowly:r;'+
+        'hurtigt=quickly:r;',
+    'igen=again:r;snart=soon:r;allerede=already:r;stadig=still:r;kun=only:r;vi'+
+        'rkelig=really:r;sammen=together:r;næsten=almost:r;derefter=then:r;ti'+
+        'dligt=early:r;sent=late:r;langt=far:r;tæt=near:r;ude=outside:r;inde='+
+        'inside:r;',
+    'måske=maybe:r;selvfølgelig=of_course:r;lidt=a_little:r;hjemme=at_home:r'+
+        ';væk=away:r;oppe=upstairs:r;nede=downstairs:r;i_dag=today:r;i_morgen'+
+        '=tomorrow:r;i_går=yesterday:r;i_aften=tonight:r;i_nat=tonight:r;',
+    'i_morges=this_morning:r;næste_uge=next_week:r;sidste_uge=last_week:r;nog'+
+        'le_gange=sometimes:r;i=in:p;på=on:p;til=to:p;fra=from:p;med=with:p;a'+
+        'f=of:p;for=for:p;om=about:p;ved=at:p;under=under:p;over=over:p;efter='+
+        'after:p;',
+    'før=before:p;mellem=between:p;uden=without:p;hos=at:p;mod=toward:p;genne'+
+        'm=through:p;bag=behind:p;foran=in_front_of:p;ved_siden_af=next_to:p;o'+
+        'g=and:c;men=but:c;eller=or:c;at=that:c;fordi=because:c;når=when:c;me'+
+        'ns=while:c;',
+    'selvom=although:c;hvis=if:c;hej=Hello:j;farvel=Goodbye:j;tak=Thank_you:j;'+
+        'mange_tak=Thank_you_very_much:j;venligst=please:j;undskyld=Sorry:j;go'+
+        'd_morgen=Good_morning:j;god_aften=Good_evening:j;godnat=Good_night:j;'+
+        'ja=Yes:j;nej=No:j;',
+    'velkommen=Welcome:j;tillykke=Congratulations:j;skål=Cheers:j;goddag=Good'+
+        '_day:j;hvad=what:w;hvem=who:w;hvor=where:w;hvornår=when:w;hvorfor=wh'+
+        'y:w;hvordan=how:w;hvilken=which:w;hvilket=which:w;hvilke=which:w;hvor'+
+        '_mange=how_many:w;',
+    'hvor_meget=how_much:w;høj/højt/høje=tall:a;'
+  );
+
+  { Italien : italien=anglais:categorie }
+  ItData: Array[0..34] Of String = (
+    'ragazzo=boy:n;ragazza=girl:n;bambino=child:n;bambina=child:n;uomo/uomini='+
+        'man:n;donna=woman:n;amico/amici=friend:n;amica=friend:n;famiglia=fami'+
+        'ly:n;madre=mother:n;mamma=mother:n;padre=father:n;papà/papà=father:'+
+        'n;',
+    'fratello=brother:n;sorella=sister:n;figlio=son:n;figlia=daughter:n;marito'+
+        '=husband:n;moglie/mogli=wife:n;insegnante=teacher:n;professore=teache'+
+        'r:n;professoressa=teacher:n;studente=student:n;studentessa=student:n;',
+    'medico/medici=doctor:n;dottore=doctor:n;infermiera=nurse:n;persona=person'+
+        ':n;gente/gente=people:n;casa=house:n;camera=room:n;stanza=room:n;cuci'+
+        'na=kitchen:n;bagno=bathroom:n;porta=door:n;finestra=window:n;tavolo=t'+
+        'able:n;',
+    'sedia=chair:n;letto=bed:n;scuola=school:n;università/università=univers'+
+        'ity:n;classe=class:n;ufficio=office:n;negozio/negozi=shop:n;mercato=m'+
+        'arket:n;ristorante=restaurant:n;albergo/alberghi=hotel:n;hotel/hotel='+
+        'hotel:n;',
+    'ospedale=hospital:n;biblioteca=library:n;banca/banche=bank:n;aeroporto=ai'+
+        'rport:n;stazione=station:n;museo=museum:n;chiesa=church:n;cinema/cine'+
+        'ma=cinema:n;teatro=theater:n;spiaggia/spiagge=beach:n;mare=sea:n;fium'+
+        'e=river:n;',
+    'montagna=mountain:n;bosco/boschi=forest:n;giardino=garden:n;parco/parchi='+
+        'park:n;albero=tree:n;fiore=flower:n;città/città=city:n;paese=countr'+
+        'y:n;strada=street:n;via/vie=street:n;mondo=world:n;appartamento=apart'+
+        'ment:n;',
+    'lavagna=board:n;treno=train:n;autobus/autobus=bus:n;macchina=car:n;automo'+
+        'bile=car:n;bicicletta=bicycle:n;aereo=plane:n;barca/barche=boat:n;tax'+
+        'i/taxi=taxi:n;viaggio/viaggi=trip:n;cibo=food:n;acqua/acque=water:n;l'+
+        'atte/latte=milk:n;',
+    'pane=bread:n;carne=meat:n;pesce=fish:n;formaggio=cheese:n;uovo/uova=egg:n'+
+        ';frutta=fruit:n;tè/tè=tea:n;birra=beer:n;vino=wine:n;caffè/caffè='+
+        'coffee:n;mela=apple:n;pizza=pizza:n;cena=dinner:n;colazione=breakfast'+
+        ':n;pranzo=lunch:n;',
+    'soldi/soldi=money:n;denaro=money:n;tempo=time:n;giorno=day:n;notte=night:'+
+        'n;settimana=week:n;mese=month:n;anno=year:n;ora=hour:n;minuto=minute:'+
+        'n;mattina=morning:n;sera=evening:n;pomeriggio=afternoon:n;lunedì/lun'+
+        'edì=Monday:n;',
+    'martedì/martedì=Tuesday:n;mercoledì/mercoledì=Wednesday:n;giovedì/gi'+
+        'ovedì=Thursday:n;venerdì/venerdì=Friday:n;sabato=Saturday:n;domeni'+
+        'ca=Sunday:n;libro=book:n;giornale=newspaper:n;lettera=letter:n;telefo'+
+        'no=telephone:n;',
+    'computer/computer=computer:n;film/film=movie:n;musica=music:n;gioco/gioch'+
+        'i=game:n;lavoro=work:n;regalo=gift:n;cane=dog:n;gatto=cat:n;uccello=b'+
+        'ird:n;cavallo=horse:n;mucca/mucche=cow:n;mano/mani=hand:n;testa=head:'+
+        'n;',
+    'occhio/occhi=eye:n;piede=foot:n;cuore=heart:n;lingua/lingue=language:n;no'+
+        'me=name:n;problema/problemi=problem:n;domanda=question:n;risposta=ans'+
+        'wer:n;idea=idea:n;cosa=thing:n;posto=place:n;fame/fame=hungry:n;sete/'+
+        'sete=thirsty:n;',
+    'freddo=cold:n;caldo=hot:n;sonno=sleepy:n;paura=afraid:n;ragione=right:n;f'+
+        'retta=in_a_hurry:n;vergogna=ashamed:n;italiano=Italian:n;inglese=Engl'+
+        'ish:n;francese=French:n;tedesco=German:n;spagnolo=Spanish:n;portoghes'+
+        'e=Portuguese:n;',
+    'svedese=Swedish:n;danese=Danish:n;russo=Russian:n;cinese=Chinese:n;giappo'+
+        'nese=Japanese:n;essere=be:vx:ser;avere=have:vx:tener;andare=go:vx:ir;'+
+        'fare=do:vx:hacer;dire=say:vx:decir;venire=come:vx:venir;potere=can:vx'+
+        ':poder;',
+    'volere=want:vx:querer;dovere=must:vx:deber;sapere=know:vx:saber;dare=give'+
+        ':vx:dar;stare=be:vx:estar;uscire=go_out:vx;bere=drink:vx;rimanere=sta'+
+        'y:vx;tenere=keep:vx;scegliere=choose:vx;tradurre=translate:vx;morire='+
+        'die:vx;',
+    'piacere=like:vx:gustar;vedere/visto/vedr=see:v:ver;leggere/letto=read:v;s'+
+        'crivere/scritto=write:v;prendere/preso=take:v;mettere/messo=put:v;apr'+
+        'ire/aperto=open:v;chiudere/chiuso=close:v;vivere/vissuto/vivr=live:v;',
+    'vincere/vinto=win:v;perdere/perso=lose:v;correre/corso/corr=run:v;decider'+
+        'e/deciso=decide:v;chiedere/chiesto=ask:v;rispondere/risposto=answer:v'+
+        ';offrire/offerto=offer:v;conoscere/conosciuto=know:v;nascere/nato=be_'+
+        'born:v;',
+    'cadere/caduto/cadr=fall:v;spendere/speso=spend:v;piovere/piovuto=rain:v:l'+
+        'lover;parlare=speak:v;mangiare=eat:v;lavorare=work:v;abitare=live:v;s'+
+        'tudiare=study:v;comprare=buy:v;amare=love:v;cantare=sing:v;ballare=da'+
+        'nce:v;',
+    'cucinare=cook:v;aspettare=wait:v;chiamare=call:v:llamar;arrivare=arrive:v'+
+        ';tornare=return:v;entrare=enter:v;trovare=find:v;usare=use:v;pagare=p'+
+        'ay:v;costare=cost:v;cominciare=begin:v;aiutare=help:v;ascoltare=liste'+
+        'n_to:v;',
+    'guardare=look:v;giocare=play:v;pensare=think:v;cercare=look_for:v;cammina'+
+        're=walk:v;viaggiare=travel:v;nuotare=swim:v;ricordare=remember:v;dime'+
+        'nticare=forget:v;telefonare=call:v;visitare=visit:v;invitare=invite:v'+
+        ';lavare=wash:v;',
+    'sperare=hope:v;desiderare=wish:v;preparare=prepare:v;spiegare=explain:v;d'+
+        'omandare=ask:v;ricevere=receive:v;credere=believe:v;vendere=sell:v;ri'+
+        'petere=repeat:v;insegnare=teach:v;imparare=learn:v;lasciare=leave:v;p'+
+        'ortare=bring:v;',
+    'mandare=send:v;ringraziare=thank:v;dormire=sleep:v;partire=leave:v;sentir'+
+        'e=hear:v;seguire=follow:v;finire=finish:vi;preferire=prefer:vi;capire'+
+        '=understand:vi;pulire=clean:vi;costruire=build:vi;grande=big:a;piccol'+
+        'o=small:a;',
+    'lungo/lunga/lunghi/lunghe=long:a;corto=short:a;nuovo=new:a;vecchio/vecchi'+
+        'a/vecchi/vecchie=old:a;giovane=young:a;bello=beautiful:a;bravo=good:a'+
+        ';felice=happy:a;triste=sad:a;stanco/stanca/stanchi/stanche=tired:a;ma'+
+        'lato=sick:a;',
+    'caldo=hot:a;freddo=cold:a;caro=expensive:a;economico/economica/economici/'+
+        'economiche=cheap:a;facile=easy:a;difficile=difficult:a;importante=imp'+
+        'ortant:a;interessante=interesting:a;noioso=boring:a;divertente=funny:'+
+        'a;veloce=fast:a;',
+    'lento=slow:a;forte=strong:a;debole=weak:a;ricco/ricca/ricchi/ricche=rich:'+
+        'a;povero=poor:a;pulito=clean:a;sporco/sporca/sporchi/sporche=dirty:a;'+
+        'pieno=full:a;vuoto=empty:a;aperto=open:a;chiuso=closed:a;pronto=ready'+
+        ':a;occupato=busy:a;',
+    'libero=free:a;rosso=red:a;blu=blue:a;verde=green:a;giallo=yellow:a;nero=b'+
+        'lack:a;bianco/bianca/bianchi/bianche=white:a;marrone=brown:a;grigio/g'+
+        'rigia/grigi/grigie=gray:a;rosa=pink:a;stesso=same:a;diverso=different'+
+        ':a;altro=other:a;',
+    'primo=first:a;ultimo=last:a;prossimo=next:a;buono=good:a;cattivo=bad:a;al'+
+        'to=tall:a;basso=short:a;gentile=kind:a;simpatico/simpatica/simpatici/'+
+        'simpatiche=nice:a;sicuro=sure:a;vero=true:a;famoso=famous:a;speciale='+
+        'special:a;',
+    'tranquillo=quiet:a;sposato=married:a;contento=glad:a;bene=well:r;male=bad'+
+        'ly:r;molto=very:r;troppo=too_much:r;poco=little:r;sempre=always:r;spe'+
+        'sso=often:r;qualche_volta=sometimes:r;ora=now:r;adesso=now:r;oggi=tod'+
+        'ay:r;',
+    'domani=tomorrow:r;ieri=yesterday:r;stasera=tonight:r;stanotte=tonight:r;q'+
+        'ui=here:r;qua=here:r;là=there:r;lì=there:r;ancora=again:r;presto=so'+
+        'on:r;già=already:r;solo=only:r;soltanto=only:r;davvero=really:r;insi'+
+        'eme=together:r;',
+    'quasi=almost:r;poi=then:r;dopo=afterwards:r;prima=before:r;tardi=late:r;l'+
+        'ontano=far:r;vicino=near:r;fuori=outside:r;dentro=inside:r;forse=mayb'+
+        'e:r;naturalmente=of_course:r;certo=of_course:r;anche=also:r;di=of:p;a'+
+        '=to:p;da=from:p;',
+    'in=in:p;con=with:p;su=on:p;per=for:p;tra=between:p;fra=between:p;senza=wi'+
+        'thout:p;sopra=above:p;sotto=under:p;dopo=after:p;prima_di=before:p;ve'+
+        'rso=toward:p;contro=against:p;presso=at:p;accanto_a=next_to:p;davanti'+
+        '_a=in_front_of:p;',
+    'dietro=behind:p;vicino_a=near:p;fino_a=until:p;durante=during:p;e=and:c;m'+
+        'a=but:c;o=or:c;oppure=or:c;che=that:c;perché=because:c;quando=when:c'+
+        ';mentre=while:c;se=if:c;però=but:c;anche_se=although:c;ciao=Hello:j;',
+    'arrivederci=Goodbye:j;grazie=Thank_you:j;grazie_mille=Thank_you_very_much'+
+        ':j;prego=You''re_welcome:j;per_favore=please:j;scusa=Sorry:j;scusi=Ex'+
+        'cuse_me:j;buongiorno=Good_morning:j;buonasera=Good_evening:j;buonanot'+
+        'te=Good_night:j;',
+    'sì=Yes:j;benvenuto=Welcome:j;auguri=Congratulations:j;salute=Cheers:j;ch'+
+        'e=what:w;cosa=what:w;che_cosa=what:w;chi=who:w;dove=where:w;quando=wh'+
+        'en:w;perché=why:w;come=how:w;quale=which:w;quali=which:w;quanto=how_'+
+        'much:w;',
+    'quanti=how_many:w;quante=how_many:w;quanta=how_much:w;no=No:j;come=like:p'+
+        ';mi_dispiace=I''m_sorry:j;affamato=hungry:a;assetato=thirsty:a;piange'+
+        're/pianto=cry:v;'
   );
 
   { Innu-aimun : mots et phrases (voir logic5zg) }
@@ -2227,7 +2535,7 @@ Begin
                 (W = 'german') Or (W = 'spanish') Or (W = 'italian') Or (W =
                     'chinese') Or
                 (W = 'japanese') Or (W = 'russian') Or (W = 'portuguese') Or (W
-                    = 'arabic') Or (W = 'swedish');
+                    = 'arabic') Or (W = 'swedish') Or (W = 'danish');
 End;
 
 { ------------------------------------------------------------------ }
@@ -2519,7 +2827,7 @@ Function IsLanguage(Const W: String): Boolean;
 Begin
   IsLanguage := InList(W,
       'english french german spanish italian chinese japanese russian portugue'+
-      'se arabic swedish');
+      'se arabic swedish danish');
 End;
 
 Function IsProfession(Const W: String): Boolean;
@@ -3449,7 +3757,7 @@ Begin
       If (W = 'in') And IsCalendar(Tk[K].W) And Not InList(Tk[K].W,
           'monday tuesday wednesday thursday friday saturday sunday english fr'+
           'ench german spanish italian chinese japanese russian portuguese ara'+
-          'bic swedish') Then
+          'bic swedish danish') Then
       Begin
         TranslatePP := 'en ' + Lex[Tk[K].N].Fr;
         I := K + 1;
@@ -5686,7 +5994,7 @@ Begin
        Not InList(Tk[K].W,
            'monday tuesday wednesday thursday friday saturday sunday english f'+
            'rench german spanish italian chinese japanese russian portuguese a'+
-           'rabic swedish') Then
+           'rabic swedish danish') Then
     Begin
       TranslatePPDe := 'im ' + Lex[Tk[K].N].De;
       I := K + 1;
@@ -15826,6 +16134,15 @@ Begin
   Else If W = 'medo' Then SpTenerIdiom := 'afraid'
   Else If W = 'pressa' Then SpTenerIdiom := 'in a hurry'
   Else If W = 'verguenza' Then SpTenerIdiom := 'ashamed'
+  Else If W = 'fame' Then SpTenerIdiom := 'hungry'
+  Else If W = 'sete' Then SpTenerIdiom := 'thirsty'
+  Else If W = 'freddo' Then SpTenerIdiom := 'cold'
+  Else If W = 'caldo' Then SpTenerIdiom := 'hot'
+  Else If W = 'sonno' Then SpTenerIdiom := 'sleepy'
+  Else If W = 'paura' Then SpTenerIdiom := 'afraid'
+  Else If W = 'ragione' Then SpTenerIdiom := 'right'
+  Else If W = 'fretta' Then SpTenerIdiom := 'in a hurry'
+  Else If W = 'vergogna' Then SpTenerIdiom := 'ashamed'
   Else SpTenerIdiom := '';
 End;
 
@@ -16503,6 +16820,15 @@ Begin
     End;
     If (Inf = 'ser') And (Sp = 3) And (Tns = 'p') And (Pred <> '') Then SubjText
         := 'it';
+    { es una casa : "it" quand l'attribut est une chose }
+    If (Inf = 'ser') And (Sp = 3) And (Wh = '') And (Not IsQ) And (SubjText <>
+        'it') Then
+      For I := 1 To SIN Do
+        If (SI[I].Kind = 'N') And (SI[I].First > Vf) And (Not SI[I].Pron) And
+            (Not SI[I].Proper) And
+           (SI[I].HeadEn <> '') And (Not SpIsPersonEn(SI[I].HeadEn)) And
+               (SubjText = 'he') Then
+          SubjText := 'it';
     If Sp = 5 Then Sp := 2;
   End;
   If (SubjText = 'it') Or (SubjText = 'he') Or (SubjText = 'she') Then Sp := 3;
@@ -16633,6 +16959,11 @@ Begin
     Exit;
   End;
 
+  { there are two books }
+  If (G.Mode = 't') And (SubjText = 'there') Then
+    For I := 1 To SIN Do
+      If (SI[I].Kind = 'N') And (I <> SubjI) And SI[I].Plural And (Not
+          SI[I].Pron) Then Sp := 6;
   BuildEn(G, Sp, Aux, Rest, LexBase, Post, LexTns);
   WhSubject := False;
   DoQ := IsQ Or (SEnd = '?');
@@ -20269,6 +20600,18 @@ Begin
        ((ST[I - 2].Cat = 'P') Or ((ST[I - 2].Cat = 'N') And SpIsPersonEn(ST[I -
            2].En))) Then
       ST[I].En := 'tall';
+  { complement d'une preposition : pronom de groupe nominal }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'O') And (ST[I - 1].Cat = 'E') And (ST[I].En <> '') Then
+      ST[I].Cat := 'B';
+  { quantificateur pluriel : le nom est au pluriel }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'Q') And ST[I].Plu Then
+    Begin
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If ST[K].Cat = 'N' Then ST[K].Plu := True;
+    End;
   { pronoms complements apres le verbe : enclitiques }
   For I := 2 To SN Do
     If (ST[I].Cat = 'O') And (ST[I - 1].Cat = 'V') And (ST[I].En <> '') Then
@@ -20303,6 +20646,2349 @@ Begin
   Res := UpperFirst(FixEnglish(Res));
   If SEnd <> #0 Then Res := Res + SEnd;
   SvTranslateSentence := Res;
+End;
+
+{ ------------------------------------------------------------------ }
+{ DANOIS -> ANGLAIS : lexique et morphologie                         }
+{ ------------------------------------------------------------------ }
+{ Comme pour l'albanais et le portugais, les jetons produits sont ceux   }
+{ de l'espagnol (ST) : la meme analyse de proposition sert ensuite.      }
+
+Type
+  TDa = Record
+    Orig: String[26];
+    F1, F2, F3, F4: String[24];
+    En: String[28];
+    Pos: String[3];
+    Key: String[10];
+    SpIdx: Integer;
+  End;
+
+Var
+  DaLex: Array[1..700] Of TDa;
+  DaCount: Integer;
+  SourceDa: Boolean;
+  DaLastDef, DaLastGen: Boolean;
+
+{ Les lettres a ring, a et o trema restent telles quelles : les formes }
+{ pliees se confondraient (har / har, far / far). }
+Function DaPlain(Const S: String): String;
+Begin
+  DaPlain := S;
+End;
+
+Procedure LoadDanish;
+Var
+  I: Integer;
+  Line, Item, W, Rest, P: String;
+Begin
+  DaCount := 0;
+  For I := 0 To High(DaData) Do
+  Begin
+    Line := DaData[I];
+    While Line <> '' Do
+    Begin
+      Item := CopyUntil(Line, ';');
+      If (Item <> '') And (DaCount < 700) Then
+      Begin
+        W := CopyUntil(Item, '=');
+        Rest := CopyUntil(Item, ':');
+        Inc(DaCount);
+        FillChar(DaLex[DaCount], SizeOf(TDa), 0);
+        P := CopyUntil(W, '/');
+        DaLex[DaCount].Orig := ReplaceChar(P, '_', ' ');
+        DaLex[DaCount].F1 := DaPlain(DaLex[DaCount].Orig);
+        If W <> '' Then DaLex[DaCount].F2 := DaPlain(CopyUntil(W, '/'));
+        If W <> '' Then DaLex[DaCount].F3 := DaPlain(CopyUntil(W, '/'));
+        If W <> '' Then DaLex[DaCount].F4 := DaPlain(W);
+        DaLex[DaCount].En := ReplaceChar(Rest, '_', ' ');
+        DaLex[DaCount].Pos := CopyUntil(Item, ':');
+        DaLex[DaCount].Key := Item;
+        If Copy(DaLex[DaCount].Pos, 1, 1) = 'v' Then
+        Begin
+          If DaLex[DaCount].Key <> '' Then
+            DaLex[DaCount].SpIdx := AlSpIndex(DaLex[DaCount].Key,
+                DaLex[DaCount].En)
+          Else
+            DaLex[DaCount].SpIdx := AlSpIndex('da:' + DaLex[DaCount].F1,
+                DaLex[DaCount].En);
+        End;
+      End;
+    End;
+  End;
+End;
+
+Function DaIsVowel(C: Char): Boolean;
+Begin
+  DaIsVowel := C In ['a', 'e', 'i', 'o', 'u', 'y'];
+End;
+
+{ Formes d'un nom : singulier, defini, pluriel, pluriel defini }
+Procedure DaNounForms(I: Integer; Var Sg, DefSg, Pl, DefPl: String);
+Var
+  B: String;
+  L: Integer;
+  Neuter: Boolean;
+Begin
+  B := DaLex[I].F1;
+  L := Length(B);
+  Neuter := DaLex[I].Pos = 'nn';
+  Sg := B;
+  If B[L] = 'e' Then
+  Begin
+    If Neuter Then DefSg := B + 't' Else DefSg := B + 'n';
+  End
+  Else If Neuter Then DefSg := B + 'et'
+  Else DefSg := B + 'en';
+  If DaLex[I].F2 <> '' Then Pl := DaLex[I].F2
+  Else If B[L] = 'e' Then Pl := B + 'r'
+  Else Pl := B + 'er';
+  If EndsWith(Pl, 'e') Or EndsWith(Pl, 'er') Then DefPl := Pl + 'ne'
+  Else DefPl := Pl + 'ene';
+End;
+
+Function DaFindNounExact(Const W: String; Var Plu, Def: Boolean): Integer;
+Var
+  I: Integer;
+  Sg, D1, Pl, D2: String;
+Begin
+  DaFindNounExact := 0;
+  For I := 1 To DaCount Do
+    If (DaLex[I].Pos = 'nu') Or (DaLex[I].Pos = 'nn') Then
+    Begin
+      DaNounForms(I, Sg, D1, Pl, D2);
+      If W = Sg Then Begin Plu := False; Def := False; DaFindNounExact := I;
+          Exit; End;
+      If W = Pl Then Begin Plu := True; Def := False; DaFindNounExact := I;
+          Exit; End;
+      If (W = D1) Or ((Length(D1) > Length(Sg)) And (W = Sg + Sg[Length(Sg)] +
+          Copy(D1, Length(Sg) + 1, 3))) Then Begin Plu := False; Def := True;
+          DaFindNounExact := I; Exit; End;
+      If W = D2 Then Begin Plu := True; Def := True; DaFindNounExact := I; Exit;
+          End;
+    End;
+End;
+
+Function DaFindNoun(Const W: String; Var Plu, Def, Gen: Boolean): Integer;
+Var
+  I: Integer;
+Begin
+  Gen := False;
+  Def := False;
+  DaFindNoun := DaFindNounExact(W, Plu, Def);
+  If (DaFindNoun = 0) And (Length(W) > 3) And (W[Length(W)] = 's') Then
+  Begin
+    I := DaFindNounExact(Copy(W, 1, Length(W) - 1), Plu, Def);
+    If I > 0 Then
+    Begin
+      Gen := True;
+      DaFindNoun := I;
+    End;
+  End;
+End;
+
+Function DaFindAdj(Const W: String; Var Plu: Boolean): Integer;
+Var
+  I: Integer;
+  B, N, P: String;
+Begin
+  DaFindAdj := 0;
+  For I := 1 To DaCount Do
+    If DaLex[I].Pos = 'a' Then
+    Begin
+      B := DaLex[I].F1;
+      If DaLex[I].F2 <> '' Then N := DaLex[I].F2 Else N := B + 't';
+      If DaLex[I].F3 <> '' Then P := DaLex[I].F3 Else P := B + 'e';
+      Plu := False;
+      If (W = B) Or (W = N) Then
+      Begin
+        DaFindAdj := I;
+        Exit;
+      End;
+      Plu := True;
+      If W = P Then
+      Begin
+        DaFindAdj := I;
+        Exit;
+      End;
+    End;
+  Plu := False;
+End;
+
+Function DaFind(Const W: String; Const Kinds: String): Integer;
+Var
+  I: Integer;
+Begin
+  DaFind := 0;
+  For I := 1 To DaCount Do
+    If (DaLex[I].F1 = W) And (Pos(DaLex[I].Pos, Kinds) > 0) Then
+    Begin
+      DaFind := I;
+      Exit;
+    End;
+End;
+
+{ Formes verbales : I infinitif, p present, i preterit, P parfait, M imperatif }
+Function DaMatchVerb(Const W: String; Var Idx: Integer; Var Tns: Char): Boolean;
+Var
+  I, L: Integer;
+  Cls, B, Stem: String;
+
+  Function T(Const F: String; Tn: Char): Boolean;
+  Begin
+    T := False;
+    If (F <> '') And (F = W) Then
+    Begin
+      Idx := I;
+      Tns := Tn;
+      T := True;
+    End;
+  End;
+
+Begin
+  DaMatchVerb := True;
+  For I := 1 To DaCount Do
+    If Copy(DaLex[I].Pos, 1, 1) = 'v' Then
+    Begin
+      Cls := DaLex[I].Pos;
+      B := DaLex[I].F1;
+      L := Length(B);
+      If Cls = 'v4' Then
+      Begin
+        If T(DaLex[I].F2, 'p') Or T(DaLex[I].F3, 'i') Or T(DaLex[I].F4, 'P') Or
+            T(B, 'I') Then Exit;
+        If EndsWith(B, 'e') Then Stem := Copy(B, 1, L - 1) Else Stem := B;
+        If T(Stem, 'M') Then Exit;
+      End
+      Else If Cls = 'v3' Then
+      Begin
+        If T(B, 'I') Or T(B + 'r', 'p') Or T(B + 'ede', 'i') Or T(B + 'et', 'P')
+            Then Exit;
+      End
+      Else
+      Begin
+        If EndsWith(B, 'e') Then Stem := Copy(B, 1, L - 1) Else Stem := B;
+        If Cls = 'v1' Then
+        Begin
+          If T(Stem + 'er', 'p') Or T(Stem + 'ede', 'i') Or T(Stem + 'et', 'P')
+              Or T(B, 'I') Then Exit;
+        End
+        Else
+        Begin
+          If T(Stem + 'er', 'p') Or T(Stem + 'te', 'i') Or T(Stem + 't', 'P') Or
+              T(B, 'I') Then Exit;
+        End;
+        If T(Stem, 'M') Then Exit;
+      End;
+    End;
+  DaMatchVerb := False;
+End;
+
+{ ------------------------------------------------------------------ }
+{ DANOIS -> ANGLAIS : jetons et etiquetage                           }
+{ ------------------------------------------------------------------ }
+
+Procedure DaTokenize(Const S0: String);
+Var
+  S, Word1, Low: String;
+  I, L: Integer;
+  C: Char;
+  Cap: Boolean;
+Begin
+  SN := 0;
+  SEnd := #0;
+  S := '';
+  I := 1;
+  While I <= Length(S0) Do
+  Begin
+    If (S0[I] = #$C2) And (I < Length(S0)) And ((S0[I + 1] = #$AB) Or (S0[I + 1]
+        = #$BB) Or (S0[I + 1] = #$A0) Or
+       (S0[I + 1] = #$BF) Or (S0[I + 1] = #$A1)) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 2);
+    End
+    Else If (S0[I] = #$E2) And (I + 2 <= Length(S0)) And (S0[I + 1] = #$80) And
+            ((S0[I + 2] = #$99) Or (S0[I + 2] = #$98)) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 3);
+    End
+    Else
+    Begin
+      S := S + S0[I];
+      Inc(I);
+    End;
+  End;
+  L := Length(S);
+  I := 1;
+  While I <= L Do
+  Begin
+    C := S[I];
+    If FrWordByte(C) Then
+    Begin
+      Word1 := '';
+      While (I <= L) And FrWordByte(S[I]) Do
+      Begin
+        Word1 := Word1 + S[I];
+        Inc(I);
+      End;
+      Cap := (Word1 <> '') And (((Word1[1] >= 'A') And (Word1[1] <= 'Z')) Or
+             ((Word1[1] = #$C3) And (Length(Word1) > 1) And (Word1[2] >= #$80)
+                 And (Word1[2] <= #$9E)));
+      Low := FrLower(Word1);
+      SPush(DaPlain(Low), Word1, Cap, False, False);
+    End
+    Else
+    Begin
+      If (C = '.') Or (C = '?') Or (C = '!') Then
+      Begin
+        If SEnd = #0 Then SEnd := C;
+        If C = '?' Then SEnd := '?';
+      End
+      Else If (C = ',') Or (C = ';') Or (C = ':') Then
+      Begin
+        SPush(',', ',', False, True, False);
+        ST[SN].Cat := ',';
+      End;
+      Inc(I);
+    End;
+  End;
+End;
+
+Function DaNumberEn(Const W: String): String;
+Const
+  N: Array[0..30] Of String = ('nul', 'to', 'tre', 'fire', 'fem', 'seks', 'syv',
+      'otte', 'ni', 'ti',
+    'elleve', 'tolv', 'tretten', 'fjorten', 'femten', 'seksten', 'sytten',
+        'atten', 'nitten',
+    'tyve', 'tredive', 'fyrre', 'halvtreds', 'tres', 'halvfjerds', 'firs',
+        'halvfems',
+    'hundrede', 'tusind', 'million', 'x');
+  E: Array[0..30] Of String = ('zero', 'two', 'three', 'four', 'five', 'six',
+      'seven', 'eight', 'nine', 'ten',
+    'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen',
+        'seventeen', 'eighteen', 'nineteen',
+    'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty',
+        'ninety',
+    'one hundred', 'one thousand', 'one million', 'x');
+Var
+  K: Integer;
+Begin
+  DaNumberEn := '';
+  For K := 0 To 29 Do
+    If W = N[K] Then DaNumberEn := E[K];
+End;
+
+Function DaProperEn(Const Orig: String): String;
+Var
+  L: String;
+Begin
+  L := FrLower(Orig);
+  If L = 'danmark' Then DaProperEn := 'Denmark'
+  Else If L = 'sverige' Then DaProperEn := 'Sweden'
+  Else If L = 'norge' Then DaProperEn := 'Norway'
+  Else If L = 'tyskland' Then DaProperEn := 'Germany'
+  Else If L = 'frankrig' Then DaProperEn := 'France'
+  Else If L = 'spanien' Then DaProperEn := 'Spain'
+  Else If L = 'italien' Then DaProperEn := 'Italy'
+  Else If L = 'england' Then DaProperEn := 'England'
+  Else If L = 'finland' Then DaProperEn := 'Finland'
+  Else If L = 'island' Then DaProperEn := 'Iceland'
+  Else If L = 'rusland' Then DaProperEn := 'Russia'
+  Else If L = 'kina' Then DaProperEn := 'China'
+  Else If L = 'schweiz' Then DaProperEn := 'Switzerland'
+  Else If L = 'belgien' Then DaProperEn := 'Belgium'
+  Else If L = 'holland' Then DaProperEn := 'the Netherlands'
+  Else If L = 'københavn' Then DaProperEn := 'Copenhagen'
+  Else If L = 'rom' Then DaProperEn := 'Rome'
+  Else If L = 'wien' Then DaProperEn := 'Vienna'
+  Else If L = 'moskva' Then DaProperEn := 'Moscow'
+  Else DaProperEn := Orig;
+End;
+
+Function DaNextNounish(I: Integer): Boolean;
+Var
+  Plu, Def, Gen: Boolean;
+Begin
+  DaNextNounish := False;
+  If I > SN Then Exit;
+  If ST[I].Punct Then Exit;
+  DaNextNounish := (DaFindNoun(ST[I].W, Plu, Def, Gen) > 0) Or
+      (DaFindAdj(ST[I].W, Plu) > 0) Or
+                   InList(ST[I].W,
+                       'en et min mit mine din dit dine vores jeres hans hende'+
+                       's deres denne dette disse alle nogle mange hver') Or
+                   (DaNumberEn(ST[I].W) <> '');
+End;
+
+Function DaNextVerbal(I: Integer): Boolean;
+Var
+  Idx: Integer;
+  T: Char;
+Begin
+  DaNextVerbal := False;
+  If I > SN Then Exit;
+  If ST[I].Punct Then Exit;
+  If InList(ST[I].W, 'ikke aldrig også altid') Then
+  Begin
+    DaNextVerbal := True;
+    Exit;
+  End;
+  DaNextVerbal := DaMatchVerb(ST[I].W, Idx, T) And (T In ['p', 'i']);
+End;
+
+Procedure DaMergeMultiword;
+Var
+  I, K, Len, L: Integer;
+  Key: String;
+  Bad, Found: Boolean;
+Begin
+  I := 1;
+  While I < SN Do
+  Begin
+    Found := False;
+    For Len := 3 Downto 2 Do
+      If (Not Found) And (I + Len - 1 <= SN) Then
+      Begin
+        Key := '';
+        Bad := False;
+        For K := I To I + Len - 1 Do
+        Begin
+          If ST[K].Punct Then Bad := True;
+          Key := Join(Key, ST[K].W);
+        End;
+        If Not Bad Then
+        Begin
+          L := DaFind(Key, 'rpcjw');
+          If L > 0 Then
+          Begin
+            Found := True;
+            ST[I].W := Key;
+            ST[I].Orig := Key;
+            For K := I + 1 To SN - Len + 1 Do
+              ST[K] := ST[K + Len - 1];
+            Dec(SN, Len - 1);
+          End;
+        End;
+      End;
+    Inc(I);
+  End;
+End;
+
+Procedure DaPickCat(I: Integer);
+Var
+  W: String;
+  Prev: Char;
+  Idx, Sl: Integer;
+  T: Char;
+  Plu, Def, Gen, QStart, IsVerb, IsNoun, IsAdj: Boolean;
+  LN, LA: Integer;
+Begin
+  W := ST[I].W;
+  If I > 1 Then Prev := ST[I - 1].Cat Else Prev := '.';
+  QStart := (SEnd = '?') And ((I = 1) Or (ST[I - 1].Cat = ','));
+  If ST[I].Punct Then
+  Begin
+    ST[I].Cat := ',';
+    Exit;
+  End;
+  If IsDigitsOnly(W) Then
+  Begin
+    ST[I].Cat := 'U';
+    ST[I].En := W;
+    Exit;
+  End;
+  If DaNumberEn(W) <> '' Then
+  Begin
+    ST[I].Cat := 'U';
+    ST[I].En := DaNumberEn(W);
+    Exit;
+  End;
+  If W = 'ikke' Then
+  Begin
+    ST[I].Cat := 'G';
+    Exit;
+  End;
+  If W = 'aldrig' Then
+  Begin
+    ST[I].Cat := 'R';
+    ST[I].En := 'never';
+    Exit;
+  End;
+  If (W = 'intet') And (Not DaNextNounish(I + 1)) Then
+  Begin
+    ST[I].Cat := 'g';
+    ST[I].En := 'anything';
+    Exit;
+  End;
+  If (W = 'ingen') And (Not DaNextNounish(I + 1)) Then
+  Begin
+    ST[I].Cat := 'g';
+    ST[I].En := 'anyone';
+    Exit;
+  End;
+  { pronoms sujets }
+  If InList(W, 'jeg du han hun vi') Or ((W = 'de') And (Not DaNextNounish(I +
+      1))) Then
+  Begin
+    ST[I].Cat := 'P';
+    If W = 'jeg' Then Begin ST[I].En := 'I'; ST[I].Slot := 1; End
+    Else If W = 'du' Then Begin ST[I].En := 'you'; ST[I].Slot := 2; End
+    Else If W = 'han' Then Begin ST[I].En := 'he'; ST[I].Slot := 3; End
+    Else If W = 'hun' Then Begin ST[I].En := 'she'; ST[I].Slot := 3; End
+    Else If W = 'vi' Then Begin ST[I].En := 'we'; ST[I].Slot := 4; End
+    Else Begin ST[I].En := 'they'; ST[I].Slot := 6; End;
+    Exit;
+  End;
+  { den / det / de : article defini devant adjectif ou nom defini }
+  If InList(W, 'den det de') Then
+  Begin
+    If DaNextNounish(I + 1) Then
+    Begin
+      ST[I].Cat := 'D';
+      ST[I].Kind := 'd';
+      ST[I].Plu := W = 'de';
+    End
+    Else
+    Begin
+      ST[I].Cat := 'P';
+      ST[I].En := 'it';
+      ST[I].Slot := 3;
+    End;
+    Exit;
+  End;
+  If (W = 'man') And (Prev <> 'D') And (Prev <> 'A') And DaNextVerbal(I + 1)
+      Then
+  Begin
+    ST[I].Cat := 'P';
+    ST[I].En := 'one';
+    ST[I].Slot := 3;
+    Exit;
+  End;
+  { articles indefinis }
+  If InList(W, 'en et') Then
+  Begin
+    ST[I].Cat := 'D';
+    ST[I].Kind := 'i';
+    Exit;
+  End;
+  { possessifs }
+  If InList(W,
+      'min mit mine din dit dine hans hendes dens dets vores deres sin sit sine'
+      ) Or
+     (InList(W, 'jeres') And DaNextNounish(I + 1)) Then
+  Begin
+    ST[I].Cat := 'S';
+    If InList(W, 'min mit mine') Then ST[I].En := 'my'
+    Else If InList(W, 'din dit dine jeres') Then ST[I].En := 'your'
+    Else If W = 'hans' Then ST[I].En := 'his'
+    Else If W = 'hendes' Then ST[I].En := 'her'
+    Else If InList(W, 'dens dets') Then ST[I].En := 'its'
+    Else If W = 'vores' Then ST[I].En := 'our'
+    Else If W = 'deres' Then ST[I].En := 'their'
+    Else ST[I].En := 'his';
+    ST[I].Plu := InList(W, 'mine dine jeres sine');
+    Exit;
+  End;
+  { demonstratifs }
+  If InList(W, 'denne dette disse') Then
+  Begin
+    ST[I].Cat := 'T';
+    If W = 'disse' Then Begin ST[I].En := 'these'; ST[I].Plu := True; End
+    Else ST[I].En := 'this';
+    Exit;
+  End;
+  { quantificateurs }
+  If InList(W, 'alle alt hver nogle noget mange flere begge ingen') Or
+     (InList(W, 'meget') And DaNextNounish(I + 1) And
+      (DaFindNoun(ST[I + 1].W, Plu, Def, Gen) > 0)) Or
+     (InList(W, 'ingen intet') And DaNextNounish(I + 1)) Then
+  Begin
+    ST[I].Cat := 'Q';
+    If InList(W, 'alle alt') Then ST[I].En := 'all'
+    Else If W = 'hver' Then ST[I].En := 'each'
+    Else If InList(W, 'nogle noget') Then ST[I].En := 'some'
+    Else If W = 'mange' Then ST[I].En := 'many'
+    Else If W = 'meget' Then ST[I].En := 'much'
+    Else If W = 'flere' Then ST[I].En := 'several'
+    Else If W = 'begge' Then ST[I].En := 'both'
+    Else ST[I].En := 'no';
+    ST[I].Plu := InList(W, 'alle nogle mange flere begge ingen');
+    Exit;
+  End;
+  { pronoms complements }
+  If InList(W, 'mig dig ham hende os jer dem sig') Then
+  Begin
+    ST[I].Cat := 'O';
+    If W = 'mig' Then ST[I].En := 'me'
+    Else If W = 'dig' Then ST[I].En := 'you'
+    Else If W = 'ham' Then ST[I].En := 'him'
+    Else If W = 'hende' Then ST[I].En := 'her'
+    Else If W = 'os' Then ST[I].En := 'us'
+    Else If W = 'jer' Then ST[I].En := 'you'
+    Else If W = 'dem' Then ST[I].En := 'them'
+    Else ST[I].En := '';
+    Exit;
+  End;
+  { mots interrogatifs }
+  Idx := DaFind(W, 'w');
+  If (Idx > 0) And (QStart Or ((SEnd = '?') And InList(W,
+      'hvem hvorfor hvordan hvad hvilken hvilket hvilke hvor mange hvor meget'
+      ))) Then
+  Begin
+    ST[I].Cat := 'W';
+    ST[I].En := DaLex[Idx].En;
+    If W = 'hvor' Then ST[I].W := 'donde'
+    Else If W = 'hvem' Then ST[I].W := 'quien'
+    Else If Copy(W, 1, 5) = 'hvilk' Then ST[I].W := 'cual'
+    Else If W = 'hvor mange' Then ST[I].W := 'cuantos'
+    Else If W = 'hvor meget' Then ST[I].W := 'cuantos'
+    Else If W = 'hvornår' Then ST[I].W := 'cuando'
+    Else If W = 'hvordan' Then ST[I].W := 'como'
+    Else If W = 'hvorfor' Then ST[I].W := 'por que'
+    Else ST[I].W := 'que';
+    Exit;
+  End;
+  { prepositions, conjonctions, interjections, adverbes }
+  Idx := DaFind(W, 'p');
+  If (W = 'ved') And (Prev = 'P') Then Idx := 0;
+  If Idx > 0 Then
+  Begin
+    ST[I].Cat := 'E';
+    ST[I].En := DaLex[Idx].En;
+    If W = 'til' Then ST[I].W := 'a'
+    Else If W = 'af' Then ST[I].W := 'de'
+    Else If (W = 'i') Or (W = 'på') Or (W = 'ved') Then ST[I].W := 'en';
+    Exit;
+  End;
+  Idx := DaFind(W, 'c');
+  If Idx > 0 Then
+  Begin
+    ST[I].Cat := 'C';
+    ST[I].En := DaLex[Idx].En;
+    Exit;
+  End;
+  Idx := DaFind(W, 'j');
+  If Idx > 0 Then
+  Begin
+    ST[I].Cat := 'J';
+    ST[I].En := DaLex[Idx].En;
+    Exit;
+  End;
+  Idx := DaFind(W, 'r');
+  If (Idx > 0) And Not ((W = 'godt') And ((Prev = 'V') Or DaNextNounish(I + 1)))
+      Then
+  Begin
+    ST[I].Cat := 'R';
+    ST[I].En := DaLex[Idx].En;
+    Exit;
+  End;
+  { noms, adjectifs, verbes }
+  LN := DaFindNoun(W, Plu, Def, Gen);
+  IsNoun := LN > 0;
+  If IsNoun Then
+  Begin
+    ST[I].Plu := Plu;
+    ST[I].Cl := '';
+    If Def Then ST[I].Cl := 'def';
+    If Gen Then ST[I].Cl := ST[I].Cl + 'gen';
+  End;
+  LA := DaFindAdj(W, Plu);
+  IsAdj := LA > 0;
+  IsVerb := DaMatchVerb(W, Idx, T);
+  If IsVerb And (IsNoun Or IsAdj) And (Prev In ['D', 'S', 'T', 'Q', 'U']) Then
+      IsVerb := False;
+  If IsVerb And (T = 'P') And IsAdj Then IsVerb := False;
+  If IsVerb And IsNoun And (Prev = 'V') And (T In ['p', 'i']) Then IsVerb :=
+      False;
+  If IsVerb And (Not (T In ['p', 'i', 'M'])) And (IsNoun Or IsAdj) And (Prev <>
+      'V') And (I > 1) Then IsVerb := False;
+  If IsVerb Then
+  Begin
+    ST[I].Cat := 'V';
+    ST[I].Idx := DaLex[Idx].SpIdx;
+    ST[I].Tns := T;
+    ST[I].Slot := 3;
+    ST[I].En := DaLex[Idx].En;
+    Exit;
+  End;
+  If IsNoun And IsAdj Then
+  Begin
+    If Prev In ['D', 'S', 'T', 'Q', 'U', 'A'] Then IsAdj := False Else IsNoun :=
+        False;
+  End;
+  If IsNoun Then
+  Begin
+    ST[I].Cat := 'N';
+    ST[I].En := DaLex[LN].En;
+    Exit;
+  End;
+  If IsAdj Then
+  Begin
+    DaFindAdj(W, Plu);
+    ST[I].Cat := 'A';
+    ST[I].Plu := Plu;
+    ST[I].En := DaLex[LA].En;
+    Exit;
+  End;
+  ST[I].Cat := 'Z';
+End;
+
+{ ------------------------------------------------------------------ }
+{ DANOIS -> ANGLAIS : lissage et phrase complete                     }
+{ ------------------------------------------------------------------ }
+
+Function DaVerbKey(I: Integer): String;
+Begin
+  If (I >= 1) And (I <= SN) And (ST[I].Cat = 'V') And (ST[I].Idx > 0) Then
+    DaVerbKey := SpPlain(SpLex[ST[I].Idx].Es)
+  Else
+    DaVerbKey := '';
+End;
+
+Procedure DaInsert(Pos1: Integer);
+Var
+  K: Integer;
+Begin
+  If SN >= MaxTokens Then Exit;
+  For K := SN Downto Pos1 Do
+    ST[K + 1] := ST[K];
+  Inc(SN);
+  FillChar(ST[Pos1], SizeOf(TSTok), 0);
+  ST[Pos1].Tns := ' ';
+End;
+
+{ Fin du groupe nominal sujet qui commence en K (0 s'il n'y en a pas). }
+Function DaSubjEnd(K: Integer): Integer;
+Var
+  J: Integer;
+Begin
+  DaSubjEnd := 0;
+  If (K < 1) Or (K > SN) Then Exit;
+  If ST[K].Cat = 'P' Then
+  Begin
+    DaSubjEnd := K;
+    Exit;
+  End;
+  J := K;
+  While (J <= SN) And (ST[J].Cat In ['D', 'S', 'T', 'Q', 'U']) Do Inc(J);
+  While (J <= SN) And (ST[J].Cat = 'A') Do Inc(J);
+  If (J <= SN) And (ST[J].Cat = 'N') Then
+    DaSubjEnd := J
+  Else If (J <= SN) And (ST[J].Cat = 'Z') And ST[J].Cap And (J > 1) Then
+  Begin
+    While (J < SN) And (ST[J + 1].Cat = 'Z') Do Inc(J);
+    DaSubjEnd := J;
+  End;
+End;
+
+{ Vrai si le jeton I-1 termine un groupe nominal sujet (et non un complement). }
+Function DaSubjBefore(I: Integer): Boolean;
+Var
+  J: Integer;
+Begin
+  DaSubjBefore := False;
+  If I <= 1 Then Exit;
+  If ST[I - 1].Cat = 'P' Then
+  Begin
+    DaSubjBefore := True;
+    Exit;
+  End;
+  J := I - 1;
+  While (J >= 1) And (ST[J].Cat In ['N', 'A', 'D', 'S', 'T', 'Q', 'U', 'Z']) Do
+      Dec(J);
+  If J < I - 1 Then
+    DaSubjBefore := (J < 1) Or (ST[J].Cat <> 'E');
+End;
+
+Procedure DaMoveBlock(From1, To1, Dest: Integer);
+{ deplace les jetons From1..To1 juste avant la position Dest (Dest < From1) }
+Var
+  Tmp: Array[1..12] Of TSTok;
+  N, K: Integer;
+Begin
+  N := To1 - From1 + 1;
+  If (N < 1) Or (N > 12) Or (Dest >= From1) Then Exit;
+  For K := 1 To N Do Tmp[K] := ST[From1 + K - 1];
+  For K := From1 - 1 Downto Dest Do ST[K + N] := ST[K];
+  For K := 1 To N Do ST[Dest + K - 1] := Tmp[K];
+End;
+
+Function DaFirstW: String;
+Var
+  K: Integer;
+Begin
+  DaFirstW := '';
+  For K := 1 To SN Do
+    If ST[K].Cat = 'W' Then
+    Begin
+      DaFirstW := ST[K].W;
+      Exit;
+    End;
+End;
+
+Procedure DaClassify;
+Var
+  I, J, K, E: Integer;
+  Key, Owner: String;
+  Fin: Boolean;
+Begin
+  DaMergeMultiword;
+  For I := 1 To SN Do
+    DaPickCat(I);
+  For I := 1 To SN Do
+    If ST[I].Cat = 'Z' Then ST[I].Orig := DaProperEn(ST[I].Orig);
+  { travailler / etre "pa" une banque, une ecole... : at }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'E') And (ST[I].W = 'en') And ((ST[I].En = 'on') Or
+        (ST[I].En = 'in')) Then
+    Begin
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat In ['D', 'A', 'S']) Do Inc(K);
+      If (ST[K].Cat = 'N') And InList(ST[K].En,
+          'bank office school university hospital restaurant shop market stati'+
+          'on airport library') Then
+        ST[I].En := 'at';
+    End;
+  { gik i skole : aller a l'ecole }
+  For I := 2 To SN - 1 Do
+    If (ST[I].Cat = 'E') And (ST[I].W = 'en') And ((ST[I].En = 'in') Or
+        (ST[I].En = 'at')) And (ST[I + 1].Cat = 'N') And
+       (ST[I + 1].En = 'school') And (ST[I - 1].Cat = 'V') And (ST[I - 1].En =
+           'go') Then
+      ST[I].En := 'to';
+  { nom propre au genitif : Annas bil -> la voiture d'Anna }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'Z') And ST[I].Cap And (Length(ST[I].Orig) > 3) And
+       (ST[I].Orig[Length(ST[I].Orig)] = 's') And
+       ((ST[I + 1].Cat = 'N') Or ((ST[I + 1].Cat = 'A') And (I + 2 <= SN) And
+           (ST[I + 2].Cat = 'N'))) Then
+    Begin
+      ST[I].Orig := Copy(ST[I].Orig, 1, Length(ST[I].Orig) - 1);
+      ST[I].Cl := 'gen';
+    End;
+  { genitif : on place le possede devant, puis "de" et le possesseur }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cl <> '') And (Pos('gen', ST[I].Cl) > 0) And (ST[I].Cat In ['N',
+        'Z']) Then
+    Begin
+      K := I + 1;
+      While (K <= SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If (K <= SN) And (ST[K].Cat = 'N') And (K - I <= 6) And (SN + 2 <=
+          MaxTokens) Then
+      Begin
+        If ST[I].Cat = 'N' Then
+        Begin
+          Owner := ST[I].En;
+          If ST[I].Plu Then Owner := EnPlural(Owner);
+          If Pos('def', ST[I].Cl) > 0 Then Owner := 'the ' + Owner;
+          ST[I].Orig := Owner;
+          ST[I].Cat := 'Z';
+          If (I > 1) And (ST[I - 1].Cat = 'D') And (ST[I - 1].Kind = 'd') Then
+              ST[I - 1].Cat := ' ';
+        End;
+        ST[I].Cl := '';
+        ST[I].Cap := True;
+        { ordre : possede, "de", possesseur }
+        ST[0] := ST[I];
+        For J := I To K - 1 Do
+          ST[J] := ST[J + 1];
+        FillChar(ST[K], SizeOf(TSTok), 0);
+        ST[K].Tns := ' ';
+        ST[K].Cat := 'E';
+        ST[K].W := 'de';
+        ST[K].Orig := 'de';
+        ST[K].En := 'of';
+        DaInsert(K + 1);
+        Owner := ST[0].Orig;
+        ST[K + 1] := ST[0];
+        ST[K + 1].Orig := Owner;
+      End;
+    End;
+    Inc(I);
+  End;
+  { articles definis portes par le suffixe du nom }
+  I := 1;
+  While I <= SN Do
+  Begin
+    If (ST[I].Cat = 'N') And (Pos('def', ST[I].Cl) > 0) Then
+    Begin
+      K := I;
+      While (K > 1) And (ST[K - 1].Cat = 'A') Do Dec(K);
+      If (K = 1) Or Not (ST[K - 1].Cat In ['D', 'S', 'T', 'Q', 'U']) Then
+      Begin
+        DaInsert(K);
+        ST[K].Cat := 'D';
+        ST[K].Kind := 'd';
+        ST[K].Plu := ST[I + 1].Plu;
+        ST[K].W := 'el';
+        ST[K].Orig := 'el';
+        Inc(I);
+      End;
+    End;
+    Inc(I);
+  End;
+  { adjectifs devant un nom sans determinant : nom puis adjectifs }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cat = 'A') And ((I = 1) Or Not (ST[I - 1].Cat In ['D', 'S', 'T',
+        'Q', 'U', 'A'])) Then
+    Begin
+      K := I;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If (ST[K].Cat = 'N') And (K - I <= 3) Then
+      Begin
+        ST[0] := ST[K];
+        For J := K Downto I + 1 Do
+          ST[J] := ST[J - 1];
+        ST[I] := ST[0];
+        I := K;
+      End
+      Else
+        I := K;
+    End;
+    Inc(I);
+  End;
+  { att + infinitif }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'C') And (ST[I].W = 'at') And (ST[I + 1].Cat = 'V') And
+        (ST[I + 1].Tns = 'I') Then
+    Begin
+      ST[I].Cat := ' ';
+    End;
+  { der er + groupe nominal indefini : il y a }
+  For I := 1 To SN - 2 Do
+  Begin
+    If (ST[I].Cat = 'R') And (ST[I].W = 'der') And (ST[I + 1].Cat = 'V') And
+       (DaVerbKey(I + 1) = 'ser') And (ST[I + 1].Tns In ['p', 'i']) And
+       (ST[I + 2].Cat In ['D', 'N', 'Q', 'U']) And (ST[I + 2].Kind <> 'd') Then
+    Begin
+      ST[I].Cat := ' ';
+      ST[I + 1].Idx := AlSpIndex('haber', 'have');
+    End
+    Else If (ST[I].Cat = 'V') And (DaVerbKey(I) = 'ser') And (ST[I].Tns In ['p',
+        'i']) And
+            (ST[I + 1].Cat = 'R') And (ST[I + 1].W = 'der') And
+            (ST[I + 2].Cat In ['D', 'N', 'Q', 'U']) And (ST[I + 2].Kind <> 'd')
+                Then
+    Begin
+      ST[I + 1].Cat := ' ';
+      ST[I].Idx := AlSpIndex('haber', 'have');
+    End;
+  End;
+  { inversion du verbe en seconde position : Idag gar jag -> Idag jag gar }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'i']) And (Not DaSubjBefore(I))
+        Then
+    Begin
+      E := DaSubjEnd(I + 1);
+      If (E > 0) And (E - I <= 8) Then
+        If (DaVerbKey(I) <> 'haber') Or (ST[I + 1].Cat = 'P') Then
+        Begin
+          DaMoveBlock(I + 1, E, I);
+          I := E;
+        End;
+    End;
+    Inc(I);
+  End;
+  { det finns / det regnar / heter }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'V' Then
+    Begin
+      Key := DaVerbKey(I);
+      If Key = 'haber' Then
+      Begin
+        ST[I].W := 'hay';
+        If (I > 1) And (ST[I - 1].Cat = 'R') And (ST[I - 1].W = 'der') Then ST[I
+            - 1].Cat := ' ';
+        If (I < SN) And (ST[I + 1].Cat = 'R') And (ST[I + 1].W = 'der') Then
+            ST[I + 1].Cat := ' ';
+        ST[I].Slot := 3;
+        If (I > 1) And (ST[I - 1].Cat = 'P') And (ST[I - 1].W = 'det') Then ST[I
+            - 1].Cat := ' ';
+      End
+      Else If Key = 'llover' Then
+      Begin
+        ST[I].Kind := 'g';
+        If (I > 1) And (ST[I - 1].Cat = 'P') And (ST[I - 1].W = 'det') Then ST[I
+            - 1].Cat := ' ';
+      End
+      Else If Key = 'llamar' Then
+        ST[I].Kind := 'r';
+    End;
+  { ha + supin : temps compose }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'V') And (DaVerbKey(I) = 'tener') And (ST[I].Tns In ['p',
+        'i']) Then
+    Begin
+      J := I + 1;
+      While (J <= SN) And (ST[J].Cat In ['R', 'G', 'P']) Do Inc(J);
+      If (J <= SN) And (ST[J].Cat = 'V') And (ST[J].Tns = 'P') Then
+      Begin
+        ST[I].Idx := AlSpIndex('haber', 'have');
+        ST[I].En := 'have';
+      End;
+    End;
+  { negation : inte apres le verbe -> avant le verbe }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'G') And (ST[I - 1].Cat = 'V') And (ST[I - 1].Tns In ['p',
+        'i', 'M']) Then
+    Begin
+      Key := '';
+      ST[0] := ST[I];
+      ST[I] := ST[I - 1];
+      ST[I - 1] := ST[0];
+    End;
+  { impératif en tete de phrase }
+  If (SN >= 1) And (ST[1].Cat = 'V') And (ST[1].Tns In ['p', 'i', 'I', 'M']) And
+      (SEnd <> '?') And
+     (DaVerbKey(1) <> 'haber') Then
+  Begin
+    ST[1].Tns := 'M';
+    ST[1].Slot := 3;
+  End;
+  { personne du verbe d'apres le sujet qui precede }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'i']) Then
+    Begin
+      ST[I].Slot := 3;
+      J := I - 1;
+      While (J >= 1) And (ST[J].Cat In ['R', 'G']) Do Dec(J);
+      If (J >= 1) And (ST[J].Cat = 'P') Then
+        ST[I].Slot := ST[J].Slot
+      Else If (J >= 1) And (ST[J].Cat In ['N', 'Z']) Then
+      Begin
+        If ST[J].Plu And (ST[J].Cat = 'N') Then ST[I].Slot := 6;
+        K := J;
+        While (K > 1) And (ST[K - 1].Cat In ['D', 'S', 'T', 'Q', 'U', 'A']) Do
+            Dec(K);
+        If (K > 2) And (ST[K - 1].Cat = 'C') And (ST[K - 1].En = 'and') Then
+            ST[I].Slot := 6;
+      End;
+    End;
+  { tage til = aller ; hvad laver du = que fais-tu ; hvordan har du det }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'V') And (ST[I].Idx > 0) Then
+    Begin
+      If InList(ST[I].W, 'tager tog tage') And (ST[I + 1].Cat = 'E') And (ST[I +
+          1].W = 'a') Then
+      Begin
+        ST[I].Idx := AlSpIndex('ir', 'go');
+        ST[I].En := 'go';
+      End
+      Else If InList(ST[I].W, 'laver lavede') And (DaFirstW = 'que') Then
+      Begin
+        ST[I].Idx := AlSpIndex('hacer', 'do');
+        ST[I].En := 'do';
+      End
+      Else If (DaVerbKey(I) = 'tener') And (DaFirstW = 'como') And
+              (I < SN) And (ST[SN].Cat = 'P') And (ST[SN].W = 'det') Then
+      Begin
+        ST[I].Idx := AlSpIndex('estar', 'be');
+        ST[I].En := 'be';
+        ST[SN].Cat := ' ';
+      End;
+    End;
+  { hvor ligger X ? = ou est X ? }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].Idx > 0) Then
+    Begin
+      If False Then
+      Begin
+      End
+      Else If InList(ST[I].W, 'ligger lå står stod') And (ST[1].Cat = 'W') And
+          (ST[1].W = 'donde') Then
+      Begin
+        ST[I].Idx := AlSpIndex('estar', 'be');
+        ST[I].En := 'be';
+      End;
+    End;
+  { ska + infinitif : aller + a + infinitif }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cat = 'V') And (DaVerbKey(I) = 'ir') And InList(ST[I].W,
+        'skal skulle') And
+       (ST[I + 1].Cat = 'V') And (ST[I + 1].Tns = 'I') And (SN < MaxTokens) Then
+    Begin
+      DaInsert(I + 1);
+      ST[I + 1].Cat := 'E';
+      ST[I + 1].W := 'a';
+      ST[I + 1].Orig := 'a';
+      ST[I + 1].En := 'to';
+      Inc(I);
+    End;
+    Inc(I);
+  End;
+  { lang d'une personne : grand }
+  For I := 3 To SN Do
+    If (ST[I].Cat = 'A') And (ST[I].En = 'long') And (ST[I - 1].Cat = 'V') And
+       ((ST[I - 2].Cat = 'P') Or ((ST[I - 2].Cat = 'N') And SpIsPersonEn(ST[I -
+           2].En))) Then
+      ST[I].En := 'tall';
+  { complement d'une preposition : pronom de groupe nominal }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'O') And (ST[I - 1].Cat = 'E') And (ST[I].En <> '') Then
+      ST[I].Cat := 'B';
+  { quantificateur pluriel : le nom est au pluriel }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'Q') And ST[I].Plu Then
+    Begin
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If ST[K].Cat = 'N' Then ST[K].Plu := True;
+    End;
+  { pronoms complements apres le verbe : enclitiques }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'O') And (ST[I - 1].Cat = 'V') And (ST[I].En <> '') Then
+    Begin
+      ST[I - 1].Cl := ST[I].En;
+      ST[I].Cat := ' ';
+    End;
+  ARemoveConsumed;
+End;
+
+Function DaTranslateSentence(Const Sentence: String): String;
+Var
+  Res: String;
+Begin
+  DaTokenize(Sentence);
+  If SN = 0 Then
+  Begin
+    DaTranslateSentence := '';
+    Exit;
+  End;
+  DaClassify;
+  If SN = 0 Then
+  Begin
+    DaTranslateSentence := '';
+    Exit;
+  End;
+  Res := TranslateTokensEs(1, SN, SEnd = '?');
+  { Vad heter du ? -> What is your name ? }
+  If (SEnd = '?') And (Length(Res) > 8) And (Copy(Res, Length(Res) - 7, 8) =
+      ' name is') Then
+    Res := 'What is ' + LowerAscii(Copy(Res, 1, Length(Res) - 8)) + ' name';
+  Res := UpperFirst(FixEnglish(Res));
+  If SEnd <> #0 Then Res := Res + SEnd;
+  DaTranslateSentence := Res;
+End;
+
+{ ------------------------------------------------------------------ }
+{ ITALIEN -> ANGLAIS : lexique et morphologie                         }
+{ ------------------------------------------------------------------ }
+{ Comme pour le portugais, les jetons produits sont ceux de l'espagnol   }
+{ (ST) : la meme analyse de proposition sert ensuite.                    }
+
+Type
+  TIt = Record
+    Orig: String[26];
+    F1, F2, F3, F4: String[26];
+    En: String[28];
+    Pos: String[3];
+    Key: String[10];
+    SpIdx: Integer;
+  End;
+
+  TItIrr = Record
+    Inf: String[10];
+    Pres: Array[1..6] Of String[12];
+    Imp: String[60];
+    Fut, Part, Ger: String[12];
+  End;
+
+Const
+  ItIrrData: Array[0..19] Of String = (
+    'essere|sono,sei,è,siamo,siete,sono|ero,eri,era,eravamo,eravate,erano|sar'+
+        '|stato|essendo',
+    'avere|ho,hai,ha,abbiamo,avete,hanno|-|avr|avuto|avendo',
+    'andare|vado,vai,va,andiamo,andate,vanno|-|andr|andato|andando',
+    'fare|faccio,fai,fa,facciamo,fate,fanno|fac|far|fatto|facendo',
+    'dire|dico,dici,dice,diciamo,dite,dicono|dic|dir|detto|dicendo',
+    'venire|vengo,vieni,viene,veniamo,venite,vengono|-|verr|venuto|venendo',
+    'potere|posso,puoi,può,possiamo,potete,possono|-|potr|potuto|potendo',
+    'volere|voglio,vuoi,vuole,vogliamo,volete,vogliono|-|vorr|voluto|volendo',
+    'dovere|devo,devi,deve,dobbiamo,dovete,devono|-|dovr|dovuto|dovendo',
+    'sapere|so,sai,sa,sappiamo,sapete,sanno|-|sapr|saputo|sapendo',
+    'dare|do,dai,dà,diamo,date,danno|-|dar|dato|dando',
+    'stare|sto,stai,sta,stiamo,state,stanno|-|star|stato|stando',
+    'uscire|esco,esci,esce,usciamo,uscite,escono|-|-|uscito|uscendo',
+    'bere|bevo,bevi,beve,beviamo,bevete,bevono|bev|berr|bevuto|bevendo',
+    'rimanere|rimango,rimani,rimane,rimaniamo,rimanete,rimangono|-|rimarr|rima'+
+        'sto|rimanendo',
+    'tenere|tengo,tieni,tiene,teniamo,tenete,tengono|-|terr|tenuto|tenendo',
+    'scegliere|scelgo,scegli,sceglie,scegliamo,scegliete,scelgono|-|-|scelto|s'+
+        'cegliendo',
+    'tradurre|traduco,traduci,traduce,traduciamo,traducete,traducono|traduc|tr'+
+        'adurr|tradotto|traducendo',
+    'morire|muoio,muori,muore,moriamo,morite,muoiono|-|morr|morto|morendo',
+    'piacere|piaccio,piaci,piace,piacciamo,piacete,piacciono|-|piacer|piaciuto'+
+        '|piacendo'
+  );
+
+Var
+  ItLex: Array[1..900] Of TIt;
+  ItCount: Integer;
+  ItIrr: Array[1..24] Of TItIrr;
+  ItIrrCount: Integer;
+  SourceIt: Boolean;
+
+Procedure LoadItalian;
+Var
+  I, K: Integer;
+  Line, Item, W, Rest, P, Part: String;
+Begin
+  ItCount := 0;
+  For I := 0 To High(ItData) Do
+  Begin
+    Line := ItData[I];
+    While Line <> '' Do
+    Begin
+      Item := CopyUntil(Line, ';');
+      If (Item <> '') And (ItCount < 900) Then
+      Begin
+        W := CopyUntil(Item, '=');
+        Rest := CopyUntil(Item, ':');
+        Inc(ItCount);
+        FillChar(ItLex[ItCount], SizeOf(TIt), 0);
+        P := CopyUntil(W, '/');
+        ItLex[ItCount].Orig := ReplaceChar(P, '_', ' ');
+        ItLex[ItCount].F1 := ItLex[ItCount].Orig;
+        If W <> '' Then ItLex[ItCount].F2 := CopyUntil(W, '/');
+        If W <> '' Then ItLex[ItCount].F3 := CopyUntil(W, '/');
+        If W <> '' Then ItLex[ItCount].F4 := W;
+        ItLex[ItCount].En := ReplaceChar(Rest, '_', ' ');
+        ItLex[ItCount].Pos := CopyUntil(Item, ':');
+        ItLex[ItCount].Key := Item;
+        If Copy(ItLex[ItCount].Pos, 1, 1) = 'v' Then
+        Begin
+          If ItLex[ItCount].Key <> '' Then
+            ItLex[ItCount].SpIdx := AlSpIndex(ItLex[ItCount].Key,
+                ItLex[ItCount].En)
+          Else
+            ItLex[ItCount].SpIdx := AlSpIndex('it:' + ItLex[ItCount].F1,
+                ItLex[ItCount].En);
+        End;
+      End;
+    End;
+  End;
+  ItIrrCount := 0;
+  For I := 0 To High(ItIrrData) Do
+    If ItIrrCount < 24 Then
+    Begin
+      Line := ItIrrData[I];
+      Inc(ItIrrCount);
+      ItIrr[ItIrrCount].Inf := CopyUntil(Line, '|');
+      Part := CopyUntil(Line, '|');
+      For K := 1 To 6 Do ItIrr[ItIrrCount].Pres[K] := CopyUntil(Part, ',');
+      ItIrr[ItIrrCount].Imp := CopyUntil(Line, '|');
+      ItIrr[ItIrrCount].Fut := CopyUntil(Line, '|');
+      ItIrr[ItIrrCount].Part := CopyUntil(Line, '|');
+      ItIrr[ItIrrCount].Ger := Line;
+    End;
+End;
+
+Function ItIsVowel(C: Char): Boolean;
+Begin
+  ItIsVowel := C In ['a', 'e', 'i', 'o', 'u'];
+End;
+
+Function ItPlural(Const S: String): String;
+Var
+  L: Integer;
+Begin
+  L := Length(S);
+  If L < 2 Then ItPlural := S
+  Else If EndsWith(S, 'io') Then ItPlural := Copy(S, 1, L - 1)
+  Else If EndsWith(S, 'ca') Then ItPlural := Copy(S, 1, L - 2) + 'che'
+  Else If EndsWith(S, 'ga') Then ItPlural := Copy(S, 1, L - 2) + 'ghe'
+  Else If EndsWith(S, 'co') Then ItPlural := Copy(S, 1, L - 2) + 'chi'
+  Else If EndsWith(S, 'go') Then ItPlural := Copy(S, 1, L - 2) + 'ghi'
+  Else If S[L] = 'a' Then ItPlural := Copy(S, 1, L - 1) + 'e'
+  Else If (S[L] = 'o') Or (S[L] = 'e') Then ItPlural := Copy(S, 1, L - 1) + 'i'
+  Else ItPlural := S;
+End;
+
+Function ItFindNoun(Const W: String; Var Plu: Boolean): Integer;
+Var
+  I: Integer;
+  P: String;
+Begin
+  ItFindNoun := 0;
+  For I := 1 To ItCount Do
+    If ItLex[I].Pos = 'n' Then
+    Begin
+      Plu := False;
+      If W = ItLex[I].F1 Then
+      Begin
+        ItFindNoun := I;
+        Exit;
+      End;
+      Plu := True;
+      If ItLex[I].F2 <> '' Then P := ItLex[I].F2 Else P :=
+          ItPlural(ItLex[I].F1);
+      If W = P Then
+      Begin
+        ItFindNoun := I;
+        Exit;
+      End;
+    End;
+  Plu := False;
+End;
+
+Function ItFindAdj(Const W: String; Var Plu: Boolean): Integer;
+Var
+  I, L: Integer;
+  B, Fem, PM, PF: String;
+Begin
+  ItFindAdj := 0;
+  For I := 1 To ItCount Do
+    If ItLex[I].Pos = 'a' Then
+    Begin
+      B := ItLex[I].F1;
+      L := Length(B);
+      If ItLex[I].F2 <> '' Then
+      Begin
+        Fem := ItLex[I].F2;
+        PM := ItLex[I].F3;
+        PF := ItLex[I].F4;
+      End
+      Else
+      Begin
+        If EndsWith(B, 'o') Then Fem := Copy(B, 1, L - 1) + 'a' Else Fem := B;
+        PM := ItPlural(B);
+        PF := ItPlural(Fem);
+        If EndsWith(B, 'co') Then PM := Copy(B, 1, L - 2) + 'chi';
+      End;
+      Plu := False;
+      If (W = B) Or (W = Fem) Then
+      Begin
+        ItFindAdj := I;
+        Exit;
+      End;
+      Plu := True;
+      If (W = PM) Or (W = PF) Then
+      Begin
+        ItFindAdj := I;
+        Exit;
+      End;
+    End;
+  Plu := False;
+End;
+
+Function ItFind(Const W: String; Const Kinds: String): Integer;
+Var
+  I: Integer;
+Begin
+  ItFind := 0;
+  For I := 1 To ItCount Do
+    If (ItLex[I].F1 = W) And (Pos(ItLex[I].Pos, Kinds) > 0) Then
+    Begin
+      ItFind := I;
+      Exit;
+    End;
+End;
+
+{ Ajoute une terminaison en gerant les i et les c/g des verbes en -are. }
+Function ItJoin(Const Stem, Ending: String; Cls: String): String;
+Begin
+  If (Stem <> '') And (Ending <> '') And (Stem[Length(Stem)] = 'i') And
+      (Ending[1] = 'i') Then
+    ItJoin := Stem + Copy(Ending, 2, 20)
+  Else If (Cls = 'are') And (Stem <> '') And (Stem[Length(Stem)] In ['c', 'g'])
+      And
+          (Ending <> '') And (Ending[1] In ['i', 'e']) Then
+    ItJoin := Stem + 'h' + Ending
+  Else
+    ItJoin := Stem + Ending;
+End;
+
+{ Formes verbales : p present, m imparfait, f futur, c conditionnel, P
+  participe,
+  G gerondif, I infinitif }
+Function ItMatchVerb(Const W: String; Var Idx: Integer; Var Tns: Char; Var Slot:
+    Integer): Boolean;
+Const
+  PrAr: Array[1..6] Of String[6] = ('o', 'i', 'a', 'iamo', 'ate', 'ano');
+  PrEr: Array[1..6] Of String[6] = ('o', 'i', 'e', 'iamo', 'ete', 'ono');
+  PrIr: Array[1..6] Of String[6] = ('o', 'i', 'e', 'iamo', 'ite', 'ono');
+  PrIs: Array[1..6] Of String[6] = ('isco', 'isci', 'isce', 'iamo', 'ite',
+      'iscono');
+  ImA: Array[1..6] Of String[8] = ('avo', 'avi', 'ava', 'avamo', 'avate',
+      'avano');
+  ImE: Array[1..6] Of String[8] = ('evo', 'evi', 'eva', 'evamo', 'evate',
+      'evano');
+  ImI: Array[1..6] Of String[8] = ('ivo', 'ivi', 'iva', 'ivamo', 'ivate',
+      'ivano');
+  FuE: Array[1..6] Of String[6] = ('ò', 'ai', 'à', 'emo', 'ete', 'anno');
+  CoE: Array[1..6] Of String[8] = ('ei', 'esti', 'ebbe', 'emmo', 'este',
+      'ebbero');
+Var
+  I, Q, K, Irr, L: Integer;
+  Inf, Stem, Cls, Form, FS, Part, Rest: String;
+
+  Function T(Const F: String; Tn: Char; Sl: Integer): Boolean;
+  Begin
+    T := False;
+    If (F <> '') And (F = W) Then
+    Begin
+      Idx := I;
+      Tns := Tn;
+      Slot := Sl;
+      T := True;
+    End;
+  End;
+
+Begin
+  ItMatchVerb := True;
+  For I := 1 To ItCount Do
+    If Copy(ItLex[I].Pos, 1, 1) = 'v' Then
+    Begin
+      Inf := ItLex[I].F1;
+      L := Length(Inf);
+      If L < 4 Then Continue;
+      Cls := Copy(Inf, L - 2, 3);
+      Stem := Copy(Inf, 1, L - 3);
+      If (Cls = 'rre') Then Stem := Copy(Inf, 1, L - 3);
+      Irr := 0;
+      For K := 1 To ItIrrCount Do
+        If ItIrr[K].Inf = Inf Then Irr := K;
+      { infinitif, avec ou sans le e final }
+      If T(Inf, 'I', 0) Then Exit;
+      If T(Copy(Inf, 1, L - 1), 'I', 0) Then Exit;
+      { present }
+      For Q := 1 To 6 Do
+      Begin
+        If Irr > 0 Then Form := ItIrr[Irr].Pres[Q]
+        Else If Cls = 'are' Then Form := ItJoin(Stem, PrAr[Q], Cls)
+        Else If Cls = 'ere' Then Form := ItJoin(Stem, PrEr[Q], Cls)
+        Else If ItLex[I].Pos = 'vi' Then Form := ItJoin(Stem, PrIs[Q], Cls)
+        Else Form := ItJoin(Stem, PrIr[Q], Cls);
+        If T(Form, 'p', Q) Then Exit;
+      End;
+      { imparfait }
+      For Q := 1 To 6 Do
+      Begin
+        If Irr > 0 Then
+        Begin
+          Rest := ItIrr[Irr].Imp;
+          If Rest = '-' Then
+          Begin
+            If Cls = 'are' Then Form := Stem + ImA[Q]
+            Else If Cls = 'ire' Then Form := Stem + ImI[Q]
+            Else Form := Stem + ImE[Q];
+          End
+          Else If Pos(',', Rest) > 0 Then
+          Begin
+            Part := Rest;
+            For K := 1 To Q Do Form := CopyUntil(Part, ',');
+          End
+          Else Form := Rest + ImE[Q];
+        End
+        Else If Cls = 'are' Then Form := ItJoin(Stem, ImA[Q], Cls)
+        Else If Cls = 'ere' Then Form := Stem + ImE[Q]
+        Else Form := Stem + ImI[Q];
+        If T(Form, 'm', Q) Then Exit;
+      End;
+      { futur et conditionnel }
+      If Irr > 0 Then FS := ItIrr[Irr].Fut Else FS := '-';
+      If (FS = '-') Then
+      Begin
+        If ItLex[I].F3 <> '' Then FS := ItLex[I].F3
+        Else If Cls = 'are' Then
+        Begin
+          FS := Stem + 'er';
+          If EndsWith(Stem, 'ci') Or EndsWith(Stem, 'gi') Then FS := Copy(Stem,
+              1, Length(Stem) - 1) + 'er'
+          Else If Stem[Length(Stem)] In ['c', 'g'] Then FS := Stem + 'her';
+        End
+        Else If Cls = 'ere' Then FS := Stem + 'er'
+        Else FS := Stem + 'ir';
+      End;
+      For Q := 1 To 6 Do
+        If T(FS + FuE[Q], 'f', Q) Then Exit;
+      For Q := 1 To 6 Do
+        If T(FS + CoE[Q], 'c', Q) Then Exit;
+      { participe : quatre formes }
+      If Irr > 0 Then Part := ItIrr[Irr].Part
+      Else If ItLex[I].F2 <> '' Then Part := ItLex[I].F2
+      Else If Cls = 'are' Then Part := Stem + 'ato'
+      Else If Cls = 'ere' Then Part := Stem + 'uto'
+      Else Part := Stem + 'ito';
+      If EndsWith(Part, 'o') Then
+      Begin
+        Form := Copy(Part, 1, Length(Part) - 1);
+        If T(Part, 'P', 0) Or T(Form + 'a', 'P', 0) Or T(Form + 'i', 'P', 0) Or
+            T(Form + 'e', 'P', 0) Then Exit;
+      End;
+      { gerondif }
+      If Irr > 0 Then Part := ItIrr[Irr].Ger
+      Else If Cls = 'are' Then Part := ItJoin(Stem, 'ando', Cls)
+      Else Part := Stem + 'endo';
+      If T(Part, 'G', 0) Then Exit;
+    End;
+  ItMatchVerb := False;
+End;
+
+{ ------------------------------------------------------------------ }
+{ ITALIEN -> ANGLAIS : jetons et etiquetage                           }
+{ ------------------------------------------------------------------ }
+
+Procedure ItTokenize(Const S0: String);
+Var
+  S, Word1, Low: String;
+  I, L: Integer;
+  C: Char;
+  Cap: Boolean;
+Begin
+  SN := 0;
+  SEnd := #0;
+  S := '';
+  I := 1;
+  While I <= Length(S0) Do
+  Begin
+    If (S0[I] = #$C2) And (I < Length(S0)) And ((S0[I + 1] = #$AB) Or (S0[I + 1]
+        = #$BB) Or (S0[I + 1] = #$A0) Or
+       (S0[I + 1] = #$BF) Or (S0[I + 1] = #$A1)) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 2);
+    End
+    Else If (S0[I] = #$E2) And (I + 2 <= Length(S0)) And (S0[I + 1] = #$80) And
+            ((S0[I + 2] = #$99) Or (S0[I + 2] = #$98)) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 3);
+    End
+    Else
+    Begin
+      S := S + S0[I];
+      Inc(I);
+    End;
+  End;
+  L := Length(S);
+  I := 1;
+  While I <= L Do
+  Begin
+    C := S[I];
+    If FrWordByte(C) Then
+    Begin
+      Word1 := '';
+      While (I <= L) And FrWordByte(S[I]) Do
+      Begin
+        Word1 := Word1 + S[I];
+        Inc(I);
+      End;
+      Cap := (Word1 <> '') And (((Word1[1] >= 'A') And (Word1[1] <= 'Z')) Or
+             ((Word1[1] = #$C3) And (Length(Word1) > 1) And (Word1[2] >= #$80)
+                 And (Word1[2] <= #$9E)));
+      Low := FrLower(Word1);
+      SPush(Low, Word1, Cap, False, False);
+    End
+    Else
+    Begin
+      If (C = '.') Or (C = '?') Or (C = '!') Then
+      Begin
+        If SEnd = #0 Then SEnd := C;
+        If C = '?' Then SEnd := '?';
+      End
+      Else If (C = ',') Or (C = ';') Or (C = ':') Then
+      Begin
+        SPush(',', ',', False, True, False);
+        ST[SN].Cat := ',';
+      End;
+      Inc(I);
+    End;
+  End;
+End;
+
+Function ItNumberEn(Const W: String): String;
+Const
+  N: Array[0..28] Of String = ('zero', 'due', 'tre', 'quattro', 'cinque', 'sei',
+      'sette', 'otto',
+    'nove', 'dieci', 'undici', 'dodici', 'tredici', 'quattordici', 'quindici',
+        'sedici',
+    'diciassette', 'diciotto', 'diciannove', 'venti', 'trenta', 'quaranta',
+        'cinquanta',
+    'sessanta', 'settanta', 'ottanta', 'novanta', 'cento', 'mille');
+  E: Array[0..28] Of String = ('zero', 'two', 'three', 'four', 'five', 'six',
+      'seven', 'eight',
+    'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen',
+        'sixteen',
+    'seventeen', 'eighteen', 'nineteen', 'twenty', 'thirty', 'forty', 'fifty',
+    'sixty', 'seventy', 'eighty', 'ninety', 'one hundred', 'one thousand');
+Var
+  K: Integer;
+Begin
+  ItNumberEn := '';
+  For K := 0 To 28 Do
+    If W = N[K] Then ItNumberEn := E[K];
+End;
+
+Function ItProperEn(Const Orig: String): String;
+Var
+  L: String;
+Begin
+  L := FrLower(Orig);
+  If L = 'italia' Then ItProperEn := 'Italy'
+  Else If L = 'francia' Then ItProperEn := 'France'
+  Else If L = 'spagna' Then ItProperEn := 'Spain'
+  Else If L = 'germania' Then ItProperEn := 'Germany'
+  Else If L = 'inghilterra' Then ItProperEn := 'England'
+  Else If L = 'svizzera' Then ItProperEn := 'Switzerland'
+  Else If L = 'portogallo' Then ItProperEn := 'Portugal'
+  Else If L = 'grecia' Then ItProperEn := 'Greece'
+  Else If L = 'svezia' Then ItProperEn := 'Sweden'
+  Else If L = 'danimarca' Then ItProperEn := 'Denmark'
+  Else If L = 'norvegia' Then ItProperEn := 'Norway'
+  Else If L = 'russia' Then ItProperEn := 'Russia'
+  Else If L = 'giappone' Then ItProperEn := 'Japan'
+  Else If L = 'cina' Then ItProperEn := 'China'
+  Else If L = 'belgio' Then ItProperEn := 'Belgium'
+  Else If L = 'brasile' Then ItProperEn := 'Brazil'
+  Else If L = 'roma' Then ItProperEn := 'Rome'
+  Else If L = 'milano' Then ItProperEn := 'Milan'
+  Else If L = 'napoli' Then ItProperEn := 'Naples'
+  Else If L = 'venezia' Then ItProperEn := 'Venice'
+  Else If L = 'firenze' Then ItProperEn := 'Florence'
+  Else If L = 'torino' Then ItProperEn := 'Turin'
+  Else If L = 'genova' Then ItProperEn := 'Genoa'
+  Else If L = 'parigi' Then ItProperEn := 'Paris'
+  Else If L = 'londra' Then ItProperEn := 'London'
+  Else If L = 'mosca' Then ItProperEn := 'Moscow'
+  Else If L = 'vienna' Then ItProperEn := 'Vienna'
+  Else ItProperEn := Orig;
+End;
+
+Function ItNextNounish(I: Integer): Boolean;
+Var
+  Plu: Boolean;
+Begin
+  ItNextNounish := False;
+  If I > SN Then Exit;
+  If ST[I].Punct Then Exit;
+  ItNextNounish := (ItFindNoun(ST[I].W, Plu) > 0) Or (ItFindAdj(ST[I].W, Plu) >
+      0) Or
+                   InList(ST[I].W,
+                       'il lo la i gli le l un uno una mio mia miei mie tuo tu'+
+                       'a tuoi tue') Or
+                   InList(ST[I].W,
+                       'suo sua suoi sue nostro nostra nostri nostre vostro vo'+
+                       'stra vostri vostre') Or
+                   InList(ST[I].W,
+                       'questo questa questi queste quello quella quelli quell'+
+                       'e ogni tutto tutta') Or
+                   InList(ST[I].W,
+                       'tutti tutte alcuni alcune qualche molto molta molti mo'+
+                       'lte poco poca pochi poche') Or
+                   (ItNumberEn(ST[I].W) <> '');
+End;
+
+Function ItNextVerbal(I: Integer): Boolean;
+Var
+  Idx, Sl: Integer;
+  T: Char;
+Begin
+  ItNextVerbal := False;
+  If I > SN Then Exit;
+  If ST[I].Punct Then Exit;
+  If InList(ST[I].W, 'non mi ti ci vi si lo la li le gli ne') Then
+  Begin
+    ItNextVerbal := True;
+    Exit;
+  End;
+  ItNextVerbal := ItMatchVerb(ST[I].W, Idx, T, Sl) And (T In ['p', 'm', 'f',
+      'c']);
+End;
+
+{ Contractions : del, nel, sul... et articles elides (l', dell') }
+Procedure ItExpandContractions;
+Var
+  I, K: Integer;
+  E1, E2, W: String;
+  T: TSTok;
+Begin
+  I := SN;
+  While I >= 1 Do
+  Begin
+    E1 := '';
+    E2 := '';
+    W := ST[I].W;
+    If Not ST[I].Punct Then
+    Begin
+      If (W = 'del') Or (W = 'dello') Or (W = 'della') Or (W = 'dell') Or (W =
+          'dei') Or (W = 'degli') Or (W = 'delle') Then
+        E1 := 'di'
+      Else If (W = 'al') Or (W = 'allo') Or (W = 'alla') Or (W = 'all') Or (W =
+          'ai') Or (W = 'agli') Or (W = 'alle') Then
+        E1 := 'a'
+      Else If (W = 'dal') Or (W = 'dallo') Or (W = 'dalla') Or (W = 'dall') Or
+          (W = 'dai') Or (W = 'dagli') Or (W = 'dalle') Then
+        E1 := 'da'
+      Else If (W = 'nel') Or (W = 'nello') Or (W = 'nella') Or (W = 'nell') Or
+          (W = 'nei') Or (W = 'negli') Or (W = 'nelle') Then
+        E1 := 'in'
+      Else If (W = 'sul') Or (W = 'sullo') Or (W = 'sulla') Or (W = 'sull') Or
+          (W = 'sui') Or (W = 'sugli') Or (W = 'sulle') Then
+        E1 := 'su'
+      Else If (W = 'col') Or (W = 'coi') Then
+        E1 := 'con';
+      If E1 <> '' Then
+      Begin
+        If (W = 'del') Or (W = 'al') Or (W = 'dal') Or (W = 'nel') Or (W =
+            'sul') Or (W = 'col') Then E2 := 'il'
+        Else If (W = 'dello') Or (W = 'allo') Or (W = 'dallo') Or (W = 'nello')
+            Or (W = 'sullo') Then E2 := 'lo'
+        Else If (W = 'della') Or (W = 'alla') Or (W = 'dalla') Or (W = 'nella')
+            Or (W = 'sulla') Then E2 := 'la'
+        Else If (W = 'dell') Or (W = 'all') Or (W = 'dall') Or (W = 'nell') Or
+            (W = 'sull') Then E2 := 'l'
+        Else If (W = 'dei') Or (W = 'ai') Or (W = 'dai') Or (W = 'nei') Or (W =
+            'sui') Or (W = 'coi') Then E2 := 'i'
+        Else If (W = 'degli') Or (W = 'agli') Or (W = 'dagli') Or (W = 'negli')
+            Or (W = 'sugli') Then E2 := 'gli'
+        Else E2 := 'le';
+      End;
+    End;
+    If (E1 <> '') And (SN < MaxTokens) Then
+    Begin
+      T := ST[I];
+      For K := SN Downto I + 1 Do
+        ST[K + 1] := ST[K];
+      Inc(SN);
+      ST[I] := T;
+      ST[I].W := E1;
+      ST[I].Orig := E1;
+      ST[I].Kind := 'e';
+      ST[I + 1] := T;
+      ST[I + 1].W := E2;
+      ST[I + 1].Orig := E2;
+      ST[I + 1].Cap := False;
+      ST[I + 1].Kind := 'p';
+      { "di + article" : possible partitif, repere pour la suite }
+      If E1 = 'di' Then ST[I + 1].Cl := 'part';
+    End;
+    Dec(I);
+  End;
+End;
+
+Procedure ItMergeMultiword;
+Var
+  I, K, Len, L: Integer;
+  Key: String;
+  Bad, Found: Boolean;
+Begin
+  I := 1;
+  While I < SN Do
+  Begin
+    Found := False;
+    For Len := 3 Downto 2 Do
+      If (Not Found) And (I + Len - 1 <= SN) Then
+      Begin
+        Key := '';
+        Bad := False;
+        For K := I To I + Len - 1 Do
+        Begin
+          If ST[K].Punct Then Bad := True;
+          Key := Join(Key, ST[K].W);
+        End;
+        If Not Bad Then
+        Begin
+          L := ItFind(Key, 'rpcjw');
+          If L > 0 Then
+          Begin
+            Found := True;
+            ST[I].W := Key;
+            ST[I].Orig := Key;
+            For K := I + 1 To SN - Len + 1 Do
+              ST[K] := ST[K + Len - 1];
+            Dec(SN, Len - 1);
+          End;
+        End;
+      End;
+    Inc(I);
+  End;
+End;
+
+{ Verbe a l'infinitif avec pronom enclitique : vederlo, parlarmi }
+Function ItEnclitic(Const W: String; Var Idx: Integer; Var Clit: String):
+    Boolean;
+Var
+  Base, Cl, Inf: String;
+  L, K, Sl: Integer;
+  T: Char;
+Begin
+  ItEnclitic := False;
+  L := Length(W);
+  If L < 6 Then Exit;
+  Cl := Copy(W, L - 1, 2);
+  If Not InList(Cl, 'lo la li le mi ti ci vi ne') Then Exit;
+  Base := Copy(W, 1, L - 2);
+  If Not EndsWith(Base, 're') Then Base := Base + 'e';
+  If Not EndsWith(Base, 're') Then Exit;
+  If ItMatchVerb(Base, K, T, Sl) And (T = 'I') Then
+  Begin
+    Idx := K;
+    If Cl = 'lo' Then Clit := 'him'
+    Else If Cl = 'la' Then Clit := 'her'
+    Else If (Cl = 'li') Or (Cl = 'le') Then Clit := 'them'
+    Else If Cl = 'mi' Then Clit := 'me'
+    Else If Cl = 'ti' Then Clit := 'you'
+    Else If Cl = 'ci' Then Clit := 'us'
+    Else If Cl = 'vi' Then Clit := 'you'
+    Else Clit := '';
+    ItEnclitic := True;
+  End;
+  Inf := Base;
+End;
+
+Procedure ItPickCat(I: Integer);
+Var
+  W, Clit: String;
+  Prev: Char;
+  Idx, Sl: Integer;
+  T: Char;
+  Plu, QStart, IsVerb, IsNoun, IsAdj: Boolean;
+  LN, LA: Integer;
+Begin
+  W := ST[I].W;
+  If I > 1 Then Prev := ST[I - 1].Cat Else Prev := '.';
+  QStart := (SEnd = '?') And ((I = 1) Or (ST[I - 1].Cat = ','));
+  If ST[I].Punct Then
+  Begin
+    ST[I].Cat := ',';
+    Exit;
+  End;
+  If IsDigitsOnly(W) Then
+  Begin
+    ST[I].Cat := 'U';
+    ST[I].En := W;
+    Exit;
+  End;
+  If (ItNumberEn(W) <> '') And ((W <> 'sei') Or (ItFindNoun(ST[I + 1].W, Plu) >
+      0)) Then
+  Begin
+    ST[I].Cat := 'U';
+    ST[I].En := ItNumberEn(W);
+    If W = 'cento' Then ST[I].En := 'one hundred';
+    Exit;
+  End;
+  If ST[I].Kind = 'e' Then
+  Begin
+    Idx := ItFind(W, 'p');
+    ST[I].Cat := 'E';
+    ST[I].Kind := ' ';
+    If Idx > 0 Then ST[I].En := ItLex[Idx].En Else ST[I].En := W;
+    If W = 'di' Then ST[I].W := 'de'
+    Else If W = 'in' Then ST[I].W := 'en'
+    Else If W = 'da' Then ST[I].W := 'desde';
+    Exit;
+  End;
+  If W = 'non' Then
+  Begin
+    ST[I].Cat := 'G';
+    Exit;
+  End;
+  If W = 'mai' Then
+  Begin
+    ST[I].Cat := 'R';
+    ST[I].En := 'never';
+    Exit;
+  End;
+  If (W = 'niente') Or (W = 'nulla') Then
+  Begin
+    ST[I].Cat := 'g';
+    ST[I].En := 'anything';
+    Exit;
+  End;
+  If (W = 'nessuno') And (Not ItNextNounish(I + 1)) Then
+  Begin
+    ST[I].Cat := 'g';
+    ST[I].En := 'anyone';
+    Exit;
+  End;
+  { pronoms sujets }
+  If InList(W, 'io tu lui lei noi voi loro egli ella esso essa') Then
+  Begin
+    ST[I].Cat := 'P';
+    If W = 'io' Then Begin ST[I].En := 'I'; ST[I].Slot := 1; End
+    Else If W = 'tu' Then Begin ST[I].En := 'you'; ST[I].Slot := 2; End
+    Else If (W = 'lui') Or (W = 'egli') Or (W = 'esso') Then Begin ST[I].En :=
+        'he'; ST[I].Slot := 3; End
+    Else If (W = 'lei') Or (W = 'ella') Then Begin ST[I].En := 'she'; ST[I].Slot
+        := 3; End
+    Else If W = 'essa' Then Begin ST[I].En := 'it'; ST[I].Slot := 3; End
+    Else If W = 'noi' Then Begin ST[I].En := 'we'; ST[I].Slot := 4; End
+    Else If W = 'voi' Then Begin ST[I].En := 'you'; ST[I].Slot := 5; End
+    Else Begin ST[I].En := 'they'; ST[I].Slot := 6; End;
+    Exit;
+  End;
+  { articles definis / pronoms clitiques }
+  If InList(W, 'il lo la l i gli le') Then
+  Begin
+    If (InList(W, 'lo la li le gli')) And (Not ItNextNounish(I + 1)) And
+        ItNextVerbal(I + 1) Then
+    Begin
+      ST[I].Cat := 'O';
+      If W = 'lo' Then Begin ST[I].En := 'him'; End
+      Else If W = 'la' Then Begin ST[I].En := 'her'; End
+      Else If W = 'gli' Then Begin ST[I].En := 'him'; ST[I].W := 'le'; End
+      Else Begin ST[I].En := 'them'; ST[I].W := 'los'; End;
+      Exit;
+    End;
+    ST[I].Cat := 'D';
+    ST[I].Kind := 'd';
+    ST[I].Plu := (W = 'i') Or (W = 'gli') Or (W = 'le');
+    Exit;
+  End;
+  If InList(W, 'un uno una') Then
+  Begin
+    ST[I].Cat := 'D';
+    ST[I].Kind := 'i';
+    Exit;
+  End;
+  If InList(W,
+      'mio mia miei mie tuo tua tuoi tue suo sua suoi sue nostro nostra nostri'+
+      ' nostre vostro vostra vostri vostre') Or
+     ((W = 'loro') And False) Then
+  Begin
+    ST[I].Cat := 'S';
+    If Copy(W, 1, 2) = 'mi' Then ST[I].En := 'my'
+    Else If Copy(W, 1, 2) = 'tu' Then ST[I].En := 'your'
+    Else If Copy(W, 1, 2) = 'su' Then ST[I].En := 'his'
+    Else If Copy(W, 1, 2) = 'no' Then ST[I].En := 'our'
+    Else ST[I].En := 'your';
+    ST[I].Plu := EndsWith(W, 'i') Or EndsWith(W, 'e');
+    Exit;
+  End;
+  If InList(W,
+      'questo questa questi queste quello quella quelli quelle quel quei quegli'
+      ) Then
+  Begin
+    ST[I].Cat := 'T';
+    If Copy(W, 1, 4) = 'ques' Then ST[I].En := 'this' Else ST[I].En := 'that';
+    ST[I].Plu := (W = 'questi') Or (W = 'queste') Or (W = 'quelli') Or (W =
+        'quelle') Or (W = 'quei') Or (W = 'quegli');
+    If ST[I].Plu Then
+      If ST[I].En = 'this' Then ST[I].En := 'these' Else ST[I].En := 'those';
+    Exit;
+  End;
+  { quantificateurs }
+  If InList(W,
+      'tutto tutta tutti tutte ogni alcuni alcune qualche nessun nessuna parec'+
+      'chi parecchie vari varie diversi diverse troppo troppa troppi troppe') Or
+     (InList(W, 'molto molta molti molte poco poca pochi poche') And (I < SN)
+         And (ItFindNoun(ST[I + 1].W, Plu) > 0)) Then
+  Begin
+    ST[I].Cat := 'Q';
+    ST[I].Plu := EndsWith(W, 'i') Or EndsWith(W, 'e');
+    If Copy(W, 1, 4) = 'tutt' Then ST[I].En := 'all'
+    Else If W = 'ogni' Then Begin ST[I].En := 'every'; ST[I].Plu := False; End
+    Else If Copy(W, 1, 4) = 'molt' Then ST[I].En := 'many'
+    Else If Copy(W, 1, 4) = 'poch' Then ST[I].En := 'few'
+    Else If Copy(W, 1, 4) = 'poco' Then ST[I].En := 'few'
+    Else If Copy(W, 1, 3) = 'alc' Then ST[I].En := 'some'
+    Else If W = 'qualche' Then Begin ST[I].En := 'some'; ST[I].Plu := True; End
+    Else If Copy(W, 1, 3) = 'nes' Then Begin ST[I].En := 'no'; ST[I].Plu :=
+        False; End
+    Else If Copy(W, 1, 3) = 'var' Then ST[I].En := 'several'
+    Else If Copy(W, 1, 3) = 'div' Then ST[I].En := 'several'
+    Else If Copy(W, 1, 3) = 'par' Then ST[I].En := 'several'
+    Else ST[I].En := 'too many';
+    If (ST[I].En = 'many') And (Not ST[I].Plu) Then ST[I].En := 'much';
+    If (ST[I].En = 'few') And (Not ST[I].Plu) Then ST[I].En := 'little';
+    If (ST[I].En = 'all') And (Not ST[I].Plu) Then ST[I].Plu := False;
+    Exit;
+  End;
+  { clitiques complements }
+  If InList(W, 'mi ti ci vi si ne') Then
+  Begin
+    ST[I].Cat := 'O';
+    If W = 'mi' Then Begin ST[I].En := 'me'; ST[I].W := 'me'; End
+    Else If W = 'ti' Then Begin ST[I].En := 'you'; ST[I].W := 'te'; End
+    Else If W = 'ci' Then Begin ST[I].En := 'us'; ST[I].W := 'nos'; End
+    Else If W = 'vi' Then Begin ST[I].En := 'you'; ST[I].W := 'os'; End
+    Else If W = 'si' Then Begin ST[I].En := ''; ST[I].W := 'se'; End
+    Else Begin ST[I].En := ''; ST[I].Cat := ' '; End;
+    Exit;
+  End;
+  { mots grammaticaux du lexique }
+  Idx := ItFind(W, 'w');
+  If (Idx > 0) And (QStart Or InList(W,
+      'dove quanto quanti quanta quante quale quali chi')) Then
+  Begin
+    ST[I].Cat := 'W';
+    ST[I].En := ItLex[Idx].En;
+    If W = 'dove' Then ST[I].W := 'donde'
+    Else If W = 'chi' Then ST[I].W := 'quien'
+    Else If Copy(W, 1, 4) = 'qual' Then ST[I].W := 'cual'
+    Else If Copy(W, 1, 5) = 'quant' Then ST[I].W := 'cuantos'
+    Else If W = 'quando' Then ST[I].W := 'cuando'
+    Else If W = 'come' Then ST[I].W := 'como'
+    Else If W = 'perché' Then ST[I].W := 'por que'
+    Else ST[I].W := 'que';
+    Exit;
+  End;
+  Idx := ItFind(W, 'p');
+  If Idx > 0 Then
+  Begin
+    ST[I].Cat := 'E';
+    ST[I].En := ItLex[Idx].En;
+    If W = 'di' Then ST[I].W := 'de'
+    Else If W = 'in' Then ST[I].W := 'en'
+    Else If W = 'da' Then ST[I].W := 'desde'
+    Else If W = 'senza' Then ST[I].W := 'sin'
+    Else If W = 'per' Then ST[I].W := 'para';
+    Exit;
+  End;
+  Idx := ItFind(W, 'c');
+  If Idx > 0 Then
+  Begin
+    ST[I].Cat := 'C';
+    ST[I].En := ItLex[Idx].En;
+    Exit;
+  End;
+  Idx := ItFind(W, 'j');
+  If Idx > 0 Then
+  Begin
+    ST[I].Cat := 'J';
+    ST[I].En := ItLex[Idx].En;
+    Exit;
+  End;
+  Idx := ItFind(W, 'r');
+  If (Idx > 0) And Not ((W = 'bene') And False) Then
+  Begin
+    ST[I].Cat := 'R';
+    ST[I].En := ItLex[Idx].En;
+    If (W = 'molto') And (Not (ItNextNounish(I + 1))) Then ST[I].En := 'very';
+    Exit;
+  End;
+  { noms, adjectifs, verbes }
+  LN := ItFindNoun(W, Plu);
+  IsNoun := LN > 0;
+  If IsNoun Then ST[I].Plu := Plu;
+  LA := ItFindAdj(W, Plu);
+  IsAdj := LA > 0;
+  IsVerb := ItMatchVerb(W, Idx, T, Sl);
+  If (Not IsVerb) And ItEnclitic(W, Idx, Clit) Then
+  Begin
+    ST[I].Cat := 'V';
+    ST[I].Idx := ItLex[Idx].SpIdx;
+    ST[I].Tns := 'I';
+    ST[I].Slot := 0;
+    ST[I].En := ItLex[Idx].En;
+    ST[I].Cl := Clit;
+    Exit;
+  End;
+  If IsVerb And (IsNoun Or IsAdj) And (Prev In ['D', 'S', 'T', 'Q', 'U', 'E'])
+      Then IsVerb := False;
+  If IsVerb And (T = 'P') And IsAdj Then IsVerb := False;
+  If IsVerb And (Not (T In ['p', 'm', 'f', 'c', 'i'])) And (IsNoun Or IsAdj) And
+      (Prev <> 'V') Then IsVerb := False;
+  { ho fame, ho freddo : le nom l'emporte apres avere }
+  If IsVerb And IsNoun And (Prev = 'V') And (T In ['p', 'm']) Then IsVerb :=
+      False;
+  If IsVerb Then
+  Begin
+    ST[I].Cat := 'V';
+    ST[I].Idx := ItLex[Idx].SpIdx;
+    ST[I].Tns := T;
+    ST[I].Slot := Sl;
+    ST[I].En := ItLex[Idx].En;
+    Exit;
+  End;
+  If IsNoun And IsAdj Then
+  Begin
+    If Prev In ['D', 'S', 'T', 'Q', 'U', 'A'] Then IsAdj := False
+    Else If (Prev = 'V') And InList(W, 'freddo caldo') Then IsAdj := False
+    Else IsNoun := False;
+  End;
+  If IsNoun Then
+  Begin
+    ST[I].Cat := 'N';
+    ST[I].Plu := Plu;
+    ST[I].En := ItLex[LN].En;
+    ItFindNoun(W, Plu);
+    ST[I].Plu := Plu;
+    Exit;
+  End;
+  If IsAdj Then
+  Begin
+    ItFindAdj(W, Plu);
+    ST[I].Cat := 'A';
+    ST[I].Plu := Plu;
+    ST[I].En := ItLex[LA].En;
+    Exit;
+  End;
+  ST[I].Cat := 'Z';
+End;
+
+{ ------------------------------------------------------------------ }
+{ ITALIEN -> ANGLAIS : lissage et phrase complete                     }
+{ ------------------------------------------------------------------ }
+
+Function ItVerbKey(I: Integer): String;
+Begin
+  If (I >= 1) And (I <= SN) And (ST[I].Cat = 'V') And (ST[I].Idx > 0) Then
+    ItVerbKey := SpPlain(SpLex[ST[I].Idx].Es)
+  Else
+    ItVerbKey := '';
+End;
+
+Procedure ItClassify;
+Var
+  I, J, K: Integer;
+  Key: String;
+Begin
+  { elisions : l'amico, c'e, dov'e... }
+  For I := 1 To SN Do
+    If Not ST[I].Punct Then
+    Begin
+      Key := ST[I].W;
+      If Key = 'c' Then ST[I].W := 'ci'
+      Else If Key = 'm' Then ST[I].W := 'mi'
+      Else If Key = 't' Then ST[I].W := 'ti'
+      Else If Key = 's' Then ST[I].W := 'si'
+      Else If Key = 'n' Then ST[I].W := 'ne'
+      Else If Key = 'd' Then ST[I].W := 'di'
+      Else If Key = 'dov' Then ST[I].W := 'dove'
+      Else If Key = 'com' Then ST[I].W := 'come'
+      Else If Key = 'cos' Then ST[I].W := 'cosa'
+      Else If Key = 'quest' Then ST[I].W := 'questo'
+      Else If Key = 'quell' Then ST[I].W := 'quello';
+    End;
+  For I := 1 To SN Do
+    If ST[I].W = 'sia' Then ST[I].W := 'è';
+  ItExpandContractions;
+  ItMergeMultiword;
+  For I := 1 To SN Do
+    ItPickCat(I);
+  For I := 1 To SN Do
+    If ST[I].Cat = 'Z' Then ST[I].Orig := ItProperEn(ST[I].Orig);
+  { partitif : mangio del pane = I eat some bread }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'E') And (ST[I].W = 'de') And (ST[I + 1].Cat = 'D') And
+        (ST[I + 1].Cl = 'part') And
+       ((I = 1) Or (ST[I - 1].Cat In ['V', 'G'])) Then
+    Begin
+      ST[I].Cat := 'Q';
+      ST[I].En := 'some';
+      ST[I].Plu := ST[I + 1].Plu;
+      ST[I + 1].Cat := ' ';
+    End;
+  { il mio libro : l'article devant un possessif disparait }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'D') And (ST[I].Kind = 'd') And (ST[I + 1].Cat = 'S') Then
+        ST[I].Cat := ' ';
+  { ci + essere : il y a }
+  For I := 1 To SN - 2 Do
+    If (ST[I].Cat = 'O') And (ST[I].W = 'nos') And (ST[I + 1].Cat = 'V') And
+        (ItVerbKey(I + 1) = 'ser') And
+       (ST[I + 1].Tns In ['p', 'm', 'f', 'c']) And (ST[I + 2].Cat In ['D', 'N',
+           'Q', 'U', 'A']) Then
+    Begin
+      ST[I].Cat := ' ';
+      ST[I + 1].Idx := AlSpIndex('haber', 'have');
+      ST[I + 1].W := 'hay';
+      ST[I + 1].Slot := 3;
+    End;
+  { fa freddo / fa caldo }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'V') And (ItVerbKey(I) = 'hacer') And InList(ST[I + 1].W,
+        'freddo caldo') Then
+    Begin
+      ST[I].Idx := AlSpIndex('ser', 'be');
+      ST[I].En := 'be';
+      ST[I].Slot := 3;
+      ST[I + 1].Cat := 'A';
+      If ST[I + 1].W = 'freddo' Then ST[I + 1].En := 'cold' Else ST[I + 1].En :=
+          'hot';
+    End;
+  { ho vent'anni }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'N') And (ST[I].W = 'anni') Then ST[I].W := 'anos';
+  { passe compose : ho mangiato = I ate }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'V') And ((ItVerbKey(I) = 'tener') Or (ItVerbKey(I) =
+        'ser')) And
+       (ST[I].Tns In ['p', 'm', 'f', 'c']) Then
+    Begin
+      J := I + 1;
+      While (J <= SN) And (ST[J].Cat In ['R', 'G']) Do Inc(J);
+      If (J <= SN) And (ST[J].Cat = 'V') And (ST[J].Tns = 'P') And
+         ((ItVerbKey(I) = 'tener') Or
+          InList(ST[J].En,
+              'go come arrive return leave go_out enter fall be_born die stay '+
+              'be')) Then
+      Begin
+        If ST[I].Tns = 'p' Then
+        Begin
+          ST[J].Tns := 'i';
+          ST[J].Slot := ST[I].Slot;
+          ST[I].Cat := ' ';
+        End
+        Else
+        Begin
+          ST[I].Idx := AlSpIndex('haber', 'have');
+          ST[I].En := 'have';
+        End;
+      End;
+    End;
+  { a Roma, a scuola, all'universita : lieu et non complement de personne }
+  For I := 2 To SN - 1 Do
+    If (ST[I].Cat = 'E') And (ST[I].W = 'a') And ((ST[I - 1].Cat = 'N') Or (ST[I
+        - 1].Cat = 'V')) And
+       (Not InList(ST[I - 1].En,
+           'go come arrive return leave travel walk run drive enter give send '+
+           'write tell show teach bring say ask offer sell call')) Then
+    Begin
+      K := I + 1;
+      If ST[K].Cat = 'D' Then Inc(K);
+      If (K <= SN) And ((ST[K].Cat = 'Z') Or ((ST[K].Cat = 'N') And Not
+          SpIsPersonEn(ST[K].En))) Then
+      Begin
+        ST[I].W := 'en';
+        If ST[K].Cat = 'Z' Then ST[I].En := 'in' Else ST[I].En := 'at';
+      End;
+    End;
+  { a casa : chez soi }
+  For I := 2 To SN - 1 Do
+    If (ST[I].Cat = 'E') And InList(ST[I].W, 'a en') And (ST[I - 1].Cat = 'V')
+        And
+       (ST[I + 1].Cat = 'N') And (ST[I + 1].W = 'casa') Then
+    Begin
+      ST[I + 1].Cat := 'R';
+      If ST[I].En = 'at' Then ST[I + 1].En := 'at home' Else ST[I + 1].En :=
+          'home';
+      ST[I].Cat := ' ';
+    End;
+  { jours de la semaine : adverbes de temps }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'N') And InList(ST[I].En,
+        'Monday Tuesday Wednesday Thursday Friday Saturday Sunday') And
+       ((I = 1) Or Not (ST[I - 1].Cat In ['D', 'E', 'S', 'T', 'Q'])) Then
+    Begin
+      ST[I].Cat := 'R';
+      ST[I].En := 'on ' + ST[I].En;
+    End;
+  { si trova = est situe ; vorrei = je voudrais ; costa : sujet "it" }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'V' Then
+    Begin
+      If InList(ST[I].W, 'trova trovano trovavano') And (I > 1) And (ST[I -
+          1].Cat = 'O') And (ST[I - 1].W = 'se') Then
+      Begin
+        ST[I].Idx := AlSpIndex('estar', 'be');
+        ST[I].En := 'be';
+      End
+      Else If (ItVerbKey(I) = 'querer') And (ST[I].Tns = 'c') Then
+        ST[I].En := 'like';
+    End;
+  For I := SN Downto 1 Do
+    If (ST[I].Cat = 'V') And (ST[I].En = 'cost') And (ST[I].Slot = 3) And
+        (ST[I].Tns In ['p', 'i']) And
+       ((I = 1) Or Not (ST[I - 1].Cat In ['P', 'N', 'Z'])) And (SN < MaxTokens)
+           Then
+    Begin
+      For K := SN Downto I Do
+        ST[K + 1] := ST[K];
+      Inc(SN);
+      FillChar(ST[I], SizeOf(TSTok), 0);
+      ST[I].Cat := 'P';
+      ST[I].W := 'esso';
+      ST[I].En := 'it';
+      ST[I].Slot := 3;
+      ST[I].Tns := ' ';
+    End;
+  { chi e ? = who is it ? }
+  If (SN = 2) And (ST[1].Cat = 'W') And (ST[1].W = 'quien') And (ItVerbKey(2) =
+      'ser') Then
+  Begin
+    SN := 3;
+    FillChar(ST[3], SizeOf(TSTok), 0);
+    ST[3].Cat := 'P';
+    ST[3].W := 'esso';
+    ST[3].En := 'it';
+    ST[3].Slot := 3;
+    ST[3].Tns := ' ';
+  End;
+  { in cucina, in giardino : article defini sous-entendu }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cat = 'E') And (ST[I].W = 'en') And (ST[I + 1].Cat = 'N') And (Not
+        ST[I + 1].Plu) And
+       InList(ST[I + 1].En,
+           'kitchen bathroom bedroom room garden street city park') And (SN <
+           MaxTokens) Then
+    Begin
+      For K := SN Downto I + 1 Do
+        ST[K + 1] := ST[K];
+      Inc(SN);
+      FillChar(ST[I + 1], SizeOf(TSTok), 0);
+      ST[I + 1].Cat := 'D';
+      ST[I + 1].Kind := 'd';
+      ST[I + 1].W := 'el';
+      ST[I + 1].Tns := ' ';
+      Inc(I);
+    End;
+    Inc(I);
+  End;
+  { piove, nevica }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'V' Then
+    Begin
+      Key := ItVerbKey(I);
+      If Key = 'llover' Then ST[I].Kind := 'g'
+      Else If Key = 'llamar' Then
+      Begin
+        If (I > 1) And (ST[I - 1].Cat = 'O') And InList(ST[I - 1].W, 'me te se')
+            Then ST[I].Kind := 'r';
+      End;
+    End;
+  { impératif : Apri la porta ! }
+  If (SN >= 1) And (SEnd = '!') And (ST[1].Cat = 'V') And (ST[1].Tns = 'p') And
+      (ST[1].Slot In [2, 5]) Then
+    ST[1].Tns := 'M';
+  { pronoms apres une preposition : lui, lei sont deja des groupes nominaux }
+  K := 0;
+  ARemoveConsumed;
+End;
+
+Function ItTranslateSentence(Const Sentence: String): String;
+Var
+  Res: String;
+  TimeQ: Boolean;
+Begin
+  ItTokenize(Sentence);
+  If SN = 0 Then
+  Begin
+    ItTranslateSentence := '';
+    Exit;
+  End;
+  ItClassify;
+  If SN = 0 Then
+  Begin
+    ItTranslateSentence := '';
+    Exit;
+  End;
+  TimeQ := (SN = 3) And (ST[1].Cat = 'W') And InList(ST[2].W, 'ora ore') And
+      (ItVerbKey(3) = 'ser');
+  Res := TranslateTokensEs(1, SN, SEnd = '?');
+  If TimeQ Then Res := 'What time is it';
+  { Come ti chiami ? -> What is your name ? }
+  If (SEnd = '?') And (Length(Res) > 8) And (Copy(Res, Length(Res) - 7, 8) =
+      ' name is') Then
+    Res := 'What is ' + LowerAscii(Copy(Res, 1, Length(Res) - 8)) + ' name';
+  Res := UpperFirst(FixEnglish(Res));
+  If SEnd <> #0 Then Res := Res + SEnd;
+  ItTranslateSentence := Res;
 End;
 
 { ------------------------------------------------------------------ }
@@ -20603,16 +23289,19 @@ Var
   Key, Res, Pair, En: String;
   I, N: Integer;
   Question: Boolean;
-  SD, SJ, SE, SQ, SP, SV: Boolean;
+  SD, SJ, SE, SQ, SP, SV, SDa, SIt: Boolean;
 Begin
   If SourceMoe Then
   Begin
     TranslateSentence := MoeTranslateSentence(Sentence);
     Exit;
   End;
-  If SourceDe Or SourceJa Or SourceEs Or SourceSq Or SourcePt Or SourceSv Then
+  If SourceDe Or SourceJa Or SourceEs Or SourceSq Or SourcePt Or SourceSv Or
+      SourceDa Or SourceIt Then
   Begin
-    If SourceSv Then Res := SvTranslateSentence(Sentence)
+    If SourceIt Then Res := ItTranslateSentence(Sentence)
+    Else If SourceDa Then Res := DaTranslateSentence(Sentence)
+    Else If SourceSv Then Res := SvTranslateSentence(Sentence)
     Else If SourcePt Then Res := PtTranslateSentence(Sentence)
     Else If SourceSq Then Res := SqTranslateSentence(Sentence)
     Else If SourceJa Then Res := JaTranslateSentence(Sentence)
@@ -20627,6 +23316,10 @@ Begin
       SQ := SourceSq;
       SP := SourcePt;
       SV := SourceSv;
+      SDa := SourceDa;
+      SIt := SourceIt;
+      SourceIt := False;
+      SourceDa := False;
       SourceSv := False;
       SourcePt := False;
       SourceDe := False;
@@ -20640,6 +23333,8 @@ Begin
       SourceSq := SQ;
       SourcePt := SP;
       SourceSv := SV;
+      SourceDa := SDa;
+      SourceIt := SIt;
     End;
     TranslateSentence := Res;
     Exit;
@@ -20757,7 +23452,7 @@ Begin
   Writeln;
   Writeln('Options :');
   Writeln('  -f, --from-lang  Code ISO 639-1 de la langue source (en, fr, de, '+
-      'ja en romaji, es, sq, pt, sv).');
+      'ja en romaji, es, sq, pt, sv, da, it).');
   Writeln('  -t, --to-lang    Code ISO 639-1 de la langue cible (fr, de, en).');
   Writeln('  -l, --list       Affiche les paires de langues disponibles.');
   Writeln('  -V, --version    Affiche la version.');
@@ -20788,6 +23483,8 @@ BEGIN
   LoadAlbanian;
   LoadPortuguese;
   LoadSwedish;
+  LoadDanish;
+  LoadItalian;
   LoadMoe;
   FromLang := '';
   ToLang := '';
@@ -20857,6 +23554,10 @@ BEGIN
     Writeln('pt -> en');
     Writeln('sv -> fr');
     Writeln('sv -> en');
+    Writeln('da -> fr');
+    Writeln('da -> en');
+    Writeln('it -> fr');
+    Writeln('it -> en');
     Writeln('moe -> fr (innu-aimun : phrases et mots connus seulement)');
     Halt(0);
   End;
@@ -20886,14 +23587,16 @@ BEGIN
           ((FromLang = 'es') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
           ((FromLang = 'sq') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
           ((FromLang = 'pt') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
-          ((FromLang = 'sv') And ((ToLang = 'fr') Or (ToLang = 'en')))) Then
+          ((FromLang = 'sv') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
+          ((FromLang = 'da') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
+          ((FromLang = 'it') And ((ToLang = 'fr') Or (ToLang = 'en')))) Then
   Begin
     Writeln('Erreur : aucun modele de traduction de ', FromLang, ' vers ',
         ToLang,
             ' n''est installe (paires disponibles : en -> fr, en -> de, fr -> '+
                 'en, de -> fr, de -> en, ja -> fr, ja -> en, es -> fr, es -> e'+
                 'n, sq -> fr, sq -> en, pt -> fr, pt -> en, sv -> fr, sv -> en'+
-                ').');
+                ', da -> fr, da -> en, it -> fr, it -> en).');
     Halt(1);
   End;
   SourceDe := FromLang = 'de';
@@ -20902,10 +23605,12 @@ BEGIN
   SourceSq := FromLang = 'sq';
   SourcePt := FromLang = 'pt';
   SourceSv := FromLang = 'sv';
+  SourceDa := FromLang = 'da';
+  SourceIt := FromLang = 'it';
   DeToEn := (SourceDe Or SourceJa Or SourceEs Or SourceSq Or SourcePt Or
-      SourceSv) And (ToLang = 'en');
+      SourceSv Or SourceDa Or SourceIt) And (ToLang = 'en');
   DePivot := (SourceDe Or SourceJa Or SourceEs Or SourceSq Or SourcePt Or
-      SourceSv) And (Not DeToEn);
+      SourceSv Or SourceDa Or SourceIt) And (Not DeToEn);
   If SourceDe Then InitDeSpecials;
   TargetDe := ToLang = 'de';
   TargetEn := ToLang = 'en';
