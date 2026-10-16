@@ -16,11 +16,6 @@
 
 Program LINGUACLI;
 
-{$IFDEF FPC}
-{$IFDEF WINDOWS}
-Uses Windows;
-{$ENDIF}
-{$ENDIF}
 
 Const
   Version = '1.0';
@@ -726,8 +721,9 @@ End;
 { ------------------------------------------------------------------ }
 
 { ------------------------------------------------------------------ }
-{ Arguments : sous Windows, la ligne de commande est lue en UTF-16 pour           }
-{ conserver les caracteres hors page de code (cyrillique, japonais, ...).        }
+{ Arguments : lus par ParamStr (page de code de la console). Pour du texte hors  }
+{ de cette page de code (cyrillique, japonais, ...), utiliser -f fichier ou      }
+{ l'entree standard, qui conservent l'UTF-8.                                     }
 { ------------------------------------------------------------------ }
 
 Var
@@ -749,96 +745,6 @@ Begin
 End;
 
 Procedure CollectArguments;
-{$IFDEF FPC}
-{$IFDEF WINDOWS}
-Var
-  Line: PWideChar;
-  Position, Slashes: Integer;
-  InQuotes, InArgument: Boolean;
-  Current: String;
-  Unit1, Unit2: Longint;
-
-  Procedure Flush;
-  Begin
-    If InArgument Then
-    Begin
-      If ArgTotal < 63 Then
-      Begin
-        Inc(ArgTotal);
-        Args[ArgTotal] := Current;
-      End;
-      Current := '';
-      InArgument := False;
-    End;
-  End;
-
-  Procedure Add(Code: Longint);
-  Begin
-    If Length(Current) < 230 Then Current := Current + Utf8Of(Code);
-    InArgument := True;
-  End;
-
-Begin
-  ArgTotal := -1;
-  Line := GetCommandLineW;
-  Position := 0;
-  InQuotes := False;
-  InArgument := False;
-  Current := '';
-  While Line[Position] <> #0 Do
-  Begin
-    Unit1 := Ord(Line[Position]);
-    If (Unit1 >= $D800) And (Unit1 <= $DBFF) And (Line[Position + 1] <> #0) Then
-    Begin
-      Unit2 := Ord(Line[Position + 1]);
-      Unit1 := $10000 + ((Unit1 - $D800) Shl 10) + (Unit2 - $DC00);
-      Inc(Position);
-    End;
-    If Unit1 = 92 Then
-    Begin
-      Slashes := 0;
-      While Line[Position] = '\' Do
-      Begin
-        Inc(Slashes);
-        Inc(Position);
-      End;
-      If Line[Position] = '"' Then
-      Begin
-        While Slashes >= 2 Do
-        Begin
-          Add(92);
-          Dec(Slashes, 2);
-        End;
-        If Slashes = 1 Then
-        Begin
-          Add(34);
-          Inc(Position);
-        End;
-      End
-      Else
-        While Slashes > 0 Do
-        Begin
-          Add(92);
-          Dec(Slashes);
-        End;
-      Continue;
-    End;
-    If Unit1 = 34 Then
-    Begin
-      InQuotes := Not InQuotes;
-      InArgument := True;
-    End
-    Else If ((Unit1 = 32) Or (Unit1 = 9)) And (Not InQuotes) Then
-      Flush
-    Else
-      Add(Unit1);
-    Inc(Position);
-  End;
-  Flush;
-  { Args[0] est le programme : on le conserve a part. }
-  If ArgTotal < 0 Then ArgTotal := 0;
-End;
-{$ELSE}
 Var
   I: Integer;
 Begin
@@ -846,16 +752,6 @@ Begin
   For I := 1 To ParamCount Do
     If I < 64 Then Args[I] := ParamStr(I);
 End;
-{$ENDIF}
-{$ELSE}
-Var
-  I: Integer;
-Begin
-  ArgTotal := ParamCount;
-  For I := 1 To ParamCount Do
-    If I < 64 Then Args[I] := ParamStr(I);
-End;
-{$ENDIF}
 
 Procedure ShowHelp;
 Begin
