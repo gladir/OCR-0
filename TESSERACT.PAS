@@ -7,6 +7,8 @@
 
 Program TESSERACT;
 
+Uses Dos;
+
 Const
   MaxImageWidth = 32000;
   MaxImageHeight = 16000;
@@ -4950,6 +4952,80 @@ Var
   OptionError: Integer;
   RecognizedLine: String;
 
+{ Suivi de la progression : Progress reecrit la meme ligne, Step affiche une etape. }
+Var
+  StartTime: Longint;
+  ProgressWidth: Integer;
+
+Function ClockHundredths: Longint;
+Var
+  H, M, S, S100: Word;
+Begin
+  GetTime(H, M, S, S100);
+  ClockHundredths := ((Longint(H) * 60 + M) * 60 + S) * 100 + S100;
+End;
+
+Function ElapsedText: String;
+Var
+  Elapsed: Longint;
+  A, B: String;
+Begin
+  Elapsed := ClockHundredths - StartTime;
+  If Elapsed < 0 Then Inc(Elapsed, 8640000);
+  Str(Elapsed Div 100, A);
+  Str((Elapsed Mod 100) Div 10, B);
+  ElapsedText := A + ',' + B + ' s';
+End;
+
+Procedure ClearProgress;
+Var
+  I: Integer;
+Begin
+  If ProgressWidth > 0 Then
+  Begin
+    Write(#13);
+    For I := 1 To ProgressWidth Do
+      Write(' ');
+    Write(#13);
+    ProgressWidth := 0;
+  End;
+End;
+
+Procedure Progress(Text1: String);
+Var
+  I: Integer;
+Begin
+  Write(#13, Text1);
+  For I := Length(Text1) + 1 To ProgressWidth Do
+    Write(' ');
+  If Length(Text1) > ProgressWidth Then ProgressWidth := Length(Text1);
+  Flush(Output);
+End;
+
+Procedure Step(Text1: String);
+Begin
+  ClearProgress;
+  Writeln('[', ElapsedText, '] ', Text1);
+  Flush(Output);
+End;
+
+Function NumberText(Value: Longint): String;
+Var
+  T: String;
+Begin
+  Str(Value, T);
+  NumberText := T;
+End;
+
+Function EmText(Em100: Integer): String;
+Var
+  Cents: String;
+Begin
+  Cents := NumberText(Em100 Mod 100);
+  If Length(Cents) < 2 Then Cents := '0' + Cents;
+  EmText := NumberText(Em100 Div 100) + ',' + Cents + ' px';
+End;
+
 Procedure ShowHelp;
 Begin
   Writeln('TESSERACT - Cette commande permet de lancer la reconnaissance de caracteres d''une image.');
@@ -5160,6 +5236,7 @@ Var
 
 Procedure DecodeError(Reason: String);
 Begin
+  ClearProgress;
   Writeln('Erreur : ', Reason);
   Halt(2);
 End;
@@ -6915,6 +6992,7 @@ Type
     Width, Height, Top: Integer;
     Pen, Advance, Extra: Integer;
     Squares: Longint;
+    Root: Real;
     PixelSize: Word;
     Stem: Boolean;
     Pixels: PRowBuffer;
@@ -6939,7 +7017,8 @@ Var
   LineCount, LineLength, SampleCount, SearchFont, SearchEm: Integer;
   SampleLine: Array[0..3] Of Integer;
   SearchScore, ScoreBonus: Real;
-  FullScoring, CoarseScoring, UseExact: Boolean;
+  EvalCount, EvalTotal: Integer;
+  FullScoring, CoarseScoring, CoarsePass, UseExact: Boolean;
 
 Function FloorInt(Value: Real): Integer;
 Var
@@ -7096,6 +7175,7 @@ Procedure AssignExtra(Index, G, FontNo: Integer);
 Begin
   { Un trait vertical (i, l, I, !, |, 1) ne se chevauche jamais : ce serait un doublon. }
   Templates[Index].Stem := GlyphCodeOf(G) In [33, 49, 73, 105, 108, 124];
+  Templates[Index].Root := Sqrt(Templates[Index].Squares);
   { Caracteres rares dans le texte courant : on les prefere moins. }
   Case GlyphCodeOf(G) Of
     33, 93, 124: Templates[Index].Extra := RarePenalty;
@@ -7121,6 +7201,7 @@ Begin
   For Phase := 0 To 3 Do
   Begin
     Index := G * 4 + Phase;
+    If CoarseScoring And ((Phase And 1) <> 0) Then Continue;
     Start := ExactOffset[Index];
     Templates[Index].Width := ExactWidth[Index];
     Templates[Index].Height := ExactHeight[Index];
@@ -7166,6 +7247,9 @@ Begin
   Begin
     { Les lettres accentuees n'existent que dans les langues demandees. }
     If (G >= UnaccentedCount) And (Not LanguageAllows(G)) Then Continue;
+    If CoarseScoring And ((LanguageMask And LangJapanese) = 0) Then
+      If Not (((GlyphCodeOf(G) >= Ord('a')) And (GlyphCodeOf(G) <= Ord('z'))) Or
+              ((GlyphCodeOf(G) >= Ord('0')) And (GlyphCodeOf(G) <= Ord('9')))) Then Continue;
     If UseExact And (FontNo = FontSegoe) And (Em100 = ExactEm) And (G < GlyphCount) Then
     Begin
       LoadExactTemplates(G);
@@ -7301,18 +7385,28 @@ End;
   peut mordre de 1 ou 2 colonnes sur le precedent (crenage, ex. Tr). }
 Function MatchLine(Base: Integer): Longint;
 Var
-  Column, Start, Overlap, Index, Width, Height, TopRow, Rows, Cols, Position: Integer;
-  Cost, Sum, Penalty: Longint;
+  Column, Start, Overlap, Index, Width, Height, TopRow, Rows, Cols, Position, Finish: Integer;
+  Cost, Sum, Penalty, Energy: Longint;
+  Gap: Real;
   Row: PImageRow;
+  Pixels: PRowBuffer;
 Begin
-  For Column := 0 To ImageWidth + 7 Do
+  { Borne superieure de depart : ne rien reconnaitre du tout (colonnes sautees).
+    Elle permet d'ecarter tres tot les gabarits qui ne peuvent pas faire mieux. }
+  BestCost^[0] := 0;
+  BackX^[0] := 0;
+  BackT^[0] := 0;
+  BackS^[0] := 0;
+  For Column := 1 To ImageWidth + 7 Do
   Begin
-    BestCost^[Column] := Infinity;
-    BackX^[Column] := 0;
+    If Column <= ImageWidth Then
+      BestCost^[Column] := PrefixSquares^[Column] * SkipFactor
+    Else
+      BestCost^[Column] := Infinity;
+    BackX^[Column] := Column - 1;
     BackT^[Column] := 0;
     BackS^[Column] := 0;
   End;
-  BestCost^[0] := 0;
 
   For Column := 0 To ImageWidth - 1 Do
   Begin
@@ -7340,26 +7434,39 @@ Begin
           Height := Templates[Index].Height;
           TopRow := Base - Templates[Index].Top + 1;
           If (TopRow < 1) Or (TopRow + Height - 1 > ImageHeight) Then Continue;
+          Finish := Start + Width;
+          Penalty := GlyphPenalty + Overlap * OverlapPenalty + Templates[Index].Extra;
+
+          { Elagage 1 : le cout ne peut pas etre inferieur a la penalite. }
+          If BestCost^[Column] + Penalty >= BestCost^[Finish] Then Continue;
+
+          { Elagage 2 (Cauchy-Schwarz) : la somme des produits est au plus
+            racine(energie du gabarit x energie de l'image), d'ou un cout
+            minimal (racine(E gabarit) - racine(E image))^2. }
+          Energy := PrefixSquares^[Finish] - PrefixSquares^[Start];
+          Gap := Templates[Index].Root - Sqrt(Energy + Energy Div 8 + 64);
+          If Gap > 0 Then
+            If BestCost^[Column] + Penalty + Gap * Gap >= BestCost^[Finish] Then Continue;
+
           Sum := 0;
           Position := 0;
+          Pixels := Templates[Index].Pixels;
           For Rows := 0 To Height - 1 Do
           Begin
             Row := Image^[TopRow + Rows];
             For Cols := 1 To Width Do
             Begin
-              Sum := Sum + Row^[Start + Cols] * Templates[Index].Pixels^[Position];
+              Sum := Sum + Row^[Start + Cols] * Pixels^[Position];
               Inc(Position);
             End;
           End;
-          Penalty := GlyphPenalty + Overlap * OverlapPenalty + Templates[Index].Extra;
-          Cost := BestCost^[Column] + Templates[Index].Squares - 2 * Sum +
-                  (PrefixSquares^[Start + Width] - PrefixSquares^[Start]) + Penalty;
-          If Cost < BestCost^[Start + Width] Then
+          Cost := BestCost^[Column] + Templates[Index].Squares - 2 * Sum + Energy + Penalty;
+          If Cost < BestCost^[Finish] Then
           Begin
-            BestCost^[Start + Width] := Cost;
-            BackX^[Start + Width] := Column;
-            BackS^[Start + Width] := Start;
-            BackT^[Start + Width] := Index + 1;
+            BestCost^[Finish] := Cost;
+            BackX^[Finish] := Column;
+            BackS^[Finish] := Start;
+            BackT^[Finish] := Index + 1;
           End;
         End;
     End;
@@ -7535,8 +7642,11 @@ Var
   BestCostLine, LineCost: Longint;
   Cost, Energy, Score: Real;
 Begin
+  Inc(EvalCount);
+  Progress('Detection de la police et de la taille : essai ' + NumberText(EvalCount) +
+           '/~' + NumberText(EvalTotal) + ' (' + FontNames[FontNo] + ' ' + EmText(Em100) + ')');
   UsedSamples := SampleCount;
-  CoarseScoring := (Not FullScoring) And ((LanguageMask And LangJapanese) <> 0);
+  CoarseScoring := CoarsePass And (Not FullScoring);
   If FullScoring Then
   Begin
     { Evaluation fidele : tous les caracteres de la langue, avec crenage. }
@@ -7552,7 +7662,13 @@ Begin
     MaxOverlapUsed := 0;
   End;
   If ((LanguageMask And LangJapanese) <> 0) And (UsedSamples > 2) Then UsedSamples := 2;
-  If CoarseScoring And ((LanguageMask And LangJapanese) <> 0) Then UsedSamples := 1;
+  { Recherche grossiere : peu de lignes et peu de gabarits suffisent. }
+  If (Not FullScoring) And (Not CoarseScoring) And (UsedSamples > 3) Then UsedSamples := 3;
+  If CoarseScoring Then
+    If (LanguageMask And LangJapanese) <> 0 Then
+      UsedSamples := 1
+    Else If UsedSamples > 2 Then
+      UsedSamples := 2;
   Cost := 0;
   Energy := 0;
   For K := 0 To UsedSamples - 1 Do
@@ -7632,7 +7748,7 @@ Var
 Begin
   CoarseStep := 40;
   FineStep := 10;
-  FineSpan := 4;
+  FineSpan := 2;
   If (LanguageMask And LangJapanese) <> 0 Then
   Begin
     CoarseStep := 60;
@@ -7657,6 +7773,7 @@ Begin
     LastFont := FontOption;
   End;
   FullScoring := False;
+  CoarsePass := False;
   UseExact := True;
   ScoreBonus := 1;
   SearchScore := 1E30;
@@ -7672,6 +7789,9 @@ Begin
   Begin
     EmLow := ClampTo(Integer((Longint(Height75) * 10000) Div 135), 600, 4800);
     EmHigh := ClampTo(Integer((Longint(Height75) * 10000) Div 85), 600, 4800);
+    EvalTotal := ((LastFont - FirstFont + 1) * ((EmHigh - EmLow) Div CoarseStep + 1)) +
+                 2 * FineSpan + 5 + 5;
+    CoarsePass := True;
     For FontNo := FirstFont To LastFont Do
     If Not (((LanguageMask And LangJapanese) <> 0) And (FontNo In [FontArial, FontConsolas])) Then
     Begin
@@ -7682,6 +7802,7 @@ Begin
         Inc(Em, CoarseStep);
       End;
     End;
+    CoarsePass := False;
     FontNo := SearchFont;
     SearchScore := 1E30;
     Center := SearchEm;
@@ -7816,6 +7937,7 @@ Begin
     If LineFirst^[I] < MinStart Then MinStart := LineFirst^[I];
 
   { Interligne : premier quartile des ecarts entre lignes de base. }
+  Step('Lignes de texte reperees : ' + NumberText(LineCount) + '.');
   FillChar(DeltaHistogram, SizeOf(DeltaHistogram), 0);
   Total := 0;
   For I := 1 To LineCount - 1 Do
@@ -7875,18 +7997,22 @@ Begin
     SampleCount := 1;
   End;
 
+  Step('Detection de la police et de la taille ...');
+  EvalCount := 0;
   ChooseFont(Height75);
+  Progress('Preparation des gabarits ...');
   BuildTemplates(CurrentFont, CurrentEm, TotalGlyphs);
   MaxOverlapUsed := MaxOverlap;
   SpaceQ := (Longint(FontSpace) * CurrentEm * 4 + 51200) Div 102400;
   If SpaceQ < 4 Then SpaceQ := 4;
-  Writeln('Police detectee : ', FontNames[CurrentFont], ' ',
-          CurrentEm Div 100, ',', (CurrentEm Mod 100) Div 10, (CurrentEm Mod 10), ' px');
+  Step('Police detectee : ' + FontNames[CurrentFont] + ' ' + EmText(CurrentEm));
 
   { Passe 2 : reconnaitre chaque ligne. }
   PreviousBase := 0;
   For I := 0 To LineCount - 1 Do
   Begin
+    Progress('Reconnaissance : ligne ' + NumberText(I + 1) + '/' + NumberText(LineCount) +
+             ' (' + NumberText(Longint(I) * 100 Div LineCount) + ' %)');
     PrepareLine(LineTop^[I], LineBottom^[I]);
 
     RunCount := 0;
@@ -8144,6 +8270,8 @@ BEGIN
   End;
   OutputName := OutputName + '.txt';
 
+  StartTime := ClockHundredths;
+  Step('Lecture de l''image ' + ImageName + ' ...');
   Case DetectFormat Of
     FormatPng: LoadPng;
     FormatJpeg: LoadJpeg;
@@ -8152,17 +8280,25 @@ BEGIN
   Else
     LoadPbm;
   End;
+  Step('Image chargee : ' + NumberText(ImageWidth) + ' x ' + NumberText(ImageHeight) +
+       ' pixels.');
   NormalizeImage;
+  Step('Image normalisee (fond et encre).');
   { Image de la police matricielle 5 x 7 : ses glyphes collent presque parfaitement
     a la grille, ce qui n'arrive jamais avec un vrai texte. }
   If (Not UseLegacy) And (FontOption = FontAuto) And (SizeOption = 0) Then
   Begin
+    Step('Test de la police matricielle 5 x 7 ...');
     LegacyDry := True;
     DryGlyphs := 0;
     DryErrors := 0;
     RecognizeLegacy;
     LegacyDry := False;
-    If (DryGlyphs > 0) And (DryErrors <= DryGlyphs * 3) Then UseLegacy := True;
+    If (DryGlyphs > 0) And (DryErrors <= DryGlyphs * 3) Then
+    Begin
+      UseLegacy := True;
+      Step('Police matricielle 5 x 7 reconnue.');
+    End;
   End;
 
   Assign(OutputFile, OutputName);
@@ -8180,5 +8316,5 @@ BEGIN
   Else
     RecognizeText;
   Close(OutputFile);
-  Writeln('Reconnaissance terminee : ', OutputName);
+  Step('Reconnaissance terminee : ' + OutputName);
 END.
