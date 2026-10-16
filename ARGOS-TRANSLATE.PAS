@@ -16,8 +16,9 @@
   japonais (romaji) -> anglais, japonais (romaji) -> francais, espagnol ->
     anglais,
   espagnol -> francais, albanais -> anglais, albanais -> francais, portugais ->
-    anglais
-  et portugais -> francais.
+    anglais,
+  portugais -> francais, suedois -> anglais, suedois -> francais et innu-aimun
+  (montagnais) -> francais (mots et phrases connus seulement).
     - lexique d'environ 600 mots (noms avec genre, adjectifs avec accord et
       place,
       verbes avec groupe et auxiliaire, adverbes, prepositions) ;
@@ -74,6 +75,15 @@
       infinitif, ter que, estar a + infinitif, gostar de, ha ; lexique d'environ
         420
       mots ; comme l'albanais, le portugais reutilise l'analyse de l'espagnol.
+    - suedois : noms a article defini en suffixe (huset, pojken), pluriels,
+      adjectifs
+      accordes, verbes (presents, preterits, supins, imperatifs), ordre des mots
+        (verbe
+      en 2e position retabli en ordre sujet-verbe), inte, ha + supin, att, ska,
+      genitif en -s, det finns ; lexique d'environ 471 mots ; comme l'albanais
+        et le
+      portugais, le suedois reutilise l'analyse de l'espagnol puis passe par
+        l'anglais.
   Il traduit correctement des phrases simples ; une phrase complexe peut donner
     une
   traduction approximative, et un mot inconnu est conserve tel quel.
@@ -458,7 +468,8 @@ Const
         'ne:r~nächstes Jahr;this week=cette semaine:r~diese Woche;this year=c'+
         'ette année:r~dieses Jahr;this month=ce mois-ci:r~diesen Monat;',
     'pizza=pizza:nf~Pizza|f/Pizzen;sandwich=sandwich:nm~Sandwich|n/Sandwiches;'+
-        'hamburger=hamburger:nm~Hamburger|m/-;to=à:p~zu|d;'
+        'hamburger=hamburger:nm~Hamburger|m/-;to=à:p~zu|d;swedish=suédois:nm'+
+        ';'
   );
 
   { Verbes francais irreguliers :
@@ -1052,6 +1063,281 @@ Const
         ';',
     'quantas=how_many:w;qual=which:w;pizza=pizza:n;brincar=play:v;o_que=what:w'+
         ';todos_os_dias=every_day:r;todo_o_dia=all_day:r;'
+  );
+
+  { Suedois : suedois=anglais:categorie }
+  SvData: Array[0..46] Of String = (
+    'pojke/pojkar=boy:nu;flicka/flickor=girl:nu;man/män=man:nu;kvinna/kvinnor'+
+        '=woman:nu;barn/barn=child:nn;vän/vänner=friend:nu;familj/familjer=f'+
+        'amily:nu;mamma/mammor=mother:nu;mor/mödrar=mother:nu;pappa/pappor=fa'+
+        'ther:nu;',
+    'far/fäder=father:nu;bror/bröder=brother:nu;syster/systrar=sister:nu;son'+
+        '/söner=son:nu;dotter/döttrar=daughter:nu;make/makar=husband:nu;fru/'+
+        'fruar=wife:nu;lärare/lärare=teacher:nu;student/studenter=student:nu'+
+        ';',
+    'elev/elever=student:nu;läkare/läkare=doctor:nu;sjuksköterska/sjuksköt'+
+        'erskor=nurse:nu;person/personer=person:nu;människa/människor=person'+
+        ':nu;hus/hus=house:nn;rum/rum=room:nn;kök/kök=kitchen:nn;badrum/badr'+
+        'um=bathroom:nn;',
+    'sovrum/sovrum=bedroom:nn;dörr/dörrar=door:nu;fönster/fönster=window:n'+
+        'n;bord/bord=table:nn;stol/stolar=chair:nu;säng/sängar=bed:nu;skola/'+
+        'skolor=school:nu;universitet/universitet=university:nn;klass/klasser='+
+        'class:nu;',
+    'kontor/kontor=office:nn;butik/butiker=shop:nu;marknad/marknader=market:nu'+
+        ';restaurang/restauranger=restaurant:nu;hotell/hotell=hotel:nn;sjukhus'+
+        '/sjukhus=hospital:nn;bibliotek/bibliotek=library:nn;bank/banker=bank:'+
+        'nu;',
+    'flygplats/flygplatser=airport:nu;station/stationer=station:nu;museum/muse'+
+        'er=museum:nn;kyrka/kyrkor=church:nu;bio/biografer=cinema:nu;teater/te'+
+        'atrar=theater:nu;strand/stränder=beach:nu;hav/hav=sea:nn;flod/floder'+
+        '=river:nu;',
+    'berg/berg=mountain:nn;skog/skogar=forest:nu;trädgård/trädgårdar=garde'+
+        'n:nu;park/parker=park:nu;träd/träd=tree:nn;blomma/blommor=flower:nu'+
+        ';stad/städer=city:nu;by/byar=village:nu;land/länder=country:nn;gata'+
+        '/gator=street:nu;',
+    'väg/vägar=road:nu;värld/världar=world:nu;vatten/vatten=water:nn;mat/m'+
+        'at=food:nu;bröd/bröd=bread:nn;ost/ostar=cheese:nu;kött/kött=meat:'+
+        'nn;fisk/fiskar=fish:nu;äpple/äpplen=apple:nn;apelsin/apelsiner=oran'+
+        'ge:nu;',
+    'banan/bananer=banana:nu;ägg/ägg=egg:nn;ris/ris=rice:nn;sallad/sallader='+
+        'salad:nu;soppa/soppor=soup:nu;tårta/tårtor=cake:nu;kaffe/kaffe=coff'+
+        'ee:nn;te/te=tea:nn;mjölk/mjölk=milk:nu;vin/viner=wine:nn;öl/öl=be'+
+        'er:nn;',
+    'juice/juicer=juice:nu;frukost/frukostar=breakfast:nu;lunch/luncher=lunch:'+
+        'nu;middag/middagar=dinner:nu;pengar/pengar=money:nu;pris/priser=price'+
+        ':nn;bok/böcker=book:nu;brev/brev=letter:nn;tidning/tidningar=newspap'+
+        'er:nu;',
+    'tidskrift/tidskrifter=magazine:nn;telefon/telefoner=phone:nu;dator/datore'+
+        'r=computer:nu;bil/bilar=car:nu;buss/bussar=bus:nu;tåg/tåg=train:nn;'+
+        'flygplan/flygplan=plane:nn;cykel/cyklar=bike:nu;båt/båtar=boat:nu;n'+
+        'amn/namn=name:nn;',
+    'språk/språk=language:nn;ord/ord=word:nn;fråga/frågor=question:nu;svar'+
+        '/svar=answer:nn;problem/problem=problem:nn;idé/idéer=idea:nu;histor'+
+        'ia/historier=story:nu;sak/saker=thing:nu;plats/platser=place:nu;arbet'+
+        'e/arbeten=work:nn;',
+    'jobb/jobb=job:nn;tid/tider=time:nu;dag/dagar=day:nu;natt/nätter=night:nu'+
+        ';vecka/veckor=week:nu;månad/månader=month:nu;år/år=year:nn;timme/'+
+        'timmar=hour:nu;minut/minuter=minute:nu;morgon/morgnar=morning:nu;',
+    'kväll/kvällar=evening:nu;musik/musik=music:nu;sång/sånger=song:nu;fil'+
+        'm/filmer=movie:nu;spel/spel=game:nn;present/presenter=gift:nu;fest/fe'+
+        'ster=party:nu;resa/resor=trip:nu;biljett/biljetter=ticket:nu;',
+    'resväska/resväskor=suitcase:nu;nyckel/nycklar=key:nu;väska/väskor=bag'+
+        ':nu;hund/hundar=dog:nu;katt/katter=cat:nu;fågel/fåglar=bird:nu;häs'+
+        't/hästar=horse:nu;djur/djur=animal:nn;regn/regn=rain:nn;snö/snö=sn'+
+        'ow:nu;',
+    'vind/vindar=wind:nu;sol/solar=sun:nu;måne/månar=moon:nu;himmel/himlar=s'+
+        'ky:nu;huvud/huvuden=head:nn;hand/händer=hand:nu;fot/fötter=foot:nu;'+
+        'öga/ögon=eye:nn;mun/munnar=mouth:nu;ansikte/ansikten=face:nn;',
+    'hjärta/hjärtan=heart:nn;skjorta/skjortor=shirt:nu;klänning/klänningar'+
+        '=dress:nu;sko/skor=shoe:nu;hatt/hattar=hat:nu;måndag=Monday:nu;tisda'+
+        'g=Tuesday:nu;onsdag=Wednesday:nu;torsdag=Thursday:nu;fredag=Friday:nu'+
+        ';',
+    'lördag=Saturday:nu;söndag=Sunday:nu;januari=January:nu;februari=Februar'+
+        'y:nu;mars=March:nu;april=April:nu;maj=May:nu;juni=June:nu;juli=July:n'+
+        'u;augusti=August:nu;september=September:nu;oktober=October:nu;novembe'+
+        'r=November:nu;',
+    'december=December:nu;svenska=Swedish:nu;engelska=English:nu;franska=Frenc'+
+        'h:nu;tyska=German:nu;spanska=Spanish:nu;italienska=Italian:nu;kinesis'+
+        'ka=Chinese:nu;japanska=Japanese:nu;ryska=Russian:nu;arabiska=Arabic:n'+
+        'u;',
+    'stor/stort/stora=big:a;liten/litet/små=small:a;lång/långt/långa=long:'+
+        'a;kort/kort/korta=short:a;ny/nytt/nya=new:a;gammal/gammalt/gamla=old:'+
+        'a;ung/ungt/unga=young:a;vacker/vackert/vackra=beautiful:a;snygg/snygg'+
+        't/snygga=pretty:a;',
+    'glad/glatt/glada=happy:a;ledsen/ledset/ledsna=sad:a;trött/trött/trötta'+
+        '=tired:a;sjuk/sjukt/sjuka=sick:a;varm/varmt/varma=hot:a;kall/kallt/ka'+
+        'lla=cold:a;dyr/dyrt/dyra=expensive:a;billig/billigt/billiga=cheap:a;',
+    'lätt/lätt/lätta=easy:a;svår/svårt/svåra=difficult:a;viktig/viktigt/'+
+        'viktiga=important:a;intressant/intressant/intressanta=interesting:a;t'+
+        'råkig/tråkigt/tråkiga=boring:a;rolig/roligt/roliga=funny:a;',
+    'snabb/snabbt/snabba=fast:a;långsam/långsamt/långsamma=slow:a;stark/sta'+
+        'rkt/starka=strong:a;svag/svagt/svaga=weak:a;rik/rikt/rika=rich:a;fatt'+
+        'ig/fattigt/fattiga=poor:a;ren/rent/rena=clean:a;smutsig/smutsigt/smut'+
+        'siga=dirty:a;',
+    'full/fullt/fulla=full:a;tom/tomt/tomma=empty:a;öppen/öppet/öppna=open:'+
+        'a;stängd/stängt/stängda=closed:a;färdig/färdigt/färdiga=ready:a'+
+        ';upptagen/upptaget/upptagna=busy:a;fri/fritt/fria=free:a;röd/rött/r'+
+        'öda=red:a;',
+    'blå/blått/blå=blue:a;grön/grönt/gröna=green:a;gul/gult/gula=yellow:'+
+        'a;svart/svart/svarta=black:a;vit/vitt/vita=white:a;brun/brunt/bruna=b'+
+        'rown:a;grå/grått/grå=gray:a;rosa/rosa/rosa=pink:a;samma/samma/samm'+
+        'a=same:a;',
+    'annorlunda/annorlunda/annorlunda=different:a;annan/annat/andra=other:a;f'+
+        'örsta/första/första=first:a;sista/sista/sista=last:a;nästa/nästa'+
+        '/nästa=next:a;god/gott/goda=good:a;bra/bra/bra=good:a;dålig/dåligt'+
+        '/dåliga=bad:a;',
+    'hungrig/hungrigt/hungriga=hungry:a;törstig/törstigt/törstiga=thirsty:a'+
+        ';rädd/rätt/rädda=afraid:a;nöjd/nöjt/nöjda=satisfied:a;snäll/sn'+
+        'ällt/snälla=kind:a;trevlig/trevligt/trevliga=nice:a;säker/säkert/'+
+        'säkra=sure:a;',
+    'sann/sant/sanna=true:a;känd/känt/kända=famous:a;speciell/speciellt/spe'+
+        'ciella=special:a;lugn/lugnt/lugna=quiet:a;vara/är/var/varit=be:v4:se'+
+        'r;ha/har/hade/haft=have:v4:tener;gå/går/gick/gått=go:v4:ir;',
+    'se/ser/såg/sett=see:v4:ver;ta/tar/tog/tagit=take:v4;ge/ger/gav/gett=give'+
+        ':v4:dar;komma/kommer/kom/kommit=come:v4:venir;bli/blir/blev/blivit=be'+
+        'come:v4;göra/gör/gjorde/gjort=do:v4:hacer;säga/säger/sa/sagt=say:'+
+        'v4:decir;',
+    'ligga/ligger/låg/legat=lie:v4;sitta/sitter/satt/suttit=sit:v4;stå/står'+
+        '/stod/stått=stand:v4;äta/äter/åt/ätit=eat:v4;dricka/dricker/drac'+
+        'k/druckit=drink:v4;sova/sover/sov/sovit=sleep:v4;vinna/vinner/vann/vu'+
+        'nnit=win:v4;',
+    'springa/springer/sprang/sprungit=run:v4;skriva/skriver/skrev/skrivit=writ'+
+        'e:v4;få/får/fick/fått=get:v4;veta/vet/visste/vetat=know:v4:saber;k'+
+        'unna/kan/kunde/kunnat=can:v4:poder;vilja/vill/ville/velat=want:v4:que'+
+        'rer;',
+    'måste/måste/måste/måst=must:v4:deber;skola/ska/skulle/skolat=shall:v4'+
+        ':ir;finnas/finns/fanns/funnits=exist:v4:haber;heta/heter/hette/hetat='+
+        'be_called:v4:llamar;sälja/säljer/sålde/sålt=sell:v4;',
+    'sjunga/sjunger/sjöng/sjungit=sing:v4;välja/väljer/valde/valt=choose:v4'+
+        ';bära/bär/bar/burit=carry:v4;gråta/gråter/grät/gråtit=cry:v4;d'+
+        'ö/dör/dog/dött=die:v4;bryta/bryter/bröt/brutit=break:v4;',
+    'bygga/bygger/byggde/byggt=build:v4;förstå/förstår/förstod/förstått'+
+        '=understand:v4;stänga/stänger/stängde/stängt=close:v4;tala=speak:'+
+        'v1;arbeta=work:v1;bo=live:v3;kosta=cost:v1;köpa=buy:v2;betala=pay:v1'+
+        ';laga=cook:v1;',
+    'studera=study:v1;lära=learn:v2;undervisa=teach:v1;spela=play:v1;dansa=da'+
+        'nce:v1;promenera=walk:v1;köra=drive:v2;resa=travel:v2;lämna=leave:v'+
+        '1;stanna=stay:v1;börja=begin:v1;sluta=finish:v1;öppna=open:v1;hjäl'+
+        'pa=help:v2;',
+    'vänta=wait:v1;ringa=call:v2;besöka=visit:v2;använda=use:v1;glömma=for'+
+        'get:v2;bestämma=decide:v2;njuta=enjoy:v2;skicka=send:v1;hämta=bring'+
+        ':v1;ändra=change:v1;visa=show:v1;simma=swim:v1;le=smile:v3;skratta=l'+
+        'augh:v1;',
+    'förlora=lose:v1;tvätta=wash:v1;städa=clean:v1;skära=cut:v2;föredra=p'+
+        'refer:v1;beställa=order:v1;älska=love:v1;hata=hate:v1;behöva=need:'+
+        'v1:necesitar;gilla=like:v1;regna=rain:v1:llover;tro=believe:v3;tänka'+
+        '=think:v2;',
+    'känna=feel:v2;hitta=find:v1;titta=look_at:v1;höra=hear:v2;lyssna=listen'+
+        '_to:v1;fråga=ask:v1;svara=answer:v1;leva=live:v1;tycka=think:v2;myck'+
+        'et=very:r;också=also:r;alltid=always:r;aldrig=never:r;ofta=often:r;i'+
+        'bland=sometimes:r;',
+    'nu=now:r;idag=today:r;imorgon=tomorrow:r;igår=yesterday:r;i_kväll=tonig'+
+        'ht:r;här=here:r;där=there:r;bra=well:r;illa=badly:r;långsamt=slowl'+
+        'y:r;igen=again:r;snart=soon:r;redan=already:r;fortfarande=still:r;bar'+
+        'a=only:r;',
+    'verkligen=really:r;tillsammans=together:r;nästan=almost:r;sedan=then:r;t'+
+        'idigt=early:r;sent=late:r;långt=far:r;nära=near:r;ute=outside:r;inn'+
+        'e=inside:r;kanske=maybe:r;förstås=of_course:r;lite=a_little:r;i=in:'+
+        'p;på=on:p;',
+    'till=to:p;från=from:p;med=with:p;av=of:p;för=for:p;om=about:p;vid=at:p;'+
+        'under=under:p;över=over:p;efter=after:p;före=before:p;mellan=betwee'+
+        'n:p;utan=without:p;hos=at:p;mot=toward:p;genom=through:p;bakom=behind'+
+        ':p;',
+    'framför=in_front_of:p;bredvid=next_to:p;och=and:c;men=but:c;eller=or:c;a'+
+        'tt=that:c;eftersom=because:c;när=when:c;medan=while:c;fast=although:'+
+        'c;hej=Hello:j;hej_då=Goodbye:j;tack=Thank_you:j;tack_så_mycket=Than'+
+        'k_you_very_much:j;',
+    'snälla=please:j;förlåt=Sorry:j;ursäkta=Excuse_me:j;god_morgon=Good_mo'+
+        'rning:j;god_kväll=Good_evening:j;godnatt=Good_night:j;ja=Yes:j;nej=N'+
+        'o:j;välkommen=Welcome:j;grattis=Congratulations:j;skål=Cheers:j;vad'+
+        '=what:w;vem=who:w;',
+    'var=where:w;när=when:w;varför=why:w;hur=how:w;vilken=which:w;vilket=whi'+
+        'ch:w;vilka=which:w;hur_många=how_many:w;hur_mycket=how_much:w;pizza/'+
+        'pizzor=pizza:nu;leka=play:v2;åka/åker/åkte/åkt=go:v4;må/mår/må'+
+        'dde/mått=feel:v4;',
+    'i_morgon=tomorrow:r;i_dag=today:r;i_går=yesterday:r;i_natt=tonight:r;i_m'+
+        'orse=this_morning:r;nästa_vecka=next_week:r;förra_veckan=last_week:'+
+        'r;läsa=read:v2;lägenhet/lägenheter=apartment:nu;tavla/tavlor=board'+
+        ':nu;',
+    'taxi/taxibilar=taxi:nu;frukt/frukter=fruit:nu;hemma=at_home:r;borta=away:'+
+        'r;hit=here:r;dit=there:r;uppe=upstairs:r;nere=downstairs:r;träffa=me'+
+        'et:v2;berätta=tell:v2;flyga/flyger/flög/flugit=fly:v4;cykla=cycle:v'+
+        '1;',
+    'minnas=remember:v2;hoppas=hope:v1;fungera=work:v1;hända=happen:v2;förs'+
+        'öka=try:v2;handla=shop:v1;hålla/håller/höll/hållit=hold:v4;gift='+
+        'married:a;'
+  );
+
+  { Innu-aimun : mots et phrases (voir logic5zg) }
+  MoeData: Array[0..13] Of String = (
+    'mecatina=grande montagne (Mécatina);assi=terre, sol;maikan=loup;anapi=fi'+
+        'let de pêche;ishkueu=femme;mashku=ours (ours noir);mashk=ours (ours '+
+        'noir);atiku=caribou;atik=caribou;amishku=castor;amishk=castor;kaku=po'+
+        'rc-épic;',
+    'kak=porc-épic;matsheshu=renard;muaku=plongeon huard;muak=plongeon huard;'+
+        'atush=pointe de flèche;atshakash=vison;atimu=chien;atim=chien;kakats'+
+        'hiship=cormoran à aigrettes;minishtiku=île;minishtik=île;atshiku=p'+
+        'hoque;',
+    'atshik=phoque;assiku=marmite, seau;assik=marmite, seau;kakatshimin=baie d'+
+        'e genévrier;assimin=camarine noire;kukamess=touladi;matameku=omble d'+
+        'e fontaine;matamek=omble de fontaine;ishkuteu=feu;emikuan=cuillère;i'+
+        'shkuatem=porte;',
+    'kakumin=cassis;akakuai=sangsue;eniku=fourmi, araignée;enik=fourmi, araig'+
+        'née;mishui=durbec des sapins;masseku=marais, tourbière;massek=marai'+
+        's, tourbière;anushkan=framboise;innikuai=bouleau à papier;akushames'+
+        'heu=balbuzard;',
+    'akameku=écaille de poisson;akamek=écaille de poisson;akupitamaun=emplâ'+
+        'tre, cataplasme;anikutshash=écureuil;inniminan=bleuet;atumin=amélan'+
+        'che (fruit);atikuminan=busserole;neu=quatre;unan=ouananiche;shikuteu='+
+        'chicoutai;',
+    'uapush=lièvre (lapin);nishuasht=sept;pipun=hiver;nishk=outarde (bernache'+
+        ' du Canada);pishku=engoulevent d''Amérique;pishk=engoulevent d''Amé'+
+        'rique;utsheu=mouche;shiship=canard;utshek=pékan;uapishtan=martre d'''+
+        'Amérique;',
+    'mukuman=couteau;pineminanish=chiogène;nitshiku=loutre;nitshik=loutre;shi'+
+        'pu=rivière;nameu=esturgeon;utshashumeku=saumon atlantique;utshashume'+
+        'k=saumon atlantique;shakaikan=lac;uapatsheshu=renard arctique;mushumi'+
+        'n=pimbina;',
+    'tshinash=sterne;munaikutan=macareux moine;tshetsheku=busard Saint-Martin;'+
+        'tshetshek=busard Saint-Martin;upueiashku=érable à sucre;upueiashk='+
+        'érable à sucre;shashatshu=grand héron;pipitshish=faucon émerillon'+
+        ';teueikan=tambour;',
+    'teueshekaikan=cloche;tatuauatshipitshikan=charrue;napeiatshiku=phoque mâ'+
+        'le;napeiatshik=phoque mâle;pipunatshiku=phoque du Groenland;pipunats'+
+        'hik=phoque du Groenland;uteiminan=fraise;nissiminan=airelle des marai'+
+        's;',
+    'tshitshinakuss=fruit de la chiogène;shapumin=groseille à maquereau;uapu'+
+        'shimin=baie;shashakuminan=quatre-temps (fruit);auass=enfant;auassat=e'+
+        'nfants;nitauassim=mon enfant;nitauassimat=mes enfants;',
+    'nitauassimissat=mes jeunes enfants;kuei=bonjour;eshe=oui;mauat=non;tshina'+
+        'shkumitin=merci (je te remercie);iame=au revoir;niaut=au revoir;nimin'+
+        'upanin=je vais bien;nitassi=mon pays;nuapamau=je le vois (animé);',
+    'nuapaten=je le vois (inanimé);tshuapamau=tu le vois (animé);tshuapaten='+
+        'tu le vois (inanimé);uapameu=il le voit (animé);uapatamu=il le voit'+
+        ' (inanimé);uapatam=il le voit (inanimé);nuapamanan=nous le voyons ('+
+        'exclusif, animé);',
+    'nuapatenan=nous le voyons (exclusif, inanimé);tshuapamanan=nous le voyon'+
+        's (inclusif, animé);tshuapatenan=nous le voyons (inclusif, inanimé)'+
+        ';tshuapamanau=vous le voyez (animé);tshuapetenau=vous le voyez (inan'+
+        'imé);',
+    'uapameuat=ils le voient (animé);uapatamuat=ils le voient (inanimé);'
+  );
+
+  MoePhrData: Array[0..28] Of String = (
+    'mashten-atushkan nene katshi unian ekue mitshishuian|Dimanche dernier, ap'+
+        'rès m''être levé, j''ai mangé.',
+    'atauitshuapit ekue ituteian|Puis, je suis allé au dépanneur.',
+    'mina nitaiati tshetshi minaputsheian|J''ai acheté des baies pour faire d'+
+        'e la confiture.',
+    'nimishta-aiati|J''en ai acheté beaucoup.',
+    'katshi takushinian nitshinat ekue minaputsheian|Rendu chez moi, j''ai fai'+
+        't la confiture.',
+    'nimishta-minaputsheti|J''en ai fait beaucoup.',
+    'katshi tshishi-minaputsheian ekue tshishtapunitishuian|Après en avoir fa'+
+        'it, je me suis lavé.',
+    'nuitsheuakan peiku nitaimikuti tshetshi natshi-kutueiat|Une de mes amies '+
+        'm''a appelé pour aller pique-niquer.',
+    'innu-aimi ma|Parle donc innu-aimun !',
+    'kuei|Bonjour !',
+    'tan eshpanin|Comment ça va ?',
+    'niminupanin|Je vais bien',
+    'miam a|Ça va bien',
+    'tan eshinikashuin|Comment t''appelles-tu ?',
+    'tan eshinikatikauin|Comment t''appelles-tu ?',
+    'auen tshin|Qui es-tu ?',
+    'tanite uetshipanin|D''où viens-tu ?',
+    'tan etatupipuneshin|Quel âge as-tu ?',
+    'tshekuan etutamin|Que fais-tu ?',
+    'apu tshekuan tutaman|Je ne fais rien',
+    'eshe|Oui',
+    'mauat|Non',
+    'tshinashkumitin|Merci (je te remercie)',
+    'iame|Au revoir',
+    'niaut|Au revoir',
+    'tanite etat|Où est-il ? (objet animé)',
+    'tanite tekuak|Où est-il ? (objet inanimé)',
+    'tshekuan ma|Pourquoi ?',
+    'tanite nana etutamin nitassi|Qu''as-tu fait de mon pays ?'
   );
 
 Var
@@ -1941,7 +2227,7 @@ Begin
                 (W = 'german') Or (W = 'spanish') Or (W = 'italian') Or (W =
                     'chinese') Or
                 (W = 'japanese') Or (W = 'russian') Or (W = 'portuguese') Or (W
-                    = 'arabic');
+                    = 'arabic') Or (W = 'swedish');
 End;
 
 { ------------------------------------------------------------------ }
@@ -2233,7 +2519,7 @@ Function IsLanguage(Const W: String): Boolean;
 Begin
   IsLanguage := InList(W,
       'english french german spanish italian chinese japanese russian portugue'+
-      'se arabic');
+      'se arabic swedish');
 End;
 
 Function IsProfession(Const W: String): Boolean;
@@ -2658,6 +2944,13 @@ Begin
     If ParseNP(I + 1, Mode, Rest) Then
     Begin
       NP := Rest;
+      { le possessif 's tient lieu de determinant : article defini }
+      If (NP.Plu) And (Copy(NP.Text, 1, 4) = 'des ') Then NP.Text := 'les ' +
+          Copy(NP.Text, 5, 200)
+      Else If NP.Plu Then NP.Text := 'les ' + NP.Text
+      Else If StartsVowel(NP.Text) Then NP.Text := 'l''' + NP.Text
+      Else If NP.Gen = 'f' Then NP.Text := 'la ' + NP.Text
+      Else NP.Text := 'le ' + NP.Text;
       NP.Text := NP.Text + ' de ' + PossText;
       NP.Used := (I + 1 + Rest.Used) - Start;
       NP.Found := True;
@@ -3156,7 +3449,7 @@ Begin
       If (W = 'in') And IsCalendar(Tk[K].W) And Not InList(Tk[K].W,
           'monday tuesday wednesday thursday friday saturday sunday english fr'+
           'ench german spanish italian chinese japanese russian portuguese ara'+
-          'bic') Then
+          'bic swedish') Then
       Begin
         TranslatePP := 'en ' + Lex[Tk[K].N].Fr;
         I := K + 1;
@@ -5393,7 +5686,7 @@ Begin
        Not InList(Tk[K].W,
            'monday tuesday wednesday thursday friday saturday sunday english f'+
            'rench german spanish italian chinese japanese russian portuguese a'+
-           'rabic') Then
+           'rabic swedish') Then
     Begin
       TranslatePPDe := 'im ' + Lex[Tk[K].N].De;
       I := K + 1;
@@ -13968,7 +14261,7 @@ Type
   End;
 
 Var
-  SpLex: Array[1..900] Of TSp;
+  SpLex: Array[1..1200] Of TSp;
   SpCount: Integer;
   ST: Array[0..MaxTokens + 1] Of TSTok;
   SN: Integer;
@@ -15582,12 +15875,13 @@ Begin
           { coordination : pain et fromage }
           If (I + NP.Used + 1 <= B) And (ST[I + NP.Used].Cat = 'C') And (ST[I +
               NP.Used].En = 'and') And
-             (ST[I + NP.Used + 1].Cat In ['D', 'N', 'U', 'P', 'B']) And
-                 ParseNPEs(I + NP.Used + 1, NP2) Then
+             (ST[I + NP.Used + 1].Cat In ['D', 'N', 'U', 'P', 'B', 'S', 'T',
+                 'Q', 'Z']) And ParseNPEs(I + NP.Used + 1, NP2) Then
           Begin
             SI[J].Text := SI[J].Text + ' and ' + RenderNPEs(NP2, True, Generic,
                 SubjPoss);
             SI[J].Plural := True;
+            SI[J].Pers := 6;
             SI[J].Last := I + NP.Used + NP2.Used;
             SI[J].Prep := SI[J].Text;
             Inc(I, NP.Used + 1 + NP2.Used);
@@ -15705,6 +15999,14 @@ Begin
         J := NewItem('A');
         SI[J].Text := ST[I].En;
         SI[J].Last := I;
+        { coordination : grand et fort }
+        If (I + 2 <= B) And (ST[I + 1].Cat = 'C') And (ST[I + 1].En = 'and') And
+            (ST[I + 2].Cat = 'A') Then
+        Begin
+          SI[J].Text := SI[J].Text + ' and ' + ST[I + 2].En;
+          SI[J].Last := I + 2;
+          Inc(I, 2);
+        End;
         Inc(I);
       End;
       'R':
@@ -16564,7 +16866,7 @@ Begin
       AlSpIndex := I;
       Exit;
     End;
-  If SpCount < 900 Then
+  If SpCount < 1200 Then
   Begin
     Inc(SpCount);
     SpLex[SpCount].Es := Key;
@@ -18756,6 +19058,1254 @@ Begin
 End;
 
 { ------------------------------------------------------------------ }
+{ INNU-AIMUN (montagnais) -> FRANCAIS : mots et phrases connus          }
+{ ------------------------------------------------------------------ }
+{ Ce n'est pas un traducteur a regles : l'innu-aimun est polysynthetique }
+{ et aucune description grammaticale libre n'est integree. Le programme   }
+{ reconnait des phrases entieres, puis des mots isoles ; un mot inconnu   }
+{ est conserve tel quel.                                                  }
+{                                                                         }
+{ Sources des donnees (licence CC BY-SA 4.0) :                            }
+{  - Wiktionnaire anglais, categorie "Montagnais lemmas"                  }
+{    (https://en.wiktionary.org/wiki/Category:Montagnais_lemmas) ;        }
+{  - Wikipedia francophone, article "Innu-aimun" (exemples, expressions   }
+{    courantes, conjugaison de "voir").                                   }
+{ Les traductions francaises des gloses anglaises du Wiktionnaire sont    }
+{ de l'auteur du programme. Ces donnees restent sous CC BY-SA 4.0.        }
+
+Const
+  MoeMax = 400;
+  MoePhrMax = 60;
+
+Type
+  TMoe = Record
+    Key: String[44];
+    Fr: String[70];
+  End;
+
+  TMoePhr = Record
+    Key: String[110];
+    Fr: String[110];
+  End;
+
+Var
+  MoeLex: Array[1..MoeMax] Of TMoe;
+  MoeCount: Integer;
+  MoePhr: Array[1..MoePhrMax] Of TMoePhr;
+  MoePhrCount: Integer;
+  SourceMoe: Boolean;
+
+Procedure LoadMoe;
+Var
+  I: Integer;
+  Line, Item, Key: String;
+Begin
+  MoeCount := 0;
+  For I := 0 To High(MoeData) Do
+  Begin
+    Line := MoeData[I];
+    While Line <> '' Do
+    Begin
+      Item := CopyUntil(Line, ';');
+      If (Item <> '') And (MoeCount < MoeMax) Then
+      Begin
+        Key := CopyUntil(Item, '=');
+        Inc(MoeCount);
+        MoeLex[MoeCount].Key := Key;
+        MoeLex[MoeCount].Fr := Item;
+      End;
+    End;
+  End;
+  MoePhrCount := 0;
+  For I := 0 To High(MoePhrData) Do
+    If MoePhrCount < MoePhrMax Then
+    Begin
+      Item := MoePhrData[I];
+      Inc(MoePhrCount);
+      MoePhr[MoePhrCount].Key := CopyUntil(Item, '|');
+      MoePhr[MoePhrCount].Fr := Item;
+    End;
+End;
+
+{ Minuscules, "u" a la place de la lettre modificative, sans ponctuation. }
+Function MoeNorm(Const S: String): String;
+Var
+  I: Integer;
+  R: String;
+Begin
+  R := '';
+  I := 1;
+  While I <= Length(S) Do
+  Begin
+    If (S[I] = #$E1) And (I + 2 <= Length(S)) And (S[I + 1] = #$B5) And
+       (S[I + 2] = #$98) Then
+    Begin
+      R := R + 'u';
+      Inc(I, 3);
+    End
+    Else If S[I] In ['.', ',', '?', '!', ';', ':'] Then
+      Inc(I)
+    Else If (S[I] = ' ') And ((R = '') Or (R[Length(R)] = ' ')) Then
+      Inc(I)
+    Else
+    Begin
+      R := R + S[I];
+      Inc(I);
+    End;
+  End;
+  If (R <> '') And (R[Length(R)] = ' ') Then Delete(R, Length(R), 1);
+  MoeNorm := FrLower(R);
+End;
+
+Function MoeLookup(Const W: String): String;
+Var
+  I: Integer;
+  K: String;
+Begin
+  K := MoeNorm(W);
+  MoeLookup := '';
+  For I := 1 To MoeCount Do
+    If MoeLex[I].Key = K Then
+    Begin
+      MoeLookup := MoeLex[I].Fr;
+      Exit;
+    End;
+End;
+
+Function MoeTranslateSentence(Const Sentence: String): String;
+Var
+  I, L: Integer;
+  Word1, Res, Found, K: String;
+  C: Char;
+  EndMark: Char;
+Begin
+  K := MoeNorm(Sentence);
+  For I := 1 To MoePhrCount Do
+    If MoePhr[I].Key = K Then
+    Begin
+      MoeTranslateSentence := MoePhr[I].Fr;
+      Exit;
+    End;
+  Res := '';
+  EndMark := #0;
+  L := Length(Sentence);
+  I := 1;
+  While I <= L Do
+  Begin
+    C := Sentence[I];
+    If FrWordByte(C) Then
+    Begin
+      Word1 := '';
+      While (I <= L) And (FrWordByte(Sentence[I]) Or
+            (((Sentence[I] = '-') Or (Sentence[I] = '''')) And (Word1 <> '') And
+             (I < L) And FrWordByte(Sentence[I + 1]))) Do
+      Begin
+        Word1 := Word1 + Sentence[I];
+        Inc(I);
+      End;
+      Found := MoeLookup(Word1);
+      If Found = '' Then Found := Word1;
+      Res := Join(Res, Found);
+    End
+    Else
+    Begin
+      If (C = '.') Or (C = '?') Or (C = '!') Then
+        EndMark := C
+      Else If (C = ',') Or (C = ';') Or (C = ':') Then
+        Res := Res + C;
+      Inc(I);
+    End;
+  End;
+  Res := UpperFirst(Res);
+  If EndMark <> #0 Then Res := Res + EndMark;
+  MoeTranslateSentence := Res;
+End;
+
+{ ------------------------------------------------------------------ }
+{ SUEDOIS -> ANGLAIS : lexique et morphologie                         }
+{ ------------------------------------------------------------------ }
+{ Comme pour l'albanais et le portugais, les jetons produits sont ceux   }
+{ de l'espagnol (ST) : la meme analyse de proposition sert ensuite.      }
+
+Type
+  TSv = Record
+    Orig: String[26];
+    F1, F2, F3, F4: String[24];
+    En: String[28];
+    Pos: String[3];
+    Key: String[10];
+    SpIdx: Integer;
+  End;
+
+Var
+  SvLex: Array[1..700] Of TSv;
+  SvCount: Integer;
+  SourceSv: Boolean;
+  SvLastDef, SvLastGen: Boolean;
+
+{ Les lettres a ring, a et o trema restent telles quelles : les formes }
+{ pliees se confondraient (har / har, far / far). }
+Function SvPlain(Const S: String): String;
+Begin
+  SvPlain := S;
+End;
+
+Procedure LoadSwedish;
+Var
+  I: Integer;
+  Line, Item, W, Rest, P: String;
+Begin
+  SvCount := 0;
+  For I := 0 To High(SvData) Do
+  Begin
+    Line := SvData[I];
+    While Line <> '' Do
+    Begin
+      Item := CopyUntil(Line, ';');
+      If (Item <> '') And (SvCount < 700) Then
+      Begin
+        W := CopyUntil(Item, '=');
+        Rest := CopyUntil(Item, ':');
+        Inc(SvCount);
+        FillChar(SvLex[SvCount], SizeOf(TSv), 0);
+        P := CopyUntil(W, '/');
+        SvLex[SvCount].Orig := ReplaceChar(P, '_', ' ');
+        SvLex[SvCount].F1 := SvPlain(SvLex[SvCount].Orig);
+        If W <> '' Then SvLex[SvCount].F2 := SvPlain(CopyUntil(W, '/'));
+        If W <> '' Then SvLex[SvCount].F3 := SvPlain(CopyUntil(W, '/'));
+        If W <> '' Then SvLex[SvCount].F4 := SvPlain(W);
+        SvLex[SvCount].En := ReplaceChar(Rest, '_', ' ');
+        SvLex[SvCount].Pos := CopyUntil(Item, ':');
+        SvLex[SvCount].Key := Item;
+        If Copy(SvLex[SvCount].Pos, 1, 1) = 'v' Then
+        Begin
+          If SvLex[SvCount].Key <> '' Then
+            SvLex[SvCount].SpIdx := AlSpIndex(SvLex[SvCount].Key,
+                SvLex[SvCount].En)
+          Else
+            SvLex[SvCount].SpIdx := AlSpIndex('sv:' + SvLex[SvCount].F1,
+                SvLex[SvCount].En);
+        End;
+      End;
+    End;
+  End;
+End;
+
+Function SvIsVowel(C: Char): Boolean;
+Begin
+  SvIsVowel := C In ['a', 'e', 'i', 'o', 'u', 'y'];
+End;
+
+{ Formes d'un nom : [0] singulier, [1] defini, [2] pluriel, [3] pluriel defini }
+Procedure SvNounForms(I: Integer; Var Sg, DefSg, Pl, DefPl: String);
+Var
+  B: String;
+  L: Integer;
+  Neuter: Boolean;
+Begin
+  B := SvLex[I].F1;
+  L := Length(B);
+  Neuter := SvLex[I].Pos = 'nn';
+  Sg := B;
+  If Neuter Then
+  Begin
+    If SvIsVowel(B[L]) Then DefSg := B + 't'
+    Else If EndsWith(B, 'er') Then DefSg := Copy(B, 1, L - 2) + 'ret'
+    Else DefSg := B + 'et';
+  End
+  Else
+  Begin
+    If B[L] = 'e' Then DefSg := Copy(B, 1, L - 1) + 'en'
+    Else If B[L] = 'a' Then DefSg := Copy(B, 1, L - 1) + 'an'
+    Else If SvIsVowel(B[L]) Then DefSg := B + 'n'
+    Else DefSg := B + 'en';
+  End;
+  If SvLex[I].F2 <> '' Then Pl := SvLex[I].F2
+  Else If Neuter Then
+  Begin
+    If SvIsVowel(B[L]) Then Pl := B + 'n' Else Pl := B;
+  End
+  Else If B[L] = 'a' Then Pl := Copy(B, 1, L - 1) + 'or'
+  Else Pl := B + 'ar';
+  If (Pl = B) And Neuter Then DefPl := Pl + 'en'
+  Else If (Pl = B) And (B[L] = 'e') Then DefPl := Copy(B, 1, L - 1) + 'na'
+  Else If EndsWith(Pl, 'n') Then DefPl := Pl + 'a'
+  Else DefPl := Pl + 'na';
+End;
+
+Function SvFindNounExact(Const W: String; Var Plu, Def: Boolean): Integer;
+Var
+  I: Integer;
+  Sg, D1, Pl, D2: String;
+Begin
+  SvFindNounExact := 0;
+  For I := 1 To SvCount Do
+    If (SvLex[I].Pos = 'nu') Or (SvLex[I].Pos = 'nn') Then
+    Begin
+      SvNounForms(I, Sg, D1, Pl, D2);
+      If W = Sg Then Begin Plu := False; Def := False; SvFindNounExact := I;
+          Exit; End;
+      If W = Pl Then Begin Plu := True; Def := False; SvFindNounExact := I;
+          Exit; End;
+      If W = D1 Then Begin Plu := False; Def := True; SvFindNounExact := I;
+          Exit; End;
+      If W = D2 Then Begin Plu := True; Def := True; SvFindNounExact := I; Exit;
+          End;
+    End;
+End;
+
+Function SvFindNoun(Const W: String; Var Plu, Def, Gen: Boolean): Integer;
+Var
+  I: Integer;
+Begin
+  Gen := False;
+  Def := False;
+  SvFindNoun := SvFindNounExact(W, Plu, Def);
+  If (SvFindNoun = 0) And (Length(W) > 3) And (W[Length(W)] = 's') Then
+  Begin
+    I := SvFindNounExact(Copy(W, 1, Length(W) - 1), Plu, Def);
+    If I > 0 Then
+    Begin
+      Gen := True;
+      SvFindNoun := I;
+    End;
+  End;
+End;
+
+Function SvFindAdj(Const W: String; Var Plu: Boolean): Integer;
+Var
+  I: Integer;
+  B, N, P: String;
+Begin
+  SvFindAdj := 0;
+  For I := 1 To SvCount Do
+    If SvLex[I].Pos = 'a' Then
+    Begin
+      B := SvLex[I].F1;
+      If SvLex[I].F2 <> '' Then N := SvLex[I].F2 Else N := B + 't';
+      If SvLex[I].F3 <> '' Then P := SvLex[I].F3 Else P := B + 'a';
+      Plu := False;
+      If (W = B) Or (W = N) Then
+      Begin
+        SvFindAdj := I;
+        Exit;
+      End;
+      Plu := True;
+      If (W = P) Or (W = 'lilla') And (B = 'liten') Then
+      Begin
+        SvFindAdj := I;
+        Exit;
+      End;
+    End;
+  Plu := False;
+End;
+
+Function SvFind(Const W: String; Const Kinds: String): Integer;
+Var
+  I: Integer;
+Begin
+  SvFind := 0;
+  For I := 1 To SvCount Do
+    If (SvLex[I].F1 = W) And (Pos(SvLex[I].Pos, Kinds) > 0) Then
+    Begin
+      SvFind := I;
+      Exit;
+    End;
+End;
+
+{ Formes verbales : I infinitif, p present, i preterit, P supin, M imperatif }
+Function SvMatchVerb(Const W: String; Var Idx: Integer; Var Tns: Char): Boolean;
+Var
+  I, L: Integer;
+  Cls, B, Stem, Pret, Pres: String;
+
+  Function T(Const F: String; Tn: Char): Boolean;
+  Begin
+    T := False;
+    If (F <> '') And (F = W) Then
+    Begin
+      Idx := I;
+      Tns := Tn;
+      T := True;
+    End;
+  End;
+
+Begin
+  SvMatchVerb := True;
+  For I := 1 To SvCount Do
+    If Copy(SvLex[I].Pos, 1, 1) = 'v' Then
+    Begin
+      Cls := SvLex[I].Pos;
+      B := SvLex[I].F1;
+      L := Length(B);
+      If Cls = 'v4' Then
+      Begin
+        If T(SvLex[I].F2, 'p') Or T(SvLex[I].F3, 'i') Or T(SvLex[I].F4, 'P') Or
+            T(B, 'I') Then Exit;
+        If EndsWith(B, 'a') Then Stem := Copy(B, 1, L - 1) Else Stem := B;
+        If T(Stem, 'M') Then Exit;
+      End
+      Else If Cls = 'v3' Then
+      Begin
+        If T(B, 'I') Or T(B + 'r', 'p') Or T(B + 'dde', 'i') Or T(B + 'tt', 'P')
+            Then Exit;
+      End
+      Else
+      Begin
+        If EndsWith(B, 'a') Then Stem := Copy(B, 1, L - 1) Else Stem := B;
+        If Cls = 'v1' Then
+        Begin
+          If T(Stem + 'ar', 'p') Or T(Stem + 'ade', 'i') Or T(Stem + 'at', 'P')
+              Or T(B, 'I') Then Exit;
+        End
+        Else
+        Begin
+          If (Stem <> '') And (Stem[Length(Stem)] In ['k', 'p', 't', 's', 'x'])
+              Then Pret := Stem + 'te'
+          Else Pret := Stem + 'de';
+          If (Stem <> '') And (Stem[Length(Stem)] = 'r') Then Pres := Stem Else
+              Pres := Stem + 'er';
+          If T(Pres, 'p') Or T(Pret, 'i') Or T(Stem + 't', 'P') Or T(B, 'I')
+              Then Exit;
+        End;
+        If T(Stem, 'M') Then Exit;
+      End;
+    End;
+  SvMatchVerb := False;
+End;
+
+{ ------------------------------------------------------------------ }
+{ SUEDOIS -> ANGLAIS : jetons et etiquetage                           }
+{ ------------------------------------------------------------------ }
+
+Procedure SvTokenize(Const S0: String);
+Var
+  S, Word1, Low: String;
+  I, L: Integer;
+  C: Char;
+  Cap: Boolean;
+Begin
+  SN := 0;
+  SEnd := #0;
+  S := '';
+  I := 1;
+  While I <= Length(S0) Do
+  Begin
+    If (S0[I] = #$C2) And (I < Length(S0)) And ((S0[I + 1] = #$AB) Or (S0[I + 1]
+        = #$BB) Or (S0[I + 1] = #$A0) Or
+       (S0[I + 1] = #$BF) Or (S0[I + 1] = #$A1)) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 2);
+    End
+    Else If (S0[I] = #$E2) And (I + 2 <= Length(S0)) And (S0[I + 1] = #$80) And
+            ((S0[I + 2] = #$99) Or (S0[I + 2] = #$98)) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 3);
+    End
+    Else
+    Begin
+      S := S + S0[I];
+      Inc(I);
+    End;
+  End;
+  L := Length(S);
+  I := 1;
+  While I <= L Do
+  Begin
+    C := S[I];
+    If FrWordByte(C) Then
+    Begin
+      Word1 := '';
+      While (I <= L) And FrWordByte(S[I]) Do
+      Begin
+        Word1 := Word1 + S[I];
+        Inc(I);
+      End;
+      Cap := (Word1 <> '') And (((Word1[1] >= 'A') And (Word1[1] <= 'Z')) Or
+             ((Word1[1] = #$C3) And (Length(Word1) > 1) And (Word1[2] >= #$80)
+                 And (Word1[2] <= #$9E)));
+      Low := FrLower(Word1);
+      SPush(SvPlain(Low), Word1, Cap, False, False);
+    End
+    Else
+    Begin
+      If (C = '.') Or (C = '?') Or (C = '!') Then
+      Begin
+        If SEnd = #0 Then SEnd := C;
+        If C = '?' Then SEnd := '?';
+      End
+      Else If (C = ',') Or (C = ';') Or (C = ':') Then
+      Begin
+        SPush(',', ',', False, True, False);
+        ST[SN].Cat := ',';
+      End;
+      Inc(I);
+    End;
+  End;
+End;
+
+Function SvNumberEn(Const W: String): String;
+Begin
+  SvNumberEn := '';
+  If W = 'noll' Then SvNumberEn := 'zero'
+  Else If W = 'två' Then SvNumberEn := 'two'
+  Else If W = 'tre' Then SvNumberEn := 'three'
+  Else If W = 'fyra' Then SvNumberEn := 'four'
+  Else If W = 'fem' Then SvNumberEn := 'five'
+  Else If W = 'sex' Then SvNumberEn := 'six'
+  Else If W = 'sju' Then SvNumberEn := 'seven'
+  Else If W = 'åtta' Then SvNumberEn := 'eight'
+  Else If W = 'nio' Then SvNumberEn := 'nine'
+  Else If W = 'tio' Then SvNumberEn := 'ten'
+  Else If W = 'elva' Then SvNumberEn := 'eleven'
+  Else If W = 'tolv' Then SvNumberEn := 'twelve'
+  Else If W = 'tretton' Then SvNumberEn := 'thirteen'
+  Else If W = 'fjorton' Then SvNumberEn := 'fourteen'
+  Else If W = 'femton' Then SvNumberEn := 'fifteen'
+  Else If W = 'sexton' Then SvNumberEn := 'sixteen'
+  Else If W = 'sjutton' Then SvNumberEn := 'seventeen'
+  Else If W = 'arton' Then SvNumberEn := 'eighteen'
+  Else If W = 'nitton' Then SvNumberEn := 'nineteen'
+  Else If W = 'tjugo' Then SvNumberEn := 'twenty'
+  Else If W = 'trettio' Then SvNumberEn := 'thirty'
+  Else If W = 'fyrtio' Then SvNumberEn := 'forty'
+  Else If W = 'femtio' Then SvNumberEn := 'fifty'
+  Else If W = 'sextio' Then SvNumberEn := 'sixty'
+  Else If W = 'sjuttio' Then SvNumberEn := 'seventy'
+  Else If W = 'åttio' Then SvNumberEn := 'eighty'
+  Else If W = 'nittio' Then SvNumberEn := 'ninety'
+  Else If W = 'hundra' Then SvNumberEn := 'one hundred'
+  Else If W = 'tusen' Then SvNumberEn := 'one thousand';
+End;
+
+Function SvProperEn(Const Orig: String): String;
+Var
+  L: String;
+Begin
+  L := FrLower(Orig);
+  If L = 'sverige' Then SvProperEn := 'Sweden'
+  Else If L = 'frankrike' Then SvProperEn := 'France'
+  Else If L = 'tyskland' Then SvProperEn := 'Germany'
+  Else If L = 'spanien' Then SvProperEn := 'Spain'
+  Else If L = 'italien' Then SvProperEn := 'Italy'
+  Else If L = 'england' Then SvProperEn := 'England'
+  Else If L = 'danmark' Then SvProperEn := 'Denmark'
+  Else If L = 'norge' Then SvProperEn := 'Norway'
+  Else If L = 'finland' Then SvProperEn := 'Finland'
+  Else If L = 'ryssland' Then SvProperEn := 'Russia'
+  Else If L = 'kina' Then SvProperEn := 'China'
+  Else If L = 'schweiz' Then SvProperEn := 'Switzerland'
+  Else If L = 'belgien' Then SvProperEn := 'Belgium'
+  Else If L = 'nederländerna' Then SvProperEn := 'the Netherlands'
+  Else If L = 'köpenhamn' Then SvProperEn := 'Copenhagen'
+  Else If L = 'göteborg' Then SvProperEn := 'Gothenburg'
+  Else If L = 'lissabon' Then SvProperEn := 'Lisbon'
+  Else If L = 'moskva' Then SvProperEn := 'Moscow'
+  Else If L = 'rom' Then SvProperEn := 'Rome'
+  Else If L = 'wien' Then SvProperEn := 'Vienna'
+  Else If L = 'usa' Then SvProperEn := 'the United States'
+  Else SvProperEn := Orig;
+End;
+
+Function SvNextNounish(I: Integer): Boolean;
+Var
+  Plu, Def, Gen: Boolean;
+Begin
+  SvNextNounish := False;
+  If I > SN Then Exit;
+  If ST[I].Punct Then Exit;
+  SvNextNounish := (SvFindNoun(ST[I].W, Plu, Def, Gen) > 0) Or
+      (SvFindAdj(ST[I].W, Plu) > 0) Or
+                   InList(ST[I].W,
+                       'en ett min mitt mina din ditt dina vår vårt våra ha'+
+                       'ns hennes deras denna detta dessa två tre fyra fem se'+
+                       'x sju åtta nio tio alla några många varje') Or
+                   (SvNumberEn(ST[I].W) <> '');
+End;
+
+Function SvNextVerbal(I: Integer): Boolean;
+Var
+  Idx: Integer;
+  T: Char;
+Begin
+  SvNextVerbal := False;
+  If I > SN Then Exit;
+  If ST[I].Punct Then Exit;
+  If InList(ST[I].W, 'inte aldrig också alltid') Then
+  Begin
+    SvNextVerbal := True;
+    Exit;
+  End;
+  SvNextVerbal := SvMatchVerb(ST[I].W, Idx, T) And (T In ['p', 'i']);
+End;
+
+Procedure SvMergeMultiword;
+Var
+  I, K, Len, L: Integer;
+  Key: String;
+  Bad, Found: Boolean;
+Begin
+  I := 1;
+  While I < SN Do
+  Begin
+    Found := False;
+    For Len := 3 Downto 2 Do
+      If (Not Found) And (I + Len - 1 <= SN) Then
+      Begin
+        Key := '';
+        Bad := False;
+        For K := I To I + Len - 1 Do
+        Begin
+          If ST[K].Punct Then Bad := True;
+          Key := Join(Key, ST[K].W);
+        End;
+        If Not Bad Then
+        Begin
+          L := SvFind(Key, 'rpcjw');
+          If L > 0 Then
+          Begin
+            Found := True;
+            ST[I].W := Key;
+            ST[I].Orig := Key;
+            For K := I + 1 To SN - Len + 1 Do
+              ST[K] := ST[K + Len - 1];
+            Dec(SN, Len - 1);
+          End;
+        End;
+      End;
+    Inc(I);
+  End;
+End;
+
+Procedure SvPickCat(I: Integer);
+Var
+  W: String;
+  Prev: Char;
+  Idx, Sl: Integer;
+  T: Char;
+  Plu, Def, Gen, QStart, IsVerb, IsNoun, IsAdj: Boolean;
+  LN, LA: Integer;
+Begin
+  W := ST[I].W;
+  If I > 1 Then Prev := ST[I - 1].Cat Else Prev := '.';
+  QStart := (SEnd = '?') And ((I = 1) Or (ST[I - 1].Cat = ','));
+  If ST[I].Punct Then
+  Begin
+    ST[I].Cat := ',';
+    Exit;
+  End;
+  If IsDigitsOnly(W) Then
+  Begin
+    ST[I].Cat := 'U';
+    ST[I].En := W;
+    Exit;
+  End;
+  If SvNumberEn(W) <> '' Then
+  Begin
+    ST[I].Cat := 'U';
+    ST[I].En := SvNumberEn(W);
+    Exit;
+  End;
+  If W = 'inte' Then
+  Begin
+    ST[I].Cat := 'G';
+    Exit;
+  End;
+  If W = 'aldrig' Then
+  Begin
+    ST[I].Cat := 'R';
+    ST[I].En := 'never';
+    Exit;
+  End;
+  If (W = 'ingenting') Or (W = 'inget') And (Not SvNextNounish(I + 1)) Then
+  Begin
+    ST[I].Cat := 'g';
+    ST[I].En := 'anything';
+    Exit;
+  End;
+  If (W = 'ingen') And (Not SvNextNounish(I + 1)) Then
+  Begin
+    ST[I].Cat := 'g';
+    ST[I].En := 'anyone';
+    Exit;
+  End;
+  { pronoms sujets }
+  If InList(W, 'jag du han hon vi ni') Or ((W = 'de') And (Not SvNextNounish(I +
+      1))) Then
+  Begin
+    ST[I].Cat := 'P';
+    If W = 'jag' Then Begin ST[I].En := 'I'; ST[I].Slot := 1; End
+    Else If W = 'du' Then Begin ST[I].En := 'you'; ST[I].Slot := 2; End
+    Else If W = 'han' Then Begin ST[I].En := 'he'; ST[I].Slot := 3; End
+    Else If W = 'hon' Then Begin ST[I].En := 'she'; ST[I].Slot := 3; End
+    Else If W = 'vi' Then Begin ST[I].En := 'we'; ST[I].Slot := 4; End
+    Else If W = 'ni' Then Begin ST[I].En := 'you'; ST[I].Slot := 5; End
+    Else Begin ST[I].En := 'they'; ST[I].Slot := 6; End;
+    Exit;
+  End;
+  { den / det / de : article defini devant adjectif ou nom defini }
+  If InList(W, 'den det de') Then
+  Begin
+    If SvNextNounish(I + 1) Then
+    Begin
+      ST[I].Cat := 'D';
+      ST[I].Kind := 'd';
+      ST[I].Plu := W = 'de';
+    End
+    Else
+    Begin
+      ST[I].Cat := 'P';
+      ST[I].En := 'it';
+      ST[I].Slot := 3;
+    End;
+    Exit;
+  End;
+  If (W = 'man') And (Prev <> 'D') And (Prev <> 'A') And SvNextVerbal(I + 1)
+      Then
+  Begin
+    ST[I].Cat := 'P';
+    ST[I].En := 'one';
+    ST[I].Slot := 3;
+    Exit;
+  End;
+  { articles indefinis }
+  If InList(W, 'en ett') Then
+  Begin
+    ST[I].Cat := 'D';
+    ST[I].Kind := 'i';
+    Exit;
+  End;
+  { possessifs }
+  If InList(W,
+      'min mitt mina din ditt dina hans hennes dess vår vårt våra deras sin'+
+      ' sitt sina') Or
+     (InList(W, 'er ert era') And SvNextNounish(I + 1)) Then
+  Begin
+    ST[I].Cat := 'S';
+    If InList(W, 'min mitt mina') Then ST[I].En := 'my'
+    Else If InList(W, 'din ditt dina er ert era') Then ST[I].En := 'your'
+    Else If W = 'hans' Then ST[I].En := 'his'
+    Else If W = 'hennes' Then ST[I].En := 'her'
+    Else If W = 'dess' Then ST[I].En := 'its'
+    Else If InList(W, 'vår vårt våra') Then ST[I].En := 'our'
+    Else If W = 'deras' Then ST[I].En := 'their'
+    Else ST[I].En := 'his';
+    ST[I].Plu := InList(W, 'mina dina våra era sina');
+    Exit;
+  End;
+  { demonstratifs }
+  If InList(W, 'denna detta dessa') Then
+  Begin
+    ST[I].Cat := 'T';
+    If W = 'dessa' Then Begin ST[I].En := 'these'; ST[I].Plu := True; End
+    Else ST[I].En := 'this';
+    Exit;
+  End;
+  { quantificateurs }
+  If InList(W, 'alla allt varje några något många flera båda inga') Or
+     (InList(W, 'mycket') And SvNextNounish(I + 1) And
+      (SvFindNoun(ST[I + 1].W, Plu, Def, Gen) > 0)) Or
+     (InList(W, 'ingen inget') And SvNextNounish(I + 1)) Then
+  Begin
+    ST[I].Cat := 'Q';
+    If InList(W, 'alla allt') Then ST[I].En := 'all'
+    Else If W = 'varje' Then ST[I].En := 'each'
+    Else If InList(W, 'några något') Then ST[I].En := 'some'
+    Else If W = 'många' Then ST[I].En := 'many'
+    Else If W = 'mycket' Then ST[I].En := 'much'
+    Else If W = 'flera' Then ST[I].En := 'several'
+    Else If W = 'båda' Then ST[I].En := 'both'
+    Else ST[I].En := 'no';
+    ST[I].Plu := InList(W, 'alla några många flera båda inga');
+    Exit;
+  End;
+  { pronoms complements }
+  If InList(W, 'mig dig honom henne oss dem sig') Or (InList(W, 'er') And (Not
+      SvNextNounish(I + 1))) Then
+  Begin
+    ST[I].Cat := 'O';
+    If W = 'mig' Then ST[I].En := 'me'
+    Else If W = 'dig' Then ST[I].En := 'you'
+    Else If W = 'honom' Then ST[I].En := 'him'
+    Else If W = 'henne' Then ST[I].En := 'her'
+    Else If W = 'oss' Then ST[I].En := 'us'
+    Else If W = 'er' Then ST[I].En := 'you'
+    Else If W = 'dem' Then ST[I].En := 'them'
+    Else ST[I].En := '';
+    Exit;
+  End;
+  { mots interrogatifs }
+  Idx := SvFind(W, 'w');
+  If (Idx > 0) And (QStart Or ((SEnd = '?') And InList(W,
+      'vem varför hur vad vilken vilket vilka hur många hur mycket'))) Then
+  Begin
+    ST[I].Cat := 'W';
+    ST[I].En := SvLex[Idx].En;
+    If W = 'var' Then ST[I].W := 'donde'
+    Else If W = 'vem' Then ST[I].W := 'quien'
+    Else If Copy(W, 1, 4) = 'vilk' Then ST[I].W := 'cual'
+    Else If W = 'hur många' Then ST[I].W := 'cuantos'
+    Else If W = 'hur mycket' Then ST[I].W := 'cuantos'
+    Else If W = 'när' Then ST[I].W := 'cuando'
+    Else If W = 'hur' Then ST[I].W := 'como'
+    Else If W = 'varför' Then ST[I].W := 'por que'
+    Else ST[I].W := 'que';
+    Exit;
+  End;
+  { prepositions, conjonctions, interjections, adverbes }
+  Idx := SvFind(W, 'p');
+  If Idx > 0 Then
+  Begin
+    ST[I].Cat := 'E';
+    ST[I].En := SvLex[Idx].En;
+    If W = 'till' Then ST[I].W := 'a'
+    Else If W = 'av' Then ST[I].W := 'de'
+    Else If (W = 'i') Or (W = 'på') Or (W = 'vid') Then ST[I].W := 'en';
+    Exit;
+  End;
+  Idx := SvFind(W, 'c');
+  If Idx > 0 Then
+  Begin
+    ST[I].Cat := 'C';
+    ST[I].En := SvLex[Idx].En;
+    Exit;
+  End;
+  Idx := SvFind(W, 'j');
+  If Idx > 0 Then
+  Begin
+    ST[I].Cat := 'J';
+    ST[I].En := SvLex[Idx].En;
+    Exit;
+  End;
+  Idx := SvFind(W, 'r');
+  If (Idx > 0) And Not ((W = 'bra') And ((Prev = 'V') Or SvNextNounish(I + 1)))
+      Then
+  Begin
+    ST[I].Cat := 'R';
+    ST[I].En := SvLex[Idx].En;
+    Exit;
+  End;
+  { noms, adjectifs, verbes }
+  LN := SvFindNoun(W, Plu, Def, Gen);
+  IsNoun := LN > 0;
+  If IsNoun Then
+  Begin
+    ST[I].Plu := Plu;
+    ST[I].Cl := '';
+    If Def Then ST[I].Cl := 'def';
+    If Gen Then ST[I].Cl := ST[I].Cl + 'gen';
+  End;
+  LA := SvFindAdj(W, Plu);
+  IsAdj := LA > 0;
+  IsVerb := SvMatchVerb(W, Idx, T);
+  If IsVerb And (IsNoun Or IsAdj) And (Prev In ['D', 'S', 'T', 'Q', 'U']) Then
+      IsVerb := False;
+  If IsVerb And (T = 'P') And IsAdj Then IsVerb := False;
+  If IsVerb And (Not (T In ['p', 'i', 'M'])) And (IsNoun Or IsAdj) And (Prev <>
+      'V') And (I > 1) Then IsVerb := False;
+  If IsVerb Then
+  Begin
+    ST[I].Cat := 'V';
+    ST[I].Idx := SvLex[Idx].SpIdx;
+    ST[I].Tns := T;
+    ST[I].Slot := 3;
+    ST[I].En := SvLex[Idx].En;
+    Exit;
+  End;
+  If IsNoun And IsAdj Then
+  Begin
+    If Prev In ['D', 'S', 'T', 'Q', 'U', 'A'] Then IsAdj := False Else IsNoun :=
+        False;
+  End;
+  If IsNoun Then
+  Begin
+    ST[I].Cat := 'N';
+    ST[I].En := SvLex[LN].En;
+    Exit;
+  End;
+  If IsAdj Then
+  Begin
+    SvFindAdj(W, Plu);
+    ST[I].Cat := 'A';
+    ST[I].Plu := Plu;
+    ST[I].En := SvLex[LA].En;
+    Exit;
+  End;
+  ST[I].Cat := 'Z';
+End;
+
+{ ------------------------------------------------------------------ }
+{ SUEDOIS -> ANGLAIS : lissage et phrase complete                     }
+{ ------------------------------------------------------------------ }
+
+Function SvVerbKey(I: Integer): String;
+Begin
+  If (I >= 1) And (I <= SN) And (ST[I].Cat = 'V') And (ST[I].Idx > 0) Then
+    SvVerbKey := SpPlain(SpLex[ST[I].Idx].Es)
+  Else
+    SvVerbKey := '';
+End;
+
+Procedure SvInsert(Pos1: Integer);
+Var
+  K: Integer;
+Begin
+  If SN >= MaxTokens Then Exit;
+  For K := SN Downto Pos1 Do
+    ST[K + 1] := ST[K];
+  Inc(SN);
+  FillChar(ST[Pos1], SizeOf(TSTok), 0);
+  ST[Pos1].Tns := ' ';
+End;
+
+{ Fin du groupe nominal sujet qui commence en K (0 s'il n'y en a pas). }
+Function SvSubjEnd(K: Integer): Integer;
+Var
+  J: Integer;
+Begin
+  SvSubjEnd := 0;
+  If (K < 1) Or (K > SN) Then Exit;
+  If ST[K].Cat = 'P' Then
+  Begin
+    SvSubjEnd := K;
+    Exit;
+  End;
+  J := K;
+  While (J <= SN) And (ST[J].Cat In ['D', 'S', 'T', 'Q', 'U']) Do Inc(J);
+  While (J <= SN) And (ST[J].Cat = 'A') Do Inc(J);
+  If (J <= SN) And (ST[J].Cat = 'N') Then
+    SvSubjEnd := J
+  Else If (J <= SN) And (ST[J].Cat = 'Z') And ST[J].Cap And (J > 1) Then
+  Begin
+    While (J < SN) And (ST[J + 1].Cat = 'Z') Do Inc(J);
+    SvSubjEnd := J;
+  End;
+End;
+
+{ Vrai si le jeton I-1 termine un groupe nominal sujet (et non un complement). }
+Function SvSubjBefore(I: Integer): Boolean;
+Var
+  J: Integer;
+Begin
+  SvSubjBefore := False;
+  If I <= 1 Then Exit;
+  If ST[I - 1].Cat = 'P' Then
+  Begin
+    SvSubjBefore := True;
+    Exit;
+  End;
+  J := I - 1;
+  While (J >= 1) And (ST[J].Cat In ['N', 'A', 'D', 'S', 'T', 'Q', 'U', 'Z']) Do
+      Dec(J);
+  If J < I - 1 Then
+    SvSubjBefore := (J < 1) Or (ST[J].Cat <> 'E');
+End;
+
+Procedure SvMoveBlock(From1, To1, Dest: Integer);
+{ deplace les jetons From1..To1 juste avant la position Dest (Dest < From1) }
+Var
+  Tmp: Array[1..12] Of TSTok;
+  N, K: Integer;
+Begin
+  N := To1 - From1 + 1;
+  If (N < 1) Or (N > 12) Or (Dest >= From1) Then Exit;
+  For K := 1 To N Do Tmp[K] := ST[From1 + K - 1];
+  For K := From1 - 1 Downto Dest Do ST[K + N] := ST[K];
+  For K := 1 To N Do ST[Dest + K - 1] := Tmp[K];
+End;
+
+Procedure SvClassify;
+Var
+  I, J, K, E: Integer;
+  Key, Owner: String;
+  Fin: Boolean;
+Begin
+  SvMergeMultiword;
+  For I := 1 To SN Do
+    SvPickCat(I);
+  For I := 1 To SN Do
+    If ST[I].Cat = 'Z' Then ST[I].Orig := SvProperEn(ST[I].Orig);
+  { travailler / etre "pa" une banque, une ecole... : at }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'E') And (ST[I].W = 'en') And (ST[I].En = 'on') Then
+    Begin
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat In ['D', 'A', 'S']) Do Inc(K);
+      If (ST[K].Cat = 'N') And InList(ST[K].En,
+          'bank office school university hospital restaurant shop market stati'+
+          'on airport library') Then
+        ST[I].En := 'at';
+    End;
+  { nom propre au genitif : Annas bil -> la voiture d'Anna }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'Z') And ST[I].Cap And (Length(ST[I].Orig) > 3) And
+       (ST[I].Orig[Length(ST[I].Orig)] = 's') And
+       ((ST[I + 1].Cat = 'N') Or ((ST[I + 1].Cat = 'A') And (I + 2 <= SN) And
+           (ST[I + 2].Cat = 'N'))) Then
+    Begin
+      ST[I].Orig := Copy(ST[I].Orig, 1, Length(ST[I].Orig) - 1);
+      ST[I].Cl := 'gen';
+    End;
+  { genitif : on place le possede devant, puis "de" et le possesseur }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cl <> '') And (Pos('gen', ST[I].Cl) > 0) And (ST[I].Cat In ['N',
+        'Z']) Then
+    Begin
+      K := I + 1;
+      While (K <= SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If (K <= SN) And (ST[K].Cat = 'N') And (K - I <= 6) And (SN + 2 <=
+          MaxTokens) Then
+      Begin
+        If ST[I].Cat = 'N' Then
+        Begin
+          Owner := ST[I].En;
+          If ST[I].Plu Then Owner := EnPlural(Owner);
+          If Pos('def', ST[I].Cl) > 0 Then Owner := 'the ' + Owner;
+          ST[I].Orig := Owner;
+          ST[I].Cat := 'Z';
+          If (I > 1) And (ST[I - 1].Cat = 'D') And (ST[I - 1].Kind = 'd') Then
+              ST[I - 1].Cat := ' ';
+        End;
+        ST[I].Cl := '';
+        ST[I].Cap := True;
+        { ordre : possede, "de", possesseur }
+        ST[0] := ST[I];
+        For J := I To K - 1 Do
+          ST[J] := ST[J + 1];
+        FillChar(ST[K], SizeOf(TSTok), 0);
+        ST[K].Tns := ' ';
+        ST[K].Cat := 'E';
+        ST[K].W := 'de';
+        ST[K].Orig := 'de';
+        ST[K].En := 'of';
+        SvInsert(K + 1);
+        Owner := ST[0].Orig;
+        ST[K + 1] := ST[0];
+        ST[K + 1].Orig := Owner;
+      End;
+    End;
+    Inc(I);
+  End;
+  { articles definis portes par le suffixe du nom }
+  I := 1;
+  While I <= SN Do
+  Begin
+    If (ST[I].Cat = 'N') And (Pos('def', ST[I].Cl) > 0) Then
+    Begin
+      K := I;
+      While (K > 1) And (ST[K - 1].Cat = 'A') Do Dec(K);
+      If (K = 1) Or Not (ST[K - 1].Cat In ['D', 'S', 'T', 'Q', 'U']) Then
+      Begin
+        SvInsert(K);
+        ST[K].Cat := 'D';
+        ST[K].Kind := 'd';
+        ST[K].Plu := ST[I + 1].Plu;
+        ST[K].W := 'el';
+        ST[K].Orig := 'el';
+        Inc(I);
+      End;
+    End;
+    Inc(I);
+  End;
+  { adjectifs devant un nom sans determinant : nom puis adjectifs }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cat = 'A') And ((I = 1) Or Not (ST[I - 1].Cat In ['D', 'S', 'T',
+        'Q', 'U', 'A'])) Then
+    Begin
+      K := I;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If (ST[K].Cat = 'N') And (K - I <= 3) Then
+      Begin
+        ST[0] := ST[K];
+        For J := K Downto I + 1 Do
+          ST[J] := ST[J - 1];
+        ST[I] := ST[0];
+        I := K;
+      End
+      Else
+        I := K;
+    End;
+    Inc(I);
+  End;
+  { att + infinitif }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'C') And (ST[I].W = 'att') And (ST[I + 1].Cat = 'V') And
+        (ST[I + 1].Tns = 'I') Then
+    Begin
+      ST[I].Cat := ' ';
+    End;
+  { inversion du verbe en seconde position : Idag gar jag -> Idag jag gar }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'i']) And (Not SvSubjBefore(I))
+        Then
+    Begin
+      E := SvSubjEnd(I + 1);
+      If (E > 0) And (E - I <= 8) Then
+        If (SvVerbKey(I) <> 'haber') Or (ST[I + 1].Cat = 'P') Then
+        Begin
+          SvMoveBlock(I + 1, E, I);
+          I := E;
+        End;
+    End;
+    Inc(I);
+  End;
+  { det finns / det regnar / heter }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'V' Then
+    Begin
+      Key := SvVerbKey(I);
+      If Key = 'haber' Then
+      Begin
+        ST[I].W := 'hay';
+        ST[I].Slot := 3;
+        If (I > 1) And (ST[I - 1].Cat = 'P') And (ST[I - 1].W = 'det') Then ST[I
+            - 1].Cat := ' ';
+      End
+      Else If Key = 'llover' Then
+      Begin
+        ST[I].Kind := 'g';
+        If (I > 1) And (ST[I - 1].Cat = 'P') And (ST[I - 1].W = 'det') Then ST[I
+            - 1].Cat := ' ';
+      End
+      Else If Key = 'llamar' Then
+        ST[I].Kind := 'r';
+    End;
+  { ha + supin : temps compose }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'V') And (SvVerbKey(I) = 'tener') And (ST[I].Tns In ['p',
+        'i']) Then
+    Begin
+      J := I + 1;
+      While (J <= SN) And (ST[J].Cat In ['R', 'G', 'P']) Do Inc(J);
+      If (J <= SN) And (ST[J].Cat = 'V') And (ST[J].Tns = 'P') Then
+      Begin
+        ST[I].Idx := AlSpIndex('haber', 'have');
+        ST[I].En := 'have';
+      End;
+    End;
+  { negation : inte apres le verbe -> avant le verbe }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'G') And (ST[I - 1].Cat = 'V') And (ST[I - 1].Tns In ['p',
+        'i', 'M']) Then
+    Begin
+      Key := '';
+      ST[0] := ST[I];
+      ST[I] := ST[I - 1];
+      ST[I - 1] := ST[0];
+    End;
+  { impératif en tete de phrase }
+  If (SN >= 1) And (ST[1].Cat = 'V') And (ST[1].Tns In ['p', 'i', 'I', 'M']) And
+      (SEnd <> '?') And
+     (SvVerbKey(1) <> 'haber') Then
+  Begin
+    ST[1].Tns := 'M';
+    ST[1].Slot := 3;
+  End;
+  { personne du verbe d'apres le sujet qui precede }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'i']) Then
+    Begin
+      ST[I].Slot := 3;
+      J := I - 1;
+      While (J >= 1) And (ST[J].Cat In ['R', 'G']) Do Dec(J);
+      If (J >= 1) And (ST[J].Cat = 'P') Then
+        ST[I].Slot := ST[J].Slot
+      Else If (J >= 1) And (ST[J].Cat In ['N', 'Z']) Then
+      Begin
+        If ST[J].Plu And (ST[J].Cat = 'N') Then ST[I].Slot := 6;
+        K := J;
+        While (K > 1) And (ST[K - 1].Cat In ['D', 'S', 'T', 'Q', 'U', 'A']) Do
+            Dec(K);
+        If (K > 2) And (ST[K - 1].Cat = 'C') And (ST[K - 1].En = 'and') Then
+            ST[I].Slot := 6;
+      End;
+    End;
+  { tycka om = aimer ; var ligger X ? = ou est X ? }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].Idx > 0) Then
+    Begin
+      If (I < SN) And (ST[I + 1].Cat = 'E') And (ST[I + 1].W = 'om') And
+          (SpLex[ST[I].Idx].Es = 'sv:tycka') Then
+      Begin
+        ST[I].Idx := AlSpIndex('sv:tyckaom', 'like');
+        ST[I].En := 'like';
+        ST[I + 1].Cat := ' ';
+      End
+      Else If InList(ST[I].W, 'ligger låg står stod') And (ST[1].Cat = 'W')
+          And (ST[1].W = 'donde') Then
+      Begin
+        ST[I].Idx := AlSpIndex('estar', 'be');
+        ST[I].En := 'be';
+      End;
+    End;
+  { ska + infinitif : aller + a + infinitif }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cat = 'V') And (SvVerbKey(I) = 'ir') And InList(ST[I].W,
+        'ska skall skulle') And
+       (ST[I + 1].Cat = 'V') And (ST[I + 1].Tns = 'I') And (SN < MaxTokens) Then
+    Begin
+      SvInsert(I + 1);
+      ST[I + 1].Cat := 'E';
+      ST[I + 1].W := 'a';
+      ST[I + 1].Orig := 'a';
+      ST[I + 1].En := 'to';
+      Inc(I);
+    End;
+    Inc(I);
+  End;
+  { lang d'une personne : grand }
+  For I := 3 To SN Do
+    If (ST[I].Cat = 'A') And (ST[I].En = 'long') And (ST[I - 1].Cat = 'V') And
+       ((ST[I - 2].Cat = 'P') Or ((ST[I - 2].Cat = 'N') And SpIsPersonEn(ST[I -
+           2].En))) Then
+      ST[I].En := 'tall';
+  { pronoms complements apres le verbe : enclitiques }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'O') And (ST[I - 1].Cat = 'V') And (ST[I].En <> '') Then
+    Begin
+      ST[I - 1].Cl := ST[I].En;
+      ST[I].Cat := ' ';
+    End;
+  ARemoveConsumed;
+End;
+
+Function SvTranslateSentence(Const Sentence: String): String;
+Var
+  Res: String;
+Begin
+  SvTokenize(Sentence);
+  If SN = 0 Then
+  Begin
+    SvTranslateSentence := '';
+    Exit;
+  End;
+  SvClassify;
+  If SN = 0 Then
+  Begin
+    SvTranslateSentence := '';
+    Exit;
+  End;
+  Res := TranslateTokensEs(1, SN, SEnd = '?');
+  { Vad heter du ? -> What is your name ? }
+  If (SEnd = '?') And (Length(Res) > 8) And (Copy(Res, Length(Res) - 7, 8) =
+      ' name is') Then
+    Res := 'What is ' + LowerAscii(Copy(Res, 1, Length(Res) - 8)) + ' name';
+  Res := UpperFirst(FixEnglish(Res));
+  If SEnd <> #0 Then Res := Res + SEnd;
+  SvTranslateSentence := Res;
+End;
+
+{ ------------------------------------------------------------------ }
 { Phrases toutes faites                                               }
 { ------------------------------------------------------------------ }
 
@@ -19053,11 +20603,17 @@ Var
   Key, Res, Pair, En: String;
   I, N: Integer;
   Question: Boolean;
-  SD, SJ, SE, SQ, SP: Boolean;
+  SD, SJ, SE, SQ, SP, SV: Boolean;
 Begin
-  If SourceDe Or SourceJa Or SourceEs Or SourceSq Or SourcePt Then
+  If SourceMoe Then
   Begin
-    If SourcePt Then Res := PtTranslateSentence(Sentence)
+    TranslateSentence := MoeTranslateSentence(Sentence);
+    Exit;
+  End;
+  If SourceDe Or SourceJa Or SourceEs Or SourceSq Or SourcePt Or SourceSv Then
+  Begin
+    If SourceSv Then Res := SvTranslateSentence(Sentence)
+    Else If SourcePt Then Res := PtTranslateSentence(Sentence)
     Else If SourceSq Then Res := SqTranslateSentence(Sentence)
     Else If SourceJa Then Res := JaTranslateSentence(Sentence)
     Else If SourceEs Then Res := EsTranslateSentence(Sentence)
@@ -19070,6 +20626,8 @@ Begin
       SE := SourceEs;
       SQ := SourceSq;
       SP := SourcePt;
+      SV := SourceSv;
+      SourceSv := False;
       SourcePt := False;
       SourceDe := False;
       SourceJa := False;
@@ -19081,6 +20639,7 @@ Begin
       SourceEs := SE;
       SourceSq := SQ;
       SourcePt := SP;
+      SourceSv := SV;
     End;
     TranslateSentence := Res;
     Exit;
@@ -19198,7 +20757,7 @@ Begin
   Writeln;
   Writeln('Options :');
   Writeln('  -f, --from-lang  Code ISO 639-1 de la langue source (en, fr, de, '+
-      'ja en romaji, es, sq, pt).');
+      'ja en romaji, es, sq, pt, sv).');
   Writeln('  -t, --to-lang    Code ISO 639-1 de la langue cible (fr, de, en).');
   Writeln('  -l, --list       Affiche les paires de langues disponibles.');
   Writeln('  -V, --version    Affiche la version.');
@@ -19228,6 +20787,8 @@ BEGIN
   LoadSpanish;
   LoadAlbanian;
   LoadPortuguese;
+  LoadSwedish;
+  LoadMoe;
   FromLang := '';
   ToLang := '';
   TextArg := '';
@@ -19294,6 +20855,9 @@ BEGIN
     Writeln('sq -> en (albanais)');
     Writeln('pt -> fr');
     Writeln('pt -> en');
+    Writeln('sv -> fr');
+    Writeln('sv -> en');
+    Writeln('moe -> fr (innu-aimun : phrases et mots connus seulement)');
     Halt(0);
   End;
   If (FromLang = '') Or (ToLang = '') Then
@@ -19301,19 +20865,35 @@ BEGIN
     Writeln('Erreur : indiquer --from-lang et --to-lang.');
     Halt(2);
   End;
-  If Not (((FromLang = 'en') And ((ToLang = 'fr') Or (ToLang = 'de'))) Or
+  If (FromLang = 'inn') Or (FromLang = 'innu') Then FromLang := 'moe';
+  If FromLang = 'moe' Then
+  Begin
+    If ToLang <> 'fr' Then
+    Begin
+      Writeln('Erreur : l''innu-aimun ne se traduit que vers le francais (moe '+
+          '-> fr).');
+      Halt(1);
+    End;
+    SourceMoe := True;
+    TargetDe := False;
+    TargetEn := False;
+  End;
+  If Not (SourceMoe Or ((FromLang = 'en') And ((ToLang = 'fr') Or (ToLang =
+      'de'))) Or
           ((FromLang = 'fr') And (ToLang = 'en')) Or
           ((FromLang = 'de') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
           ((FromLang = 'ja') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
           ((FromLang = 'es') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
           ((FromLang = 'sq') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
-          ((FromLang = 'pt') And ((ToLang = 'fr') Or (ToLang = 'en')))) Then
+          ((FromLang = 'pt') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
+          ((FromLang = 'sv') And ((ToLang = 'fr') Or (ToLang = 'en')))) Then
   Begin
     Writeln('Erreur : aucun modele de traduction de ', FromLang, ' vers ',
         ToLang,
             ' n''est installe (paires disponibles : en -> fr, en -> de, fr -> '+
                 'en, de -> fr, de -> en, ja -> fr, ja -> en, es -> fr, es -> e'+
-                'n, sq -> fr, sq -> en, pt -> fr, pt -> en).');
+                'n, sq -> fr, sq -> en, pt -> fr, pt -> en, sv -> fr, sv -> en'+
+                ').');
     Halt(1);
   End;
   SourceDe := FromLang = 'de';
@@ -19321,10 +20901,11 @@ BEGIN
   SourceEs := FromLang = 'es';
   SourceSq := FromLang = 'sq';
   SourcePt := FromLang = 'pt';
-  DeToEn := (SourceDe Or SourceJa Or SourceEs Or SourceSq Or SourcePt) And
-      (ToLang = 'en');
-  DePivot := (SourceDe Or SourceJa Or SourceEs Or SourceSq Or SourcePt) And (Not
-      DeToEn);
+  SourceSv := FromLang = 'sv';
+  DeToEn := (SourceDe Or SourceJa Or SourceEs Or SourceSq Or SourcePt Or
+      SourceSv) And (ToLang = 'en');
+  DePivot := (SourceDe Or SourceJa Or SourceEs Or SourceSq Or SourcePt Or
+      SourceSv) And (Not DeToEn);
   If SourceDe Then InitDeSpecials;
   TargetDe := ToLang = 'de';
   TargetEn := ToLang = 'en';
