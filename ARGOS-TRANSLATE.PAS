@@ -21,7 +21,9 @@
     anglais, danois -> francais, italien -> anglais, italien -> francais, latin
     -> anglais, latin -> francais, gallois -> anglais, gallois -> francais,
     afrikaans -> anglais, afrikaans ->
-  francais et innu-aimun
+  francais, maltais -> anglais, maltais -> francais, islandais -> anglais,
+    islandais ->
+  francais, ancien francais (roman) -> francais moderne et innu-aimun
   (montagnais) -> francais (mots et phrases connus seulement).
     - lexique d'environ 600 mots (noms avec genre, adjectifs avec accord et
       place,
@@ -136,6 +138,42 @@
       subordonnees remis en ordre, genitif "se", "om te", "huis toe", "daar is"
         ;
       lexique d'environ 355 mots ; analyse de l'espagnol puis anglais.
+    - maltais : formes de surface engendrees a la construction (parfait,
+      imparfait et
+      imperatif des verbes, pluriels brises des noms, feminins et pluriels des
+        adjectifs),
+      article colle (il-, it-, id-...) et contractions (fil-, mill-, bil-,
+        tal-...),
+      negation ma ... -x, qed / se / sa + imparfait, "hemm", "għandi", pronoms
+      suffixes possessifs (missieri, ommi, tiegħi), phrases nominales sans
+        verbe (jien
+      student, il-ktieb kbir) ; lexique d'environ 1110 formes ; analyse de
+        l'espagnol puis
+      anglais.
+    - islandais : formes de surface engendrees a la construction (noms aux
+      quatre cas,
+      singulier et pluriel, avec l'article defini suffixe -inn / -in / -id ;
+        adjectifs ;
+      verbes reguliers et forts au present, au passe, au supin ; formes
+        enclitiques
+      ertu, geturdu), verbe en 2e position remis en ordre sujet - verbe, ekki,
+        hafa +
+      supin, munu + infinitif, vera ad + infinitif, "thad er", genitif,
+        possessif
+      postpose (hundurinn minn) ; lexique d'environ 2985 formes ; analyse de
+        l'espagnol
+      puis anglais.
+    - ancien francais (code fro, vers le francais moderne seulement) :
+      modernisation mot
+      a mot de textes simples (orthographe, formes verbales, articles li / le /
+        les,
+      contractions del, al, el), systeme a deux cas des noms (li rois = le roi,
+        li roi =
+      les rois), accords des adjectifs et des demonstratifs d'apres le nom
+        voisin,
+      ajout de "pas" apres "ne", inversion avec trait d'union (vas-tu,
+        aidez-moi) ;
+      lexique d'environ 607 mots ; les formes inconnues sont conservees.
   Il traduit correctement des phrases simples ; une phrase complexe peut donner
     une
   traduction approximative, et un mot inconnu est conserve tel quel.
@@ -560,7 +598,7 @@ Const
         'ly=enfin:r;',
     'hardly=à peine:r;immediately=immédiatement:r;once=autrefois:r;thus=ains'+
         'i:r;praise=louer:ve;wage=mener:vxa;welsh=gallois:nm;afrikaans=afrikaa'+
-        'ns:nm;'
+        'ns:nm;maltese=maltais:nm;icelandic=islandais:nm;'
   );
 
   { Verbes francais irreguliers :
@@ -2013,6 +2051,1623 @@ Const
         'e=dress:nu;'
   );
 
+  { Ancien francais : ancien=moderne:categorie }
+  FroData: Array[0..38] Of String = (
+    'rei=roi:nm;roi=roi:nm;roy=roi:nm;reine=reine:nf;roine=reine:nf;chevalier='+
+        'chevalier:nm;dame=dame:nf;damoisele=demoiselle:nf;home=homme:nm;hom=h'+
+        'omme:nm;ome=homme:nm;femme=femme:nf;feme=femme:nf;fame=femme:nf;enfan'+
+        't=enfant:nm;',
+    'fils=fils:ns;fil=fils:ns;filz=fils/fils:nm;fille=fille:nf;pere=père:ns;m'+
+        'ere=mère:nf;frere=frère:ns;suer=soeur:nf;seror=soeur:nf;ami=ami:nm;'+
+        'amie=amie:nf;seigneur=seigneur:nm;seignor=seigneur:nm;sire=sire:nm;',
+    'vassal=vassal/vassaux:nm;baron=baron:nm;empereur=empereur:nm;emperere=emp'+
+        'ereur:nm;prince=prince:nm;duc=duc:nm;conte=comte:nm;evesque=évêque:'+
+        'nm;abbé=abbé:nm;prestre=prêtre:nm;moine=moine:nm;clerc=clerc:nm;vi'+
+        'lain=paysan:nm;',
+    'pastor=berger:nm;serjant=serviteur:nm;messagier=messager:nm;ennemi=ennemi'+
+        ':nm;paien=païen:nm;cité=cité:nf;cit=cité:nf;ville=ville:nf;chaste'+
+        'l=château/châteaux:nm;castel=château/châteaux:nm;tor=tour:nf;egli'+
+        'se=église:nf;',
+    'iglise=église:nf;mostier=monastère:nm;maison=maison:nf;meson=maison:nf;'+
+        'sale=salle:nf;chambre=chambre:nf;porte=porte:nf;mur=mur:nm;fenestre=f'+
+        'enêtre:nf;rue=rue:nf;chemin=chemin:nm;pont=pont:nm;forest=forêt:nf;'+
+        'forez=forêt:nf;',
+    'bois=bois/bois:nm;champ=champ:nm;pré=pré:nm;riviere=rivière:nf;mer=mer'+
+        ':nf;mont=mont:nm;montaigne=montagne:nf;terre=terre:nf;ciel=ciel/cieux'+
+        ':nm;soleil=soleil:nm;lune=lune:nf;estoile=étoile:nf;jor=jour:nm;jour'+
+        '=jour:nm;',
+    'nuit=nuit:nf;an=an:nm;mois=mois/mois:nm;ore=heure:nf;hore=heure:nf;matin='+
+        'matin:nm;vespre=soir:nm;eve=eau:nf;eaue=eau:nf;vin=vin:nm;pain=pain:n'+
+        'm;char=chair:nf;poisson=poisson:nm;fruit=fruit:nm;cheval=cheval/cheva'+
+        'ux:nm;',
+    'destrier=destrier:nm;chien=chien:nm;oisel=oiseau/oiseaux:nm;lion=lion:nm;'+
+        'cors=corps/corps:nm;main=main:nf;chief=tête:nf;oel=oeil/yeux:nm;oil='+
+        'oeil/yeux:nm;cuer=coeur:nm;bras=bras/bras:nm;pié=pied:nm;voiz=voix/v'+
+        'oix:nf;',
+    'espee=épée:nf;espée=épée:nf;lance=lance:nf;escu=écu:nm;hiaume=heaum'+
+        'e:nm;arc=arc:nm;guerre=guerre:nf;bataille=bataille:nf;victoire=victoi'+
+        're:nf;mort=mort:nf;vie=vie:nf;sanc=sang:nm;feu=feu:nm;paor=peur:nf;jo'+
+        'ie=joie:nf;',
+    'dolor=douleur:nf;duel=deuil:nm;amor=amour:nf;amour=amour:nm;honor=honneur'+
+        ':nm;foi=foi:nf;loi=loi:nf;pais=paix/paix:nf;deus=dieu/dieux:nm;dieu=d'+
+        'ieu/dieux:nm;diable=diable:nm;ame=âme:nf;nom=nom:nm;mot=mot:nm;parol'+
+        'e=parole:nf;',
+    'livre=livre:nm;lettre=lettre:nf;chançon=chanson:nf;geste=geste:nf;conte='+
+        'conte:nm;roman=roman:nm;voie=voie:nf;tresor=trésor:nm;or=or:nm;argen'+
+        't=argent:nm;avoir=richesse:nf;don=don:nm;pais=paix:nf;nef=navire:nm;b'+
+        'arbe=barbe:nf;',
+    'cheval=cheval/chevaux:nm;bel=beau/belle:a;bele=belle:af;bon=bon/bonne:a;b'+
+        'one=bonne:af;bonne=bonne:af;grant=grand/grande:a;grand=grand/grande:a'+
+        ';grande=grande:af;petit=petit/petite:a;petite=petite:af;vieil=vieux/v'+
+        'ieille:a;',
+    'viel=vieux/vieille:a;viele=vieille:af;novel=nouveau/nouvelle:a;novele=nou'+
+        'velle:af;jovenes=jeune:a;fort=fort/forte:a;forte=forte:af;fol=fou/fol'+
+        'le:a;fole=folle:af;sage=sage:a;proz=preux:a;prud=preux:a;cortois=cour'+
+        'tois/courtoise:a;',
+    'cortoise=courtoise:af;hardi=hardi/hardie:a;hardie=hardie:af;cruel=cruel/c'+
+        'ruelle:a;cruele=cruelle:af;mal=mauvais/mauvaise:a;male=mauvaise:af;ma'+
+        'uvais=mauvais/mauvaise:a;riche=riche:a;povre=pauvre:a;blanc=blanc/bla'+
+        'nche:a;',
+    'blanche=blanche:af;noir=noir/noire:a;noire=noire:af;vert=vert/verte:a;ver'+
+        'te=verte:af;roge=rouge:a;rouge=rouge:a;clair=clair/claire:a;clere=cla'+
+        'ire:af;gent=gentil/gentille:a;gente=gentille:af;haut=haut/haute:a;hau'+
+        'z=haut/haute:a;',
+    'haute=haute:af;bas=bas/basse:a;basse=basse:af;lonc=long/longue:a;longue=l'+
+        'ongue:af;cort=court/courte:a;corte=courte:af;doux=doux/douce:a;douz=d'+
+        'oux/douce:a;douce=douce:af;felon=félon/félonne:a;loial=loyal/loyale'+
+        ':a;',
+    'vrai=vrai/vraie:a;vrais=vrai/vraie:a;tel=tel/telle:a;telle=telle:af;tuit='+
+        'tous:x;tout=tout/toute:a;toute=toute:af;tote=toute:af;tot=tout/toute:'+
+        'a;jo=je:x;je=je:x;ge=je:x;jou=je:x;me=me:x;mi=mes:x;moi=moi:x;mei=moi'+
+        ':x;tu=tu:x;te=te:x;',
+    'toi=toi:x;tei=toi:x;ti=tes:x;il=il:x;ele=elle:x;eles=elles:x;ils=ils:x;el'+
+        'le=elle:x;nos=nous:x;nous=nous:x;noz=nos:x;vos=vous:x;vous=vous:x;voz'+
+        '=vos:x;se=se:x;soi=soi:x;lui=lui:x;lor=leur:x;lors=alors:x;qui=qui:x;'+
+        'que=que:x;',
+    'quoi=quoi:x;cui=qui:x;dont=dont:x;ou=ou:x;quant=quand:x;ci=ici:x;la=la:x;'+
+        'iluec=là:x;ilec=là:x;ensemble=ensemble:x;encore=encore:x;encor=enco'+
+        're:x;ja=déjà:x;jamais=jamais:x;onques=jamais:x;mie=pas:x;pas=pas:x;'+
+        'point=pas:x;',
+    'ne=ne:x;non=non:x;nen=ne:x;si=ainsi:x;et=et:x;e=et:x;mais=mais:x;car=car:'+
+        'x;por=pour:x;pour=pour:x;par=par:x;de=de:x;des=des:x;a=à:x;en=dans:x'+
+        ';sor=sur:x;sur=sur:x;desor=sur:x;desoz=sous:x;soz=sous:x;entre=entre:'+
+        'x;vers=vers:x;',
+    'sanz=sans:x;sans=sans:x;od=avec:x;ot=avec:x;avec=avec:x;devant=devant:x;a'+
+        'pres=après:x;après=après:x;avant=avant:x;enz=dans:x;dedenz=dedans:'+
+        'x;fors=hors:x;jusque=jusque:x;ains=mais:x;donc=donc:x;adonc=alors:x;a'+
+        'tant=alors:x;',
+    'puis=puis:x;tost=vite:x;tant=tant:x;mult=très:x;molt=très:x;moult=très'+
+        ':x;tres=très:x;bien=bien:x;trop=trop:x;assez=assez:x;poi=peu:x;peu=p'+
+        'eu:x;plus=plus:x;mielz=mieux:x;mains=moins:x;oïl=oui:x;oil=oui:x;oui'+
+        '=oui:x;nul=nul:x;',
+    'nule=nulle:x;rien=rien:x;riens=rien:x;cestui=celui-ci:x;celui=celui:x;ço'+
+        '=cela:x;ce=ce:x;cest=ce:x;cist=ce:x;ceste=cette:x;cele=cette:x;cel=ce'+
+        ':x;cil=ces:x;ces=ces:x;cez=ces:x;cestes=ces:x;celes=ces:x;iço=cela:x'+
+        ';li=le:x;le=le:x;',
+    'la=la:x;les=les:x;un=un:x;une=une:x;uns=des:x;unes=des:x;del=du:x;dou=du:'+
+        'x;al=au:x;ol=au:x;as=aux:x;es=ès:x;au=au:x;du=du:x;mon=mon:x;ma=ma:x'+
+        ';mes=mes:x;ton=ton:x;ta=ta:x;tes=tes:x;son=son:x;sa=sa:x;ses=ses:x;no'+
+        'stre=notre:x;',
+    'vostre=votre:x;nos=nos:x;deus=deux:x;trois=trois:x;treis=trois:x;quatre=q'+
+        'uatre:x;cinq=cinq:x;sis=six:x;set=sept:x;uit=huit:x;nuef=neuf:x;dis=d'+
+        'ix:x;cent=cent:x;mil=mille:x;sui=suis:v;es=es:v;est=est:v;somes=somme'+
+        's:v;',
+    'sommes=sommes:v;estes=êtes:v;sont=sont:v;estoie=étais:v;estoit=était:v'+
+        ';esteit=était:v;estoient=étaient:v;esteient=étaient:v;iere=étais:'+
+        'v;iert=sera:v;ert=sera:v;fu=fut:v;fui=fus:v;fustes=fûtes:v;furent=fu'+
+        'rent:v;',
+    'fumes=fûmes:v;sera=sera:v;seroit=serait:v;estre=être:v;esté=été:v;so'+
+        'it=soit:v;soient=soient:v;ai=ai:v;as=as:v;a=a:v;avons=avons:v;avez=av'+
+        'ez:v;ont=ont:v;avoit=avait:v;aveit=avait:v;avoient=avaient:v;oi=eus:v'+
+        ';orent=eurent:v;',
+    'avra=aura:v;aura=aura:v;avoir=avoir:v;eü=eu:v;eu=eu:v;vois=vais:v;vas=va'+
+        's:v;va=va:v;alons=allons:v;alez=allez:v;vont=vont:v;alot=allait:v;alo'+
+        'it=allait:v;ala=alla:v;alerent=allèrent:v;ira=ira:v;aler=aller:v;al'+
+        'é=allé:v;',
+    'vient=vient:v;vienent=viennent:v;vint=vint:v;vindrent=vinrent:v;venoit=ve'+
+        'nait:v;venir=venir:v;venu=venu:v;fais=fais:v;fait=fait:v;fet=fait:v;f'+
+        'aisons=faisons:v;font=font:v;fist=fit:v;firent=firent:v;ferai=ferai:v'+
+        ';fera=fera:v;',
+    'faire=faire:v;di=dis:v;dist=dit:v;dit=dit:v;dient=disent:v;distrent=diren'+
+        't:v;dire=dire:v;disoit=disait:v;voi=vois:v;voit=voit:v;voient=voient:'+
+        'v;vit=vit:v;virent=virent:v;veoir=voir:v;veü=vu:v;vi=vis:v;voir=voir'+
+        ':v;prent=prend:v;',
+    'prist=prit:v;pristrent=prirent:v;prendre=prendre:v;pris=pris:v;tient=tien'+
+        't:v;tenir=tenir:v;tint=tint:v;mande=mande:v;mander=mander:v;fiert=fra'+
+        'ppe:v;ferir=frapper:v;feri=frappa:v;ocist=tua:v;occist=tua:v;occire=t'+
+        'uer:v;ocire=tuer:v;',
+    'aime=aime:v;ame=aime:v;amoit=aimait:v;ama=aima:v;amer=aimer:v;parle=parle'+
+        ':v;parla=parla:v;parler=parler:v;chante=chante:v;chanta=chanta:v;chan'+
+        'ter=chanter:v;mangier=manger:v;manger=manger:v;mangoit=mangeait:v;boi'+
+        'vre=boire:v;',
+    'boit=boit:v;dort=dort:v;dormoit=dormait:v;dormir=dormir:v;entre=entre:v;e'+
+        'ntra=entra:v;entrer=entrer:v;ist=sort:v;issi=sortit:v;issir=sortir:v;'+
+        'laisse=laisse:v;laissa=laissa:v;laissier=laisser:v;trove=trouve:v;tro'+
+        'va=trouva:v;',
+    'trover=trouver:v;sai=sais:v;sevent=savent:v;savoir=savoir:v;puis=peux:v;p'+
+        'uet=peut:v;peut=peut:v;poent=peuvent:v;pooir=pouvoir:v;voil=veux:v;vu'+
+        'elt=veut:v;veut=veut:v;voloir=vouloir:v;doi=dois:v;doit=doit:v;devoir'+
+        '=devoir:v;',
+    'aidiez=aidez:v;aide=aide:v;aidier=aider:v;sert=sert:v;servir=servir:v;don'+
+        'e=donne:v;donna=donna:v;donner=donner:v;porte=porte:v;porta=porta:v;p'+
+        'orter=porter:v;esgarde=regarde:v;esgarda=regarda:v;esgarder=regarder:'+
+        'v;oit=entend:v;',
+    'oir=entendre:v;cuide=pense:v;cuit=pense:v;cuidier=penser:v;muert=meurt:v;'+
+        'morut=mourut:v;morir=mourir:v;mourir=mourir:v;crie=crie:v;plore=pleur'+
+        'e:v;plorer=pleurer:v;rit=rit:v;chevauche=chevauche:v;chevalcha=chevau'+
+        'cha:v;',
+    'conquist=conquit:v;tue=tue:v;Rollant=Roland:n;Rolland=Roland:n;Karles=Cha'+
+        'rles:n;Charles=Charles:n;Charlemaine=Charlemagne:n;Carlemagne=Charlem'+
+        'agne:n;Oliver=Olivier:n;Olivier=Olivier:n;Ganelon=Ganelon:n;Marsilie='+
+        'Marsile:n;',
+    'Tristan=Tristan:n;Yseut=Iseut:n;Iseut=Iseut:n;Lancelot=Lancelot:n;Artus=A'+
+        'rthur:n;Guenievre=Guenièvre:n;Perceval=Perceval:n;Paris=Paris:n;Rome'+
+        '=Rome:n;France=France:n;Bretaigne=Bretagne:n;Aquitaine=Aquitaine:n;Es'+
+        'paigne=Espagne:n;',
+    'Jerusalem=Jérusalem:n;Saint=Saint:n;el=dans le:x;cuens=comte:ns;deu=Dieu'+
+        ':x;volt=voulut:v;vout=voulut:v;pot=put:v;sot=sut:v;mist=mit:v;dut=dut'+
+        ':v;sires=sire:ns;'
+  );
+
+  { Maltais : formes de surface (voir mkmt.py) }
+  MtData: Array[0..88] Of String = (
+    'ktieb=book:n;kotba=book:n:p;dar=house:n;djar=house:n:p;skola=school:n;ske'+
+        'jjel=school:n:p;raġel=man:n;irġiel=man:n:p;mara=woman:n;nisa=woman:'+
+        'n:p;tifel=boy:n;subien=boy:n:p;tifla=girl:n;bniet=girl:n:p;wild=child'+
+        ':n;ulied=child:n:p;',
+    'ħabib=friend:n;ħbieb=friend:n:p;familja=family:n;familji=family:n:p;omm'+
+        '=mother:n;ommijiet=mother:n:p;missier=father:n;missirijiet=father:n:p'+
+        ';ħu=brother:n;aħwa=brother:n:p;bin=son:n;sinjura=lady:n;sinjuri=lad'+
+        'y:n:p;',
+    'tfajla=girl:n;tfajliet=girl:n:p;oħt=sister:n;iben=son:n;bint=daughter:n;'+
+        'għalliem=teacher:n;student=student:n;studenti=student:n:p;tabib=doct'+
+        'or:n;tobba=doctor:n:p;infermier=nurse:n;infermiera=nurse:n:p;persuna='+
+        'person:n;',
+    'persuni=person:n:p;belt=city:n;bliet=city:n:p;raħal=village:n;rħula=vil'+
+        'lage:n:p;triq=street:n;toroq=street:n:p;knisja=church:n;knejjes=churc'+
+        'h:n:p;ristorant=restaurant:n;ristoranti=restaurant:n:p;ħanut=shop:n;'+
+        'ħwienet=shop:n:p;',
+    'suq=market:n;swieq=market:n:p;librerija=library:n;librerijiet=library:n:p'+
+        ';bank=bank:n;banek=bank:n:p;stazzjon=station:n;stazzjonijiet=station:'+
+        'n:p;ajruport=airport:n;ajruporti=airport:n:p;mużew=museum:n;mużewij'+
+        'iet=museum:n:p;',
+    'teatru=theater:n;teatri=theater:n:p;bajja=bay:n;bajjiet=bay:n:p;baħar=se'+
+        'a:n;ibħra=sea:n:p;muntanja=mountain:n;muntanji=mountain:n:p;foresta='+
+        'forest:n;foresti=forest:n:p;ġnien=garden:n;ġonna=garden:n:p;park=pa'+
+        'rk:n;',
+    'parks=park:n:p;siġra=tree:n;siġar=tree:n:p;fjura=flower:n;fjuri=flower:'+
+        'n:p;pajjiż=country:n;pajjiżi=country:n:p;kamra=room:n;kmamar=room:n'+
+        ':p;kċina=kitchen:n;kċejjen=kitchen:n:p;bieb=door:n;bibien=door:n:p;'+
+        'tieqa=window:n;',
+    'twieqi=window:n:p;mejda=table:n;mwejjed=table:n:p;siġġu=chair:n;siġġi'+
+        'jiet=chair:n:p;sodda=bed:n;swaders=bed:n:p;ġurnata=day:n;ġranet=day'+
+        ':n:p;lejl=night:n;iljieli=night:n:p;ġimgħa=week:n;ġimgħat=week:n:'+
+        'p;xahar=month:n;',
+    'xhur=month:n:p;sena=year:n;snin=year:n:p;siegħa=hour:n;sigħat=hour:n:p;'+
+        'minuta=minute:n;minuti=minute:n:p;ikel=food:n;ilma=water:n;ilmijiet=w'+
+        'ater:n:p;ħalib=milk:n;ħobż=bread:n;laħam=meat:n;ħut=fish:n;ġobo'+
+        'n=cheese:n;',
+    'bajda=egg:n;bajd=egg:n:p;frott=fruit:n;te=tea:n;kafè=coffee:n;birra=beer'+
+        ':n;birer=beer:n:p;inbid=wine:n;inbejjed=wine:n:p;tuffieħa=apple:n;tu'+
+        'ffieħ=apple:n:p;flus=money:n;ħin=time:n;ħinijiet=time:n:p;xogħol='+
+        'work:n;',
+    'xogħlijiet=work:n:p;gazzetta=newspaper:n;gazzetti=newspaper:n:p;ittra=le'+
+        'tter:n;ittri=letter:n:p;telefon=telephone:n;telefons=telephone:n:p;ko'+
+        'mpjuter=computer:n;kompjuters=computer:n:p;film=movie:n;films=movie:n'+
+        ':p;mużika=music:n;',
+    'logħba=game:n;logħob=game:n:p;rigal=gift:n;rigali=gift:n:p;isem=name:n;'+
+        'ismijiet=name:n:p;lingwa=language:n;lingwi=language:n:p;mistoqsija=qu'+
+        'estion:n;mistoqsijiet=question:n:p;tweġiba=answer:n;tweġibiet=answe'+
+        'r:n:p;idea=idea:n;',
+    'ideat=idea:n:p;ħaġa=thing:n;affarijiet=thing:n:p;post=place:n;postijiet'+
+        '=place:n:p;temp=weather:n;xita=rain:n;xemx=sun:n;kelb=dog:n;klieb=dog'+
+        ':n:p;qattus=cat:n;qtates=cat:n:p;għasfur=bird:n;għasafar=bird:n:p;'+
+        'żiemel=horse:n;',
+    'żwiemel=horse:n:p;baqra=cow:n;baqar=cow:n:p;id=hand:n;idejn=hand:n:p;ras'+
+        '=head:n;rjus=head:n:p;għajn=eye:n;għajnejn=eye:n:p;sieq=foot:n;saqa'+
+        'jn=foot:n:p;qalb=heart:n;qlub=heart:n:p;karozza=car:n;karozzi=car:n:p'+
+        ';xarabank=bus:n;',
+    'xarabanks=bus:n:p;ferrovija=train:n;ferroviji=train:n:p;bastiment=ship:n;'+
+        'bastimenti=ship:n:p;rota=bicycle:n;roti=bicycle:n:p;vjaġġ=trip:n;vj'+
+        'aġġi=trip:n:p;ħabs=prison:n;ħabsijiet=prison:n:p;re=king:n;slaten'+
+        '=king:n:p;',
+    'reġina=queen:n;reġini=queen:n:p;ħaruf=lamb:n;ħrief=lamb:n:p;ġenb=sid'+
+        'e:n;ġnub=side:n:p;kelma=word:n;kliem=word:n:p;storja=story:n;stejjer'+
+        '=story:n:p;tabella=board:n;tabelli=board:n:p;kumpanija=company:n;kump'+
+        'aniji=company:n:p;',
+    'appartament=apartment:n;appartamenti=apartment:n:p;kbir=big:a;kbira=big:a'+
+        ';kbar=big:a:p;żgħir=small:a;żgħira=small:a;żgħar=small:a:p;twil'+
+        '=long:a;twila=long:a;twal=long:a:p;qasir=short:a;qasira=short:a;qosra'+
+        '=short:a:p;',
+    'ġdid=new:a;ġdida=new:a;ġodda=new:a:p;qadim=old:a;qadima=old:a;qodma=ol'+
+        'd:a:p;xwejjaħ=old:a;xwejħa=old:a;sabiħ=beautiful:a;sabiħa=beautif'+
+        'ul:a;sbieħ=beautiful:a:p;ferħan=happy:a;ferħana=happy:a;ferħanin='+
+        'happy:a:p;',
+    'imdejjaq=sad:a;imdejqa=sad:a;imdejqin=sad:a:p;għajjien=tired:a;għajjien'+
+        'a=tired:a;għajjenin=tired:a:p;marid=sick:a;marida=sick:a;morda=sick:'+
+        'a:p;sħun=hot:a;sħuna=hot:a;sħan=hot:a:p;kiesaħ=cold:a;kiesħa=col'+
+        'd:a;',
+    'kesħin=cold:a:p;għali=expensive:a;għalja=expensive:a;għaljin=expensiv'+
+        'e:a:p;rħis=cheap:a;rħisa=cheap:a;irħas=cheap:a:p;faċli=easy:a;dif'+
+        'fiċli=difficult:a;importanti=important:a;interessanti=interesting:a;'+
+        'tajjeb=good:a;',
+    'tajba=good:a;tajbin=good:a:p;ħażin=bad:a;ħażina=bad:a;ħżiena=bad:a:'+
+        'p;nadif=clean:a;nadifa=clean:a;nodfa=clean:a:p;maħmuġ=dirty:a;maħm'+
+        'uġa=dirty:a;maħmuġin=dirty:a:p;mimli=full:a;mimlija=full:a;mimliji'+
+        'n=full:a:p;',
+    'vojt=empty:a;vojta=empty:a;miftuħ=open:a;miftuħa=open:a;miftuħin=open:'+
+        'a:p;magħluq=closed:a;magħluqa=closed:a;magħluqin=closed:a:p;lest=r'+
+        'eady:a;lesta=ready:a;lesti=ready:a:p;ħieles=free:a;ħielsa=free:a;a'+
+        'ħmar=red:a;',
+    'ħamra=red:a;ħomor=red:a:p;blu=blue:a;aħdar=green:a;ħadra=green:a;ħod'+
+        'or=green:a:p;isfar=yellow:a;safra=yellow:a;sofor=yellow:a:p;iswed=bla'+
+        'ck:a;sewda=black:a;suwed=black:a:p;abjad=white:a;bajda=white:a;bojod='+
+        'white:a:p;',
+    'griż=gray:a;griża=gray:a;griżi=gray:a:p;differenti=different:a;ieħor='+
+        'other:a;oħra=other:a;oħrajn=other:a:p;bnin=nice:a;bnina=nice:a;siku'+
+        'r=sure:a;sikura=sure:a;sikuri=sure:a:p;veru=true:a;vera=true:a;veri=t'+
+        'rue:a:p;',
+    'famuż=famous:a;famuża=famous:a;famużi=famous:a:p;kwiet=quiet:a;kwieta='+
+        'quiet:a;kwieti=quiet:a:p;miżżewweġ=married:a;miżżewġa=married:a'+
+        ';miżżewġin=married:a:p;bravu=good:a;brava=good:a;bravi=good:a:p;ġ'+
+        'ust=fair:a;',
+    'ġusta=fair:a;ġusti=fair:a:p;rieqed=asleep:a;rieqda=asleep:a;rieqdin=asl'+
+        'eep:a:p;kitibt=write:v:i1+i2;kiteb=write:v:i3;kitbet=write:v:i3;kitib'+
+        'na=write:v:i4;kitibtu=write:v:i5;kitbu=write:v:i6;nikteb=write:v:p1;',
+    'tikteb=write:v:p2+p3;jikteb=write:v:p3;niktbu=write:v:p4;tiktbu=write:v:p'+
+        '5;jiktbu=write:v:p6;ikteb=write:v:M2;iktbu=write:v:M5;ħadimt=work:v:'+
+        'i1+i2;ħadem=work:v:i3;ħadmet=work:v:i3;ħadimna=work:v:i4;ħadimtu='+
+        'work:v:i5;',
+    'ħadmu=work:v:i6;naħdem=work:v:p1;taħdem=work:v:p2+p3;jaħdem=work:v:p3'+
+        ';naħdmu=work:v:p4;taħdmu=work:v:p5;jaħdmu=work:v:p6;aħdem=work:v:'+
+        'M2;aħdmu=work:v:M5;qatilt=kill:v:i1+i2;qatel=kill:v:i3;qatlet=kill:v'+
+        ':i3;',
+    'qatilna=kill:v:i4;qatiltu=kill:v:i5;qatlu=kill:v:i6;naqtel=kill:v:p1;taqt'+
+        'el=kill:v:p2+p3;jaqtel=kill:v:p3;naqtlu=kill:v:p4;taqtlu=kill:v:p5;ja'+
+        'qtlu=kill:v:p6;aqtel=kill:v:M2;aqtlu=kill:v:M5;fetaħt=open:v:i1+i2;f'+
+        'etaħ=open:v:i3;',
+    'fetħet=open:v:i3;fetaħna=open:v:i4;fetaħtu=open:v:i5;fetħu=open:v:i6;'+
+        'niftaħ=open:v:p1;tiftaħ=open:v:p2+p3;jiftaħ=open:v:p3;niftħu=open'+
+        ':v:p4;tiftħu=open:v:p5;jiftħu=open:v:p6;iftaħ=open:v:M2;iftħu=ope'+
+        'n:v:M5;',
+    'għalaqt=close:v:i1+i2;għalaq=close:v:i3;għalqet=close:v:i3;għalaqna=c'+
+        'lose:v:i4;għalaqtu=close:v:i5;għalqu=close:v:i6;nagħlaq=close:v:p1'+
+        ';tagħlaq=close:v:p2+p3;jagħlaq=close:v:p3;nagħlqu=close:v:p4;tagħ'+
+        'lqu=close:v:p5;',
+    'jagħlqu=close:v:p6;agħlaq=close:v:M2;agħlqu=close:v:M5;lgħabt=play:v:'+
+        'i1+i2;lagħab=play:v:i3;lagħbet=play:v:i3;lgħabna=play:v:i4;lgħabt'+
+        'u=play:v:i5;lagħbu=play:v:i6;nilgħab=play:v:p1;tilgħab=play:v:p2+p'+
+        '3;',
+    'jilgħab=play:v:p3;nilagħbu=play:v:p4;tilagħbu=play:v:p5;jilagħbu=play'+
+        ':v:p6;ilgħab=play:v:M2;ilagħbu=play:v:M5;ħsibt=think:v:i1+i2;ħasa'+
+        'b=think:v:i3;ħasbet=think:v:i3;ħsibna=think:v:i4;ħsibtu=think:v:i5'+
+        ';ħasbu=think:v:i6;',
+    'naħseb=think:v:p1;taħseb=think:v:p2+p3;jaħseb=think:v:p3;naħsbu=think'+
+        ':v:p4;taħsbu=think:v:p5;jaħsbu=think:v:p6;aħseb=think:v:M2;aħsbu='+
+        'think:v:M5;fhimt=understand:v:i1+i2;fehem=understand:v:i3;fehmet=unde'+
+        'rstand:v:i3;',
+    'fhimna=understand:v:i4;fhimtu=understand:v:i5;fehmu=understand:v:i6;nifhe'+
+        'm=understand:v:p1;tifhem=understand:v:p2+p3;jifhem=understand:v:p3;ni'+
+        'fhmu=understand:v:p4;tifhmu=understand:v:p5;jifhmu=understand:v:p6;',
+    'ifhem=understand:v:M2;ifhmu=understand:v:M5;wasalt=arrive:v:i1+i2;wasal=a'+
+        'rrive:v:i3;waslet=arrive:v:i3;wasalna=arrive:v:i4;wasaltu=arrive:v:i5'+
+        ';waslu=arrive:v:i6;nasal=arrive:v:p1;tasal=arrive:v:p2+p3;jasal=arriv'+
+        'e:v:p3;',
+    'naslu=arrive:v:p4;taslu=arrive:v:p5;jaslu=arrive:v:p6;asal=arrive:v:M2;as'+
+        'lu=arrive:v:M5;qrajt=read:v:i1+i2;qara=read:v:i3;qratet=read:v:i3;qra'+
+        'jna=read:v:i4;qrajtu=read:v:i5;qraw=read:v:i6;naqra=read:v:p1;taqra=r'+
+        'ead:v:p2+p3;',
+    'jaqra=read:v:p3;naqraw=read:v:p4;taqraw=read:v:p5;jaqraw=read:v:p6;aqra=r'+
+        'ead:v:M2;aqraw=read:v:M5;kilt=eat:v:i1+i2;kiel=eat:v:i3;kielet=eat:v:'+
+        'i3;kilna=eat:v:i4;kiltu=eat:v:i5;kielu=eat:v:i6;niekol=eat:v:p1;tieko'+
+        'l=eat:v:p2+p3;',
+    'jiekol=eat:v:p3;nieklu=eat:v:p4;tieklu=eat:v:p5;jieklu=eat:v:p6;kul=eat:v'+
+        ':M2;kulu=eat:v:M5;xrobt=drink:v:i1+i2;xorob=drink:v:i3;xorbot=drink:v'+
+        ':i3;xrobna=drink:v:i4;xrobtu=drink:v:i5;xorbu=drink:v:i6;nixrob=drink'+
+        ':v:p1;',
+    'tixrob=drink:v:p2+p3;jixrob=drink:v:p3;nixorbu=drink:v:p4;tixorbu=drink:v'+
+        ':p5;jixorbu=drink:v:p6;ixrob=drink:v:M2;ixorbu=drink:v:M5;rqadt=sleep'+
+        ':v:i1+i2;raqad=sleep:v:i3;raqdet=sleep:v:i3;rqadna=sleep:v:i4;rqadtu='+
+        'sleep:v:i5;',
+    'raqdu=sleep:v:i6;norqod=sleep:v:p1;torqod=sleep:v:p2+p3;jorqod=sleep:v:p3'+
+        ';norqdu=sleep:v:p4;torqdu=sleep:v:p5;jorqdu=sleep:v:p6;orqod=sleep:v:'+
+        'M2;orqdu=sleep:v:M5;mort=go:v:i1:ir+i2:ir;mar=go:v:i3:ir;marret=go:v:'+
+        'i3:ir;',
+    'morna=go:v:i4:ir;mortu=go:v:i5:ir;marru=go:v:i6:ir;immur=go:v:p1:ir;tmur='+
+        'go:v:p2:ir+p3:ir;jmur=go:v:p3:ir;immorru=go:v:p4:ir;tmorru=go:v:p5:ir'+
+        ';jmorru=go:v:p6:ir;mur=go:v:M2:ir;morru=go:v:M5:ir;ġejt=come:v:i1:ve'+
+        'nir+i2:venir;',
+    'ġie=come:v:i3:venir;ġiet=come:v:i3:venir;ġejna=come:v:i4:venir;ġejtu='+
+        'come:v:i5:venir;ġew=come:v:i6:venir;niġi=come:v:p1:venir;tiġi=come'+
+        ':v:p2:venir+p3:venir;jiġi=come:v:p3:venir;niġu=come:v:p4:venir;tiġ'+
+        'u=come:v:p5:venir;',
+    'jiġu=come:v:p6:venir;ejja=come:v:M2:venir;ejjew=come:v:M5:venir;rajt=see'+
+        ':v:i1:ver+i2:ver;ra=see:v:i3:ver;rat=see:v:i3:ver;rajna=see:v:i4:ver;'+
+        'rajtu=see:v:i5:ver;raw=see:v:i6:ver;nara=see:v:p1:ver;tara=see:v:p2:v'+
+        'er+p3:ver;',
+    'jara=see:v:p3:ver;naraw=see:v:p4:ver;taraw=see:v:p5:ver;jaraw=see:v:p6:ve'+
+        'r;ara=see:v:M2:ver;araw=see:v:M5:ver;għedt=say:v:i1:decir+i2:decir;q'+
+        'al=say:v:i3:decir;qalet=say:v:i3:decir;għedna=say:v:i4:decir;għedtu'+
+        '=say:v:i5:decir;',
+    'qalu=say:v:i6:decir;ngħid=say:v:p1:decir;tgħid=say:v:p2:decir+p3:decir;'+
+        'jgħid=say:v:p3:decir;ngħidu=say:v:p4:decir;tgħidu=say:v:p5:decir;j'+
+        'għidu=say:v:p6:decir;għid=say:v:M2:decir;għidu=say:v:M5:decir;',
+    'għamilt=make:v:i1:hacer+i2:hacer;għamel=make:v:i3:hacer;għamlet=make:v'+
+        ':i3:hacer;għamilna=make:v:i4:hacer;għamiltu=make:v:i5:hacer;għamlu'+
+        '=make:v:i6:hacer;nagħmel=make:v:p1:hacer;tagħmel=make:v:p2:hacer+p3'+
+        ':hacer;',
+    'jagħmel=make:v:p3:hacer;nagħmlu=make:v:p4:hacer;tagħmlu=make:v:p5:hace'+
+        'r;jagħmlu=make:v:p6:hacer;agħmel=make:v:M2:hacer;agħmlu=make:v:M5:'+
+        'hacer;għext=live:v:i1+i2;għex=live:v:i3;għexet=live:v:i3;għexna=l'+
+        'ive:v:i4;',
+    'għextu=live:v:i5;għexu=live:v:i6;ngħix=live:v:p1;tgħix=live:v:p2+p3;j'+
+        'għix=live:v:p3;ngħixu=live:v:p4;tgħixu=live:v:p5;jgħixu=live:v:p6'+
+        ';għix=live:v:M2;għixu=live:v:M5;tkellimt=speak:v:i1+i2;tkellem=spea'+
+        'k:v:i3+M2;',
+    'tkellmet=speak:v:i3;tkellimna=speak:v:i4;tkellimtu=speak:v:i5;tkellmu=spe'+
+        'ak:v:i6+M5;nitkellem=speak:v:p1;titkellem=speak:v:p2+p3;jitkellem=spe'+
+        'ak:v:p3;nitkellmu=speak:v:p4;titkellmu=speak:v:p5;jitkellmu=speak:v:p'+
+        '6;',
+    'smajt=hear:v:i1+i2;sema''=hear:v:i3;semgħet=hear:v:i3;smajna=hear:v:i4;s'+
+        'majtu=hear:v:i5;semgħu=hear:v:i6;nisma''=hear:v:p1;tisma''=hear:v:p2'+
+        '+p3;jisma''=hear:v:p3;nisimgħu=hear:v:p4;tisimgħu=hear:v:p5;jisimg'+
+        'ħu=hear:v:p6;',
+    'isma''=hear:v:M2;isimgħu=hear:v:M5;ħadt=take:v:i1+i2;ħa=take:v:i3;ħad'+
+        'et=take:v:i3;ħadna=take:v:i4;ħadtu=take:v:i5;ħadu=take:v:i6;nieħu'+
+        '=take:v:p1;tieħu=take:v:p2+p3;jieħu=take:v:p3;nieħdu=take:v:p4;tie'+
+        'ħdu=take:v:p5;',
+    'jieħdu=take:v:p6;ħu=take:v:M2;ħudu=take:v:M5;tajt=give:v:i1:dar+i2:dar'+
+        ';ta=give:v:i3:dar;tat=give:v:i3:dar;tajna=give:v:i4:dar;tajtu=give:v:'+
+        'i5:dar;taw=give:v:i6:dar;nagħti=give:v:p1:dar;tagħti=give:v:p2:dar+'+
+        'p3:dar;',
+    'jagħti=give:v:p3:dar;nagħtu=give:v:p4:dar;tagħtu=give:v:p5:dar;jagħtu'+
+        '=give:v:p6:dar;agħti=give:v:M2:dar;agħtu=give:v:M5:dar;xtrajt=buy:v'+
+        ':i1+i2;xtara=buy:v:i3;xtrat=buy:v:i3;xtrajna=buy:v:i4;xtrajtu=buy:v:i'+
+        '5;xtraw=buy:v:i6;',
+    'nixtri=buy:v:p1;tixtri=buy:v:p2+p3;jixtri=buy:v:p3;nixtru=buy:v:p4;tixtru'+
+        '=buy:v:p5;jixtru=buy:v:p6;ixtri=buy:v:M2;ixtru=buy:v:M5;bgħajt=sell:'+
+        'v:i1+i2;biegħ=sell:v:i3;biegħet=sell:v:i3;bgħajna=sell:v:i4;bgħaj'+
+        'tu=sell:v:i5;',
+    'biegħu=sell:v:i6;nbigħ=sell:v:p1;tbigħ=sell:v:p2+p3;jbigħ=sell:v:p3;n'+
+        'bigħu=sell:v:p4;tbigħu=sell:v:p5;jbigħu=sell:v:p6;bigħ=sell:v:M2;'+
+        'bigħu=sell:v:M5;bdejt=begin:v:i1+i2;beda=begin:v:i3;bdiet=begin:v:i3'+
+        ';bdejna=begin:v:i4;',
+    'bdejtu=begin:v:i5;bdew=begin:v:i6;nibda=begin:v:p1;tibda=begin:v:p2+p3;ji'+
+        'bda=begin:v:p3;nibdew=begin:v:p4;tibdew=begin:v:p5;jibdew=begin:v:p6;'+
+        'ibda=begin:v:M2;ibdew=begin:v:M5;mxejt=walk:v:i1+i2;mexa=walk:v:i3;mx'+
+        'iet=walk:v:i3;',
+    'mxejna=walk:v:i4;mxejtu=walk:v:i5;mexew=walk:v:i6;nimxi=walk:v:p1;timxi=w'+
+        'alk:v:p2+p3;jimxi=walk:v:p3;nimxu=walk:v:p4;timxu=walk:v:p5;jimxu=wal'+
+        'k:v:p6;imxi=walk:v:M2;imxu=walk:v:M5;għomt=swim:v:i1+i2;għam=swim:v'+
+        ':i3;',
+    'għamet=swim:v:i3;għomna=swim:v:i4;għomtu=swim:v:i5;għamu=swim:v:i6;ng'+
+        'ħum=swim:v:p1;tgħum=swim:v:p2+p3;jgħum=swim:v:p3;ngħumu=swim:v:p4'+
+        ';tgħumu=swim:v:p5;jgħumu=swim:v:p6;għum=swim:v:M2;għumu=swim:v:M5'+
+        ';',
+    'kantajt=sing:v:i1+i2;kanta=sing:v:i3;kantat=sing:v:i3;kantajna=sing:v:i4;'+
+        'kantajtu=sing:v:i5;kantaw=sing:v:i6;nkanta=sing:v:p1;tkanta=sing:v:p2'+
+        '+p3;jkanta=sing:v:p3;nkantaw=sing:v:p4;tkantaw=sing:v:p5;jkantaw=sing'+
+        ':v:p6;',
+    'ikanta=sing:v:M2;ikantaw=sing:v:M5;stennejt=wait:v:i1+i2;stenna=wait:v:i3'+
+        ';stenniet=wait:v:i3;stennejna=wait:v:i4;stennejtu=wait:v:i5;stennew=w'+
+        'ait:v:i6;nistenna=wait:v:p1;tistenna=wait:v:p2+p3;jistenna=wait:v:p3;',
+    'nistennew=wait:v:p4;tistennew=wait:v:p5;jistennew=wait:v:p6;istenna=wait:'+
+        'v:M2;istennew=wait:v:M5;ħabbejt=love:v:i1+i2;ħabb=love:v:i3;ħabbet'+
+        '=love:v:i3;ħabbejna=love:v:i4;ħabbejtu=love:v:i5;ħabbu=love:v:i6;i'+
+        'nħobb=love:v:p1;',
+    'tħobb=love:v:p2+p3;iħobb=love:v:p3;inħobbu=love:v:p4;tħobbu=love:v:p5'+
+        ';iħobbu=love:v:p6;ħobb=love:v:M2;ħobbu=love:v:M5;ġrajt=run:v:i1+i'+
+        '2;ġera=run:v:i3;ġriet=run:v:i3;ġrajna=run:v:i4;ġrajtu=run:v:i5;ġ'+
+        'raw=run:v:i6;',
+    'niġri=run:v:p1;tiġri=run:v:p2+p3;jiġri=run:v:p3;niġru=run:v:p4;tiġru'+
+        '=run:v:p5;jiġru=run:v:p6;iġri=run:v:M2;iġru=run:v:M5;kellimt=talk:'+
+        'v:i1+i2;kellem=talk:v:i3+M2;kellmet=talk:v:i3;kellimna=talk:v:i4;kell'+
+        'imtu=talk:v:i5;',
+    'kellmu=talk:v:i6+M5;nikellem=talk:v:p1;tikellem=talk:v:p2+p3;jikellem=tal'+
+        'k:v:p3;nikellmu=talk:v:p4;tikellmu=talk:v:p5;jikellmu=talk:v:p6;weġi'+
+        'bt=answer:v:i1+i2;wieġeb=answer:v:i3+M2;wieġbet=answer:v:i3;weġibn'+
+        'a=answer:v:i4;',
+    'weġibtu=answer:v:i5;wieġbu=answer:v:i6+M5;nwieġeb=answer:v:p1;twieġeb'+
+        '=answer:v:p2+p3;jwieġeb=answer:v:p3;nwieġbu=answer:v:p4;twieġbu=an'+
+        'swer:v:p5;jwieġbu=answer:v:p6;staqsejt=ask:v:i1+i2;staqsa=ask:v:i3;s'+
+        'taqsiet=ask:v:i3;',
+    'staqsejna=ask:v:i4;staqsejtu=ask:v:i5;staqsew=ask:v:i6;nistaqsi=ask:v:p1;'+
+        'tistaqsi=ask:v:p2+p3;jistaqsi=ask:v:p3;nistaqsu=ask:v:p4;tistaqsu=ask'+
+        ':v:p5;jistaqsu=ask:v:p6;staqsi=ask:v:M2;staqsu=ask:v:M5;spiċċajt=fi'+
+        'nish:v:i1+i2;',
+    'spiċċa=finish:v:i3;spiċċat=finish:v:i3;spiċċajna=finish:v:i4;spiċ'+
+        'ċajtu=finish:v:i5;spiċċaw=finish:v:i6;nispiċċa=finish:v:p1;tispi'+
+        'ċċa=finish:v:p2+p3;jispiċċa=finish:v:p3;nispiċċaw=finish:v:p4;',
+    'tispiċċaw=finish:v:p5;jispiċċaw=finish:v:p6;ispiċċa=finish:v:M2;isp'+
+        'iċċaw=finish:v:M5;għenejt=help:v:i1+i2;għen=help:v:i3;għenet=hel'+
+        'p:v:i3;għenejna=help:v:i4;għenejtu=help:v:i5;għenu=help:v:i6;ngħi'+
+        'n=help:v:p1;',
+    'tgħin=help:v:p2+p3;jgħin=help:v:p3;ngħinu=help:v:p4;tgħinu=help:v:p5;'+
+        'jgħinu=help:v:p6;għin=help:v:M2;għinu=help:v:M5;riedt=want:v:i1:qu'+
+        'erer+i2:querer;ried=want:v:i3:querer;ridet=want:v:i3:querer;ridna=wan'+
+        't:v:i4:querer;',
+    'ridtu=want:v:i5:querer;ridu=want:v:i6:querer;irrid=want:v:p1:querer;trid='+
+        'want:v:p2:querer+p3:querer;irid=want:v:p3:querer;nridu=want:v:p4:quer'+
+        'er;tridu=want:v:p5:querer;jridu=want:v:p6:querer;stajt=can:v:i1:poder'+
+        '+i2:poder;',
+    'seta''=can:v:i3:poder;setgħet=can:v:i3:poder;stajna=can:v:i4:poder;stajt'+
+        'u=can:v:i5:poder;setgħu=can:v:i6:poder;nista''=can:v:p1:poder;tista'+
+        '''=can:v:p2:poder+p3:poder;jista''=can:v:p3:poder;nistgħu=can:v:p4:p'+
+        'oder;',
+    'tistgħu=can:v:p5:poder;jistgħu=can:v:p6:poder;naf=know:v:p1:saber;taf=k'+
+        'now:v:p2:saber+p3:saber+p2:saber;jaf=know:v:p3:saber;nafu=know:v:p4:s'+
+        'aber;tafu=know:v:p5:saber;jafu=know:v:p6:saber;kelli=have:v:i1:tener;',
+    'kellek=have:v:i2:tener;kellu=have:v:i3:tener;kellha=have:v:i3:tener;kelln'+
+        'a=have:v:i4:tener;kellkom=have:v:i5:tener;kellhom=have:v:i6:tener;għ'+
+        'andi=have:v:p1:tener;għandek=have:v:p2:tener;għandu=have:v:p3:tener'+
+        ';',
+    'għandha=have:v:p3:tener;għandna=have:v:p4:tener;għandkom=have:v:p5:ten'+
+        'er;għandhom=have:v:p6:tener;studjajt=study:v:i1+i2;studja=study:v:i3'+
+        ';studjat=study:v:i3;studjajna=study:v:i4;studjajtu=study:v:i5;studjaw'+
+        '=study:v:i6;',
+    'nistudja=study:v:p1;tistudja=study:v:p2+p3;jistudja=study:v:p3;nistudjaw='+
+        'study:v:p4;tistudjaw=study:v:p5;jistudjaw=study:v:p6;istudja=study:v:'+
+        'M2;istudjaw=study:v:M5;xtaqt=want:v:i1+i2;xtaq=want:v:i3;xtaqet=want:'+
+        'v:i3;',
+    'xtaqna=want:v:i4;xtaqtu=want:v:i5;xtaqu=want:v:i6;nixtieq=want:v:p1;tixti'+
+        'eq=want:v:p2+p3;jixtieq=want:v:p3;nixtiequ=want:v:p4;tixtiequ=want:v:'+
+        'p5;jixtiequ=want:v:p6;kont=be:v:i1:ser+i2:ser;kien=be:v:i3:ser;kienet'+
+        '=be:v:i3:ser;',
+    'konna=be:v:i4:ser;kontu=be:v:i5:ser;kienu=be:v:i6:ser;jien=I:s:1;jiena=I:'+
+        's:1;int=you:s:2;inti=you:s:2;huwa=he:s:3;hu=he:s:3;hija=she:s:3;hi=sh'+
+        'e:s:3;aħna=we:s:4;intom=you:s:5;huma=they:s:6;dan=this:d;din=this:d;'+
+        'dawn=these:d;',
+    'dak=that:d;dik=that:d;dawk=those:d;x''=what:w;xi=what:w;xiex=what:w;min=w'+
+        'ho:w;fejn=where:w;meta=when:w;għaliex=why:w;ghaliex=why:w;kif=how:w;'+
+        'kemm=how_many:w;liema=which:w;fi=in:p;f''=in:p;minn=from:p;lil=to:p;m'+
+        'a''=with:p;ma=with:p;',
+    'għal=for:p;fuq=on:p;taħt=under:p;bejn=between:p;mingħajr=without:p;sa='+
+        'until:p;qabel=before:p;wara=after:p;ġewwa=inside:p;barra=outside:p;'+
+        'ħdejn=near:p;quddiem=in_front_of:p;ta''=of:p;ta=of:p;b''=with:p;bi=w'+
+        'ith:p;lejn=toward:p;',
+    'permezz=through:p;waqt=during:p;u=and:c;imma=but:c;jew=or:c;għax=because'+
+        ':c;ghax=because:c;li=that:c;jekk=if:c;biex=so_that:c;waqt_li=while:c;'+
+        'minħabba=because:c;issa=now:r;illum=today:r;għada=tomorrow:r;biera'+
+        'ħ=yesterday:r;',
+    'dejjem=always:r;spiss=often:r;qatt=ever:r;diġà=already:r;ukoll=also:r;b'+
+        'iss=only:r;hawn=here:r;hemm=there:r;ħafna=very:r;ftit=little:r;wisq='+
+        'too:r;malajr=quickly:r;ġieli=sometimes:r;forsi=maybe:r;flimkien=toge'+
+        'ther:r;le=no:j;',
+    'iva=yes:j;grazzi=Thank_you:j;bonġu=Good_morning:j;bonswa=Good_evening:j;'+
+        'saħħa=Cheers:j;merħba=Welcome:j;skużani=Sorry:j;ċaw=Goodbye:j;je'+
+        'kk_jogħġbok=please:j;hello=Hello:j;mhux=not:g;ma=not:g;xejn=nothing'+
+        ':q;',
+    'kollox=everything:q;kulħadd=everyone:q;ħadd=anyone:q;kull=each:u;xi=som'+
+        'e:u;ħafna=many:u;ftit=few:u;ebda=no:u;kollha=all:u;wieħed=one:u:1;t'+
+        'nejn=two:u:1;tlieta=three:u:1;erbgħa=four:u:1;ħamsa=five:u:1;sitta='+
+        'six:u:1;',
+    'sebgħa=seven:u:1;tmienja=eight:u:1;disgħa=nine:u:1;għaxra=ten:u:1;mija'+
+        '=one_hundred:u:1;elf=one_thousand:u:1;Malta=Malta:z;Għawdex=Gozo:z;V'+
+        'alletta=Valletta:z;Marija=Mary:z;Ġanni=John:z;Pawlu=Paul:z;Karmenu=C'+
+        'harles:z;',
+    'Mariju=Mario:z;Ġużeppi=Joseph:z;Anna=Anna:z;Ingilterra=England:z;Franza'+
+        '=France:z;Italja=Italy:z;Spanja=Spain:z;Ġermanja=Germany:z;Ewropa=Eu'+
+        'rope:z;Malti=Maltese:z;Ingliż=English:z;Franċiż=French:z;Taljan=It'+
+        'alian:z;',
+    'jismi=my_name:t;jismek=your_name:t;jismu=his_name:t;jisimha=her_name:t;g'+
+        'ħalliema=teacher:n;sema=sky:n;smewwiet=sky:n:p;iskola=school:n;iskej'+
+        'jel=school:n:p;tfal=child:n:p;istudenti=student:n:p;istudent=student:'+
+        'n;kitibx=write:v:i3;',
+    'inkun=be:v:p1:ser;pizza=pizza:n;pizzez=pizza:n:p;mmur=go:v:p1:ir;mmorru=g'+
+        'o:v:p4:ir;tiegħi=my:x;tiegħek=your:x;tiegħu=his:x;tagħha=her:x;ta'+
+        'għna=our:x;tagħkom=your:x;tagħhom=their:x;żewġ=two:u:1;tliet=thr'+
+        'ee:u:1;',
+    'erba''=four:u:1;ħames=five:u:1;sitt=six:u:1;sebat=seven:u:1;tmien=eight:'+
+        'u:1;disat=nine:u:1;għaxar=ten:u:1;'
+  );
+
+  { Islandais : formes de surface (voir mkis.py) }
+  IcData: Array[0..283] Of String = (
+    'hestur=horse:n:si:n;hesturinn=horse:n:sD:n;hest=horse:n:si:a;hestinn=hors'+
+        'e:n:sD:a;hesti=horse:n:si:d;hestinum=horse:n:sD:d;hests=horse:n:si:g;'+
+        'hestsins=horse:n:sD:g;hestar=horse:n:pi:n;hestarnir=horse:n:pD:n;',
+    'hesta=horse:n:pi:a+pi:g;hestana=horse:n:pD:a;hestum=horse:n:pi:d;hestunum'+
+        '=horse:n:pD:d;hestanna=horse:n:pD:g;hundur=dog:n:si:n;hundurinn=dog:n'+
+        ':sD:n;hund=dog:n:si:a;hundinn=dog:n:sD:a;hundi=dog:n:si:d;hundinum=do'+
+        'g:n:sD:d;',
+    'hunds=dog:n:si:g;hundsins=dog:n:sD:g;hundar=dog:n:pi:n;hundarnir=dog:n:pD'+
+        ':n;hunda=dog:n:pi:a+pi:g;hundana=dog:n:pD:a;hundum=dog:n:pi:d;hundunu'+
+        'm=dog:n:pD:d;hundanna=dog:n:pD:g;fiskur=fish:n:si:n;fiskurinn=fish:n:'+
+        'sD:n;',
+    'fisk=fish:n:si:a;fiskinn=fish:n:sD:a;fiski=fish:n:si:d;fiskinum=fish:n:sD'+
+        ':d;fisks=fish:n:si:g;fisksins=fish:n:sD:g;fiskar=fish:n:pi:n;fiskarni'+
+        'r=fish:n:pD:n;fiska=fish:n:pi:a+pi:g;fiskana=fish:n:pD:a;fiskum=fish:'+
+        'n:pi:d;',
+    'fiskunum=fish:n:pD:d;fiskanna=fish:n:pD:g;fugl=bird:n:si:n+si:a;fuglinn=b'+
+        'ird:n:sD:n+sD:a;fugli=bird:n:si:d;fuglinum=bird:n:sD:d;fugls=bird:n:s'+
+        'i:g;fuglsins=bird:n:sD:g;fuglar=bird:n:pi:n;fuglarnir=bird:n:pD:n;',
+    'fugla=bird:n:pi:a+pi:g;fuglana=bird:n:pD:a;fuglum=bird:n:pi:d;fuglunum=bi'+
+        'rd:n:pD:d;fuglanna=bird:n:pD:g;stóll=chair:n:si:n;stóllinn=chair:n:'+
+        'sD:n;stól=chair:n:si:a+si:d;stólinn=chair:n:sD:a;stólnum=chair:n:s'+
+        'D:d;',
+    'stóls=chair:n:si:g;stólsins=chair:n:sD:g;stólar=chair:n:pi:n;stólarni'+
+        'r=chair:n:pD:n;stóla=chair:n:pi:a+pi:g;stólana=chair:n:pD:a;stólum'+
+        '=chair:n:pi:d;stólunum=chair:n:pD:d;stólanna=chair:n:pD:g;bíll=car'+
+        ':n:si:n;',
+    'bíllinn=car:n:sD:n;bíl=car:n:si:a+si:d;bílinn=car:n:sD:a;bílnum=car:n'+
+        ':sD:d;bíls=car:n:si:g;bílsins=car:n:sD:g;bílar=car:n:pi:n;bílarni'+
+        'r=car:n:pD:n;bíla=car:n:pi:a+pi:g;bílana=car:n:pD:a;bílum=car:n:pi'+
+        ':d;',
+    'bílunum=car:n:pD:d;bílanna=car:n:pD:g;skóli=school:n:si:n;skólinn=sch'+
+        'ool:n:sD:n;skóla=school:n:si:a+si:d+si:g;skólann=school:n:sD:a;skó'+
+        'lanum=school:n:sD:d;skólans=school:n:sD:g;skólar=school:n:pi:n;',
+    'skólarnir=school:n:pD:n;skólana=school:n:pD:a;skólum=school:n:pi:d;sk'+
+        'ólunum=school:n:pD:d;skólanna=school:n:pD:g;kvöld=evening:n:si:n+s'+
+        'i:a+pi:n;kvöldið=evening:n:sD:n+sD:a;kvöldi=evening:n:si:d;kvöldi'+
+        'nu=evening:n:sD:d;',
+    'kvölds=evening:n:si:g;kvöldsins=evening:n:sD:g;kvöldin=evening:n:pD:n+'+
+        'pD:a;kvöldum=evening:n:pi:d;kvöldunum=evening:n:pD:d;kvölda=evenin'+
+        'g:n:pi:g;kvöldanna=evening:n:pD:g;íbúð=apartment:n:si:n+si:a+si:d'+
+        ';',
+    'íbúðin=apartment:n:sD:n;íbúðina=apartment:n:sD:a;íbúðinni=apartm'+
+        'ent:n:sD:d;íbúðar=apartment:n:si:g;íbúðarinnar=apartment:n:sD:g'+
+        ';íbúðir=apartment:n:pi:n+pi:a;íbúðirnar=apartment:n:pD:n+pD:a;',
+    'íbúðum=apartment:n:pi:d;íbúðunum=apartment:n:pD:d;íbúða=apartmen'+
+        't:n:pi:g;íbúðanna=apartment:n:pD:g;fótbolti=football:n:si:n;fótb'+
+        'oltinn=football:n:sD:n;fótbolta=football:n:si:a+si:d+si:g;fótboltan'+
+        'n=football:n:sD:a;',
+    'fótboltanum=football:n:sD:d;fótboltans=football:n:sD:g;tafla=board:n:si'+
+        ':n;taflan=board:n:sD:n;töflu=board:n:si:a+si:d+si:g;töfluna=board:n'+
+        ':sD:a;töflunni=board:n:sD:d;töflunnar=board:n:sD:g;töflur=board:n:'+
+        'pi:n+pi:a;',
+    'töflurnar=board:n:pD:n+pD:a;töflum=board:n:pi:d;töflunum=board:n:pD:d;'+
+        'taflna=board:n:pi:g;taflnanna=board:n:pD:g;nemandi=student:n:si:n;nem'+
+        'andinn=student:n:sD:n;nemanda=student:n:si:a+si:d+si:g;nemandann=stud'+
+        'ent:n:sD:a;',
+    'nemandanum=student:n:sD:d;nemandans=student:n:sD:g;nemendur=student:n:pi:'+
+        'n+pi:a;nemendurnir=student:n:pD:n;nemendurina=student:n:pD:a;nemendum'+
+        '=student:n:pi:d;nemendunum=student:n:pD:d;nemenda=student:n:pi:g;',
+    'nemendanna=student:n:pD:g;banki=bank:n:si:n;bankinn=bank:n:sD:n;banka=ban'+
+        'k:n:si:a+si:d+si:g;bankann=bank:n:sD:a;bankanum=bank:n:sD:d;bankans=b'+
+        'ank:n:sD:g;bankar=bank:n:pi:n;bankarnir=bank:n:pD:n;bankana=bank:n:pD'+
+        ':a;',
+    'bönkum=bank:n:pi:d;bönkunum=bank:n:pD:d;bankanna=bank:n:pD:g;stelpa=gir'+
+        'l:n:si:n;stelpan=girl:n:sD:n;stelpu=girl:n:si:a+si:d+si:g;stelpuna=gi'+
+        'rl:n:sD:a;stelpunni=girl:n:sD:d;stelpunnar=girl:n:sD:g;stelpur=girl:n'+
+        ':pi:n+pi:a;',
+    'stelpurnar=girl:n:pD:n+pD:a;stelpum=girl:n:pi:d;stelpunum=girl:n:pD:d;ste'+
+        'lpna=girl:n:pi:g;stelpnanna=girl:n:pD:g;pitsa=pizza:n:si:n;pitsan=piz'+
+        'za:n:sD:n;pitsu=pizza:n:si:a+si:d+si:g;pitsuna=pizza:n:sD:a;pitsunni='+
+        'pizza:n:sD:d;',
+    'pitsunnar=pizza:n:sD:g;pitsur=pizza:n:pi:n+pi:a;pitsurnar=pizza:n:pD:n+pD'+
+        ':a;pitsum=pizza:n:pi:d;pitsunum=pizza:n:pD:d;pitsna=pizza:n:pi:g;pits'+
+        'nanna=pizza:n:pD:g;íslenska=Icelandic:n:si:n;íslenskan=Icelandic:n:'+
+        'sD:n;',
+    'íslensku=Icelandic:n:si:a+si:d+si:g;íslenskuna=Icelandic:n:sD:a;íslens'+
+        'kunni=Icelandic:n:sD:d;íslenskunnar=Icelandic:n:sD:g;enska=English:n'+
+        ':si:n;enskan=English:n:sD:n;ensku=English:n:si:a+si:d+si:g;enskuna=En'+
+        'glish:n:sD:a;',
+    'enskunni=English:n:sD:d;enskunnar=English:n:sD:g;bróðir=brother:n:si:n;'+
+        'bróðirinn=brother:n:sD:n;bróður=brother:n:si:a+si:d+si:g;bróður'+
+        'inn=brother:n:sD:a;bróðurnum=brother:n:sD:d;bróðurins=brother:n:s'+
+        'D:g;',
+    'bræður=brother:n:pi:n+pi:a;bræðurnir=brother:n:pD:n;bræðurina=broth'+
+        'er:n:pD:a;bræðrum=brother:n:pi:d;bræðrunum=brother:n:pD:d;bræðr'+
+        'a=brother:n:pi:g;bræðranna=brother:n:pD:g;faðir=father:n:si:n;',
+    'faðirinn=father:n:sD:n;föður=father:n:si:a+si:d+si:g;föðurinn=father'+
+        ':n:sD:a;föðurnum=father:n:sD:d;föðurins=father:n:sD:g;feður=fath'+
+        'er:n:pi:n+pi:a;feðurnir=father:n:pD:n;feðurina=father:n:pD:a;feðru'+
+        'm=father:n:pi:d;',
+    'feðrunum=father:n:pD:d;feðra=father:n:pi:g;feðranna=father:n:pD:g;sonu'+
+        'r=son:n:si:n;sonurinn=son:n:sD:n;son=son:n:si:a;soninn=son:n:sD:a;syn'+
+        'i=son:n:si:d;syninum=son:n:sD:d;sonar=son:n:si:g;sonarins=son:n:sD:g;'+
+        'synir=son:n:pi:n;',
+    'synirnir=son:n:pD:n;sonu=son:n:pi:a;sonuna=son:n:pD:a;sonum=son:n:pi:d;so'+
+        'nunum=son:n:pD:d;sona=son:n:pi:g;sonanna=son:n:pD:g;maður=man:n:si:n'+
+        ';maðurinn=man:n:sD:n;mann=man:n:si:a;manninn=man:n:sD:a;manni=man:n:'+
+        'si:d;',
+    'manninum=man:n:sD:d;manns=man:n:si:g;mannsins=man:n:sD:g;menn=man:n:pi:n+'+
+        'pi:a;mennnir=man:n:pD:n;mennina=man:n:pD:a;mönnum=man:n:pi:d;mönnun'+
+        'um=man:n:pD:d;manna=man:n:pi:g;mannanna=man:n:pD:g;vinur=friend:n:si:'+
+        'n;',
+    'vinurinn=friend:n:sD:n;vin=friend:n:si:a;vininn=friend:n:sD:a;vini=friend'+
+        ':n:si:d+pi:a;vininum=friend:n:sD:d;vinar=friend:n:si:g;vinarins=frien'+
+        'd:n:sD:g;vinir=friend:n:pi:n;vinirnir=friend:n:pD:n;vinina=friend:n:p'+
+        'D:a;',
+    'vinum=friend:n:pi:d;vinunum=friend:n:pD:d;vina=friend:n:pi:g;vinanna=frie'+
+        'nd:n:pD:g;kennari=teacher:n:si:n;kennarinn=teacher:n:sD:n;kennara=tea'+
+        'cher:n:si:a+si:d+si:g;kennarann=teacher:n:sD:a;kennaranum=teacher:n:s'+
+        'D:d;',
+    'kennarans=teacher:n:sD:g;kennarar=teacher:n:pi:n;kennararnir=teacher:n:pD'+
+        ':n;kennarana=teacher:n:pD:a;kennurum=teacher:n:pi:d;kennurunum=teache'+
+        'r:n:pD:d;kennaranna=teacher:n:pD:g;læknir=doctor:n:si:n;læknirinn=d'+
+        'octor:n:sD:n;',
+    'lækni=doctor:n:si:a+si:d;lækniinn=doctor:n:sD:a;lækninum=doctor:n:sD:d'+
+        ';læknis=doctor:n:si:g;læknisins=doctor:n:sD:g;læknar=doctor:n:pi:n'+
+        ';læknarnir=doctor:n:pD:n;lækna=doctor:n:pi:a+pi:g;læknana=doctor:n'+
+        ':pD:a;',
+    'læknum=doctor:n:pi:d;læknunum=doctor:n:pD:d;læknanna=doctor:n:pD:g;str'+
+        'ákur=boy:n:si:n;strákurinn=boy:n:sD:n;strák=boy:n:si:a+si:d;strák'+
+        'inn=boy:n:sD:a;stráknum=boy:n:sD:d;stráks=boy:n:si:g;stráksins=boy'+
+        ':n:sD:g;',
+    'strákar=boy:n:pi:n;strákarnir=boy:n:pD:n;stráka=boy:n:pi:a+pi:g;strák'+
+        'ana=boy:n:pD:a;strákum=boy:n:pi:d;strákunum=boy:n:pD:d;strákanna=b'+
+        'oy:n:pD:g;dagur=day:n:si:n;dagurinn=day:n:sD:n;dag=day:n:si:a;daginn='+
+        'day:n:sD:a;',
+    'degi=day:n:si:d;deginum=day:n:sD:d;dags=day:n:si:g;dagsins=day:n:sD:g;dag'+
+        'ar=day:n:pi:n;dagarnir=day:n:pD:n;daga=day:n:pi:a+pi:g;dagana=day:n:p'+
+        'D:a;dögum=day:n:pi:d;dögunum=day:n:pD:d;daganna=day:n:pD:g;bær=tow'+
+        'n:n:si:n;',
+    'bærinn=town:n:sD:n;bæ=town:n:si:a+si:d;bæinn=town:n:sD:a;bænum=town:n'+
+        ':sD:d;bæjar=town:n:si:g;bæjarins=town:n:sD:g;bæir=town:n:pi:n;bæi'+
+        'rnir=town:n:pD:n;bæi=town:n:pi:a;bæina=town:n:pD:a;bæjum=town:n:pi'+
+        ':d;',
+    'bæjunum=town:n:pD:d;bæja=town:n:pi:g;bæjanna=town:n:pD:g;vegur=road:n:'+
+        'si:n;vegurinn=road:n:sD:n;veg=road:n:si:a;veginn=road:n:sD:a;vegi=roa'+
+        'd:n:si:d+pi:a;veginum=road:n:sD:d;vegar=road:n:si:g;vegarins=road:n:s'+
+        'D:g;',
+    'vegir=road:n:pi:n;vegirnir=road:n:pD:n;vegina=road:n:pD:a;vegum=road:n:pi'+
+        ':d;vegunum=road:n:pD:d;vega=road:n:pi:g;veganna=road:n:pD:g;bátur=bo'+
+        'at:n:si:n;báturinn=boat:n:sD:n;bát=boat:n:si:a;bátinn=boat:n:sD:a;'+
+        'báti=boat:n:si:d;',
+    'bátinum=boat:n:sD:d;báts=boat:n:si:g;bátsins=boat:n:sD:g;bátar=boat:n'+
+        ':pi:n;bátarnir=boat:n:pD:n;báta=boat:n:pi:a+pi:g;bátana=boat:n:pD:'+
+        'a;bátum=boat:n:pi:d;bátunum=boat:n:pD:d;bátanna=boat:n:pD:g;himinn'+
+        '=sky:n:si:n;',
+    'himinninn=sky:n:sD:n;himin=sky:n:si:a;himininn=sky:n:sD:a;himni=sky:n:si:'+
+        'd;himninum=sky:n:sD:d;himins=sky:n:si:g;himinsins=sky:n:sD:g;himnar=s'+
+        'ky:n:pi:n;himnarnir=sky:n:pD:n;himna=sky:n:pi:a+pi:g;himnana=sky:n:pD'+
+        ':a;',
+    'himnum=sky:n:pi:d;himnunum=sky:n:pD:d;himnanna=sky:n:pD:g;sjór=sea:n:si:'+
+        'n;sjórinn=sea:n:sD:n;sjó=sea:n:si:a+si:d+pi:a;sjóinn=sea:n:sD:a;sj'+
+        'ónum=sea:n:sD:d;sjávar=sea:n:si:g;sjávarins=sea:n:sD:g;sjóar=sea:'+
+        'n:pi:n;',
+    'sjóarnir=sea:n:pD:n;sjóina=sea:n:pD:a;sjóum=sea:n:pi:d;sjóunum=sea:n:'+
+        'pD:d;sjóa=sea:n:pi:g;sjóanna=sea:n:pD:g;garður=garden:n:si:n;garð'+
+        'urinn=garden:n:sD:n;garð=garden:n:si:a;garðinn=garden:n:sD:a;garði'+
+        '=garden:n:si:d;',
+    'garðinum=garden:n:sD:d;garðs=garden:n:si:g;garðsins=garden:n:sD:g;gar'+
+        'ðar=garden:n:pi:n;garðarnir=garden:n:pD:n;garða=garden:n:pi:a+pi:g'+
+        ';garðana=garden:n:pD:a;görðum=garden:n:pi:d;görðunum=garden:n:pD'+
+        ':d;',
+    'garðanna=garden:n:pD:g;skógur=forest:n:si:n;skógurinn=forest:n:sD:n;sk'+
+        'óg=forest:n:si:a;skóginn=forest:n:sD:a;skógi=forest:n:si:d;skógin'+
+        'um=forest:n:sD:d;skógar=forest:n:si:g+pi:n;skógarins=forest:n:sD:g;',
+    'skógarnir=forest:n:pD:n;skóga=forest:n:pi:a+pi:g;skógana=forest:n:pD:a'+
+        ';skógum=forest:n:pi:d;skógunum=forest:n:pD:d;skóganna=forest:n:pD:'+
+        'g;mánuður=month:n:si:n;mánuðurinn=month:n:sD:n;mánuð=month:n:si'+
+        ':a;',
+    'mánuðinn=month:n:sD:a;mánuði=month:n:si:d+pi:a;mánuðinum=month:n:sD'+
+        ':d;mánaðar=month:n:si:g;mánaðarins=month:n:sD:g;mánuðir=month:n'+
+        ':pi:n;mánuðirnir=month:n:pD:n;mánuðina=month:n:pD:a;mánuðum=mon'+
+        'th:n:pi:d;',
+    'mánuðunum=month:n:pD:d;mánaða=month:n:pi:g;mánaðanna=month:n:pD:g;k'+
+        'onungur=king:n:si:n;konungurinn=king:n:sD:n;konung=king:n:si:a;konung'+
+        'inn=king:n:sD:a;konungi=king:n:si:d;konunginum=king:n:sD:d;konungs=ki'+
+        'ng:n:si:g;',
+    'konungsins=king:n:sD:g;konungar=king:n:pi:n;konungarnir=king:n:pD:n;konun'+
+        'ga=king:n:pi:a+pi:g;konungana=king:n:pD:a;konungum=king:n:pi:d;konung'+
+        'unum=king:n:pD:d;konunganna=king:n:pD:g;gluggi=window:n:si:n;glugginn'+
+        '=window:n:sD:n;',
+    'glugga=window:n:si:a+si:d+si:g;gluggann=window:n:sD:a;glugganum=window:n:'+
+        'sD:d;gluggans=window:n:sD:g;gluggar=window:n:pi:n;gluggarnir=window:n'+
+        ':pD:n;gluggana=window:n:pD:a;gluggum=window:n:pi:d;gluggunum=window:n'+
+        ':pD:d;',
+    'glugganna=window:n:pD:g;sími=telephone:n:si:n;síminn=telephone:n:sD:n;s'+
+        'íma=telephone:n:si:a+si:d+si:g;símann=telephone:n:sD:a;símanum=tel'+
+        'ephone:n:sD:d;símans=telephone:n:sD:g;símar=telephone:n:pi:n;',
+    'símarnir=telephone:n:pD:n;símana=telephone:n:pD:a;símum=telephone:n:pi'+
+        ':d;símunum=telephone:n:pD:d;símanna=telephone:n:pD:g;köttur=cat:n:'+
+        'si:n;kötturinn=cat:n:sD:n;kött=cat:n:si:a;köttinn=cat:n:sD:a;ketti'+
+        '=cat:n:si:d+pi:a;',
+    'kettinum=cat:n:sD:d;kattar=cat:n:si:g;kattarins=cat:n:sD:g;kettir=cat:n:p'+
+        'i:n;kettirnir=cat:n:pD:n;kettina=cat:n:pD:a;köttum=cat:n:pi:d;köttu'+
+        'num=cat:n:pD:d;katta=cat:n:pi:g;kattanna=cat:n:pD:g;peningar=money:n:'+
+        'si:n;',
+    'peningarinn=money:n:sD:n;peninga=money:n:si:a+si:g;peningann=money:n:sD:a'+
+        ';peningum=money:n:si:d;peningumnum=money:n:sD:d;peningans=money:n:sD:'+
+        'g;matur=food:n:si:n;maturinn=food:n:sD:n;mat=food:n:si:a+si:d;matinn='+
+        'food:n:sD:a;',
+    'matnum=food:n:sD:d;matar=food:n:si:g;matarins=food:n:sD:g;kona=woman:n:si'+
+        ':n;konan=woman:n:sD:n;konu=woman:n:si:a+si:d+si:g;konuna=woman:n:sD:a'+
+        ';konunni=woman:n:sD:d;konunnar=woman:n:sD:g;konur=woman:n:pi:n+pi:a;',
+    'konurnar=woman:n:pD:n+pD:a;konum=woman:n:pi:d;konunum=woman:n:pD:d;kvenna'+
+        '=woman:n:pi:g;kvennanna=woman:n:pD:g;stúlka=girl:n:si:n;stúlkan=gir'+
+        'l:n:sD:n;stúlku=girl:n:si:a+si:d+si:g;stúlkuna=girl:n:sD:a;stúlkun'+
+        'ni=girl:n:sD:d;',
+    'stúlkunnar=girl:n:sD:g;stúlkur=girl:n:pi:n+pi:a;stúlkurnar=girl:n:pD:n'+
+        '+pD:a;stúlkum=girl:n:pi:d;stúlkunum=girl:n:pD:d;stúlkna=girl:n:pi:'+
+        'g;stúlknanna=girl:n:pD:g;móðir=mother:n:si:n;móðirin=mother:n:sD'+
+        ':n;',
+    'móður=mother:n:si:a+si:d+si:g;móðurina=mother:n:sD:a;móðurinni=moth'+
+        'er:n:sD:d;móðurinnar=mother:n:sD:g;mæður=mother:n:pi:n+pi:a;mæð'+
+        'urnar=mother:n:pD:n+pD:a;mæðrum=mother:n:pi:d;mæðrunum=mother:n:p'+
+        'D:d;',
+    'mæðra=mother:n:pi:g;mæðranna=mother:n:pD:g;systir=sister:n:si:n;systi'+
+        'rin=sister:n:sD:n;systur=sister:n:si:a+si:d+si:g;systurina=sister:n:s'+
+        'D:a;systurinni=sister:n:sD:d;systurinnar=sister:n:sD:g;systurnar=sist'+
+        'er:n:pD:n+pD:a;',
+    'systrum=sister:n:pi:d;systrunum=sister:n:pD:d;systra=sister:n:pi:g;systra'+
+        'nna=sister:n:pD:g;dóttir=daughter:n:si:n;dóttirin=daughter:n:sD:n;d'+
+        'óttur=daughter:n:si:a+si:d+si:g;dótturina=daughter:n:sD:a;dótturin'+
+        'ni=daughter:n:sD:d;',
+    'dótturinnar=daughter:n:sD:g;dætur=daughter:n:pi:n+pi:a;dæturnar=daught'+
+        'er:n:pD:n+pD:a;dætrum=daughter:n:pi:d;dætrunum=daughter:n:pD:d;dæt'+
+        'ra=daughter:n:pi:g;dætranna=daughter:n:pD:g;bók=book:n:si:n+si:a+si'+
+        ':d;',
+    'bókin=book:n:sD:n;bókina=book:n:sD:a;bókinni=book:n:sD:d;bókar=book:n'+
+        ':si:g;bókarinnar=book:n:sD:g;bækur=book:n:pi:n+pi:a;bækurnar=book:'+
+        'n:pD:n+pD:a;bókum=book:n:pi:d;bókunum=book:n:pD:d;bóka=book:n:pi:g'+
+        ';',
+    'bókanna=book:n:pD:g;borg=city:n:si:n+si:a+si:d;borgin=city:n:sD:n;borgin'+
+        'a=city:n:sD:a;borginni=city:n:sD:d;borgar=city:n:si:g;borgarinnar=cit'+
+        'y:n:sD:g;borgir=city:n:pi:n+pi:a;borgirnar=city:n:pD:n+pD:a;borgum=ci'+
+        'ty:n:pi:d;',
+    'borgunum=city:n:pD:d;borga=city:n:pi:g;borganna=city:n:pD:g;gata=street:n'+
+        ':si:n;gatan=street:n:sD:n;götu=street:n:si:a+si:d+si:g;götuna=stree'+
+        't:n:sD:a;götunni=street:n:sD:d;götunnar=street:n:sD:g;götur=street'+
+        ':n:pi:n+pi:a;',
+    'göturnar=street:n:pD:n+pD:a;götum=street:n:pi:d;götunum=street:n:pD:d;'+
+        'gatna=street:n:pi:g;gatnanna=street:n:pD:g;hurð=door:n:si:n+si:a+si:'+
+        'd;hurðin=door:n:sD:n;hurðina=door:n:sD:a;hurðinni=door:n:sD:d;hur'+
+        'ðar=door:n:si:g;',
+    'hurðarinnar=door:n:sD:g;hurðir=door:n:pi:n+pi:a;hurðirnar=door:n:pD:n+'+
+        'pD:a;hurðum=door:n:pi:d;hurðunum=door:n:pD:d;hurða=door:n:pi:g;hur'+
+        'ðanna=door:n:pD:g;vika=week:n:si:n;vikan=week:n:sD:n;viku=week:n:si:'+
+        'a+si:d+si:g;',
+    'vikuna=week:n:sD:a;vikunni=week:n:sD:d;vikunnar=week:n:sD:g;vikur=week:n:'+
+        'pi:n+pi:a;vikurnar=week:n:pD:n+pD:a;vikum=week:n:pi:d;vikunum=week:n:'+
+        'pD:d;vikna=week:n:pi:g;viknanna=week:n:pD:g;nótt=night:n:si:n+si:a+s'+
+        'i:d;',
+    'nóttin=night:n:sD:n;nóttina=night:n:sD:a;nóttinni=night:n:sD:d;nætur='+
+        'night:n:si:g+pi:n+pi:a;næturinnar=night:n:sD:g;næturnar=night:n:pD:'+
+        'n+pD:a;nóttum=night:n:pi:d;nóttunum=night:n:pD:d;nátta=night:n:pi:'+
+        'g;',
+    'náttanna=night:n:pD:g;mjólk=milk:n:si:n+si:a+si:d;mjólkin=milk:n:sD:n;'+
+        'mjólkina=milk:n:sD:a;mjólkinni=milk:n:sD:d;mjólkur=milk:n:si:g;mj'+
+        'ólkurinnar=milk:n:sD:g;gjöf=gift:n:si:n+si:a+si:d;gjöfin=gift:n:sD'+
+        ':n;',
+    'gjöfina=gift:n:sD:a;gjöfinni=gift:n:sD:d;gjafar=gift:n:si:g;gjafarinnar'+
+        '=gift:n:sD:g;gjafir=gift:n:pi:n+pi:a;gjafirnar=gift:n:pD:n+pD:a;gjöf'+
+        'um=gift:n:pi:d;gjöfunum=gift:n:pD:d;gjafa=gift:n:pi:g;gjafanna=gift:'+
+        'n:pD:g;',
+    'tunga=language:n:si:n;tungan=language:n:sD:n;tungu=language:n:si:a+si:d+s'+
+        'i:g;tunguna=language:n:sD:a;tungunni=language:n:sD:d;tungunnar=langua'+
+        'ge:n:sD:g;tungur=language:n:pi:n+pi:a;tungurnar=language:n:pD:n+pD:a;',
+    'tungum=language:n:pi:d;tungunum=language:n:pD:d;tungna=language:n:pi:g;tu'+
+        'ngnanna=language:n:pD:g;fjölskylda=family:n:si:n;fjölskyldan=family'+
+        ':n:sD:n;fjölskyldu=family:n:si:a+si:d+si:g;fjölskylduna=family:n:sD'+
+        ':a;',
+    'fjölskyldunni=family:n:sD:d;fjölskyldunnar=family:n:sD:g;fjölskyldur=f'+
+        'amily:n:pi:n+pi:a;fjölskyldurnar=family:n:pD:n+pD:a;fjölskyldum=fam'+
+        'ily:n:pi:d;fjölskyldunum=family:n:pD:d;fjölskyldna=family:n:pi:g;',
+    'fjölskyldnanna=family:n:pD:g;ferð=trip:n:si:n+si:a+si:d;ferðin=trip:n:'+
+        'sD:n;ferðina=trip:n:sD:a;ferðinni=trip:n:sD:d;ferðar=trip:n:si:g;f'+
+        'erðarinnar=trip:n:sD:g;ferðir=trip:n:pi:n+pi:a;ferðirnar=trip:n:pD'+
+        ':n+pD:a;',
+    'ferðum=trip:n:pi:d;ferðunum=trip:n:pD:d;ferða=trip:n:pi:g;ferðanna=tr'+
+        'ip:n:pD:g;hönd=hand:n:si:n+si:a;höndin=hand:n:sD:n;höndina=hand:n:'+
+        'sD:a;hendi=hand:n:si:d;hendinni=hand:n:sD:d;handar=hand:n:si:g;handar'+
+        'innar=hand:n:sD:g;',
+    'hendur=hand:n:pi:n+pi:a;hendurnar=hand:n:pD:n+pD:a;höndum=hand:n:pi:d;h'+
+        'öndunum=hand:n:pD:d;handa=hand:n:pi:g;handanna=hand:n:pD:g;lest=trai'+
+        'n:n:si:n+si:a+si:d;lestin=train:n:sD:n;lestina=train:n:sD:a;lestinni='+
+        'train:n:sD:d;',
+    'lestar=train:n:si:g;lestarinnar=train:n:sD:g;lestir=train:n:pi:n+pi:a;les'+
+        'tirnar=train:n:pD:n+pD:a;lestum=train:n:pi:d;lestunum=train:n:pD:d;le'+
+        'sta=train:n:pi:g;lestanna=train:n:pD:g;flugvél=plane:n:si:n+si:a+si:'+
+        'd;',
+    'flugvélin=plane:n:sD:n;flugvélina=plane:n:sD:a;flugvélinni=plane:n:sD:'+
+        'd;flugvélar=plane:n:si:g+pi:n+pi:a;flugvélarinnar=plane:n:sD:g;flug'+
+        'vélarnar=plane:n:pD:n+pD:a;flugvélum=plane:n:pi:d;flugvélunum=plan'+
+        'e:n:pD:d;',
+    'flugvéla=plane:n:pi:g;flugvélanna=plane:n:pD:g;kirkja=church:n:si:n;kir'+
+        'kjan=church:n:sD:n;kirkju=church:n:si:a+si:d+si:g;kirkjuna=church:n:s'+
+        'D:a;kirkjunni=church:n:sD:d;kirkjunnar=church:n:sD:g;kirkjur=church:n'+
+        ':pi:n+pi:a;',
+    'kirkjurnar=church:n:pD:n+pD:a;kirkjum=church:n:pi:d;kirkjunum=church:n:pD'+
+        ':d;kirkna=church:n:pi:g;kirknanna=church:n:pD:g;búð=shop:n:si:n+si:'+
+        'a+si:d;búðin=shop:n:sD:n;búðina=shop:n:sD:a;búðinni=shop:n:sD:d'+
+        ';',
+    'búðar=shop:n:si:g;búðarinnar=shop:n:sD:g;búðir=shop:n:pi:n+pi:a;bú'+
+        'ðirnar=shop:n:pD:n+pD:a;búðum=shop:n:pi:d;búðunum=shop:n:pD:d;b'+
+        'úða=shop:n:pi:g;búðanna=shop:n:pD:g;stofa=living_room:n:si:n+pi:g'+
+        ';',
+    'stofan=living_room:n:sD:n;stofu=living_room:n:si:a+si:d+si:g;stofuna=livi'+
+        'ng_room:n:sD:a;stofunni=living_room:n:sD:d;stofunnar=living_room:n:sD'+
+        ':g;stofur=living_room:n:pi:n+pi:a;stofurnar=living_room:n:pD:n+pD:a;',
+    'stofum=living_room:n:pi:d;stofunum=living_room:n:pD:d;stofanna=living_roo'+
+        'm:n:pD:g;tölva=computer:n:si:n+pi:g;tölvan=computer:n:sD:n;tölvu=c'+
+        'omputer:n:si:a+si:d+si:g;tölvuna=computer:n:sD:a;tölvunni=computer:'+
+        'n:sD:d;',
+    'tölvunnar=computer:n:sD:g;tölvur=computer:n:pi:n+pi:a;tölvurnar=comput'+
+        'er:n:pD:n+pD:a;tölvum=computer:n:pi:d;tölvunum=computer:n:pD:d;töl'+
+        'vanna=computer:n:pD:g;spurning=question:n:si:n;spurningin=question:n:'+
+        'sD:n;',
+    'spurningu=question:n:si:a+si:d;spurninguna=question:n:sD:a;spurningunni=q'+
+        'uestion:n:sD:d;spurningar=question:n:si:g+pi:n+pi:a;spurningarinnar=q'+
+        'uestion:n:sD:g;spurningarnar=question:n:pD:n+pD:a;spurningum=question'+
+        ':n:pi:d;',
+    'spurningunum=question:n:pD:d;spurninga=question:n:pi:g;spurninganna=quest'+
+        'ion:n:pD:g;rigning=rain:n:si:n;rigningin=rain:n:sD:n;rigningu=rain:n:'+
+        'si:a+si:d;rigninguna=rain:n:sD:a;rigningunni=rain:n:sD:d;rigningar=ra'+
+        'in:n:si:g;',
+    'rigningarinnar=rain:n:sD:g;sól=sun:n:si:n+si:a+si:d;sólin=sun:n:sD:n;s'+
+        'ólina=sun:n:sD:a;sólinni=sun:n:sD:d;sólar=sun:n:si:g;sólarinnar=s'+
+        'un:n:sD:g;á=river:n:si:n+si:a+si:d;án=river:n:sD:n;ána=river:n:sD:'+
+        'a;',
+    'ánni=river:n:sD:d;ár=river:n:si:g+pi:n+pi:a;árinnar=river:n:sD:g;árna'+
+        'r=river:n:pD:n+pD:a;ám=river:n:pi:d;ámunum=river:n:pD:d;áa=river:n'+
+        ':pi:g;áanna=river:n:pD:g;kýr=cow:n:si:n+si:g+pi:n;kýrin=cow:n:sD:n'+
+        ';',
+    'kú=cow:n:si:a+si:d;kúina=cow:n:sD:a;kúinni=cow:n:sD:d;kýrinnar=cow:n:'+
+        'sD:g;kýrnar=cow:n:pD:n+pD:a;kúm=cow:n:pi:d;kúmunum=cow:n:pD:d;kúa'+
+        '=cow:n:pi:g;kúanna=cow:n:pD:g;hús=house:n:si:n+si:a+pi:n;húsið=ho'+
+        'use:n:sD:n+sD:a;',
+    'húsi=house:n:si:d;húsinu=house:n:sD:d;húss=house:n:si:g;hússins=house'+
+        ':n:sD:g;húsin=house:n:pD:n+pD:a;húsum=house:n:pi:d;húsunum=house:n'+
+        ':pD:d;húsa=house:n:pi:g;húsanna=house:n:pD:g;borð=table:n:si:n+si:'+
+        'a+pi:n;',
+    'borðið=table:n:sD:n+sD:a;borði=table:n:si:d;borðinu=table:n:sD:d;bor'+
+        'ðs=table:n:si:g;borðsins=table:n:sD:g;borðin=table:n:pD:n+pD:a;bor'+
+        'ðum=table:n:pi:d;borðunum=table:n:pD:d;borða=table:n:pi:g;borðann'+
+        'a=table:n:pD:g;',
+    'barn=child:n:si:n+si:a;barnið=child:n:sD:n+sD:a;barni=child:n:si:d;barni'+
+        'nu=child:n:sD:d;barns=child:n:si:g;barnsins=child:n:sD:g;börn=child:'+
+        'n:pi:n+pi:a;börnin=child:n:pD:n+pD:a;börnum=child:n:pi:d;börnunum='+
+        'child:n:pD:d;',
+    'barna=child:n:pi:g;barnanna=child:n:pD:g;auga=eye:n:si:n+si:a+si:d;augað'+
+        '=eye:n:sD:n+sD:a;augainu=eye:n:sD:d;augains=eye:n:sD:g;augu=eye:n:pi:'+
+        'n+pi:a;augun=eye:n:pD:n+pD:a;augum=eye:n:pi:d;augunum=eye:n:pD:d;augn'+
+        'a=eye:n:pi:g;',
+    'augnanna=eye:n:pD:g;hjarta=heart:n:si:n+si:a+si:d;hjartað=heart:n:sD:n+s'+
+        'D:a;hjartainu=heart:n:sD:d;hjartains=heart:n:sD:g;hjörtu=heart:n:pi:'+
+        'n+pi:a;hjörtun=heart:n:pD:n+pD:a;hjörtum=heart:n:pi:d;hjörtunum=he'+
+        'art:n:pD:d;',
+    'hjartna=heart:n:pi:g;hjartnanna=heart:n:pD:g;epli=apple:n:si:n+si:a+si:d;'+
+        'eplið=apple:n:sD:n+sD:a;eplinu=apple:n:sD:d;eplis=apple:n:si:g;eplis'+
+        'ins=apple:n:sD:g;eplin=apple:n:pD:n+pD:a;eplum=apple:n:pi:d;eplunum=a'+
+        'pple:n:pD:d;',
+    'epla=apple:n:pi:g;eplanna=apple:n:pD:g;vatn=water:n:si:n+si:a;vatnið=wat'+
+        'er:n:sD:n+sD:a;vatni=water:n:si:d;vatninu=water:n:sD:d;vatns=water:n:'+
+        'si:g;vatnsins=water:n:sD:g;brauð=bread:n:si:n+si:a+pi:n;brauðið=br'+
+        'ead:n:sD:n+sD:a;',
+    'brauði=bread:n:si:d;brauðinu=bread:n:sD:d;brauðs=bread:n:si:g;brauðsi'+
+        'ns=bread:n:sD:g;brauðin=bread:n:pD:n+pD:a;brauðum=bread:n:pi:d;brau'+
+        'ðunum=bread:n:pD:d;brauða=bread:n:pi:g;brauðanna=bread:n:pD:g;kjö'+
+        't=meat:n:si:n+si:a;',
+    'kjötið=meat:n:sD:n+sD:a;kjöti=meat:n:si:d;kjötinu=meat:n:sD:d;kjöts='+
+        'meat:n:si:g;kjötsins=meat:n:sD:g;kaffi=coffee:n:si:n+si:a+si:d;kaffi'+
+        'ð=coffee:n:sD:n+sD:a;kaffinu=coffee:n:sD:d;kaffis=coffee:n:si:g;',
+    'kaffisins=coffee:n:sD:g;te=tea:n:si:n+si:a+si:d;teð=tea:n:sD:n+sD:a;tein'+
+        'u=tea:n:sD:d;tes=tea:n:si:g;tesins=tea:n:sD:g;vín=wine:n:si:n+si:a;v'+
+        'ínið=wine:n:sD:n+sD:a;víni=wine:n:si:d;víninu=wine:n:sD:d;víns=w'+
+        'ine:n:si:g;',
+    'vínsins=wine:n:sD:g;bréf=letter:n:si:n+si:a+pi:n;bréfið=letter:n:sD:n'+
+        '+sD:a;bréfi=letter:n:si:d;bréfinu=letter:n:sD:d;bréfs=letter:n:si:'+
+        'g;bréfsins=letter:n:sD:g;bréfin=letter:n:pD:n+pD:a;bréfum=letter:n'+
+        ':pi:d;',
+    'bréfunum=letter:n:pD:d;bréfa=letter:n:pi:g;bréfanna=letter:n:pD:g;land'+
+        '=country:n:si:n+si:a;landið=country:n:sD:n+sD:a;landi=country:n:si:d'+
+        ';landinu=country:n:sD:d;lands=country:n:si:g;landsins=country:n:sD:g;',
+    'lönd=country:n:pi:n+pi:a;löndin=country:n:pD:n+pD:a;löndum=country:n:p'+
+        'i:d;löndunum=country:n:pD:d;landa=country:n:pi:g;landanna=country:n:'+
+        'pD:g;fjall=mountain:n:si:n+si:a;fjallið=mountain:n:sD:n+sD:a;fjalli='+
+        'mountain:n:si:d;',
+    'fjallinu=mountain:n:sD:d;fjalls=mountain:n:si:g;fjallsins=mountain:n:sD:g'+
+        ';fjöll=mountain:n:pi:n+pi:a;fjöllin=mountain:n:pD:n+pD:a;fjöllum=m'+
+        'ountain:n:pi:d;fjöllunum=mountain:n:pD:d;fjalla=mountain:n:pi:g;',
+    'fjallanna=mountain:n:pD:g;herbergi=room:n:si:n+si:a+si:d;herbergið=room:'+
+        'n:sD:n+sD:a;herberginu=room:n:sD:d;herbergis=room:n:si:g;herbergisins'+
+        '=room:n:sD:g;herbergin=room:n:pD:n+pD:a;herbergjum=room:n:pi:d;herber'+
+        'gjunum=room:n:pD:d;',
+    'herbergja=room:n:pi:g;herbergjanna=room:n:pD:g;eldhús=kitchen:n:si:n+si:'+
+        'a+pi:n;eldhúsið=kitchen:n:sD:n+sD:a;eldhúsi=kitchen:n:si:d;eldhús'+
+        'inu=kitchen:n:sD:d;eldhúss=kitchen:n:si:g;eldhússins=kitchen:n:sD:g'+
+        ';',
+    'eldhúsin=kitchen:n:pD:n+pD:a;eldhúsum=kitchen:n:pi:d;eldhúsunum=kitche'+
+        'n:n:pD:d;eldhúsa=kitchen:n:pi:g;eldhúsanna=kitchen:n:pD:g;sjúkrah'+
+        'ús=hospital:n:si:n+si:a+pi:n;sjúkrahúsið=hospital:n:sD:n+sD:a;',
+    'sjúkrahúsi=hospital:n:si:d;sjúkrahúsinu=hospital:n:sD:d;sjúkrahúss='+
+        'hospital:n:si:g;sjúkrahússins=hospital:n:sD:g;sjúkrahúsin=hospita'+
+        'l:n:pD:n+pD:a;sjúkrahúsum=hospital:n:pi:d;sjúkrahúsunum=hospital:'+
+        'n:pD:d;',
+    'sjúkrahúsa=hospital:n:pi:g;sjúkrahúsanna=hospital:n:pD:g;bókasafn=li'+
+        'brary:n:si:n+si:a;bókasafnið=library:n:sD:n+sD:a;bókasafni=library'+
+        ':n:si:d;bókasafninu=library:n:sD:d;bókasafns=library:n:si:g;',
+    'bókasafnsins=library:n:sD:g;bókasöfn=library:n:pi:n+pi:a;bókasöfnin='+
+        'library:n:pD:n+pD:a;bókasöfnum=library:n:pi:d;bókasöfnunum=librar'+
+        'y:n:pD:d;bókasafna=library:n:pi:g;bókasafnanna=library:n:pD:g;safn='+
+        'museum:n:si:n+si:a;',
+    'safnið=museum:n:sD:n+sD:a;safni=museum:n:si:d;safninu=museum:n:sD:d;safn'+
+        's=museum:n:si:g;safnsins=museum:n:sD:g;söfn=museum:n:pi:n+pi:a;söfn'+
+        'in=museum:n:pD:n+pD:a;söfnum=museum:n:pi:d;söfnunum=museum:n:pD:d;s'+
+        'afna=museum:n:pi:g;',
+    'safnanna=museum:n:pD:g;leikhús=theater:n:si:n+si:a+pi:n;leikhúsið=thea'+
+        'ter:n:sD:n+sD:a;leikhúsi=theater:n:si:d;leikhúsinu=theater:n:sD:d;l'+
+        'eikhúss=theater:n:si:g;leikhússins=theater:n:sD:g;leikhúsin=theate'+
+        'r:n:pD:n+pD:a;',
+    'leikhúsum=theater:n:pi:d;leikhúsunum=theater:n:pD:d;leikhúsa=theater:n'+
+        ':pi:g;leikhúsanna=theater:n:pD:g;tré=tree:n:si:n+si:a+si:d;tréið='+
+        'tree:n:sD:n+sD:a;tréinu=tree:n:sD:d;trés=tree:n:si:g;trésins=tree:'+
+        'n:sD:g;',
+    'tréin=tree:n:pD:n+pD:a;trjám=tree:n:pi:d;trjámunum=tree:n:pD:d;trjáa='+
+        'tree:n:pi:g;trjáanna=tree:n:pD:g;blóm=flower:n:si:n+si:a+pi:n;blóm'+
+        'ið=flower:n:sD:n+sD:a;blómi=flower:n:si:d;blóminu=flower:n:sD:d;bl'+
+        'óms=flower:n:si:g;',
+    'blómsins=flower:n:sD:g;blómin=flower:n:pD:n+pD:a;blómum=flower:n:pi:d;'+
+        'blómunum=flower:n:pD:d;blóma=flower:n:pi:g;blómanna=flower:n:pD:g;'+
+        'árið=year:n:sD:n+sD:a;ári=year:n:si:d;árinu=year:n:sD:d;árs=year'+
+        ':n:si:g;',
+    'ársins=year:n:sD:g;árin=year:n:pD:n+pD:a;árum=year:n:pi:d;árunum=year'+
+        ':n:pD:d;ára=year:n:pi:g;áranna=year:n:pD:g;orð=word:n:si:n+si:a+pi'+
+        ':n;orðið=word:n:sD:n+sD:a;orði=word:n:si:d;orðinu=word:n:sD:d;or'+
+        'ðs=word:n:si:g;',
+    'orðsins=word:n:sD:g;orðin=word:n:pD:n+pD:a;orðum=word:n:pi:d;orðunum='+
+        'word:n:pD:d;orða=word:n:pi:g;orðanna=word:n:pD:g;nafn=name:n:si:n+s'+
+        'i:a;nafnið=name:n:sD:n+sD:a;nafni=name:n:si:d;nafninu=name:n:sD:d;na'+
+        'fns=name:n:si:g;',
+    'nafnsins=name:n:sD:g;nöfn=name:n:pi:n+pi:a;nöfnin=name:n:pD:n+pD:a;nöf'+
+        'num=name:n:pi:d;nöfnunum=name:n:pD:d;nafna=name:n:pi:g;nafnanna=name'+
+        ':n:pD:g;mál=language:n:si:n+si:a+pi:n;málið=language:n:sD:n+sD:a;',
+    'máli=language:n:si:d;málinu=language:n:sD:d;máls=language:n:si:g;máls'+
+        'ins=language:n:sD:g;málin=language:n:pD:n+pD:a;málum=language:n:pi:'+
+        'd;málunum=language:n:pD:d;mála=language:n:pi:g;málanna=language:n:'+
+        'pD:g;',
+    'svar=answer:n:si:n+si:a;svarið=answer:n:sD:n+sD:a;svari=answer:n:si:d;sv'+
+        'arinu=answer:n:sD:d;svars=answer:n:si:g;svarsins=answer:n:sD:g;svör='+
+        'answer:n:pi:n+pi:a;svörin=answer:n:pD:n+pD:a;svörum=answer:n:pi:d;',
+    'svörunum=answer:n:pD:d;svara=answer:n:pi:g;svaranna=answer:n:pD:g;veður'+
+        '=weather:n:si:n+si:a+pi:n;veðurið=weather:n:sD:n+sD:a;veðri=weathe'+
+        'r:n:si:d;veðrinu=weather:n:sD:d;veðurs=weather:n:si:g;veðursins=we'+
+        'ather:n:sD:g;',
+    'veðurin=weather:n:pD:n+pD:a;veðrum=weather:n:pi:d;veðrunum=weather:n:p'+
+        'D:d;veðra=weather:n:pi:g;veðranna=weather:n:pD:g;starf=job:n:si:n+s'+
+        'i:a;starfið=job:n:sD:n+sD:a;starfi=job:n:si:d;starfinu=job:n:sD:d;st'+
+        'arfs=job:n:si:g;',
+    'starfsins=job:n:sD:g;störf=job:n:pi:n+pi:a;störfin=job:n:pD:n+pD:a;stö'+
+        'rfum=job:n:pi:d;störfunum=job:n:pD:d;starfa=job:n:pi:g;starfanna=job'+
+        ':n:pD:g;bíó=cinema:n:si:n+si:a+pi:n;bíóð=cinema:n:sD:n+sD:a;bí'+
+        'ói=cinema:n:si:d;',
+    'bíóinu=cinema:n:sD:d;bíós=cinema:n:si:g;bíósins=cinema:n:sD:g;bíó'+
+        'n=cinema:n:pD:n+pD:a;bíóum=cinema:n:pi:d;bíóunum=cinema:n:pD:d;b'+
+        'íóa=cinema:n:pi:g;bíóanna=cinema:n:pD:g;rúm=bed:n:si:n+si:a+pi:n'+
+        ';',
+    'rúmið=bed:n:sD:n+sD:a;rúmi=bed:n:si:d;rúminu=bed:n:sD:d;rúms=bed:n:s'+
+        'i:g;rúmsins=bed:n:sD:g;rúmin=bed:n:pD:n+pD:a;rúmum=bed:n:pi:d;rúm'+
+        'unum=bed:n:pD:d;rúma=bed:n:pi:g;rúmanna=bed:n:pD:g;',
+    'fyrirtæki=company:n:si:n+si:a+si:d;fyrirtækið=company:n:sD:n+sD:a;fyri'+
+        'rtækinu=company:n:sD:d;fyrirtækis=company:n:si:g;fyrirtækisins=com'+
+        'pany:n:sD:g;fyrirtækin=company:n:pD:n+pD:a;fyrirtækjum=company:n:pi'+
+        ':d;',
+    'fyrirtækjunum=company:n:pD:d;fyrirtækja=company:n:pi:g;fyrirtækjanna=c'+
+        'ompany:n:pD:g;tímabil=period:n:si:n+si:a+pi:n;tímabilið=period:n:s'+
+        'D:n+sD:a;tímabili=period:n:si:d;tímabilinu=period:n:sD:d;tímabils='+
+        'period:n:si:g;',
+    'tímabilsins=period:n:sD:g;tímabilin=period:n:pD:n+pD:a;tímabilum=perio'+
+        'd:n:pi:d;tímabilunum=period:n:pD:d;tímabila=period:n:pi:g;tímabila'+
+        'nna=period:n:pD:g;pláss=place:n:si:n+si:a+pi:n;plássið=place:n:sD:'+
+        'n+sD:a;',
+    'plássi=place:n:si:d;plássinu=place:n:sD:d;plásss=place:n:si:g;plásssi'+
+        'ns=place:n:sD:g;plássin=place:n:pD:n+pD:a;plássum=place:n:pi:d;plá'+
+        'ssunum=place:n:pD:d;plássa=place:n:pi:g;plássanna=place:n:pD:g;stó'+
+        'r=big:a:sm;',
+    'stórt=big:a:sn;stóran=big:a:sm;stórir=big:a:pm;stórar=big:a:pf;stóru'+
+        'm=big:a:pd;stórra=big:a:pg;stóri=big:a:sw;stóra=big:a:sw;stóru=bi'+
+        'g:a:pw;góður=good:a:sm;góð=good:a:sf;gott=good:a:sn;góðan=good:'+
+        'a:sm;',
+    'góðir=good:a:pm;góðar=good:a:pf;góðum=good:a:pd;góðra=good:a:pg;g'+
+        'óði=good:a:sw;góða=good:a:sw;góðu=good:a:pw;vondur=bad:a:sm;von'+
+        'd=bad:a:sf;vont=bad:a:sn;vondan=bad:a:sm;vondir=bad:a:pm;vondar=bad:a'+
+        ':pf;',
+    'vondum=bad:a:pd;vondra=bad:a:pg;vondi=bad:a:sw;vonda=bad:a:sw;vondu=bad:a'+
+        ':pw;fallegur=beautiful:a:sm;falleg=beautiful:a:sf;fallegt=beautiful:a'+
+        ':sn;fallegan=beautiful:a:sm;fallegir=beautiful:a:pm;fallegar=beautifu'+
+        'l:a:pf;',
+    'fallegum=beautiful:a:pd;fallegra=beautiful:a:pg;fallegi=beautiful:a:sw;fa'+
+        'llega=beautiful:a:sw;fallegu=beautiful:a:pw;ljótur=ugly:a:sm;ljót=u'+
+        'gly:a:sf;ljótt=ugly:a:sn;ljótan=ugly:a:sm;ljótir=ugly:a:pm;ljótar'+
+        '=ugly:a:pf;',
+    'ljótum=ugly:a:pd;ljótra=ugly:a:pg;ljóti=ugly:a:sw;ljóta=ugly:a:sw;lj'+
+        'ótu=ugly:a:pw;ungur=young:a:sm;ung=young:a:sf;ungt=young:a:sn;ungan='+
+        'young:a:sm;ungir=young:a:pm;ungar=young:a:pf;ungum=young:a:pd;ungra=y'+
+        'oung:a:pg;',
+    'ungi=young:a:sw;unga=young:a:sw;ungu=young:a:pw;ríkur=rich:a:sm;rík=ric'+
+        'h:a:sf;ríkt=rich:a:sn;ríkan=rich:a:sm;ríkir=rich:a:pm;ríkar=rich:'+
+        'a:pf;ríkum=rich:a:pd;ríkra=rich:a:pg;ríki=rich:a:sw;ríka=rich:a:s'+
+        'w;ríku=rich:a:pw;',
+    'fátækur=poor:a:sm;fátæk=poor:a:sf;fátækt=poor:a:sn;fátækan=poor:a'+
+        ':sm;fátækir=poor:a:pm;fátækar=poor:a:pf;fátækum=poor:a:pd;fát'+
+        'ækra=poor:a:pg;fátæki=poor:a:sw;fátæka=poor:a:sw;fátæku=poor:a'+
+        ':pw;',
+    'sterkur=strong:a:sm;sterk=strong:a:sf;sterkt=strong:a:sn;sterkan=strong:a'+
+        ':sm;sterkir=strong:a:pm;sterkar=strong:a:pf;sterkum=strong:a:pd;sterk'+
+        'ra=strong:a:pg;sterki=strong:a:sw;sterka=strong:a:sw;sterku=strong:a:'+
+        'pw;',
+    'veikur=sick:a:sm;veik=sick:a:sf;veikt=sick:a:sn;veikan=sick:a:sm;veikir=s'+
+        'ick:a:pm;veikar=sick:a:pf;veikum=sick:a:pd;veikra=sick:a:pg;veiki=sic'+
+        'k:a:sw;veika=sick:a:sw;veiku=sick:a:pw;hár=tall:a:sm;há=tall:a:sf;h'+
+        'átt=tall:a:sn;',
+    'háan=tall:a:sm;háir=tall:a:pm;háar=tall:a:pf;háum=tall:a:pd;hára=tal'+
+        'l:a:pg;hái=tall:a:sw;háa=tall:a:sw;háu=tall:a:pw;langur=long:a:sm;'+
+        'löng=long:a:sf;langt=long:a:sn;löngan=long:a:sm;löngir=long:a:pm;l'+
+        'öngar=long:a:pf;',
+    'löngum=long:a:pd;löngra=long:a:pg;löngi=long:a:sw;lönga=long:a:sw;lö'+
+        'ngu=long:a:pw;stuttur=short:a:sm;stutt=short:a:sf;stuttan=short:a:sm;'+
+        'stuttir=short:a:pm;stuttar=short:a:pf;stuttum=short:a:pd;stuttra=shor'+
+        't:a:pg;',
+    'stutti=short:a:sw;stutta=short:a:sw;stuttu=short:a:pw;nýr=new:a:sm;ný=n'+
+        'ew:a:sf;nýtt=new:a:sn;nýan=new:a:sm;nýir=new:a:pm;nýar=new:a:pf;n'+
+        'ýum=new:a:pd;nýra=new:a:pg;nýi=new:a:sw;nýa=new:a:sw;nýu=new:a:p'+
+        'w;rauður=red:a:sm;',
+    'rauð=red:a:sf;rautt=red:a:sn;rauðan=red:a:sm;rauðir=red:a:pm;rauðar=r'+
+        'ed:a:pf;rauðum=red:a:pd;rauðra=red:a:pg;rauði=red:a:sw;rauða=red:'+
+        'a:sw;rauðu=red:a:pw;blár=blue:a:sm;blá=blue:a:sf;blátt=blue:a:sn;'+
+        'bláan=blue:a:sm;',
+    'bláir=blue:a:pm;bláar=blue:a:pf;bláum=blue:a:pd;blára=blue:a:pg;blái'+
+        '=blue:a:sw;bláa=blue:a:sw;bláu=blue:a:pw;grænn=green:a:sm;græn=gr'+
+        'een:a:sf;grænt=green:a:sn;grænan=green:a:sm;grænir=green:a:pm;græ'+
+        'nar=green:a:pf;',
+    'grænum=green:a:pd;grænra=green:a:pg;græni=green:a:sw;græna=green:a:sw'+
+        ';grænu=green:a:pw;gulur=yellow:a:sm;gul=yellow:a:sf;gult=yellow:a:sn'+
+        ';gulan=yellow:a:sm;gulir=yellow:a:pm;gular=yellow:a:pf;gulum=yellow:a'+
+        ':pd;',
+    'gulra=yellow:a:pg;guli=yellow:a:sw;gula=yellow:a:sw;gulu=yellow:a:pw;svar'+
+        'tur=black:a:sm;svört=black:a:sf;svart=black:a:sn;svörtan=black:a:sm'+
+        ';svörtir=black:a:pm;svörtar=black:a:pf;svörtum=black:a:pd;svörtra'+
+        '=black:a:pg;',
+    'svörti=black:a:sw;svörta=black:a:sw;svörtu=black:a:pw;hvítur=white:a:'+
+        'sm;hvít=white:a:sf;hvítt=white:a:sn;hvítan=white:a:sm;hvítir=whit'+
+        'e:a:pm;hvítar=white:a:pf;hvítum=white:a:pd;hvítra=white:a:pg;hvít'+
+        'i=white:a:sw;',
+    'hvíta=white:a:sw;hvítu=white:a:pw;brúnn=brown:a:sm;brún=brown:a:sf;br'+
+        'únt=brown:a:sn;brúnan=brown:a:sm;brúnir=brown:a:pm;brúnar=brown:a'+
+        ':pf;brúnum=brown:a:pd;brúnra=brown:a:pg;brúni=brown:a:sw;brúna=br'+
+        'own:a:sw;',
+    'brúnu=brown:a:pw;grár=gray:a:sm;grá=gray:a:sf;grátt=gray:a:sn;gráan='+
+        'gray:a:sm;gráir=gray:a:pm;gráar=gray:a:pf;gráum=gray:a:pd;grára=g'+
+        'ray:a:pg;grái=gray:a:sw;gráa=gray:a:sw;gráu=gray:a:pw;heitur=hot:a'+
+        ':sm;heit=hot:a:sf;',
+    'heitt=hot:a:sn;heitan=hot:a:sm;heitir=hot:a:pm;heitar=hot:a:pf;heitum=hot'+
+        ':a:pd;heitra=hot:a:pg;heiti=hot:a:sw;heita=hot:a:sw;heitu=hot:a:pw;ka'+
+        'ldur=cold:a:sm;köld=cold:a:sf;kalt=cold:a:sn;köldan=cold:a:sm;köld'+
+        'ir=cold:a:pm;',
+    'köldar=cold:a:pf;köldum=cold:a:pd;köldra=cold:a:pg;köldi=cold:a:sw;k'+
+        'ölda=cold:a:sw;köldu=cold:a:pw;glaður=happy:a:sm;glöð=happy:a:sf'+
+        ';glatt=happy:a:sn;glöðan=happy:a:sm;glöðir=happy:a:pm;glöðar=ha'+
+        'ppy:a:pf;',
+    'glöðum=happy:a:pd;glöðra=happy:a:pg;glöði=happy:a:sw;glöða=happy:'+
+        'a:sw;glöðu=happy:a:pw;leiður=sad:a:sm;leið=sad:a:sf;leitt=sad:a:s'+
+        'n;leiðan=sad:a:sm;leiðir=sad:a:pm;leiðar=sad:a:pf;leiðum=sad:a:pd'+
+        ';leiðra=sad:a:pg;',
+    'leiði=sad:a:sw;leiða=sad:a:sw;leiðu=sad:a:pw;þreyttur=tired:a:sm;þre'+
+        'ytt=tired:a:sf;þreyttan=tired:a:sm;þreyttir=tired:a:pm;þreyttar=ti'+
+        'red:a:pf;þreyttum=tired:a:pd;þreyttra=tired:a:pg;þreytti=tired:a:s'+
+        'w;',
+    'þreytta=tired:a:sw;þreyttu=tired:a:pw;svangur=hungry:a:sm;svöng=hungry'+
+        ':a:sf;svangt=hungry:a:sn;svöngan=hungry:a:sm;svöngir=hungry:a:pm;sv'+
+        'öngar=hungry:a:pf;svöngum=hungry:a:pd;svöngra=hungry:a:pg;svöngi='+
+        'hungry:a:sw;',
+    'svönga=hungry:a:sw;svöngu=hungry:a:pw;þyrstur=thirsty:a:sm;þyrst=thir'+
+        'sty:a:sf;þyrstan=thirsty:a:sm;þyrstir=thirsty:a:pm;þyrstar=thirsty'+
+        ':a:pf;þyrstum=thirsty:a:pd;þyrstra=thirsty:a:pg;þyrsti=thirsty:a:s'+
+        'w;',
+    'þyrsta=thirsty:a:sw;þyrstu=thirsty:a:pw;vingjarnlegur=friendly:a:sm;vin'+
+        'gjarnleg=friendly:a:sf;vingjarnlegt=friendly:a:sn;vingjarnlegan=frien'+
+        'dly:a:sm;vingjarnlegir=friendly:a:pm;vingjarnlegar=friendly:a:pf;',
+    'vingjarnlegum=friendly:a:pd;vingjarnlegra=friendly:a:pg;vingjarnlegi=frie'+
+        'ndly:a:sw;vingjarnlega=friendly:a:sw;vingjarnlegu=friendly:a:pw;skemm'+
+        'tilegur=fun:a:sm;skemmtileg=fun:a:sf;skemmtilegt=fun:a:sn;skemmtilega'+
+        'n=fun:a:sm;',
+    'skemmtilegir=fun:a:pm;skemmtilegar=fun:a:pf;skemmtilegum=fun:a:pd;skemmti'+
+        'legra=fun:a:pg;skemmtilegi=fun:a:sw;skemmtilega=fun:a:sw;skemmtilegu='+
+        'fun:a:pw;leiðinlegur=boring:a:sm;leiðinleg=boring:a:sf;leiðinlegt='+
+        'boring:a:sn;',
+    'leiðinlegan=boring:a:sm;leiðinlegir=boring:a:pm;leiðinlegar=boring:a:p'+
+        'f;leiðinlegum=boring:a:pd;leiðinlegra=boring:a:pg;leiðinlegi=borin'+
+        'g:a:sw;leiðinlega=boring:a:sw;leiðinlegu=boring:a:pw;mikilvægur=im'+
+        'portant:a:sm;',
+    'mikilvæg=important:a:sf;mikilvægt=important:a:sn;mikilvægan=important:'+
+        'a:sm;mikilvægir=important:a:pm;mikilvægar=important:a:pf;mikilvægu'+
+        'm=important:a:pd;mikilvægra=important:a:pg;mikilvægi=important:a:sw'+
+        ';',
+    'mikilvæga=important:a:sw;mikilvægu=important:a:pw;erfiður=difficult:a:'+
+        'sm;erfið=difficult:a:sf;erfitt=difficult:a:sn;erfiðan=difficult:a:s'+
+        'm;erfiðir=difficult:a:pm;erfiðar=difficult:a:pf;erfiðum=difficult:'+
+        'a:pd;',
+    'erfiðra=difficult:a:pg;erfiði=difficult:a:sw;erfiða=difficult:a:sw;erf'+
+        'iðu=difficult:a:pw;auðveldur=easy:a:sm;auðveld=easy:a:sf;auðvelt='+
+        'easy:a:sn;auðveldan=easy:a:sm;auðveldir=easy:a:pm;auðveldar=easy:a'+
+        ':pf;',
+    'auðveldum=easy:a:pd;auðveldra=easy:a:pg;auðveldi=easy:a:sw;auðvelda=e'+
+        'asy:a:sw;auðveldu=easy:a:pw;dýr=expensive:a:sm;dýrt=expensive:a:sn'+
+        ';dýran=expensive:a:sm;dýrir=expensive:a:pm;dýrar=expensive:a:pf;',
+    'dýrum=expensive:a:pd;dýrra=expensive:a:pg;dýri=expensive:a:sw;dýra=ex'+
+        'pensive:a:sw;dýru=expensive:a:pw;ódýr=cheap:a:sm;ódýrt=cheap:a:s'+
+        'n;ódýran=cheap:a:sm;ódýrir=cheap:a:pm;ódýrar=cheap:a:pf;ódýru'+
+        'm=cheap:a:pd;',
+    'ódýrra=cheap:a:pg;ódýri=cheap:a:sw;ódýra=cheap:a:sw;ódýru=cheap:a'+
+        ':pw;fljótur=fast:a:sm;fljót=fast:a:sf;fljótt=fast:a:sn;fljótan=fa'+
+        'st:a:sm;fljótir=fast:a:pm;fljótar=fast:a:pf;fljótum=fast:a:pd;flj'+
+        'ótra=fast:a:pg;',
+    'fljóti=fast:a:sw;fljóta=fast:a:sw;fljótu=fast:a:pw;hægur=slow:a:sm;h'+
+        'æg=slow:a:sf;hægt=slow:a:sn;hægan=slow:a:sm;hægir=slow:a:pm;hæga'+
+        'r=slow:a:pf;hægum=slow:a:pd;hægra=slow:a:pg;hægi=slow:a:sw;hæga=s'+
+        'low:a:sw;',
+    'hægu=slow:a:pw;hreinn=clean:a:sm;hrein=clean:a:sf;hreint=clean:a:sn;hrei'+
+        'nir=clean:a:pm;hreinar=clean:a:pf;hreinum=clean:a:pd;hreinra=clean:a:'+
+        'pg;hreini=clean:a:sw;hreina=clean:a:sw;hreinu=clean:a:pw;óhreinn=dir'+
+        'ty:a:sm;',
+    'óhrein=dirty:a:sf;óhreint=dirty:a:sn;óhreinir=dirty:a:pm;óhreinar=dir'+
+        'ty:a:pf;óhreinum=dirty:a:pd;óhreinra=dirty:a:pg;óhreini=dirty:a:sw'+
+        ';óhreina=dirty:a:sw;óhreinu=dirty:a:pw;opinn=open:a:sm;opin=open:a:'+
+        'sf;opið=open:a:sn;',
+    'opinir=open:a:pm;opinar=open:a:pf;opinum=open:a:pd;opinra=open:a:pg;opini'+
+        '=open:a:sw;opina=open:a:sw;opinu=open:a:pw;lokaður=closed:a:sm;loku'+
+        'ð=closed:a:sf;lokað=closed:a:sn;lokuðan=closed:a:sm;lokuðir=close'+
+        'd:a:pm;',
+    'lokuðar=closed:a:pf;lokuðum=closed:a:pd;lokuðra=closed:a:pg;lokuði=cl'+
+        'osed:a:sw;lokuða=closed:a:sw;lokuðu=closed:a:pw;tilbúinn=ready:a:s'+
+        'm;tilbúin=ready:a:sf;tilbúið=ready:a:sn;tilbúinir=ready:a:pm;tilb'+
+        'úinar=ready:a:pf;',
+    'tilbúinum=ready:a:pd;tilbúinra=ready:a:pg;tilbúini=ready:a:sw;tilbúin'+
+        'a=ready:a:sw;tilbúinu=ready:a:pw;upptekinn=busy:a:sm;upptekin=busy:a'+
+        ':sf;upptekið=busy:a:sn;upptekinir=busy:a:pm;upptekinar=busy:a:pf;upp'+
+        'tekinum=busy:a:pd;',
+    'upptekinra=busy:a:pg;upptekini=busy:a:sw;upptekina=busy:a:sw;upptekinu=bu'+
+        'sy:a:pw;frjáls=free:a:sm;frjálst=free:a:sn;frjálsan=free:a:sm;frj'+
+        'álsir=free:a:pm;frjálsar=free:a:pf;frjálsum=free:a:pd;frjálsra=fr'+
+        'ee:a:pg;',
+    'frjálsi=free:a:sw;frjálsa=free:a:sw;frjálsu=free:a:pw;gamall=old:a:sm;'+
+        'göm=old:a:sf;gamalt=old:a:sn;göman=old:a:sm;gömir=old:a:pm;gömar='+
+        'old:a:pf;gömum=old:a:pd;gömra=old:a:pg;gömi=old:a:sw;göma=old:a:s'+
+        'w;gömu=old:a:pw;',
+    'lítill=small:a:sm;lítil=small:a:sf;lítið=small:a:sn;lítilan=small:a:'+
+        'sm;lítilir=small:a:pm;lítilar=small:a:pf;lítilum=small:a:pd;lítil'+
+        'ra=small:a:pg;lítili=small:a:sw;lítila=small:a:sw;lítilu=small:a:p'+
+        'w;mikill=much:a:sm;',
+    'mikil=much:a:sf;mikið=much:a:sn;mikilan=much:a:sm;mikilir=much:a:pm;miki'+
+        'lar=much:a:pf;mikilum=much:a:pd;mikilra=much:a:pg;mikili=much:a:sw;mi'+
+        'kila=much:a:sw;mikilu=much:a:pw;margur=many:a:sm;mörg=many:a:sf;marg'+
+        't=many:a:sn;',
+    'mörgan=many:a:sm;mörgir=many:a:pm;mörgar=many:a:pf;mörgum=many:a:pd;m'+
+        'örgra=many:a:pg;mörgi=many:a:sw;mörga=many:a:sw;mörgu=many:a:pw;a'+
+        'nnar=other:a:sm;önnur=other:a:sf;annað=other:a:sn;önnuran=other:a:'+
+        'sm;',
+    'önnurir=other:a:pm;önnurar=other:a:pf;önnurum=other:a:pd;önnurra=othe'+
+        'r:a:pg;önnuri=other:a:sw;önnura=other:a:sw;önnuru=other:a:pw;sami='+
+        'same:a:sm;sama=same:a:sf;samaan=same:a:sm;samair=same:a:pm;samaar=sam'+
+        'e:a:pf;',
+    'samaum=same:a:pd;samara=same:a:pg;samai=same:a:sw;samaa=same:a:sw;samau=s'+
+        'ame:a:pw;ánægður=satisfied:a:sm;ánægð=satisfied:a:sf;ánægt=sa'+
+        'tisfied:a:sn;ánægðan=satisfied:a:sm;ánægðir=satisfied:a:pm;',
+    'ánægðar=satisfied:a:pf;ánægðum=satisfied:a:pd;ánægðra=satisfied:'+
+        'a:pg;ánægði=satisfied:a:sw;ánægða=satisfied:a:sw;ánægðu=sati'+
+        'sfied:a:pw;viss=sure:a:sm;víst=sure:a:sn;vissan=sure:a:sm;vissir=sur'+
+        'e:a:pm;',
+    'vissar=sure:a:pf;vissum=sure:a:pd;vissra=sure:a:pg;vissi=sure:a:sw;vissa='+
+        'sure:a:sw;vissu=sure:a:pw;frægur=famous:a:sm;fræg=famous:a:sf;fræg'+
+        't=famous:a:sn;frægan=famous:a:sm;frægir=famous:a:pm;frægar=famous:'+
+        'a:pf;',
+    'frægum=famous:a:pd;frægra=famous:a:pg;frægi=famous:a:sw;fræga=famous:'+
+        'a:sw;frægu=famous:a:pw;rólegur=quiet:a:sm;róleg=quiet:a:sf;rólegt'+
+        '=quiet:a:sn;rólegan=quiet:a:sm;rólegir=quiet:a:pm;rólegar=quiet:a:'+
+        'pf;',
+    'rólegum=quiet:a:pd;rólegra=quiet:a:pg;rólegi=quiet:a:sw;rólega=quiet:'+
+        'a:sw;rólegu=quiet:a:pw;giftur=married:a:sm;gift=married:a:sf;giftan='+
+        'married:a:sm;giftir=married:a:pm;giftar=married:a:pf;giftum=married:a'+
+        ':pd;',
+    'giftra=married:a:pg;gifti=married:a:sw;gifta=married:a:sw;giftu=married:a'+
+        ':pw;áhugaverður=interesting:a:sm;áhugaverð=interesting:a:sf;áhug'+
+        'avert=interesting:a:sn;áhugaverðan=interesting:a:sm;áhugaverðir=i'+
+        'nteresting:a:pm;',
+    'áhugaverðar=interesting:a:pf;áhugaverðum=interesting:a:pd;áhugaverð'+
+        'ra=interesting:a:pg;áhugaverði=interesting:a:sw;áhugaverða=intere'+
+        'sting:a:sw;áhugaverðu=interesting:a:pw;talarðu=speak:v:E2;talaðir'+
+        'ðu=speak:v:e2;',
+    'tala=speak:v:I+p1+p6;talar=speak:v:p2+p3;tölum=speak:v:p4;talið=speak:v'+
+        ':p5;talaði=speak:v:i1+i3;talaðir=speak:v:i2;töluðum=speak:v:i4;t'+
+        'öluðuð=speak:v:i5;töluðu=speak:v:i6;talað=speak:v:P;talaðu=spe'+
+        'ak:v:M2;',
+    'kallarðu=call:v:E2;kallaðirðu=call:v:e2;kalla=call:v:I+p1+p6;kallar=ca'+
+        'll:v:p2+p3;köllum=call:v:p4;kallið=call:v:p5;kallaði=call:v:i1+i3;'+
+        'kallaðir=call:v:i2;kölluðum=call:v:i4;kölluðuð=call:v:i5;köllu'+
+        'ðu=call:v:i6;',
+    'kallað=call:v:P;kallaðu=call:v:M2;borðarðu=eat:v:E2;borðaðirðu=eat'+
+        ':v:e2;borða=eat:v:I+p1+p6;borðar=eat:v:p2+p3;borðum=eat:v:p4;borð'+
+        'ið=eat:v:p5;borðaði=eat:v:i1+i3;borðaðir=eat:v:i2;borðuðum=eat'+
+        ':v:i4;',
+    'borðuðuð=eat:v:i5;borðuðu=eat:v:i6;borðað=eat:v:P;borðaðu=eat:v:'+
+        'M2;skrifarðu=write:v:E2;skrifaðirðu=write:v:e2;skrifa=write:v:I+p1'+
+        '+p6;skrifar=write:v:p2+p3;skrifum=write:v:p4;skrifið=write:v:p5;',
+    'skrifaði=write:v:i1+i3;skrifaðir=write:v:i2;skrifuðum=write:v:i4;skrif'+
+        'uðuð=write:v:i5;skrifuðu=write:v:i6;skrifað=write:v:P;skrifaðu=w'+
+        'rite:v:M2;elskarðu=love:v:E2;elskaðirðu=love:v:e2;elska=love:v:I+p'+
+        '1+p6;',
+    'elskar=love:v:p2+p3;elskum=love:v:p4;elskið=love:v:p5;elskaði=love:v:i1'+
+        '+i3;elskaðir=love:v:i2;elskuðum=love:v:i4;elskuðuð=love:v:i5;elsk'+
+        'uðu=love:v:i6;elskað=love:v:P;elskaðu=love:v:M2;spilarðu=play:v:E'+
+        '2;',
+    'spilaðirðu=play:v:e2;spila=play:v:I+p1+p6;spilar=play:v:p2+p3;spilum=pl'+
+        'ay:v:p4;spilið=play:v:p5;spilaði=play:v:i1+i3;spilaðir=play:v:i2;s'+
+        'piluðum=play:v:i4;spiluðuð=play:v:i5;spiluðu=play:v:i6;spilað=pl'+
+        'ay:v:P;',
+    'spilaðu=play:v:M2;hjálparðu=help:v:E2;hjálpaðirðu=help:v:e2;hjálpa'+
+        '=help:v:I+p1+p6;hjálpar=help:v:p2+p3;hjálpum=help:v:p4;hjálpið=he'+
+        'lp:v:p5;hjálpaði=help:v:i1+i3;hjálpaðir=help:v:i2;hjálpuðum=hel'+
+        'p:v:i4;',
+    'hjálpuðuð=help:v:i5;hjálpuðu=help:v:i6;hjálpað=help:v:P;hjálpaðu'+
+        '=help:v:M2;opnarðu=open:v:E2;opnaðirðu=open:v:e2;opna=open:v:I+p1+'+
+        'p6;opnar=open:v:p2+p3;opnum=open:v:p4;opnið=open:v:p5;opnaði=open:v'+
+        ':i1+i3;',
+    'opnaðir=open:v:i2;opnuðum=open:v:i4;opnuðuð=open:v:i5;opnuðu=open:v:'+
+        'i6;opnað=open:v:P;opnaðu=open:v:M2;lokarðu=close:v:E2;lokaðirðu='+
+        'close:v:e2;loka=close:v:I+p1+p6;lokar=close:v:p2+p3;lokum=close:v:p4;'+
+        'lokið=close:v:p5;',
+    'lokaði=close:v:i1+i3;lokaðir=close:v:i2;lokuðum=close:v:i4;lokuðuð=c'+
+        'lose:v:i5;lokuðu=close:v:i6;lokað=close:v:P;lokaðu=close:v:M2;borg'+
+        'arðu=pay:v:E2;borgaðirðu=pay:v:e2;borga=pay:v:I+p1+p6;borgar=pay:v'+
+        ':p2+p3;',
+    'borgum=pay:v:p4;borgið=pay:v:p5;borgaði=pay:v:i1+i3;borgaðir=pay:v:i2;'+
+        'borguðum=pay:v:i4;borguðuð=pay:v:i5;borguðu=pay:v:i6;borgað=pay:'+
+        'v:P;borgaðu=pay:v:M2;dansarðu=dance:v:E2;dansaðirðu=dance:v:e2;',
+    'dansa=dance:v:I+p1+p6;dansar=dance:v:p2+p3;dansum=dance:v:p4;dansið=danc'+
+        'e:v:p5;dansaði=dance:v:i1+i3;dansaðir=dance:v:i2;dansuðum=dance:v:'+
+        'i4;dansuðuð=dance:v:i5;dansuðu=dance:v:i6;dansað=dance:v:P;dansa'+
+        'ðu=dance:v:M2;',
+    'vinnarðu=work:v:E2;vinnaðirðu=work:v:e2;vinna=work:v:I+p1+p6;vinnar=wo'+
+        'rk:v:p2+p3;vinnum=work:v:p4;vinnið=work:v:p5;vinnaði=work:v:i1+i3;v'+
+        'innaðir=work:v:i2;vinnuðum=work:v:i4;vinnuðuð=work:v:i5;vinnuðu='+
+        'work:v:i6;',
+    'vinnað=work:v:P;vinnaðu=work:v:M2;bíðarðu=wait:v:E2;bíðaðirðu=wa'+
+        'it:v:e2;bíða=wait:v:I+p1+p6;bíðar=wait:v:p2+p3;bíðum=wait:v:p4;'+
+        'bíðið=wait:v:p5;bíðaði=wait:v:i1+i3;bíðaðir=wait:v:i2;bíðu'+
+        'ðum=wait:v:i4;',
+    'bíðuðuð=wait:v:i5;bíðuðu=wait:v:i6;bíðað=wait:v:P;bíðaðu=wai'+
+        't:v:M2;lærarðu=learn:v:E2;læraðirðu=learn:v:e2;læra=learn:v:I+p'+
+        '1+p6;lærar=learn:v:p2+p3;lærum=learn:v:p4;lærið=learn:v:p5;læra'+
+        'ði=learn:v:i1+i3;',
+    'læraðir=learn:v:i2;læruðum=learn:v:i4;læruðuð=learn:v:i5;læruðu='+
+        'learn:v:i6;lærað=learn:v:P;læraðu=learn:v:M2;byrjarðu=begin:v:E2'+
+        ';byrjaðirðu=begin:v:e2;byrja=begin:v:I+p1+p6;byrjar=begin:v:p2+p3;b'+
+        'yrjum=begin:v:p4;',
+    'byrjið=begin:v:p5;byrjaði=begin:v:i1+i3;byrjaðir=begin:v:i2;byrjuðum='+
+        'begin:v:i4;byrjuðuð=begin:v:i5;byrjuðu=begin:v:i6;byrjað=begin:v:'+
+        'P;byrjaðu=begin:v:M2;hlustarðu=listen:v:E2;hlustaðirðu=listen:v:e'+
+        '2;',
+    'hlusta=listen:v:I+p1+p6;hlustar=listen:v:p2+p3;hlustum=listen:v:p4;hlusti'+
+        'ð=listen:v:p5;hlustaði=listen:v:i1+i3;hlustaðir=listen:v:i2;hlustu'+
+        'ðum=listen:v:i4;hlustuðuð=listen:v:i5;hlustuðu=listen:v:i6;hlusta'+
+        'ð=listen:v:P;',
+    'hlustaðu=listen:v:M2;skoðarðu=look:v:E2;skoðaðirðu=look:v:e2;skoða'+
+        '=look:v:I+p1+p6;skoðar=look:v:p2+p3;skoðum=look:v:p4;skoðið=look:'+
+        'v:p5;skoðaði=look:v:i1+i3;skoðaðir=look:v:i2;skoðuðum=look:v:i4'+
+        ';',
+    'skoðuðuð=look:v:i5;skoðuðu=look:v:i6;skoðað=look:v:P;skoðaðu=loo'+
+        'k:v:M2;reynarðu=try:v:E2;reynaðirðu=try:v:e2;reyna=try:v:I+p1+p6;r'+
+        'eynar=try:v:p2+p3;reynum=try:v:p4;reynið=try:v:p5;reynaði=try:v:i1+'+
+        'i3;',
+    'reynaðir=try:v:i2;reynuðum=try:v:i4;reynuðuð=try:v:i5;reynuðu=try:v:'+
+        'i6;reynað=try:v:P;reynaðu=try:v:M2;þakkarðu=thank:v:E2;þakkaðir'+
+        'ðu=thank:v:e2;þakka=thank:v:I+p1+p6;þakkar=thank:v:p2+p3;þökkum='+
+        'thank:v:p4;',
+    'þakkið=thank:v:p5;þakkaði=thank:v:i1+i3;þakkaðir=thank:v:i2;þökku'+
+        'ðum=thank:v:i4;þökkuðuð=thank:v:i5;þökkuðu=thank:v:i6;þakka'+
+        'ð=thank:v:P;þakkaðu=thank:v:M2;svararðu=answer:v:E2;svaraðirðu='+
+        'answer:v:e2;',
+    'svara=answer:v:I+p1+p6;svarar=answer:v:p2+p3;svarum=answer:v:p4;svarið=a'+
+        'nswer:v:p5;svaraði=answer:v:i1+i3;svaraðir=answer:v:i2;svaruðum=an'+
+        'swer:v:i4;svaruðuð=answer:v:i5;svaruðu=answer:v:i6;svarað=answer:'+
+        'v:P;',
+    'svaraðu=answer:v:M2;heimarðu=visit:v:E2;heimaðirðu=visit:v:e2;heima=v'+
+        'isit:v:I+p1+p6;heimar=visit:v:p2+p3;heimum=visit:v:p4;heimið=visit:v'+
+        ':p5;heimaði=visit:v:i1+i3;heimaðir=visit:v:i2;heimuðum=visit:v:i4;',
+    'heimuðuð=visit:v:i5;heimuðu=visit:v:i6;heimað=visit:v:P;heimaðu=visi'+
+        't:v:M2;ferðastarðu=travel:v:E2;ferðastaðirðu=travel:v:e2;ferðas'+
+        'ta=travel:v:I+p1+p6;ferðastar=travel:v:p2+p3;ferðastum=travel:v:p4;',
+    'ferðastið=travel:v:p5;ferðastaði=travel:v:i1+i3;ferðastaðir=travel:'+
+        'v:i2;ferðastuðum=travel:v:i4;ferðastuðuð=travel:v:i5;ferðastuð'+
+        'u=travel:v:i6;ferðastað=travel:v:P;ferðastaðu=travel:v:M2;labbaar'+
+        'ðu=walk:v:E2;',
+    'labbaaðirðu=walk:v:e2;labbaa=walk:v:I+p1+p6;labbaar=walk:v:p2+p3;labbau'+
+        'm=walk:v:p4;labbaið=walk:v:p5;labbaaði=walk:v:i1+i3;labbaaðir=walk'+
+        ':v:i2;labbauðum=walk:v:i4;labbauðuð=walk:v:i5;labbauðu=walk:v:i6;'+
+        'labbaað=walk:v:P;',
+    'labbaaðu=walk:v:M2;kostarðu=cost:v:E2;kostaðirðu=cost:v:e2;kosta=cost'+
+        ':v:I+p1+p6;kostar=cost:v:p2+p3;kostum=cost:v:p4;kostið=cost:v:p5;kos'+
+        'taði=cost:v:i1+i3;kostaðir=cost:v:i2;kostuðum=cost:v:i4;kostuðuð'+
+        '=cost:v:i5;',
+    'kostuðu=cost:v:i6;kostað=cost:v:P;kostaðu=cost:v:M2;synarðu=swim:v:E2'+
+        ';synaðirðu=swim:v:e2;syna=swim:v:I+p1+p6;synar=swim:v:p2+p3;synum=s'+
+        'wim:v:p4;synið=swim:v:p5;synaði=swim:v:i1+i3;synaðir=swim:v:i2;syn'+
+        'uðum=swim:v:i4;',
+    'synuðuð=swim:v:i5;synuðu=swim:v:i6;synað=swim:v:P;synaðu=swim:v:M2;s'+
+        'yndirðu=swim:v:E2;syntirðu=swim:v:e2;synda=swim:v:I+p6;syndi=swim:v'+
+        ':p1;syndir=swim:v:p2+p3;syndum=swim:v:p4;syndið=swim:v:p5;synti=swim'+
+        ':v:i1+i3;',
+    'syntir=swim:v:i2;syntum=swim:v:i4;syntuð=swim:v:i5;syntu=swim:v:i6;synt='+
+        'swim:v:P;leikurðu=play:v:E2;lékstu=play:v:e2;leika=play:v:I+p6;leik'+
+        '=play:v:p1;leikur=play:v:p2+p3;leikum=play:v:p4;leikið=play:v:p5+P;l'+
+        'ék=play:v:i1+i3;',
+    'lékst=play:v:i2;lékum=play:v:i4;lékuð=play:v:i5;léku=play:v:i6;ertu='+
+        'be:v:E2:ser;varstu=be:v:e2:ser;vera=be:v:I:ser;er=be:v:p1:ser+p3:ser;'+
+        'ert=be:v:p2:ser;erum=be:v:p4:ser;eruð=be:v:p5:ser;eru=be:v:p6:ser;',
+    'var=be:v:i1:ser+i3:ser;varst=be:v:i2:ser;vorum=be:v:i4:ser;voruð=be:v:i5'+
+        ':ser;voru=be:v:i6:ser;verið=be:v:P:ser;hefurðu=have:v:E2:tener;haf'+
+        'ðirðu=have:v:e2:tener;hafa=have:v:I:tener+p6:tener;hef=have:v:p1:te'+
+        'ner;',
+    'hefur=have:v:p2:tener+p3:tener;höfum=have:v:p4:tener;hafið=have:v:p5:te'+
+        'ner;hafði=have:v:i1:tener+i3:tener;hafðir=have:v:i2:tener;höfðum='+
+        'have:v:i4:tener;höfðuð=have:v:i5:tener+i5;höfðu=have:v:i6:tener;',
+    'haft=have:v:P:tener;ferðu=go:v:E2:ir;fórstu=go:v:e2:ir;fara=go:v:I:ir+p'+
+        '6:ir;fer=go:v:p1:ir+p3:ir;ferð=go:v:p2:ir;förum=go:v:p4:ir;farið=g'+
+        'o:v:p5:ir+P:ir;fór=go:v:i1:ir+i3:ir;fórst=go:v:i2:ir;fórum=go:v:i4'+
+        ':ir;',
+    'fóruð=go:v:i5:ir;fóru=go:v:i6:ir;farðu=go:v:M2:ir;kemurðu=come:v:E2:'+
+        'venir;komstu=come:v:e2:venir;koma=come:v:I:venir+p6:venir;kem=come:v:'+
+        'p1:venir;kemur=come:v:p2:venir+p3:venir;komum=come:v:p4:venir+i4:veni'+
+        'r;',
+    'komið=come:v:p5:venir+P:venir;kom=come:v:i1:venir+i3:venir;komst=come:v:'+
+        'i2:venir;komuð=come:v:i5:venir;komu=come:v:i6:venir;komdu=come:v:M2:'+
+        'venir;sérðu=see:v:E2:ver;sástu=see:v:e2:ver;sjá=see:v:I:ver+p6:ve'+
+        'r;sé=see:v:p1:ver;',
+    'sérð=see:v:p2:ver;sér=see:v:p3:ver;sjáum=see:v:p4:ver;sjáið=see:v:p'+
+        '5:ver;sá=see:v:i1:ver+i3:ver;sást=see:v:i2:ver;sáum=see:v:i4:ver;s'+
+        'áuð=see:v:i5:ver;sáu=see:v:i6:ver;séð=see:v:P:ver;gerirðu=do:v:'+
+        'E2:hacer;',
+    'gerðirðu=do:v:e2:hacer;gera=do:v:I:hacer+p6:hacer;geri=do:v:p1:hacer;ge'+
+        'rir=do:v:p2:hacer+p3:hacer;gerum=do:v:p4:hacer;gerið=do:v:p5:hacer;g'+
+        'erði=do:v:i1:hacer+i3:hacer;gerðir=do:v:i2:hacer;gerðum=do:v:i4:ha'+
+        'cer;',
+    'gerðuð=do:v:i5:hacer;gerðu=do:v:i6:hacer+M2:hacer;gert=do:v:P:hacer;se'+
+        'girðu=say:v:E2:decir;sagðirðu=say:v:e2:decir;segja=say:v:I:decir+p'+
+        '6:decir;segi=say:v:p1:decir;segir=say:v:p2:decir+p3:decir;segjum=say:'+
+        'v:p4:decir;',
+    'segið=say:v:p5:decir;sagði=say:v:i1:decir+i3:decir;sagðir=say:v:i2:dec'+
+        'ir;sögðum=say:v:i4:decir;sögðuð=say:v:i5:decir;sögðu=say:v:i6:'+
+        'decir;sagt=say:v:P:decir;veistu=know:v:E2:saber;vissirðu=know:v:e2:s'+
+        'aber;',
+    'vita=know:v:I:saber+p6:saber;veit=know:v:p1:saber+p3:saber;veist=know:v:p'+
+        '2:saber;vitum=know:v:p4:saber;vitið=know:v:p5:saber;vissi=know:v:i1:'+
+        'saber+i3:saber;vissir=know:v:i2:saber;vissum=know:v:i4:saber;vissuð='+
+        'know:v:i5:saber;',
+    'vissu=know:v:i6:saber;vitað=know:v:P:saber;geturðu=can:v:E2:poder;gaztu'+
+        '=can:v:e2:poder;geta=can:v:I:poder+p6:poder;get=can:v:p1:poder;getur='+
+        'can:v:p2:poder+p3:poder;getum=can:v:p4:poder;getið=can:v:p5:poder;',
+    'gat=can:v:i1:poder+i3:poder;gazt=can:v:i2:poder;gátum=can:v:i4:poder;gá'+
+        'tuð=can:v:i5:poder;gátu=can:v:i6:poder;getað=can:v:P:poder;viltu=w'+
+        'ant:v:E2:querer;vildirðu=want:v:e2:querer;vilja=want:v:I:querer+p6:q'+
+        'uerer;',
+    'vil=want:v:p1:querer;vilt=want:v:p2:querer;vill=want:v:p3:querer;viljum=w'+
+        'ant:v:p4:querer;viljið=want:v:p5:querer;vildi=want:v:i1:querer+i3:qu'+
+        'erer;vildir=want:v:i2:querer;vildum=want:v:i4:querer;vilduð=want:v:i'+
+        '5:querer;',
+    'vildu=want:v:i6:querer;viljað=want:v:P:querer;áttu=have:v:E2:tener+i6:t'+
+        'ener;áttirðu=have:v:e2:tener;eiga=have:v:I:tener+p6:tener;á=have:v'+
+        ':p1:tener+p3:tener;átt=have:v:p2:tener+P:tener;eigum=have:v:p4:tener'+
+        ';',
+    'eigið=have:v:p5:tener;átti=have:v:i1:tener+i3:tener;áttir=have:v:i2:te'+
+        'ner;áttum=have:v:i4:tener;áttuð=have:v:i5:tener;þarftu=need:v:E2:'+
+        'necesitar;þurftirðu=need:v:e2:necesitar;þurfa=need:v:I:necesitar+p'+
+        '6:necesitar;',
+    'þarf=need:v:p1:necesitar+p3:necesitar;þarft=need:v:p2:necesitar;þurfum'+
+        '=need:v:p4:necesitar;þurfið=need:v:p5:necesitar;þurfti=need:v:i1:n'+
+        'ecesitar+i3:necesitar;þurftir=need:v:i2:necesitar;þurftum=need:v:i4'+
+        ':necesitar;',
+    'þurftuð=need:v:i5:necesitar;þurftu=need:v:i6:necesitar;þurft=need:v:P'+
+        ':necesitar;muntu=will:v:E2:ir;myndirðu=will:v:e2:ir;munu=will:v:I:ir'+
+        '+p6:ir;mun=will:v:p1:ir+p3:ir;munt=will:v:p2:ir;munum=will:v:p4:ir+p4'+
+        ';',
+    'munuð=will:v:p5:ir;myndi=will:v:i1:ir+i3:ir;myndir=will:v:i2:ir;myndum=w'+
+        'ill:v:i4:ir;mynduð=will:v:i5:ir;myndu=will:v:i6:ir;munað=will:v:P:i'+
+        'r+P;skaltu=shall:v:E2:deber;skyldirðu=shall:v:e2:deber;skulu=shall:v'+
+        ':I:deber+p6:deber;',
+    'skal=shall:v:p1:deber+p3:deber;skalt=shall:v:p2:deber;skulum=shall:v:p4:d'+
+        'eber;skuluð=shall:v:p5:deber;skyldi=shall:v:i1:deber+i3:deber;skyldi'+
+        'r=shall:v:i2:deber;skyldum=shall:v:i4:deber;skylduð=shall:v:i5:deber'+
+        ';',
+    'skyldu=shall:v:i6:deber;skuldað=shall:v:P:deber;drekkurðu=drink:v:E2;dr'+
+        'akkstu=drink:v:e2;drekka=drink:v:I+p6;drekk=drink:v:p1;drekkur=drink:'+
+        'v:p2+p3;drekkum=drink:v:p4;drekkið=drink:v:p5;drakk=drink:v:i1+i3;dr'+
+        'akkst=drink:v:i2;',
+    'drukkum=drink:v:i4;drukkuð=drink:v:i5;drukku=drink:v:i6;drukkið=drink:v'+
+        ':P;sefurðu=sleep:v:E2;svafstu=sleep:v:e2;sofa=sleep:v:I+p6;sef=sleep'+
+        ':v:p1;sefur=sleep:v:p2+p3;sofum=sleep:v:p4;sofið=sleep:v:p5+P;svaf=s'+
+        'leep:v:i1+i3;',
+    'svafst=sleep:v:i2;sváfum=sleep:v:i4;sváfuð=sleep:v:i5;sváfu=sleep:v:i'+
+        '6;lestu=read:v:E2;lastu=read:v:e2;lesa=read:v:I+p6;les=read:v:p1+p3;l'+
+        'est=read:v:p2;lesum=read:v:p4;lesið=read:v:p5+P;las=read:v:i1+i3;las'+
+        't=read:v:i2;',
+    'lásum=read:v:i4;lásuð=read:v:i5;lásu=read:v:i6;kaupirðu=buy:v:E2;key'+
+        'ptirðu=buy:v:e2;kaupa=buy:v:I+p6;kaupi=buy:v:p1;kaupir=buy:v:p2+p3;k'+
+        'aupum=buy:v:p4;kaupið=buy:v:p5;keypti=buy:v:i1+i3;keyptir=buy:v:i2;k'+
+        'eyptum=buy:v:i4;',
+    'keyptuð=buy:v:i5;keyptu=buy:v:i6;keypt=buy:v:P;selurðu=sell:v:E2;seldir'+
+        'ðu=sell:v:e2;selja=sell:v:I+p6;sel=sell:v:p1;selur=sell:v:p2+p3;selj'+
+        'um=sell:v:p4;seljið=sell:v:p5;seldi=sell:v:i1+i3;seldir=sell:v:i2;se'+
+        'ldum=sell:v:i4;',
+    'selduð=sell:v:i5;seldu=sell:v:i6;selt=sell:v:P;býrðu=live:v:E2;bjóstu'+
+        '=live:v:e2;búa=live:v:I+p6;bý=live:v:p1;býrð=live:v:p2;býr=live:'+
+        'v:p3;búum=live:v:p4;búið=live:v:p5+P;bjó=live:v:i1+i3;bjóst=live'+
+        ':v:i2;',
+    'bjuggum=live:v:i4;bjugguð=live:v:i5;bjuggu=live:v:i6;vinnurðu=work:v:E2'+
+        ';vannstu=work:v:e2;vinn=work:v:p1;vinnur=work:v:p2+p3;vann=work:v:i1+'+
+        'i3;vannst=work:v:i2;unnum=work:v:i4;unnuð=work:v:i5;unnu=work:v:i6;u'+
+        'nnið=work:v:P;',
+    'gengurðu=walk:v:E2;gekkstu=walk:v:e2;ganga=walk:v:I+p6;geng=walk:v:p1;ge'+
+        'ngur=walk:v:p2+p3;göngum=walk:v:p4;gangið=walk:v:p5;gekk=walk:v:i1+'+
+        'i3;gekkst=walk:v:i2;gengum=walk:v:i4;genguð=walk:v:i5;gengu=walk:v:i'+
+        '6;gengið=walk:v:P;',
+    'heitirðu=be_called:v:E2:llamar;hétstu=be_called:v:e2:llamar;heita=be_ca'+
+        'lled:v:I:llamar+p6:llamar;heiti=be_called:v:p1:llamar;heitir=be_calle'+
+        'd:v:p2:llamar+p3:llamar;heitum=be_called:v:p4:llamar;',
+    'heitið=be_called:v:p5:llamar+P:llamar;hét=be_called:v:i1:llamar+i3:llam'+
+        'ar;hétst=be_called:v:i2:llamar;hétum=be_called:v:i4:llamar;hétuð='+
+        'be_called:v:i5:llamar;hétu=be_called:v:i6:llamar;hringirðu=call:v:E'+
+        '2;',
+    'hringdirðu=call:v:e2;hringja=call:v:I+p6;hringi=call:v:p1;hringir=call:v'+
+        ':p2+p3;hringjum=call:v:p4;hringið=call:v:p5;hringdi=call:v:i1+i3;hri'+
+        'ngdir=call:v:i2;hringdum=call:v:i4;hringduð=call:v:i5;hringdu=call:v'+
+        ':i6;',
+    'hringt=call:v:P;flýgurðu=fly:v:E2;flaugstu=fly:v:e2;fljúga=fly:v:I+p6;'+
+        'flýg=fly:v:p1;flýgur=fly:v:p2+p3;fljúgum=fly:v:p4;fljúgið=fly:v:'+
+        'p5;flaug=fly:v:i1+i3;flaugst=fly:v:i2;flugum=fly:v:i4;fluguð=fly:v:i'+
+        '5;flugu=fly:v:i6;',
+    'flogið=fly:v:P;hleypurðu=run:v:E2;hljópstu=run:v:e2;hlaupa=run:v:I+p6;'+
+        'hleyp=run:v:p1;hleypur=run:v:p2+p3;hlaupum=run:v:p4;hlaupið=run:v:p5'+
+        '+P;hljóp=run:v:i1+i3;hljópst=run:v:i2;hlupum=run:v:i4;hlupuð=run:v'+
+        ':i5;hlupu=run:v:i6;',
+    'syngurðu=sing:v:E2;söngstu=sing:v:e2;syngja=sing:v:I+p6;syng=sing:v:p1;'+
+        'syngur=sing:v:p2+p3;syngjum=sing:v:p4;syngið=sing:v:p5;söng=sing:v:'+
+        'i1+i3;söngst=sing:v:i2;sungum=sing:v:i4;sunguð=sing:v:i5;sungu=sing'+
+        ':v:i6;',
+    'sungið=sing:v:P;siturðu=sit:v:E2;sastu=sit:v:e2;sitja=sit:v:I+p6;sit=si'+
+        't:v:p1;situr=sit:v:p2+p3;sitjum=sit:v:p4;sitjið=sit:v:p5;sat=sit:v:i'+
+        '1+i3;sast=sit:v:i2;sátum=sit:v:i4;sátuð=sit:v:i5;sátu=sit:v:i6;se'+
+        'tið=sit:v:P;',
+    'stendurðu=stand:v:E2;stóðstu=stand:v:e2;standa=stand:v:I+p6;stend=stan'+
+        'd:v:p1;stendur=stand:v:p2+p3;stöndum=stand:v:p4;standið=stand:v:p5;'+
+        'stóð=stand:v:i1+i3;stóðst=stand:v:i2;stóðum=stand:v:i4;stóðu'+
+        'ð=stand:v:i5;',
+    'stóðu=stand:v:i6;staðið=stand:v:P;skilurðu=understand:v:E2;skildirð'+
+        'u=understand:v:e2;skilja=understand:v:I+p6;skil=understand:v:p1;skilu'+
+        'r=understand:v:p2+p3;skiljum=understand:v:p4;skiljið=understand:v:p5'+
+        ';',
+    'skildi=understand:v:i1+i3;skildir=understand:v:i2;skildum=understand:v:i4'+
+        ';skilduð=understand:v:i5;skildu=understand:v:i6;skilið=understand:v'+
+        ':P;manstu=remember:v:E2;mundirðu=remember:v:e2;muna=remember:v:I+p6;',
+    'man=remember:v:p1+p3;manst=remember:v:p2;munið=remember:v:p5;mundi=remem'+
+        'ber:v:i1+i3;mundir=remember:v:i2;mundum=remember:v:i4;munduð=remembe'+
+        'r:v:i5;mundu=remember:v:i6;gleymirðu=forget:v:E2;gleymdirðu=forget:'+
+        'v:e2;',
+    'gleyma=forget:v:I+p6;gleymi=forget:v:p1;gleymir=forget:v:p2+p3;gleymum=fo'+
+        'rget:v:p4;gleymið=forget:v:p5;gleymdi=forget:v:i1+i3;gleymdir=forget'+
+        ':v:i2;gleymdum=forget:v:i4;gleymduð=forget:v:i5;gleymdu=forget:v:i6;'+
+        'gleymt=forget:v:P;',
+    'kennirðu=teach:v:E2;kenndirðu=teach:v:e2;kenna=teach:v:I+p6;kenni=teach'+
+        ':v:p1;kennir=teach:v:p2+p3;kennum=teach:v:p4;kennið=teach:v:p5;kennd'+
+        'i=teach:v:i1+i3;kenndir=teach:v:i2;kenndum=teach:v:i4;kennduð=teach:'+
+        'v:i5;',
+    'kenndu=teach:v:i6;kennt=teach:v:P;heyrirðu=hear:v:E2;heyrðirðu=hear:v:'+
+        'e2;heyra=hear:v:I+p6;heyri=hear:v:p1;heyrir=hear:v:p2+p3;heyrum=hear:'+
+        'v:p4;heyrið=hear:v:p5;heyrði=hear:v:i1+i3;heyrðir=hear:v:i2;heyrð'+
+        'um=hear:v:i4;',
+    'heyrðuð=hear:v:i5;heyrðu=hear:v:i6;heyrt=hear:v:P;horfirðu=watch:v:E2'+
+        ';horfðirðu=watch:v:e2;horfa=watch:v:I+p6;horfi=watch:v:p1;horfir=wa'+
+        'tch:v:p2+p3;horfum=watch:v:p4;horfið=watch:v:p5;horfði=watch:v:i1+i'+
+        '3;',
+    'horfðir=watch:v:i2;horfðum=watch:v:i4;horfðuð=watch:v:i5;horfðu=watc'+
+        'h:v:i6;horft=watch:v:P;tekurðu=take:v:E2;tókstu=take:v:e2;taka=take'+
+        ':v:I+p6;tek=take:v:p1;tekur=take:v:p2+p3;tökum=take:v:p4;takið=take'+
+        ':v:p5;',
+    'tók=take:v:i1+i3;tókst=take:v:i2;tókum=take:v:i4;tókuð=take:v:i5;tó'+
+        'ku=take:v:i6;tekið=take:v:P;gefurðu=give:v:E2:dar;gafstu=give:v:e2:'+
+        'dar;gefa=give:v:I:dar+p6:dar;gef=give:v:p1:dar;gefur=give:v:p2:dar+p3'+
+        ':dar;',
+    'gefum=give:v:p4:dar;gefið=give:v:p5:dar+P:dar;gaf=give:v:i1:dar+i3:dar;g'+
+        'afst=give:v:i2:dar;gáfum=give:v:i4:dar;gáfuð=give:v:i5:dar;gáfu=g'+
+        'ive:v:i6:dar;finnurðu=find:v:E2;fannstu=find:v:e2;finna=find:v:I+p6;'+
+        'finn=find:v:p1;',
+    'finnur=find:v:p2+p3;finnum=find:v:p4;finnið=find:v:p5;fann=find:v:i1+i3;'+
+        'fannst=find:v:i2;fundum=find:v:i4;funduð=find:v:i5;fundu=find:v:i6;f'+
+        'undið=find:v:P;heldurðu=hold:v:E2;hélstu=hold:v:e2;halda=hold:v:I+'+
+        'p6;held=hold:v:p1;',
+    'heldur=hold:v:p2+p3;höldum=hold:v:p4;haldið=hold:v:p5+P;hélt=hold:v:i1'+
+        '+i3;hélst=hold:v:i2;héldum=hold:v:i4;héldu=hold:v:i6;rignirðu=rai'+
+        'n:v:E2:llover;rigndirðu=rain:v:e2:llover;rigna=rain:v:I:llover+p6:ll'+
+        'over;',
+    'rigni=rain:v:p1:llover;rignir=rain:v:p2:llover+p3:llover;rignum=rain:v:p4'+
+        ':llover;rignið=rain:v:p5:llover;rigndi=rain:v:i1:llover+i3:llover;ri'+
+        'gndir=rain:v:i2:llover;rigndum=rain:v:i4:llover;rignduð=rain:v:i5:ll'+
+        'over;',
+    'rigndu=rain:v:i6:llover;rignt=rain:v:P:llover;þekkirðu=know:v:E2;þekkt'+
+        'irðu=know:v:e2;þekkja=know:v:I+p6;þekki=know:v:p1;þekkir=know:v:p'+
+        '2+p3;þekkjum=know:v:p4;þekkið=know:v:p5;þekkti=know:v:i1+i3;þekk'+
+        'tir=know:v:i2;',
+    'þekktum=know:v:i4;þekktuð=know:v:i5;þekktu=know:v:i6;þekkt=know:v:P;'+
+        'berðu=carry:v:E2;barstu=carry:v:e2;bera=carry:v:I+p6;ber=carry:v:p1+'+
+        'p3;berð=carry:v:p2;berum=carry:v:p4;berið=carry:v:p5;bar=carry:v:i1'+
+        '+i3;',
+    'barst=carry:v:i2;bárum=carry:v:i4;báruð=carry:v:i5;báru=carry:v:i6;bo'+
+        'rið=carry:v:P;færðu=get:v:E2;fékkstu=get:v:e2;fá=get:v:I+p6;fæ='+
+        'get:v:p1;færð=get:v:p2;fær=get:v:p3;fáum=get:v:p4;fáið=get:v:p5'+
+        ';fékk=get:v:i1+i3;',
+    'fékkst=get:v:i2;fengum=get:v:i4;fenguð=get:v:i5;fengu=get:v:i6;fengið='+
+        'get:v:P;læturðu=let:v:E2;léstu=let:v:e2;láta=let:v:I+p6;læt=let:'+
+        'v:p1;lætur=let:v:p2+p3;látum=let:v:p4;látið=let:v:p5+P;lét=let:v'+
+        ':i1+i3;',
+    'lést=let:v:i2;létum=let:v:i4;léttuð=let:v:i5;létu=let:v:i6;leggurðu'+
+        '=put:v:E2;lagðirðu=put:v:e2;leggja=put:v:I+p6;legg=put:v:p1;leggur='+
+        'put:v:p2+p3;leggjum=put:v:p4;leggið=put:v:p5;lagði=put:v:i1+i3;lag'+
+        'ðir=put:v:i2;',
+    'lögðum=put:v:i4;lögðuð=put:v:i5;lögðu=put:v:i6;lagt=put:v:P;hittir'+
+        'ðu=meet:v:E2+e2;hitta=meet:v:I+p6;hitti=meet:v:p1+i1+i3;hittir=meet:'+
+        'v:p2+p3+i2;hittum=meet:v:p4+i4;hittið=meet:v:p5;hittuð=meet:v:i5;hi'+
+        'ttu=meet:v:i6;',
+    'hitt=meet:v:P;býðurðu=offer:v:E2;bauðstu=offer:v:e2;bjóða=offer:v:I'+
+        '+p6;býð=offer:v:p1;býður=offer:v:p2+p3;bjóðum=offer:v:p4;bjóð'+
+        'ið=offer:v:p5;bauð=offer:v:i1+i3;bauðst=offer:v:i2;buðum=offer:v:'+
+        'i4;',
+    'buðuð=offer:v:i5;buðu=offer:v:i6;boðið=offer:v:P;ég=I:s:1;þú=you:'+
+        's:2;hann=he:s:3;hún=she:s:3;það=it:s:3;við=we:s:4;þið=you:s:5;'+
+        'þeir=they:s:6;þær=they:s:6;þau=they:s:6;tvo=two:u:1;þrjá=three:'+
+        'u:1;fjóra=four:u:1;',
+    'takk_fyrir=Thank_you:j;í_fyrra=last_year:r;í_kvöld=tonight:r;marga=man'+
+        'y:u;margt=many:u;mörg=many:u;mig=me:o;þig=you:o;hana=her:o;okkur=us'+
+        ':o;ykkur=you:o;þá=them:o;mér=me:o;þér=you:o;honum=him:o;henni=he'+
+        'r:o;því=it:o;',
+    'þeim=them:o;sig=himself:o;sér=himself:o;minn=my:x;mín=my:x;mitt=my:x;m'+
+        'ínir=my:x;mínar=my:x;þinn=your:x;þín=your:x;þitt=your:x;hans=hi'+
+        's:x;hennar=her:x;okkar=our:x;ykkar=your:x;þeirra=their:x;sinn=his:x;'+
+        'sín=his:x;',
+    'sitt=his:x;mínum=my:x;þínum=your:x;mína=my:x;þína=your:x;þessi=thi'+
+        's:d;þetta=this:d;þessir=these:d;þessar=these:d;þessum=this:d;þen'+
+        'nan=this:d;þessa=this:d;þessu=this:d;hinn=that:d;hin=that:d;hið=th'+
+        'at:d;hvað=what:w;',
+    'hver=who:w;hvar=where:w;hvenær=when:w;hvernig=how:w;hvaða=which:w;hvers'+
+        'u=how_many:w;af_hverju=why:w;hvers_vegna=why:w;hve=how_much:w;í=in:e'+
+        ';á=on:e;til=to:e;frá=from:e;með=with:e;af=of:e;um=about:e;við=at:'+
+        'e;fyrir=for:e;',
+    'eftir=after:e;undir=under:e;yfir=over:e;milli=between:e;án=without:e;hj'+
+        'á=at:e;gegnum=through:e;að=to:e;úr=from:e;inn_í=into:e;og=and:c;e'+
+        'n=but:c;eða=or:c;að=that:c;því_að=because:c;af_því_að=because'+
+        ':c;þegar=when:c;',
+    'ef=if:c;meðan=while:c;þótt=although:c;svo=so:c;nema=unless:c;núna=now'+
+        ':r;í_dag=today:r;á_morgun=tomorrow:r;í_gær=yesterday:r;alltaf=alw'+
+        'ays:r;oft=often:r;stundum=sometimes:r;aldrei=never:r;enn=still:r;aftu'+
+        'r=again:r;',
+    'líka=also:r;aðeins=only:r;hér=here:r;þar=there:r;saman=together:r;mj'+
+        'ög=very:r;of=too:r;vel=well:r;illa=badly:r;bráðum=soon:r;næstum=a'+
+        'lmost:r;kannski=maybe:r;heima=at_home:r;úti=outside:r;inni=inside:r;'+
+        'snemma=early:r;',
+    'seint=late:r;langt=far:r;nálægt=near:r;mikið=much:r;lítið=little:r;j'+
+        'á=Yes:j;nei=No:j;takk=Thank_you:j;þakka_þér_fyrir=Thank_you:j;ble'+
+        'ss=Goodbye:j;halló=Hello:j;góðan_daginn=Good_morning:j;gott_kvöld'+
+        '=Good_evening:j;',
+    'góða_nótt=Good_night:j;velkominn=Welcome:j;fyrirgefðu=Sorry:j;afsaki'+
+        'ð=Excuse_me:j;skál=Cheers:j;til_hamingju=Congratulations:j;vinsamle'+
+        'gast=please:j;hæ=Hi:j;ekki=not:g;ekkert=nothing:q;enginn=nobody:q;en'+
+        'ga=nobody:q;',
+    'neinn=anyone:q;nokkur=some:u;allir=all:u;allar=all:u;allt=all:u;hvert=eac'+
+        'h:u;margir=many:u;fáir=few:u;báðir=both:u;fleiri=several:u;einn=on'+
+        'e:u:1;ein=one:u:1;eitt=one:u:1;tveir=two:u:1;tvær=two:u:1;tvö=two:u'+
+        ':1;',
+    'þrír=three:u:1;þrjár=three:u:1;þrjú=three:u:1;fjórir=four:u:1;fjó'+
+        'rar=four:u:1;fjögur=four:u:1;fimm=five:u:1;sex=six:u:1;sjö=seven:u:'+
+        '1;átta=eight:u:1;níu=nine:u:1;tíu=ten:u:1;ellefu=eleven:u:1;tólf='+
+        'twelve:u:1;',
+    'tuttugu=twenty:u:1;þrjátíu=thirty:u:1;fjörutíu=forty:u:1;fimmtíu=fi'+
+        'fty:u:1;hundrað=one_hundred:u:1;þúsund=one_thousand:u:1;Ísland=Ic'+
+        'eland:z;Íslands=Iceland:z;Akureyrar=Akureyri:z;Reykjavíkur=Reykjavi'+
+        'k:z;',
+    'Noregs=Norway:z;Reykjavík=Reykjavik:z;Akureyri=Akureyri:z;Noregur=Norway'+
+        ':z;Svíþjóð=Sweden:z;Danmörk=Denmark:z;Finnland=Finland:z;England'+
+        '=England:z;Frakkland=France:z;Þýskaland=Germany:z;Spánn=Spain:z;Í'+
+        'talía=Italy:z;',
+    'Evrópa=Europe:z;Jón=John:z;Anna=Anna:z;Guðrún=Gudrun:z;Sigurður=Sigu'+
+        'rdur:z;Ólafur=Olaf:z;María=Mary:z;Katrín=Katrin:z;Björn=Bjorn:z;'+
+        'Íslendingur=Icelander:z;íslenska=Icelandic:z;enska=English:z;danska'+
+        '=Danish:z;',
+    'franska=French:z;þýska=German:z;spænska=Spanish:z;lítilli=small:a:sm;'+
+        'litla=small:a:sm;litlu=small:a:sm;litlum=small:a:sm;litlir=small:a:sm'+
+        ';litlar=small:a:sm;lítinn=small:a:sm;lítils=small:a:sm;'
+  );
+
   { Innu-aimun : mots et phrases (voir logic5zg) }
   MoeData: Array[0..13] Of String = (
     'mecatina=grande montagne (Mécatina);assi=terre, sol;maikan=loup;anapi=fi'+
@@ -2900,6 +4555,10 @@ Begin
   Else If W = 'athens' Then ProperFr := 'Athènes'
   Else If W = 'cairo' Then ProperFr := 'Le Caire'
   Else If W = 'rome' Then ProperFr := 'Rome'
+  Else If W = 'iceland' Then ProperFr := 'Islande'
+  Else If W = 'reykjavik' Then ProperFr := 'Reykjavik'
+  Else If W = 'malta' Then ProperFr := 'Malte'
+  Else If W = 'valletta' Then ProperFr := 'La Valette'
   Else If W = 'wales' Then ProperFr := 'Pays de Galles'
   Else If W = 'cardiff' Then ProperFr := 'Cardiff'
   Else If W = 'swansea' Then ProperFr := 'Swansea'
@@ -2959,8 +4618,8 @@ Begin
          'australia') Or
      (W = 'ireland') Or (W = 'scotland') Or (W = 'sweden') Or (W = 'norway') Or
          (W = 'poland') Or
-     (W = 'greece') Or (W = 'gaul') Or (W = 'britain') Or (W = 'turkey') Or (W =
-         'egypt') Or (W = 'algeria') Or (W = 'tunisia') Then
+     (W = 'greece') Or (W = 'iceland') Or (W = 'gaul') Or (W = 'britain') Or (W
+         = 'turkey') Or (W = 'egypt') Or (W = 'algeria') Or (W = 'tunisia') Then
     CountryKind := 'f'
   Else If (W = 'canada') Or (W = 'portugal') Or (W = 'japan') Or (W = 'brazil')
       Or (W = 'mexico') Or
@@ -3004,7 +4663,8 @@ Begin
                     'chinese') Or
                 (W = 'japanese') Or (W = 'russian') Or (W = 'portuguese') Or (W
                     = 'arabic') Or (W = 'swedish') Or (W = 'danish') Or (W =
-                    'welsh') Or (W = 'afrikaans');
+                    'welsh') Or (W = 'afrikaans') Or (W = 'maltese') Or (W =
+                    'icelandic');
 End;
 
 { ------------------------------------------------------------------ }
@@ -3296,7 +4956,7 @@ Function IsLanguage(Const W: String): Boolean;
 Begin
   IsLanguage := InList(W,
       'english french german spanish italian chinese japanese russian portugue'+
-      'se arabic swedish danish welsh afrikaans');
+      'se arabic swedish danish welsh afrikaans maltese icelandic');
 End;
 
 Function IsProfession(Const W: String): Boolean;
@@ -4226,7 +5886,7 @@ Begin
       If (W = 'in') And IsCalendar(Tk[K].W) And Not InList(Tk[K].W,
           'monday tuesday wednesday thursday friday saturday sunday english fr'+
           'ench german spanish italian chinese japanese russian portuguese ara'+
-          'bic swedish danish welsh afrikaans') Then
+          'bic swedish danish welsh afrikaans maltese icelandic') Then
       Begin
         TranslatePP := 'en ' + Lex[Tk[K].N].Fr;
         I := K + 1;
@@ -6463,7 +8123,7 @@ Begin
        Not InList(Tk[K].W,
            'monday tuesday wednesday thursday friday saturday sunday english f'+
            'rench german spanish italian chinese japanese russian portuguese a'+
-           'rabic swedish danish welsh afrikaans') Then
+           'rabic swedish danish welsh afrikaans maltese icelandic') Then
     Begin
       TranslatePPDe := 'im ' + Lex[Tk[K].N].De;
       I := K + 1;
@@ -27849,6 +29509,2111 @@ Begin
 End;
 
 { ------------------------------------------------------------------ }
+{ ANCIEN FRANCAIS (roman) -> FRANCAIS MODERNE                         }
+{ ------------------------------------------------------------------ }
+{ Les deux langues sont proches : il s'agit d'une modernisation mot a   }
+{ mot (orthographe, formes verbales, articles, contractions), avec le    }
+{ systeme a deux cas des noms (li rois = le roi, li roi = les rois), les }
+{ accords des adjectifs et des demonstratifs d'apres le nom voisin, et   }
+{ l'ajout de "pas" apres "ne". Le vocabulaire integre est limite.       }
+{ Les formes inconnues sont conservees telles quelles.                  }
+
+Type
+  TFro = Record
+    Key: String[24];
+    M1, M2: String[28];
+    Cat: String[3];
+  End;
+
+  TFroTok = Record
+    W, Orig: String[34];
+    Cap, Punct: Boolean;
+    Kind: Char; { N nom, A adjectif, X mot fixe, V verbe, Z nom propre, L li, D
+        demonstratif, P ponctuation, E elision }
+    Idx: Integer;
+    Plu: Boolean;
+    Gen: Char;
+    HasS: Boolean;
+    Fem: Boolean;
+    Elide: Boolean;
+    FixSg: Boolean;
+    Out: String[40];
+  End;
+
+Var
+  FroLex: Array[1..1100] Of TFro;
+  FroCount: Integer;
+  SourceFro: Boolean;
+  OFT: Array[0..160] Of TFroTok;
+  OFN: Integer;
+
+Procedure LoadOldFrench;
+Var
+  I: Integer;
+  Line, Item, Key, Mod1: String;
+Begin
+  FroCount := 0;
+  For I := 0 To High(FroData) Do
+  Begin
+    Line := FroData[I];
+    While Line <> '' Do
+    Begin
+      Item := CopyUntil(Line, ';');
+      If (Item <> '') And (FroCount < 1100) Then
+      Begin
+        Key := CopyUntil(Item, '=');
+        Mod1 := CopyUntil(Item, ':');
+        Inc(FroCount);
+        FillChar(FroLex[FroCount], SizeOf(TFro), 0);
+        FroLex[FroCount].Key := FrLower(Key);
+        FroLex[FroCount].M1 := CopyUntil(Mod1, '/');
+        FroLex[FroCount].M2 := Mod1;
+        FroLex[FroCount].Cat := Item;
+      End;
+    End;
+  End;
+End;
+
+{ Premiere entree dont la forme est W et dont la categorie est dans Cats
+  (liste de categories separees par des virgules). }
+Function FroFind(Const W, Cats: String): Integer;
+Var
+  I: Integer;
+Begin
+  FroFind := 0;
+  For I := 1 To FroCount Do
+    If (FroLex[I].Key = W) And (Pos(',' + FroLex[I].Cat + ',', ',' + Cats + ',')
+        > 0) Then
+    Begin
+      FroFind := I;
+      Exit;
+    End;
+End;
+
+{ Nom : forme exacte, ou avec un -s / -z / -x final (nominatif singulier ou
+  pluriel oblique), ou -aus / -eus pour -al / -el. }
+Function FroFindNoun(Const W: String; Var HasS: Boolean): Integer;
+Var
+  I, L: Integer;
+Begin
+  HasS := False;
+  I := FroFind(W, 'nm,nf,ns');
+  If I > 0 Then
+  Begin
+    FroFindNoun := I;
+    Exit;
+  End;
+  L := Length(W);
+  If (L > 2) And ((W[L] = 's') Or (W[L] = 'z') Or (W[L] = 'x')) Then
+  Begin
+    I := FroFind(Copy(W, 1, L - 1), 'nm,nf,ns');
+    If I > 0 Then
+    Begin
+      HasS := True;
+      FroFindNoun := I;
+      Exit;
+    End;
+    If (L > 3) And (Copy(W, L - 2, 3) = 'aus') Then I := FroFind(Copy(W, 1, L -
+        3) + 'al', 'nm,nf');
+    If (I = 0) And (L > 3) And (Copy(W, L - 2, 3) = 'eus') Then I :=
+        FroFind(Copy(W, 1, L - 3) + 'el', 'nm,nf');
+    If (I = 0) And (L > 3) And (Copy(W, L - 2, 3) = 'ius') Then I :=
+        FroFind(Copy(W, 1, L - 3) + 'il', 'nm,nf');
+    If I > 0 Then
+    Begin
+      HasS := True;
+      FroFindNoun := I;
+      Exit;
+    End;
+  End;
+  FroFindNoun := 0;
+End;
+
+Function FroFindAdj(Const W: String; Var HasS: Boolean; Var IsFem: Boolean):
+    Integer;
+Var
+  I, L: Integer;
+Begin
+  HasS := False;
+  IsFem := False;
+  I := FroFind(W, 'a');
+  If I > 0 Then
+  Begin
+    FroFindAdj := I;
+    Exit;
+  End;
+  I := FroFind(W, 'af');
+  If I > 0 Then
+  Begin
+    IsFem := True;
+    FroFindAdj := I;
+    Exit;
+  End;
+  L := Length(W);
+  If (L > 2) And ((W[L] = 's') Or (W[L] = 'z') Or (W[L] = 'x')) Then
+  Begin
+    I := FroFind(Copy(W, 1, L - 1), 'a');
+    If I > 0 Then
+    Begin
+      HasS := True;
+      FroFindAdj := I;
+      Exit;
+    End;
+    I := FroFind(Copy(W, 1, L - 1), 'af');
+    If I > 0 Then
+    Begin
+      HasS := True;
+      IsFem := True;
+      FroFindAdj := I;
+      Exit;
+    End;
+  End;
+  FroFindAdj := 0;
+End;
+
+{ ------------------------------------------------------------------ }
+{ MALTAIS -> ANGLAIS : lexique de formes, jetons et etiquetage        }
+{ ------------------------------------------------------------------ }
+{ Le lexique contient des FORMES de surface (les conjugaisons du maltais  }
+{ passent par des racines et des voyelles interieures) engendrees a la    }
+{ construction : le programme ne fait que chercher la forme. Les jetons   }
+{ sont ensuite ceux de l'espagnol (ST), comme pour les autres langues.    }
+
+Type
+  TMt = Record
+    F1: String[26];
+    En: String[26];
+    Pos: Char;
+    Plu: Boolean;
+    Tns, Tns2: Char;
+    Slot, Slot2: Integer;
+    Num: Boolean;
+    SpIdx, SpIdx2: Integer;
+  End;
+
+Var
+  MtLex: Array[1..1700] Of TMt;
+  MtCount: Integer;
+  SourceMt: Boolean;
+
+{ minuscules, y compris les lettres maltaises (c point, g point, h barre, z
+  point) }
+Function MtLower(Const S: String): String;
+Var
+  R: String;
+  I: Integer;
+Begin
+  R := FrLower(S);
+  I := 1;
+  While I < Length(R) Do
+  Begin
+    If (R[I] = #$C4) And (R[I + 1] >= #$80) And (R[I + 1] <= #$BF) And (Not
+        Odd(Ord(R[I + 1]))) Then
+    Begin
+      R[I + 1] := Chr(Ord(R[I + 1]) + 1);
+      Inc(I);
+    End
+    Else If (R[I] = #$C5) And (R[I + 1] = #$BB) Then
+    Begin
+      R[I + 1] := #$BC;
+      Inc(I);
+    End;
+    Inc(I);
+  End;
+  MtLower := R;
+End;
+
+Procedure MtParseCode(Const Code: String; Var T: Char; Var Slot: Integer; Var
+    Key: String);
+Begin
+  T := ' ';
+  Slot := 0;
+  Key := '';
+  If Length(Code) >= 2 Then
+  Begin
+    T := Code[1];
+    Slot := Ord(Code[2]) - Ord('0');
+    If (Length(Code) > 3) And (Code[3] = ':') Then Key := Copy(Code, 4, 12);
+  End;
+End;
+
+Procedure LoadMaltese;
+Var
+  I: Integer;
+  Line, Item, Key, En, Pos1, Code, Alt1, Alt2, K1, K2: String;
+Begin
+  MtCount := 0;
+  For I := 0 To High(MtData) Do
+  Begin
+    Line := MtData[I];
+    While Line <> '' Do
+    Begin
+      Item := CopyUntil(Line, ';');
+      If (Item <> '') And (MtCount < 1700) Then
+      Begin
+        Key := CopyUntil(Item, '=');
+        En := CopyUntil(Item, ':');
+        Pos1 := CopyUntil(Item, ':');
+        Code := Item;
+        Inc(MtCount);
+        FillChar(MtLex[MtCount], SizeOf(TMt), 0);
+        MtLex[MtCount].F1 := ReplaceChar(Key, '_', ' ');
+        MtLex[MtCount].En := ReplaceChar(En, '_', ' ');
+        MtLex[MtCount].Pos := Pos1[1];
+        If Pos1[1] = 'v' Then
+        Begin
+          Alt1 := CopyUntil(Code, '+');
+          Alt2 := Code;
+          MtParseCode(Alt1, MtLex[MtCount].Tns, MtLex[MtCount].Slot, K1);
+          If Alt2 <> '' Then MtParseCode(Alt2, MtLex[MtCount].Tns2,
+              MtLex[MtCount].Slot2, K2) Else K2 := K1;
+          If K1 <> '' Then MtLex[MtCount].SpIdx := AlSpIndex(K1,
+              MtLex[MtCount].En)
+          Else MtLex[MtCount].SpIdx := AlSpIndex('mt:' + MtLex[MtCount].En,
+              MtLex[MtCount].En);
+          MtLex[MtCount].SpIdx2 := MtLex[MtCount].SpIdx;
+        End
+        Else If Pos1[1] = 'n' Then MtLex[MtCount].Plu := Code = 'p'
+        Else If Pos1[1] = 'a' Then MtLex[MtCount].Plu := Code = 'p'
+        Else If (Pos1[1] = 's') Then MtLex[MtCount].Slot := Ord(Code[1]) -
+            Ord('0')
+        Else If (Pos1[1] = 'u') Then MtLex[MtCount].Num := Code = '1';
+      End;
+    End;
+  End;
+End;
+
+{ premiere entree de forme W dont la categorie est dans Kinds }
+Function MtFind(Const W, Kinds: String): Integer;
+Var
+  I: Integer;
+Begin
+  MtFind := 0;
+  For I := 1 To MtCount Do
+    If (MtLex[I].F1 = W) And (Pos(MtLex[I].Pos, Kinds) > 0) Then
+    Begin
+      MtFind := I;
+      Exit;
+    End;
+End;
+
+Function MtIsArticle(Const W: String): Boolean;
+Begin
+  MtIsArticle := InList(W, 'il l id ir it is iz ix in ic');
+End;
+
+{ contractions preposition + article : fil-, mill-, bit-... }
+Function MtSplitContraction(Const W: String; Var Prep, Art: String): Boolean;
+Var
+  P, A: String;
+  L: Integer;
+Begin
+  MtSplitContraction := False;
+  Prep := '';
+  Art := '';
+  L := Length(W);
+  If L < 3 Then Exit;
+  If InList(W, 'fil fit fid fir fis fix fiz fin fic') Then
+  Begin
+    Prep := 'fi';
+    Art := Copy(W, 2, 3);
+  End
+  Else If InList(W, 'mill mit mid mir mis mix miz') Then
+  Begin
+    Prep := 'minn';
+    Art := Copy(W, 2, 3);
+  End
+  Else If InList(W, 'bil bit bid bir bis bix biz') Then
+  Begin
+    Prep := 'bi';
+    Art := Copy(W, 2, 3);
+  End
+  Else If InList(W, 'tal tat tad tar tas tax taz') Then
+  Begin
+    Prep := 'ta';
+    Art := Copy(W, 2, 3);
+  End
+  Else If InList(W, 'lill lit lid lir lis lix') Then
+  Begin
+    Prep := 'lil';
+    Art := Copy(W, 2, 3);
+  End
+  Else If InList(W, 'mal mat mad mar mas max') Then
+  Begin
+    Prep := 'ma''';
+    Art := Copy(W, 2, 3);
+  End
+  Else If W = 'sal' Then
+  Begin
+    Prep := 'sa';
+    Art := 'il';
+  End
+  Else If W = 'għall' Then
+  Begin
+    Prep := 'għal';
+    Art := 'il';
+  End
+  Else Exit;
+  Art := 'i' + W[Length(W)];
+  MtSplitContraction := True;
+End;
+
+Procedure MtTokenize(Const S0: String);
+Var
+  S, Word1, Low, Prep, Art: String;
+  I, L: Integer;
+  C: Char;
+  Cap, Hyph: Boolean;
+Begin
+  SN := 0;
+  SEnd := #0;
+  S := '';
+  I := 1;
+  While I <= Length(S0) Do
+  Begin
+    If (S0[I] = #$C2) And (I < Length(S0)) And ((S0[I + 1] = #$AB) Or (S0[I + 1]
+        = #$BB) Or (S0[I + 1] = #$A0)) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 2);
+    End
+    Else If (S0[I] = #$E2) And (I + 2 <= Length(S0)) And (S0[I + 1] = #$80) And
+            ((S0[I + 2] = #$99) Or (S0[I + 2] = #$98)) Then
+    Begin
+      S := S + '''';
+      Inc(I, 3);
+    End
+    Else
+    Begin
+      S := S + S0[I];
+      Inc(I);
+    End;
+  End;
+  L := Length(S);
+  I := 1;
+  While I <= L Do
+  Begin
+    C := S[I];
+    If FrWordByte(C) Then
+    Begin
+      Word1 := '';
+      While (I <= L) And FrWordByte(S[I]) Do
+      Begin
+        Word1 := Word1 + S[I];
+        Inc(I);
+      End;
+      { apostrophe finale conservee : ma', ta', x' }
+      If (I <= L) And (S[I] = '''') And ((I = L) Or (Not FrWordByte(S[I + 1]))
+          Or (MtLower(Word1) = 'x') Or
+         (MtLower(Word1) = 'ta') Or (MtLower(Word1) = 'ma') Or (MtLower(Word1) =
+             'f') Or (MtLower(Word1) = 'b')) Then
+      Begin
+        Word1 := Word1 + '''';
+        Inc(I);
+      End;
+      Hyph := (I < L) And (S[I] = '-') And FrWordByte(S[I + 1]);
+      Cap := (Word1 <> '') And (((Word1[1] >= 'A') And (Word1[1] <= 'Z')) Or
+             ((Word1[1] = #$C4) Or (Word1[1] = #$C5)));
+      Low := MtLower(Word1);
+      { preposition + article : on les separe }
+      If Hyph And MtSplitContraction(Low, Prep, Art) Then
+      Begin
+        SPush(Prep, Prep, False, False, False);
+        SPush(Art, Art, False, False, False);
+        ST[SN].Cl := 'h';
+      End
+      Else
+      Begin
+        SPush(Low, Word1, Cap, False, False);
+        If Hyph Then ST[SN].Cl := 'h';
+      End;
+    End
+    Else
+    Begin
+      If (C = '.') Or (C = '?') Or (C = '!') Then
+      Begin
+        If SEnd = #0 Then SEnd := C;
+        If C = '?' Then SEnd := '?';
+      End
+      Else If (C = ',') Or (C = ';') Or (C = ':') Then
+      Begin
+        SPush(',', ',', False, True, False);
+        ST[SN].Cat := ',';
+      End;
+      Inc(I);
+    End;
+  End;
+End;
+
+Procedure MtMergeMultiword;
+Var
+  I, K, Len, L: Integer;
+  Key: String;
+  Bad, Found: Boolean;
+Begin
+  I := 1;
+  While I < SN Do
+  Begin
+    Found := False;
+    For Len := 3 Downto 2 Do
+      If (Not Found) And (I + Len - 1 <= SN) Then
+      Begin
+        Key := '';
+        Bad := False;
+        For K := I To I + Len - 1 Do
+        Begin
+          If ST[K].Punct Then Bad := True;
+          Key := Join(Key, ST[K].W);
+        End;
+        If Not Bad Then
+        Begin
+          L := MtFind(Key, 'rpcjw');
+          If L > 0 Then
+          Begin
+            Found := True;
+            ST[I].W := Key;
+            ST[I].Orig := Key;
+            For K := I + 1 To SN - Len + 1 Do
+              ST[K] := ST[K + Len - 1];
+            Dec(SN, Len - 1);
+          End;
+        End;
+      End;
+    Inc(I);
+  End;
+End;
+
+Function MtNumberEn(Const W: String): String;
+Var
+  I: Integer;
+Begin
+  MtNumberEn := '';
+  I := MtFind(W, 'u');
+  If (I > 0) And MtLex[I].Num Then MtNumberEn := MtLex[I].En;
+End;
+
+Procedure MtPickCat(I: Integer);
+Var
+  W: String;
+  Prev: Char;
+  Idx: Integer;
+Begin
+  W := ST[I].W;
+  If I > 1 Then Prev := ST[I - 1].Cat Else Prev := '.';
+  If ST[I].Punct Then
+  Begin
+    ST[I].Cat := ',';
+    Exit;
+  End;
+  If IsDigitsOnly(W) Then
+  Begin
+    ST[I].Cat := 'U';
+    ST[I].En := W;
+    Exit;
+  End;
+  { article defini : il-, l-, it-, id-... colle au mot suivant }
+  If MtIsArticle(W) And ((ST[I].Cl = 'h') Or (W = 'il') Or (W = 'l')) Then
+  Begin
+    ST[I].Cat := 'D';
+    ST[I].Kind := 'd';
+    Exit;
+  End;
+  { negation verbale : ma ... -x }
+  If (W = 'ma') Or (W = 'mhux') Then
+  Begin
+    ST[I].Cat := 'G';
+    Exit;
+  End;
+  If (W = 'qed') Or (W = 'se') Then
+  Begin
+    ST[I].Cat := 'y';
+    If W = 'qed' Then ST[I].Kind := 'p' Else ST[I].Kind := 'f';
+    Exit;
+  End;
+  If (W = 'lil') Then
+  Begin
+    ST[I].Cat := 'E';
+    ST[I].En := 'to';
+    ST[I].W := 'a';
+    Exit;
+  End;
+  { mot lexical, avec -x de la negation retire }
+  Idx := MtFind(W, 'wspgqdtcrjuvnazx');
+  If (Idx = 0) And (Prev = 'G') And (Length(W) > 2) And (W[Length(W)] = 'x')
+      Then
+  Begin
+    Idx := MtFind(Copy(W, 1, Length(W) - 1), 'v');
+    If Idx > 0 Then ST[I].Cl := 'x';
+  End;
+  If Idx = 0 Then
+  Begin
+    If ST[I].Cap Then ST[I].Cat := 'Z' Else ST[I].Cat := 'Z';
+    Exit;
+  End;
+  ST[I].En := MtLex[Idx].En;
+  Case MtLex[Idx].Pos Of
+    'w':
+    Begin
+      ST[I].Cat := 'W';
+      If W = 'fejn' Then ST[I].W := 'donde'
+      Else If W = 'min' Then ST[I].W := 'quien'
+      Else If W = 'meta' Then ST[I].W := 'cuando'
+      Else If (W = 'kif') Then ST[I].W := 'como'
+      Else If W = 'liema' Then ST[I].W := 'cual'
+      Else If W = 'kemm' Then ST[I].W := 'cuantos'
+      Else If (W = 'għaliex') Or (W = 'ghaliex') Then ST[I].W := 'por que'
+      Else ST[I].W := 'que';
+    End;
+    's':
+    Begin
+      ST[I].Cat := 'P';
+      ST[I].Slot := MtLex[Idx].Slot;
+    End;
+    'p':
+    Begin
+      ST[I].Cat := 'E';
+      If (W = 'fi') Or (W = 'f''') Or (W = 'fuq') Or (W = 'b''') Or (W = 'bi')
+          Then ST[I].W := 'en'
+      Else If (W = 'ta''') Or (W = 'ta') Then ST[I].W := 'de'
+      Else If W = 'minn' Then ST[I].W := 'desde'
+      Else If W = 'għal' Then ST[I].W := 'para'
+      Else If W = 'mingħajr' Then ST[I].W := 'sin';
+    End;
+    'g': ST[I].Cat := 'G';
+    'q':
+    Begin
+      ST[I].Cat := 'g';
+    End;
+    'd':
+    Begin
+      ST[I].Cat := 'T';
+      ST[I].Plu := (W = 'dawn') Or (W = 'dawk');
+      If ST[I].Plu Then
+      Begin
+        If (W = 'dawn') Then ST[I].En := 'these' Else ST[I].En := 'those';
+      End
+      Else If (W = 'dan') Or (W = 'din') Then ST[I].En := 'this' Else ST[I].En
+          := 'that';
+    End;
+    'x':
+    Begin
+      ST[I].Cat := 'S';
+      ST[I].Kind := 'x';
+    End;
+    'c': ST[I].Cat := 'C';
+    'r': ST[I].Cat := 'R';
+    'j': ST[I].Cat := 'J';
+    'u':
+    Begin
+      If MtLex[Idx].Num Then ST[I].Cat := 'U' Else ST[I].Cat := 'Q';
+      If (ST[I].Cat = 'Q') Then ST[I].Plu := InList(W, 'kollha ħafna ftit');
+    End;
+    't':
+    Begin
+      ST[I].Cat := 'Z';
+      ST[I].Orig := ST[I].En;
+    End;
+    'z':
+    Begin
+      ST[I].Cat := 'Z';
+      ST[I].Orig := ST[I].En;
+      ST[I].Cap := True;
+    End;
+    'v':
+    Begin
+      ST[I].Cat := 'V';
+      ST[I].Idx := MtLex[Idx].SpIdx;
+      ST[I].Tns := MtLex[Idx].Tns;
+      ST[I].Slot := MtLex[Idx].Slot;
+      ST[I].Kind := ' ';
+      If MtLex[Idx].Tns2 <> ' ' Then
+      Begin
+        ST[I].Cl := '';
+        If MtLex[Idx].Slot2 > 0 Then ST[I].Kind := Chr(Ord('0') +
+            MtLex[Idx].Slot2);
+      End;
+    End;
+    'n':
+    Begin
+      ST[I].Cat := 'N';
+      ST[I].Plu := MtLex[Idx].Plu;
+    End;
+    'a':
+    Begin
+      ST[I].Cat := 'A';
+      ST[I].Plu := MtLex[Idx].Plu;
+    End;
+  End;
+End;
+
+{ ------------------------------------------------------------------ }
+{ MALTAIS -> ANGLAIS : ordre des mots et phrase complete              }
+{ ------------------------------------------------------------------ }
+
+Function MtVerbKey(I: Integer): String;
+Begin
+  If (I >= 1) And (I <= SN) And (ST[I].Cat = 'V') And (ST[I].Idx > 0) Then
+    MtVerbKey := SpPlain(SpLex[ST[I].Idx].Es)
+  Else
+    MtVerbKey := '';
+End;
+
+Procedure MtInsert(Pos1: Integer);
+Var
+  K: Integer;
+Begin
+  If SN >= MaxTokens Then Exit;
+  For K := SN Downto Pos1 Do
+    ST[K + 1] := ST[K];
+  Inc(SN);
+  FillChar(ST[Pos1], SizeOf(TSTok), 0);
+  ST[Pos1].Tns := ' ';
+End;
+
+{ Debut-fin du groupe nominal qui commence en K : renvoie sa fin, ou 0 }
+Function MtNPEnd(K: Integer): Integer;
+Var
+  J: Integer;
+  Def: Boolean;
+Begin
+  MtNPEnd := 0;
+  If (K < 1) Or (K > SN) Then Exit;
+  If ST[K].Cat = 'P' Then
+  Begin
+    MtNPEnd := K;
+    Exit;
+  End;
+  J := K;
+  While (J <= SN) And (ST[J].Cat In ['D', 'S', 'T', 'Q', 'U']) Do Inc(J);
+  Def := (K <= SN) And (ST[K].Cat In ['D', 'S', 'T']);
+  If (J <= SN) And (ST[J].Cat = 'N') Then
+  Begin
+    Inc(J);
+    While (J <= SN) And (((ST[J].Cat = 'A') And (Not Def)) Or
+          ((ST[J].Cat = 'D') And (J < SN) And (ST[J + 1].Cat = 'A'))) Do
+    Begin
+      If ST[J].Cat = 'D' Then Inc(J);
+      Inc(J);
+    End;
+    MtNPEnd := J - 1;
+  End
+  Else If (J <= SN) And (ST[J].Cat = 'Z') Then
+  Begin
+    While (J < SN) And (ST[J + 1].Cat = 'Z') Do Inc(J);
+    MtNPEnd := J;
+  End;
+End;
+
+Procedure MtClassify;
+Var
+  I, J, K, E, Sl: Integer;
+  Key, Owner: String;
+  HasV, Done: Boolean;
+Begin
+  MtMergeMultiword;
+  For I := 1 To SN Do
+    MtPickCat(I);
+  { missieri, ommi, darha : nom + suffixe possessif }
+  I := 1;
+  While I <= SN Do
+  Begin
+    If (ST[I].Cat = 'Z') And ((Not ST[I].Cap) Or (I = 1)) And (SN < MaxTokens)
+        And (Length(ST[I].W) > 3) Then
+    Begin
+      Key := ST[I].W;
+      Done := False;
+      For K := 1 To 7 Do
+        If Not Done Then
+        Begin
+          Case K Of
+            1: Owner := 'hom';
+            2: Owner := 'kom';
+            3: Owner := 'ha';
+            4: Owner := 'na';
+            5: Owner := 'ek';
+            6: Owner := 'u';
+          Else
+            Owner := 'i';
+          End;
+          If EndsWith(Key, Owner) And (Length(Key) > Length(Owner) + 1) Then
+          Begin
+            J := MtFind(Copy(Key, 1, Length(Key) - Length(Owner)), 'n');
+            If J > 0 Then
+            Begin
+              Done := True;
+              ST[I].Cat := 'N';
+              ST[I].En := MtLex[J].En;
+              ST[I].Plu := MtLex[J].Plu;
+              MtInsert(I);
+              ST[I].Cat := 'S';
+              If Owner = 'i' Then ST[I].En := 'my'
+              Else If Owner = 'ek' Then ST[I].En := 'your'
+              Else If Owner = 'u' Then ST[I].En := 'his'
+              Else If Owner = 'ha' Then ST[I].En := 'her'
+              Else If Owner = 'na' Then ST[I].En := 'our'
+              Else If Owner = 'kom' Then ST[I].En := 'your'
+              Else ST[I].En := 'their';
+              Inc(I);
+            End;
+          End;
+        End;
+    End;
+    Inc(I);
+  End;
+  { jismi, jismek... : "mon nom" }
+  I := 1;
+  While I <= SN Do
+  Begin
+    If (ST[I].Orig = ST[I].En) And (ST[I].Cat = 'Z') And (Pos(' name', ' ' +
+        ST[I].En) > 0) And (SN < MaxTokens) Then
+    Begin
+      MtInsert(I + 1);
+      ST[I + 1].Cat := 'N';
+      ST[I + 1].En := 'name';
+      ST[I + 1].W := 'nome';
+      ST[I + 1].Orig := 'name';
+      ST[I].Cat := 'S';
+      If Copy(ST[I].En, 1, 2) = 'my' Then ST[I].En := 'my'
+      Else If Copy(ST[I].En, 1, 4) = 'your' Then ST[I].En := 'your'
+      Else If Copy(ST[I].En, 1, 3) = 'his' Then ST[I].En := 'his'
+      Else ST[I].En := 'her';
+      Inc(I);
+    End;
+    Inc(I);
+  End;
+  { l'article defini suit le nombre du nom suivant ; il disparait devant un
+    demonstratif ; un adjectif precede de l'article est epithete }
+  For I := 1 To SN - 1 Do
+    If ST[I].Cat = 'D' Then
+    Begin
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If ST[K].Cat = 'N' Then ST[I].Plu := ST[K].Plu;
+      If ST[I + 1].Cat = 'T' Then ST[I].Cat := ' ';
+      If ST[I + 1].Cat In ['R', 'V', 'E', 'J', 'C', 'Z', 'G'] Then
+        If ST[I + 1].Cat In ['R'] Then ST[I].Cat := ' ';
+    End;
+  { le demonstratif postpose passe devant le nom : il-ktieb dan }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'T') And (ST[I - 1].Cat = 'N') Then
+    Begin
+      ST[0] := ST[I];
+      ST[I] := ST[I - 1];
+      ST[I - 1] := ST[0];
+      If (I >= 3) And (ST[I - 2].Cat = 'D') Then ST[I - 2].Cat := ' ';
+    End;
+  { hemm + groupe nominal : il y a ; kien hemm : il y avait }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'R') And (ST[I].W = 'hemm') And (ST[I + 1].Cat In ['N', 'Q',
+        'U', 'D']) Then
+    Begin
+      ST[I].Cat := 'V';
+      ST[I].Idx := AlSpIndex('haber', 'have');
+      ST[I].W := 'hay';
+      ST[I].En := 'be';
+      ST[I].Tns := 'p';
+      ST[I].Slot := 3;
+      If (I > 1) And (ST[I - 1].Cat = 'V') And (MtVerbKey(I - 1) = 'ser') Then
+      Begin
+        ST[I].Tns := ST[I - 1].Tns;
+        ST[I - 1].Cat := ' ';
+      End;
+    End;
+  ARemoveConsumed;
+  { qed, sa, se + imparfait ; kien + imparfait (habitude passee) }
+  For I := 1 To SN - 1 Do
+    If ((ST[I].Cat = 'y') Or ((ST[I].Cat = 'E') And (ST[I].En = 'until') And
+        (ST[I].W = 'sa'))) And
+       (ST[I + 1].Cat = 'V') And (ST[I + 1].Tns = 'p') Then
+    Begin
+      If (ST[I].Kind = 'p') Then
+        ST[I].Cat := ' '
+      Else
+      Begin
+        ST[I + 1].Tns := 'f';
+        ST[I].Cat := ' ';
+      End;
+    End
+    Else If (ST[I].Cat = 'V') And (MtVerbKey(I) = 'ser') And (ST[I].Tns = 'i')
+        And (ST[I + 1].Cat = 'V') And
+            (ST[I + 1].Tns = 'p') Then
+    Begin
+      ST[I + 1].Tns := 'm';
+      ST[I].Cat := ' ';
+    End;
+  ARemoveConsumed;
+  { modaux : irrid, jista', jaf + imparfait = infinitif }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'V') And InList(MtVerbKey(I), 'querer poder saber') And
+        (ST[I + 1].Cat = 'V') And
+       (ST[I + 1].Tns In ['p', 'M']) Then
+      ST[I + 1].Tns := 'I';
+  { personnes ambigues (2e / 3e personne) : le pronom precedent tranche }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].Kind In ['1'..'6']) Then
+    Begin
+      Sl := ST[I].Slot;
+      If (I > 1) And (ST[I - 1].Cat = 'P') Then
+      Begin
+        If ST[I - 1].Slot = Ord(ST[I].Kind) - Ord('0') Then Sl := ST[I - 1].Slot
+        Else If ST[I - 1].Slot = ST[I].Slot Then Sl := ST[I].Slot;
+      End
+      Else If (I > 2) And (ST[I - 1].Cat = 'G') And (ST[I - 2].Cat = 'P') Then
+      Begin
+        If ST[I - 2].Slot = Ord(ST[I].Kind) - Ord('0') Then Sl := ST[I -
+            2].Slot;
+      End
+      Else If (I > 1) And (ST[I - 1].Cat In ['N', 'Z']) Then
+        Sl := 3;
+      ST[I].Slot := Sl;
+      ST[I].Kind := ' ';
+    End;
+  For I := 1 To SN Do
+    If ST[I].Cat = 'V' Then ST[I].Kind := ' ';
+  { possessif postpose : il-ktieb tiegħi = mon livre }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'S') And (ST[I].Kind = 'x') Then
+    Begin
+      J := I - 1;
+      While (J > 1) And (ST[J].Cat = 'A') Do Dec(J);
+      If ST[J].Cat = 'N' Then
+      Begin
+        ST[0] := ST[I];
+        ST[0].Kind := ' ';
+        For K := I Downto J + 1 Do
+          ST[K] := ST[K - 1];
+        ST[J] := ST[0];
+        If (J > 1) And (ST[J - 1].Cat = 'D') Then
+        Begin
+          ST[J - 1] := ST[J];
+          ST[J] := ST[J + 1];
+          ST[J + 1].Cat := ' ';
+          ST[J + 1].Plu := False;
+        End;
+      End
+      Else ST[I].Cat := 'S';
+    End;
+  ARemoveConsumed;
+  { dan il-ktieb : l'article disparait apres un demonstratif }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'T') And (ST[I + 1].Cat = 'D') Then ST[I + 1].Cat := ' ';
+  ARemoveConsumed;
+  { ħafna apres un adjectif : tres devant }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'R') And (ST[I].W = 'ħafna') And (ST[I - 1].Cat = 'A') Then
+    Begin
+      ST[I].En := 'very';
+      ST[0] := ST[I];
+      ST[I] := ST[I - 1];
+      ST[I - 1] := ST[0];
+    End;
+  { il-mara hija sabiħa : le pronom de 3e personne tient lieu de copule }
+  For I := 2 To SN - 1 Do
+    If (ST[I].Cat = 'P') And InList(ST[I].W, 'hu huwa hi hija huma') And (ST[I -
+        1].Cat In ['N', 'Z', 'D']) And
+       (ST[I + 1].Cat In ['A', 'N', 'D', 'Z']) Then
+    Begin
+      ST[I].Cat := 'V';
+      ST[I].Idx := AlSpIndex('ser', 'be');
+      ST[I].Tns := 'p';
+      ST[I].En := 'be';
+      If ST[I].W = 'huma' Then ST[I].Slot := 6 Else ST[I].Slot := 3;
+    End;
+  { min huwa dan ? : who is this ? }
+  For I := 1 To SN - 2 Do
+    If (ST[I].Cat = 'W') And (ST[I + 1].Cat = 'P') And InList(ST[I + 1].W,
+        'hu huwa hi hija') And
+       (ST[I + 2].Cat = 'T') And ((I + 2 = SN) Or Not (ST[I + 3].Cat In ['N',
+           'A'])) Then
+    Begin
+      ST[I + 1].Cat := 'V';
+      ST[I + 1].Idx := AlSpIndex('ser', 'be');
+      ST[I + 1].Tns := 'p';
+      ST[I + 1].En := 'be';
+      ST[I + 1].Slot := 3;
+      ST[I + 2].Cat := 'P';
+      ST[I + 2].Slot := 3;
+    End;
+  { fejn hu l-ktieb ? : le pronom hu / hi tient lieu de copule }
+  For I := 1 To SN - 2 Do
+    If (ST[I].Cat = 'W') And (ST[I + 1].Cat = 'P') And InList(ST[I + 1].W,
+        'hu huwa hi hija huma') And
+       (MtNPEnd(I + 2) > 0) Then
+    Begin
+      ST[I + 1].Cat := 'V';
+      ST[I + 1].Idx := AlSpIndex('ser', 'be');
+      ST[I + 1].Tns := 'p';
+      ST[I + 1].En := 'be';
+      If ST[I + 1].W = 'huma' Then ST[I + 1].Slot := 6 Else ST[I + 1].Slot := 3;
+    End;
+  { phrase sans verbe : jien student, il-ktieb kbir, il-ktieb fuq il-mejda }
+  HasV := False;
+  For I := 1 To SN Do
+    If ST[I].Cat = 'V' Then HasV := True;
+  If (Not HasV) And (SN >= 2) Then
+  Begin
+    Done := False;
+    I := 1;
+    While (I <= SN) And (ST[I].Cat In ['W', 'J', 'C', 'R', ',']) Do Inc(I);
+    E := 0;
+    If I <= SN Then E := MtNPEnd(I);
+    If (E > 0) And (E < SN) Then
+    Begin
+      { predicat : adjectif sans article, nom, nom propre ou groupe
+        prepositionnel }
+      K := E + 1;
+      If (ST[K].Cat = 'G') Then Inc(K);
+      If (K <= SN) And ((ST[K].Cat In ['A', 'N', 'Z', 'E', 'D', 'U', 'Q', 'T'])
+          Or
+         ((ST[K].Cat = 'R') And (K < SN) And (ST[K + 1].Cat = 'A'))) Then
+      Begin
+        MtInsert(K);
+        ST[K].Cat := 'V';
+        ST[K].Idx := AlSpIndex('ser', 'be');
+        ST[K].Tns := 'p';
+        ST[K].En := 'be';
+        If ST[I].Cat = 'P' Then ST[K].Slot := ST[I].Slot
+        Else If ST[E].Plu And (ST[E].Cat = 'N') Then ST[K].Slot := 6
+        Else ST[K].Slot := 3;
+        If (K > E + 1) And (ST[E + 1].Cat = 'G') Then
+        Begin
+          { mhux : la negation passe avant le verbe }
+          ST[0] := ST[K];
+          ST[K] := ST[K - 1];
+          ST[K - 1] := ST[0];
+        End;
+        Done := True;
+      End;
+    End;
+  End;
+  { le predicat nominal prend un article indefini : jien student }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'V') And (MtVerbKey(I) = 'ser') And (ST[I + 1].Cat = 'N')
+        And (Not ST[I + 1].Plu) And
+       (I > 1) Then
+    Begin
+      MtInsert(I + 1);
+      ST[I + 1].Cat := 'D';
+      ST[I + 1].Kind := 'i';
+      ST[I + 1].W := 'un';
+      Break;
+    End;
+  { kemm ghandek hbieb ? : le nom suit le mot interrogatif }
+  For I := 1 To SN - 2 Do
+    If (ST[I].Cat = 'W') And (ST[I].W = 'cuantos') And (ST[I + 1].Cat = 'V') And
+        (ST[I + 2].Cat = 'N') Then
+    Begin
+      ST[0] := ST[I + 2];
+      ST[0].Plu := True;
+      ST[I + 2] := ST[I + 1];
+      ST[I + 1] := ST[0];
+    End;
+  { x'jismek ? : mot interrogatif + groupe nominal sans verbe }
+  If (SN >= 2) And (ST[1].Cat = 'W') Then
+  Begin
+    HasV := False;
+    For I := 1 To SN Do
+      If ST[I].Cat = 'V' Then HasV := True;
+    If (Not HasV) And (MtNPEnd(2) = SN) Then
+    Begin
+      MtInsert(2);
+      ST[2].Cat := 'V';
+      ST[2].Idx := AlSpIndex('ser', 'be');
+      ST[2].Tns := 'p';
+      ST[2].En := 'be';
+      ST[2].Slot := 3;
+    End;
+  End;
+  { mouvement vers un lieu : marret l-iskola = elle est allee a l'ecole }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'V') And InList(MtVerbKey(I), 'ir venir') And (ST[I + 1].Cat
+        In ['D', 'Z']) And (SN < MaxTokens) Then
+    Begin
+      MtInsert(I + 1);
+      ST[I + 1].Cat := 'E';
+      ST[I + 1].W := 'a';
+      ST[I + 1].Orig := 'a';
+      ST[I + 1].En := 'to';
+      Break;
+    End;
+  { nom singulier sans determinant : article indefini }
+  I := 1;
+  While I <= SN Do
+  Begin
+    If (ST[I].Cat = 'N') And (Not ST[I].Plu) And (Not IsMassNoun(ST[I].En)) Then
+    Begin
+      K := I;
+      While (K > 1) And (ST[K - 1].Cat = 'A') Do Dec(K);
+      If (K = 1) Or Not (ST[K - 1].Cat In ['D', 'S', 'T', 'Q', 'U']) Then
+        Begin
+          MtInsert(K);
+          ST[K].Cat := 'D';
+          ST[K].Kind := 'i';
+          ST[K].W := 'un';
+          Inc(I);
+        End;
+    End;
+    Inc(I);
+  End;
+  { adjectifs sans article avant le nom : nom puis adjectifs }
+  { pronoms apres une preposition }
+  { possession : "ta'" + nom propre, nom + ta' }
+  { imperatif }
+  If (SN >= 1) And (ST[1].Cat = 'V') And (ST[1].Tns = 'M') Then ST[1].Slot := 2;
+  { lil + nom : "a" personnel }
+  Key := '';
+  ARemoveConsumed;
+End;
+
+Function MtTranslateSentence(Const Sentence: String): String;
+Var
+  Res: String;
+Begin
+  MtTokenize(Sentence);
+  If SN = 0 Then
+  Begin
+    MtTranslateSentence := '';
+    Exit;
+  End;
+  MtClassify;
+  If SN = 0 Then
+  Begin
+    MtTranslateSentence := '';
+    Exit;
+  End;
+  Res := TranslateTokensEs(1, SN, SEnd = '?');
+  Res := UpperFirst(FixEnglish(Res));
+  If SEnd <> #0 Then Res := Res + SEnd;
+  MtTranslateSentence := Res;
+End;
+
+{ ------------------------------------------------------------------ }
+{ ISLANDAIS -> ANGLAIS : lexique de formes, jetons et etiquetage      }
+{ ------------------------------------------------------------------ }
+{ Declinaisons (quatre cas, article defini suffixe), conjugaisons et    }
+{ adjectifs sont engendres a la construction (mkis.py) : le programme   }
+{ cherche une forme de surface et applique ensuite l'ordre des mots     }
+{ (verbe en 2e position) avant de reutiliser l'analyse de l'espagnol.   }
+
+Type
+  TIc = Record
+    F1: String[28];
+    En: String[26];
+    Pos: Char;
+    Plu, Def: Boolean;
+    PluAlt: Boolean;
+    Cases: String[5];
+    NAlt: Integer;
+    ATn: Array[1..4] Of Char;
+    ASl: Array[1..4] Of Integer;
+    Num: Boolean;
+    Enc: Boolean;
+    SpIdx: Integer;
+    Slot: Integer;
+  End;
+
+Var
+  IcLex: Array[1..3200] Of TIc;
+  IcCount: Integer;
+  SourceIc: Boolean;
+
+Procedure LoadIcelandic;
+Var
+  I, J: Integer;
+  Line, Item, Key, En, Pos1, Code, Alt, K1, Cs: String;
+Begin
+  IcCount := 0;
+  For I := 0 To High(IcData) Do
+  Begin
+    Line := IcData[I];
+    While Line <> '' Do
+    Begin
+      Item := CopyUntil(Line, ';');
+      If (Item <> '') And (IcCount < 3200) Then
+      Begin
+        Key := CopyUntil(Item, '=');
+        En := CopyUntil(Item, ':');
+        Pos1 := CopyUntil(Item, ':');
+        Code := Item;
+        Inc(IcCount);
+        FillChar(IcLex[IcCount], SizeOf(TIc), 0);
+        IcLex[IcCount].F1 := FrLower(ReplaceChar(Key, '_', ' '));
+        IcLex[IcCount].En := ReplaceChar(En, '_', ' ');
+        IcLex[IcCount].Pos := Pos1[1];
+        Cs := '';
+        K1 := '';
+        J := 0;
+        While Code <> '' Do
+        Begin
+          Alt := CopyUntil(Code, '+');
+          Inc(J);
+          If Pos1[1] = 'v' Then
+          Begin
+            If J <= 4 Then
+            Begin
+              IcLex[IcCount].ATn[J] := Alt[1];
+              If Alt[1] = 'E' Then IcLex[IcCount].ATn[J] := 'p';
+              If Alt[1] = 'e' Then IcLex[IcCount].ATn[J] := 'i';
+              If (Alt[1] = 'E') Or (Alt[1] = 'e') Then IcLex[IcCount].Enc :=
+                  True;
+              If (Length(Alt) > 1) And (Alt[2] In ['0'..'9']) Then
+              Begin
+                IcLex[IcCount].ASl[J] := Ord(Alt[2]) - Ord('0');
+                If (Length(Alt) > 3) And (Alt[3] = ':') Then K1 := Copy(Alt, 4,
+                    12);
+              End
+              Else If (Length(Alt) > 2) And (Alt[2] = ':') Then K1 := Copy(Alt,
+                  3, 12);
+              IcLex[IcCount].NAlt := J;
+            End;
+          End
+          Else If Pos1[1] = 'n' Then
+          Begin
+            If J = 1 Then
+            Begin
+              IcLex[IcCount].Plu := Alt[1] = 'p';
+              IcLex[IcCount].Def := (Length(Alt) > 1) And (Alt[2] = 'D');
+            End
+            Else If (Alt[1] = 'p') <> IcLex[IcCount].Plu Then
+                IcLex[IcCount].PluAlt := True;
+            If Pos(':', Alt) > 0 Then
+              If Pos(Alt[Pos(':', Alt) + 1], Cs) = 0 Then Cs := Cs +
+                  Alt[Pos(':', Alt) + 1];
+          End
+          Else If Pos1[1] = 'a' Then
+          Begin
+            If J = 1 Then IcLex[IcCount].Plu := Alt[1] = 'p';
+          End
+          Else If Pos1[1] = 's' Then IcLex[IcCount].Slot := Ord(Alt[1]) -
+              Ord('0')
+          Else If Pos1[1] = 'u' Then IcLex[IcCount].Num := Alt = '1';
+        End;
+        IcLex[IcCount].Cases := Cs;
+        If Pos1[1] = 'v' Then
+        Begin
+          If K1 <> '' Then IcLex[IcCount].SpIdx := AlSpIndex(K1,
+              IcLex[IcCount].En)
+          Else IcLex[IcCount].SpIdx := AlSpIndex('is:' + IcLex[IcCount].En,
+              IcLex[IcCount].En);
+        End;
+      End;
+    End;
+  End;
+End;
+
+Function IcFind(Const W, Kinds: String): Integer;
+Var
+  I: Integer;
+Begin
+  IcFind := 0;
+  For I := 1 To IcCount Do
+    If (IcLex[I].F1 = W) And (Pos(IcLex[I].Pos, Kinds) > 0) Then
+    Begin
+      IcFind := I;
+      Exit;
+    End;
+End;
+
+Procedure IcTokenize(Const S0: String);
+Var
+  S, Word1, Low: String;
+  I, L: Integer;
+  C: Char;
+  Cap: Boolean;
+Begin
+  SN := 0;
+  SEnd := #0;
+  S := '';
+  I := 1;
+  While I <= Length(S0) Do
+  Begin
+    If (S0[I] = #$C2) And (I < Length(S0)) And ((S0[I + 1] = #$AB) Or (S0[I + 1]
+        = #$BB) Or (S0[I + 1] = #$A0)) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 2);
+    End
+    Else If (S0[I] = #$E2) And (I + 2 <= Length(S0)) And (S0[I + 1] = #$80) And
+            ((S0[I + 2] = #$99) Or (S0[I + 2] = #$98)) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 3);
+    End
+    Else
+    Begin
+      S := S + S0[I];
+      Inc(I);
+    End;
+  End;
+  L := Length(S);
+  I := 1;
+  While I <= L Do
+  Begin
+    C := S[I];
+    If FrWordByte(C) Then
+    Begin
+      Word1 := '';
+      While (I <= L) And FrWordByte(S[I]) Do
+      Begin
+        Word1 := Word1 + S[I];
+        Inc(I);
+      End;
+      Cap := (Word1 <> '') And (((Word1[1] >= 'A') And (Word1[1] <= 'Z')) Or
+             ((Word1[1] = #$C3) And (Length(Word1) > 1) And (Word1[2] >= #$80)
+                 And (Word1[2] <= #$9E)));
+      Low := FrLower(Word1);
+      SPush(Low, Word1, Cap, False, False);
+    End
+    Else
+    Begin
+      If (C = '.') Or (C = '?') Or (C = '!') Then
+      Begin
+        If SEnd = #0 Then SEnd := C;
+        If C = '?' Then SEnd := '?';
+      End
+      Else If (C = ',') Or (C = ';') Or (C = ':') Then
+      Begin
+        SPush(',', ',', False, True, False);
+        ST[SN].Cat := ',';
+      End;
+      Inc(I);
+    End;
+  End;
+End;
+
+Procedure IcMergeMultiword;
+Var
+  I, K, Len, L: Integer;
+  Key: String;
+  Bad, Found: Boolean;
+Begin
+  I := 1;
+  While I < SN Do
+  Begin
+    Found := False;
+    For Len := 3 Downto 2 Do
+      If (Not Found) And (I + Len - 1 <= SN) Then
+      Begin
+        Key := '';
+        Bad := False;
+        For K := I To I + Len - 1 Do
+        Begin
+          If ST[K].Punct Then Bad := True;
+          Key := Join(Key, ST[K].W);
+        End;
+        If Not Bad Then
+        Begin
+          L := IcFind(Key, 'rpcjw');
+          If L > 0 Then
+          Begin
+            Found := True;
+            ST[I].W := Key;
+            ST[I].Orig := Key;
+            For K := I + 1 To SN - Len + 1 Do
+              ST[K] := ST[K + Len - 1];
+            Dec(SN, Len - 1);
+          End;
+        End;
+      End;
+    Inc(I);
+  End;
+End;
+
+Function IcNextNounish(I: Integer): Boolean;
+Var
+  K: Integer;
+Begin
+  IcNextNounish := False;
+  If (I > SN) Or ST[I].Punct Then Exit;
+  K := IcFind(ST[I].W, 'nadxuz');
+  IcNextNounish := K > 0;
+End;
+
+Function IcNextVerbal(I: Integer): Boolean;
+Var
+  K: Integer;
+Begin
+  IcNextVerbal := False;
+  If (I > SN) Or ST[I].Punct Then Exit;
+  If ST[I].W = 'ekki' Then
+  Begin
+    IcNextVerbal := True;
+    Exit;
+  End;
+  K := IcFind(ST[I].W, 'v');
+  IcNextVerbal := K > 0;
+End;
+
+Function IcVerbBefore(I: Integer): Boolean;
+Var
+  K: Integer;
+Begin
+  IcVerbBefore := False;
+  For K := 1 To I - 1 Do
+    If ST[K].Cat = 'V' Then IcVerbBefore := True;
+End;
+
+Procedure IcPickCat(I: Integer);
+Var
+  W: String;
+  Prev: Char;
+  Idx, J: Integer;
+Begin
+  W := ST[I].W;
+  If I > 1 Then Prev := ST[I - 1].Cat Else Prev := '.';
+  If ST[I].Punct Then
+  Begin
+    ST[I].Cat := ',';
+    Exit;
+  End;
+  If IsDigitsOnly(W) Then
+  Begin
+    ST[I].Cat := 'U';
+    ST[I].En := W;
+    Exit;
+  End;
+  If W = 'ekki' Then
+  Begin
+    ST[I].Cat := 'G';
+    Exit;
+  End;
+  { við : nous (devant un verbe) ou preposition }
+  If W = 'við' Then
+  Begin
+    If IcNextVerbal(I + 1) Then
+    Begin
+      ST[I].Cat := 'P';
+      ST[I].En := 'we';
+      ST[I].Slot := 4;
+    End
+    Else
+    Begin
+      ST[I].Cat := 'E';
+      ST[I].En := 'at';
+      ST[I].W := 'en';
+    End;
+    Exit;
+  End;
+  { að : infinitif, preposition ou conjonction }
+  If W = 'að' Then
+  Begin
+    If IcNextVerbal(I + 1) Then
+    Begin
+      ST[I].Cat := ' ';
+      ST[I].Kind := 'i';
+    End
+    Else If IcNextNounish(I + 1) Then
+    Begin
+      ST[I].Cat := 'E';
+      ST[I].En := 'to';
+      ST[I].W := 'a';
+    End
+    Else
+    Begin
+      ST[I].Cat := 'C';
+      ST[I].En := 'that';
+    End;
+    Exit;
+  End;
+  { á : possede (verbe eiga) ou preposition }
+  If (W = 'á') And (Prev In ['P', 'N', 'Z', 'S']) And IcNextNounish(I + 1) And
+      Not IcVerbBefore(I) Then
+  Begin
+    Idx := IcFind(W, 'v');
+    If Idx > 0 Then
+    Begin
+      ST[I].Cat := 'V';
+      ST[I].En := IcLex[Idx].En;
+      ST[I].Idx := IcLex[Idx].SpIdx;
+      ST[I].Tns := IcLex[Idx].ATn[1];
+      ST[I].Slot := IcLex[Idx].ASl[1];
+      ST[I].Kind := ' ';
+      Exit;
+    End;
+  End;
+  If (W = 'sé') And (Prev = 'P') And (ST[I - 1].Slot = 3) Then W := 'er';
+  Idx := IcFind(W, 'wsoxdqgcjruzpe');
+  If Idx = 0 Then Idx := IcFind(W, 'v');
+  If Idx = 0 Then Idx := IcFind(W, 'n');
+  If Idx = 0 Then Idx := IcFind(W, 'a');
+  If Idx = 0 Then
+  Begin
+    ST[I].Cat := 'Z';
+    Exit;
+  End;
+  ST[I].En := IcLex[Idx].En;
+  Case IcLex[Idx].Pos Of
+    'w':
+    Begin
+      ST[I].Cat := 'W';
+      If W = 'hvar' Then ST[I].W := 'donde'
+      Else If W = 'hver' Then ST[I].W := 'quien'
+      Else If W = 'hvenær' Then ST[I].W := 'cuando'
+      Else If W = 'hvernig' Then ST[I].W := 'como'
+      Else If W = 'hvaða' Then ST[I].W := 'cual'
+      Else If (W = 'hversu') Then ST[I].W := 'cuantos'
+      Else If (W = 'af hverju') Or (W = 'hvers vegna') Then ST[I].W := 'por que'
+      Else ST[I].W := 'que';
+    End;
+    's':
+    Begin
+      ST[I].Cat := 'P';
+      ST[I].Slot := IcLex[Idx].Slot;
+    End;
+    'o':
+    Begin
+      ST[I].Cat := 'O';
+      If (W = 'sig') Or (W = 'sér') Then ST[I].En := '';
+    End;
+    'x':
+    Begin
+      ST[I].Cat := 'S';
+      ST[I].Kind := 'x';
+    End;
+    'd':
+    Begin
+      ST[I].Cat := 'T';
+      ST[I].Plu := InList(W, 'þessir þessar');
+      If ST[I].Plu Then ST[I].En := 'these';
+    End;
+    'g': ST[I].Cat := 'G';
+    'q': ST[I].Cat := 'g';
+    'c': ST[I].Cat := 'C';
+    'r': ST[I].Cat := 'R';
+    'j': ST[I].Cat := 'J';
+    'p', 'e':
+    Begin
+      ST[I].Cat := 'E';
+      If (W = 'í') Or (W = 'á') Then ST[I].W := 'en'
+      Else If W = 'til' Then ST[I].W := 'a'
+      Else If W = 'frá' Then ST[I].W := 'desde'
+      Else If W = 'af' Then ST[I].W := 'de'
+      Else If W = 'án' Then ST[I].W := 'sin'
+      Else If W = 'með' Then ST[I].W := 'con';
+    End;
+    'u':
+    Begin
+      If IcLex[Idx].Num Then ST[I].Cat := 'U' Else ST[I].Cat := 'Q';
+      ST[I].Plu := InList(W,
+          'allir allar margir marga mörg fáir báðir fleiri');
+    End;
+    'z':
+    Begin
+      ST[I].Cat := 'Z';
+      ST[I].Orig := ST[I].En;
+      ST[I].Cap := True;
+    End;
+    'v':
+    Begin
+      ST[I].Cat := 'V';
+      ST[I].Idx := IcLex[Idx].SpIdx;
+      ST[I].Tns := IcLex[Idx].ATn[1];
+      ST[I].Slot := IcLex[Idx].ASl[1];
+      ST[I].Kind := ' ';
+      ST[I].Cl := '';
+      If IcLex[Idx].Enc Then ST[I].Kind := 'e';
+    End;
+    'n':
+    Begin
+      ST[I].Cat := 'N';
+      ST[I].Plu := IcLex[Idx].Plu;
+      ST[I].Cl := '';
+      If IcLex[Idx].Def Then ST[I].Cl := 'def';
+      If (IcLex[Idx].Cases <> '') And (IcLex[Idx].Cases = 'g') Then ST[I].Cl :=
+          ST[I].Cl + 'gen';
+    End;
+    'a':
+    Begin
+      ST[I].Cat := 'A';
+      ST[I].Plu := IcLex[Idx].Plu;
+    End;
+  End;
+  J := 0;
+End;
+
+{ ------------------------------------------------------------------ }
+{ ISLANDAIS -> ANGLAIS : ordre des mots et phrase complete            }
+{ ------------------------------------------------------------------ }
+
+Function IcVerbKey(I: Integer): String;
+Begin
+  If (I >= 1) And (I <= SN) And (ST[I].Cat = 'V') And (ST[I].Idx > 0) Then
+    IcVerbKey := SpPlain(SpLex[ST[I].Idx].Es)
+  Else
+    IcVerbKey := '';
+End;
+
+Procedure IcInsert(Pos1: Integer);
+Var
+  K: Integer;
+Begin
+  If SN >= MaxTokens Then Exit;
+  For K := SN Downto Pos1 Do
+    ST[K + 1] := ST[K];
+  Inc(SN);
+  FillChar(ST[Pos1], SizeOf(TSTok), 0);
+  ST[Pos1].Tns := ' ';
+End;
+
+{ fin du groupe nominal sujet qui commence en K (0 s'il n'y en a pas) }
+Function IcSubjEnd(K: Integer): Integer;
+Var
+  J: Integer;
+Begin
+  IcSubjEnd := 0;
+  If (K < 1) Or (K > SN) Then Exit;
+  If ST[K].Cat = 'P' Then
+  Begin
+    IcSubjEnd := K;
+    Exit;
+  End;
+  J := K;
+  While (J <= SN) And (ST[J].Cat In ['D', 'S', 'T', 'Q', 'U']) Do Inc(J);
+  While (J <= SN) And (ST[J].Cat = 'A') Do Inc(J);
+  If (J <= SN) And (ST[J].Cat = 'N') Then
+    IcSubjEnd := J
+  Else If (J <= SN) And (ST[J].Cat = 'Z') And ST[J].Cap And (J > 1) Then
+  Begin
+    While (J < SN) And (ST[J + 1].Cat = 'Z') Do Inc(J);
+    IcSubjEnd := J;
+  End;
+End;
+
+Function IcSubjBefore(I: Integer): Boolean;
+Var
+  J: Integer;
+Begin
+  IcSubjBefore := False;
+  If I <= 1 Then Exit;
+  If ST[I - 1].Cat = 'P' Then
+  Begin
+    IcSubjBefore := True;
+    Exit;
+  End;
+  J := I - 1;
+  While (J >= 1) And (ST[J].Cat In ['N', 'A', 'D', 'S', 'T', 'Q', 'U', 'Z']) Do
+      Dec(J);
+  If J < I - 1 Then
+    IcSubjBefore := (J < 1) Or (ST[J].Cat <> 'E');
+End;
+
+Procedure IcMoveBlock(From1, To1, Dest: Integer);
+Var
+  Tmp: Array[1..12] Of TSTok;
+  N, K: Integer;
+Begin
+  N := To1 - From1 + 1;
+  If (N < 1) Or (N > 12) Or (Dest >= From1) Then Exit;
+  For K := 1 To N Do Tmp[K] := ST[From1 + K - 1];
+  For K := From1 - 1 Downto Dest Do ST[K + N] := ST[K];
+  For K := 1 To N Do ST[Dest + K - 1] := Tmp[K];
+End;
+
+Function IcFirstW: String;
+Var
+  K: Integer;
+Begin
+  IcFirstW := '';
+  For K := 1 To SN Do
+    If ST[K].Cat = 'W' Then
+    Begin
+      IcFirstW := ST[K].W;
+      Exit;
+    End;
+End;
+
+{ le groupe nominal qui commence en K contient-il un adjectif ? }
+Function IcNPHasAdj(K: Integer): Boolean;
+Var
+  J: Integer;
+Begin
+  IcNPHasAdj := False;
+  J := K;
+  While (J <= SN) And (ST[J].Cat In ['D', 'S', 'T', 'Q', 'U', 'A']) Do
+  Begin
+    If ST[J].Cat = 'A' Then IcNPHasAdj := True;
+    Inc(J);
+  End;
+  If (J <= SN) And (ST[J].Cat = 'N') And (J < SN) And (ST[J + 1].Cat = 'A') Then
+      IcNPHasAdj := True;
+End;
+
+{ Choisit parmi les lectures d'une forme verbale (infinitif, personnes, supin) }
+Procedure IcResolveVerb(I: Integer);
+Var
+  Idx, J, K, Want, Pick: Integer;
+  PrevV: Boolean;
+Begin
+  Idx := IcFind(ST[I].W, 'v');
+  If (Idx = 0) Or (IcLex[Idx].NAlt < 2) Then
+  Begin
+    If ST[I].Kind = 'z' Then
+    Begin
+      If ST[I].Tns = 'I' Then ST[I].Tns := 'p';
+      ST[I].Kind := ' ';
+    End;
+    Exit;
+  End;
+  Want := 0;
+  PrevV := False;
+  J := I - 1;
+  While (J >= 1) And (ST[J].Cat In ['G', 'R']) Do Dec(J);
+  If (J >= 1) And (ST[J].Cat = 'P') Then Want := ST[J].Slot
+  Else If (J >= 1) And (ST[J].Cat = 'V') Then PrevV := True
+  Else If (J >= 1) And (ST[J].Cat In ['N', 'Z']) Then
+  Begin
+    If ST[J].Plu Then Want := 6 Else Want := 3;
+  End
+  Else
+  Begin
+    { sujet apres le verbe : question ou inversion }
+    K := I + 1;
+    While (K <= SN) And (ST[K].Cat In ['G', 'R']) Do Inc(K);
+    If (K <= SN) And (ST[K].Cat = 'P') Then Want := ST[K].Slot
+    Else If (K <= SN) And (ST[K].Cat In ['D', 'N', 'Z', 'S']) Then Want := 3;
+  End;
+  Pick := 0;
+  If PrevV Then
+  Begin
+    For K := 1 To IcLex[Idx].NAlt Do
+      If (Pick = 0) And (IcLex[Idx].ATn[K] = 'P') And (IcVerbKey(J) = 'tener')
+          Then Pick := K;
+    For K := 1 To IcLex[Idx].NAlt Do
+      If (Pick = 0) And (IcLex[Idx].ATn[K] = 'I') Then Pick := K;
+    For K := 1 To IcLex[Idx].NAlt Do
+      If (Pick = 0) And (IcLex[Idx].ATn[K] = 'P') Then Pick := K;
+  End;
+  If (Pick = 0) And (Want > 0) Then
+    For K := 1 To IcLex[Idx].NAlt Do
+      If (Pick = 0) And (IcLex[Idx].ATn[K] In ['p', 'i']) And (IcLex[Idx].ASl[K]
+          = Want) Then Pick := K;
+  If Pick = 0 Then
+    For K := 1 To IcLex[Idx].NAlt Do
+      If (Pick = 0) And (IcLex[Idx].ATn[K] In ['p', 'i']) And (IcLex[Idx].ASl[K]
+          = 3) Then Pick := K;
+  If Pick = 0 Then
+    For K := 1 To IcLex[Idx].NAlt Do
+      If (Pick = 0) And (IcLex[Idx].ATn[K] In ['p', 'i', 'M']) Then Pick := K;
+  If Pick = 0 Then Pick := 1;
+  ST[I].Tns := IcLex[Idx].ATn[Pick];
+  ST[I].Slot := IcLex[Idx].ASl[Pick];
+  If ST[I].Slot = 0 Then ST[I].Slot := 3;
+  ST[I].Kind := ' ';
+End;
+
+Procedure IcClassify;
+Var
+  I, J, K, E, S1: Integer;
+  Key, Owner: String;
+  Idx: Integer;
+Begin
+  IcMergeMultiword;
+  For I := 1 To SN Do
+    IcPickCat(I);
+  { vera + ad + infinitif : forme progressive }
+  For I := 2 To SN - 1 Do
+    If (ST[I].Cat = ' ') And (ST[I].Kind = 'i') And (ST[I - 1].Cat = 'V') And
+        (ST[I + 1].Cat = 'V') And
+       (IcVerbKey(I - 1) = 'ser') Then
+    Begin
+      ST[I + 1].Kind := 'z';
+      If ST[I - 1].Kind = 'e' Then
+      Begin
+        ST[I - 1].Cat := 'P';
+        ST[I - 1].En := 'you';
+        ST[I - 1].Slot := 2;
+        ST[I - 1].Kind := ' ';
+      End
+      Else
+        ST[I - 1].Cat := ' ';
+    End;
+  { formes enclitiques : ertu = ert thu }
+  I := 1;
+  While I <= SN Do
+  Begin
+    If (ST[I].Cat = 'V') And (ST[I].Kind = 'e') And (SN < MaxTokens) Then
+    Begin
+      ST[I].Kind := ' ';
+      IcInsert(I + 1);
+      ST[I + 1].Cat := 'P';
+      ST[I + 1].En := 'you';
+      ST[I + 1].Slot := 2;
+      ST[I + 1].W := 'þú';
+      ST[I + 1].Orig := 'þú';
+      Inc(I);
+    End;
+    Inc(I);
+  End;
+  ARemoveConsumed;
+  { i / a apres un verbe de mouvement : vers }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'E') And ((ST[I].Orig = 'í') Or (ST[I].Orig = 'á')) And
+        (ST[I - 1].Cat = 'V') And
+       InList(ST[I - 1].En, 'go come walk') Then
+      ST[I].En := 'to';
+  { le suffixe defini et la casse : "bókin" = la livre ; pronoms apres un verbe
+    }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'Z' Then
+    Begin
+      Idx := 0;
+      If ST[I].Cap And (I > 1) Then ST[I].Orig := ST[I].Orig;
+    End;
+  { pronom personnel apres un verbe qui a deja son sujet : complement }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'P') And (ST[I - 1].Cat = 'V') And (I > 2) And (ST[I -
+        2].Cat = 'P') Then
+    Begin
+      ST[I].Cat := 'O';
+      If ST[I].En = 'I' Then ST[I].En := 'me'
+      Else If ST[I].En = 'he' Then ST[I].En := 'him'
+      Else If ST[I].En = 'she' Then ST[I].En := 'her'
+      Else If ST[I].En = 'we' Then ST[I].En := 'us'
+      Else If ST[I].En = 'they' Then ST[I].En := 'them';
+    End;
+  { possessif postpose : hundurinn minn = mon chien }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'S') And (ST[I].Kind = 'x') And (ST[I - 1].Cat In ['N',
+        'A']) Then
+    Begin
+      J := I - 1;
+      While (J > 1) And (ST[J].Cat = 'A') Do Dec(J);
+      If ST[J].Cat = 'N' Then
+      Begin
+        ST[0] := ST[I];
+        ST[0].Kind := ' ';
+        For K := I Downto J + 1 Do
+          ST[K] := ST[K - 1];
+        ST[J] := ST[0];
+        ST[J + 1].Cl := '';
+      End;
+    End;
+  { genitif : bokin hundsins = le livre du chien }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'N') And (Pos('gen', ST[I].Cl) > 0) And (ST[I - 1].Cat =
+        'N') Then
+    Begin
+      Owner := ST[I].En;
+      If ST[I].Plu Then Owner := EnPlural(Owner);
+      If Pos('def', ST[I].Cl) > 0 Then Owner := 'the ' + Owner;
+      ST[I].Orig := Owner;
+      ST[I].Cat := 'Z';
+      ST[I].Cap := True;
+      ST[I].Cl := '';
+      IcInsert(I);
+      ST[I].Cat := 'E';
+      ST[I].W := 'de';
+      ST[I].Orig := 'de';
+      ST[I].En := 'of';
+      Break;
+    End;
+  { demonstratif seul : ce / cela }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'T') And ((I = SN) Or Not (ST[I + 1].Cat In ['N', 'A']))
+        Then
+    Begin
+      ST[I].Cat := 'P';
+      ST[I].Slot := 3;
+      If ST[I].Plu Then ST[I].Slot := 6;
+    End;
+  { articles definis portes par le suffixe du nom }
+  I := 1;
+  While I <= SN Do
+  Begin
+    If (ST[I].Cat = 'N') And (Pos('def', ST[I].Cl) > 0) Then
+    Begin
+      K := I;
+      While (K > 1) And (ST[K - 1].Cat = 'A') Do Dec(K);
+      If (K = 1) Or Not (ST[K - 1].Cat In ['D', 'S', 'T', 'Q', 'U']) Then
+      Begin
+        IcInsert(K);
+        ST[K].Cat := 'D';
+        ST[K].Kind := 'd';
+        ST[K].Plu := ST[I + 1].Plu;
+        ST[K].W := 'el';
+        ST[K].Orig := 'el';
+        Inc(I);
+      End;
+    End;
+    Inc(I);
+  End;
+  { adjectifs devant un nom sans determinant : nom puis adjectifs }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cat = 'A') And ((I = 1) Or Not (ST[I - 1].Cat In ['D', 'S', 'T',
+        'Q', 'U', 'A'])) Then
+    Begin
+      K := I;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If (ST[K].Cat = 'N') And (K - I <= 3) Then
+      Begin
+        ST[0] := ST[K];
+        For J := K Downto I + 1 Do
+          ST[J] := ST[J - 1];
+        ST[I] := ST[0];
+        I := K;
+      End
+      Else
+        I := K;
+    End;
+    Inc(I);
+  End;
+  { choix de la lecture des formes verbales ambigues }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'V' Then IcResolveVerb(I);
+  { modal + supin = infinitif }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns = 'P') Then
+    Begin
+      J := I - 1;
+      While (J > 1) And (ST[J].Cat In ['P', 'G', 'R']) Do Dec(J);
+      If (ST[J].Cat = 'V') And InList(IcVerbKey(J),
+          'poder querer deber necesitar ir') Then
+        ST[I].Tns := 'I';
+    End;
+  { það er + groupe nominal indefini : il y a ; það rignir }
+  For I := 1 To SN - 2 Do
+    If (ST[I].Cat = 'P') And (ST[I].W = 'það') And (ST[I + 1].Cat = 'V') And
+        (IcVerbKey(I + 1) = 'ser') And
+       (ST[I + 2].Cat In ['D', 'N', 'Q', 'U']) And (ST[I + 2].Kind <> 'd') And
+       Not IcNPHasAdj(I + 2) Then
+    Begin
+      ST[I].Cat := ' ';
+      ST[I + 1].Idx := AlSpIndex('haber', 'have');
+      ST[I + 1].W := 'hay';
+    End;
+  { inversion : Í dag fer ég -> Í dag ég fer ; Talar þú ? -> þú talar ?
+    }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'i']) And (Not IcSubjBefore(I))
+        And
+       Not ((I > 1) And (ST[I - 1].Cat = 'C') And (ST[I - 1].En = 'and')) Then
+    Begin
+      E := IcSubjEnd(I + 1);
+      If (E > 0) And (E - I <= 8) Then
+        If (IcVerbKey(I) <> 'haber') Or (ST[I + 1].Cat = 'P') Then
+        Begin
+          IcMoveBlock(I + 1, E, I);
+          I := E;
+        End;
+    End;
+    Inc(I);
+  End;
+  { og + verbe sans sujet : meme sujet que la proposition precedente }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'i']) And (ST[I - 1].Cat = 'C')
+        And (ST[I - 1].En = 'and') And
+       (SN < MaxTokens) Then
+    Begin
+      K := 0;
+      For J := I - 2 Downto 1 Do
+        If (K = 0) And (ST[J].Cat = 'P') Then K := J;
+      If K > 0 Then
+      Begin
+        IcInsert(I);
+        ST[I].Cat := 'P';
+        ST[I].En := ST[K].En;
+        ST[I].Slot := ST[K].Slot;
+        ST[I].W := ST[K].W;
+        ST[I].Orig := ST[K].Orig;
+        Break;
+      End;
+      For J := 1 To I - 2 Do
+        If (K = 0) And (ST[J].Cat = 'N') Then K := J;
+      If K > 0 Then
+      Begin
+        IcInsert(I);
+        ST[I].Cat := 'P';
+        ST[I].W := 'hann';
+        ST[I].Orig := 'hann';
+        If ST[K].Plu Then
+        Begin
+          ST[I].En := 'they';
+          ST[I].Slot := 6;
+        End
+        Else
+        Begin
+          ST[I].En := 'he';
+          ST[I].Slot := 3;
+        End;
+        Break;
+      End;
+    End;
+  { ekki apres le verbe -> avant le verbe }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'G') And (ST[I - 1].Cat = 'V') And (ST[I - 1].Tns In ['p',
+        'i', 'M']) Then
+    Begin
+      ST[0] := ST[I];
+      ST[I] := ST[I - 1];
+      ST[I - 1] := ST[0];
+    End;
+  { hafa + supin : temps compose ; munu + infinitif : futur }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'i']) Then
+    Begin
+      J := I + 1;
+      While (J <= SN) And (ST[J].Cat In ['R', 'G', 'P', 'O']) Do Inc(J);
+      If (J <= SN) And (ST[J].Cat = 'V') Then
+      Begin
+        If (IcVerbKey(I) = 'tener') And (ST[I].En = 'have') And (ST[J].Tns =
+            'P') Then
+        Begin
+          If ST[I].Tns = 'p' Then
+          Begin
+            ST[J].Tns := 'i';
+            ST[J].Slot := ST[I].Slot;
+            ST[I].Cat := ' ';
+          End
+          Else
+          Begin
+            ST[I].Idx := AlSpIndex('haber', 'have');
+            ST[I].En := 'have';
+          End;
+        End
+        Else If (ST[I].W = 'mun') Or (ST[I].W = 'munt') Or (ST[I].W = 'munum')
+            Or (ST[I].W = 'munuð') Or (ST[I].W = 'munu') Then
+        Begin
+          ST[J].Tns := 'f';
+          ST[J].Slot := ST[I].Slot;
+          ST[I].Cat := ' ';
+        End
+        Else If (ST[J].Tns = 'I') Then
+          ST[J].Tns := 'I';
+      End;
+    End;
+  ARemoveConsumed;
+  { nom singulier sans determinant : article indefini }
+  I := 1;
+  While I <= SN Do
+  Begin
+    If (ST[I].Cat = 'N') And (Not ST[I].Plu) And (Not IsMassNoun(ST[I].En)) Then
+    Begin
+      K := I;
+      While (K > 1) And (ST[K - 1].Cat = 'A') Do Dec(K);
+      If ((K = 1) Or Not (ST[K - 1].Cat In ['D', 'S', 'T', 'Q', 'U'])) And Not
+          IsLanguage(LowerAscii(ST[I].En)) Then
+      Begin
+        IcInsert(K);
+        ST[K].Cat := 'D';
+        ST[K].Kind := 'i';
+        ST[K].W := 'un';
+        Inc(I);
+      End;
+    End;
+    Inc(I);
+  End;
+  { le pluriel de l'article suit celui du nom }
+  For I := 1 To SN - 1 Do
+    If ST[I].Cat = 'D' Then
+    Begin
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If ST[K].Cat = 'N' Then ST[I].Plu := ST[K].Plu;
+    End;
+  { impératif en tete de phrase }
+  If (SN >= 1) And (ST[1].Cat = 'V') And (ST[1].Tns In ['M', 'I']) And (SEnd <>
+      '?') Then
+  Begin
+    ST[1].Tns := 'M';
+    ST[1].Slot := 2;
+  End;
+  { personne du verbe d'apres le sujet qui precede }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'i', 'f']) Then
+    Begin
+      J := I - 1;
+      While (J >= 1) And (ST[J].Cat In ['R', 'G']) Do Dec(J);
+      If (J >= 1) And (ST[J].Cat = 'P') Then
+        ST[I].Slot := ST[J].Slot
+      Else If (J >= 1) And (ST[J].Cat In ['N', 'Z']) Then
+      Begin
+        ST[I].Slot := 3;
+        If ST[J].Plu And (ST[J].Cat = 'N') Then ST[I].Slot := 6;
+      End
+      Else If ST[I].Slot = 0 Then ST[I].Slot := 3;
+    End;
+  { expressions verbales : heita, rigna, hvað heitir þú }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'V' Then
+    Begin
+      Key := IcVerbKey(I);
+      If Key = 'haber' Then
+      Begin
+        ST[I].W := 'hay';
+        ST[I].Slot := 3;
+      End
+      Else If Key = 'llover' Then
+      Begin
+        ST[I].Kind := 'g';
+        If (I > 1) And (ST[I - 1].Cat = 'P') And (ST[I - 1].W = 'það') Then
+            ST[I - 1].Cat := ' ';
+      End
+      Else If Key = 'llamar' Then
+        ST[I].Kind := 'r'
+      Else If (ST[I].En = 'hold') And (I < SN) And (ST[I + 1].Cat = 'C') And
+          (ST[I + 1].En = 'that') Then
+      Begin
+        ST[I].En := 'think';
+        ST[I].Idx := AlSpIndex('is:think', 'think');
+      End
+      Else If (ST[I].En = 'call') And (I < SN) And (ST[I + 1].Cat = 'E') And
+          (ST[I + 1].En = 'in') Then
+        ST[I + 1].Cat := ' ';
+    End;
+  ARemoveConsumed;
+  { complement d'une preposition : pronom de groupe nominal }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'O') And (ST[I - 1].Cat = 'E') And (ST[I].En <> '') Then
+      ST[I].Cat := 'B';
+  { quantificateur pluriel : le nom est au pluriel }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'Q') And ST[I].Plu Then
+    Begin
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If ST[K].Cat = 'N' Then ST[K].Plu := True;
+    End;
+  { pronoms complements apres le verbe : enclitiques }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'O') And (ST[I - 1].Cat = 'V') And (ST[I].En <> '') Then
+    Begin
+      ST[I - 1].Cl := ST[I].En;
+      ST[I].Cat := ' ';
+    End;
+  S1 := 0;
+  ARemoveConsumed;
+End;
+
+Function IcTranslateSentence(Const Sentence: String): String;
+Var
+  Res: String;
+Begin
+  IcTokenize(Sentence);
+  If SN = 0 Then
+  Begin
+    IcTranslateSentence := '';
+    Exit;
+  End;
+  IcClassify;
+  If SN = 0 Then
+  Begin
+    IcTranslateSentence := '';
+    Exit;
+  End;
+  Res := TranslateTokensEs(1, SN, SEnd = '?');
+  If (SEnd = '?') And (Length(Res) > 8) And (Copy(Res, Length(Res) - 7, 8) =
+      ' name is') Then
+    Res := 'What is ' + LowerAscii(Copy(Res, 1, Length(Res) - 8)) + ' name';
+  Res := UpperFirst(FixEnglish(Res));
+  If SEnd <> #0 Then Res := Res + SEnd;
+  IcTranslateSentence := Res;
+End;
+
+{ ------------------------------------------------------------------ }
 { Phrases toutes faites                                               }
 { ------------------------------------------------------------------ }
 
@@ -28141,22 +31906,616 @@ Begin
   FixFrench := Res;
 End;
 
+{ ------------------------------------------------------------------ }
+{ ANCIEN FRANCAIS -> FRANCAIS MODERNE : analyse et production        }
+{ ------------------------------------------------------------------ }
+
+Var
+  OfQuestion: Boolean;
+
+Function FroIsVowelStart(Const S: String): Boolean;
+Begin
+  FroIsVowelStart := (S <> '') And ((S[1] In ['a', 'e', 'i', 'o', 'u', 'h',
+      'y']) Or
+                     ((Length(S) > 1) And (S[1] = #$C3) And (S[2] In [#$A9,
+                         #$A8, #$AA, #$A0, #$A2, #$B4, #$AE, #$BB])));
+End;
+
+Function FroPluralDet(Const W: String): Boolean;
+Begin
+  FroPluralDet := InList(W,
+      'les des uns unes mes tes ses noz voz ces cez cestes celes tuit as es de'+
+      'us trois treis quatre cinq sis uit nuef dis cent');
+End;
+
+Function FroSingularDet(Const W: String): Boolean;
+Begin
+  FroSingularDet := InList(W,
+      'le la un une mon ma ton ta son sa ce cest cist cele ceste cel nostre vo'+
+      'stre del al dou ol');
+End;
+
+Function FroIsPrep(Const W: String): Boolean;
+Begin
+  FroIsPrep := InList(W,
+      'de a en por pour par sor sur od sanz sans vers entre devant apres desor'+
+      ' desoz soz dedenz enz fors avec');
+End;
+
+Function FroIsAdverb(Const W: String): Boolean;
+Begin
+  FroIsAdverb := InList(W,
+      'mult molt moult tres bien trop assez tant si plus mielz mains poi');
+End;
+
+{ Nom (Kind N) gouverneur d'un adjectif ou d'un determinant situe en I }
+Function FroGovernor(I: Integer): Integer;
+Var
+  J: Integer;
+Begin
+  FroGovernor := 0;
+  J := I + 1;
+  While (J <= OFN) And ((OFT[J].Kind = 'A') Or FroIsAdverb(OFT[J].W)) Do Inc(J);
+  If (J <= OFN) And (OFT[J].Kind = 'N') Then
+  Begin
+    FroGovernor := J;
+    Exit;
+  End;
+  J := I - 1;
+  While (J >= 1) And FroIsAdverb(OFT[J].W) Do Dec(J);
+  If (J >= 1) And (OFT[J].Kind = 'N') Then
+  Begin
+    FroGovernor := J;
+    Exit;
+  End;
+  { attribut : le nom ou le pronom sujet le plus proche avant }
+  J := I - 1;
+  While J >= 1 Do
+  Begin
+    If OFT[J].Kind = 'N' Then
+    Begin
+      FroGovernor := J;
+      Exit;
+    End;
+    If InList(OFT[J].W, 'ele eles il ils') Then
+    Begin
+      FroGovernor := -J;
+      Exit;
+    End;
+    Dec(J);
+  End;
+End;
+
+Function FroPlural(Const S: String): String;
+Begin
+  If EndsWith(S, 's') Or EndsWith(S, 'x') Or EndsWith(S, 'z') Then FroPlural :=
+      S
+  Else If EndsWith(S, 'eau') Then FroPlural := S + 'x'
+  Else If EndsWith(S, 'al') Then FroPlural := Copy(S, 1, Length(S) - 2) + 'aux'
+  Else FroPlural := S + 's';
+End;
+
+{ Type du determinant qui precede le nom en I : L (li), P pluriel, S singulier,
+  N aucun }
+Function FroDetBefore(I: Integer): Char;
+Var
+  J: Integer;
+Begin
+  FroDetBefore := 'N';
+  J := I - 1;
+  While (J >= 1) And (OFT[J].Kind = 'A') Do Dec(J);
+  If J < 1 Then Exit;
+  If (OFT[J].Kind = 'L') Or (OFT[J].W = 'cil') Or (OFT[J].W = 'cist') Then
+      FroDetBefore := 'L'
+  Else If FroPluralDet(OFT[J].W) Then FroDetBefore := 'P'
+  Else If FroSingularDet(OFT[J].W) Or (OFT[J].Kind = 'E') Then FroDetBefore :=
+      'S'
+  Else If FroIsPrep(OFT[J].W) Then FroDetBefore := 'R'
+  Else If OFT[J].Punct Or InList(OFT[J].W, 'et e mais car que quant si') Then
+      FroDetBefore := 'C';
+End;
+
+Procedure FroClassify;
+Var
+  I, J, K: Integer;
+  W, Prev: String;
+  Idx: Integer;
+  HasS, IsFem: Boolean;
+  D: Char;
+  HasNe: Boolean;
+Begin
+  HasNe := False;
+  For I := 1 To OFN Do
+    If (OFT[I].W = 'ne') Or (OFT[I].W = 'nen') Then HasNe := True;
+  For I := 1 To OFN Do
+  Begin
+    OFT[I].Kind := 'X';
+    OFT[I].Idx := 0;
+    OFT[I].Plu := False;
+    OFT[I].Gen := 'm';
+    OFT[I].Out := OFT[I].Orig;
+    If OFT[I].Punct Then
+    Begin
+      OFT[I].Kind := 'P';
+      Continue;
+    End;
+    W := OFT[I].W;
+    If I > 1 Then Prev := OFT[I - 1].W Else Prev := '';
+    { mots elides : l', d', n', qu', s', j', m', t', c' }
+    If OFT[I].Elide Then
+    Begin
+      OFT[I].Kind := 'E';
+      Continue;
+    End;
+    If W = 'li' Then
+    Begin
+      OFT[I].Kind := 'L';
+      Continue;
+    End;
+    If (W = 'deus') And OFT[I].Cap Then
+    Begin
+      OFT[I].Out := 'Dieu';
+      Continue;
+    End;
+    If (W = 'deus') Then
+    Begin
+      OFT[I].Out := 'deux';
+      Continue;
+    End;
+    { formes ambigues, tranchees d'apres le voisinage }
+    If (W = 'a') And (Prev = 'ci') Then
+    Begin
+      OFT[I].Kind := 'V';
+      OFT[I].Out := 'a';
+      OFT[I - 1].Out := 'ici il y';
+      Continue;
+    End;
+    If (W = 'a') And (InList(Prev, 'il ele on qui n ne') Or ((I > 2) And (OFT[I
+        - 1].Kind = 'N'))) Then
+    Begin
+      OFT[I].Kind := 'V';
+      OFT[I].Out := 'a';
+      Continue;
+    End;
+    If (W = 'ou') And (OfQuestion Or (I = 1)) Then
+    Begin
+      OFT[I].Out := 'où';
+      Continue;
+    End;
+    If (W = 'en') Then
+    Begin
+      If (I < OFN) And InList(OFT[I + 1].W,
+          'li le la les un une mon ma mes ton ta tes son sa ses nostre vostre '+
+          'noz voz cest ceste cel cele cist') Then
+        OFT[I].Out := 'dans'
+      Else OFT[I].Out := 'en';
+      Continue;
+    End;
+    If (W = 'es') And ((Prev = 'tu') Or ((I < OFN) And (OFT[I + 1].W = 'tu')))
+        Then
+    Begin
+      OFT[I].Kind := 'V';
+      OFT[I].Out := 'es';
+      Continue;
+    End;
+    If (W = 'ot') And (InList(Prev, 'il ele on qui n ne') Or ((I > 1) And (OFT[I
+        - 1].Kind = 'N'))) Then
+    Begin
+      OFT[I].Kind := 'V';
+      OFT[I].Out := 'eut';
+      Continue;
+    End;
+    If (W = 'puis') And InList(Prev, 'jo je ge jou') Then
+    Begin
+      OFT[I].Kind := 'V';
+      OFT[I].Out := 'peux';
+      Continue;
+    End;
+    If (W = 'set') And (Not ((I < OFN) And ((OFT[I + 1].Kind = 'N') Or (OFT[I +
+        1].Kind = 'A')))) Then
+    Begin
+      OFT[I].Kind := 'V';
+      OFT[I].Out := 'sait';
+      Continue;
+    End;
+    If (W = 'ame') And ((I = 1) Or Not (FroSingularDet(Prev) Or
+        FroPluralDet(Prev) Or (Prev = 'li'))) Then
+    Begin
+      OFT[I].Kind := 'V';
+      OFT[I].Out := 'aime';
+      Continue;
+    End;
+    If (W = 'ja') And HasNe Then
+    Begin
+      OFT[I].Out := 'jamais';
+      Continue;
+    End;
+    If (W = 'mal') And (I > 1) And (OFT[I - 1].Kind = 'V') Then
+    Begin
+      OFT[I].Out := 'mal';
+      Continue;
+    End;
+    If (W = 'oil') And (OFN <= 2) Then
+    Begin
+      OFT[I].Out := 'oui';
+      Continue;
+    End;
+    { demonstratifs et possessifs dependant du nom suivant }
+    If InList(W,
+        'cist cest cestui cil cel cele ceste cestes celes cez ces mi ti si nos'+
+        ' vos lor') Then
+    Begin
+      OFT[I].Kind := 'D';
+      Continue;
+    End;
+    { mots fixes, formes verbales, noms propres }
+    Idx := FroFind(W, 'x,v,n');
+    If Idx > 0 Then
+    Begin
+      OFT[I].Out := FroLex[Idx].M1;
+      If FroLex[Idx].Cat = 'v' Then OFT[I].Kind := 'V';
+      If FroLex[Idx].Cat = 'n' Then
+      Begin
+        OFT[I].Kind := 'Z';
+        OFT[I].Out := FroLex[Idx].M1;
+      End;
+      Continue;
+    End;
+    Idx := FroFindNoun(W, HasS);
+    If Idx > 0 Then
+    Begin
+      OFT[I].Kind := 'N';
+      OFT[I].Idx := Idx;
+      OFT[I].HasS := HasS;
+      OFT[I].FixSg := (FroLex[Idx].Cat = 'ns') And (Not HasS);
+      If FroLex[Idx].Cat = 'nf' Then OFT[I].Gen := 'f' Else OFT[I].Gen := 'm';
+      Continue;
+    End;
+    Idx := FroFindAdj(W, HasS, IsFem);
+    If Idx > 0 Then
+    Begin
+      OFT[I].Kind := 'A';
+      OFT[I].Idx := Idx;
+      OFT[I].HasS := HasS;
+      OFT[I].Fem := IsFem;
+      Continue;
+    End;
+    { inconnu : on garde la graphie ; une majuscule en milieu de phrase est un
+      nom propre }
+    If OFT[I].Cap And (I > 1) Then OFT[I].Kind := 'Z' Else OFT[I].Out :=
+        OFT[I].Orig;
+    If I = 1 Then OFT[I].Out := FrLower(OFT[I].Orig);
+  End;
+  { nombre des noms d'apres leur determinant }
+  For I := 1 To OFN Do
+    If OFT[I].Kind = 'N' Then
+    Begin
+      D := FroDetBefore(I);
+      If OFT[I].FixSg Then
+        OFT[I].Plu := False
+      Else If OFT[I].HasS Then
+      Begin
+        If (D = 'L') Or (D = 'S') Then OFT[I].Plu := False
+        Else If (D = 'P') Or (D = 'R') Then OFT[I].Plu := True
+        Else OFT[I].Plu := (I > 1) And (D <> 'C');
+      End
+      Else
+        OFT[I].Plu := (D = 'L') Or (D = 'P');
+      If OFT[I].Plu Then
+      Begin
+        If FroLex[OFT[I].Idx].M2 <> '' Then OFT[I].Out := FroLex[OFT[I].Idx].M2
+        Else OFT[I].Out := FroPlural(FroLex[OFT[I].Idx].M1);
+      End
+      Else
+        OFT[I].Out := FroLex[OFT[I].Idx].M1;
+    End;
+  { article li, l' et demonstratifs }
+  For I := 1 To OFN Do
+    If (OFT[I].Kind = 'L') Or (OFT[I].Kind = 'E') Or (OFT[I].Kind = 'D') Then
+    Begin
+      J := I + 1;
+      While (J <= OFN) And ((OFT[J].Kind = 'A') Or FroIsAdverb(OFT[J].W)) Do
+          Inc(J);
+      K := 0;
+      If (J <= OFN) And (OFT[J].Kind = 'N') Then K := J;
+      W := OFT[I].W;
+      If OFT[I].Kind = 'L' Then
+      Begin
+        If K > 0 Then
+        Begin
+          If OFT[K].Plu Then OFT[I].Out := 'les'
+          Else If OFT[K].Gen = 'f' Then OFT[I].Out := 'la'
+          Else OFT[I].Out := 'le';
+        End
+        Else OFT[I].Out := 'lui';
+      End
+      Else If OFT[I].Kind = 'E' Then
+      Begin
+        If W = 'l' Then
+        Begin
+          If (K > 0) And (OFT[K].Gen = 'f') And (Not OFT[K].Plu) Then OFT[I].Out
+              := 'la' Else OFT[I].Out := 'le';
+        End
+        Else If W = 'd' Then OFT[I].Out := 'de'
+        Else If W = 'n' Then OFT[I].Out := 'ne'
+        Else If W = 'qu' Then OFT[I].Out := 'que'
+        Else If W = 's' Then
+        Begin
+          If (I < OFN) And InList(OFT[I + 1].W, 'il ils') Then OFT[I].Out :=
+              'si' Else OFT[I].Out := 'se';
+        End
+        Else If W = 'j' Then OFT[I].Out := 'je'
+        Else If W = 'm' Then OFT[I].Out := 'me'
+        Else If W = 't' Then OFT[I].Out := 'te'
+        Else If W = 'c' Then OFT[I].Out := 'ce'
+        Else OFT[I].Out := W;
+        OFT[I].Kind := 'X';
+      End
+      Else
+      Begin
+        { demonstratifs, possessifs pluriels }
+        If InList(W, 'cist cest cestui cel cil cele ceste cestes celes cez ces')
+            Then
+        Begin
+          If K > 0 Then
+          Begin
+            If OFT[K].Plu Then OFT[I].Out := 'ces'
+            Else If OFT[K].Gen = 'f' Then OFT[I].Out := 'cette'
+            Else If FroIsVowelStart(OFT[K].Out) Then OFT[I].Out := 'cet'
+            Else OFT[I].Out := 'ce';
+          End
+          Else If W = 'cil' Then OFT[I].Out := 'celui'
+          Else If W = 'cist' Then OFT[I].Out := 'celui-ci'
+          Else If W = 'cele' Then OFT[I].Out := 'celle'
+          Else If W = 'ceste' Then OFT[I].Out := 'celle-ci'
+          Else If InList(W, 'cez ces cestes celes') Then OFT[I].Out := 'ceux'
+          Else OFT[I].Out := 'celui';
+        End
+        Else If (W = 'mi') Or (W = 'ti') Or (W = 'si') Then
+        Begin
+          If K > 0 Then
+          Begin
+            If W = 'mi' Then OFT[I].Out := 'mes' Else If W = 'ti' Then
+                OFT[I].Out := 'tes' Else OFT[I].Out := 'ses';
+          End
+          Else If W = 'mi' Then OFT[I].Out := 'moi'
+          Else If W = 'ti' Then OFT[I].Out := 'toi'
+          Else OFT[I].Out := 'ainsi';
+        End
+        Else If (W = 'nos') Or (W = 'vos') Then
+        Begin
+          If K > 0 Then OFT[I].Out := W Else If W = 'nos' Then OFT[I].Out :=
+              'nous' Else OFT[I].Out := 'vous';
+        End
+        Else If W = 'lor' Then
+        Begin
+          OFT[I].Out := 'leur';
+          If (K > 0) And OFT[K].Plu Then OFT[I].Out := 'leurs';
+        End;
+        OFT[I].Kind := 'X';
+      End;
+    End;
+  { ma / ta / sa devant une voyelle }
+  For I := 1 To OFN - 1 Do
+    If InList(OFT[I].W, 'ma ta sa') And (OFT[I + 1].Kind = 'N') And
+        FroIsVowelStart(OFT[I + 1].Out) Then
+    Begin
+      If OFT[I].W = 'ma' Then OFT[I].Out := 'mon' Else If OFT[I].W = 'ta' Then
+          OFT[I].Out := 'ton' Else OFT[I].Out := 'son';
+    End;
+  { adjectifs : accord avec le nom voisin }
+  For I := 1 To OFN Do
+    If OFT[I].Kind = 'A' Then
+    Begin
+      K := FroGovernor(I);
+      Idx := OFT[I].Idx;
+      IsFem := OFT[I].Fem;
+      HasS := OFT[I].HasS;
+      If K > 0 Then
+      Begin
+        If OFT[K].Gen = 'f' Then IsFem := True;
+        HasS := OFT[K].Plu;
+      End
+      Else If K < 0 Then
+      Begin
+        If OFT[-K].W = 'ele' Then IsFem := True;
+        HasS := (OFT[-K].W = 'eles') Or (OFT[-K].W = 'ils');
+        If OFT[-K].W = 'eles' Then IsFem := True;
+      End;
+      If OFT[I].Fem Then
+        OFT[I].Out := FroLex[Idx].M1
+      Else If IsFem And (FroLex[Idx].M2 <> '') Then
+        OFT[I].Out := FroLex[Idx].M2
+      Else
+        OFT[I].Out := FroLex[Idx].M1;
+      If HasS Then OFT[I].Out := FroPlural(OFT[I].Out);
+    End;
+End;
+
+Function FroTranslateSentence(Const Sentence: String): String;
+Var
+  S, Word1, Res, Mark: String;
+  I, L, J, K, M: Integer;
+  C: Char;
+  Cap, ElideNext: Boolean;
+  Words: Array[1..160] Of String[40];
+  HyphenOk: Boolean;
+  WordVerb: Array[1..161] Of Boolean;
+  WN: Integer;
+  HasNeg: Boolean;
+Begin
+  OFN := 0;
+  Mark := '';
+  OfQuestion := False;
+  S := '';
+  I := 1;
+  While I <= Length(Sentence) Do
+  Begin
+    If (Sentence[I] = #$E2) And (I + 2 <= Length(Sentence)) And (Sentence[I + 1]
+        = #$80) And
+       (Sentence[I + 2] = #$99) Then
+    Begin
+      S := S + '''';
+      Inc(I, 3);
+    End
+    Else
+    Begin
+      S := S + Sentence[I];
+      Inc(I);
+    End;
+  End;
+  L := Length(S);
+  I := 1;
+  While I <= L Do
+  Begin
+    C := S[I];
+    If FrWordByte(C) Then
+    Begin
+      Word1 := '';
+      While (I <= L) And FrWordByte(S[I]) Do
+      Begin
+        Word1 := Word1 + S[I];
+        Inc(I);
+      End;
+      ElideNext := (I < L) And (S[I] = '''') And FrWordByte(S[I + 1]);
+      Cap := (Word1 <> '') And (((Word1[1] >= 'A') And (Word1[1] <= 'Z')) Or
+             ((Word1[1] = #$C3) And (Length(Word1) > 1) And (Word1[2] >= #$80)
+                 And (Word1[2] <= #$9E)));
+      If OFN < 160 Then
+      Begin
+        Inc(OFN);
+        FillChar(OFT[OFN], SizeOf(TFroTok), 0);
+        OFT[OFN].W := FrLower(Word1);
+        OFT[OFN].Orig := Word1;
+        OFT[OFN].Cap := Cap;
+        OFT[OFN].Elide := ElideNext;
+      End;
+    End
+    Else
+    Begin
+      If (C = '.') Or (C = '?') Or (C = '!') Then
+        Mark := C
+      Else If (C = ',') Or (C = ';') Or (C = ':') Then
+      Begin
+        If OFN < 160 Then
+        Begin
+          Inc(OFN);
+          FillChar(OFT[OFN], SizeOf(TFroTok), 0);
+          OFT[OFN].W := C;
+          OFT[OFN].Orig := C;
+          OFT[OFN].Punct := True;
+        End;
+      End;
+      Inc(I);
+    End;
+  End;
+  If OFN = 0 Then
+  Begin
+    FroTranslateSentence := '';
+    Exit;
+  End;
+  OfQuestion := Mark = '?';
+  FroClassify;
+  { assemblage }
+  WN := 0;
+  For I := 1 To OFN Do
+    If OFT[I].Out <> '' Then
+    Begin
+      Inc(WN);
+      Words[WN] := OFT[I].Out;
+      WordVerb[WN] := OFT[I].Kind = 'V';
+    End;
+  { ne ... pas }
+  I := 1;
+  While I <= WN Do
+  Begin
+    If (Words[I] = 'ne') Then
+    Begin
+      J := I + 1;
+      While (J <= WN) And (J <= I + 4) And (Not WordVerb[J]) Do
+        Inc(J);
+      If (J <= WN) And (J <= I + 4) Then
+      Begin
+        HasNeg := False;
+        For K := 1 To WN Do
+          If (K <> I) And InList(Words[K],
+              'pas rien jamais plus nul nulle personne que guère point') Then
+              HasNeg := True;
+        If (J < WN) And (Words[J + 1] = 'point') Then HasNeg := True;
+        If Not HasNeg Then
+        Begin
+          For M := WN Downto J + 1 Do
+          Begin
+            Words[M + 1] := Words[M];
+            WordVerb[M + 1] := WordVerb[M];
+          End;
+          Words[J + 1] := 'pas';
+          WordVerb[J + 1] := False;
+          Inc(WN);
+        End;
+      End;
+    End;
+    Inc(I);
+  End;
+  { inversion du sujet et imperatif : vas-tu, aidez-moi }
+  I := 2;
+  While I <= WN Do
+  Begin
+    HyphenOk := WordVerb[I - 1] And ((InList(Words[I],
+        'tu il elle ils elles nous vous je on') And (Mark = '?')) Or
+                (InList(Words[I], 'moi toi lui nous vous') And ((I = 2) Or
+                    (Words[I - 2] = ','))));
+    If HyphenOk Then
+    Begin
+      Words[I - 1] := Words[I - 1] + '-' + Words[I];
+      For M := I To WN - 1 Do
+      Begin
+        Words[M] := Words[M + 1];
+        WordVerb[M] := WordVerb[M + 1];
+      End;
+      Dec(WN);
+    End
+    Else Inc(I);
+  End;
+  Res := '';
+  For I := 1 To WN Do
+  Begin
+    If Res = '' Then
+      Res := Words[I]
+    Else Res := Res + ' ' + Words[I];
+  End;
+  Res := FixFrench(Res);
+  Res := UpperFirst(Res);
+  If Mark = '?' Then Res := Res + ' ?'
+  Else If Mark = '!' Then Res := Res + ' !'
+  Else If Mark = '.' Then Res := Res + '.';
+  FroTranslateSentence := Res;
+End;
+
 Function TranslateSentence(Const Sentence: String): String;
 Var
   Key, Res, Pair, En: String;
   I, N: Integer;
   Question: Boolean;
-  SD, SJ, SE, SQ, SP, SV, SDa, SIt, SLa, SCy, SAf: Boolean;
+  SD, SJ, SE, SQ, SP, SV, SDa, SIt, SLa, SCy, SAf, SMt, SIc: Boolean;
 Begin
   If SourceMoe Then
   Begin
     TranslateSentence := MoeTranslateSentence(Sentence);
     Exit;
   End;
-  If SourceDe Or SourceJa Or SourceEs Or SourceSq Or SourcePt Or SourceSv Or
-      SourceDa Or SourceIt Or SourceLa Or SourceCy Or SourceAf Then
+  If SourceFro Then
   Begin
-    If SourceAf Then Res := AfTranslateSentence(Sentence)
+    TranslateSentence := FroTranslateSentence(Sentence);
+    Exit;
+  End;
+  If SourceDe Or SourceJa Or SourceEs Or SourceSq Or SourcePt Or SourceSv Or
+      SourceDa Or SourceIt Or SourceLa Or SourceCy Or SourceAf Or SourceMt Or
+      SourceIc Then
+  Begin
+    If SourceIc Then Res := IcTranslateSentence(Sentence)
+    Else If SourceMt Then Res := MtTranslateSentence(Sentence)
+    Else If SourceAf Then Res := AfTranslateSentence(Sentence)
     Else If SourceCy Then Res := CyTranslateSentence(Sentence)
     Else If SourceLa Then Res := LaTranslateSentence(Sentence)
     Else If SourceIt Then Res := ItTranslateSentence(Sentence)
@@ -28181,6 +32540,10 @@ Begin
       SLa := SourceLa;
       SCy := SourceCy;
       SAf := SourceAf;
+      SMt := SourceMt;
+      SIc := SourceIc;
+      SourceIc := False;
+      SourceMt := False;
       SourceAf := False;
       SourceCy := False;
       SourceLa := False;
@@ -28204,6 +32567,8 @@ Begin
       SourceLa := SLa;
       SourceCy := SCy;
       SourceAf := SAf;
+      SourceMt := SMt;
+      SourceIc := SIc;
     End;
     TranslateSentence := Res;
     Exit;
@@ -28321,27 +32686,31 @@ Begin
   Writeln;
   Writeln('Options :');
   Writeln('  -f, --from-lang  Code ISO 639-1 de la langue source (en, fr, de, '+
-      'ja en romaji, es, sq, pt, sv, da, it, la, cy, af).');
+      'ja en romaji, es, sq, pt, sv, da, it, la, cy, af, mt, is, mt, is, fro).'
+      );
   Writeln('  -t, --to-lang    Code ISO 639-1 de la langue cible (fr, de, en).');
   Writeln('  -l, --list       Affiche les paires de langues disponibles.');
   Writeln('  -V, --version    Affiche la version.');
   Writeln('  -h, --help, /?   Affiche cette aide.');
   Writeln;
   Writeln('Codes de langue :');
-  Writeln('  en = anglais');
-  Writeln('  fr = francais');
-  Writeln('  de = allemand');
-  Writeln('  es = espagnol');
-  Writeln('  pt = portugais');
-  Writeln('  it = italien');
-  Writeln('  la = latin');
-  Writeln('  sv = suedois');
-  Writeln('  da = danois');
-  Writeln('  sq = albanais');
-  Writeln('  cy = gallois');
   Writeln('  af = afrikaans');
+  Writeln('  cy = gallois');
+  Writeln('  da = danois');
+  Writeln('  de = allemand');
+  Writeln('  en = anglais');
+  Writeln('  es = espagnol');
+  Writeln('  fr = francais');
+  Writeln('  fro = ancien francais (roman)');
+  Writeln('  is = islandais');
+  Writeln('  it = italien');
   Writeln('  ja = japonais (en romaji)');
+  Writeln('  la = latin');
   Writeln('  moe = innu-aimun (montagnais)');
+  Writeln('  mt = maltais');
+  Writeln('  pt = portugais');
+  Writeln('  sq = albanais');
+  Writeln('  sv = suedois');
   Writeln;
   Writeln('Sans texte, les lignes sont lues sur l''entree standard. Le resulta'+
       't est ecrit en');
@@ -28373,6 +32742,9 @@ BEGIN
   LoadLatin;
   LoadWelsh;
   LoadAfrikaans;
+  LoadMaltese;
+  LoadIcelandic;
+  LoadOldFrench;
   LoadMoe;
   FromLang := '';
   ToLang := '';
@@ -28452,7 +32824,12 @@ BEGIN
     Writeln('cy -> en');
     Writeln('af -> fr');
     Writeln('af -> en');
+    Writeln('mt -> fr');
+    Writeln('mt -> en');
+    Writeln('is -> fr');
+    Writeln('is -> en');
     Writeln('moe -> fr (innu-aimun : phrases et mots connus seulement)');
+    Writeln('fro -> fr (ancien francais : modernisation mot a mot)');
     Halt(0);
   End;
   If (FromLang = '') Or (ToLang = '') Then
@@ -28461,6 +32838,20 @@ BEGIN
     Halt(2);
   End;
   If (FromLang = 'inn') Or (FromLang = 'innu') Then FromLang := 'moe';
+  If (FromLang = 'roman') Or (FromLang = 'romanz') Or (FromLang = 'ofr') Then
+      FromLang := 'fro';
+  If FromLang = 'fro' Then
+  Begin
+    If ToLang <> 'fr' Then
+    Begin
+      Writeln('Erreur : l''ancien francais ne se traduit que vers le francais '+
+          'moderne (fro -> fr).');
+      Halt(1);
+    End;
+    SourceFro := True;
+    TargetDe := False;
+    TargetEn := False;
+  End;
   If FromLang = 'moe' Then
   Begin
     If ToLang <> 'fr' Then
@@ -28473,8 +32864,8 @@ BEGIN
     TargetDe := False;
     TargetEn := False;
   End;
-  If Not (SourceMoe Or ((FromLang = 'en') And ((ToLang = 'fr') Or (ToLang =
-      'de'))) Or
+  If Not (SourceMoe Or SourceFro Or ((FromLang = 'en') And ((ToLang = 'fr') Or
+      (ToLang = 'de'))) Or
           ((FromLang = 'fr') And (ToLang = 'en')) Or
           ((FromLang = 'de') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
           ((FromLang = 'ja') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
@@ -28486,7 +32877,9 @@ BEGIN
           ((FromLang = 'it') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
           ((FromLang = 'la') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
           ((FromLang = 'cy') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
-          ((FromLang = 'af') And ((ToLang = 'fr') Or (ToLang = 'en')))) Then
+          ((FromLang = 'af') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
+          ((FromLang = 'mt') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
+          ((FromLang = 'is') And ((ToLang = 'fr') Or (ToLang = 'en')))) Then
   Begin
     Writeln('Erreur : aucun modele de traduction de ', FromLang, ' vers ',
         ToLang,
@@ -28494,7 +32887,8 @@ BEGIN
                 'en, de -> fr, de -> en, ja -> fr, ja -> en, es -> fr, es -> e'+
                 'n, sq -> fr, sq -> en, pt -> fr, pt -> en, sv -> fr, sv -> en'+
                 ', da -> fr, da -> en, it -> fr, it -> en, la -> fr, la -> en,'+
-                ' cy -> fr, cy -> en, af -> fr, af -> en).');
+                ' cy -> fr, cy -> en, af -> fr, af -> en, mt -> fr, mt -> en, '+
+                'is -> fr, is -> en, fro -> fr).');
     Halt(1);
   End;
   SourceDe := FromLang = 'de';
@@ -28508,12 +32902,14 @@ BEGIN
   SourceLa := FromLang = 'la';
   SourceCy := FromLang = 'cy';
   SourceAf := FromLang = 'af';
+  SourceMt := FromLang = 'mt';
+  SourceIc := FromLang = 'is';
   DeToEn := (SourceDe Or SourceJa Or SourceEs Or SourceSq Or SourcePt Or
-      SourceSv Or SourceDa Or SourceIt Or SourceLa Or SourceCy Or SourceAf) And
-      (ToLang = 'en');
+      SourceSv Or SourceDa Or SourceIt Or SourceLa Or SourceCy Or SourceAf Or
+      SourceMt Or SourceIc) And (ToLang = 'en');
   DePivot := (SourceDe Or SourceJa Or SourceEs Or SourceSq Or SourcePt Or
-      SourceSv Or SourceDa Or SourceIt Or SourceLa Or SourceCy Or SourceAf) And
-      (Not DeToEn);
+      SourceSv Or SourceDa Or SourceIt Or SourceLa Or SourceCy Or SourceAf Or
+      SourceMt Or SourceIc) And (Not DeToEn);
   If SourceDe Then InitDeSpecials;
   TargetDe := ToLang = 'de';
   TargetEn := ToLang = 'en';
