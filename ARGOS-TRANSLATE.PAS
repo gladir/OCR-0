@@ -23,7 +23,10 @@
     afrikaans -> anglais, afrikaans ->
   francais, maltais -> anglais, maltais -> francais, islandais -> anglais,
     islandais ->
-  francais, ancien francais (roman) -> francais moderne et innu-aimun
+  francais, neerlandais -> anglais, neerlandais -> francais, norvegien ->
+    anglais, norvegien -> francais, polonais -> anglais, polonais -> francais,
+    roumain -> anglais, roumain -> francais, catalan -> anglais, catalan ->
+    francais, ancien francais (roman) -> francais moderne et innu-aimun
   (montagnais) -> francais (mots et phrases connus seulement).
     - lexique d'environ 600 mots (noms avec genre, adjectifs avec accord et
       place,
@@ -163,6 +166,69 @@
       postpose (hundurinn minn) ; lexique d'environ 2985 formes ; analyse de
         l'espagnol
       puis anglais.
+    - neerlandais : formes de surface engendrees a la construction (noms et
+      pluriels,
+      adjectifs, verbes faibles avec la regle du 't kofschip, verbes forts :
+        present,
+      passe simple, participe), verbe en 2e position (inversion) et verbe final
+        des
+      subordonnees remis en ordre, hebben / zijn + participe = passe, zullen +
+        infinitif =
+      futur, gaan + infinitif, geen / niet, "er is", "om te", genitif (Jans
+        boek), houden
+      van ; lexique d'environ 1162 formes ; analyse de l'espagnol puis anglais.
+    - norvegien (bokmal) : formes de surface engendrees a la construction (noms,
+      definis en -en / -a / -et, pluriels, adjectifs, verbes : infinitif,
+        present,
+      passe, supin, imperatif), verbe en 2e position (inversion), har + supin =
+        passe,
+      skal + infinitif = futur, "det er", ikke, possessifs postposes (boken
+        min),
+      genitif (Annas bok) ; lexique d'environ 1321 formes ; analyse de
+        l'espagnol puis
+      anglais.
+    - polonais : formes de surface engendrees a la construction (noms avec leurs
+      sept
+      cas, adjectifs, verbes : present, passe en -l selon la personne et le
+        genre,
+      futur compose avec bede, conditionnel, imperatif, aspect parfait), sujet
+        omis
+      retabli d'apres la terminaison du verbe, articles ajoutes (le polonais
+        n'en a
+      pas), genitif du complement du nom (dom brata), instrumental sans
+        preposition
+      (par le train), "jest" + nom = il y a, nie ... nic, ile ... kosztuje,
+        titres pan /
+      pani, jours et mois ; lexique d'environ 8300 formes ; analyse de
+        l'espagnol puis
+      anglais.
+    - roumain : formes de surface engendrees a la construction (article defini
+      suffixe
+      -ul / -a / -ii / -le, genitif-datif, adjectifs, verbes : present,
+        imparfait,
+      participe, subjonctif), perfect compose (am citit = passe), futur (voi +
+        infinitif,
+      o sa), conditionnel (as vrea), sa + verbe = infinitif, sujet omis retabli
+        d'apres
+      la terminaison du verbe, articles ajoutes, genitif (cartea copilului),
+        pronoms
+      lies (il vad), pe devant un objet, "este" + groupe indefini = il y a, nu
+        ... nimic,
+      ma cheama / ma numesc, imi place, jours et mois ; lexique d'environ 3640
+        formes ;
+      analyse de l'espagnol puis anglais.
+    - catalan : formes de surface engendrees a la construction (pluriels,
+      adjectifs,
+      verbes : present, imparfait, futur, conditionnel, participe), contractions
+        al / del
+      / pel et elisions l', d', m', passe compose (he cantat) et passe
+        periphrastique
+      (vaig cantar) = passe, anar a + infinitif, sujet omis retabli d'apres la
+      terminaison du verbe, articles, em dic / m'agrada, hi ha, fa fred, tinc
+        fam,
+      tinc trenta anys, no ... res, jours et mois ; lexique d'environ 3400
+        formes ;
+      analyse de l'espagnol puis anglais.
     - ancien francais (code fro, vers le francais moderne seulement) :
       modernisation mot
       a mot de textes simples (orthographe, formes verbales, articles li / le /
@@ -229,7 +295,7 @@ Const
   { ------------------------------------------------------------------ }
   { Lexique : en=fr:specification (n m/f, a B/A, v groupe aux, r, p, c, j) }
   { ------------------------------------------------------------------ }
-  LexData: Array[0..100] Of String = (
+  LexData: Array[0..111] Of String = (
     'time=temps:nm/temps~Zeit|f/Zeiten;day=jour:nm~Tag|m/Tage;night=nuit:nf~Na'+
         'cht|f/Nächte;morning=matin:nm~Morgen|m/-;evening=soir:nm~Abend|m/Abe'+
         'nde;afternoon=après-midi:nm/après-midi~Nachmittag|m/Nachmittage;',
@@ -598,7 +664,49 @@ Const
         'ly=enfin:r;',
     'hardly=à peine:r;immediately=immédiatement:r;once=autrefois:r;thus=ains'+
         'i:r;praise=louer:ve;wage=mener:vxa;welsh=gallois:nm;afrikaans=afrikaa'+
-        'ns:nm;maltese=maltais:nm;icelandic=islandais:nm;'
+        'ns:nm;maltese=maltais:nm;icelandic=islandais:nm;dutch=néerlandais:nm'+
+        ';',
+    'norwegian=norvégien:nm;polish=polonais:nm;lie=reposer:ve;cafe=café:nm;g'+
+        'randmother=grand-mère:nf;grandfather=grand-père:nm;uncle=oncle:nm;a'+
+        'unt=tante:nf;center=centre:nm;centre=centre:nm;sofa=canapé:nm;board='+
+        'tableau:nm;',
+    'chess=échecs:nm/échecs;romanian=roumain:nm;actor=acteur:nm;apartment=ap'+
+        'partement:nm;chicken=poulet:nm;clock=horloge:nf;engineer=ingénieur:n'+
+        'm;exam=examen:nm;football=football:nm;gentleman=monsieur:nm/messieurs'+
+        ';honey=miel:nm;',
+    'neighbor=voisin:nm;neighborhood=quartier:nm;nephew=neveu:nm/neveux;noon=m'+
+        'idi:nm;onion=oignon:nm;pharmacy=pharmacie:nf;policeman=policier:nm;po'+
+        'tato=pomme de terre:nf/pommes de terre;program=programme:nm;temperatu'+
+        're=température:nf;',
+    'tennis=tennis:nm;waiter=serveur:nm;wedding=mariage:nm;address=adresse:nf;'+
+        'artist=artiste:nm;backpack=sac à dos:nm/sacs à dos;bench=banc:nm;bi'+
+        'cycle=vélo:nm;boss=patron:nm;butter=beurre:nm;colleague=collègue:nm'+
+        ';',
+    'conversation=conversation:nf;cookie=biscuit:nm;date=date:nf;decision=déc'+
+        'ision:nf;dentist=dentiste:nm;elephant=éléphant:nm;elevator=ascenseu'+
+        'r:nm;excursion=excursion:nf;jacket=veste:nf;lamp=lampe:nf;mirror=miro'+
+        'ir:nm;',
+    'moment=moment:nm;mum=maman:nf;notebook=cahier:nm;painter=peintre:nm;pasta'+
+        '=pâtes:nf/pâtes;pear=poire:nf;photograph=photo:nf;pool=piscine:nf;r'+
+        'efrigerator=réfrigérateur:nm;roll=petit pain:nm/petits pains;screen'+
+        '=écran:nm;',
+    'shelf=étagère:nf;soap=savon:nm;square=place:nf;strawberry=fraise:nf;sub'+
+        'ject=sujet:nm;surname=nom de famille:nm/noms de famille;task=tâche:n'+
+        'f;tomato=tomate:nf;wardrobe=armoire:nf;writer=écrivain:nm;cheerful=j'+
+        'oyeux:aA/joyeuse;',
+    'curious=curieux:aA/curieuse;dangerous=dangereux:aA/dangereuse;fat=gros:aB'+
+        '/grosse;foreign=étranger:aA/étrangère;healthy=sain:aA/saine;local='+
+        'local:aA/locale/locaux;necessary=nécessaire:aA;quiet=calme:aA;simple'+
+        '=simple:aA;',
+    'smart=intelligent:aA/intelligente;stupid=stupide:aA;thin=mince:aA;whole=e'+
+        'ntier:aA/entière;dry=sec:aA/sèche;fresh=frais:aA/fraîche;lazy=pare'+
+        'sseux:aA/paresseuse;loud=fort:aA/forte;ugly=laid:aA/laide;wet=mouill'+
+        'é:aA;',
+    'draw=dessiner:ve;fly=voler:ve;jump=sauter:ve;invite=inviter:ve;count=comp'+
+        'ter:ve;shine=briller:ve;continue=continuer:ve;succeed=réussir:via;wi'+
+        'sh=souhaiter:ve;ring=sonner:ve;catalan=catalan:nm;sunny=ensoleillé:a'+
+        'A;',
+    'windy=venteux:aA/venteuse;'
   );
 
   { Verbes francais irreguliers :
@@ -3668,6 +3776,6603 @@ Const
         ';litlar=small:a:sm;lítinn=small:a:sm;lítils=small:a:sm;'
   );
 
+  { Neerlandais : formes de surface (voir mknl.py) }
+  NlData: Array[0..107] Of String = (
+    'boek=book:n:s;boeken=book:n:p;huis=house:n:s;huizen=house:n:p;school=scho'+
+        'ol:n:s;scholen=school:n:p;man=man:n:s;mannen=man:n:p;vrouw=woman:n:s;'+
+        'vrouwen=woman:n:p;kind=child:n:s;kinderen=child:n:p;vriend=friend:n:s'+
+        ';',
+    'vrienden=friend:n:p;vriendin=friend:n:s;vriendinnen=friend:n:p;familie=fa'+
+        'mily:n:s;families=family:n:p;moeder=mother:n:s;moeders=mother:n:p;vad'+
+        'er=father:n:s;vaders=father:n:p;broer=brother:n:s;broers=brother:n:p;'+
+        'zus=sister:n:s;',
+    'zussen=sister:n:p;zoon=son:n:s;zonen=son:n:p;dochter=daughter:n:s;dochter'+
+        's=daughter:n:p;leraar=teacher:n:s;leraren=teacher:n:p;lerares=teacher'+
+        ':n:s+p;student=student:n:s;studenten=student:n:p;dokter=doctor:n:s;do'+
+        'kters=doctor:n:p;',
+    'verpleegster=nurse:n:s;verpleegsters=nurse:n:p;persoon=person:n:s;persone'+
+        'n=person:n:p;mens=person:n:s;mensen=person:n:p;stad=city:n:s;steden=c'+
+        'ity:n:p;dorp=village:n:s;dorpen=village:n:p;land=country:n:s;landen=c'+
+        'ountry:n:p;',
+    'straat=street:n:s;straten=street:n:p;weg=road:n:s;wegen=road:n:p;tuin=gar'+
+        'den:n:s;tuinen=garden:n:p;park=park:n:s;parken=park:n:p;boom=tree:n:s'+
+        ';bomen=tree:n:p;bloem=flower:n:s;bloemen=flower:n:p;kamer=room:n:s;ka'+
+        'mers=room:n:p;',
+    'keuken=kitchen:n:s;keukens=kitchen:n:p;deur=door:n:s;deuren=door:n:p;raam'+
+        '=window:n:s;ramen=window:n:p;tafel=table:n:s;tafels=table:n:p;stoel=c'+
+        'hair:n:s;stoelen=chair:n:p;bed=bed:n:s;bedden=bed:n:p;kantoor=office:'+
+        'n:s;',
+    'kantoren=office:n:p;winkel=shop:n:s;winkels=shop:n:p;markt=market:n:s;mar'+
+        'kten=market:n:p;restaurant=restaurant:n:s;restaurants=restaurant:n:p;'+
+        'hotel=hotel:n:s;hotels=hotel:n:p;ziekenhuis=hospital:n:s;ziekenhuizen'+
+        '=hospital:n:p;',
+    'bibliotheek=library:n:s;bibliotheken=library:n:p;bank=bank:n:s;banken=ban'+
+        'k:n:p;station=station:n:s;stations=station:n:p;museum=museum:n:s;muse'+
+        'a=museum:n:p;kerk=church:n:s;kerken=church:n:p;theater=theater:n:s;th'+
+        'eaters=theater:n:p;',
+    'strand=beach:n:s;stranden=beach:n:p;zee=sea:n:s;zeeën=sea:n:p;rivier=riv'+
+        'er:n:s;rivieren=river:n:p;berg=mountain:n:s;bergen=mountain:n:p;bos=f'+
+        'orest:n:s;bossen=forest:n:p;auto=car:n:s;auto''s=car:n:p;fiets=bicycl'+
+        'e:n:s;',
+    'fietsen=bicycle:n:p;trein=train:n:s;treinen=train:n:p;bus=bus:n:s;bussen='+
+        'bus:n:p;vliegtuig=plane:n:s;vliegtuigen=plane:n:p;boot=boat:n:s;boten'+
+        '=boat:n:p;reis=trip:n:s;reizen=trip:n:p;eten=food:n:s+p;water=water:n'+
+        ':s+p;',
+    'melk=milk:n:s+p;brood=bread:n:s;broden=bread:n:p;vlees=meat:n:s+p;vis=fis'+
+        'h:n:s;vissen=fish:n:p;kaas=cheese:n:s;kazen=cheese:n:p;ei=egg:n:s;eie'+
+        'ren=egg:n:p;appel=apple:n:s;appels=apple:n:p;koffie=coffee:n:s+p;thee'+
+        '=tea:n:s+p;',
+    'bier=beer:n:s;bieren=beer:n:p;wijn=wine:n:s;wijnen=wine:n:p;pizza=pizza:n'+
+        ':s;pizza''s=pizza:n:p;geld=money:n:s+p;tijd=time:n:s;tijden=time:n:p;'+
+        'dag=day:n:s;dagen=day:n:p;nacht=night:n:s;nachten=night:n:p;week=week'+
+        ':n:s;weken=week:n:p;',
+    'maand=month:n:s;maanden=month:n:p;jaar=year:n:s;jaren=year:n:p;uur=hour:n'+
+        ':s;uren=hour:n:p;minuut=minute:n:s;minuten=minute:n:p;ochtend=morning'+
+        ':n:s;ochtenden=morning:n:p;middag=afternoon:n:s;middagen=afternoon:n:'+
+        'p;',
+    'avond=evening:n:s;avonden=evening:n:p;krant=newspaper:n:s;kranten=newspap'+
+        'er:n:p;brief=letter:n:s;brieven=letter:n:p;telefoon=telephone:n:s;tel'+
+        'efoons=telephone:n:p;computer=computer:n:s;computers=computer:n:p;fil'+
+        'm=movie:n:s;',
+    'films=movie:n:p;muziek=music:n:s+p;spel=game:n:s;spellen=game:n:p;werk=wo'+
+        'rk:n:s+p;cadeau=gift:n:s;cadeaus=gift:n:p;naam=name:n:s;namen=name:n:'+
+        'p;taal=language:n:s;talen=language:n:p;vraag=question:n:s;vragen=ques'+
+        'tion:n:p;',
+    'antwoord=answer:n:s;antwoorden=answer:n:p;idee=idea:n:s;ideeën=idea:n:p;'+
+        'ding=thing:n:s;dingen=thing:n:p;plaats=place:n:s;plaatsen=place:n:p;w'+
+        'eer=weather:n:s+p;regen=rain:n:s+p;zon=sun:n:s+p;hond=dog:n:s;honden='+
+        'dog:n:p;',
+    'kat=cat:n:s;katten=cat:n:p;vogel=bird:n:s;vogels=bird:n:p;paard=horse:n:s'+
+        ';paarden=horse:n:p;koe=cow:n:s;koeien=cow:n:p;hand=hand:n:s;handen=ha'+
+        'nd:n:p;hoofd=head:n:s;hoofden=head:n:p;oog=eye:n:s;ogen=eye:n:p;voet='+
+        'foot:n:s;',
+    'voeten=foot:n:p;hart=heart:n:s;harten=heart:n:p;koning=king:n:s;koningen='+
+        'king:n:p;bord=board:n:s;borden=board:n:p;appartement=apartment:n:s;ap'+
+        'partementen=apartment:n:p;bedrijf=company:n:s;bedrijven=company:n:p;b'+
+        'aan=job:n:s;',
+    'banen=job:n:p;fout=mistake:n:s;fouten=mistake:n:p;verjaardag=birthday:n:s'+
+        ';verjaardagen=birthday:n:p;vakantie=holiday:n:s;vakanties=holiday:n:p'+
+        ';kaart=card:n:s;kaarten=card:n:p;tas=bag:n:s;tassen=bag:n:p;jas=coat:'+
+        'n:s;',
+    'jassen=coat:n:p;schoen=shoe:n:s;schoenen=shoe:n:p;hemd=shirt:n:s;hemden=s'+
+        'hirt:n:p;brug=bridge:n:s;bruggen=bridge:n:p;haven=port:n:s;havens=por'+
+        't:n:p;meer=lake:n:s;meren=lake:n:p;eiland=island:n:s;eilanden=island:'+
+        'n:p;',
+    'kerstmis=Christmas:n:s+p;meisje=girl:n:s;meisjes=girl:n:p;jongen=boy:n:s;'+
+        'jongens=boy:n:p;vrouwtje=little_woman:n:s;vrouwtjes=little_woman:n:p;'+
+        'groot=big:a;grote=big:a;klein=small:a;kleine=small:a;lang=long:a;lang'+
+        'e=long:a;',
+    'kort=short:a;korte=short:a;nieuw=new:a;nieuwe=new:a;oud=old:a;oude=old:a;'+
+        'jong=young:a;jonge=young:a;mooi=beautiful:a;mooie=beautiful:a;gelukki'+
+        'g=happy:a;gelukkige=happy:a;verdrietig=sad:a;verdrietige=sad:a;moe=ti'+
+        'red:a;',
+    'moeë=tired:a;ziek=sick:a;zieke=sick:a;warm=hot:a;warme=hot:a;koud=cold:a'+
+        ';koude=cold:a;duur=expensive:a;dure=expensive:a;goedkoop=cheap:a;goed'+
+        'kope=cheap:a;makkelijk=easy:a;makkelijke=easy:a;moeilijk=difficult:a;',
+    'moeilijke=difficult:a;belangrijk=important:a;belangrijke=important:a;inte'+
+        'ressant=interesting:a;interessante=interesting:a;saai=boring:a;saaie='+
+        'boring:a;leuk=fun:a;leuke=fun:a;snel=fast:a;snelle=fast:a;langzaam=sl'+
+        'ow:a;',
+    'langzame=slow:a;sterk=strong:a;sterke=strong:a;zwak=weak:a;zwakke=weak:a;'+
+        'rijk=rich:a;rijke=rich:a;arm=poor:a;arme=poor:a;schoon=clean:a;schone'+
+        '=clean:a;vuil=dirty:a;vuile=dirty:a;vol=full:a;volle=full:a;leeg=empt'+
+        'y:a;lege=empty:a;',
+    'open=open:a;dicht=closed:a;dichte=closed:a;klaar=ready:a;klare=ready:a;dr'+
+        'uk=busy:a;drukke=busy:a;vrij=free:a;vrije=free:a;rood=red:a;rode=red:'+
+        'a;blauw=blue:a;blauwe=blue:a;groen=green:a;groene=green:a;geel=yellow'+
+        ':a;gele=yellow:a;',
+    'zwart=black:a;zwarte=black:a;wit=white:a;witte=white:a;bruin=brown:a;brui'+
+        'ne=brown:a;grijs=gray:a;grijze=gray:a;roze=pink:a;zelfde=same:a;ander'+
+        's=different:a;andere=different:a;ander=other:a;eerste=first:a;laatste'+
+        '=last:a;',
+    'volgende=next:a;goed=good:a;goede=good:a;slecht=bad:a;slechte=bad:a;honge'+
+        'rig=hungry:a;hongerige=hungry:a;dorstig=thirsty:a;dorstige=thirsty:a;'+
+        'vriendelijk=kind:a;vriendelijke=kind:a;aardig=nice:a;aardige=nice:a;z'+
+        'eker=sure:a;',
+    'zekere=sure:a;waar=true:a;ware=true:a;beroemd=famous:a;beroemde=famous:a;'+
+        'rustig=quiet:a;rustige=quiet:a;getrouwd=married:a;getrouwde=married:a'+
+        ';lekker=tasty:a;lekkere=tasty:a;hoog=tall:a;hoge=tall:a;laag=low:a;la'+
+        'ge=low:a;',
+    'dik=thick:a;dikke=thick:a;dun=thin:a;dunne=thin:a;gezond=healthy:a;gezond'+
+        'e=healthy:a;ongezond=unhealthy:a;ongezonde=unhealthy:a;werken=work:v:'+
+        'I+p4+p5+p6;werk=work:v:p1+p2+M2;werkt=work:v:p2+p3;werkte=work:v:i1+i'+
+        '2+i3;',
+    'werkten=work:v:i4+i5+i6;gewerkt=work:v:P;wonen=live:v:I+p4+p5+p6;woon=liv'+
+        'e:v:p1+p2+M2;woont=live:v:p2+p3;woonde=live:v:i1+i2+i3;woonden=live:v'+
+        ':i4+i5+i6;gewoond=live:v:P;maken=make:v:I+p4+p5+p6;maak=make:v:p1+p2+'+
+        'M2;',
+    'maakt=make:v:p2+p3;maakte=make:v:i1+i2+i3;maakten=make:v:i4+i5+i6;gemaakt'+
+        '=make:v:P;spelen=play:v:I+p4+p5+p6;speel=play:v:p1+p2+M2;speelt=play:'+
+        'v:p2+p3;speelde=play:v:i1+i2+i3;speelden=play:v:i4+i5+i6;gespeeld=pla'+
+        'y:v:P;',
+    'praten=talk:v:I+p4+p5+p6;praat=talk:v:p1+p2+M2+p3;praatte=talk:v:i1+i2+i3'+
+        ';praatten=talk:v:i4+i5+i6;gepraat=talk:v:P;leren=learn:v:I+p4+p5+p6;l'+
+        'eer=learn:v:p1+p2+M2;leert=learn:v:p2+p3;leerde=learn:v:i1+i2+i3;',
+    'leerden=learn:v:i4+i5+i6;geleerd=learn:v:P;leven=live:v:I+p4+p5+p6;leef=l'+
+        'ive:v:p1+p2+M2;leeft=live:v:p2+p3;leefte=live:v:i1+i2+i3;leeften=live'+
+        ':v:i4+i5+i6;geleeft=live:v:P;reizen=travel:v:I+p4+p5+p6;reis=travel:v'+
+        ':p1+p2+M2;',
+    'reist=travel:v:p2+p3;reiste=travel:v:i1+i2+i3;reisten=travel:v:i4+i5+i6;g'+
+        'ereist=travel:v:P;wachten=wait:v:I+p4+p5+p6;wacht=wait:v:p1+p2+M2+p3;'+
+        'wachtte=wait:v:i1+i2+i3;wachtten=wait:v:i4+i5+i6;gewacht=wait:v:P;',
+    'bellen=call:v:I+p4+p5+p6;bel=call:v:p1+p2+M2;belt=call:v:p2+p3;belde=call'+
+        ':v:i1+i2+i3;belden=call:v:i4+i5+i6;beld=call:v:P;vragen=ask:v:I+p4+p5'+
+        '+p6;vraag=ask:v:p1+p2+M2;vraagt=ask:v:p2+p3;vraagde=ask:v:i1+i2+i3;',
+    'vraagden=ask:v:i4+i5+i6;gevraagd=ask:v:P;antwoorden=answer:v:I+p4+p5+p6;a'+
+        'ntwoord=answer:v:p1+p2+M2;antwoordt=answer:v:p2+p3;antwoordde=answer:'+
+        'v:i1+i2+i3;antwoordden=answer:v:i4+i5+i6;geantwoord=answer:v:P;kijken'+
+        '=look:v:I+p4+p5+p6;',
+    'kijk=look:v:p1+p2+M2;kijkt=look:v:p2+p3;kijkte=look:v:i1+i2+i3;kijkten=lo'+
+        'ok:v:i4+i5+i6;gekijkt=look:v:P;luisteren=listen:v:I+p4+p5+p6;luister='+
+        'listen:v:p1+p2+M2;luistert=listen:v:p2+p3;luisterde=listen:v:i1+i2+i3'+
+        ';',
+    'luisterden=listen:v:i4+i5+i6;geluisterd=listen:v:P;dansen=dance:v:I+p4+p5'+
+        '+p6;dans=dance:v:p1+p2+M2;danst=dance:v:p2+p3;danste=dance:v:i1+i2+i3'+
+        ';dansten=dance:v:i4+i5+i6;gedanst=dance:v:P;koken=cook:v:I+p4+p5+p6;',
+    'kook=cook:v:p1+p2+M2;kookt=cook:v:p2+p3;kookte=cook:v:i1+i2+i3;kookten=co'+
+        'ok:v:i4+i5+i6;gekookt=cook:v:P;betalen=pay:v:I+p4+p5+p6;betaal=pay:v:'+
+        'p1+p2+M2;betaalt=pay:v:p2+p3;betaalde=pay:v:i1+i2+i3;betaalden=pay:v:'+
+        'i4+i5+i6;',
+    'betaald=pay:v:P;kosten=cost:v:I+p4+p5+p6;kost=cost:v:p1+p2+M2+p3;kostte=c'+
+        'ost:v:i1+i2+i3;kostten=cost:v:i4+i5+i6;gekost=cost:v:P;bezoeken=visit'+
+        ':v:I+p4+p5+p6;bezoek=visit:v:p1+p2+M2;bezoekt=visit:v:p2+p3+P;bezoekt'+
+        'e=visit:v:i1+i2+i3;',
+    'bezoekten=visit:v:i4+i5+i6;onthouden=remember:v:I+p4+p5+p6;onthoud=rememb'+
+        'er:v:p1+p2+M2+P;onthoudt=remember:v:p2+p3;onthoudde=remember:v:i1+i2+'+
+        'i3;onthoudden=remember:v:i4+i5+i6;zoeken=look_for:v:I+p4+p5+p6;zoek=l'+
+        'ook_for:v:p1+p2+M2;',
+    'zoekt=look_for:v:p2+p3;zoekte=look_for:v:i1+i2+i3;zoekten=look_for:v:i4+i'+
+        '5+i6;gezoekt=look_for:v:P;gebruiken=use:v:I+p4+p5+p6;gebruik=use:v:p1'+
+        '+p2+M2;gebruikt=use:v:p2+p3+P;gebruikte=use:v:i1+i2+i3;gebruikten=use'+
+        ':v:i4+i5+i6;',
+    'huilen=cry:v:I+p4+p5+p6;huil=cry:v:p1+p2+M2;huilt=cry:v:p2+p3;huilde=cry:'+
+        'v:i1+i2+i3;huilden=cry:v:i4+i5+i6;gehuild=cry:v:P;lachen=laugh:v:I+p4'+
+        '+p5+p6;lach=laugh:v:p1+p2+M2;lacht=laugh:v:p2+p3;lachte=laugh:v:i1+i2'+
+        '+i3;',
+    'lachten=laugh:v:i4+i5+i6;gelacht=laugh:v:P;studeren=study:v:I+p4+p5+p6;st'+
+        'udeer=study:v:p1+p2+M2;studeert=study:v:p2+p3;studeerde=study:v:i1+i2'+
+        '+i3;studeerden=study:v:i4+i5+i6;gestudeerd=study:v:P;fietsen=cycle:v:'+
+        'I+p4+p5+p6;',
+    'fiets=cycle:v:p1+p2+M2;fietst=cycle:v:p2+p3;fietste=cycle:v:i1+i2+i3;fiet'+
+        'sten=cycle:v:i4+i5+i6;gefietst=cycle:v:P;wandelen=walk:v:I+p4+p5+p6;w'+
+        'andel=walk:v:p1+p2+M2;wandelt=walk:v:p2+p3;wandelde=walk:v:i1+i2+i3;',
+    'wandelden=walk:v:i4+i5+i6;gewandeld=walk:v:P;ontmoeten=meet:v:I+p4+p5+p6;'+
+        'ontmoet=meet:v:p1+p2+M2+p3;ontmoette=meet:v:i1+i2+i3;ontmoetten=meet:'+
+        'v:i4+i5+i6;bouwen=build:v:I+p4+p5+p6;bouw=build:v:p1+p2+M2;bouwt=buil'+
+        'd:v:p2+p3;',
+    'bouwde=build:v:i1+i2+i3;bouwden=build:v:i4+i5+i6;gebouwd=build:v:P;openen'+
+        '=open:v:I+p4+p5+p6;open=open:v:p1+p2+M2;opent=open:v:p2+p3;opende=ope'+
+        'n:v:i1+i2+i3;openden=open:v:i4+i5+i6;geopend=open:v:P;halen=fetch:v:I'+
+        '+p4+p5+p6;',
+    'haal=fetch:v:p1+p2+M2;haalt=fetch:v:p2+p3;haalde=fetch:v:i1+i2+i3;haalden'+
+        '=fetch:v:i4+i5+i6;gehaald=fetch:v:P;leggen=put:v:I+p4+p5+p6;leg=put:v'+
+        ':p1+p2+M2;legt=put:v:p2+p3;legde=put:v:i1+i2+i3;legden=put:v:i4+i5+i6'+
+        ';gelegd=put:v:P;',
+    'noemen=call:v:I+p4+p5+p6;noem=call:v:p1+p2+M2;noemt=call:v:p2+p3;noemde=c'+
+        'all:v:i1+i2+i3;noemden=call:v:i4+i5+i6;genoemd=call:v:P;hopen=hope:v:'+
+        'I+p4+p5+p6;hoop=hope:v:p1+p2+M2;hoopt=hope:v:p2+p3;hoopte=hope:v:i1+i'+
+        '2+i3;',
+    'hoopten=hope:v:i4+i5+i6;gehoopt=hope:v:P;geloven=believe:v:I+p4+p5+p6;gel'+
+        'oof=believe:v:p1+p2+M2;gelooft=believe:v:p2+p3+P;geloofte=believe:v:i'+
+        '1+i2+i3;gelooften=believe:v:i4+i5+i6;horen=hear:v:I+p4+p5+p6;hoor=hea'+
+        'r:v:p1+p2+M2;',
+    'hoort=hear:v:p2+p3;hoorde=hear:v:i1+i2+i3;hoorden=hear:v:i4+i5+i6;gehoord'+
+        '=hear:v:P;voelen=feel:v:I+p4+p5+p6;voel=feel:v:p1+p2+M2;voelt=feel:v:'+
+        'p2+p3;voelde=feel:v:i1+i2+i3;voelden=feel:v:i4+i5+i6;gevoeld=feel:v:P'+
+        ';',
+    'kennen=know:v:I+p4+p5+p6;ken=know:v:p1+p2+M2;kent=know:v:p2+p3;kende=know'+
+        ':v:i1+i2+i3;kenden=know:v:i4+i5+i6;gekend=know:v:P;proberen=try:v:I+p'+
+        '4+p5+p6;probeer=try:v:p1+p2+M2;probeert=try:v:p2+p3;probeerde=try:v:i'+
+        '1+i2+i3;',
+    'probeerden=try:v:i4+i5+i6;geprobeerd=try:v:P;stoppen=stop:v:I+p4+p5+p6;st'+
+        'op=stop:v:p1+p2+M2;stopt=stop:v:p2+p3;stopte=stop:v:i1+i2+i3;stopten='+
+        'stop:v:i4+i5+i6;gestopt=stop:v:P;vertellen=tell:v:I+p4+p5+p6;vertel=t'+
+        'ell:v:p1+p2+M2;',
+    'vertelt=tell:v:p2+p3;vertelde=tell:v:i1+i2+i3;vertelden=tell:v:i4+i5+i6;v'+
+        'erteld=tell:v:P;verhuizen=move:v:I+p4+p5+p6;verhuis=move:v:p1+p2+M2;v'+
+        'erhuist=move:v:p2+p3+P;verhuiste=move:v:i1+i2+i3;verhuisten=move:v:i4'+
+        '+i5+i6;',
+    'vieren=celebrate:v:I+p4+p5+p6;vier=celebrate:v:p1+p2+M2;viert=celebrate:v'+
+        ':p2+p3;vierde=celebrate:v:i1+i2+i3;vierden=celebrate:v:i4+i5+i6;gevie'+
+        'rd=celebrate:v:P;bestellen=order:v:I+p4+p5+p6;bestel=order:v:p1+p2+M2'+
+        ';',
+    'bestelt=order:v:p2+p3;bestelde=order:v:i1+i2+i3;bestelden=order:v:i4+i5+i'+
+        '6;besteld=order:v:P;helpen=help:v:I+p4+p5+p6;help=help:v:p1+p2+M2;hel'+
+        'pt=help:v:p2+p3;hielp=help:v:i1+i2+i3;hielpen=help:v:i4+i5+i6;geholpe'+
+        'n=help:v:P;',
+    'beloven=promise:v:I+p4+p5+p6;beloof=promise:v:p1+p2+M2;belooft=promise:v:'+
+        'p2+p3+P;beloofte=promise:v:i1+i2+i3;belooften=promise:v:i4+i5+i6;dank'+
+        'en=thank:v:I+p4+p5+p6;dank=thank:v:p1+p2+M2;dankt=thank:v:p2+p3;dankt'+
+        'e=thank:v:i1+i2+i3;',
+    'dankten=thank:v:i4+i5+i6;gedankt=thank:v:P;plannen=plan:v:I+p4+p5+p6;plan'+
+        '=plan:v:p1+p2+M2;plant=plan:v:p2+p3;plande=plan:v:i1+i2+i3;planden=pl'+
+        'an:v:i4+i5+i6;gepland=plan:v:P;zijn=be:v:I:ser+p4:ser+p5:ser+p6:ser;',
+    'ben=be:v:p1:ser+p2:ser+M2:ser;bent=be:v:p2:ser+p3:ser;is=be:v:p3:ser;was='+
+        'be:v:i1:ser+i2:ser+i3:ser;waren=be:v:i4:ser+i5:ser+i6:ser;geweest=be:'+
+        'v:P:ser;hebben=have:v:I:tener+p4:tener+p5:tener+p6:tener;',
+    'heb=have:v:p1:tener+p2:tener+M2:tener;hebt=have:v:p2:tener+p3:tener;heeft'+
+        '=have:v:p3:tener;had=have:v:i1:tener+i2:tener+i3:tener;hadden=have:v:'+
+        'i4:tener+i5:tener+i6:tener;gehad=have:v:P:tener;gaan=go:v:I:ir+p4:ir+'+
+        'p5:ir+p6:ir;',
+    'ga=go:v:p1:ir+p2:ir+M2:ir;gaat=go:v:p2:ir+p3:ir;ging=go:v:i1:ir+i2:ir+i3:'+
+        'ir;gingen=go:v:i4:ir+i5:ir+i6:ir;gegaan=go:v:P:ir;komen=come:v:I:veni'+
+        'r+p4:venir+p5:venir+p6:venir;kom=come:v:p1:venir+p2:venir+M2:venir;',
+    'komt=come:v:p2:venir+p3:venir;kwam=come:v:i1:venir+i2:venir+i3:venir;kwam'+
+        'en=come:v:i4:venir+i5:venir+i6:venir;gekomen=come:v:P:venir;zien=see:'+
+        'v:I:ver+p4:ver+p5:ver+p6:ver;zie=see:v:p1:ver+p2:ver+M2:ver;ziet=see:'+
+        'v:p2:ver+p3:ver;',
+    'zag=see:v:i1:ver+i2:ver+i3:ver;zagen=see:v:i4:ver+i5:ver+i6:ver;gezien=se'+
+        'e:v:P:ver;doen=do:v:I:hacer+p4:hacer+p5:hacer+p6:hacer;doe=do:v:p1:ha'+
+        'cer+p2:hacer+M2:hacer;doet=do:v:p2:hacer+p3:hacer;deed=do:v:i1:hacer+'+
+        'i2:hacer+i3:hacer;',
+    'deden=do:v:i4:hacer+i5:hacer+i6:hacer;gedaan=do:v:P:hacer;zeggen=say:v:I:'+
+        'decir+p4:decir+p5:decir+p6:decir;zeg=say:v:p1:decir+p2:decir+M2:decir'+
+        ';zegt=say:v:p2:decir+p3:decir;zei=say:v:i1:decir+i2:decir+i3:decir;',
+    'zeiden=say:v:i4:decir+i5:decir+i6:decir;gezegd=say:v:P:decir;weten=know:v'+
+        ':I:saber+p4:saber+p5:saber+p6:saber;weet=know:v:p1:saber+p2:saber+M2:'+
+        'saber+p3:saber;wist=know:v:i1:saber+i2:saber+i3:saber;',
+    'wisten=know:v:i4:saber+i5:saber+i6:saber;geweten=know:v:P:saber;kunnen=ca'+
+        'n:v:I:poder+p4:poder+p5:poder+p6:poder;kan=can:v:p1:poder+p2:poder+M2'+
+        ':poder+p3:poder;kunt=can:v:p2:poder+p3:poder;kon=can:v:i1:poder+i2:po'+
+        'der+i3:poder;',
+    'konden=can:v:i4:poder+i5:poder+i6:poder;gekund=can:v:P:poder;willen=want:'+
+        'v:I:querer+p4:querer+p5:querer+p6:querer;wil=want:v:p1:querer+p2:quer'+
+        'er+M2:querer+p3:querer;wilt=want:v:p2:querer+p3:querer;',
+    'wilde=want:v:i1:querer+i2:querer+i3:querer;wilden=want:v:i4:querer+i5:que'+
+        'rer+i6:querer;gewild=want:v:P:querer;moeten=must:v:I:deber+p4:deber+p'+
+        '5:deber+p6:deber;moet=must:v:p1:deber+p2:deber+M2:deber+p3:deber;',
+    'moest=must:v:i1:deber+i2:deber+i3:deber;moesten=must:v:i4:deber+i5:deber+'+
+        'i6:deber;gemoeten=must:v:P:deber;mogen=may:v:I+p4+p5+p6;mag=may:v:p1+'+
+        'p2+M2+p3;mocht=may:v:i1+i2+i3;mochten=may:v:i4+i5+i6;gemogen=may:v:P;',
+    'zullen=shall:v:I+p4+p5+p6;zal=shall:v:p1+p2+M2+p3;zult=shall:v:p2+p3;zou='+
+        'shall:v:i1+i2+i3;zouden=shall:v:i4+i5+i6;eten=eat:v:I+p4+p5+p6;eet=ea'+
+        't:v:p1+p2+M2+p3;at=eat:v:i1+i2+i3;aten=eat:v:i4+i5+i6;gegeten=eat:v:P'+
+        ';',
+    'drinken=drink:v:I+p4+p5+p6;drink=drink:v:p1+p2+M2;drinkt=drink:v:p2+p3;dr'+
+        'onk=drink:v:i1+i2+i3;dronken=drink:v:i4+i5+i6;gedronken=drink:v:P;sla'+
+        'pen=sleep:v:I+p4+p5+p6;slaap=sleep:v:p1+p2+M2;slaapt=sleep:v:p2+p3;',
+    'sliep=sleep:v:i1+i2+i3;sliepen=sleep:v:i4+i5+i6;geslapen=sleep:v:P;lezen='+
+        'read:v:I+p4+p5+p6;lees=read:v:p1+p2+M2;leest=read:v:p2+p3;las=read:v:'+
+        'i1+i2+i3;lazen=read:v:i4+i5+i6;gelezen=read:v:P;schrijven=write:v:I+p'+
+        '4+p5+p6;',
+    'schrijf=write:v:p1+p2+M2;schrijft=write:v:p2+p3;schreef=write:v:i1+i2+i3;'+
+        'schreven=write:v:i4+i5+i6;geschreven=write:v:P;kopen=buy:v:I+p4+p5+p6'+
+        ';koop=buy:v:p1+p2+M2;koopt=buy:v:p2+p3;kocht=buy:v:i1+i2+i3;kochten=b'+
+        'uy:v:i4+i5+i6;',
+    'gekocht=buy:v:P;verkopen=sell:v:I+p4+p5+p6;verkoop=sell:v:p1+p2+M2;verkoo'+
+        'pt=sell:v:p2+p3;verkocht=sell:v:i1+i2+i3+P;verkochten=sell:v:i4+i5+i6'+
+        ';spreken=speak:v:I+p4+p5+p6;spreek=speak:v:p1+p2+M2;spreekt=speak:v:p'+
+        '2+p3;',
+    'sprak=speak:v:i1+i2+i3;spraken=speak:v:i4+i5+i6;gesproken=speak:v:P;lopen'+
+        '=walk:v:I+p4+p5+p6;loop=walk:v:p1+p2+M2;loopt=walk:v:p2+p3;liep=walk:'+
+        'v:i1+i2+i3;liepen=walk:v:i4+i5+i6;gelopen=walk:v:P;zwemmen=swim:v:I+p'+
+        '4+p5+p6;',
+    'zwem=swim:v:p1+p2+M2;zwemt=swim:v:p2+p3;zwom=swim:v:i1+i2+i3;zwommen=swim'+
+        ':v:i4+i5+i6;gezwommen=swim:v:P;geven=give:v:I:dar+p4:dar+p5:dar+p6:da'+
+        'r;geef=give:v:p1:dar+p2:dar+M2:dar;geeft=give:v:p2:dar+p3:dar;',
+    'gaf=give:v:i1:dar+i2:dar+i3:dar;gaven=give:v:i4:dar+i5:dar+i6:dar;gegeven'+
+        '=give:v:P:dar;nemen=take:v:I+p4+p5+p6;neem=take:v:p1+p2+M2;neemt=take'+
+        ':v:p2+p3;nam=take:v:i1+i2+i3;namen=take:v:i4+i5+i6;genomen=take:v:P;',
+    'vinden=find:v:I+p4+p5+p6;vind=find:v:p1+p2+M2;vindt=find:v:p2+p3;vond=fin'+
+        'd:v:i1+i2+i3;vonden=find:v:i4+i5+i6;gevonden=find:v:P;houden=hold:v:I'+
+        '+p4+p5+p6;houd=hold:v:p1+p2+M2;houdt=hold:v:p2+p3;hield=hold:v:i1+i2+'+
+        'i3;',
+    'hielden=hold:v:i4+i5+i6;gehouden=hold:v:P;staan=stand:v:I+p4+p5+p6;sta=st'+
+        'and:v:p1+p2+M2;staat=stand:v:p2+p3;stond=stand:v:i1+i2+i3;stonden=sta'+
+        'nd:v:i4+i5+i6;gestaan=stand:v:P;zitten=sit:v:I+p4+p5+p6;zit=sit:v:p1+'+
+        'p2+M2+p3;',
+    'zat=sit:v:i1+i2+i3;zaten=sit:v:i4+i5+i6;gezeten=sit:v:P;liggen=lie:v:I+p4'+
+        '+p5+p6;lig=lie:v:p1+p2+M2;ligt=lie:v:p2+p3;lag=lie:v:i1+i2+i3;lagen=l'+
+        'ie:v:i4+i5+i6;gelegen=lie:v:P;blijven=stay:v:I+p4+p5+p6;blijf=stay:v:'+
+        'p1+p2+M2;',
+    'blijft=stay:v:p2+p3;bleef=stay:v:i1+i2+i3;bleven=stay:v:i4+i5+i6;gebleven'+
+        '=stay:v:P;beginnen=begin:v:I+p4+p5+p6;begin=begin:v:p1+p2+M2;begint=b'+
+        'egin:v:p2+p3;begon=begin:v:i1+i2+i3;begonnen=begin:v:i4+i5+i6+P;',
+    'krijgen=get:v:I+p4+p5+p6;krijg=get:v:p1+p2+M2;krijgt=get:v:p2+p3;kreeg=ge'+
+        't:v:i1+i2+i3;kregen=get:v:i4+i5+i6;gekregen=get:v:P;brengen=bring:v:I'+
+        '+p4+p5+p6;breng=bring:v:p1+p2+M2;brengt=bring:v:p2+p3;bracht=bring:v:'+
+        'i1+i2+i3;',
+    'brachten=bring:v:i4+i5+i6;gebracht=bring:v:P;denken=think:v:I+p4+p5+p6;de'+
+        'nk=think:v:p1+p2+M2;denkt=think:v:p2+p3;dacht=think:v:i1+i2+i3;dachte'+
+        'n=think:v:i4+i5+i6;gedacht=think:v:P;',
+    'heten=be_called:v:I:llamar+p4:llamar+p5:llamar+p6:llamar;heet=be_called:v'+
+        ':p1:llamar+p2:llamar+M2:llamar+p3:llamar;heette=be_called:v:i1:llamar'+
+        '+i2:llamar+i3:llamar;heetten=be_called:v:i4:llamar+i5:llamar+i6:llama'+
+        'r;',
+    'geheten=be_called:v:P:llamar;begrijpen=understand:v:I+p4+p5+p6;begrijp=un'+
+        'derstand:v:p1+p2+M2;begrijpt=understand:v:p2+p3;begreep=understand:v:'+
+        'i1+i2+i3;begrepen=understand:v:i4+i5+i6+P;rijden=drive:v:I+p4+p5+p6;',
+    'rijd=drive:v:p1+p2+M2;rijdt=drive:v:p2+p3;reed=drive:v:i1+i2+i3;reden=dri'+
+        've:v:i4+i5+i6;gereden=drive:v:P;vliegen=fly:v:I+p4+p5+p6;vlieg=fly:v:'+
+        'p1+p2+M2;vliegt=fly:v:p2+p3;vloog=fly:v:i1+i2+i3;vlogen=fly:v:i4+i5+i'+
+        '6;gevlogen=fly:v:P;',
+    'zingen=sing:v:I+p4+p5+p6;zing=sing:v:p1+p2+M2;zingt=sing:v:p2+p3;zong=sin'+
+        'g:v:i1+i2+i3;zongen=sing:v:i4+i5+i6;gezongen=sing:v:P;winnen=win:v:I+'+
+        'p4+p5+p6;win=win:v:p1+p2+M2;wint=win:v:p2+p3;won=win:v:i1+i2+i3;wonne'+
+        'n=win:v:i4+i5+i6;',
+    'gewonnen=win:v:P;verliezen=lose:v:I+p4+p5+p6;verlies=lose:v:p1+p2+M2;verl'+
+        'iest=lose:v:p2+p3;verloor=lose:v:i1+i2+i3;verloren=lose:v:i4+i5+i6+P;'+
+        'sluiten=close:v:I+p4+p5+p6;sluit=close:v:p1+p2+M2+p3;sloot=close:v:i1'+
+        '+i2+i3;',
+    'sloten=close:v:i4+i5+i6;gesloten=close:v:P;vergeten=forget:v:I+p4+p5+p6;v'+
+        'ergeet=forget:v:p1+p2+M2+p3;vergat=forget:v:i1+i2+i3;vergaten=forget:'+
+        'v:i4+i5+i6;regenen=rain:v:I:llover+p4:llover+p5:llover+p6:llover;',
+    'regen=rain:v:p1:llover+p2:llover+M2:llover;regent=rain:v:p2:llover+p3:llo'+
+        'ver;regende=rain:v:i1:llover+i2:llover+i3:llover;regenden=rain:v:i4:l'+
+        'lover+i5:llover+i6:llover;geregend=rain:v:P:llover;snijden=cut:v:I+p4'+
+        '+p5+p6;',
+    'snijd=cut:v:p1+p2+M2;snijdt=cut:v:p2+p3;sneed=cut:v:i1+i2+i3;sneden=cut:v'+
+        ':i4+i5+i6;gesneden=cut:v:P;bieden=offer:v:I+p4+p5+p6;bied=offer:v:p1+'+
+        'p2+M2;biedt=offer:v:p2+p3;bood=offer:v:i1+i2+i3;boden=offer:v:i4+i5+i'+
+        '6;',
+    'geboden=offer:v:P;vallen=fall:v:I+p4+p5+p6;val=fall:v:p1+p2+M2;valt=fall:'+
+        'v:p2+p3;viel=fall:v:i1+i2+i3;vielen=fall:v:i4+i5+i6;gevallen=fall:v:P'+
+        ';roepen=call:v:I+p4+p5+p6;roep=call:v:p1+p2+M2;roept=call:v:p2+p3;rie'+
+        'p=call:v:i1+i2+i3;',
+    'riepen=call:v:i4+i5+i6;geroepen=call:v:P;aangekomen=arrive:v:P;kun=can:v:'+
+        'p2:poder;vertrekken=leave:v:I+p4+p5+p6;vertrek=leave:v:p1+p2+M2;vertr'+
+        'ekt=leave:v:p2+p3;vertrok=leave:v:i1+i2+i3;vertrokken=leave:v:i4+i5+i'+
+        '6+P;',
+    'rennen=run:v:I+p4+p5+p6;ren=run:v:p1+p2+M2;rent=run:v:p2+p3;rende=run:v:i'+
+        '1+i2+i3;renden=run:v:i4+i5+i6;gerend=run:v:P;hou=hold:v:p1+p2+M2;aank'+
+        'omen=arrive:v:I;ik=I:s:1;jij=you:s:2;je=you:s:2;u=you:s:2;hij=he:s:3;'+
+        'zij=she:s:3;',
+    'ze=she:s:3;het=it:s:3;wij=we:s:4;we=we:s:4;jullie=you:s:5;mij=me:o;me=me:'+
+        'o;jou=you:o;hem=him:o;haar=her:o;ons=us:o;hen=them:o;hun=them:o;zich='+
+        'himself:o;mijn=my:x;jouw=your:x;uw=your:x;zijn=his:x;onze=our:x;deze='+
+        'this:d;dit=this:d;',
+    'die=that:d;dat=that:d;wat=what:w;wie=who:w;waar=where:w;wanneer=when:w;wa'+
+        'arom=why:w;hoe=how:w;hoeveel=how_many:w;welke=which:w;welk=which:w;in'+
+        '=in:e;op=on:e;naar=to:e;van=of:e;met=with:e;voor=for:e;bij=at:e;uit=f'+
+        'rom:e;over=about:e;',
+    'onder=under:e;achter=behind:e;tussen=between:e;door=through:e;tot=until:e'+
+        ';zonder=without:e;tegen=against:e;langs=along:e;aan=at:e;om=around:e;'+
+        'na=after:e;vanuit=from:e;binnen=inside:e;buiten=outside:e;en=and:c;ma'+
+        'ar=but:c;of=or:c;',
+    'omdat=because:c;want=for:c;als=if:c;toen=when:c;terwijl=while:c;hoewel=al'+
+        'though:c;dus=so:c;zodat=so_that:c;voordat=before:c;nadat=after:c;nu=n'+
+        'ow:r;vandaag=today:r;morgen=tomorrow:r;gisteren=yesterday:r;altijd=al'+
+        'ways:r;',
+    'vaak=often:r;soms=sometimes:r;al=already:r;nog=still:r;weer=again:r;ook=a'+
+        'lso:r;alleen=only:r;misschien=maybe:r;hier=here:r;daar=there:r;samen='+
+        'together:r;zeer=very:r;heel=very:r;erg=very:r;te=too:r;bijna=almost:r'+
+        ';vroeg=early:r;',
+    'laat=late:r;ver=far:r;echt=really:r;graag=gladly:r;thuis=at_home:r;naar_h'+
+        'uis=home:r;er=there:r;wel=indeed:r;naartoe=there:r;omhoog=up:r;omlaag'+
+        '=down:r;vanavond=tonight:r;vanmorgen=this_morning:r;eens=once:r;even='+
+        'for_a_moment:r;',
+    'ja=Yes:j;nee=No:j;dank=Thank_you:j;dankjewel=Thank_you:j;dankuwel=Thank_y'+
+        'ou:j;bedankt=Thanks:j;alsjeblieft=please:j;alstublieft=please:j;sorry'+
+        '=Sorry:j;pardon=Excuse_me:j;hallo=Hello:j;dag=Goodbye:j;tot_ziens=Goo'+
+        'dbye:j;',
+    'dank_u_wel=Thank_you:j;dank_je_wel=Thank_you:j;bedankt_voor=Thanks_for:j;'+
+        'goedemorgen=Good_morning:j;goedemiddag=Good_afternoon:j;goedenavond=G'+
+        'ood_evening:j;goedenacht=Good_night:j;welkom=Welcome:j;gefeliciteerd='+
+        'Congratulations:j;',
+    'proost=Cheers:j;hoi=Hi:j;niet=not:g;nooit=never:r;niets=nothing:q;niemand'+
+        '=nobody:q;geen=no:u;alle=all:u;alles=everything:q;elke=each:u;veel=ma'+
+        'ny:u;weinig=few:u;sommige=some:u;beide=both:u;enkele=a_few:u;meeste=m'+
+        'ost:u;',
+    'andere=others:u;een=a:t;de=the:t;één=one:u:1;twee=two:u:1;drie=three:u:'+
+        '1;vier=four:u:1;vijf=five:u:1;zes=six:u:1;zeven=seven:u:1;acht=eight:'+
+        'u:1;negen=nine:u:1;tien=ten:u:1;elf=eleven:u:1;twaalf=twelve:u:1;twin'+
+        'tig=twenty:u:1;',
+    'dertig=thirty:u:1;veertig=forty:u:1;vijftig=fifty:u:1;honderd=one_hundred'+
+        ':u:1;duizend=one_thousand:u:1;Nederland=the_Netherlands:z;Amsterdam=A'+
+        'msterdam:z;Rotterdam=Rotterdam:z;Utrecht=Utrecht:z;Den_Haag=The_Hague'+
+        ':z;',
+    'Brussel=Brussels:z;België=Belgium:z;Frankrijk=France:z;Duitsland=Germany'+
+        ':z;Engeland=England:z;Spanje=Spain:z;Italië=Italy:z;Europa=Europe:z;'+
+        'Jan=John:z;Piet=Peter:z;Anna=Anna:z;Maria=Mary:z;Karel=Charles:z;Will'+
+        'em=William:z;',
+    'Nederlands=Dutch:z;Engels=English:z;Frans=French:z;Duits=German:z;'
+  );
+
+  { Norvegien bokmal : formes de surface (voir mkno.py) }
+  NbData: Array[0..101] Of String = (
+    'gutt=boy:n:s;gutten=boy:n:sD;gutter=boy:n:p;guttene=boy:n:pD;mann=man:n:s'+
+        ';mannen=man:n:sD;menn=man:n:p;mennene=man:n:pD;venn=friend:n:s;vennen'+
+        '=friend:n:sD;venner=friend:n:p;vennene=friend:n:pD;bror=brother:n:s;b'+
+        'roren=brother:n:sD;',
+    'brødre=brother:n:p;brødrene=brother:n:pD;far=father:n:s;faren=father:n:'+
+        'sD;fedre=father:n:p;fedrene=father:n:pD;sønn=son:n:s;sønnen=son:n:s'+
+        'D;sønner=son:n:p;sønnene=son:n:pD;lærer=teacher:n:s;læreren=teach'+
+        'er:n:sD;',
+    'lærere=teacher:n:p;lærerene=teacher:n:pD;lege=doctor:n:s;legen=doctor:n'+
+        ':sD;leger=doctor:n:p;legene=doctor:n:pD;student=student:n:s;studenten'+
+        '=student:n:sD;studenter=student:n:p;studentene=student:n:pD;elev=pupi'+
+        'l:n:s;',
+    'eleven=pupil:n:sD;elever=pupil:n:p;elevene=pupil:n:pD;hest=horse:n:s;hest'+
+        'en=horse:n:sD;hester=horse:n:p;hestene=horse:n:pD;hund=dog:n:s;hunden'+
+        '=dog:n:sD;hunder=dog:n:p;hundene=dog:n:pD;fisk=fish:n:s;fisken=fish:n'+
+        ':sD;',
+    'fisker=fish:n:p;fiskene=fish:n:pD;fugl=bird:n:s;fuglen=bird:n:sD;fugler=b'+
+        'ird:n:p;fuglene=bird:n:pD;bil=car:n:s;bilen=car:n:sD;biler=car:n:p;bi'+
+        'lene=car:n:pD;stol=chair:n:s;stolen=chair:n:sD;stoler=chair:n:p;stole'+
+        'ne=chair:n:pD;',
+    'skole=school:n:s;skolen=school:n:sD;skoler=school:n:p;skolene=school:n:pD'+
+        ';sykepleier=nurse:n:s;sykepleieren=nurse:n:sD;sykepleiere=nurse:n:p;s'+
+        'ykepleierene=nurse:n:pD;dag=day:n:s;dagen=day:n:sD;dager=day:n:p;dage'+
+        'ne=day:n:pD;',
+    'vei=road:n:s;veien=road:n:sD;veier=road:n:p;veiene=road:n:pD;båt=boat:n:'+
+        's;båten=boat:n:sD;båter=boat:n:p;båtene=boat:n:pD;himmel=sky:n:s;h'+
+        'immelen=sky:n:sD;himler=sky:n:p;himlene=sky:n:pD;sjø=sea:n:s;sjøen='+
+        'sea:n:sD;',
+    'sjøer=sea:n:p;sjøene=sea:n:pD;hage=garden:n:s;hagen=garden:n:sD;hager=g'+
+        'arden:n:p;hagene=garden:n:pD;skog=forest:n:s;skogen=forest:n:sD;skoge'+
+        'r=forest:n:p;skogene=forest:n:pD;måned=month:n:s;måneden=month:n:sD'+
+        ';',
+    'måneder=month:n:p;månedene=month:n:pD;konge=king:n:s;kongen=king:n:sD;k'+
+        'onger=king:n:p;kongene=king:n:pD;telefon=telephone:n:s;telefonen=tele'+
+        'phone:n:sD;telefoner=telephone:n:p;telefonene=telephone:n:pD;buss=bus'+
+        ':n:s;',
+    'bussen=bus:n:sD;busser=bus:n:p;bussene=bus:n:pD;sykkel=bicycle:n:s;sykkel'+
+        'en=bicycle:n:sD;sykler=bicycle:n:p;syklene=bicycle:n:pD;kopp=cup:n:s;'+
+        'koppen=cup:n:sD;kopper=cup:n:p;koppene=cup:n:pD;by=city:n:s;byen=city'+
+        ':n:sD;',
+    'byer=city:n:p;byene=city:n:pD;kaffe=coffee:n:s;kaffen=coffee:n:sD;kaffene'+
+        '=coffee:n:pD;kontor=office:n:s;kontoren=office:n:sD;kontorer=office:n'+
+        ':p;kontorene=office:n:pD;flyplass=airport:n:s;flyplassen=airport:n:sD'+
+        ';',
+    'flyplasser=airport:n:p;flyplassene=airport:n:pD;stasjon=station:n:s;stasj'+
+        'onen=station:n:sD;stasjoner=station:n:p;stasjonene=station:n:pD;fjord'+
+        '=fjord:n:s;fjorden=fjord:n:sD;fjorder=fjord:n:p;fjordene=fjord:n:pD;p'+
+        'izza=pizza:n:s;',
+    'pizzaen=pizza:n:sD;pizzaer=pizza:n:p;pizzaene=pizza:n:pD;bank=bank:n:s;ba'+
+        'nken=bank:n:sD;banker=bank:n:p;bankene=bank:n:pD;park=park:n:s;parken'+
+        '=park:n:sD;parker=park:n:p;parkene=park:n:pD;tavle=board:n:s;tavla=bo'+
+        'ard:n:sD;',
+    'tavlen=board:n:sD;tavler=board:n:p;tavlene=board:n:pD;fotball=football:n:'+
+        's;fotballen=football:n:sD;fotballene=football:n:pD;ørret=trout:n:s;'+
+        'ørreten=trout:n:sD;ørreter=trout:n:p;ørretene=trout:n:pD;kvinne=wo'+
+        'man:n:s;',
+    'kvinna=woman:n:sD;kvinnen=woman:n:sD;kvinner=woman:n:p;kvinnene=woman:n:p'+
+        'D;jente=girl:n:s;jenta=girl:n:sD;jenten=girl:n:sD;jenter=girl:n:p;jen'+
+        'tene=girl:n:pD;mor=mother:n:s;mora=mother:n:sD;moren=mother:n:sD;mød'+
+        're=mother:n:p;',
+    'mødrene=mother:n:pD;søster=sister:n:s;søstera=sister:n:sD;søsteren=si'+
+        'ster:n:sD;søstre=sister:n:p;søstrene=sister:n:pD;datter=daughter:n:'+
+        's;dattera=daughter:n:sD;datteren=daughter:n:sD;døtre=daughter:n:p;',
+    'døtrene=daughter:n:pD;bok=book:n:s;boka=book:n:sD;boken=book:n:sD;bøker'+
+        '=book:n:p;bøkene=book:n:pD;gate=street:n:s;gata=street:n:sD;gaten=st'+
+        'reet:n:sD;gater=street:n:p;gatene=street:n:pD;dør=door:n:s;døra=doo'+
+        'r:n:sD;',
+    'døren=door:n:sD;dører=door:n:p;dørene=door:n:pD;uke=week:n:s;uka=week:'+
+        'n:sD;uken=week:n:sD;uker=week:n:p;ukene=week:n:pD;natt=night:n:s;natt'+
+        'a=night:n:sD;natten=night:n:sD;netter=night:n:p;nettene=night:n:pD;me'+
+        'lk=milk:n:s;',
+    'melka=milk:n:sD;melken=milk:n:sD;melkene=milk:n:pD;gave=gift:n:s;gava=gif'+
+        't:n:sD;gaven=gift:n:sD;gaver=gift:n:p;gavene=gift:n:pD;familie=family'+
+        ':n:s;familia=family:n:sD;familien=family:n:sD;familier=family:n:p;fam'+
+        'iliene=family:n:pD;',
+    'reise=trip:n:s;reisa=trip:n:sD;reisen=trip:n:sD;reiser=trip:n:p;reisene=t'+
+        'rip:n:pD;hånd=hand:n:s;hånda=hand:n:sD;hånden=hand:n:sD;hender=han'+
+        'd:n:p;hendene=hand:n:pD;kirke=church:n:s;kirka=church:n:sD;kirken=chu'+
+        'rch:n:sD;',
+    'kirker=church:n:p;kirkene=church:n:pD;butikk=shop:n:s;butikka=shop:n:sD;b'+
+        'utikken=shop:n:sD;butikker=shop:n:p;butikkene=shop:n:pD;stue=living_r'+
+        'oom:n:s;stua=living_room:n:sD;stuen=living_room:n:sD;stuer=living_roo'+
+        'm:n:p;',
+    'stuene=living_room:n:pD;datamaskin=computer:n:s;datamaskina=computer:n:sD'+
+        ';datamaskinen=computer:n:sD;datamaskiner=computer:n:p;datamaskinene=c'+
+        'omputer:n:pD;seng=bed:n:s;senga=bed:n:sD;sengen=bed:n:sD;senger=bed:n'+
+        ':p;',
+    'sengene=bed:n:pD;klokke=clock:n:s;klokka=clock:n:sD;klokken=clock:n:sD;kl'+
+        'okker=clock:n:p;klokkene=clock:n:pD;elv=river:n:s;elva=river:n:sD;elv'+
+        'en=river:n:sD;elver=river:n:p;elvene=river:n:pD;kake=cake:n:s;kaka=ca'+
+        'ke:n:sD;',
+    'kaken=cake:n:sD;kaker=cake:n:p;kakene=cake:n:pD;øy=island:n:s;øya=islan'+
+        'd:n:sD;øyn=island:n:sD;øyer=island:n:p;øyene=island:n:pD;verden=wo'+
+        'rld:n:s;verdena=world:n:sD;verdenen=world:n:sD;verdener=world:n:p;ver'+
+        'denene=world:n:pD;',
+    'ku=cow:n:s;kua=cow:n:sD;kun=cow:n:sD;kuer=cow:n:p;kuene=cow:n:pD;leilighe'+
+        't=apartment:n:s;leiligheta=apartment:n:sD;leiligheten=apartment:n:sD;'+
+        'leiligheter=apartment:n:p;leilighetene=apartment:n:pD;tid=time:n:s;ti'+
+        'da=time:n:sD;',
+    'tiden=time:n:sD;tider=time:n:p;tidene=time:n:pD;sol=sun:n:s;sola=sun:n:sD'+
+        ';solen=sun:n:sD;solene=sun:n:pD;hytte=cabin:n:s;hytta=cabin:n:sD;hytt'+
+        'en=cabin:n:sD;hytter=cabin:n:p;hyttene=cabin:n:pD;bygd=village:n:s;by'+
+        'gda=village:n:sD;',
+    'bygden=village:n:sD;bygder=village:n:p;bygdene=village:n:pD;bru=bridge:n:'+
+        's;brua=bridge:n:sD;brun=bridge:n:sD;bruer=bridge:n:p;bruene=bridge:n:'+
+        'pD;hylle=shelf:n:s;hylla=shelf:n:sD;hyllen=shelf:n:sD;hyller=shelf:n:'+
+        'p;',
+    'hyllene=shelf:n:pD;hus=house:n:s+p;huset=house:n:sD;husa=house:n:pD;husen'+
+        'e=house:n:pD;bord=table:n:s+p;bordet=table:n:sD;borda=table:n:pD;bord'+
+        'ene=table:n:pD;barn=child:n:s+p;barnet=child:n:sD;barna=child:n:pD;ba'+
+        'rnene=child:n:pD;',
+    'eple=apple:n:s;eplet=apple:n:sD;epler=apple:n:p;eplene=apple:n:pD;vann=wa'+
+        'ter:n:s+p;vannet=water:n:sD;vanna=water:n:pD;vannene=water:n:pD;brød'+
+        '=bread:n:s+p;brødet=bread:n:sD;brøda=bread:n:pD;brødene=bread:n:pD'+
+        ';kjøtt=meat:n:s+p;',
+    'kjøttet=meat:n:sD;kjøtta=meat:n:pD;kjøttene=meat:n:pD;øl=beer:n:s+p;'+
+        'ølet=beer:n:sD;øla=beer:n:pD;ølene=beer:n:pD;vin=wine:n:s+p;vinet='+
+        'wine:n:sD;vina=wine:n:pD;vinene=wine:n:pD;brev=letter:n:s+p;brevet=le'+
+        'tter:n:sD;',
+    'breva=letter:n:pD;brevene=letter:n:pD;land=country:n:s+p;landet=country:n'+
+        ':sD;landa=country:n:pD;landene=country:n:pD;fjell=mountain:n:s+p;fjel'+
+        'let=mountain:n:sD;fjella=mountain:n:pD;fjellene=mountain:n:pD;rom=roo'+
+        'm:n:s+p;',
+    'romet=room:n:sD;roma=room:n:pD;romene=room:n:pD;kjøkken=kitchen:n:s+p;kj'+
+        'økkenet=kitchen:n:sD;kjøkkena=kitchen:n:pD;kjøkkenene=kitchen:n:pD'+
+        ';sykehus=hospital:n:s+p;sykehuset=hospital:n:sD;sykehusa=hospital:n:p'+
+        'D;',
+    'sykehusene=hospital:n:pD;bibliotek=library:n:s+p;biblioteket=library:n:sD'+
+        ';biblioteka=library:n:pD;bibliotekene=library:n:pD;museum=museum:n:s;'+
+        'museumet=museum:n:sD;museer=museum:n:p;museene=museum:n:pD;teater=the'+
+        'ater:n:s;',
+    'teateret=theater:n:sD;teatre=theater:n:p;teatrene=theater:n:pD;tre=tree:n'+
+        ':s;tret=tree:n:sD;trær=tree:n:p;trærene=tree:n:pD;år=year:n:s+p;å'+
+        'ret=year:n:sD;åra=year:n:pD;årene=year:n:pD;ord=word:n:s+p;ordet=wo'+
+        'rd:n:sD;',
+    'orda=word:n:pD;ordene=word:n:pD;navn=name:n:s+p;navnet=name:n:sD;navna=na'+
+        'me:n:pD;navnene=name:n:pD;språk=language:n:s+p;språket=language:n:s'+
+        'D;språka=language:n:pD;språkene=language:n:pD;svar=answer:n:s+p;sva'+
+        'ret=answer:n:sD;',
+    'svara=answer:n:pD;svarene=answer:n:pD;vær=weather:n:s+p;været=weather:n'+
+        ':sD;væra=weather:n:pD;værene=weather:n:pD;arbeid=work:n:s+p;arbeide'+
+        't=work:n:sD;arbeida=work:n:pD;arbeidene=work:n:pD;hotell=hotel:n:s;ho'+
+        'tellet=hotel:n:sD;',
+    'hoteller=hotel:n:p;hotellene=hotel:n:pD;vindu=window:n:s;vinduet=window:n'+
+        ':sD;vinduer=window:n:p;vinduene=window:n:pD;fly=plane:n:s+p;flyet=pla'+
+        'ne:n:sD;flya=plane:n:pD;flyene=plane:n:pD;egg=egg:n:s+p;egget=egg:n:s'+
+        'D;egga=egg:n:pD;',
+    'eggene=egg:n:pD;te=tea:n:s+p;tet=tea:n:sD;tene=tea:n:pD;teene=tea:n:pD;to'+
+        'g=train:n:s+p;toget=train:n:sD;toga=train:n:pD;togene=train:n:pD;spø'+
+        'rsmål=question:n:s+p;spørsmålet=question:n:sD;spørsmåla=question'+
+        ':n:pD;',
+    'spørsmålene=question:n:pD;sted=place:n:s;stedet=place:n:sD;steder=place'+
+        ':n:p;stedene=place:n:pD;liv=life:n:s+p;livet=life:n:sD;liva=life:n:pD'+
+        ';livene=life:n:pD;bilde=picture:n:s;bildet=picture:n:sD;bilder=pictur'+
+        'e:n:p;',
+    'bildene=picture:n:pD;kart=map:n:s+p;kartet=map:n:sD;karta=map:n:pD;karten'+
+        'e=map:n:pD;selskap=company:n:s;selskapet=company:n:sD;selskaper=compa'+
+        'ny:n:p;selskapene=company:n:pD;regn=rain:n:s+p;regnet=rain:n:sD;regna'+
+        '=rain:n:pD;',
+    'regnene=rain:n:pD;blomst=flower:n:s;blomstet=flower:n:sD;blomster=flower:'+
+        'n:p;blomstene=flower:n:pD;lys=light:n:s+p;lyset=light:n:sD;lysa=light'+
+        ':n:pD;lysene=light:n:pD;sykkelløp=bicycle_race:n:s+p;sykkelløpet=bi'+
+        'cycle_race:n:sD;',
+    'sykkelløpa=bicycle_race:n:pD;sykkelløpene=bicycle_race:n:pD;stor=big:a:'+
+        's;stort=big:a:s;store=big:a:p;liten=small:a:s;lite=small:a:s;små=sma'+
+        'll:a:p;lang=long:a:s;langt=long:a:s;lange=long:a:p;kort=short:a:s;kor'+
+        'te=short:a:p;',
+    'ny=new:a:s;nytt=new:a:s;nye=new:a:p;gammel=old:a:s;gammelt=old:a:s;gamle='+
+        'old:a:p;ung=young:a:s;ungt=young:a:s;unge=young:a:p;pen=pretty:a:s;pe'+
+        'nt=pretty:a:s;pene=pretty:a:p;vakker=beautiful:a:s;vakkert=beautiful:'+
+        'a:s;',
+    'vakre=beautiful:a:p;glad=happy:a:s;glade=happy:a:p;trist=sad:a:s;triste=s'+
+        'ad:a:p;trøtt=tired:a:s;trøtte=tired:a:p;syk=sick:a:s;sykt=sick:a:s;'+
+        'syke=sick:a:p;varm=hot:a:s;varmt=hot:a:s;varme=hot:a:p;kald=cold:a:s;'+
+        'kaldt=cold:a:s;',
+    'kalde=cold:a:p;dyr=expensive:a:s;dyrt=expensive:a:s;dyre=expensive:a:p;bi'+
+        'llig=cheap:a:s;billige=cheap:a:p;lett=easy:a:s;lette=easy:a:p;vanskel'+
+        'ig=difficult:a:s;vanskelige=difficult:a:p;viktig=important:a:s;viktig'+
+        'e=important:a:p;',
+    'interessant=interesting:a:s;interessante=interesting:a:p;kjedelig=boring:'+
+        'a:s;kjedelige=boring:a:p;morsom=funny:a:s;morsomt=funny:a:s;morsomme='+
+        'funny:a:p;rask=fast:a:s;raskt=fast:a:s;raske=fast:a:p;langsom=slow:a:'+
+        's;',
+    'langsomt=slow:a:s;langsomme=slow:a:p;sterk=strong:a:s;sterkt=strong:a:s;s'+
+        'terke=strong:a:p;svak=weak:a:s;svakt=weak:a:s;svake=weak:a:p;rik=rich'+
+        ':a:s;rikt=rich:a:s;rike=rich:a:p;fattig=poor:a:s;fattige=poor:a:p;ren'+
+        '=clean:a:s;',
+    'rent=clean:a:s;rene=clean:a:p;skitten=dirty:a:s;skittent=dirty:a:s;skitne'+
+        '=dirty:a:p;full=full:a:s;fullt=full:a:s;fulle=full:a:p;tom=empty:a:s;'+
+        'tomt=empty:a:s;tomme=empty:a:p;åpen=open:a:s;åpent=open:a:s;åpne=o'+
+        'pen:a:p;',
+    'stengt=closed:a:s;stengte=closed:a:p;klar=ready:a:s;klart=ready:a:s;klare'+
+        '=ready:a:p;opptatt=busy:a:s;opptatte=busy:a:p;fri=free:a:s;fritt=free'+
+        ':a:s;frie=free:a:p;rød=red:a:s;rødt=red:a:s;røde=red:a:p;blå=blue'+
+        ':a:s;',
+    'blått=blue:a:s;grønn=green:a:s;grønt=green:a:s;grønne=green:a:p;gul=y'+
+        'ellow:a:s;gult=yellow:a:s;gule=yellow:a:p;svart=black:a:s;svarte=blac'+
+        'k:a:p;hvit=white:a:s;hvitt=white:a:s;hvite=white:a:p;brun=brown:a:s;b'+
+        'runt=brown:a:s;',
+    'brune=brown:a:p;grå=gray:a:s;grått=gray:a:s;rosa=pink:a:s;samme=same:a:'+
+        's;annerledes=different:a:s;annen=other:a:s;annet=other:a:s;andre=othe'+
+        'r:a:p;første=first:a:s;siste=last:a:s;neste=next:a:s;god=good:a:s;go'+
+        'dt=good:a:s;',
+    'gode=good:a:p;dårlig=bad:a:s;dårlige=bad:a:p;sulten=hungry:a:s;sultent='+
+        'hungry:a:s;sultne=hungry:a:p;tørst=thirsty:a:s;tørste=thirsty:a:p;s'+
+        'nill=kind:a:s;snilt=kind:a:s;snille=kind:a:p;hyggelig=nice:a:s;hyggel'+
+        'ige=nice:a:p;',
+    'sikker=sure:a:s;sikkert=sure:a:s;sikre=sure:a:p;sann=true:a:s;sant=true:a'+
+        ':s;sanne=true:a:p;berømt=famous:a:s;berømte=famous:a:p;rolig=quiet:'+
+        'a:s;rolige=quiet:a:p;gift=married:a:s;gifte=married:a:p;høy=tall:a:s'+
+        ';høyt=tall:a:s;',
+    'høye=tall:a:p;lav=low:a:s;lavt=low:a:s;lave=low:a:p;deilig=lovely:a:s;de'+
+        'ilige=lovely:a:p;snakke=speak:v:I;snakker=speak:v:p3;snakket=speak:v:'+
+        'i3+P;snakk=speak:v:M2;leke=play:v:I;leker=play:v:p3;leket=play:v:i3+P'+
+        ';lek=play:v:M2;',
+    'arbeide=work:v:I;arbeider=work:v:p3;arbeidet=work:v:i3+P;arbeid=work:v:M2'+
+        ';jobbe=work:v:I;jobber=work:v:p3;jobbet=work:v:i3+P;jobb=work:v:M2;la'+
+        'ge=make:v:I;lager=make:v:p3;laget=make:v:i3+P;lag=make:v:M2;kalle=cal'+
+        'l:v:I;',
+    'kaller=call:v:p3;kallet=call:v:i3+P;kall=call:v:M2;elske=love:v:I;elsker='+
+        'love:v:p3;elsket=love:v:i3+P;elsk=love:v:M2;spille=play:v:I;spiller=p'+
+        'lay:v:p3;spillet=play:v:i3+P;spill=play:v:M2;studere=study:v:I;studer'+
+        'er=study:v:p3;',
+    'studeret=study:v:i3+P;studer=study:v:M2;vente=wait:v:I;venter=wait:v:p3;v'+
+        'entet=wait:v:i3+P;vent=wait:v:M2;betale=pay:v:I;betaler=pay:v:p3;beta'+
+        'let=pay:v:i3+P;betal=pay:v:M2;bruke=use:v:I;bruker=use:v:p3;bruket=us'+
+        'e:v:i3+P;',
+    'bruk=use:v:M2;besøke=visit:v:I;besøker=visit:v:p3;besøket=visit:v:i3+P'+
+        ';besøk=visit:v:M2;huske=remember:v:I;husker=remember:v:p3;husket=rem'+
+        'ember:v:i3+P;husk=remember:v:M2;åpne=open:v:I+M2;åpner=open:v:p3;å'+
+        'pnet=open:v:i3+P;',
+    'åpn=open:v:M2;lukke=close:v:I;lukker=close:v:p3;lukket=close:v:i3+P;lukk'+
+        '=close:v:M2;leve=live:v:I;lever=live:v:p3;levet=live:v:i3+P;lev=live:'+
+        'v:M2;danse=dance:v:I;danser=dance:v:p3;danset=dance:v:i3+P;dans=dance'+
+        ':v:M2;',
+    'lytte=listen:v:I;lytter=listen:v:p3;lyttte=listen:v:i3;lyttt=listen:v:P;l'+
+        'ytt=listen:v:M2;vaske=wash:v:I;vasker=wash:v:p3;vasket=wash:v:i3+P;va'+
+        'sk=wash:v:M2;svare=answer:v:I;svarer=answer:v:p3;svaret=answer:v:i3+P'+
+        ';svar=answer:v:M2;',
+    'hoppe=jump:v:I;hopper=jump:v:p3;hoppet=jump:v:i3+P;hopp=jump:v:M2;prøve='+
+        'try:v:I;prøver=try:v:p3;prøvet=try:v:i3+P;prøv=try:v:M2;ringe=call'+
+        ':v:I;ringer=call:v:p3;ringet=call:v:i3+P;ring=call:v:M2;begynne=begin'+
+        ':v:I;',
+    'begynner=begin:v:p3;begynnte=begin:v:i3;begynnt=begin:v:P;begynn=begin:v:'+
+        'M2;reise=travel:v:I;reiser=travel:v:p3;reiste=travel:v:i3;reist=trave'+
+        'l:v:P;reis=travel:v:M2;lære=learn:v:I;lærer=learn:v:p3;lærte=learn'+
+        ':v:i3;',
+    'lært=learn:v:P;lær=learn:v:M2;kjenne=know:v:I;kjenner=know:v:p3;kjennte'+
+        '=know:v:i3;kjennt=know:v:P;kjenn=know:v:M2;mene=think:v:I;mener=think'+
+        ':v:p3;mente=think:v:i3;ment=think:v:P;men=think:v:M2;spørre=ask:v:I;'+
+        'spører=ask:v:p3;',
+    'spørte=ask:v:i3;spørt=ask:v:P;spør=ask:v:M2;glemme=forget:v:I;glemer=f'+
+        'orget:v:p3;glemte=forget:v:i3;glemt=forget:v:P;glem=forget:v:M2;kjør'+
+        'e=drive:v:I;kjører=drive:v:p3;kjørte=drive:v:i3;kjørt=drive:v:P;kj'+
+        'ør=drive:v:M2;',
+    'bety=mean:v:I+M2;betyer=mean:v:p3;betyte=mean:v:i3;betyt=mean:v:P;vise=sh'+
+        'ow:v:I;viser=show:v:p3;viste=show:v:i3;vist=show:v:P;vis=show:v:M2;ko'+
+        'ste=cost:v:I;koster=cost:v:p3;kostet=cost:v:i3+P;kost=cost:v:M2;treng'+
+        'e=need:v:I;',
+    'trenger=need:v:p3;trengte=need:v:i3;trengt=need:v:P;treng=need:v:M2;søke'+
+        '=look_for:v:I;søker=look_for:v:p3;søkte=look_for:v:i3;søkt=look_fo'+
+        'r:v:P;søk=look_for:v:M2;hente=fetch:v:I;henter=fetch:v:p3;hentet=fet'+
+        'ch:v:i3+P;',
+    'hent=fetch:v:M2;stoppe=stop:v:I;stopper=stop:v:p3;stoppet=stop:v:i3+P;sto'+
+        'pp=stop:v:M2;ønske=wish:v:I;ønsker=wish:v:p3;ønsket=wish:v:i3+P;ø'+
+        'nsk=wish:v:M2;håpe=hope:v:I;håper=hope:v:p3;håpet=hope:v:i3+P;håp'+
+        '=hope:v:M2;',
+    'bestille=order:v:I;bestiller=order:v:p3;bestillet=order:v:i3+P;bestill=or'+
+        'der:v:M2;takke=thank:v:I;takker=thank:v:p3;takket=thank:v:i3+P;takk=t'+
+        'hank:v:M2;bygge=build:v:I;bygger=build:v:p3;byggte=build:v:i3;byggt=b'+
+        'uild:v:P;',
+    'bygg=build:v:M2;dusje=shower:v:I;dusjer=shower:v:p3;dusjet=shower:v:i3+P;'+
+        'dusj=shower:v:M2;vinke=wave:v:I;vinker=wave:v:p3;vinket=wave:v:i3+P;v'+
+        'ink=wave:v:M2;telle=count:v:I;teller=count:v:p3;tellet=count:v:i3+P;t'+
+        'ell=count:v:M2;',
+    'måle=measure:v:I;måler=measure:v:p3;målet=measure:v:i3+P;mål=measure:'+
+        'v:M2;plukke=pick:v:I;plukker=pick:v:p3;plukket=pick:v:i3+P;plukk=pick'+
+        ':v:M2;bake=bake:v:I;baker=bake:v:p3;baket=bake:v:i3+P;bak=bake:v:M2;f'+
+        'iske=fish:v:I;',
+    'fisker=fish:v:p3;fisket=fish:v:i3+P;fisk=fish:v:M2;løfte=lift:v:I;løfte'+
+        'r=lift:v:p3;løftet=lift:v:i3+P;løft=lift:v:M2;være=be:v:I:ser;er=b'+
+        'e:v:p3:ser;var=be:v:i3:ser;vært=be:v:P:ser;vær=be:v:M2:ser;ha=have:'+
+        'v:I:tener+M2:tener;',
+    'har=have:v:p3:tener;hadde=have:v:i3:tener;hatt=have:v:P:tener;gå=go:v:I:'+
+        'ir+M2:ir;går=go:v:p3:ir;gikk=go:v:i3:ir;gått=go:v:P:ir;komme=come:v'+
+        ':I:venir;kommer=come:v:p3:venir;kom=come:v:i3:venir+M2:venir;kommet=c'+
+        'ome:v:P:venir;',
+    'se=see:v:I:ver+M2:ver;ser=see:v:p3:ver;så=see:v:i3:ver;sett=see:v:P:ver+'+
+        'M2;gjøre=do:v:I:hacer;gjør=do:v:p3:hacer+M2:hacer;gjorde=do:v:i3:ha'+
+        'cer;gjort=do:v:P:hacer;si=say:v:I:decir+M2:decir;sier=say:v:p3:decir;'+
+        'sa=say:v:i3:decir;',
+    'sagt=say:v:P:decir;vite=know:v:I:saber;vet=know:v:p3:saber;visste=know:v:'+
+        'i3:saber;visst=know:v:P:saber;vit=know:v:M2:saber;kunne=can:v:I:poder'+
+        '+i3:poder;kan=can:v:p3:poder;kunnet=can:v:P:poder;ville=want:v:I:quer'+
+        'er+i3:querer;',
+    'vil=want:v:p3:querer;villet=want:v:P:querer;måtte=must:v:I:deber+i3:debe'+
+        'r;må=must:v:p3:deber;måttet=must:v:P:deber;skulle=shall:v:I:ir+i3:i'+
+        'r;skal=shall:v:p3:ir;skullet=shall:v:P:ir;spise=eat:v:I;spiser=eat:v:'+
+        'p3;spiste=eat:v:i3;',
+    'spist=eat:v:P;spis=eat:v:M2;drikke=drink:v:I;drikker=drink:v:p3;drakk=dri'+
+        'nk:v:i3;drukket=drink:v:P;drikk=drink:v:M2;sove=sleep:v:I;sover=sleep'+
+        ':v:p3;sov=sleep:v:i3+M2;sovet=sleep:v:P;lese=read:v:I;leser=read:v:p3'+
+        ';leste=read:v:i3;',
+    'lest=read:v:P;les=read:v:M2;skrive=write:v:I;skriver=write:v:p3;skrev=wri'+
+        'te:v:i3;skrevet=write:v:P;skriv=write:v:M2;kjøpe=buy:v:I;kjøper=buy'+
+        ':v:p3;kjøpte=buy:v:i3;kjøpt=buy:v:P;kjøp=buy:v:M2;selge=sell:v:I;s'+
+        'elger=sell:v:p3;',
+    'solgte=sell:v:i3;solgt=sell:v:P;selg=sell:v:M2;bo=live:v:I+M2;bor=live:v:'+
+        'p3;bodde=live:v:i3;bodd=live:v:P;ta=take:v:I+M2;tar=take:v:p3;tok=tak'+
+        'e:v:i3;tatt=take:v:P;gi=give:v:I:dar+M2:dar;gir=give:v:p3:dar;ga=give'+
+        ':v:i3:dar;',
+    'gitt=give:v:P:dar;få=get:v:I+M2;får=get:v:p3;fikk=get:v:i3;fått=get:v:'+
+        'P;finne=find:v:I;finner=find:v:p3;fant=find:v:i3;funnet=find:v:P;finn'+
+        '=find:v:M2;hete=be_called:v:I:llamar;heter=be_called:v:p3:llamar;',
+    'het=be_called:v:i3:llamar;hett=be_called:v:P:llamar;bli=become:v:I+M2;bli'+
+        'r=become:v:p3;ble=become:v:i3;blitt=become:v:P;stå=stand:v:I+M2;stå'+
+        'r=stand:v:p3;sto=stand:v:i3;stått=stand:v:P;sitte=sit:v:I;sitter=sit'+
+        ':v:p3;',
+    'satt=sit:v:i3+P;sittet=sit:v:P;sitt=sit:v:M2;ligge=lie:v:I;ligger=lie:v:p'+
+        '3;lå=lie:v:i3;ligget=lie:v:P;ligg=lie:v:M2;løpe=run:v:I;løper=run:'+
+        'v:p3;løp=run:v:i3+M2;løpt=run:v:P;svømme=swim:v:I;svømmer=swim:v:'+
+        'p3;',
+    'svømte=swim:v:i3;svømt=swim:v:P;svøm=swim:v:M2;synge=sing:v:I;synger=s'+
+        'ing:v:p3;sang=sing:v:i3;sunget=sing:v:P;syng=sing:v:M2;fly=fly:v:I+M2'+
+        ';flyr=fly:v:p3;fløy=fly:v:i3;fløyet=fly:v:P;tenke=think:v:I;tenker='+
+        'think:v:p3;',
+    'tenkte=think:v:i3;tenkt=think:v:P;tenk=think:v:M2;hjelpe=help:v:I;hjelper'+
+        '=help:v:p3;hjalp=help:v:i3;hjulpet=help:v:P;hjelp=help:v:M2;forstå=u'+
+        'nderstand:v:I+M2;forstår=understand:v:p3;forsto=understand:v:i3;',
+    'forstått=understand:v:P;regne=rain:v:I:llover;regner=rain:v:p3:llover;re'+
+        'gnet=rain:v:i3:llover+P:llover;møte=meet:v:I;møter=meet:v:p3;møtte'+
+        '=meet:v:i3;møtt=meet:v:P;møt=meet:v:M2;gifte=marry:v:I;gifter=marry'+
+        ':v:p3;',
+    'giftet=marry:v:i3+P;gift=marry:v:M2;bringe=bring:v:I;bringer=bring:v:p3;b'+
+        'rakte=bring:v:i3;brakt=bring:v:P;bring=bring:v:M2;sende=send:v:I;send'+
+        'er=send:v:p3;sendte=send:v:i3;sendt=send:v:P;send=send:v:M2;tro=belie'+
+        've:v:I+M2;',
+    'tror=believe:v:p3;trodde=believe:v:i3;trodd=believe:v:P;sette=put:v:I;set'+
+        'ter=put:v:p3;satte=put:v:i3;legge=put:v:I;legger=put:v:p3;la=put:v:i3'+
+        ';lagt=put:v:P;legg=put:v:M2;slå=hit:v:I+M2;slår=hit:v:p3;slo=hit:v:'+
+        'i3;slått=hit:v:P;',
+    'vinne=win:v:I;vinner=win:v:p3;vant=win:v:i3;vunnet=win:v:P;vinn=win:v:M2;'+
+        'tape=lose:v:I;taper=lose:v:p3;tapte=lose:v:i3;tapt=lose:v:P;tap=lose:'+
+        'v:M2;ringte=call:v:i3;ringt=call:v:P;bære=carry:v:I;bærer=carry:v:p'+
+        '3;bar=carry:v:i3;',
+    'båret=carry:v:P;bær=carry:v:M2;holde=hold:v:I;holder=hold:v:p3;holdt=ho'+
+        'ld:v:i3+P;hold=hold:v:M2;brukte=use:v:i3;brukt=use:v:P;gråte=cry:v:I'+
+        ';gråter=cry:v:p3;gråt=cry:v:i3+M2;grått=cry:v:P;le=laugh:v:I+M2;le'+
+        'r=laugh:v:p3;',
+    'lo=laugh:v:i3;ledd=laugh:v:P;dø=die:v:I+M2;dør=die:v:p3;døde=die:v:i3;'+
+        'dødd=die:v:P;vokse=grow:v:I+M2;vokser=grow:v:p3;vokste=grow:v:i3;vok'+
+        'st=grow:v:P;stenge=close:v:I;stenger=close:v:p3;stengte=close:v:i3;st'+
+        'engt=close:v:P;',
+    'steng=close:v:M2;jeg=I:s:1;du=you:s:2;han=he:s:3;hun=she:s:3;det=it:s:3;v'+
+        'i=we:s:4;dere=you:s:5;de=they:s:6;meg=me:o;deg=you:o;ham=him:o;henne='+
+        'her:o;oss=us:o;dem=them:o;seg=himself:o;min=my:x;mi=my:x;mitt=my:x;mi'+
+        'ne=my:x;din=your:x;',
+    'di=your:x;ditt=your:x;dine=your:x;hans=his:x;hennes=her:x;vår=our:x;vår'+
+        't=our:x;våre=our:x;deres=their:x;sin=his:x;si=his:x;sitt=his:x;sine='+
+        'his:x;denne=this:d;dette=this:d;disse=these:d;hva=what:w;hvem=who:w;h'+
+        'vor=where:w;',
+    'når=when:w;hvorfor=why:w;hvordan=how:w;hvilken=which:w;hvilket=which:w;h'+
+        'vilke=which:w;hvor_mange=how_many:w;hvor_mye=how_much:w;i=in:e;på=on'+
+        ':e;til=to:e;fra=from:e;med=with:e;av=of:e;for=for:e;om=about:e;ved=at'+
+        ':e;under=under:e;',
+    'over=over:e;etter=after:e;før=before:e;mellom=between:e;uten=without:e;h'+
+        'os=at:e;mot=toward:e;gjennom=through:e;bak=behind:e;foran=in_front_of'+
+        ':e;ved_siden_av=next_to:e;inni=inside:e;utenfor=outside:e;og=and:c;me'+
+        'n=but:c;som=who:c;',
+    'eller=or:c;at=that:c;fordi=because:c;mens=while:c;hvis=if:c;selv_om=altho'+
+        'ugh:c;så=so:c;da=when:c;siden=since:c;nå=now:r;i_dag=today:r;i_morg'+
+        'en=tomorrow:r;i_går=yesterday:r;i_kveld=tonight:r;alltid=always:r;of'+
+        'te=often:r;',
+    'noen_ganger=sometimes:r;allerede=already:r;fortsatt=still:r;igjen=again:r'+
+        ';også=also:r;bare=only:r;kanskje=maybe:r;her=here:r;der=there:r;samm'+
+        'en=together:r;veldig=very:r;nesten=almost:r;tidlig=early:r;sent=late:'+
+        'r;langt=far:r;',
+    'virkelig=really:r;hjemme=at_home:r;ute=outside:r;inne=inside:r;bra=well:r'+
+        ';gjerne=gladly:r;aldri=never:r;nylig=recently:r;snart=soon:r;i_fjor=l'+
+        'ast_year:r;i_år=this_year:r;hei=Hello:j;hallo=Hello:j;ha_det=Goodbye'+
+        ':j;',
+    'takk=Thank_you:j;tusen_takk=Thank_you_very_much:j;vær_så_snill=please:j'+
+        ';unnskyld=Sorry:j;god_morgen=Good_morning:j;god_dag=Good_day:j;god_kv'+
+        'eld=Good_evening:j;god_natt=Good_night:j;ja=Yes:j;nei=No:j;velkommen='+
+        'Welcome:j;',
+    'gratulerer=Congratulations:j;skål=Cheers:j;vær_så_god=Here_you_are:j;i'+
+        'kke=not:g;ingenting=nothing:q;ingen=nobody:q;alle=all:u;alt=all:u;hve'+
+        'r=each:u;noen=some:u;noe=some:u;mange=many:u;få=few:u;begge=both:u;m'+
+        'ye=much:u;',
+    'litt=little:u;hele=whole:u;en=a:t;ei=a:t;et=a:t;én=one:u:1;ett=one:u:1;t'+
+        'o=two:u:1;tre=three:u:1;fire=four:u:1;fem=five:u:1;seks=six:u:1;sju=s'+
+        'even:u:1;syv=seven:u:1;åtte=eight:u:1;ni=nine:u:1;ti=ten:u:1;elleve='+
+        'eleven:u:1;',
+    'tolv=twelve:u:1;tjue=twenty:u:1;tretti=thirty:u:1;førti=forty:u:1;femti='+
+        'fifty:u:1;hundre=one_hundred:u:1;tusen=one_thousand:u:1;Norge=Norway:'+
+        'z;Oslo=Oslo:z;Bergen=Bergen:z;Trondheim=Trondheim:z;Sverige=Sweden:z;'+
+        'Danmark=Denmark:z;',
+    'Finland=Finland:z;England=England:z;Frankrike=France:z;Tyskland=Germany:z'+
+        ';Spania=Spain:z;Italia=Italy:z;Europa=Europe:z;Per=Peter:z;Ola=Ola:z;'+
+        'Kari=Kari:z;Anna=Anna:z;Lars=Lars:z;Ingrid=Ingrid:z;norsk=Norwegian:z'+
+        ';engelsk=English:z;',
+    'svensk=Swedish:z;dansk=Danish:z;fransk=French:z;tysk=German:z;spansk=Span'+
+        'ish:z;'
+  );
+
+  { Polonais : formes de surface (voir mkpl.py) }
+  PlData: Array[0..850] Of String = (
+    'pies=dog:n:s:n;psy=dog:n:p:na;psa=dog:n:s:ag;psów=dog:n:p:g;psu=dog:n:s:'+
+        'd;piesowi=dog:n:s:d;psem=dog:n:s:i;psie=dog:n:s:l;psom=dog:n:p:d;psam'+
+        'i=dog:n:p:i;psach=dog:n:p:l;kot=cat:n:s:n;koty=cat:n:p:na;kota=cat:n:'+
+        's:ag;',
+    'kotów=cat:n:p:g;kotu=cat:n:s:d;kotowi=cat:n:s:d;kotem=cat:n:s:i;kocie=ca'+
+        't:n:s:l;kotom=cat:n:p:d;kotami=cat:n:p:i;kotach=cat:n:p:l;dom=house:n'+
+        ':s:na;domy=house:n:p:na;domu=house:n:s:gl;domów=house:n:p:g;domowi=h'+
+        'ouse:n:s:d;',
+    'domem=house:n:s:i;domom=house:n:p:d;domami=house:n:p:i;domach=house:n:p:l'+
+        ';bilet=ticket:n:s:na;bilety=ticket:n:p:na;biletu=ticket:n:s:g;biletó'+
+        'w=ticket:n:p:g;biletowi=ticket:n:s:d;biletem=ticket:n:s:i;bilecie=tic'+
+        'ket:n:s:l;',
+    'biletom=ticket:n:p:d;biletami=ticket:n:p:i;biletach=ticket:n:p:l;dworzec='+
+        'station:n:s:na;dworce=station:n:p:na;dworca=station:n:s:g;dworców=st'+
+        'ation:n:p:g;dworzecowi=station:n:s:d;dworcem=station:n:s:i;dworcu=sta'+
+        'tion:n:s:l;',
+    'dworcom=station:n:p:d;dworcami=station:n:p:i;dworcach=station:n:p:l;dług'+
+        'opis=pen:n:s:na;długopisy=pen:n:p:na;długopisu=pen:n:s:g;długopis'+
+        'ów=pen:n:p:g;długopisowi=pen:n:s:d;długopisem=pen:n:s:i;długopisi'+
+        'e=pen:n:s:l;',
+    'długopisom=pen:n:p:d;długopisami=pen:n:p:i;długopisach=pen:n:p:l;piłk'+
+        'a=ball:n:s:n;piłki=ball:n:p:na+s:g;piłkę=ball:n:s:a;piłek=ball:n:'+
+        'p:g;piłce=ball:n:s:dl;piłką=ball:n:s:i;piłkom=ball:n:p:d;piłkami'+
+        '=ball:n:p:i;',
+    'piłkach=ball:n:p:l;stół=table:n:s:na;stoły=table:n:p:na;stołu=table:'+
+        'n:s:g;stołów=table:n:p:g;stółowi=table:n:s:d;stółem=table:n:s:i'+
+        ';stole=table:n:s:l;stołom=table:n:p:d;stołami=table:n:p:i;stołach='+
+        'table:n:p:l;',
+    'student=student:n:s:n;studenci=student:n:p:n;studenta=student:n:s:ag;stud'+
+        'entów=student:n:p:ag;studentowi=student:n:s:d;studentem=student:n:s:'+
+        'i;studencie=student:n:s:l;studentom=student:n:p:d;studentami=student:'+
+        'n:p:i;',
+    'studentach=student:n:p:l;uczeń=pupil:n:s:n;uczniowie=pupil:n:p:n;ucznia='+
+        'pupil:n:s:ag;uczniów=pupil:n:p:ag;uczeńowi=pupil:n:s:d;uczniem=pupi'+
+        'l:n:s:i;uczniu=pupil:n:s:l;uczniom=pupil:n:p:d;uczniami=pupil:n:p:i;',
+    'uczniach=pupil:n:p:l;mężczyzna=man:n:s:n;mężczyźni=man:n:p:n;mężcz'+
+        'yznę=man:n:s:a;mężczyzn=man:n:p:ag;mężczyzny=man:n:s:g;mężczy'+
+        'źnie=man:n:s:dl;mężczyznaowi=man:n:s:d;mężczyzną=man:n:s:i;mę'+
+        'żczyznom=man:n:p:d;',
+    'mężczyznami=man:n:p:i;mężczyznach=man:n:p:l;chłopiec=boy:n:s:n;chło'+
+        'pcy=boy:n:p:n;chłopca=boy:n:s:ag;chłopców=boy:n:p:ag;chłopiecowi='+
+        'boy:n:s:d;chłopcem=boy:n:s:i;chłopcu=boy:n:s:l;chłopcom=boy:n:p:d;',
+    'chłopcami=boy:n:p:i;chłopcach=boy:n:p:l;brat=brother:n:s:n;bracia=broth'+
+        'er:n:p:n;brata=brother:n:s:ag;braci=brother:n:p:ag;bratu=brother:n:s:'+
+        'd;bratowi=brother:n:s:d;bratem=brother:n:s:i;bracie=brother:n:s:l;bra'+
+        'ciom=brother:n:p:d;',
+    'braćmi=brother:n:p:i;braciach=brother:n:p:l;ojciec=father:n:s:n;ojcowie='+
+        'father:n:p:n;ojca=father:n:s:ag;ojców=father:n:p:ag;ojcu=father:n:s:'+
+        'dl;ojciecowi=father:n:s:d;ojcem=father:n:s:i;ojcom=father:n:p:d;ojcam'+
+        'i=father:n:p:i;',
+    'ojcach=father:n:p:l;syn=son:n:s:n;synowie=son:n:p:n;syna=son:n:s:ag;synó'+
+        'w=son:n:p:ag;synowi=son:n:s:d;synem=son:n:s:i;synu=son:n:s:l;synom=so'+
+        'n:n:p:d;synami=son:n:p:i;synach=son:n:p:l;lekarz=doctor:n:s:n;lekarze'+
+        '=doctor:n:p:n;',
+    'lekarza=doctor:n:s:ag;lekarzy=doctor:n:p:ag;lekarzowi=doctor:n:s:d;lekarz'+
+        'em=doctor:n:s:i;lekarzu=doctor:n:s:l;lekarzom=doctor:n:p:d;lekarzami='+
+        'doctor:n:p:i;lekarzach=doctor:n:p:l;nauczyciel=teacher:n:s:n;nauczyci'+
+        'ele=teacher:n:p:n;',
+    'nauczyciela=teacher:n:s:ag;nauczycieli=teacher:n:p:ag;nauczycielowi=teach'+
+        'er:n:s:d;nauczycielem=teacher:n:s:i;nauczycielu=teacher:n:s:l;nauczyc'+
+        'ielom=teacher:n:p:d;nauczycielami=teacher:n:p:i;nauczycielach=teacher'+
+        ':n:p:l;',
+    'przyjaciel=friend:n:s:n;przyjaciele=friend:n:p:n;przyjaciela=friend:n:s:a'+
+        'g;przyjaciół=friend:n:p:ag;przyjacielowi=friend:n:s:d;przyjacielem='+
+        'friend:n:s:i;przyjacielu=friend:n:s:l;przyjaciołom=friend:n:p:d;',
+    'przyjaciółmi=friend:n:p:i;przyjaciołach=friend:n:p:l;król=king:n:s:n;'+
+        'królowie=king:n:p:n;króla=king:n:s:ag;królów=king:n:p:ag;królowi'+
+        '=king:n:s:d;królem=king:n:s:i;królu=king:n:s:l;królom=king:n:p:d;k'+
+        'rólami=king:n:p:i;',
+    'królach=king:n:p:l;czas=time:n:s:na;czasy=time:n:p:na;czasu=time:n:s:g;c'+
+        'zasów=time:n:p:g;czasowi=time:n:s:d;czasem=time:n:s:i;czasie=time:n:'+
+        's:l;czasom=time:n:p:d;czasami=time:n:p:i;czasach=time:n:p:l;dzień=da'+
+        'y:n:s:na;',
+    'dni=day:n:p:nag;dnia=day:n:s:g;dniowi=day:n:s:d;dzieńowi=day:n:s:d;dniem'+
+        '=day:n:s:i;dniu=day:n:s:l;dniom=day:n:p:d;dniami=day:n:p:i;dniach=day'+
+        ':n:p:l;rok=year:n:s:na;lata=year:n:p:na+s:g;roku=year:n:s:gl;lat=year'+
+        ':n:p:g;',
+    'rokowi=year:n:s:d;rokem=year:n:s:i;latom=year:n:p:d;latami=year:n:p:i;lat'+
+        'ach=year:n:p:l;miesiąc=month:n:s:na;miesiące=month:n:p:na;miesiąca'+
+        '=month:n:s:g;miesięcy=month:n:p:g;miesiącowi=month:n:s:d;miesiącem'+
+        '=month:n:s:i;',
+    'miesiącu=month:n:s:l;miesiącom=month:n:p:d;miesiącami=month:n:p:i;mies'+
+        'iącach=month:n:p:l;tydzień=week:n:s:na;tygodnie=week:n:p:na;tygodni'+
+        'a=week:n:s:g;tygodni=week:n:p:g;tydzieńowi=week:n:s:d;tygodniem=week'+
+        ':n:s:i;',
+    'tygodniu=week:n:s:l;tygodniom=week:n:p:d;tygodniami=week:n:p:i;tygodniach'+
+        '=week:n:p:l;wieczór=evening:n:s:na;wieczory=evening:n:p:na;wieczoru='+
+        'evening:n:s:g;wieczorów=evening:n:p:g;wieczórowi=evening:n:s:d;',
+    'wieczórem=evening:n:s:i;wieczorze=evening:n:s:l;wieczorom=evening:n:p:d;'+
+        'wieczorami=evening:n:p:i;wieczorach=evening:n:p:l;samochód=car:n:s:n'+
+        'a;samochody=car:n:p:na;samochodu=car:n:s:g;samochodów=car:n:p:g;samo'+
+        'chódowi=car:n:s:d;',
+    'samochódem=car:n:s:i;samochodzie=car:n:s:l;samochodom=car:n:p:d;samochod'+
+        'ami=car:n:p:i;samochodach=car:n:p:l;autobus=bus:n:s:na;autobusy=bus:n'+
+        ':p:na;autobusu=bus:n:s:g;autobusów=bus:n:p:g;autobusowi=bus:n:s:d;au'+
+        'tobusem=bus:n:s:i;',
+    'autobusie=bus:n:s:l;autobusom=bus:n:p:d;autobusami=bus:n:p:i;autobusach=b'+
+        'us:n:p:l;pociąg=train:n:s:na;pociągi=train:n:p:na;pociągu=train:n:'+
+        's:gl;pociągów=train:n:p:g;pociągowi=train:n:s:d;pociągiem=train:n'+
+        ':s:i;',
+    'pociągom=train:n:p:d;pociągami=train:n:p:i;pociągach=train:n:p:l;rower'+
+        '=bicycle:n:s:na;rowery=bicycle:n:p:na;roweru=bicycle:n:s:g;rowerów=b'+
+        'icycle:n:p:g;rowerowi=bicycle:n:s:d;rowerem=bicycle:n:s:i;rowerze=bic'+
+        'ycle:n:s:l;',
+    'rowerom=bicycle:n:p:d;rowerami=bicycle:n:p:i;rowerach=bicycle:n:p:l;telef'+
+        'on=telephone:n:s:na;telefony=telephone:n:p:na;telefonu=telephone:n:s:'+
+        'g;telefonów=telephone:n:p:g;telefonowi=telephone:n:s:d;telefonem=tel'+
+        'ephone:n:s:i;',
+    'telefonie=telephone:n:s:l;telefonom=telephone:n:p:d;telefonami=telephone:'+
+        'n:p:i;telefonach=telephone:n:p:l;komputer=computer:n:s:na;komputery=c'+
+        'omputer:n:p:na;komputera=computer:n:s:g;komputerów=computer:n:p:g;',
+    'komputerowi=computer:n:s:d;komputerem=computer:n:s:i;komputerze=computer:'+
+        'n:s:l;komputerom=computer:n:p:d;komputerami=computer:n:p:i;komputerac'+
+        'h=computer:n:p:l;samolot=plane:n:s:na;samoloty=plane:n:p:na;samolotu='+
+        'plane:n:s:g;',
+    'samolotów=plane:n:p:g;samolotowi=plane:n:s:d;samolotem=plane:n:s:i;samol'+
+        'ocie=plane:n:s:l;samolotom=plane:n:p:d;samolotami=plane:n:p:i;samolot'+
+        'ach=plane:n:p:l;list=letter:n:s:na;listy=letter:n:p:na;listu=letter:n'+
+        ':s:g;',
+    'listów=letter:n:p:g;listowi=letter:n:s:d;listem=letter:n:s:i;liście=let'+
+        'ter:n:s:l;listom=letter:n:p:d;listami=letter:n:p:i;listach=letter:n:p'+
+        ':l;las=forest:n:s:na;lasy=forest:n:p:na;lasu=forest:n:s:g;lasów=fore'+
+        'st:n:p:g;',
+    'lasowi=forest:n:s:d;lasem=forest:n:s:i;lesie=forest:n:s:l;lasom=forest:n:'+
+        'p:d;lasami=forest:n:p:i;lasach=forest:n:p:l;ogród=garden:n:s:na;ogro'+
+        'dy=garden:n:p:na;ogrodu=garden:n:s:g;ogrodów=garden:n:p:g;ogródowi='+
+        'garden:n:s:d;',
+    'ogródem=garden:n:s:i;ogrodzie=garden:n:s:l;ogrodom=garden:n:p:d;ogrodami'+
+        '=garden:n:p:i;ogrodach=garden:n:p:l;park=park:n:s:na;parki=park:n:p:n'+
+        'a;parku=park:n:s:gl;parków=park:n:p:g;parkowi=park:n:s:d;parkiem=par'+
+        'k:n:s:i;',
+    'parkom=park:n:p:d;parkami=park:n:p:i;parkach=park:n:p:l;sklep=shop:n:s:na'+
+        ';sklepy=shop:n:p:na;sklepu=shop:n:s:g;sklepów=shop:n:p:g;sklepowi=sh'+
+        'op:n:s:d;sklepem=shop:n:s:i;sklepie=shop:n:s:l;sklepom=shop:n:p:d;skl'+
+        'epami=shop:n:p:i;',
+    'sklepach=shop:n:p:l;bank=bank:n:s:na;banki=bank:n:p:na;banku=bank:n:s:gl;'+
+        'banków=bank:n:p:g;bankowi=bank:n:s:d;bankiem=bank:n:s:i;bankom=bank:'+
+        'n:p:d;bankami=bank:n:p:i;bankach=bank:n:p:l;pokój=room:n:s:na;pokoje'+
+        '=room:n:p:na;',
+    'pokoju=room:n:s:gl;pokoi=room:n:p:g;pokójowi=room:n:s:d;pokójem=room:n:'+
+        's:i;pokojom=room:n:p:d;pokojami=room:n:p:i;pokojach=room:n:p:l;obiad='+
+        'lunch:n:s:na;obiady=lunch:n:p:na;obiadu=lunch:n:s:g;obiadów=lunch:n:'+
+        'p:g;',
+    'obiadowi=lunch:n:s:d;obiadem=lunch:n:s:i;obiedzie=lunch:n:s:l;obiadom=lun'+
+        'ch:n:p:d;obiadami=lunch:n:p:i;obiadach=lunch:n:p:l;chleb=bread:n:s:na'+
+        ';chleby=bread:n:p:na;chleba=bread:n:s:g;chlebów=bread:n:p:g;chlebowi'+
+        '=bread:n:s:d;',
+    'chlebem=bread:n:s:i;chlebie=bread:n:s:l;chlebom=bread:n:p:d;chlebami=brea'+
+        'd:n:p:i;chlebach=bread:n:p:l;ser=cheese:n:s:na;sery=cheese:n:p:na;ser'+
+        'a=cheese:n:s:g;serów=cheese:n:p:g;serowi=cheese:n:s:d;serem=cheese:n'+
+        ':s:i;',
+    'serze=cheese:n:s:l;serom=cheese:n:p:d;serami=cheese:n:p:i;serach=cheese:n'+
+        ':p:l;sok=juice:n:s:na;soki=juice:n:p:na;soku=juice:n:s:gl;soków=juic'+
+        'e:n:p:g;sokowi=juice:n:s:d;sokem=juice:n:s:i;sokom=juice:n:p:d;sokami'+
+        '=juice:n:p:i;',
+    'sokach=juice:n:p:l;kraj=country:n:s:na;kraje=country:n:p:na;kraju=country'+
+        ':n:s:gl;krajów=country:n:p:g;krajowi=country:n:s:d;krajem=country:n:'+
+        's:i;krajom=country:n:p:d;krajami=country:n:p:i;krajach=country:n:p:l;',
+    'świat=world:n:s:na;światy=world:n:p:na;świata=world:n:s:g;światów=wo'+
+        'rld:n:p:g;światowi=world:n:s:d;światem=world:n:s:i;świecie=world:n'+
+        ':s:l;światom=world:n:p:d;światami=world:n:p:i;światach=world:n:p:l'+
+        ';',
+    'język=language:n:s:na;języki=language:n:p:na;języka=language:n:s:g;ję'+
+        'zyków=language:n:p:g;językowi=language:n:s:d;językiem=language:n:s'+
+        ':i;języku=language:n:s:l;językom=language:n:p:d;językami=language:'+
+        'n:p:i;',
+    'językach=language:n:p:l;wiatr=wind:n:s:na;wiatry=wind:n:p:na;wiatru=wind'+
+        ':n:s:g;wiatrów=wind:n:p:g;wiatrowi=wind:n:s:d;wiatrem=wind:n:s:i;wie'+
+        'trze=wind:n:s:l;wiatrom=wind:n:p:d;wiatrami=wind:n:p:i;wiatrach=wind:'+
+        'n:p:l;',
+    'deszcz=rain:n:s:na;deszcze=rain:n:p:na;deszczu=rain:n:s:gl;deszczów=rain'+
+        ':n:p:g;deszczowi=rain:n:s:d;deszczem=rain:n:s:i;deszczom=rain:n:p:d;d'+
+        'eszczami=rain:n:p:i;deszczach=rain:n:p:l;śnieg=snow:n:s:na;śniegi=s'+
+        'now:n:p:na;',
+    'śniegu=snow:n:s:gl;śniegów=snow:n:p:g;śniegowi=snow:n:s:d;śniegem=sn'+
+        'ow:n:s:i;śniegom=snow:n:p:d;śniegami=snow:n:p:i;śniegach=snow:n:p:'+
+        'l;ptak=bird:n:s:n;ptaki=bird:n:p:na;ptaka=bird:n:s:ag;ptaków=bird:n:'+
+        'p:g;',
+    'ptakowi=bird:n:s:d;ptakiem=bird:n:s:i;ptaku=bird:n:s:l;ptakom=bird:n:p:d;'+
+        'ptakami=bird:n:p:i;ptakach=bird:n:p:l;koń=horse:n:s:n;konie=horse:n:'+
+        'p:na;konia=horse:n:s:ag;koni=horse:n:p:g;końowi=horse:n:s:d;koniem=h'+
+        'orse:n:s:i;',
+    'koniu=horse:n:s:l;koniom=horse:n:p:d;końmi=horse:n:p:i;koniach=horse:n:p'+
+        ':l;ryż=rice:n:s:na;ryże=rice:n:p:na;ryżu=rice:n:s:gl;ryżów=rice:'+
+        'n:p:g;ryżowi=rice:n:s:d;ryżem=rice:n:s:i;ryżom=rice:n:p:d;ryżami='+
+        'rice:n:p:i;',
+    'ryżach=rice:n:p:l;głos=voice:n:s:na;głosy=voice:n:p:na;głosu=voice:n:'+
+        's:g;głosów=voice:n:p:g;głosowi=voice:n:s:d;głosem=voice:n:s:i;gł'+
+        'osie=voice:n:s:l;głosom=voice:n:p:d;głosami=voice:n:p:i;głosach=vo'+
+        'ice:n:p:l;',
+    'temat=subject:n:s:na;tematy=subject:n:p:na;tematu=subject:n:s:g;tematów='+
+        'subject:n:p:g;tematowi=subject:n:s:d;tematem=subject:n:s:i;temacie=su'+
+        'bject:n:s:l;tematom=subject:n:p:d;tematami=subject:n:p:i;tematach=sub'+
+        'ject:n:p:l;',
+    'numer=number:n:s:na;numery=number:n:p:na;numeru=number:n:s:g;numerów=num'+
+        'ber:n:p:g;numerowi=number:n:s:d;numerem=number:n:s:i;numerze=number:n'+
+        ':s:l;numerom=number:n:p:d;numerami=number:n:p:i;numerach=number:n:p:l'+
+        ';',
+    'adres=address:n:s:na;adresy=address:n:p:na;adresu=address:n:s:g;adresów='+
+        'address:n:p:g;adresowi=address:n:s:d;adresem=address:n:s:i;adresie=ad'+
+        'dress:n:s:l;adresom=address:n:p:d;adresami=address:n:p:i;adresach=add'+
+        'ress:n:p:l;',
+    'film=film:n:s:na;filmy=film:n:p:na;filmu=film:n:s:g;filmów=film:n:p:g;fi'+
+        'lmowi=film:n:s:d;filmem=film:n:s:i;filmie=film:n:s:l;filmom=film:n:p:'+
+        'd;filmami=film:n:p:i;filmach=film:n:p:l;obraz=picture:n:s:na;obrazy=p'+
+        'icture:n:p:na;',
+    'obrazu=picture:n:s:g;obrazów=picture:n:p:g;obrazowi=picture:n:s:d;obraze'+
+        'm=picture:n:s:i;obrazie=picture:n:s:l;obrazom=picture:n:p:d;obrazami='+
+        'picture:n:p:i;obrazach=picture:n:p:l;człowiek=person:n:s:n;ludzie=pe'+
+        'rson:n:p:n;',
+    'człowieka=person:n:s:ag;ludzi=person:n:p:ag;człowiekowi=person:n:s:d;cz'+
+        'łowiekiem=person:n:s:i;człowieku=person:n:s:l;ludziom=person:n:p:d;'+
+        'ludźmi=person:n:p:i;ludziach=person:n:p:l;kobieta=woman:n:s:n;kobiet'+
+        'y=woman:n:p:na+s:g;',
+    'kobietę=woman:n:s:a;kobiet=woman:n:p:g;kobiecie=woman:n:s:dl;kobietą=wo'+
+        'man:n:s:i;kobietom=woman:n:p:d;kobietami=woman:n:p:i;kobietach=woman:'+
+        'n:p:l;nauczycielka=teacher:n:s:n;nauczycielki=teacher:n:p:na+s:g;',
+    'nauczycielkę=teacher:n:s:a;nauczycielek=teacher:n:p:g;nauczycielce=teach'+
+        'er:n:s:dl;nauczycielką=teacher:n:s:i;nauczycielkom=teacher:n:p:d;nau'+
+        'czycielkami=teacher:n:p:i;nauczycielkach=teacher:n:p:l;studentka=stud'+
+        'ent:n:s:n;',
+    'studentki=student:n:p:na+s:g;studentkę=student:n:s:a;studentek=student:n'+
+        ':p:g;studentce=student:n:s:dl;studentką=student:n:s:i;studentkom=stu'+
+        'dent:n:p:d;studentkami=student:n:p:i;studentkach=student:n:p:l;lekark'+
+        'a=doctor:n:s:n;',
+    'lekarki=doctor:n:p:na+s:g;lekarkę=doctor:n:s:a;lekarek=doctor:n:p:g;leka'+
+        'rce=doctor:n:s:dl;lekarką=doctor:n:s:i;lekarkom=doctor:n:p:d;lekarka'+
+        'mi=doctor:n:p:i;lekarkach=doctor:n:p:l;uczennica=pupil:n:s:n;uczennic'+
+        'e=pupil:n:p:na;',
+    'uczennicę=pupil:n:s:a;uczennicy=pupil:n:s:gdl;uczennic=pupil:n:p:g;uczen'+
+        'nicą=pupil:n:s:i;uczennicom=pupil:n:p:d;uczennicami=pupil:n:p:i;ucze'+
+        'nnicach=pupil:n:p:l;pielęgniarka=nurse:n:s:n;pielęgniarki=nurse:n:p'+
+        ':na+s:g;',
+    'pielęgniarkę=nurse:n:s:a;pielęgniarek=nurse:n:p:g;pielęgniarce=nurse:'+
+        'n:s:dl;pielęgniarką=nurse:n:s:i;pielęgniarkom=nurse:n:p:d;pielęgn'+
+        'iarkami=nurse:n:p:i;pielęgniarkach=nurse:n:p:l;sąsiadka=neighbor:n:'+
+        's:n;',
+    'sąsiadki=neighbor:n:p:na+s:g;sąsiadkę=neighbor:n:s:a;sąsiadek=neighbo'+
+        'r:n:p:g;sąsiadce=neighbor:n:s:dl;sąsiadką=neighbor:n:s:i;sąsiadko'+
+        'm=neighbor:n:p:d;sąsiadkami=neighbor:n:p:i;sąsiadkach=neighbor:n:p:'+
+        'l;',
+    'sąsiad=neighbor:n:s:n;sąsiedzi=neighbor:n:p:n;sąsiada=neighbor:n:s:ag;'+
+        'sąsiadów=neighbor:n:p:ag;sąsiadowi=neighbor:n:s:d;sąsiadem=neighb'+
+        'or:n:s:i;sąsiedzie=neighbor:n:s:l;sąsiadom=neighbor:n:p:d;sąsiadam'+
+        'i=neighbor:n:p:i;',
+    'sąsiadach=neighbor:n:p:l;prezent=gift:n:s:na;prezenty=gift:n:p:na;prezen'+
+        'tu=gift:n:s:g;prezentów=gift:n:p:g;prezentowi=gift:n:s:d;prezentem=g'+
+        'ift:n:s:i;prezencie=gift:n:s:l;prezentom=gift:n:p:d;prezentami=gift:n'+
+        ':p:i;',
+    'prezentach=gift:n:p:l;wiosna=spring:n:s:n;wiosny=spring:n:p:na+s:g;wiosn'+
+        'ę=spring:n:s:a;wiosen=spring:n:p:g;wiośnie=spring:n:s:dl;wiosną=sp'+
+        'ring:n:s:i;wiosnom=spring:n:p:d;wiosnami=spring:n:p:i;wiosnach=spring'+
+        ':n:p:l;',
+    'zima=winter:n:s:n;zimy=winter:n:p:na+s:g;zimę=winter:n:s:a;zim=winter:n:'+
+        'p:g;zimie=winter:n:s:dl;zimą=winter:n:s:i;zimom=winter:n:p:d;zimami='+
+        'winter:n:p:i;zimach=winter:n:p:l;jesień=autumn:n:s:na;jesienie=autum'+
+        'n:n:p:na;',
+    'jesieni=autumn:n:s:gdl+p:g;jesienią=autumn:n:s:i;jesieniom=autumn:n:p:d;'+
+        'jesieniami=autumn:n:p:i;jesieniach=autumn:n:p:l;dziewczyna=girl:n:s:n'+
+        ';dziewczyny=girl:n:p:na+s:g;dziewczynę=girl:n:s:a;dziewczyn=girl:n:p'+
+        ':g;',
+    'dziewczynie=girl:n:s:dl;dziewczyną=girl:n:s:i;dziewczynom=girl:n:p:d;dzi'+
+        'ewczynami=girl:n:p:i;dziewczynach=girl:n:p:l;matka=mother:n:s:n;matki'+
+        '=mother:n:p:na+s:g;matkę=mother:n:s:a;matek=mother:n:p:g;matce=mothe'+
+        'r:n:s:dl;',
+    'matką=mother:n:s:i;matkom=mother:n:p:d;matkami=mother:n:p:i;matkach=moth'+
+        'er:n:p:l;mama=mum:n:s:n;mamy=mum:n:p:na+s:g;mamę=mum:n:s:a;mam=mum:n'+
+        ':p:g;mamie=mum:n:s:dl;mamą=mum:n:s:i;mamom=mum:n:p:d;mamami=mum:n:p:'+
+        'i;mamach=mum:n:p:l;',
+    'siostra=sister:n:s:n;siostry=sister:n:p:na+s:g;siostrę=sister:n:s:a;sió'+
+        'str=sister:n:p:g;siostrze=sister:n:s:dl;siostrą=sister:n:s:i;siostro'+
+        'm=sister:n:p:d;siostrami=sister:n:p:i;siostrach=sister:n:p:l;córka=d'+
+        'aughter:n:s:n;',
+    'córki=daughter:n:p:na+s:g;córkę=daughter:n:s:a;córek=daughter:n:p:g;c'+
+        'órce=daughter:n:s:dl;córką=daughter:n:s:i;córkom=daughter:n:p:d;c'+
+        'órkami=daughter:n:p:i;córkach=daughter:n:p:l;żona=wife:n:s:n;żony'+
+        '=wife:n:p:na+s:g;',
+    'żonę=wife:n:s:a;żon=wife:n:p:g;żonie=wife:n:s:dl;żoną=wife:n:s:i;ż'+
+        'onom=wife:n:p:d;żonami=wife:n:p:i;żonach=wife:n:p:l;książka=book:'+
+        'n:s:n;książki=book:n:p:na+s:g;książkę=book:n:s:a;książek=book:'+
+        'n:p:g;',
+    'książce=book:n:s:dl;książką=book:n:s:i;książkom=book:n:p:d;książ'+
+        'kami=book:n:p:i;książkach=book:n:p:l;szkoła=school:n:s:n;szkoły=s'+
+        'chool:n:p:na+s:g;szkołę=school:n:s:a;szkół=school:n:p:g;szkole=sc'+
+        'hool:n:s:dl;',
+    'szkołą=school:n:s:i;szkołom=school:n:p:d;szkołami=school:n:p:i;szkoł'+
+        'ach=school:n:p:l;ulica=street:n:s:n;ulice=street:n:p:na;ulicę=street'+
+        ':n:s:a;ulicy=street:n:s:gdl;ulic=street:n:p:g;ulicą=street:n:s:i;uli'+
+        'com=street:n:p:d;',
+    'ulicami=street:n:p:i;ulicach=street:n:p:l;droga=road:n:s:n;drogi=road:n:p'+
+        ':na+s:g;drogę=road:n:s:a;dróg=road:n:p:g;drodze=road:n:s:dl;drogą='+
+        'road:n:s:i;drogom=road:n:p:d;drogami=road:n:p:i;drogach=road:n:p:l;pr'+
+        'aca=work:n:s:n;',
+    'prace=work:n:p:na;pracę=work:n:s:a;pracy=work:n:s:gdl;prac=work:n:p:g;pr'+
+        'acą=work:n:s:i;pracom=work:n:p:d;pracami=work:n:p:i;pracach=work:n:p'+
+        ':l;rodzina=family:n:s:n;rodziny=family:n:p:na+s:g;rodzinę=family:n:s'+
+        ':a;',
+    'rodzin=family:n:p:g;rodzinie=family:n:s:dl;rodziną=family:n:s:i;rodzinom'+
+        '=family:n:p:d;rodzinami=family:n:p:i;rodzinach=family:n:p:l;godzina=h'+
+        'our:n:s:n;godziny=hour:n:p:na+s:g;godzinę=hour:n:s:a;godzin=hour:n:p'+
+        ':g;',
+    'godzinie=hour:n:s:dl;godziną=hour:n:s:i;godzinom=hour:n:p:d;godzinami=ho'+
+        'ur:n:p:i;godzinach=hour:n:p:l;minuta=minute:n:s:n;minuty=minute:n:p:n'+
+        'a+s:g;minutę=minute:n:s:a;minut=minute:n:p:g;minucie=minute:n:s:dl;',
+    'minutą=minute:n:s:i;minutom=minute:n:p:d;minutami=minute:n:p:i;minutach='+
+        'minute:n:p:l;noc=night:n:s:na;noce=night:n:p:na;nocy=night:n:s:gdl+p:'+
+        'g;nocą=night:n:s:i;nocom=night:n:p:d;nocami=night:n:p:i;nocach=night'+
+        ':n:p:l;',
+    'rzecz=thing:n:s:na;rzeczy=thing:n:p:nag+s:gdl;rzeczą=thing:n:s:i;rzeczom'+
+        '=thing:n:p:d;rzeczami=thing:n:p:i;rzeczach=thing:n:p:l;rzeka=river:n:'+
+        's:n;rzeki=river:n:p:na+s:g;rzekę=river:n:s:a;rzek=river:n:p:g;rzece='+
+        'river:n:s:dl;',
+    'rzeką=river:n:s:i;rzekom=river:n:p:d;rzekami=river:n:p:i;rzekach=river:n'+
+        ':p:l;góra=mountain:n:s:n;góry=mountain:n:p:na+s:g;górę=mountain:n'+
+        ':s:a;gór=mountain:n:p:g;górze=mountain:n:s:dl;górą=mountain:n:s:i'+
+        ';',
+    'górom=mountain:n:p:d;górami=mountain:n:p:i;górach=mountain:n:p:l;wyspa'+
+        '=island:n:s:n;wyspy=island:n:p:na+s:g;wyspę=island:n:s:a;wysp=island'+
+        ':n:p:g;wyspie=island:n:s:dl;wyspą=island:n:s:i;wyspom=island:n:p:d;',
+    'wyspami=island:n:p:i;wyspach=island:n:p:l;kuchnia=kitchen:n:s:n;kuchnie=k'+
+        'itchen:n:p:na;kuchnię=kitchen:n:s:a;kuchni=kitchen:n:s:gdl+p:g;kuchn'+
+        'ią=kitchen:n:s:i;kuchniom=kitchen:n:p:d;kuchniami=kitchen:n:p:i;',
+    'kuchniach=kitchen:n:p:l;restauracja=restaurant:n:s:n;restauracje=restaura'+
+        'nt:n:p:na;restaurację=restaurant:n:s:a;restauracji=restaurant:n:s:gd'+
+        'l+p:g;restauracją=restaurant:n:s:i;restauracjom=restaurant:n:p:d;',
+    'restauracjami=restaurant:n:p:i;restauracjach=restaurant:n:p:l;stacja=stat'+
+        'ion:n:s:n;stacje=station:n:p:na;stację=station:n:s:a;stacji=station:'+
+        'n:s:gdl+p:g;stacją=station:n:s:i;stacjom=station:n:p:d;stacjami=stat'+
+        'ion:n:p:i;',
+    'stacjach=station:n:p:l;biblioteka=library:n:s:n;biblioteki=library:n:p:na'+
+        '+s:g;bibliotekę=library:n:s:a;bibliotek=library:n:p:g;bibliotece=lib'+
+        'rary:n:s:dl;biblioteką=library:n:s:i;bibliotekom=library:n:p:d;',
+    'bibliotekami=library:n:p:i;bibliotekach=library:n:p:l;apteka=pharmacy:n:s'+
+        ':n;apteki=pharmacy:n:p:na+s:g;aptekę=pharmacy:n:s:a;aptek=pharmacy:n'+
+        ':p:g;aptece=pharmacy:n:s:dl;apteką=pharmacy:n:s:i;aptekom=pharmacy:n'+
+        ':p:d;',
+    'aptekami=pharmacy:n:p:i;aptekach=pharmacy:n:p:l;poczta=post_office:n:s:n;'+
+        'poczty=post_office:n:p:na+s:g;pocztę=post_office:n:s:a;poczt=post_of'+
+        'fice:n:p:g;poczcie=post_office:n:s:dl;pocztą=post_office:n:s:i;',
+    'pocztom=post_office:n:p:d;pocztami=post_office:n:p:i;pocztach=post_office'+
+        ':n:p:l;kawiarnia=cafe:n:s:n;kawiarnie=cafe:n:p:na;kawiarnię=cafe:n:s'+
+        ':a;kawiarni=cafe:n:s:gdl+p:g;kawiarnią=cafe:n:s:i;kawiarniom=cafe:n:'+
+        'p:d;',
+    'kawiarniami=cafe:n:p:i;kawiarniach=cafe:n:p:l;lekcja=lesson:n:s:n;lekcje='+
+        'lesson:n:p:na;lekcję=lesson:n:s:a;lekcji=lesson:n:s:gdl+p:g;lekcją='+
+        'lesson:n:s:i;lekcjom=lesson:n:p:d;lekcjami=lesson:n:p:i;lekcjach=less'+
+        'on:n:p:l;',
+    'kolacja=dinner:n:s:n;kolacje=dinner:n:p:na;kolację=dinner:n:s:a;kolacji='+
+        'dinner:n:s:gdl+p:g;kolacją=dinner:n:s:i;kolacjom=dinner:n:p:d;kolacj'+
+        'ami=dinner:n:p:i;kolacjach=dinner:n:p:l;mapa=map:n:s:n;mapy=map:n:p:n'+
+        'a+s:g;',
+    'mapę=map:n:s:a;map=map:n:p:g;mapie=map:n:s:dl;mapą=map:n:s:i;mapom=map:'+
+        'n:p:d;mapami=map:n:p:i;mapach=map:n:p:l;gazeta=newspaper:n:s:n;gazety'+
+        '=newspaper:n:p:na+s:g;gazetę=newspaper:n:s:a;gazet=newspaper:n:p:g;',
+    'gazecie=newspaper:n:s:dl;gazetą=newspaper:n:s:i;gazetom=newspaper:n:p:d;'+
+        'gazetami=newspaper:n:p:i;gazetach=newspaper:n:p:l;cena=price:n:s:n;ce'+
+        'ny=price:n:p:na+s:g;cenę=price:n:s:a;cen=price:n:p:g;cenie=price:n:s'+
+        ':dl;',
+    'ceną=price:n:s:i;cenom=price:n:p:d;cenami=price:n:p:i;cenach=price:n:p:l'+
+        ';pogoda=weather:n:s:n;pogody=weather:n:p:na+s:g;pogodę=weather:n:s:a'+
+        ';pogód=weather:n:p:g;pogodzie=weather:n:s:dl;pogodą=weather:n:s:i;',
+    'pogodom=weather:n:p:d;pogodami=weather:n:p:i;pogodach=weather:n:p:l;zupa='+
+        'soup:n:s:n;zupy=soup:n:p:na+s:g;zupę=soup:n:s:a;zup=soup:n:p:g;zupie'+
+        '=soup:n:s:dl;zupą=soup:n:s:i;zupom=soup:n:p:d;zupami=soup:n:p:i;zupa'+
+        'ch=soup:n:p:l;',
+    'pizza=pizza:n:s:n;pizze=pizza:n:p:na;pizzę=pizza:n:s:a;pizzy=pizza:n:s:g'+
+        'dl;pizz=pizza:n:p:g;pizzą=pizza:n:s:i;pizzom=pizza:n:p:d;pizzami=piz'+
+        'za:n:p:i;pizzach=pizza:n:p:l;ryba=fish:n:s:n;ryby=fish:n:p:na+s:g;ryb'+
+        'ę=fish:n:s:a;',
+    'ryb=fish:n:p:g;rybie=fish:n:s:dl;rybą=fish:n:s:i;rybom=fish:n:p:d;rybami'+
+        '=fish:n:p:i;rybach=fish:n:p:l;krowa=cow:n:s:n;krowy=cow:n:p:na+s:g;kr'+
+        'owę=cow:n:s:a;krów=cow:n:p:g;krowie=cow:n:s:dl;krową=cow:n:s:i;kro'+
+        'wom=cow:n:p:d;',
+    'krowami=cow:n:p:i;krowach=cow:n:p:l;kawa=coffee:n:s:n;kawy=coffee:n:p:na+'+
+        's:g;kawę=coffee:n:s:a;kaw=coffee:n:p:g;kawie=coffee:n:s:dl;kawą=cof'+
+        'fee:n:s:i;kawom=coffee:n:p:d;kawami=coffee:n:p:i;kawach=coffee:n:p:l;'+
+        'herbata=tea:n:s:n;',
+    'herbaty=tea:n:p:na+s:g;herbatę=tea:n:s:a;herbat=tea:n:p:g;herbacie=tea:n'+
+        ':s:dl;herbatą=tea:n:s:i;herbatom=tea:n:p:d;herbatami=tea:n:p:i;herba'+
+        'tach=tea:n:p:l;woda=water:n:s:n;wody=water:n:p:na+s:g;wodę=water:n:s'+
+        ':a;',
+    'wód=water:n:p:g;wodzie=water:n:s:dl;wodą=water:n:s:i;wodom=water:n:p:d;'+
+        'wodami=water:n:p:i;wodach=water:n:p:l;ręka=hand:n:s:n;ręce=hand:n:p'+
+        ':na+s:dl;rękę=hand:n:s:a;ręki=hand:n:s:g;rąk=hand:n:p:g;ręką=ha'+
+        'nd:n:s:i;',
+    'rękom=hand:n:p:d;rękami=hand:n:p:i;rękach=hand:n:p:l;noga=leg:n:s:n;no'+
+        'gi=leg:n:p:na+s:g;nogę=leg:n:s:a;nóg=leg:n:p:g;nodze=leg:n:s:dl;nog'+
+        'ą=leg:n:s:i;nogom=leg:n:p:d;nogami=leg:n:p:i;nogach=leg:n:p:l;głowa'+
+        '=head:n:s:n;',
+    'głowy=head:n:p:na+s:g;głowę=head:n:s:a;głów=head:n:p:g;głowie=head:'+
+        'n:s:dl;głową=head:n:s:i;głowom=head:n:p:d;głowami=head:n:p:i;gło'+
+        'wach=head:n:p:l;twarz=face:n:s:na;twarze=face:n:p:na;twarzy=face:n:s:'+
+        'gdl+p:g;',
+    'twarzą=face:n:s:i;twarzom=face:n:p:d;twarzami=face:n:p:i;twarzach=face:n'+
+        ':p:l;miłość=love:n:s:na;miłości=love:n:p:nag+s:gdl;miłością=l'+
+        'ove:n:s:i;miłościom=love:n:p:d;miłościami=love:n:p:i;miłościach'+
+        '=love:n:p:l;',
+    'tablica=board:n:s:n;tablice=board:n:p:na;tablicę=board:n:s:a;tablicy=boa'+
+        'rd:n:s:gdl;tablic=board:n:p:g;tablicą=board:n:s:i;tablicom=board:n:p'+
+        ':d;tablicami=board:n:p:i;tablicach=board:n:p:l;lampa=lamp:n:s:n;lampy'+
+        '=lamp:n:p:na+s:g;',
+    'lampę=lamp:n:s:a;lamp=lamp:n:p:g;lampie=lamp:n:s:dl;lampą=lamp:n:s:i;la'+
+        'mpom=lamp:n:p:d;lampami=lamp:n:p:i;lampach=lamp:n:p:l;dziewczynka=lit'+
+        'tle_girl:n:s:n;dziewczynki=little_girl:n:p:na+s:g;dziewczynkę=little'+
+        '_girl:n:s:a;',
+    'dziewczynek=little_girl:n:p:g;dziewczynce=little_girl:n:s:dl;dziewczynką'+
+        '=little_girl:n:s:i;dziewczynkom=little_girl:n:p:d;dziewczynkami=littl'+
+        'e_girl:n:p:i;dziewczynkach=little_girl:n:p:l;muzyka=music:n:s:n;muzyk'+
+        'i=music:n:p:na+s:g;',
+    'muzykę=music:n:s:a;muzyk=music:n:p:g;muzyce=music:n:s:dl;muzyką=music:n'+
+        ':s:i;muzykom=music:n:p:d;muzykami=music:n:p:i;muzykach=music:n:p:l;wi'+
+        'adomość=message:n:s:na;wiadomości=message:n:p:nag+s:gdl;wiadomośc'+
+        'ią=message:n:s:i;',
+    'wiadomościom=message:n:p:d;wiadomościami=message:n:p:i;wiadomościach=m'+
+        'essage:n:p:l;sól=salt:n:s:na;sole=salt:n:p:na;soli=salt:n:s:gdl+p:g;'+
+        'solą=salt:n:s:i;solom=salt:n:p:d;solami=salt:n:p:i;solach=salt:n:p:l'+
+        ';',
+    'okno=window:n:s:na;okna=window:n:p:na+s:g;okien=window:n:p:g;oknu=window:'+
+        'n:s:d;oknem=window:n:s:i;oknie=window:n:s:l;oknom=window:n:p:d;oknami'+
+        '=window:n:p:i;oknach=window:n:p:l;miasto=city:n:s:na;miasta=city:n:p:'+
+        'na+s:g;',
+    'miast=city:n:p:g;miastu=city:n:s:d;miastem=city:n:s:i;mieście=city:n:s:l'+
+        ';miastom=city:n:p:d;miastami=city:n:p:i;miastach=city:n:p:l;morze=sea'+
+        ':n:s:na;morza=sea:n:p:na+s:g;mórz=sea:n:p:g;morzu=sea:n:s:dl;morzem='+
+        'sea:n:s:i;',
+    'morzom=sea:n:p:d;morzami=sea:n:p:i;morzach=sea:n:p:l;słońce=sun:n:s:na;'+
+        'słońca=sun:n:p:na+s:g;słońc=sun:n:p:g;słońcu=sun:n:s:dl;słońc'+
+        'em=sun:n:s:i;słońcom=sun:n:p:d;słońcami=sun:n:p:i;słońcach=sun:'+
+        'n:p:l;',
+    'dziecko=child:n:s:na;dzieci=child:n:p:nag;dziecka=child:n:s:g;dziecku=chi'+
+        'ld:n:s:dl;dzieckiem=child:n:s:i;dzieciom=child:n:p:d;dziećmi=child:n'+
+        ':p:i;dzieciach=child:n:p:l;imię=name:n:s:na;imiona=name:n:p:na;imien'+
+        'ia=name:n:s:g;',
+    'imion=name:n:p:g;imieniu=name:n:s:dl;imieniem=name:n:s:i;imionom=name:n:p'+
+        ':d;imionami=name:n:p:i;imionach=name:n:p:l;słowo=word:n:s:na;słowa='+
+        'word:n:p:na+s:g;słów=word:n:p:g;słowu=word:n:s:d;słowem=word:n:s:'+
+        'i;',
+    'słowie=word:n:s:l;słowom=word:n:p:d;słowami=word:n:p:i;słowach=word:n'+
+        ':p:l;pytanie=question:n:s:na;pytania=question:n:p:na+s:g;pytań=quest'+
+        'ion:n:p:g;pytaniu=question:n:s:dl;pytaniem=question:n:s:i;pytaniom=qu'+
+        'estion:n:p:d;',
+    'pytaniami=question:n:p:i;pytaniach=question:n:p:l;miejsce=place:n:s:na;mi'+
+        'ejsca=place:n:p:na+s:g;miejsc=place:n:p:g;miejscu=place:n:s:dl;miejsc'+
+        'em=place:n:s:i;miejscom=place:n:p:d;miejscami=place:n:p:i;miejscach=p'+
+        'lace:n:p:l;',
+    'biuro=office:n:s:na;biura=office:n:p:na+s:g;biur=office:n:p:g;biuru=offic'+
+        'e:n:s:d;biurem=office:n:s:i;biurze=office:n:s:l;biurom=office:n:p:d;b'+
+        'iurami=office:n:p:i;biurach=office:n:p:l;lotnisko=airport:n:s:na;',
+    'lotniska=airport:n:p:na+s:g;lotnisk=airport:n:p:g;lotnisku=airport:n:s:dl'+
+        ';lotniskiem=airport:n:s:i;lotniskom=airport:n:p:d;lotniskami=airport:'+
+        'n:p:i;lotniskach=airport:n:p:l;mleko=milk:n:s:na;mleka=milk:n:p:na+s:'+
+        'g;mlek=milk:n:p:g;',
+    'mleku=milk:n:s:dl;mlekiem=milk:n:s:i;mlekom=milk:n:p:d;mlekami=milk:n:p:i'+
+        ';mlekach=milk:n:p:l;mięso=meat:n:s:na;mięsa=meat:n:p:na+s:g;mięs=m'+
+        'eat:n:p:g;mięsu=meat:n:s:d;mięsem=meat:n:s:i;mięsie=meat:n:s:l;mi'+
+        'ęsom=meat:n:p:d;',
+    'mięsami=meat:n:p:i;mięsach=meat:n:p:l;piwo=beer:n:s:na;piwa=beer:n:p:na'+
+        '+s:g;piw=beer:n:p:g;piwu=beer:n:s:d;piwem=beer:n:s:i;piwie=beer:n:s:l'+
+        ';piwom=beer:n:p:d;piwami=beer:n:p:i;piwach=beer:n:p:l;wino=wine:n:s:n'+
+        'a;',
+    'wina=wine:n:p:na+s:g;win=wine:n:p:g;winu=wine:n:s:d;winem=wine:n:s:i;wini'+
+        'e=wine:n:s:l;winom=wine:n:p:d;winami=wine:n:p:i;winach=wine:n:p:l;jab'+
+        'łko=apple:n:s:na;jabłka=apple:n:p:na+s:g;jabłek=apple:n:p:g;jabłk'+
+        'u=apple:n:s:dl;',
+    'jabłkiem=apple:n:s:i;jabłkom=apple:n:p:d;jabłkami=apple:n:p:i;jabłkac'+
+        'h=apple:n:p:l;jajko=egg:n:s:na;jajka=egg:n:p:na+s:g;jajek=egg:n:p:g;j'+
+        'ajku=egg:n:s:dl;jajkiem=egg:n:s:i;jajkom=egg:n:p:d;jajkami=egg:n:p:i;'+
+        'jajkach=egg:n:p:l;',
+    'lato=summer:n:s:na;latu=summer:n:s:d;latem=summer:n:s:i;lecie=summer:n:s:'+
+        'l;kino=cinema:n:s:na;kina=cinema:n:p:na+s:g;kin=cinema:n:p:g;kinu=cin'+
+        'ema:n:s:d;kinem=cinema:n:s:i;kinie=cinema:n:s:l;kinom=cinema:n:p:d;ki'+
+        'nami=cinema:n:p:i;',
+    'kinach=cinema:n:p:l;muzeum=museum:n:s:nagdil;muzea=museum:n:p:na;muzeów='+
+        'museum:n:p:g;muzeom=museum:n:p:d;muzeami=museum:n:p:i;muzeach=museum:'+
+        'n:p:l;zdjęcie=photograph:n:s:na;zdjęcia=photograph:n:p:na+s:g;',
+    'zdjęć=photograph:n:p:g;zdjęciu=photograph:n:s:dl;zdjęciem=photograph:'+
+        'n:s:i;zdjęciom=photograph:n:p:d;zdjęciami=photograph:n:p:i;zdjęcia'+
+        'ch=photograph:n:p:l;zwierzę=animal:n:s:na;zwierzęta=animal:n:p:na;',
+    'zwierzęcia=animal:n:s:g;zwierząt=animal:n:p:g;zwierzęciu=animal:n:s:dl'+
+        ';zwierzęciem=animal:n:s:i;zwierzętom=animal:n:p:d;zwierzętami=anim'+
+        'al:n:p:i;zwierzętach=animal:n:p:l;życie=life:n:s:na;życia=life:n:p'+
+        ':na+s:g;',
+    'żyć=life:n:p:g;życiu=life:n:s:dl;życiem=life:n:s:i;życiom=life:n:p:d'+
+        ';życiami=life:n:p:i;życiach=life:n:p:l;mieszkanie=apartment:n:s:na;'+
+        'mieszkania=apartment:n:p:na+s:g;mieszkań=apartment:n:p:g;mieszkaniu='+
+        'apartment:n:s:dl;',
+    'mieszkaniem=apartment:n:s:i;mieszkaniom=apartment:n:p:d;mieszkaniami=apar'+
+        'tment:n:p:i;mieszkaniach=apartment:n:p:l;jedzenie=food:n:s:na;jedzeni'+
+        'a=food:n:p:na+s:g;jedzeń=food:n:p:g;jedzeniu=food:n:s:dl;jedzeniem=f'+
+        'ood:n:s:i;',
+    'jedzeniom=food:n:p:d;jedzeniami=food:n:p:i;jedzeniach=food:n:p:l;śniadan'+
+        'ie=breakfast:n:s:na;śniadania=breakfast:n:p:na+s:g;śniadań=breakfa'+
+        'st:n:p:g;śniadaniu=breakfast:n:s:dl;śniadaniem=breakfast:n:s:i;',
+    'śniadaniom=breakfast:n:p:d;śniadaniami=breakfast:n:p:i;śniadaniach=bre'+
+        'akfast:n:p:l;lustro=mirror:n:s:na;lustra=mirror:n:p:na+s:g;luster=mir'+
+        'ror:n:p:g;lustru=mirror:n:s:d;lustrem=mirror:n:s:i;lustrze=mirror:n:s'+
+        ':l;',
+    'lustrom=mirror:n:p:d;lustrami=mirror:n:p:i;lustrach=mirror:n:p:l;drzewo=t'+
+        'ree:n:s:na;drzewa=tree:n:p:na+s:g;drzew=tree:n:p:g;drzewu=tree:n:s:d;'+
+        'drzewem=tree:n:s:i;drzewie=tree:n:s:l;drzewom=tree:n:p:d;drzewami=tre'+
+        'e:n:p:i;',
+    'drzewach=tree:n:p:l;krzesło=chair:n:s:na;krzesła=chair:n:p:na+s:g;krzes'+
+        'eł=chair:n:p:g;krzesłu=chair:n:s:d;krzesłem=chair:n:s:i;krześle=c'+
+        'hair:n:s:l;krzesłom=chair:n:p:d;krzesłami=chair:n:p:i;krzesłach=ch'+
+        'air:n:p:l;',
+    'łóżko=bed:n:s:na;łóżka=bed:n:p:na+s:g;łóżek=bed:n:p:g;łóżku=b'+
+        'ed:n:s:dl;łóżkiem=bed:n:s:i;łóżkom=bed:n:p:d;łóżkami=bed:n:p'+
+        ':i;łóżkach=bed:n:p:l;serce=heart:n:s:na;serca=heart:n:p:na+s:g;ser'+
+        'c=heart:n:p:g;',
+    'sercu=heart:n:s:dl;sercem=heart:n:s:i;sercom=heart:n:p:d;sercami=heart:n:'+
+        'p:i;sercach=heart:n:p:l;kościół=church:n:s:na;kościoły=church:n:'+
+        'p:na;kościoła=church:n:s:g;kościołów=church:n:p:g;kościółowi='+
+        'church:n:s:d;',
+    'kościołem=church:n:s:i;kościele=church:n:s:l;kościołom=church:n:p:d;'+
+        'kościołami=church:n:p:i;kościołach=church:n:p:l;dziadek=grandfath'+
+        'er:n:s:n;dziadkowie=grandfather:n:p:n;dziadka=grandfather:n:s:ag;',
+    'dziadków=grandfather:n:p:ag;dziadkowi=grandfather:n:s:d;dziadekowi=grand'+
+        'father:n:s:d;dziadkiem=grandfather:n:s:i;dziadku=grandfather:n:s:l;dz'+
+        'iadkom=grandfather:n:p:d;dziadkami=grandfather:n:p:i;dziadkach=grandf'+
+        'ather:n:p:l;',
+    'wujek=uncle:n:s:n;wujkowie=uncle:n:p:n;wujka=uncle:n:s:ag;wujków=uncle:n'+
+        ':p:ag;wujekowi=uncle:n:s:d;wujkiem=uncle:n:s:i;wujku=uncle:n:s:l;wujk'+
+        'om=uncle:n:p:d;wujkami=uncle:n:p:i;wujkach=uncle:n:p:l;mąż=husband:'+
+        'n:s:n;',
+    'mężowie=husband:n:p:n;męża=husband:n:s:ag;mężów=husband:n:p:ag;mą'+
+        'żowi=husband:n:s:d;mężem=husband:n:s:i;mężu=husband:n:s:l;mążo'+
+        'm=husband:n:p:d;mążami=husband:n:p:i;mążach=husband:n:p:l;szef=bo'+
+        'ss:n:s:n;',
+    'szefowie=boss:n:p:n;szefa=boss:n:s:ag;szefów=boss:n:p:ag;szefowi=boss:n:'+
+        's:d;szefem=boss:n:s:i;szefie=boss:n:s:l;szefom=boss:n:p:d;szefami=bos'+
+        's:n:p:i;szefach=boss:n:p:l;policjant=policeman:n:s:n;policjanci=polic'+
+        'eman:n:p:n;',
+    'policjanta=policeman:n:s:ag;policjantów=policeman:n:p:ag;policjantowi=po'+
+        'liceman:n:s:d;policjantem=policeman:n:s:i;policjancie=policeman:n:s:l'+
+        ';policjantom=policeman:n:p:d;policjantami=policeman:n:p:i;policjantac'+
+        'h=policeman:n:p:l;',
+    'kucharz=cook:n:s:n;kucharze=cook:n:p:n;kucharza=cook:n:s:ag;kucharzy=cook'+
+        ':n:p:ag;kucharzowi=cook:n:s:d;kucharzem=cook:n:s:i;kucharzu=cook:n:s:'+
+        'l;kucharzom=cook:n:p:d;kucharzami=cook:n:p:i;kucharzach=cook:n:p:l;ak'+
+        'tor=actor:n:s:n;',
+    'aktorzy=actor:n:p:n;aktora=actor:n:s:ag;aktorów=actor:n:p:ag;aktorowi=ac'+
+        'tor:n:s:d;aktorem=actor:n:s:i;aktorze=actor:n:s:l;aktorom=actor:n:p:d'+
+        ';aktorami=actor:n:p:i;aktorach=actor:n:p:l;pisarz=writer:n:s:n;pisarz'+
+        'e=writer:n:p:n;',
+    'pisarza=writer:n:s:ag;pisarzy=writer:n:p:ag;pisarzowi=writer:n:s:d;pisarz'+
+        'em=writer:n:s:i;pisarzu=writer:n:s:l;pisarzom=writer:n:p:d;pisarzami='+
+        'writer:n:p:i;pisarzach=writer:n:p:l;wilk=wolf:n:s:n;wilki=wolf:n:p:na'+
+        ';wilka=wolf:n:s:ag;',
+    'wilków=wolf:n:p:g;wilkowi=wolf:n:s:d;wilkiem=wolf:n:s:i;wilku=wolf:n:s:l'+
+        ';wilkom=wolf:n:p:d;wilkami=wolf:n:p:i;wilkach=wolf:n:p:l;lew=lion:n:s'+
+        ':n;lwy=lion:n:p:na;lwa=lion:n:s:ag;lwów=lion:n:p:g;lewowi=lion:n:s:d'+
+        ';lewem=lion:n:s:i;',
+    'lwie=lion:n:s:l;lwom=lion:n:p:d;lwami=lion:n:p:i;lwach=lion:n:p:l;słoń='+
+        'elephant:n:s:n;słonie=elephant:n:p:na;słonia=elephant:n:s:ag;słoni'+
+        '=elephant:n:p:g;słońowi=elephant:n:s:d;słoniem=elephant:n:s:i;sło'+
+        'niu=elephant:n:s:l;',
+    'słoniom=elephant:n:p:d;słoniami=elephant:n:p:i;słoniach=elephant:n:p:l'+
+        ';ołówek=pencil:n:s:na;ołówki=pencil:n:p:na;ołówka=pencil:n:s:g;'+
+        'ołówków=pencil:n:p:g;ołówekowi=pencil:n:s:d;ołówkiem=pencil:n:'+
+        's:i;',
+    'ołówku=pencil:n:s:l;ołówkom=pencil:n:p:d;ołówkami=pencil:n:p:i;oł'+
+        'ówkach=pencil:n:p:l;zeszyt=notebook:n:s:na;zeszyty=notebook:n:p:na;z'+
+        'eszytu=notebook:n:s:g;zeszytów=notebook:n:p:g;zeszytowi=notebook:n:s'+
+        ':d;',
+    'zeszytem=notebook:n:s:i;zeszycie=notebook:n:s:l;zeszytom=notebook:n:p:d;z'+
+        'eszytami=notebook:n:p:i;zeszytach=notebook:n:p:l;plecak=backpack:n:s:'+
+        'na;plecaki=backpack:n:p:na;plecaka=backpack:n:s:g;plecaków=backpack:'+
+        'n:p:g;',
+    'plecakowi=backpack:n:s:d;plecakiem=backpack:n:s:i;plecaku=backpack:n:s:l;'+
+        'plecakom=backpack:n:p:d;plecakami=backpack:n:p:i;plecakach=backpack:n'+
+        ':p:l;kwiat=flower:n:s:na;kwiaty=flower:n:p:na;kwiatu=flower:n:s:g;kwi'+
+        'atów=flower:n:p:g;',
+    'kwiatowi=flower:n:s:d;kwiatem=flower:n:s:i;kwiecie=flower:n:s:l;kwiatom=f'+
+        'lower:n:p:d;kwiatami=flower:n:p:i;kwiatach=flower:n:p:l;księżyc=moo'+
+        'n:n:s:na;księżyce=moon:n:p:na;księżyca=moon:n:s:g;księżyców=mo'+
+        'on:n:p:g;',
+    'księżycowi=moon:n:s:d;księżycem=moon:n:s:i;księżycu=moon:n:s:l;ksi'+
+        'ężycom=moon:n:p:d;księżycami=moon:n:p:i;księżycach=moon:n:p:l;z'+
+        'egar=clock:n:s:na;zegary=clock:n:p:na;zegara=clock:n:s:g;zegarów=clo'+
+        'ck:n:p:g;',
+    'zegarowi=clock:n:s:d;zegarem=clock:n:s:i;zegarze=clock:n:s:l;zegarom=cloc'+
+        'k:n:p:d;zegarami=clock:n:p:i;zegarach=clock:n:p:l;klucz=key:n:s:na;kl'+
+        'ucze=key:n:p:na;klucza=key:n:s:g;kluczy=key:n:p:g;kluczowi=key:n:s:d;'+
+        'kluczem=key:n:s:i;',
+    'kluczu=key:n:s:l;kluczom=key:n:p:d;kluczami=key:n:p:i;kluczach=key:n:p:l;'+
+        'teatr=theater:n:s:na;teatry=theater:n:p:na;teatru=theater:n:s:g;teatr'+
+        'ów=theater:n:p:g;teatrowi=theater:n:s:d;teatrem=theater:n:s:i;teatrz'+
+        'e=theater:n:s:l;',
+    'teatrom=theater:n:p:d;teatrami=theater:n:p:i;teatrach=theater:n:p:l;most='+
+        'bridge:n:s:na;mosty=bridge:n:p:na;mostu=bridge:n:s:g;mostów=bridge:n'+
+        ':p:g;mostowi=bridge:n:s:d;mostem=bridge:n:s:i;moście=bridge:n:s:l;mo'+
+        'stom=bridge:n:p:d;',
+    'mostami=bridge:n:p:i;mostach=bridge:n:p:l;plac=square:n:s:na;place=square'+
+        ':n:p:na;placu=square:n:s:gl;placów=square:n:p:g;placowi=square:n:s:d'+
+        ';placem=square:n:s:i;placom=square:n:p:d;placami=square:n:p:i;placach'+
+        '=square:n:p:l;',
+    'hotel=hotel:n:s:na;hotele=hotel:n:p:na;hotelu=hotel:n:s:gl;hoteli=hotel:n'+
+        ':p:g;hotelowi=hotel:n:s:d;hotelem=hotel:n:s:i;hotelom=hotel:n:p:d;hot'+
+        'elami=hotel:n:p:i;hotelach=hotel:n:p:l;pomidor=tomato:n:s:na;pomidory'+
+        '=tomato:n:p:na;',
+    'pomidora=tomato:n:s:g;pomidorów=tomato:n:p:g;pomidorowi=tomato:n:s:d;pom'+
+        'idorem=tomato:n:s:i;pomidorze=tomato:n:s:l;pomidorom=tomato:n:p:d;pom'+
+        'idorami=tomato:n:p:i;pomidorach=tomato:n:p:l;ziemniak=potato:n:s:na;',
+    'ziemniaki=potato:n:p:na;ziemniaka=potato:n:s:g;ziemniaków=potato:n:p:g;z'+
+        'iemniakowi=potato:n:s:d;ziemniakiem=potato:n:s:i;ziemniaku=potato:n:s'+
+        ':l;ziemniakom=potato:n:p:d;ziemniakami=potato:n:p:i;ziemniakach=potat'+
+        'o:n:p:l;',
+    'makaron=pasta:n:s:na;makarony=pasta:n:p:na;makaronu=pasta:n:s:g;makaronó'+
+        'w=pasta:n:p:g;makaronowi=pasta:n:s:d;makaronem=pasta:n:s:i;makaronie='+
+        'pasta:n:s:l;makaronom=pasta:n:p:d;makaronami=pasta:n:p:i;makaronach=p'+
+        'asta:n:p:l;',
+    'cukier=sugar:n:s:na;cukry=sugar:n:p:na;cukru=sugar:n:s:g;cukrów=sugar:n:'+
+        'p:g;cukierowi=sugar:n:s:d;cukierem=sugar:n:s:i;cukrze=sugar:n:s:l;cuk'+
+        'rom=sugar:n:p:d;cukrami=sugar:n:p:i;cukrach=sugar:n:p:l;owoc=fruit:n:'+
+        's:na;',
+    'owoce=fruit:n:p:na;owocu=fruit:n:s:gl;owoców=fruit:n:p:g;owocowi=fruit:n'+
+        ':s:d;owocem=fruit:n:s:i;owocom=fruit:n:p:d;owocami=fruit:n:p:i;owocac'+
+        'h=fruit:n:p:l;kolega=colleague:n:s:n;koledzy=colleague:n:p:n;kolegę='+
+        'colleague:n:s:a;',
+    'kolegów=colleague:n:p:ag;kolegi=colleague:n:s:g;koledze=colleague:n:s:dl'+
+        ';kolegaowi=colleague:n:s:d;kolegą=colleague:n:s:i;kolegom=colleague:'+
+        'n:p:d;kolegami=colleague:n:p:i;kolegach=colleague:n:p:l;kierowca=driv'+
+        'er:n:s:n;',
+    'kierowcy=driver:n:p:n+s:gdl;kierowcę=driver:n:s:a;kierowców=driver:n:p:'+
+        'ag;kierowcaowi=driver:n:s:d;kierowcą=driver:n:s:i;kierowcom=driver:n'+
+        ':p:d;kierowcami=driver:n:p:i;kierowcach=driver:n:p:l;pracownik=worker'+
+        ':n:s:n;',
+    'pracownicy=worker:n:p:n;pracownika=worker:n:s:ag;pracowników=worker:n:p:'+
+        'ag;pracownikowi=worker:n:s:d;pracownikiem=worker:n:s:i;pracowniku=wor'+
+        'ker:n:s:l;pracownikom=worker:n:p:d;pracownikami=worker:n:p:i;pracowni'+
+        'kach=worker:n:p:l;',
+    'malarz=painter:n:s:n;malarze=painter:n:p:n;malarza=painter:n:s:ag;malarzy'+
+        '=painter:n:p:ag;malarzowi=painter:n:s:d;malarzem=painter:n:s:i;malarz'+
+        'u=painter:n:s:l;malarzom=painter:n:p:d;malarzami=painter:n:p:i;malarz'+
+        'ach=painter:n:p:l;',
+    'dentysta=dentist:n:s:n;dentyści=dentist:n:p:n;dentystę=dentist:n:s:a;de'+
+        'ntystów=dentist:n:p:ag;dentysty=dentist:n:s:g;dentystaowi=dentist:n:'+
+        's:d;dentystą=dentist:n:s:i;dentyście=dentist:n:s:l;dentystom=dentis'+
+        't:n:p:d;',
+    'dentystami=dentist:n:p:i;dentystach=dentist:n:p:l;artysta=artist:n:s:n;ar'+
+        'tyści=artist:n:p:n;artystę=artist:n:s:a;artystów=artist:n:p:ag;art'+
+        'ysty=artist:n:s:g;artystaowi=artist:n:s:d;artystą=artist:n:s:i;arty'+
+        'ście=artist:n:s:l;',
+    'artystom=artist:n:p:d;artystami=artist:n:p:i;artystach=artist:n:p:l;basen'+
+        '=pool:n:s:na;baseny=pool:n:p:na;basenu=pool:n:s:g;basenów=pool:n:p:g'+
+        ';basenowi=pool:n:s:d;basenem=pool:n:s:i;basenie=pool:n:s:l;basenom=po'+
+        'ol:n:p:d;',
+    'basenami=pool:n:p:i;basenach=pool:n:p:l;telewizor=television:n:s:na;telew'+
+        'izory=television:n:p:na;telewizora=television:n:s:g;telewizorów=tele'+
+        'vision:n:p:g;telewizorowi=television:n:s:d;telewizorem=television:n:s'+
+        ':i;',
+    'telewizorze=television:n:s:l;telewizorom=television:n:p:d;telewizorami=te'+
+        'levision:n:p:i;telewizorach=television:n:p:l;ekran=screen:n:s:na;ekra'+
+        'ny=screen:n:p:na;ekranu=screen:n:s:g;ekranów=screen:n:p:g;ekranowi=s'+
+        'creen:n:s:d;',
+    'ekranem=screen:n:s:i;ekranie=screen:n:s:l;ekranom=screen:n:p:d;ekranami=s'+
+        'creen:n:p:i;ekranach=screen:n:p:l;rynek=market:n:s:na;rynki=market:n:'+
+        'p:na;rynku=market:n:s:gl;rynków=market:n:p:g;rynekowi=market:n:s:d;',
+    'rynkiem=market:n:s:i;rynkom=market:n:p:d;rynkami=market:n:p:i;rynkach=mar'+
+        'ket:n:p:l;firma=company:n:s:n;firmy=company:n:p:na+s:g;firmę=company'+
+        ':n:s:a;firm=company:n:p:g;firmie=company:n:s:dl;firmą=company:n:s:i;',
+    'firmom=company:n:p:d;firmami=company:n:p:i;firmach=company:n:p:l;kanapa=s'+
+        'ofa:n:s:n;kanapy=sofa:n:p:na+s:g;kanapę=sofa:n:s:a;kanap=sofa:n:p:g;'+
+        'kanapie=sofa:n:s:dl;kanapą=sofa:n:s:i;kanapom=sofa:n:p:d;kanapami=so'+
+        'fa:n:p:i;',
+    'kanapach=sofa:n:p:l;babcia=grandmother:n:s:n;babcie=grandmother:n:p:na;ba'+
+        'bcię=grandmother:n:s:a;babci=grandmother:n:s:gdl;babć=grandmother:n'+
+        ':p:g;babcią=grandmother:n:s:i;babciom=grandmother:n:p:d;babciami=gra'+
+        'ndmother:n:p:i;',
+    'babciach=grandmother:n:p:l;toaleta=toilet:n:s:n;toalety=toilet:n:p:na+s:g'+
+        ';toaletę=toilet:n:s:a;toalet=toilet:n:p:g;toalecie=toilet:n:s:dl;toa'+
+        'letą=toilet:n:s:i;toaletom=toilet:n:p:d;toaletami=toilet:n:p:i;toale'+
+        'tach=toilet:n:p:l;',
+    'ławka=bench:n:s:n;ławki=bench:n:p:na+s:g;ławkę=bench:n:s:a;ławek=ben'+
+        'ch:n:p:g;ławce=bench:n:s:dl;ławką=bench:n:s:i;ławkom=bench:n:p:d;'+
+        'ławkami=bench:n:p:i;ławkach=bench:n:p:l;lodówka=refrigerator:n:s:n'+
+        ';',
+    'lodówki=refrigerator:n:p:na+s:g;lodówkę=refrigerator:n:s:a;lodówek=re'+
+        'frigerator:n:p:g;lodówce=refrigerator:n:s:dl;lodówką=refrigerator:'+
+        'n:s:i;lodówkom=refrigerator:n:p:d;lodówkami=refrigerator:n:p:i;',
+    'lodówkach=refrigerator:n:p:l;sypialnia=bedroom:n:s:n;sypialnie=bedroom:n'+
+        ':p:na;sypialnię=bedroom:n:s:a;sypialni=bedroom:n:s:gdl+p:g;sypialni'+
+        'ą=bedroom:n:s:i;sypialniom=bedroom:n:p:d;sypialniami=bedroom:n:p:i;',
+    'sypialniach=bedroom:n:p:l;łazienka=bathroom:n:s:n;łazienki=bathroom:n:p'+
+        ':na+s:g;łazienkę=bathroom:n:s:a;łazienek=bathroom:n:p:g;łazience='+
+        'bathroom:n:s:dl;łazienką=bathroom:n:s:i;łazienkom=bathroom:n:p:d;',
+    'łazienkami=bathroom:n:p:i;łazienkach=bathroom:n:p:l;podłoga=floor:n:s:'+
+        'n;podłogi=floor:n:p:na+s:g;podłogę=floor:n:s:a;podłóg=floor:n:p:'+
+        'g;podłodze=floor:n:s:dl;podłogą=floor:n:s:i;podłogom=floor:n:p:d;',
+    'podłogami=floor:n:p:i;podłogach=floor:n:p:l;ściana=wall:n:s:n;ściany='+
+        'wall:n:p:na+s:g;ścianę=wall:n:s:a;ścian=wall:n:p:g;ścianie=wall:n'+
+        ':s:dl;ścianą=wall:n:s:i;ścianom=wall:n:p:d;ścianami=wall:n:p:i;ś'+
+        'cianach=wall:n:p:l;',
+    'winda=elevator:n:s:n;windy=elevator:n:p:na+s:g;windę=elevator:n:s:a;wind'+
+        '=elevator:n:p:g;windzie=elevator:n:s:dl;windą=elevator:n:s:i;windom='+
+        'elevator:n:p:d;windami=elevator:n:p:i;windach=elevator:n:p:l;torba=ba'+
+        'g:n:s:n;',
+    'torby=bag:n:p:na+s:g;torbę=bag:n:s:a;toreb=bag:n:p:g;torbie=bag:n:s:dl;t'+
+        'orbą=bag:n:s:i;torbom=bag:n:p:d;torbami=bag:n:p:i;torbach=bag:n:p:l;'+
+        'walizka=suitcase:n:s:n;walizki=suitcase:n:p:na+s:g;walizkę=suitcase:'+
+        'n:s:a;',
+    'walizek=suitcase:n:p:g;walizce=suitcase:n:s:dl;walizką=suitcase:n:s:i;wa'+
+        'lizkom=suitcase:n:p:d;walizkami=suitcase:n:p:i;walizkach=suitcase:n:p'+
+        ':l;koszula=shirt:n:s:n;koszule=shirt:n:p:na;koszulę=shirt:n:s:a;kosz'+
+        'uli=shirt:n:s:gdl;',
+    'koszul=shirt:n:p:g;koszulą=shirt:n:s:i;koszulom=shirt:n:p:d;koszulami=sh'+
+        'irt:n:p:i;koszulach=shirt:n:p:l;sukienka=dress:n:s:n;sukienki=dress:n'+
+        ':p:na+s:g;sukienkę=dress:n:s:a;sukienek=dress:n:p:g;sukience=dress:n'+
+        ':s:dl;',
+    'sukienką=dress:n:s:i;sukienkom=dress:n:p:d;sukienkami=dress:n:p:i;sukien'+
+        'kach=dress:n:p:l;kurtka=jacket:n:s:n;kurtki=jacket:n:p:na+s:g;kurtkę'+
+        '=jacket:n:s:a;kurtek=jacket:n:p:g;kurtce=jacket:n:s:dl;kurtką=jacket'+
+        ':n:s:i;',
+    'kurtkom=jacket:n:p:d;kurtkami=jacket:n:p:i;kurtkach=jacket:n:p:l;kanapka='+
+        'sandwich:n:s:n;kanapki=sandwich:n:p:na+s:g;kanapkę=sandwich:n:s:a;ka'+
+        'napek=sandwich:n:p:g;kanapce=sandwich:n:s:dl;kanapką=sandwich:n:s:i;',
+    'kanapkom=sandwich:n:p:d;kanapkami=sandwich:n:p:i;kanapkach=sandwich:n:p:l'+
+        ';czekolada=chocolate:n:s:n;czekolady=chocolate:n:p:na+s:g;czekoladę='+
+        'chocolate:n:s:a;czekolad=chocolate:n:p:g;czekoladzie=chocolate:n:s:dl'+
+        ';',
+    'czekoladą=chocolate:n:s:i;czekoladom=chocolate:n:p:d;czekoladami=chocola'+
+        'te:n:p:i;czekoladach=chocolate:n:p:l;bułka=roll:n:s:n;bułki=roll:n:'+
+        'p:na+s:g;bułkę=roll:n:s:a;bułek=roll:n:p:g;bułce=roll:n:s:dl;buł'+
+        'ką=roll:n:s:i;',
+    'bułkom=roll:n:p:d;bułkami=roll:n:p:i;bułkach=roll:n:p:l;sałatka=salad'+
+        ':n:s:n;sałatki=salad:n:p:na+s:g;sałatkę=salad:n:s:a;sałatek=salad'+
+        ':n:p:g;sałatce=salad:n:s:dl;sałatką=salad:n:s:i;sałatkom=salad:n:'+
+        'p:d;',
+    'sałatkami=salad:n:p:i;sałatkach=salad:n:p:l;truskawka=strawberry:n:s:n;'+
+        'truskawki=strawberry:n:p:na+s:g;truskawkę=strawberry:n:s:a;truskawek'+
+        '=strawberry:n:p:g;truskawce=strawberry:n:s:dl;truskawką=strawberry:n'+
+        ':s:i;',
+    'truskawkom=strawberry:n:p:d;truskawkami=strawberry:n:p:i;truskawkach=stra'+
+        'wberry:n:p:l;pomarańcza=orange:n:s:n;pomarańcze=orange:n:p:na;pomar'+
+        'ańczę=orange:n:s:a;pomarańczy=orange:n:s:gdl+p:g;pomarańczą=oran'+
+        'ge:n:s:i;',
+    'pomarańczom=orange:n:p:d;pomarańczami=orange:n:p:i;pomarańczach=orange'+
+        ':n:p:l;gruszka=pear:n:s:n;gruszki=pear:n:p:na+s:g;gruszkę=pear:n:s:a'+
+        ';gruszek=pear:n:p:g;gruszce=pear:n:s:dl;gruszką=pear:n:s:i;gruszkom='+
+        'pear:n:p:d;',
+    'gruszkami=pear:n:p:i;gruszkach=pear:n:p:l;historia=history:n:s:n;historie'+
+        '=history:n:p:na;historię=history:n:s:a;historii=history:n:s:gdl+p:g;'+
+        'historią=history:n:s:i;historiom=history:n:p:d;historiami=history:n:'+
+        'p:i;',
+    'historiach=history:n:p:l;odpowiedź=answer:n:s:na;odpowiedzi=answer:n:p:n'+
+        'ag+s:gdl;odpowiedzią=answer:n:s:i;odpowiedziom=answer:n:p:d;odpowied'+
+        'ziami=answer:n:p:i;odpowiedziach=answer:n:p:l;rozmowa=conversation:n:'+
+        's:n;',
+    'rozmowy=conversation:n:p:na+s:g;rozmowę=conversation:n:s:a;rozmów=conve'+
+        'rsation:n:p:g;rozmowie=conversation:n:s:dl;rozmową=conversation:n:s:'+
+        'i;rozmowom=conversation:n:p:d;rozmowami=conversation:n:p:i;rozmowach='+
+        'conversation:n:p:l;',
+    'decyzja=decision:n:s:n;decyzje=decision:n:p:na;decyzję=decision:n:s:a;de'+
+        'cyzji=decision:n:s:gdl+p:g;decyzją=decision:n:s:i;decyzjom=decision:'+
+        'n:p:d;decyzjami=decision:n:p:i;decyzjach=decision:n:p:l;sekunda=secon'+
+        'd:n:s:n;',
+    'sekundy=second:n:p:na+s:g;sekundę=second:n:s:a;sekund=second:n:p:g;sekun'+
+        'dzie=second:n:s:dl;sekundą=second:n:s:i;sekundom=second:n:p:d;sekund'+
+        'ami=second:n:p:i;sekundach=second:n:p:l;chwila=moment:n:s:n;chwile=mo'+
+        'ment:n:p:na;',
+    'chwilę=moment:n:s:a;chwili=moment:n:s:gdl;chwil=moment:n:p:g;chwilą=mom'+
+        'ent:n:s:i;chwilom=moment:n:p:d;chwilami=moment:n:p:i;chwilach=moment:'+
+        'n:p:l;data=date:n:s:n;daty=date:n:p:na+s:g;datę=date:n:s:a;dat=date:'+
+        'n:p:g;',
+    'dacie=date:n:s:dl;datą=date:n:s:i;datom=date:n:p:d;datami=date:n:p:i;dat'+
+        'ach=date:n:p:l;podróż=trip:n:s:na;podróże=trip:n:p:na;podróży=t'+
+        'rip:n:s:gdl+p:g;podróżą=trip:n:s:i;podróżom=trip:n:p:d;podróża'+
+        'mi=trip:n:p:i;',
+    'podróżach=trip:n:p:l;wycieczka=excursion:n:s:n;wycieczki=excursion:n:p:'+
+        'na+s:g;wycieczkę=excursion:n:s:a;wycieczek=excursion:n:p:g;wycieczce'+
+        '=excursion:n:s:dl;wycieczką=excursion:n:s:i;wycieczkom=excursion:n:p'+
+        ':d;',
+    'wycieczkami=excursion:n:p:i;wycieczkach=excursion:n:p:l;koleżanka=friend'+
+        ':n:s:n;koleżanki=friend:n:p:na+s:g;koleżankę=friend:n:s:a;koleżan'+
+        'ek=friend:n:p:g;koleżance=friend:n:s:dl;koleżanką=friend:n:s:i;',
+    'koleżankom=friend:n:p:d;koleżankami=friend:n:p:i;koleżankach=friend:n:'+
+        'p:l;przyjaciółka=friend:n:s:n;przyjaciółki=friend:n:p:na+s:g;przy'+
+        'jaciółkę=friend:n:s:a;przyjaciółek=friend:n:p:g;przyjaciółce=f'+
+        'riend:n:s:dl;',
+    'przyjaciółką=friend:n:s:i;przyjaciółkom=friend:n:p:d;przyjaciółkam'+
+        'i=friend:n:p:i;przyjaciółkach=friend:n:p:l;ciocia=aunt:n:s:n;ciocie'+
+        '=aunt:n:p:na;ciocię=aunt:n:s:a;cioci=aunt:n:s:gdl;cioć=aunt:n:p:g;c'+
+        'iocią=aunt:n:s:i;',
+    'ciociom=aunt:n:p:d;ciociami=aunt:n:p:i;ciociach=aunt:n:p:l;szafa=wardrobe'+
+        ':n:s:n;szafy=wardrobe:n:p:na+s:g;szafę=wardrobe:n:s:a;szaf=wardrobe:'+
+        'n:p:g;szafie=wardrobe:n:s:dl;szafą=wardrobe:n:s:i;szafom=wardrobe:n:'+
+        'p:d;',
+    'szafami=wardrobe:n:p:i;szafach=wardrobe:n:p:l;półka=shelf:n:s:n;półki'+
+        '=shelf:n:p:na+s:g;półkę=shelf:n:s:a;półek=shelf:n:p:g;półce=sh'+
+        'elf:n:s:dl;półką=shelf:n:s:i;półkom=shelf:n:p:d;półkami=shelf:'+
+        'n:p:i;',
+    'półkach=shelf:n:p:l;łyżka=spoon:n:s:n;łyżki=spoon:n:p:na+s:g;łyżk'+
+        'ę=spoon:n:s:a;łyżek=spoon:n:p:g;łyżce=spoon:n:s:dl;łyżką=spoo'+
+        'n:n:s:i;łyżkom=spoon:n:p:d;łyżkami=spoon:n:p:i;łyżkach=spoon:n:'+
+        'p:l;',
+    'szklanka=glass:n:s:n;szklanki=glass:n:p:na+s:g;szklankę=glass:n:s:a;szkl'+
+        'anek=glass:n:p:g;szklance=glass:n:s:dl;szklanką=glass:n:s:i;szklanko'+
+        'm=glass:n:p:d;szklankami=glass:n:p:i;szklankach=glass:n:p:l;butelka=b'+
+        'ottle:n:s:n;',
+    'butelki=bottle:n:p:na+s:g;butelkę=bottle:n:s:a;butelek=bottle:n:p:g;bute'+
+        'lce=bottle:n:s:dl;butelką=bottle:n:s:i;butelkom=bottle:n:p:d;butelka'+
+        'mi=bottle:n:p:i;butelkach=bottle:n:p:l;filiżanka=cup:n:s:n;filiżank'+
+        'i=cup:n:p:na+s:g;',
+    'filiżankę=cup:n:s:a;filiżanek=cup:n:p:g;filiżance=cup:n:s:dl;filiżan'+
+        'ką=cup:n:s:i;filiżankom=cup:n:p:d;filiżankami=cup:n:p:i;filiżanka'+
+        'ch=cup:n:p:l;centrum=center:n:s:nagdil;centra=center:n:p:na;centrów='+
+        'center:n:p:g;',
+    'centrom=center:n:p:d;centrami=center:n:p:i;centrach=center:n:p:l;jezioro='+
+        'lake:n:s:na;jeziora=lake:n:p:na+s:g;jezior=lake:n:p:g;jezioru=lake:n:'+
+        's:d;jeziorem=lake:n:s:i;jeziorze=lake:n:s:l;jeziorom=lake:n:p:d;jezio'+
+        'rami=lake:n:p:i;',
+    'jeziorach=lake:n:p:l;pole=field:n:s:na;pola=field:n:p:na+s:g;pól=field:n'+
+        ':p:g;polu=field:n:s:dl;polem=field:n:s:i;polom=field:n:p:d;polami=fie'+
+        'ld:n:p:i;polach=field:n:p:l;ciastko=cookie:n:s:na;ciastka=cookie:n:p:'+
+        'na+s:g;',
+    'ciastek=cookie:n:p:g;ciastku=cookie:n:s:dl;ciastkiem=cookie:n:s:i;ciastko'+
+        'm=cookie:n:p:d;ciastkami=cookie:n:p:i;ciastkach=cookie:n:p:l;ciasto=c'+
+        'ake:n:s:na;ciasta=cake:n:p:na+s:g;ciast=cake:n:p:g;ciastu=cake:n:s:d;'+
+        'ciastem=cake:n:s:i;',
+    'cieście=cake:n:s:l;ciastom=cake:n:p:d;ciastami=cake:n:p:i;ciastach=cake:'+
+        'n:p:l;masło=butter:n:s:na;masła=butter:n:p:na+s:g;mas=butter:n:p:g;'+
+        'masłu=butter:n:s:d;masłem=butter:n:s:i;maśle=butter:n:s:l;masłom='+
+        'butter:n:p:d;',
+    'masłami=butter:n:p:i;masłach=butter:n:p:l;mydło=soap:n:s:na;mydła=soa'+
+        'p:n:p:na+s:g;mydeł=soap:n:p:g;mydłu=soap:n:s:d;mydłem=soap:n:s:i;m'+
+        'ydle=soap:n:s:l;mydłom=soap:n:p:d;mydłami=soap:n:p:i;mydłach=soap:'+
+        'n:p:l;',
+    'radio=radio:n:s:na;radia=radio:n:p:na+s:g;radiów=radio:n:p:g;radiu=radio'+
+        ':n:s:dl;radiem=radio:n:s:i;radiom=radio:n:p:d;radiami=radio:n:p:i;rad'+
+        'iach=radio:n:p:l;auto=car:n:s:na;auta=car:n:p:na+s:g;aut=car:n:p:g;au'+
+        'tu=car:n:s:d;',
+    'autem=car:n:s:i;aucie=car:n:s:l;autom=car:n:p:d;autami=car:n:p:i;autach=c'+
+        'ar:n:p:l;popołudnie=afternoon:n:s:na;popołudnia=afternoon:n:p:na+s:'+
+        'g;popołudni=afternoon:n:p:g;popołudniu=afternoon:n:s:dl;popołudnie'+
+        'm=afternoon:n:s:i;',
+    'popołudniom=afternoon:n:p:d;popołudniami=afternoon:n:p:i;popołudniach='+
+        'afternoon:n:p:l;ucho=ear:n:s:na;uszy=ear:n:p:na;ucha=ear:n:s:g;uszu=e'+
+        'ar:n:p:g;uchu=ear:n:s:dl;uchem=ear:n:s:i;uszom=ear:n:p:d;uszami=ear:n'+
+        ':p:i;',
+    'uszach=ear:n:p:l;oko=eye:n:s:na;oczy=eye:n:p:na;oka=eye:n:s:g;oczu=eye:n:'+
+        'p:g;oku=eye:n:s:dl;okiem=eye:n:s:i;oczom=eye:n:p:d;oczami=eye:n:p:i;o'+
+        'czach=eye:n:p:l;zadanie=task:n:s:na;zadania=task:n:p:na+s:g;zadań=ta'+
+        'sk:n:p:g;',
+    'zadaniu=task:n:s:dl;zadaniem=task:n:s:i;zadaniom=task:n:p:d;zadaniami=tas'+
+        'k:n:p:i;zadaniach=task:n:p:l;nazwisko=surname:n:s:na;nazwiska=surname'+
+        ':n:p:na+s:g;nazwisk=surname:n:p:g;nazwisku=surname:n:s:dl;nazwiskiem='+
+        'surname:n:s:i;',
+    'nazwiskom=surname:n:p:d;nazwiskami=surname:n:p:i;nazwiskach=surname:n:p:l'+
+        ';drzwi=door:n:s:nag;drzwiom=door:n:s:d;drzwiami=door:n:s:i;drzwiach=d'+
+        'oor:n:s:l;pieniądze=money:n:p:na;pieniędzy=money:n:p:g;duży=big:a:'+
+        's:na;',
+    'duża=big:a:s:n;duże=big:a:s:na+p:na;duzi=big:a:p:n;dużą=big:a:s:ai;du'+
+        'żego=big:a:s:ga;dużej=big:a:s:gdl;dużemu=big:a:s:d;dużym=big:a:s:'+
+        'il+p:d;dużych=big:a:p:gal;dużymi=big:a:p:i;mały=small:a:s:na;mała'+
+        '=small:a:s:n;',
+    'małe=small:a:s:na+p:na;mali=small:a:p:n;małą=small:a:s:ai;małego=smal'+
+        'l:a:s:ga;małej=small:a:s:gdl;małemu=small:a:s:d;małym=small:a:s:il'+
+        '+p:d;małych=small:a:p:gal;małymi=small:a:p:i;nowy=new:a:s:na;nowa=n'+
+        'ew:a:s:n;',
+    'nowe=new:a:s:na+p:na;nowi=new:a:p:n;nową=new:a:s:ai;nowego=new:a:s:ga;no'+
+        'wej=new:a:s:gdl;nowemu=new:a:s:d;nowym=new:a:s:il+p:d;nowych=new:a:p:'+
+        'gal;nowymi=new:a:p:i;stary=old:a:s:na;stara=old:a:s:n;stare=old:a:s:n'+
+        'a+p:na;',
+    'starzy=old:a:p:n;starą=old:a:s:ai;starego=old:a:s:ga;starej=old:a:s:gdl;'+
+        'staremu=old:a:s:d;starym=old:a:s:il+p:d;starych=old:a:p:gal;starymi=o'+
+        'ld:a:p:i;młody=young:a:s:na;młoda=young:a:s:n;młode=young:a:s:na+p'+
+        ':na;',
+    'młodzi=young:a:p:n;młodą=young:a:s:ai;młodego=young:a:s:ga;młodej=yo'+
+        'ung:a:s:gdl;młodemu=young:a:s:d;młodym=young:a:s:il+p:d;młodych=yo'+
+        'ung:a:p:gal;młodymi=young:a:p:i;ładny=pretty:a:s:na;ładna=pretty:a'+
+        ':s:n;',
+    'ładne=pretty:a:s:na+p:na;ładni=pretty:a:p:n;ładną=pretty:a:s:ai;ładn'+
+        'ego=pretty:a:s:ga;ładnej=pretty:a:s:gdl;ładnemu=pretty:a:s:d;ładny'+
+        'm=pretty:a:s:il+p:d;ładnych=pretty:a:p:gal;ładnymi=pretty:a:p:i;dob'+
+        'ry=good:a:s:na;',
+    'dobra=good:a:s:n;dobre=good:a:s:na+p:na;dobrzy=good:a:p:n;dobrą=good:a:s'+
+        ':ai;dobrego=good:a:s:ga;dobrej=good:a:s:gdl;dobremu=good:a:s:d;dobrym'+
+        '=good:a:s:il+p:d;dobrych=good:a:p:gal;dobrymi=good:a:p:i;zły=bad:a:s'+
+        ':na;zła=bad:a:s:n;',
+    'złe=bad:a:s:na+p:na;źli=bad:a:p:n;złą=bad:a:s:ai;złego=bad:a:s:ga;z'+
+        'łej=bad:a:s:gdl;złemu=bad:a:s:d;złym=bad:a:s:il+p:d;złych=bad:a:p'+
+        ':gal;złymi=bad:a:p:i;wysoki=tall:a:s:na;wysoka=tall:a:s:n;wysokie=ta'+
+        'll:a:s:na+p:na;',
+    'wysocy=tall:a:p:n;wysoką=tall:a:s:ai;wysokiego=tall:a:s:ga;wysokiej=tall'+
+        ':a:s:gdl;wysokiemu=tall:a:s:d;wysokim=tall:a:s:il+p:d;wysokich=tall:a'+
+        ':p:gal;wysokimi=tall:a:p:i;niski=low:a:s:na;niska=low:a:s:n;niskie=lo'+
+        'w:a:s:na+p:na;',
+    'niscy=low:a:p:n;niską=low:a:s:ai;niskiego=low:a:s:ga;niskiej=low:a:s:gdl'+
+        ';niskiemu=low:a:s:d;niskim=low:a:s:il+p:d;niskich=low:a:p:gal;niskimi'+
+        '=low:a:p:i;długi=long:a:s:na+p:n;długa=long:a:s:n;długie=long:a:s:'+
+        'na+p:na;',
+    'długą=long:a:s:ai;długiego=long:a:s:ga;długiej=long:a:s:gdl;długiemu'+
+        '=long:a:s:d;długim=long:a:s:il+p:d;długich=long:a:p:gal;długimi=lo'+
+        'ng:a:p:i;krótki=short:a:s:na;krótka=short:a:s:n;krótkie=short:a:s:'+
+        'na+p:na;',
+    'krótcy=short:a:p:n;krótką=short:a:s:ai;krótkiego=short:a:s:ga;krótki'+
+        'ej=short:a:s:gdl;krótkiemu=short:a:s:d;krótkim=short:a:s:il+p:d;kr'+
+        'ótkich=short:a:p:gal;krótkimi=short:a:p:i;drogi=expensive:a:s:na;dr'+
+        'oga=expensive:a:s:n;',
+    'drogie=expensive:a:s:na+p:na;drodzy=expensive:a:p:n;drogą=expensive:a:s:'+
+        'ai;drogiego=expensive:a:s:ga;drogiej=expensive:a:s:gdl;drogiemu=expen'+
+        'sive:a:s:d;drogim=expensive:a:s:il+p:d;drogich=expensive:a:p:gal;',
+    'drogimi=expensive:a:p:i;tańi=cheap:a:s:na;tańia=cheap:a:s:n;tańie=chea'+
+        'p:a:s:na+p:na;tani=cheap:a:p:n;tańią=cheap:a:s:ai;tańiego=cheap:a:'+
+        's:ga;tańiej=cheap:a:s:gdl;tańiemu=cheap:a:s:d;tańim=cheap:a:s:il+p'+
+        ':d;',
+    'tańich=cheap:a:p:gal;tańimi=cheap:a:p:i;gorący=hot:a:s:na+p:n;gorąca='+
+        'hot:a:s:n;gorące=hot:a:s:na+p:na;gorącą=hot:a:s:ai;gorącego=hot:a'+
+        ':s:ga;gorącej=hot:a:s:gdl;gorącemu=hot:a:s:d;gorącym=hot:a:s:il+p:'+
+        'd;',
+    'gorących=hot:a:p:gal;gorącymi=hot:a:p:i;zimny=cold:a:s:na;zimna=cold:a:'+
+        's:n;zimne=cold:a:s:na+p:na;zimni=cold:a:p:n;zimną=cold:a:s:ai;zimneg'+
+        'o=cold:a:s:ga;zimnej=cold:a:s:gdl;zimnemu=cold:a:s:d;zimnym=cold:a:s:'+
+        'il+p:d;',
+    'zimnych=cold:a:p:gal;zimnymi=cold:a:p:i;ciepły=warm:a:s:na;ciepła=warm:'+
+        'a:s:n;ciepłe=warm:a:s:na+p:na;ciepli=warm:a:p:n;ciepłą=warm:a:s:ai'+
+        ';ciepłego=warm:a:s:ga;ciepłej=warm:a:s:gdl;ciepłemu=warm:a:s:d;',
+    'ciepłym=warm:a:s:il+p:d;ciepłych=warm:a:p:gal;ciepłymi=warm:a:p:i;chor'+
+        'y=sick:a:s:na;chora=sick:a:s:n;chore=sick:a:s:na+p:na;chorzy=sick:a:p'+
+        ':n;chorą=sick:a:s:ai;chorego=sick:a:s:ga;chorej=sick:a:s:gdl;choremu'+
+        '=sick:a:s:d;',
+    'chorym=sick:a:s:il+p:d;chorych=sick:a:p:gal;chorymi=sick:a:p:i;zdrowy=hea'+
+        'lthy:a:s:na;zdrowa=healthy:a:s:n;zdrowe=healthy:a:s:na+p:na;zdrowi=he'+
+        'althy:a:p:n;zdrową=healthy:a:s:ai;zdrowego=healthy:a:s:ga;zdrowej=he'+
+        'althy:a:s:gdl;',
+    'zdrowemu=healthy:a:s:d;zdrowym=healthy:a:s:il+p:d;zdrowych=healthy:a:p:ga'+
+        'l;zdrowymi=healthy:a:p:i;szybki=fast:a:s:na;szybka=fast:a:s:n;szybkie'+
+        '=fast:a:s:na+p:na;szybcy=fast:a:p:n;szybką=fast:a:s:ai;szybkiego=fas'+
+        't:a:s:ga;',
+    'szybkiej=fast:a:s:gdl;szybkiemu=fast:a:s:d;szybkim=fast:a:s:il+p:d;szybki'+
+        'ch=fast:a:p:gal;szybkimi=fast:a:p:i;wolny=slow:a:s:na;wolna=slow:a:s:'+
+        'n;wolne=slow:a:s:na+p:na;wolni=slow:a:p:n;wolną=slow:a:s:ai;wolnego='+
+        'slow:a:s:ga;',
+    'wolnej=slow:a:s:gdl;wolnemu=slow:a:s:d;wolnym=slow:a:s:il+p:d;wolnych=slo'+
+        'w:a:p:gal;wolnymi=slow:a:p:i;ciekawy=interesting:a:s:na;ciekawa=inter'+
+        'esting:a:s:n;ciekawe=interesting:a:s:na+p:na;ciekawi=interesting:a:p:'+
+        'n;',
+    'ciekawą=interesting:a:s:ai;ciekawego=interesting:a:s:ga;ciekawej=interes'+
+        'ting:a:s:gdl;ciekawemu=interesting:a:s:d;ciekawym=interesting:a:s:il+'+
+        'p:d;ciekawych=interesting:a:p:gal;ciekawymi=interesting:a:p:i;nudny=b'+
+        'oring:a:s:na;',
+    'nudna=boring:a:s:n;nudne=boring:a:s:na+p:na;nudni=boring:a:p:n;nudną=bor'+
+        'ing:a:s:ai;nudnego=boring:a:s:ga;nudnej=boring:a:s:gdl;nudnemu=boring'+
+        ':a:s:d;nudnym=boring:a:s:il+p:d;nudnych=boring:a:p:gal;nudnymi=boring'+
+        ':a:p:i;',
+    'ważny=important:a:s:na;ważna=important:a:s:n;ważne=important:a:s:na+p:'+
+        'na;ważni=important:a:p:n;ważną=important:a:s:ai;ważnego=important'+
+        ':a:s:ga;ważnej=important:a:s:gdl;ważnemu=important:a:s:d;ważnym=im'+
+        'portant:a:s:il+p:d;',
+    'ważnych=important:a:p:gal;ważnymi=important:a:p:i;trudny=difficult:a:s:'+
+        'na;trudna=difficult:a:s:n;trudne=difficult:a:s:na+p:na;trudni=difficu'+
+        'lt:a:p:n;trudną=difficult:a:s:ai;trudnego=difficult:a:s:ga;trudnej=d'+
+        'ifficult:a:s:gdl;',
+    'trudnemu=difficult:a:s:d;trudnym=difficult:a:s:il+p:d;trudnych=difficult:'+
+        'a:p:gal;trudnymi=difficult:a:p:i;łatwy=easy:a:s:na;łatwa=easy:a:s:n'+
+        ';łatwe=easy:a:s:na+p:na;łatwi=easy:a:p:n;łatwą=easy:a:s:ai;łatwe'+
+        'go=easy:a:s:ga;',
+    'łatwej=easy:a:s:gdl;łatwemu=easy:a:s:d;łatwym=easy:a:s:il+p:d;łatwych'+
+        '=easy:a:p:gal;łatwymi=easy:a:p:i;czysty=clean:a:s:na;czysta=clean:a:'+
+        's:n;czyste=clean:a:s:na+p:na;czyści=clean:a:p:n;czystą=clean:a:s:ai'+
+        ';',
+    'czystego=clean:a:s:ga;czystej=clean:a:s:gdl;czystemu=clean:a:s:d;czystym='+
+        'clean:a:s:il+p:d;czystych=clean:a:p:gal;czystymi=clean:a:p:i;brudny=d'+
+        'irty:a:s:na;brudna=dirty:a:s:n;brudne=dirty:a:s:na+p:na;brudni=dirty:'+
+        'a:p:n;',
+    'brudną=dirty:a:s:ai;brudnego=dirty:a:s:ga;brudnej=dirty:a:s:gdl;brudnemu'+
+        '=dirty:a:s:d;brudnym=dirty:a:s:il+p:d;brudnych=dirty:a:p:gal;brudnymi'+
+        '=dirty:a:p:i;pełny=full:a:s:na;pełna=full:a:s:n;pełne=full:a:s:na+'+
+        'p:na;',
+    'pełni=full:a:p:n;pełną=full:a:s:ai;pełnego=full:a:s:ga;pełnej=full:a'+
+        ':s:gdl;pełnemu=full:a:s:d;pełnym=full:a:s:il+p:d;pełnych=full:a:p:'+
+        'gal;pełnymi=full:a:p:i;pusty=empty:a:s:na;pusta=empty:a:s:n;puste=em'+
+        'pty:a:s:na+p:na;',
+    'puści=empty:a:p:n;pustą=empty:a:s:ai;pustego=empty:a:s:ga;pustej=empty:'+
+        'a:s:gdl;pustemu=empty:a:s:d;pustym=empty:a:s:il+p:d;pustych=empty:a:p'+
+        ':gal;pustymi=empty:a:p:i;otwarty=open:a:s:na;otwarta=open:a:s:n;',
+    'otwarte=open:a:s:na+p:na;otwarci=open:a:p:n;otwartą=open:a:s:ai;otwarteg'+
+        'o=open:a:s:ga;otwartej=open:a:s:gdl;otwartemu=open:a:s:d;otwartym=ope'+
+        'n:a:s:il+p:d;otwartych=open:a:p:gal;otwartymi=open:a:p:i;zamknięty=c'+
+        'losed:a:s:na;',
+    'zamknięta=closed:a:s:n;zamknięte=closed:a:s:na+p:na;zamknięci=closed:a'+
+        ':p:n;zamkniętą=closed:a:s:ai;zamkniętego=closed:a:s:ga;zamkniętej'+
+        '=closed:a:s:gdl;zamkniętemu=closed:a:s:d;zamkniętym=closed:a:s:il+p'+
+        ':d;',
+    'zamkniętych=closed:a:p:gal;zamkniętymi=closed:a:p:i;gotowy=ready:a:s:na'+
+        ';gotowa=ready:a:s:n;gotowe=ready:a:s:na+p:na;gotowi=ready:a:p:n;gotow'+
+        'ą=ready:a:s:ai;gotowego=ready:a:s:ga;gotowej=ready:a:s:gdl;gotowemu='+
+        'ready:a:s:d;',
+    'gotowym=ready:a:s:il+p:d;gotowych=ready:a:p:gal;gotowymi=ready:a:p:i;zaj'+
+        'ęty=busy:a:s:na;zajęta=busy:a:s:n;zajęte=busy:a:s:na+p:na;zajęci='+
+        'busy:a:p:n;zajętą=busy:a:s:ai;zajętego=busy:a:s:ga;zajętej=busy:a'+
+        ':s:gdl;',
+    'zajętemu=busy:a:s:d;zajętym=busy:a:s:il+p:d;zajętych=busy:a:p:gal;zaj'+
+        'ętymi=busy:a:p:i;czerwony=red:a:s:na;czerwona=red:a:s:n;czerwone=red'+
+        ':a:s:na+p:na;czerwoni=red:a:p:n;czerwoną=red:a:s:ai;czerwonego=red:a'+
+        ':s:ga;',
+    'czerwonej=red:a:s:gdl;czerwonemu=red:a:s:d;czerwonym=red:a:s:il+p:d;czerw'+
+        'onych=red:a:p:gal;czerwonymi=red:a:p:i;niebieski=blue:a:s:na;niebiesk'+
+        'a=blue:a:s:n;niebieskie=blue:a:s:na+p:na;niebiescy=blue:a:p:n;niebies'+
+        'ką=blue:a:s:ai;',
+    'niebieskiego=blue:a:s:ga;niebieskiej=blue:a:s:gdl;niebieskiemu=blue:a:s:d'+
+        ';niebieskim=blue:a:s:il+p:d;niebieskich=blue:a:p:gal;niebieskimi=blue'+
+        ':a:p:i;zielony=green:a:s:na;zielona=green:a:s:n;zielone=green:a:s:na+'+
+        'p:na;',
+    'zieloni=green:a:p:n;zieloną=green:a:s:ai;zielonego=green:a:s:ga;zielonej'+
+        '=green:a:s:gdl;zielonemu=green:a:s:d;zielonym=green:a:s:il+p:d;zielon'+
+        'ych=green:a:p:gal;zielonymi=green:a:p:i;żółty=yellow:a:s:na;żół'+
+        'ta=yellow:a:s:n;',
+    'żółte=yellow:a:s:na+p:na;żółci=yellow:a:p:n;żółtą=yellow:a:s:ai'+
+        ';żółtego=yellow:a:s:ga;żółtej=yellow:a:s:gdl;żółtemu=yellow:'+
+        'a:s:d;żółtym=yellow:a:s:il+p:d;żółtych=yellow:a:p:gal;żółtym'+
+        'i=yellow:a:p:i;',
+    'czarny=black:a:s:na;czarna=black:a:s:n;czarne=black:a:s:na+p:na;czarni=bl'+
+        'ack:a:p:n;czarną=black:a:s:ai;czarnego=black:a:s:ga;czarnej=black:a:'+
+        's:gdl;czarnemu=black:a:s:d;czarnym=black:a:s:il+p:d;czarnych=black:a:'+
+        'p:gal;',
+    'czarnymi=black:a:p:i;biały=white:a:s:na;biała=white:a:s:n;białe=white:'+
+        'a:s:na+p:na;biali=white:a:p:n;białą=white:a:s:ai;białego=white:a:s'+
+        ':ga;białej=white:a:s:gdl;białemu=white:a:s:d;białym=white:a:s:il+p'+
+        ':d;',
+    'białych=white:a:p:gal;białymi=white:a:p:i;brązowy=brown:a:s:na;brązow'+
+        'a=brown:a:s:n;brązowe=brown:a:s:na+p:na;brązowi=brown:a:p:n;brązow'+
+        'ą=brown:a:s:ai;brązowego=brown:a:s:ga;brązowej=brown:a:s:gdl;brąz'+
+        'owemu=brown:a:s:d;',
+    'brązowym=brown:a:s:il+p:d;brązowych=brown:a:p:gal;brązowymi=brown:a:p:'+
+        'i;szary=gray:a:s:na;szara=gray:a:s:n;szare=gray:a:s:na+p:na;szarzy=gr'+
+        'ay:a:p:n;szarą=gray:a:s:ai;szarego=gray:a:s:ga;szarej=gray:a:s:gdl;s'+
+        'zaremu=gray:a:s:d;',
+    'szarym=gray:a:s:il+p:d;szarych=gray:a:p:gal;szarymi=gray:a:p:i;różowy=p'+
+        'ink:a:s:na;różowa=pink:a:s:n;różowe=pink:a:s:na+p:na;różowi=pin'+
+        'k:a:p:n;różową=pink:a:s:ai;różowego=pink:a:s:ga;różowej=pink:a'+
+        ':s:gdl;',
+    'różowemu=pink:a:s:d;różowym=pink:a:s:il+p:d;różowych=pink:a:p:gal;r'+
+        'óżowymi=pink:a:p:i;inny=other:a:s:na;inna=other:a:s:n;inne=other:a:'+
+        's:na+p:na;inni=other:a:p:n;inną=other:a:s:ai;innego=other:a:s:ga;inn'+
+        'ej=other:a:s:gdl;',
+    'innemu=other:a:s:d;innym=other:a:s:il+p:d;innych=other:a:p:gal;innymi=oth'+
+        'er:a:p:i;pierwszy=first:a:s:na;pierwsza=first:a:s:n;pierwsze=first:a:'+
+        's:na+p:na;pierwsi=first:a:p:n;pierwszą=first:a:s:ai;pierwszego=first'+
+        ':a:s:ga;',
+    'pierwszej=first:a:s:gdl;pierwszemu=first:a:s:d;pierwszym=first:a:s:il+p:d'+
+        ';pierwszych=first:a:p:gal;pierwszymi=first:a:p:i;ostatni=last:a:s:na+'+
+        'p:n;ostatnia=last:a:s:n;ostatnie=last:a:s:na+p:na;ostatnią=last:a:s:'+
+        'ai;',
+    'ostatniego=last:a:s:ga;ostatniej=last:a:s:gdl;ostatniemu=last:a:s:d;ostat'+
+        'nim=last:a:s:il+p:d;ostatnich=last:a:p:gal;ostatnimi=last:a:p:i;nast'+
+        'ępny=next:a:s:na;następna=next:a:s:n;następne=next:a:s:na+p:na;nas'+
+        'tępni=next:a:p:n;',
+    'następną=next:a:s:ai;następnego=next:a:s:ga;następnej=next:a:s:gdl;na'+
+        'stępnemu=next:a:s:d;następnym=next:a:s:il+p:d;następnych=next:a:p:'+
+        'gal;następnymi=next:a:p:i;głodny=hungry:a:s:na;głodna=hungry:a:s:n'+
+        ';',
+    'głodne=hungry:a:s:na+p:na;głodni=hungry:a:p:n;głodną=hungry:a:s:ai;g'+
+        'łodnego=hungry:a:s:ga;głodnej=hungry:a:s:gdl;głodnemu=hungry:a:s:d'+
+        ';głodnym=hungry:a:s:il+p:d;głodnych=hungry:a:p:gal;głodnymi=hungry'+
+        ':a:p:i;',
+    'zmęczony=tired:a:s:na;zmęczona=tired:a:s:n;zmęczone=tired:a:s:na+p:na;'+
+        'zmęczeni=tired:a:p:n;zmęczoną=tired:a:s:ai;zmęczonego=tired:a:s:g'+
+        'a;zmęczonej=tired:a:s:gdl;zmęczonemu=tired:a:s:d;zmęczonym=tired:a'+
+        ':s:il+p:d;',
+    'zmęczonych=tired:a:p:gal;zmęczonymi=tired:a:p:i;szczęśliwy=happy:a:s:'+
+        'na;szczęśliwa=happy:a:s:n;szczęśliwe=happy:a:s:na+p:na;szczęśli'+
+        'wi=happy:a:p:n;szczęśliwą=happy:a:s:ai;szczęśliwego=happy:a:s:ga'+
+        ';',
+    'szczęśliwej=happy:a:s:gdl;szczęśliwemu=happy:a:s:d;szczęśliwym=happ'+
+        'y:a:s:il+p:d;szczęśliwych=happy:a:p:gal;szczęśliwymi=happy:a:p:i;'+
+        'smutny=sad:a:s:na;smutna=sad:a:s:n;smutne=sad:a:s:na+p:na;smutni=sad:'+
+        'a:p:n;',
+    'smutną=sad:a:s:ai;smutnego=sad:a:s:ga;smutnej=sad:a:s:gdl;smutnemu=sad:a'+
+        ':s:d;smutnym=sad:a:s:il+p:d;smutnych=sad:a:p:gal;smutnymi=sad:a:p:i;m'+
+        'iły=nice:a:s:na;miła=nice:a:s:n;miłe=nice:a:s:na+p:na;mili=nice:a:'+
+        'p:n;',
+    'miłą=nice:a:s:ai;miłego=nice:a:s:ga;miłej=nice:a:s:gdl;miłemu=nice:a'+
+        ':s:d;miłym=nice:a:s:il+p:d;miłych=nice:a:p:gal;miłymi=nice:a:p:i;p'+
+        'iękny=beautiful:a:s:na;piękna=beautiful:a:s:n;piękne=beautiful:a:s'+
+        ':na+p:na;',
+    'piękni=beautiful:a:p:n;piękną=beautiful:a:s:ai;pięknego=beautiful:a:s'+
+        ':ga;pięknej=beautiful:a:s:gdl;pięknemu=beautiful:a:s:d;pięknym=bea'+
+        'utiful:a:s:il+p:d;pięknych=beautiful:a:p:gal;pięknymi=beautiful:a:p'+
+        ':i;',
+    'bogaty=rich:a:s:na;bogata=rich:a:s:n;bogate=rich:a:s:na+p:na;bogaci=rich:'+
+        'a:p:n;bogatą=rich:a:s:ai;bogatego=rich:a:s:ga;bogatej=rich:a:s:gdl;b'+
+        'ogatemu=rich:a:s:d;bogatym=rich:a:s:il+p:d;bogatych=rich:a:p:gal;boga'+
+        'tymi=rich:a:p:i;',
+    'biedny=poor:a:s:na;biedna=poor:a:s:n;biedne=poor:a:s:na+p:na;biedni=poor:'+
+        'a:p:n;biedną=poor:a:s:ai;biednego=poor:a:s:ga;biednej=poor:a:s:gdl;b'+
+        'iednemu=poor:a:s:d;biednym=poor:a:s:il+p:d;biednych=poor:a:p:gal;bied'+
+        'nymi=poor:a:p:i;',
+    'silny=strong:a:s:na;silna=strong:a:s:n;silne=strong:a:s:na+p:na;silni=str'+
+        'ong:a:p:n;silną=strong:a:s:ai;silnego=strong:a:s:ga;silnej=strong:a:'+
+        's:gdl;silnemu=strong:a:s:d;silnym=strong:a:s:il+p:d;silnych=strong:a:'+
+        'p:gal;',
+    'silnymi=strong:a:p:i;słaby=weak:a:s:na;słaba=weak:a:s:n;słabe=weak:a:s'+
+        ':na+p:na;słabi=weak:a:p:n;słabą=weak:a:s:ai;słabego=weak:a:s:ga;s'+
+        'łabej=weak:a:s:gdl;słabemu=weak:a:s:d;słabym=weak:a:s:il+p:d;słab'+
+        'ych=weak:a:p:gal;',
+    'słabymi=weak:a:p:i;sławny=famous:a:s:na;sławna=famous:a:s:n;sławne=fa'+
+        'mous:a:s:na+p:na;sławni=famous:a:p:n;sławną=famous:a:s:ai;sławneg'+
+        'o=famous:a:s:ga;sławnej=famous:a:s:gdl;sławnemu=famous:a:s:d;',
+    'sławnym=famous:a:s:il+p:d;sławnych=famous:a:p:gal;sławnymi=famous:a:p:'+
+        'i;cichy=quiet:a:s:na;cicha=quiet:a:s:n;ciche=quiet:a:s:na+p:na;cisi=q'+
+        'uiet:a:p:n;cichą=quiet:a:s:ai;cichego=quiet:a:s:ga;cichej=quiet:a:s:'+
+        'gdl;',
+    'cichemu=quiet:a:s:d;cichym=quiet:a:s:il+p:d;cichych=quiet:a:p:gal;cichymi'+
+        '=quiet:a:p:i;żonaty=married:a:s:na;żonata=married:a:s:n;żonate=mar'+
+        'ried:a:s:na+p:na;żonaci=married:a:p:n;żonatą=married:a:s:ai;żonat'+
+        'ego=married:a:s:ga;',
+    'żonatej=married:a:s:gdl;żonatemu=married:a:s:d;żonatym=married:a:s:il+'+
+        'p:d;żonatych=married:a:p:gal;żonatymi=married:a:p:i;prawdziwy=true:'+
+        'a:s:na;prawdziwa=true:a:s:n;prawdziwe=true:a:s:na+p:na;prawdziwi=true'+
+        ':a:p:n;',
+    'prawdziwą=true:a:s:ai;prawdziwego=true:a:s:ga;prawdziwej=true:a:s:gdl;pr'+
+        'awdziwemu=true:a:s:d;prawdziwym=true:a:s:il+p:d;prawdziwych=true:a:p:'+
+        'gal;prawdziwymi=true:a:p:i;pewny=sure:a:s:na;pewna=sure:a:s:n;pewne=s'+
+        'ure:a:s:na+p:na;',
+    'pewni=sure:a:p:n;pewną=sure:a:s:ai;pewnego=sure:a:s:ga;pewnej=sure:a:s:g'+
+        'dl;pewnemu=sure:a:s:d;pewnym=sure:a:s:il+p:d;pewnych=sure:a:p:gal;pew'+
+        'nymi=sure:a:p:i;polski=Polish:a:s:na;polska=Polish:a:s:n;polskie=Poli'+
+        'sh:a:s:na+p:na;',
+    'polscy=Polish:a:p:n;polską=Polish:a:s:ai;polskiego=Polish:a:s:ga;polskie'+
+        'j=Polish:a:s:gdl;polskiemu=Polish:a:s:d;polskim=Polish:a:s:il+p:d;pol'+
+        'skich=Polish:a:p:gal;polskimi=Polish:a:p:i;angielski=English:a:s:na;',
+    'angielska=English:a:s:n;angielskie=English:a:s:na+p:na;angielscy=English:'+
+        'a:p:n;angielską=English:a:s:ai;angielskiego=English:a:s:ga;angielski'+
+        'ej=English:a:s:gdl;angielskiemu=English:a:s:d;angielskim=English:a:s:'+
+        'il+p:d;',
+    'angielskich=English:a:p:gal;angielskimi=English:a:p:i;francuski=French:a:'+
+        's:na;francuska=French:a:s:n;francuskie=French:a:s:na+p:na;francuscy=F'+
+        'rench:a:p:n;francuską=French:a:s:ai;francuskiego=French:a:s:ga;',
+    'francuskiej=French:a:s:gdl;francuskiemu=French:a:s:d;francuskim=French:a:'+
+        's:il+p:d;francuskich=French:a:p:gal;francuskimi=French:a:p:i;niemieck'+
+        'i=German:a:s:na;niemiecka=German:a:s:n;niemieckie=German:a:s:na+p:na;',
+    'niemieccy=German:a:p:n;niemiecką=German:a:s:ai;niemieckiego=German:a:s:g'+
+        'a;niemieckiej=German:a:s:gdl;niemieckiemu=German:a:s:d;niemieckim=Ger'+
+        'man:a:s:il+p:d;niemieckich=German:a:p:gal;niemieckimi=German:a:p:i;',
+    'hiszpański=Spanish:a:s:na;hiszpańska=Spanish:a:s:n;hiszpańskie=Spanish'+
+        ':a:s:na+p:na;hiszpańscy=Spanish:a:p:n;hiszpańską=Spanish:a:s:ai;hi'+
+        'szpańskiego=Spanish:a:s:ga;hiszpańskiej=Spanish:a:s:gdl;hiszpański'+
+        'emu=Spanish:a:s:d;',
+    'hiszpańskim=Spanish:a:s:il+p:d;hiszpańskich=Spanish:a:p:gal;hiszpański'+
+        'mi=Spanish:a:p:i;włoski=Italian:a:s:na;włoska=Italian:a:s:n;włoski'+
+        'e=Italian:a:s:na+p:na;włoscy=Italian:a:p:n;włoską=Italian:a:s:ai;',
+    'włoskiego=Italian:a:s:ga;włoskiej=Italian:a:s:gdl;włoskiemu=Italian:a:'+
+        's:d;włoskim=Italian:a:s:il+p:d;włoskich=Italian:a:p:gal;włoskimi=I'+
+        'talian:a:p:i;rosyjski=Russian:a:s:na;rosyjska=Russian:a:s:n;',
+    'rosyjskie=Russian:a:s:na+p:na;rosyjscy=Russian:a:p:n;rosyjską=Russian:a:'+
+        's:ai;rosyjskiego=Russian:a:s:ga;rosyjskiej=Russian:a:s:gdl;rosyjskiem'+
+        'u=Russian:a:s:d;rosyjskim=Russian:a:s:il+p:d;rosyjskich=Russian:a:p:g'+
+        'al;',
+    'rosyjskimi=Russian:a:p:i;norweski=Norwegian:a:s:na;norweska=Norwegian:a:s'+
+        ':n;norweskie=Norwegian:a:s:na+p:na;norwescy=Norwegian:a:p:n;norweską'+
+        '=Norwegian:a:s:ai;norweskiego=Norwegian:a:s:ga;norweskiej=Norwegian:a'+
+        ':s:gdl;',
+    'norweskiemu=Norwegian:a:s:d;norweskim=Norwegian:a:s:il+p:d;norweskich=Nor'+
+        'wegian:a:p:gal;norweskimi=Norwegian:a:p:i;szwedzki=Swedish:a:s:na;szw'+
+        'edzka=Swedish:a:s:n;szwedzkie=Swedish:a:s:na+p:na;szwedzcy=Swedish:a:'+
+        'p:n;',
+    'szwedzką=Swedish:a:s:ai;szwedzkiego=Swedish:a:s:ga;szwedzkiej=Swedish:a:'+
+        's:gdl;szwedzkiemu=Swedish:a:s:d;szwedzkim=Swedish:a:s:il+p:d;szwedzki'+
+        'ch=Swedish:a:p:gal;szwedzkimi=Swedish:a:p:i;świeży=fresh:a:s:na;św'+
+        'ieża=fresh:a:s:n;',
+    'świeże=fresh:a:s:na+p:na;świeżi=fresh:a:p:n;świeżą=fresh:a:s:ai;ś'+
+        'wieżego=fresh:a:s:ga;świeżej=fresh:a:s:gdl;świeżemu=fresh:a:s:d;'+
+        'świeżym=fresh:a:s:il+p:d;świeżych=fresh:a:p:gal;świeżymi=fresh:'+
+        'a:p:i;',
+    'wspaniały=wonderful:a:s:na;wspaniała=wonderful:a:s:n;wspaniałe=wonderf'+
+        'ul:a:s:na+p:na;wspaniali=wonderful:a:p:n;wspaniałą=wonderful:a:s:ai'+
+        ';wspaniałego=wonderful:a:s:ga;wspaniałej=wonderful:a:s:gdl;',
+    'wspaniałemu=wonderful:a:s:d;wspaniałym=wonderful:a:s:il+p:d;wspaniałyc'+
+        'h=wonderful:a:p:gal;wspaniałymi=wonderful:a:p:i;okropny=terrible:a:s'+
+        ':na;okropna=terrible:a:s:n;okropne=terrible:a:s:na+p:na;okropni=terri'+
+        'ble:a:p:n;',
+    'okropną=terrible:a:s:ai;okropnego=terrible:a:s:ga;okropnej=terrible:a:s:'+
+        'gdl;okropnemu=terrible:a:s:d;okropnym=terrible:a:s:il+p:d;okropnych=t'+
+        'errible:a:p:gal;okropnymi=terrible:a:p:i;jedyny=only:a:s:na;jedyna=on'+
+        'ly:a:s:n;',
+    'jedyne=only:a:s:na+p:na;jedyni=only:a:p:n;jedyną=only:a:s:ai;jedynego=on'+
+        'ly:a:s:ga;jedynej=only:a:s:gdl;jedynemu=only:a:s:d;jedynym=only:a:s:i'+
+        'l+p:d;jedynych=only:a:p:gal;jedynymi=only:a:p:i;każdy=each:a:s:na;ka'+
+        'żda=each:a:s:n;',
+    'każde=each:a:s:na+p:na;każdzi=each:a:p:n;każdą=each:a:s:ai;każdego=e'+
+        'ach:a:s:ga;każdej=each:a:s:gdl;każdemu=each:a:s:d;każdym=each:a:s:'+
+        'il+p:d;każdych=each:a:p:gal;każdymi=each:a:p:i;cały=whole:a:s:na;c'+
+        'ała=whole:a:s:n;',
+    'całe=whole:a:s:na+p:na;cali=whole:a:p:n;całą=whole:a:s:ai;całego=whol'+
+        'e:a:s:ga;całej=whole:a:s:gdl;całemu=whole:a:s:d;całym=whole:a:s:il'+
+        '+p:d;całych=whole:a:p:gal;całymi=whole:a:p:i;samy=same:a:s:na;sama='+
+        'same:a:s:n;',
+    'same=same:a:s:na+p:na;sami=same:a:p:n;samą=same:a:s:ai;samego=same:a:s:g'+
+        'a;samej=same:a:s:gdl;samemu=same:a:s:d;samym=same:a:s:il+p:d;samych=s'+
+        'ame:a:p:gal;samymi=same:a:p:i;grubyy=fat:a:s:na;grubya=fat:a:s:n;grub'+
+        'ye=fat:a:s:na+p:na;',
+    'grubi=fat:a:p:n;grubyą=fat:a:s:ai;grubyego=fat:a:s:ga;grubyej=fat:a:s:gd'+
+        'l;grubyemu=fat:a:s:d;grubyym=fat:a:s:il+p:d;grubyych=fat:a:p:gal;grub'+
+        'yymi=fat:a:p:i;chudy=thin:a:s:na;chuda=thin:a:s:n;chude=thin:a:s:na+p'+
+        ':na;',
+    'chudzi=thin:a:p:n;chudą=thin:a:s:ai;chudego=thin:a:s:ga;chudej=thin:a:s:'+
+        'gdl;chudemu=thin:a:s:d;chudym=thin:a:s:il+p:d;chudych=thin:a:p:gal;ch'+
+        'udymi=thin:a:p:i;mokry=wet:a:s:na;mokra=wet:a:s:n;mokre=wet:a:s:na+p:'+
+        'na;',
+    'mokrzy=wet:a:p:n;mokrą=wet:a:s:ai;mokrego=wet:a:s:ga;mokrej=wet:a:s:gdl;'+
+        'mokremu=wet:a:s:d;mokrym=wet:a:s:il+p:d;mokrych=wet:a:p:gal;mokrymi=w'+
+        'et:a:p:i;suchy=dry:a:s:na+p:n;sucha=dry:a:s:n;suche=dry:a:s:na+p:na;s'+
+        'uchą=dry:a:s:ai;',
+    'suchego=dry:a:s:ga;suchej=dry:a:s:gdl;suchemu=dry:a:s:d;suchym=dry:a:s:il'+
+        '+p:d;suchych=dry:a:p:gal;suchymi=dry:a:p:i;głośny=loud:a:s:na;gło'+
+        'śna=loud:a:s:n;głośne=loud:a:s:na+p:na;głośni=loud:a:p:n;głośn'+
+        'ą=loud:a:s:ai;',
+    'głośnego=loud:a:s:ga;głośnej=loud:a:s:gdl;głośnemu=loud:a:s:d;gło'+
+        'śnym=loud:a:s:il+p:d;głośnych=loud:a:p:gal;głośnymi=loud:a:p:i;j'+
+        'asny=bright:a:s:na;jasna=bright:a:s:n;jasne=bright:a:s:na+p:na;jasni='+
+        'bright:a:p:n;',
+    'jasną=bright:a:s:ai;jasnego=bright:a:s:ga;jasnej=bright:a:s:gdl;jasnemu='+
+        'bright:a:s:d;jasnym=bright:a:s:il+p:d;jasnych=bright:a:p:gal;jasnymi='+
+        'bright:a:p:i;ciemny=dark:a:s:na;ciemna=dark:a:s:n;ciemne=dark:a:s:na+'+
+        'p:na;',
+    'ciemni=dark:a:p:n;ciemną=dark:a:s:ai;ciemnego=dark:a:s:ga;ciemnej=dark:a'+
+        ':s:gdl;ciemnemu=dark:a:s:d;ciemnym=dark:a:s:il+p:d;ciemnych=dark:a:p:'+
+        'gal;ciemnymi=dark:a:p:i;brzydki=ugly:a:s:na;brzydka=ugly:a:s:n;',
+    'brzydkie=ugly:a:s:na+p:na;brzydcy=ugly:a:p:n;brzydką=ugly:a:s:ai;brzydki'+
+        'ego=ugly:a:s:ga;brzydkiej=ugly:a:s:gdl;brzydkiemu=ugly:a:s:d;brzydkim'+
+        '=ugly:a:s:il+p:d;brzydkich=ugly:a:p:gal;brzydkimi=ugly:a:p:i;mądry=s'+
+        'mart:a:s:na;',
+    'mądra=smart:a:s:n;mądre=smart:a:s:na+p:na;mądrzy=smart:a:p:n;mądrą=s'+
+        'mart:a:s:ai;mądrego=smart:a:s:ga;mądrej=smart:a:s:gdl;mądremu=smar'+
+        't:a:s:d;mądrym=smart:a:s:il+p:d;mądrych=smart:a:p:gal;mądrymi=smar'+
+        't:a:p:i;',
+    'głupi=stupid:a:s:na+p:n;głupia=stupid:a:s:n;głupie=stupid:a:s:na+p:na;'+
+        'głupią=stupid:a:s:ai;głupiego=stupid:a:s:ga;głupiej=stupid:a:s:gd'+
+        'l;głupiemu=stupid:a:s:d;głupim=stupid:a:s:il+p:d;głupich=stupid:a:'+
+        'p:gal;',
+    'głupimi=stupid:a:p:i;wesoły=cheerful:a:s:na;wesoła=cheerful:a:s:n;weso'+
+        'łe=cheerful:a:s:na+p:na;weseli=cheerful:a:p:n;wesołą=cheerful:a:s:'+
+        'ai;wesołego=cheerful:a:s:ga;wesołej=cheerful:a:s:gdl;wesołemu=chee'+
+        'rful:a:s:d;',
+    'wesołym=cheerful:a:s:il+p:d;wesołych=cheerful:a:p:gal;wesołymi=cheerfu'+
+        'l:a:p:i;poważny=serious:a:s:na;poważna=serious:a:s:n;poważne=serio'+
+        'us:a:s:na+p:na;poważni=serious:a:p:n;poważną=serious:a:s:ai;',
+    'poważnego=serious:a:s:ga;poważnej=serious:a:s:gdl;poważnemu=serious:a:'+
+        's:d;poważnym=serious:a:s:il+p:d;poważnych=serious:a:p:gal;poważnym'+
+        'i=serious:a:p:i;samotny=lonely:a:s:na;samotna=lonely:a:s:n;samotne=lo'+
+        'nely:a:s:na+p:na;',
+    'samotni=lonely:a:p:n;samotną=lonely:a:s:ai;samotnego=lonely:a:s:ga;samot'+
+        'nej=lonely:a:s:gdl;samotnemu=lonely:a:s:d;samotnym=lonely:a:s:il+p:d;'+
+        'samotnych=lonely:a:p:gal;samotnymi=lonely:a:p:i;odważny=brave:a:s:na'+
+        ';',
+    'odważna=brave:a:s:n;odważne=brave:a:s:na+p:na;odważni=brave:a:p:n;odwa'+
+        'żną=brave:a:s:ai;odważnego=brave:a:s:ga;odważnej=brave:a:s:gdl;od'+
+        'ważnemu=brave:a:s:d;odważnym=brave:a:s:il+p:d;odważnych=brave:a:p:'+
+        'gal;',
+    'odważnymi=brave:a:p:i;leniwy=lazy:a:s:na;leniwa=lazy:a:s:n;leniwe=lazy:a'+
+        ':s:na+p:na;leniwi=lazy:a:p:n;leniwą=lazy:a:s:ai;leniwego=lazy:a:s:ga'+
+        ';leniwej=lazy:a:s:gdl;leniwemu=lazy:a:s:d;leniwym=lazy:a:s:il+p:d;len'+
+        'iwych=lazy:a:p:gal;',
+    'leniwymi=lazy:a:p:i;drugi=second:a:s:na;druga=second:a:s:n;drugie=second:'+
+        'a:s:na+p:na;drudzy=second:a:p:n;drugą=second:a:s:ai;drugiego=second:'+
+        'a:s:ga;drugiej=second:a:s:gdl;drugiemu=second:a:s:d;drugim=second:a:s'+
+        ':il+p:d;',
+    'drugich=second:a:p:gal;drugimi=second:a:p:i;trzeci=third:a:s:na+p:n;trzec'+
+        'ia=third:a:s:n;trzecie=third:a:s:na+p:na;trzecią=third:a:s:ai;trzeci'+
+        'ego=third:a:s:ga;trzeciej=third:a:s:gdl;trzeciemu=third:a:s:d;trzecim'+
+        '=third:a:s:il+p:d;',
+    'trzecich=third:a:p:gal;trzecimi=third:a:p:i;dziwny=strange:a:s:na;dziwna='+
+        'strange:a:s:n;dziwne=strange:a:s:na+p:na;dziwni=strange:a:p:n;dziwną'+
+        '=strange:a:s:ai;dziwnego=strange:a:s:ga;dziwnej=strange:a:s:gdl;dziwn'+
+        'emu=strange:a:s:d;',
+    'dziwnym=strange:a:s:il+p:d;dziwnych=strange:a:p:gal;dziwnymi=strange:a:p:'+
+        'i;potrzebny=necessary:a:s:na;potrzebna=necessary:a:s:n;potrzebne=nece'+
+        'ssary:a:s:na+p:na;potrzebni=necessary:a:p:n;potrzebną=necessary:a:s:'+
+        'ai;',
+    'potrzebnego=necessary:a:s:ga;potrzebnej=necessary:a:s:gdl;potrzebnemu=nec'+
+        'essary:a:s:d;potrzebnym=necessary:a:s:il+p:d;potrzebnych=necessary:a:'+
+        'p:gal;potrzebnymi=necessary:a:p:i;możliwy=possible:a:s:na;możliwa=p'+
+        'ossible:a:s:n;',
+    'możliwe=possible:a:s:na+p:na;możliwi=possible:a:p:n;możliwą=possible:'+
+        'a:s:ai;możliwego=possible:a:s:ga;możliwej=possible:a:s:gdl;możliwe'+
+        'mu=possible:a:s:d;możliwym=possible:a:s:il+p:d;możliwych=possible:a'+
+        ':p:gal;',
+    'możliwymi=possible:a:p:i;czytać=read:v:I;czytam=read:v:p1;czytasz=read:'+
+        'v:p2;czyta=read:v:p3;czytamy=read:v:p4;czytacie=read:v:p5;czytają=re'+
+        'ad:v:p6;czytaj=read:v:M2;czytał=read:v:i3;czytała=read:v:i3;czytał'+
+        'o=read:v:i3;',
+    'czytali=read:v:i6;czytały=read:v:i6;czytałem=read:v:i1;czytałam=read:v'+
+        ':i1;czytałbym=read:v:c1;czytałabym=read:v:c1;czytałbyś=read:v:c2;'+
+        'czytałabyś=read:v:c2;czytałby=read:v:c3;czytałaby=read:v:c3;czyta'+
+        'łoby=read:v:c3;',
+    'czytalibyśmy=read:v:c4;czytałybyśmy=read:v:c4;czytalibyście=read:v:c5'+
+        ';czytałybyście=read:v:c5;czytaliby=read:v:c6;czytałyby=read:v:c6;c'+
+        'zytałeś=read:v:i2;czytałaś=read:v:i2;czytaliśmy=read:v:i4;czyta'+
+        'łyśmy=read:v:i4;',
+    'czytaliście=read:v:i5;czytałyście=read:v:i5;słuchać=listen:v:I;słuc'+
+        'ham=listen:v:p1;słuchasz=listen:v:p2;słucha=listen:v:p3;słuchamy=l'+
+        'isten:v:p4;słuchacie=listen:v:p5;słuchają=listen:v:p6;słuchaj=lis'+
+        'ten:v:M2;',
+    'słuchał=listen:v:i3;słuchała=listen:v:i3;słuchało=listen:v:i3;słuc'+
+        'hali=listen:v:i6;słuchały=listen:v:i6;słuchałem=listen:v:i1;słuc'+
+        'hałam=listen:v:i1;słuchałbym=listen:v:c1;słuchałabym=listen:v:c1'+
+        ';',
+    'słuchałbyś=listen:v:c2;słuchałabyś=listen:v:c2;słuchałby=listen:v'+
+        ':c3;słuchałaby=listen:v:c3;słuchałoby=listen:v:c3;słuchalibyśmy'+
+        '=listen:v:c4;słuchałybyśmy=listen:v:c4;słuchalibyście=listen:v:c'+
+        '5;',
+    'słuchałybyście=listen:v:c5;słuchaliby=listen:v:c6;słuchałyby=listen'+
+        ':v:c6;słuchałeś=listen:v:i2;słuchałaś=listen:v:i2;słuchaliśmy'+
+        '=listen:v:i4;słuchałyśmy=listen:v:i4;słuchaliście=listen:v:i5;',
+    'słuchałyście=listen:v:i5;mieszkać=live:v:I;mieszkam=live:v:p1;mieszka'+
+        'sz=live:v:p2;mieszka=live:v:p3;mieszkamy=live:v:p4;mieszkacie=live:v:'+
+        'p5;mieszkają=live:v:p6;mieszkaj=live:v:M2;mieszkał=live:v:i3;mieszk'+
+        'ała=live:v:i3;',
+    'mieszkało=live:v:i3;mieszkali=live:v:i6;mieszkały=live:v:i6;mieszkałem'+
+        '=live:v:i1;mieszkałam=live:v:i1;mieszkałbym=live:v:c1;mieszkałabym'+
+        '=live:v:c1;mieszkałbyś=live:v:c2;mieszkałabyś=live:v:c2;mieszkał'+
+        'by=live:v:c3;',
+    'mieszkałaby=live:v:c3;mieszkałoby=live:v:c3;mieszkalibyśmy=live:v:c4;m'+
+        'ieszkałybyśmy=live:v:c4;mieszkalibyście=live:v:c5;mieszkałybyści'+
+        'e=live:v:c5;mieszkaliby=live:v:c6;mieszkałyby=live:v:c6;mieszkałeś'+
+        '=live:v:i2;',
+    'mieszkałaś=live:v:i2;mieszkaliśmy=live:v:i4;mieszkałyśmy=live:v:i4;m'+
+        'ieszkaliście=live:v:i5;mieszkałyście=live:v:i5;grać=play:v:I;gram'+
+        '=play:v:p1;grasz=play:v:p2;gra=play:v:p3;gramy=play:v:p4;gracie=play:'+
+        'v:p5;',
+    'grają=play:v:p6;graj=play:v:M2;grał=play:v:i3;grała=play:v:i3;grało=p'+
+        'lay:v:i3;grali=play:v:i6;grały=play:v:i6;grałem=play:v:i1;grałam=p'+
+        'lay:v:i1;grałbym=play:v:c1;grałabym=play:v:c1;grałbyś=play:v:c2;',
+    'grałabyś=play:v:c2;grałby=play:v:c3;grałaby=play:v:c3;grałoby=play:v'+
+        ':c3;gralibyśmy=play:v:c4;grałybyśmy=play:v:c4;gralibyście=play:v:'+
+        'c5;grałybyście=play:v:c5;graliby=play:v:c6;grałyby=play:v:c6;grał'+
+        'eś=play:v:i2;',
+    'grałaś=play:v:i2;graliśmy=play:v:i4;grałyśmy=play:v:i4;graliście=pl'+
+        'ay:v:i5;grałyście=play:v:i5;pytać=ask:v:I;pytam=ask:v:p1;pytasz=as'+
+        'k:v:p2;pyta=ask:v:p3;pytamy=ask:v:p4;pytacie=ask:v:p5;pytają=ask:v:p'+
+        '6;pytaj=ask:v:M2;',
+    'pytał=ask:v:i3;pytała=ask:v:i3;pytało=ask:v:i3;pytali=ask:v:i6;pytały'+
+        '=ask:v:i6;pytałem=ask:v:i1;pytałam=ask:v:i1;pytałbym=ask:v:c1;pyta'+
+        'łabym=ask:v:c1;pytałbyś=ask:v:c2;pytałabyś=ask:v:c2;pytałby=ask'+
+        ':v:c3;',
+    'pytałaby=ask:v:c3;pytałoby=ask:v:c3;pytalibyśmy=ask:v:c4;pytałybyśmy'+
+        '=ask:v:c4;pytalibyście=ask:v:c5;pytałybyście=ask:v:c5;pytaliby=ask'+
+        ':v:c6;pytałyby=ask:v:c6;pytałeś=ask:v:i2;pytałaś=ask:v:i2;pytali'+
+        'śmy=ask:v:i4;',
+    'pytałyśmy=ask:v:i4;pytaliście=ask:v:i5;pytałyście=ask:v:i5;czekać=w'+
+        'ait:v:I;czekam=wait:v:p1;czekasz=wait:v:p2;czeka=wait:v:p3;czekamy=wa'+
+        'it:v:p4;czekacie=wait:v:p5;czekają=wait:v:p6;czekaj=wait:v:M2;czeka'+
+        'ł=wait:v:i3;',
+    'czekała=wait:v:i3;czekało=wait:v:i3;czekali=wait:v:i6;czekały=wait:v:i'+
+        '6;czekałem=wait:v:i1;czekałam=wait:v:i1;czekałbym=wait:v:c1;czeka'+
+        'łabym=wait:v:c1;czekałbyś=wait:v:c2;czekałabyś=wait:v:c2;czekał'+
+        'by=wait:v:c3;',
+    'czekałaby=wait:v:c3;czekałoby=wait:v:c3;czekalibyśmy=wait:v:c4;czekał'+
+        'ybyśmy=wait:v:c4;czekalibyście=wait:v:c5;czekałybyście=wait:v:c5;'+
+        'czekaliby=wait:v:c6;czekałyby=wait:v:c6;czekałeś=wait:v:i2;czekał'+
+        'aś=wait:v:i2;',
+    'czekaliśmy=wait:v:i4;czekałyśmy=wait:v:i4;czekaliście=wait:v:i5;czeka'+
+        'łyście=wait:v:i5;kochać=love:v:I;kocham=love:v:p1;kochasz=love:v:p'+
+        '2;kocha=love:v:p3;kochamy=love:v:p4;kochacie=love:v:p5;kochają=love:'+
+        'v:p6;',
+    'kochaj=love:v:M2;kochał=love:v:i3;kochała=love:v:i3;kochało=love:v:i3;'+
+        'kochali=love:v:i6;kochały=love:v:i6;kochałem=love:v:i1;kochałam=lo'+
+        've:v:i1;kochałbym=love:v:c1;kochałabym=love:v:c1;kochałbyś=love:v'+
+        ':c2;',
+    'kochałabyś=love:v:c2;kochałby=love:v:c3;kochałaby=love:v:c3;kochałob'+
+        'y=love:v:c3;kochalibyśmy=love:v:c4;kochałybyśmy=love:v:c4;kochalib'+
+        'yście=love:v:c5;kochałybyście=love:v:c5;kochaliby=love:v:c6;kocha'+
+        'łyby=love:v:c6;',
+    'kochałeś=love:v:i2;kochałaś=love:v:i2;kochaliśmy=love:v:i4;kochały'+
+        'śmy=love:v:i4;kochaliście=love:v:i5;kochałyście=love:v:i5;pływa'+
+        'ć=swim:v:I;pływam=swim:v:p1;pływasz=swim:v:p2;pływa=swim:v:p3;pł'+
+        'ywamy=swim:v:p4;',
+    'pływacie=swim:v:p5;pływają=swim:v:p6;pływaj=swim:v:M2;pływał=swim:v'+
+        ':i3;pływała=swim:v:i3;pływało=swim:v:i3;pływali=swim:v:i6;pływa'+
+        'ły=swim:v:i6;pływałem=swim:v:i1;pływałam=swim:v:i1;pływałbym=s'+
+        'wim:v:c1;',
+    'pływałabym=swim:v:c1;pływałbyś=swim:v:c2;pływałabyś=swim:v:c2;pł'+
+        'ywałby=swim:v:c3;pływałaby=swim:v:c3;pływałoby=swim:v:c3;pływal'+
+        'ibyśmy=swim:v:c4;pływałybyśmy=swim:v:c4;pływalibyście=swim:v:c5'+
+        ';',
+    'pływałybyście=swim:v:c5;pływaliby=swim:v:c6;pływałyby=swim:v:c6;pł'+
+        'ywałeś=swim:v:i2;pływałaś=swim:v:i2;pływaliśmy=swim:v:i4;pływ'+
+        'ałyśmy=swim:v:i4;pływaliście=swim:v:i5;pływałyście=swim:v:i5;b'+
+        'iegać=run:v:I;',
+    'biegam=run:v:p1;biegasz=run:v:p2;biega=run:v:p3;biegamy=run:v:p4;biegacie'+
+        '=run:v:p5;biegają=run:v:p6;biegaj=run:v:M2;biegał=run:v:i3;biegała'+
+        '=run:v:i3;biegało=run:v:i3;biegali=run:v:i6;biegały=run:v:i6;biega'+
+        'łem=run:v:i1;',
+    'biegałam=run:v:i1;biegałbym=run:v:c1;biegałabym=run:v:c1;biegałbyś=r'+
+        'un:v:c2;biegałabyś=run:v:c2;biegałby=run:v:c3;biegałaby=run:v:c3;'+
+        'biegałoby=run:v:c3;biegalibyśmy=run:v:c4;biegałybyśmy=run:v:c4;',
+    'biegalibyście=run:v:c5;biegałybyście=run:v:c5;biegaliby=run:v:c6;biega'+
+        'łyby=run:v:c6;biegałeś=run:v:i2;biegałaś=run:v:i2;biegaliśmy=ru'+
+        'n:v:i4;biegałyśmy=run:v:i4;biegaliście=run:v:i5;biegałyście=run:'+
+        'v:i5;',
+    'rozmawiać=talk:v:I;rozmawiam=talk:v:p1;rozmawiasz=talk:v:p2;rozmawia=tal'+
+        'k:v:p3;rozmawiamy=talk:v:p4;rozmawiacie=talk:v:p5;rozmawiają=talk:v:'+
+        'p6;rozmawiaj=talk:v:M2;rozmawiał=talk:v:i3;rozmawiała=talk:v:i3;roz'+
+        'mawiało=talk:v:i3;',
+    'rozmawiali=talk:v:i6;rozmawiały=talk:v:i6;rozmawiałem=talk:v:i1;rozmawi'+
+        'ałam=talk:v:i1;rozmawiałbym=talk:v:c1;rozmawiałabym=talk:v:c1;rozm'+
+        'awiałbyś=talk:v:c2;rozmawiałabyś=talk:v:c2;rozmawiałby=talk:v:c3'+
+        ';',
+    'rozmawiałaby=talk:v:c3;rozmawiałoby=talk:v:c3;rozmawialibyśmy=talk:v:c'+
+        '4;rozmawiałybyśmy=talk:v:c4;rozmawialibyście=talk:v:c5;rozmawiały'+
+        'byście=talk:v:c5;rozmawialiby=talk:v:c6;rozmawiałyby=talk:v:c6;',
+    'rozmawiałeś=talk:v:i2;rozmawiałaś=talk:v:i2;rozmawialiśmy=talk:v:i4;'+
+        'rozmawiałyśmy=talk:v:i4;rozmawialiście=talk:v:i5;rozmawiałyście='+
+        'talk:v:i5;odwiedzać=visit:v:I;odwiedzam=visit:v:p1;odwiedzasz=visit:'+
+        'v:p2;',
+    'odwiedza=visit:v:p3;odwiedzamy=visit:v:p4;odwiedzacie=visit:v:p5;odwiedza'+
+        'ją=visit:v:p6;odwiedzaj=visit:v:M2;odwiedzał=visit:v:i3;odwiedzała'+
+        '=visit:v:i3;odwiedzało=visit:v:i3;odwiedzali=visit:v:i6;odwiedzały='+
+        'visit:v:i6;',
+    'odwiedzałem=visit:v:i1;odwiedzałam=visit:v:i1;odwiedzałbym=visit:v:c1;'+
+        'odwiedzałabym=visit:v:c1;odwiedzałbyś=visit:v:c2;odwiedzałabyś=v'+
+        'isit:v:c2;odwiedzałby=visit:v:c3;odwiedzałaby=visit:v:c3;odwiedzał'+
+        'oby=visit:v:c3;',
+    'odwiedzalibyśmy=visit:v:c4;odwiedzałybyśmy=visit:v:c4;odwiedzalibyści'+
+        'e=visit:v:c5;odwiedzałybyście=visit:v:c5;odwiedzaliby=visit:v:c6;od'+
+        'wiedzałyby=visit:v:c6;odwiedzałeś=visit:v:i2;odwiedzałaś=visit:v'+
+        ':i2;',
+    'odwiedzaliśmy=visit:v:i4;odwiedzałyśmy=visit:v:i4;odwiedzaliście=visi'+
+        't:v:i5;odwiedzałyście=visit:v:i5;pomagać=help:v:I;pomagam=help:v:p'+
+        '1;pomagasz=help:v:p2;pomaga=help:v:p3;pomagamy=help:v:p4;pomagacie=he'+
+        'lp:v:p5;',
+    'pomagają=help:v:p6;pomagaj=help:v:M2;pomagał=help:v:i3;pomagała=help:v'+
+        ':i3;pomagało=help:v:i3;pomagali=help:v:i6;pomagały=help:v:i6;pomaga'+
+        'łem=help:v:i1;pomagałam=help:v:i1;pomagałbym=help:v:c1;pomagałaby'+
+        'm=help:v:c1;',
+    'pomagałbyś=help:v:c2;pomagałabyś=help:v:c2;pomagałby=help:v:c3;pomag'+
+        'ałaby=help:v:c3;pomagałoby=help:v:c3;pomagalibyśmy=help:v:c4;pomag'+
+        'ałybyśmy=help:v:c4;pomagalibyście=help:v:c5;pomagałybyście=help:'+
+        'v:c5;',
+    'pomagaliby=help:v:c6;pomagałyby=help:v:c6;pomagałeś=help:v:i2;pomagał'+
+        'aś=help:v:i2;pomagaliśmy=help:v:i4;pomagałyśmy=help:v:i4;pomagali'+
+        'ście=help:v:i5;pomagałyście=help:v:i5;pamiętać=remember:v:I;',
+    'pamiętam=remember:v:p1;pamiętasz=remember:v:p2;pamięta=remember:v:p3;p'+
+        'amiętamy=remember:v:p4;pamiętacie=remember:v:p5;pamiętają=remembe'+
+        'r:v:p6;pamiętaj=remember:v:M2;pamiętał=remember:v:i3;pamiętała=r'+
+        'emember:v:i3;',
+    'pamiętało=remember:v:i3;pamiętali=remember:v:i6;pamiętały=remember:v'+
+        ':i6;pamiętałem=remember:v:i1;pamiętałam=remember:v:i1;pamiętałb'+
+        'ym=remember:v:c1;pamiętałabym=remember:v:c1;pamiętałbyś=remember'+
+        ':v:c2;',
+    'pamiętałabyś=remember:v:c2;pamiętałby=remember:v:c3;pamiętałaby=re'+
+        'member:v:c3;pamiętałoby=remember:v:c3;pamiętalibyśmy=remember:v:c'+
+        '4;pamiętałybyśmy=remember:v:c4;pamiętalibyście=remember:v:c5;',
+    'pamiętałybyście=remember:v:c5;pamiętaliby=remember:v:c6;pamiętałyby'+
+        '=remember:v:c6;pamiętałeś=remember:v:i2;pamiętałaś=remember:v:i'+
+        '2;pamiętaliśmy=remember:v:i4;pamiętałyśmy=remember:v:i4;',
+    'pamiętaliście=remember:v:i5;pamiętałyście=remember:v:i5;używać=use'+
+        ':v:I;używam=use:v:p1;używasz=use:v:p2;używa=use:v:p3;używamy=use:'+
+        'v:p4;używacie=use:v:p5;używają=use:v:p6;używaj=use:v:M2;używał='+
+        'use:v:i3;',
+    'używała=use:v:i3;używało=use:v:i3;używali=use:v:i6;używały=use:v:i'+
+        '6;używałem=use:v:i1;używałam=use:v:i1;używałbym=use:v:c1;używa'+
+        'łabym=use:v:c1;używałbyś=use:v:c2;używałabyś=use:v:c2;używał'+
+        'by=use:v:c3;',
+    'używałaby=use:v:c3;używałoby=use:v:c3;używalibyśmy=use:v:c4;używa'+
+        'łybyśmy=use:v:c4;używalibyście=use:v:c5;używałybyście=use:v:c5'+
+        ';używaliby=use:v:c6;używałyby=use:v:c6;używałeś=use:v:i2;używa'+
+        'łaś=use:v:i2;',
+    'używaliśmy=use:v:i4;używałyśmy=use:v:i4;używaliście=use:v:i5;używ'+
+        'ałyście=use:v:i5;otwierać=open:v:I;otwieram=open:v:p1;otwierasz=op'+
+        'en:v:p2;otwiera=open:v:p3;otwieramy=open:v:p4;otwieracie=open:v:p5;ot'+
+        'wierają=open:v:p6;',
+    'otwieraj=open:v:M2;otwierał=open:v:i3;otwierała=open:v:i3;otwierało=op'+
+        'en:v:i3;otwierali=open:v:i6;otwierały=open:v:i6;otwierałem=open:v:i'+
+        '1;otwierałam=open:v:i1;otwierałbym=open:v:c1;otwierałabym=open:v:c'+
+        '1;',
+    'otwierałbyś=open:v:c2;otwierałabyś=open:v:c2;otwierałby=open:v:c3;ot'+
+        'wierałaby=open:v:c3;otwierałoby=open:v:c3;otwieralibyśmy=open:v:c4'+
+        ';otwierałybyśmy=open:v:c4;otwieralibyście=open:v:c5;otwierałybyś'+
+        'cie=open:v:c5;',
+    'otwieraliby=open:v:c6;otwierałyby=open:v:c6;otwierałeś=open:v:i2;otwie'+
+        'rałaś=open:v:i2;otwieraliśmy=open:v:i4;otwierałyśmy=open:v:i4;ot'+
+        'wieraliście=open:v:i5;otwierałyście=open:v:i5;zamykać=close:v:I;z'+
+        'amykam=close:v:p1;',
+    'zamykasz=close:v:p2;zamyka=close:v:p3;zamykamy=close:v:p4;zamykacie=close'+
+        ':v:p5;zamykają=close:v:p6;zamykaj=close:v:M2;zamykał=close:v:i3;zam'+
+        'ykała=close:v:i3;zamykało=close:v:i3;zamykali=close:v:i6;zamykały='+
+        'close:v:i6;',
+    'zamykałem=close:v:i1;zamykałam=close:v:i1;zamykałbym=close:v:c1;zamyka'+
+        'łabym=close:v:c1;zamykałbyś=close:v:c2;zamykałabyś=close:v:c2;za'+
+        'mykałby=close:v:c3;zamykałaby=close:v:c3;zamykałoby=close:v:c3;',
+    'zamykalibyśmy=close:v:c4;zamykałybyśmy=close:v:c4;zamykalibyście=clos'+
+        'e:v:c5;zamykałybyście=close:v:c5;zamykaliby=close:v:c6;zamykałyby='+
+        'close:v:c6;zamykałeś=close:v:i2;zamykałaś=close:v:i2;zamykaliśmy'+
+        '=close:v:i4;',
+    'zamykałyśmy=close:v:i4;zamykaliście=close:v:i5;zamykałyście=close:v:'+
+        'i5;wracać=return:v:I;wracam=return:v:p1;wracasz=return:v:p2;wraca=re'+
+        'turn:v:p3;wracamy=return:v:p4;wracacie=return:v:p5;wracają=return:v:'+
+        'p6;',
+    'wracaj=return:v:M2;wracał=return:v:i3;wracała=return:v:i3;wracało=retu'+
+        'rn:v:i3;wracali=return:v:i6;wracały=return:v:i6;wracałem=return:v:i'+
+        '1;wracałam=return:v:i1;wracałbym=return:v:c1;wracałabym=return:v:c'+
+        '1;',
+    'wracałbyś=return:v:c2;wracałabyś=return:v:c2;wracałby=return:v:c3;wr'+
+        'acałaby=return:v:c3;wracałoby=return:v:c3;wracalibyśmy=return:v:c4'+
+        ';wracałybyśmy=return:v:c4;wracalibyście=return:v:c5;wracałybyści'+
+        'e=return:v:c5;',
+    'wracaliby=return:v:c6;wracałyby=return:v:c6;wracałeś=return:v:i2;wraca'+
+        'łaś=return:v:i2;wracaliśmy=return:v:i4;wracałyśmy=return:v:i4;wr'+
+        'acaliście=return:v:i5;wracałyście=return:v:i5;zaczynać=begin:v:I;',
+    'zaczynam=begin:v:p1;zaczynasz=begin:v:p2;zaczyna=begin:v:p3;zaczynamy=beg'+
+        'in:v:p4;zaczynacie=begin:v:p5;zaczynają=begin:v:p6;zaczynaj=begin:v:'+
+        'M2;zaczynał=begin:v:i3;zaczynała=begin:v:i3;zaczynało=begin:v:i3;',
+    'zaczynali=begin:v:i6;zaczynały=begin:v:i6;zaczynałem=begin:v:i1;zaczyna'+
+        'łam=begin:v:i1;zaczynałbym=begin:v:c1;zaczynałabym=begin:v:c1;zacz'+
+        'ynałbyś=begin:v:c2;zaczynałabyś=begin:v:c2;zaczynałby=begin:v:c3'+
+        ';',
+    'zaczynałaby=begin:v:c3;zaczynałoby=begin:v:c3;zaczynalibyśmy=begin:v:c'+
+        '4;zaczynałybyśmy=begin:v:c4;zaczynalibyście=begin:v:c5;zaczynałyb'+
+        'yście=begin:v:c5;zaczynaliby=begin:v:c6;zaczynałyby=begin:v:c6;',
+    'zaczynałeś=begin:v:i2;zaczynałaś=begin:v:i2;zaczynaliśmy=begin:v:i4;'+
+        'zaczynałyśmy=begin:v:i4;zaczynaliście=begin:v:i5;zaczynałyście=b'+
+        'egin:v:i5;znać=know:v:I;znam=know:v:p1;znasz=know:v:p2;zna=know:v:p3'+
+        ';znamy=know:v:p4;',
+    'znacie=know:v:p5;znają=know:v:p6;znaj=know:v:M2;znał=know:v:i3;znała=k'+
+        'now:v:i3;znało=know:v:i3;znali=know:v:i6;znały=know:v:i6;znałem=kn'+
+        'ow:v:i1;znałam=know:v:i1;znałbym=know:v:c1;znałabym=know:v:c1;zna'+
+        'łbyś=know:v:c2;',
+    'znałabyś=know:v:c2;znałby=know:v:c3;znałaby=know:v:c3;znałoby=know:v'+
+        ':c3;znalibyśmy=know:v:c4;znałybyśmy=know:v:c4;znalibyście=know:v:'+
+        'c5;znałybyście=know:v:c5;znaliby=know:v:c6;znałyby=know:v:c6;znał'+
+        'eś=know:v:i2;',
+    'znałaś=know:v:i2;znaliśmy=know:v:i4;znałyśmy=know:v:i4;znaliście=kn'+
+        'ow:v:i5;znałyście=know:v:i5;śpiewać=sing:v:I;śpiewam=sing:v:p1;'+
+        'śpiewasz=sing:v:p2;śpiewa=sing:v:p3;śpiewamy=sing:v:p4;śpiewacie='+
+        'sing:v:p5;',
+    'śpiewają=sing:v:p6;śpiewaj=sing:v:M2;śpiewał=sing:v:i3;śpiewała=si'+
+        'ng:v:i3;śpiewało=sing:v:i3;śpiewali=sing:v:i6;śpiewały=sing:v:i6'+
+        ';śpiewałem=sing:v:i1;śpiewałam=sing:v:i1;śpiewałbym=sing:v:c1;',
+    'śpiewałabym=sing:v:c1;śpiewałbyś=sing:v:c2;śpiewałabyś=sing:v:c2;'+
+        'śpiewałby=sing:v:c3;śpiewałaby=sing:v:c3;śpiewałoby=sing:v:c3;'+
+        'śpiewalibyśmy=sing:v:c4;śpiewałybyśmy=sing:v:c4;śpiewalibyście'+
+        '=sing:v:c5;',
+    'śpiewałybyście=sing:v:c5;śpiewaliby=sing:v:c6;śpiewałyby=sing:v:c6;'+
+        'śpiewałeś=sing:v:i2;śpiewałaś=sing:v:i2;śpiewaliśmy=sing:v:i4'+
+        ';śpiewałyśmy=sing:v:i4;śpiewaliście=sing:v:i5;śpiewałyście=si'+
+        'ng:v:i5;',
+    'tańczyć=dance:v:I;tańczę=dance:v:p1;tańczysz=dance:v:p2;tańczy=danc'+
+        'e:v:p3;tańczymy=dance:v:p4;tańczycie=dance:v:p5;tańczą=dance:v:p6'+
+        ';tańcz=dance:v:M2;tańczył=dance:v:i3;tańczyła=dance:v:i3;tańczy'+
+        'ło=dance:v:i3;',
+    'tańczyli=dance:v:i6;tańczyły=dance:v:i6;tańczyłem=dance:v:i1;tańczy'+
+        'łam=dance:v:i1;tańczyłbym=dance:v:c1;tańczyłabym=dance:v:c1;tań'+
+        'czyłbyś=dance:v:c2;tańczyłabyś=dance:v:c2;tańczyłby=dance:v:c3'+
+        ';',
+    'tańczyłaby=dance:v:c3;tańczyłoby=dance:v:c3;tańczylibyśmy=dance:v:c'+
+        '4;tańczyłybyśmy=dance:v:c4;tańczylibyście=dance:v:c5;tańczyłyb'+
+        'yście=dance:v:c5;tańczyliby=dance:v:c6;tańczyłyby=dance:v:c6;',
+    'tańczyłeś=dance:v:i2;tańczyłaś=dance:v:i2;tańczyliśmy=dance:v:i4;'+
+        'tańczyłyśmy=dance:v:i4;tańczyliście=dance:v:i5;tańczyłyście=d'+
+        'ance:v:i5;liczyć=count:v:I;liczę=count:v:p1;liczysz=count:v:p2;licz'+
+        'y=count:v:p3;',
+    'liczymy=count:v:p4;liczycie=count:v:p5;liczą=count:v:p6;licz=count:v:M2;'+
+        'liczył=count:v:i3;liczyła=count:v:i3;liczyło=count:v:i3;liczyli=co'+
+        'unt:v:i6;liczyły=count:v:i6;liczyłem=count:v:i1;liczyłam=count:v:i'+
+        '1;',
+    'liczyłbym=count:v:c1;liczyłabym=count:v:c1;liczyłbyś=count:v:c2;liczy'+
+        'łabyś=count:v:c2;liczyłby=count:v:c3;liczyłaby=count:v:c3;liczył'+
+        'oby=count:v:c3;liczylibyśmy=count:v:c4;liczyłybyśmy=count:v:c4;',
+    'liczylibyście=count:v:c5;liczyłybyście=count:v:c5;liczyliby=count:v:c6'+
+        ';liczyłyby=count:v:c6;liczyłeś=count:v:i2;liczyłaś=count:v:i2;li'+
+        'czyliśmy=count:v:i4;liczyłyśmy=count:v:i4;liczyliście=count:v:i5;',
+    'liczyłyście=count:v:i5;kończyć=finish:v:I;kończę=finish:v:p1;kończ'+
+        'ysz=finish:v:p2;kończy=finish:v:p3;kończymy=finish:v:p4;kończycie='+
+        'finish:v:p5;kończą=finish:v:p6;kończ=finish:v:M2;kończył=finish:'+
+        'v:i3;',
+    'kończyła=finish:v:i3;kończyło=finish:v:i3;kończyli=finish:v:i6;końc'+
+        'zyły=finish:v:i6;kończyłem=finish:v:i1;kończyłam=finish:v:i1;ko'+
+        'ńczyłbym=finish:v:c1;kończyłabym=finish:v:c1;kończyłbyś=finish'+
+        ':v:c2;',
+    'kończyłabyś=finish:v:c2;kończyłby=finish:v:c3;kończyłaby=finish:v:'+
+        'c3;kończyłoby=finish:v:c3;kończylibyśmy=finish:v:c4;kończyłyby'+
+        'śmy=finish:v:c4;kończylibyście=finish:v:c5;kończyłybyście=finis'+
+        'h:v:c5;',
+    'kończyliby=finish:v:c6;kończyłyby=finish:v:c6;kończyłeś=finish:v:i2'+
+        ';kończyłaś=finish:v:i2;kończyliśmy=finish:v:i4;kończyłyśmy=fi'+
+        'nish:v:i4;kończyliście=finish:v:i5;kończyłyście=finish:v:i5;sły'+
+        'szeć=hear:v:I;',
+    'słyszę=hear:v:p1;słyszysz=hear:v:p2;słyszy=hear:v:p3;słyszymy=hear:v'+
+        ':p4;słyszycie=hear:v:p5;słyszą=hear:v:p6;słysz=hear:v:M2;słysza'+
+        'ł=hear:v:i3;słyszała=hear:v:i3;słyszało=hear:v:i3;słyszeli=hear'+
+        ':v:i6;',
+    'słyszały=hear:v:i6;słyszałem=hear:v:i1;słyszałam=hear:v:i1;słysza'+
+        'łbym=hear:v:c1;słyszałabym=hear:v:c1;słyszałbyś=hear:v:c2;słys'+
+        'załabyś=hear:v:c2;słyszałby=hear:v:c3;słyszałaby=hear:v:c3;sły'+
+        'szałoby=hear:v:c3;',
+    'słyszelibyśmy=hear:v:c4;słyszałybyśmy=hear:v:c4;słyszelibyście=hea'+
+        'r:v:c5;słyszałybyście=hear:v:c5;słyszeliby=hear:v:c6;słyszałyby'+
+        '=hear:v:c6;słyszałeś=hear:v:i2;słyszałaś=hear:v:i2;słyszeliśm'+
+        'y=hear:v:i4;',
+    'słyszałyśmy=hear:v:i4;słyszeliście=hear:v:i5;słyszałyście=hear:v:'+
+        'i5;leżeć=lie:v:I:estar;leżę=lie:v:p1:estar;leżysz=lie:v:p2:estar'+
+        ';leży=lie:v:p3:estar;leżymy=lie:v:p4:estar;leżycie=lie:v:p5:estar;',
+    'leżą=lie:v:p6:estar;leż=lie:v:M2:estar;leżał=lie:v:i3:estar;leżała'+
+        '=lie:v:i3:estar;leżało=lie:v:i3:estar;leżeli=lie:v:i6:estar;leża'+
+        'ły=lie:v:i6:estar;leżałem=lie:v:i1:estar;leżałam=lie:v:i1:estar;',
+    'leżałbym=lie:v:c1:estar;leżałabym=lie:v:c1:estar;leżałbyś=lie:v:c2'+
+        ':estar;leżałabyś=lie:v:c2:estar;leżałby=lie:v:c3:estar;leżałab'+
+        'y=lie:v:c3:estar;leżałoby=lie:v:c3:estar;leżelibyśmy=lie:v:c4:est'+
+        'ar;',
+    'leżałybyśmy=lie:v:c4:estar;leżelibyście=lie:v:c5:estar;leżałybyśc'+
+        'ie=lie:v:c5:estar;leżeliby=lie:v:c6:estar;leżałyby=lie:v:c6:estar;'+
+        'leżałeś=lie:v:i2:estar;leżałaś=lie:v:i2:estar;leżeliśmy=lie:v'+
+        ':i4:estar;',
+    'leżałyśmy=lie:v:i4:estar;leżeliście=lie:v:i5:estar;leżałyście=lie'+
+        ':v:i5:estar;uczyć=teach:v:I;uczę=teach:v:p1;uczysz=teach:v:p2;uczy='+
+        'teach:v:p3;uczymy=teach:v:p4;uczycie=teach:v:p5;uczą=teach:v:p6;ucz='+
+        'teach:v:M2;',
+    'uczył=teach:v:i3;uczyła=teach:v:i3;uczyło=teach:v:i3;uczyli=teach:v:i6'+
+        ';uczyły=teach:v:i6;uczyłem=teach:v:i1;uczyłam=teach:v:i1;uczyłbym'+
+        '=teach:v:c1;uczyłabym=teach:v:c1;uczyłbyś=teach:v:c2;uczyłabyś=t'+
+        'each:v:c2;',
+    'uczyłby=teach:v:c3;uczyłaby=teach:v:c3;uczyłoby=teach:v:c3;uczylibyśm'+
+        'y=teach:v:c4;uczyłybyśmy=teach:v:c4;uczylibyście=teach:v:c5;uczył'+
+        'ybyście=teach:v:c5;uczyliby=teach:v:c6;uczyłyby=teach:v:c6;uczyłe'+
+        'ś=teach:v:i2;',
+    'uczyłaś=teach:v:i2;uczyliśmy=teach:v:i4;uczyłyśmy=teach:v:i4;uczyli'+
+        'ście=teach:v:i5;uczyłyście=teach:v:i5;patrzeć=look:v:I;patrzę=lo'+
+        'ok:v:p1;patrzysz=look:v:p2;patrzy=look:v:p3;patrzymy=look:v:p4;patrzy'+
+        'cie=look:v:p5;',
+    'patrzą=look:v:p6;patrz=look:v:M2;patrzał=look:v:i3;patrzała=look:v:i3;'+
+        'patrzało=look:v:i3;patrzeli=look:v:i6;patrzały=look:v:i6;patrzałem'+
+        '=look:v:i1;patrzałam=look:v:i1;patrzałbym=look:v:c1;patrzałabym=lo'+
+        'ok:v:c1;',
+    'patrzałbyś=look:v:c2;patrzałabyś=look:v:c2;patrzałby=look:v:c3;patrz'+
+        'ałaby=look:v:c3;patrzałoby=look:v:c3;patrzelibyśmy=look:v:c4;patrz'+
+        'ałybyśmy=look:v:c4;patrzelibyście=look:v:c5;patrzałybyście=look:'+
+        'v:c5;',
+    'patrzeliby=look:v:c6;patrzałyby=look:v:c6;patrzałeś=look:v:i2;patrzał'+
+        'aś=look:v:i2;patrzeliśmy=look:v:i4;patrzałyśmy=look:v:i4;patrzeli'+
+        'ście=look:v:i5;patrzałyście=look:v:i5;płacić=pay:v:I;płacę=pay'+
+        ':v:p1;',
+    'płacisz=pay:v:p2;płaci=pay:v:p3;płacimy=pay:v:p4;płacicie=pay:v:p5;p'+
+        'łacą=pay:v:p6;płac=pay:v:M2;płacił=pay:v:i3;płaciła=pay:v:i3;p'+
+        'łaciło=pay:v:i3;płacili=pay:v:i6;płaciły=pay:v:i6;płaciłem=pay'+
+        ':v:i1;',
+    'płaciłam=pay:v:i1;płaciłbym=pay:v:c1;płaciłabym=pay:v:c1;płaciłby'+
+        'ś=pay:v:c2;płaciłabyś=pay:v:c2;płaciłby=pay:v:c3;płaciłaby=pa'+
+        'y:v:c3;płaciłoby=pay:v:c3;płacilibyśmy=pay:v:c4;płaciłybyśmy=p'+
+        'ay:v:c4;',
+    'płacilibyście=pay:v:c5;płaciłybyście=pay:v:c5;płaciliby=pay:v:c6;p'+
+        'łaciłyby=pay:v:c6;płaciłeś=pay:v:i2;płaciłaś=pay:v:i2;płacil'+
+        'iśmy=pay:v:i4;płaciłyśmy=pay:v:i4;płaciliście=pay:v:i5;płacił'+
+        'yście=pay:v:i5;',
+    'chodzić=walk:v:I;chodzę=walk:v:p1;chodzisz=walk:v:p2;chodzi=walk:v:p3;c'+
+        'hodzimy=walk:v:p4;chodzicie=walk:v:p5;chodzą=walk:v:p6;chodź=walk:v'+
+        ':M2;chodził=walk:v:i3;chodziła=walk:v:i3;chodziło=walk:v:i3;chodzi'+
+        'li=walk:v:i6;',
+    'chodziły=walk:v:i6;chodziłem=walk:v:i1;chodziłam=walk:v:i1;chodziłbym'+
+        '=walk:v:c1;chodziłabym=walk:v:c1;chodziłbyś=walk:v:c2;chodziłaby'+
+        'ś=walk:v:c2;chodziłby=walk:v:c3;chodziłaby=walk:v:c3;chodziłoby=w'+
+        'alk:v:c3;',
+    'chodzilibyśmy=walk:v:c4;chodziłybyśmy=walk:v:c4;chodzilibyście=walk:v'+
+        ':c5;chodziłybyście=walk:v:c5;chodziliby=walk:v:c6;chodziłyby=walk:'+
+        'v:c6;chodziłeś=walk:v:i2;chodziłaś=walk:v:i2;chodziliśmy=walk:v:'+
+        'i4;',
+    'chodziłyśmy=walk:v:i4;chodziliście=walk:v:i5;chodziłyście=walk:v:i5;'+
+        'widzieć=see:v:I:ver;widzę=see:v:p1:ver;widzisz=see:v:p2:ver;widzi=s'+
+        'ee:v:p3:ver;widzimy=see:v:p4:ver;widzicie=see:v:p5:ver;widzą=see:v:p'+
+        '6:ver;',
+    'widz=see:v:M2:ver;widział=see:v:i3:ver;widziała=see:v:i3:ver;widziało='+
+        'see:v:i3:ver;widzieli=see:v:i6:ver;widziały=see:v:i6:ver;widziałem='+
+        'see:v:i1:ver;widziałam=see:v:i1:ver;widziałbym=see:v:c1:ver;widzia'+
+        'łabym=see:v:c1:ver;',
+    'widziałbyś=see:v:c2:ver;widziałabyś=see:v:c2:ver;widziałby=see:v:c3:'+
+        'ver;widziałaby=see:v:c3:ver;widziałoby=see:v:c3:ver;widzielibyśmy='+
+        'see:v:c4:ver;widziałybyśmy=see:v:c4:ver;widzielibyście=see:v:c5:ve'+
+        'r;',
+    'widziałybyście=see:v:c5:ver;widzieliby=see:v:c6:ver;widziałyby=see:v:c'+
+        '6:ver;widziałeś=see:v:i2:ver;widziałaś=see:v:i2:ver;widzieliśmy='+
+        'see:v:i4:ver;widziałyśmy=see:v:i4:ver;widzieliście=see:v:i5:ver;',
+    'widziałyście=see:v:i5:ver;siedzieć=sit:v:I;siedzę=sit:v:p1;siedzisz=s'+
+        'it:v:p2;siedzi=sit:v:p3;siedzimy=sit:v:p4;siedzicie=sit:v:p5;siedzą='+
+        'sit:v:p6;siedź=sit:v:M2;siedział=sit:v:i3;siedziała=sit:v:i3;siedz'+
+        'iało=sit:v:i3;',
+    'siedzieli=sit:v:i6;siedziały=sit:v:i6;siedziałem=sit:v:i1;siedziałam=s'+
+        'it:v:i1;siedziałbym=sit:v:c1;siedziałabym=sit:v:c1;siedziałbyś=si'+
+        't:v:c2;siedziałabyś=sit:v:c2;siedziałby=sit:v:c3;siedziałaby=sit:'+
+        'v:c3;',
+    'siedziałoby=sit:v:c3;siedzielibyśmy=sit:v:c4;siedziałybyśmy=sit:v:c4;'+
+        'siedzielibyście=sit:v:c5;siedziałybyście=sit:v:c5;siedzieliby=sit:'+
+        'v:c6;siedziałyby=sit:v:c6;siedziałeś=sit:v:i2;siedziałaś=sit:v:i'+
+        '2;',
+    'siedzieliśmy=sit:v:i4;siedziałyśmy=sit:v:i4;siedzieliście=sit:v:i5;si'+
+        'edziałyście=sit:v:i5;myśleć=think:v:I;myślę=think:v:p1;myślisz'+
+        '=think:v:p2;myśli=think:v:p3;myślimy=think:v:p4;myślicie=think:v:p'+
+        '5;',
+    'myślą=think:v:p6;myśl=think:v:M2;myślał=think:v:i3;myślała=think:v'+
+        ':i3;myślało=think:v:i3;myśleli=think:v:i6;myślały=think:v:i6;my'+
+        'ślałem=think:v:i1;myślałam=think:v:i1;myślałbym=think:v:c1;myś'+
+        'lałabym=think:v:c1;',
+    'myślałbyś=think:v:c2;myślałabyś=think:v:c2;myślałby=think:v:c3;my'+
+        'ślałaby=think:v:c3;myślałoby=think:v:c3;myślelibyśmy=think:v:c4'+
+        ';myślałybyśmy=think:v:c4;myślelibyście=think:v:c5;myślałybyśc'+
+        'ie=think:v:c5;',
+    'myśleliby=think:v:c6;myślałyby=think:v:c6;myślałeś=think:v:i2;myśl'+
+        'ałaś=think:v:i2;myśleliśmy=think:v:i4;myślałyśmy=think:v:i4;my'+
+        'śleliście=think:v:i5;myślałyście=think:v:i5;mówić=speak:v:I;m'+
+        'ówię=speak:v:p1;',
+    'mówisz=speak:v:p2;mówi=speak:v:p3;mówimy=speak:v:p4;mówicie=speak:v:p'+
+        '5;mówią=speak:v:p6;mów=speak:v:M2;mówił=speak:v:i3;mówiła=spea'+
+        'k:v:i3;mówiło=speak:v:i3;mówili=speak:v:i6;mówiły=speak:v:i6;mó'+
+        'wiłem=speak:v:i1;',
+    'mówiłam=speak:v:i1;mówiłbym=speak:v:c1;mówiłabym=speak:v:c1;mówił'+
+        'byś=speak:v:c2;mówiłabyś=speak:v:c2;mówiłby=speak:v:c3;mówiła'+
+        'by=speak:v:c3;mówiłoby=speak:v:c3;mówilibyśmy=speak:v:c4;mówiły'+
+        'byśmy=speak:v:c4;',
+    'mówilibyście=speak:v:c5;mówiłybyście=speak:v:c5;mówiliby=speak:v:c6'+
+        ';mówiłyby=speak:v:c6;mówiłeś=speak:v:i2;mówiłaś=speak:v:i2;m'+
+        'ówiliśmy=speak:v:i4;mówiłyśmy=speak:v:i4;mówiliście=speak:v:i5'+
+        ';',
+    'mówiłyście=speak:v:i5;robić=do:v:I:hacer;robię=do:v:p1:hacer;robisz='+
+        'do:v:p2:hacer;robi=do:v:p3:hacer;robimy=do:v:p4:hacer;robicie=do:v:p5'+
+        ':hacer;robią=do:v:p6:hacer;rób=do:v:M2:hacer;robił=do:v:i3:hacer;',
+    'robiła=do:v:i3:hacer;robiło=do:v:i3:hacer;robili=do:v:i6:hacer;robiły='+
+        'do:v:i6:hacer;robiłem=do:v:i1:hacer;robiłam=do:v:i1:hacer;robiłbym'+
+        '=do:v:c1:hacer;robiłabym=do:v:c1:hacer;robiłbyś=do:v:c2:hacer;',
+    'robiłabyś=do:v:c2:hacer;robiłby=do:v:c3:hacer;robiłaby=do:v:c3:hacer;'+
+        'robiłoby=do:v:c3:hacer;robilibyśmy=do:v:c4:hacer;robiłybyśmy=do:v'+
+        ':c4:hacer;robilibyście=do:v:c5:hacer;robiłybyście=do:v:c5:hacer;',
+    'robiliby=do:v:c6:hacer;robiłyby=do:v:c6:hacer;robiłeś=do:v:i2:hacer;ro'+
+        'biłaś=do:v:i2:hacer;robiliśmy=do:v:i4:hacer;robiłyśmy=do:v:i4:ha'+
+        'cer;robiliście=do:v:i5:hacer;robiłyście=do:v:i5:hacer;lubić=like:'+
+        'v:I;',
+    'lubię=like:v:p1;lubisz=like:v:p2;lubi=like:v:p3;lubimy=like:v:p4;lubicie'+
+        '=like:v:p5;lubią=like:v:p6;lub=like:v:M2;lubił=like:v:i3;lubiła=li'+
+        'ke:v:i3;lubiło=like:v:i3;lubili=like:v:i6;lubiły=like:v:i6;lubiłem'+
+        '=like:v:i1;',
+    'lubiłam=like:v:i1;lubiłbym=like:v:c1;lubiłabym=like:v:c1;lubiłbyś=li'+
+        'ke:v:c2;lubiłabyś=like:v:c2;lubiłby=like:v:c3;lubiłaby=like:v:c3;'+
+        'lubiłoby=like:v:c3;lubilibyśmy=like:v:c4;lubiłybyśmy=like:v:c4;',
+    'lubilibyście=like:v:c5;lubiłybyście=like:v:c5;lubiliby=like:v:c6;lubi'+
+        'łyby=like:v:c6;lubiłeś=like:v:i2;lubiłaś=like:v:i2;lubiliśmy=li'+
+        'ke:v:i4;lubiłyśmy=like:v:i4;lubiliście=like:v:i5;lubiłyście=like'+
+        ':v:i5;',
+    'kupić=buy:v:I;kupię=buy:v:f1;kupisz=buy:v:f2;kupi=buy:v:f3;kupimy=buy:v'+
+        ':f4;kupicie=buy:v:f5;kupią=buy:v:f6;kup=buy:v:M2;kupił=buy:v:i3;kup'+
+        'iła=buy:v:i3;kupiło=buy:v:i3;kupili=buy:v:i6;kupiły=buy:v:i6;kupi'+
+        'łem=buy:v:i1;',
+    'kupiłam=buy:v:i1;kupiłeś=buy:v:i2;kupiłaś=buy:v:i2;kupiliśmy=buy:v:'+
+        'i4;kupiłyśmy=buy:v:i4;kupiliście=buy:v:i5;kupiłyście=buy:v:i5;sp'+
+        'rzedać=sell:v:I;sprzedam=sell:v:f1;sprzedasz=sell:v:f2;sprzeda=sell:'+
+        'v:f3;',
+    'sprzedamy=sell:v:f4;sprzedacie=sell:v:f5;sprzedadzą=sell:v:f6;sprzedaj=s'+
+        'ell:v:M2;sprzedał=sell:v:i3;sprzedała=sell:v:i3;sprzedało=sell:v:i'+
+        '3;sprzedali=sell:v:i6;sprzedały=sell:v:i6;sprzedałem=sell:v:i1;sprz'+
+        'edałam=sell:v:i1;',
+    'sprzedałeś=sell:v:i2;sprzedałaś=sell:v:i2;sprzedaliśmy=sell:v:i4;spr'+
+        'zedałyśmy=sell:v:i4;sprzedaliście=sell:v:i5;sprzedałyście=sell:v'+
+        ':i5;pracować=work:v:I;pracuję=work:v:p1;pracujesz=work:v:p2;pracuje'+
+        '=work:v:p3;',
+    'pracujemy=work:v:p4;pracujecie=work:v:p5;pracują=work:v:p6;pracuj=work:v'+
+        ':M2;pracował=work:v:i3;pracowała=work:v:i3;pracowało=work:v:i3;pra'+
+        'cowali=work:v:i6;pracowały=work:v:i6;pracowałem=work:v:i1;pracował'+
+        'am=work:v:i1;',
+    'pracowałbym=work:v:c1;pracowałabym=work:v:c1;pracowałbyś=work:v:c2;pr'+
+        'acowałabyś=work:v:c2;pracowałby=work:v:c3;pracowałaby=work:v:c3;p'+
+        'racowałoby=work:v:c3;pracowalibyśmy=work:v:c4;pracowałybyśmy=work'+
+        ':v:c4;',
+    'pracowalibyście=work:v:c5;pracowałybyście=work:v:c5;pracowaliby=work:v'+
+        ':c6;pracowałyby=work:v:c6;pracowałeś=work:v:i2;pracowałaś=work:v'+
+        ':i2;pracowaliśmy=work:v:i4;pracowałyśmy=work:v:i4;pracowaliście=w'+
+        'ork:v:i5;',
+    'pracowałyście=work:v:i5;kupować=buy:v:I;kupuję=buy:v:p1;kupujesz=buy:'+
+        'v:p2;kupuje=buy:v:p3;kupujemy=buy:v:p4;kupujecie=buy:v:p5;kupują=buy'+
+        ':v:p6;kupuj=buy:v:M2;kupował=buy:v:i3;kupowała=buy:v:i3;kupowało=b'+
+        'uy:v:i3;',
+    'kupowali=buy:v:i6;kupowały=buy:v:i6;kupowałem=buy:v:i1;kupowałam=buy:v'+
+        ':i1;kupowałbym=buy:v:c1;kupowałabym=buy:v:c1;kupowałbyś=buy:v:c2;'+
+        'kupowałabyś=buy:v:c2;kupowałby=buy:v:c3;kupowałaby=buy:v:c3;kupow'+
+        'ałoby=buy:v:c3;',
+    'kupowalibyśmy=buy:v:c4;kupowałybyśmy=buy:v:c4;kupowalibyście=buy:v:c5'+
+        ';kupowałybyście=buy:v:c5;kupowaliby=buy:v:c6;kupowałyby=buy:v:c6;k'+
+        'upowałeś=buy:v:i2;kupowałaś=buy:v:i2;kupowaliśmy=buy:v:i4;kupowa'+
+        'łyśmy=buy:v:i4;',
+    'kupowaliście=buy:v:i5;kupowałyście=buy:v:i5;podróżować=travel:v:I;p'+
+        'odróżuję=travel:v:p1;podróżujesz=travel:v:p2;podróżuje=travel:'+
+        'v:p3;podróżujemy=travel:v:p4;podróżujecie=travel:v:p5;podróżuj'+
+        'ą=travel:v:p6;',
+    'podróżuj=travel:v:M2;podróżował=travel:v:i3;podróżowała=travel:v:'+
+        'i3;podróżowało=travel:v:i3;podróżowali=travel:v:i6;podróżował'+
+        'y=travel:v:i6;podróżowałem=travel:v:i1;podróżowałam=travel:v:i1'+
+        ';',
+    'podróżowałbym=travel:v:c1;podróżowałabym=travel:v:c1;podróżowałb'+
+        'yś=travel:v:c2;podróżowałabyś=travel:v:c2;podróżowałby=travel'+
+        ':v:c3;podróżowałaby=travel:v:c3;podróżowałoby=travel:v:c3;',
+    'podróżowalibyśmy=travel:v:c4;podróżowałybyśmy=travel:v:c4;podróż'+
+        'owalibyście=travel:v:c5;podróżowałybyście=travel:v:c5;podróżow'+
+        'aliby=travel:v:c6;podróżowałyby=travel:v:c6;podróżowałeś=trave'+
+        'l:v:i2;',
+    'podróżowałaś=travel:v:i2;podróżowaliśmy=travel:v:i4;podróżowały'+
+        'śmy=travel:v:i4;podróżowaliście=travel:v:i5;podróżowałyście=t'+
+        'ravel:v:i5;dziękować=thank:v:I;dziękuję=thank:v:p1;dziękujesz=th'+
+        'ank:v:p2;',
+    'dziękuje=thank:v:p3;dziękujemy=thank:v:p4;dziękujecie=thank:v:p5;dzię'+
+        'kują=thank:v:p6;dziękuj=thank:v:M2;dziękował=thank:v:i3;dziękowa'+
+        'ła=thank:v:i3;dziękowało=thank:v:i3;dziękowali=thank:v:i6;dzięko'+
+        'wały=thank:v:i6;',
+    'dziękowałem=thank:v:i1;dziękowałam=thank:v:i1;dziękowałbym=thank:v:'+
+        'c1;dziękowałabym=thank:v:c1;dziękowałbyś=thank:v:c2;dziękowała'+
+        'byś=thank:v:c2;dziękowałby=thank:v:c3;dziękowałaby=thank:v:c3;',
+    'dziękowałoby=thank:v:c3;dziękowalibyśmy=thank:v:c4;dziękowałybyśmy'+
+        '=thank:v:c4;dziękowalibyście=thank:v:c5;dziękowałybyście=thank:v'+
+        ':c5;dziękowaliby=thank:v:c6;dziękowałyby=thank:v:c6;dziękowałeś'+
+        '=thank:v:i2;',
+    'dziękowałaś=thank:v:i2;dziękowaliśmy=thank:v:i4;dziękowałyśmy=tha'+
+        'nk:v:i4;dziękowaliście=thank:v:i5;dziękowałyście=thank:v:i5;dawa'+
+        'ć=give:v:I:dar;daję=give:v:p1:dar;dajesz=give:v:p2:dar;daje=give:v:'+
+        'p3:dar;',
+    'dajemy=give:v:p4:dar;dajecie=give:v:p5:dar;dają=give:v:p6:dar;daj=give:v'+
+        ':M2:dar;dawał=give:v:i3:dar;dawała=give:v:i3:dar;dawało=give:v:i3:'+
+        'dar;dawali=give:v:i6:dar;dawały=give:v:i6:dar;dawałem=give:v:i1:dar'+
+        ';',
+    'dawałam=give:v:i1:dar;dawałbym=give:v:c1:dar;dawałabym=give:v:c1:dar;d'+
+        'awałbyś=give:v:c2:dar;dawałabyś=give:v:c2:dar;dawałby=give:v:c3:'+
+        'dar;dawałaby=give:v:c3:dar;dawałoby=give:v:c3:dar;dawalibyśmy=give'+
+        ':v:c4:dar;',
+    'dawałybyśmy=give:v:c4:dar;dawalibyście=give:v:c5:dar;dawałybyście=gi'+
+        've:v:c5:dar;dawaliby=give:v:c6:dar;dawałyby=give:v:c6:dar;dawałeś='+
+        'give:v:i2:dar;dawałaś=give:v:i2:dar;dawaliśmy=give:v:i4:dar;',
+    'dawałyśmy=give:v:i4:dar;dawaliście=give:v:i5:dar;dawałyście=give:v:i'+
+        '5:dar;sprzedawać=sell:v:I;sprzedaję=sell:v:p1;sprzedajesz=sell:v:p2'+
+        ';sprzedaje=sell:v:p3;sprzedajemy=sell:v:p4;sprzedajecie=sell:v:p5;spr'+
+        'zedają=sell:v:p6;',
+    'sprzedawał=sell:v:i3;sprzedawała=sell:v:i3;sprzedawało=sell:v:i3;sprze'+
+        'dawali=sell:v:i6;sprzedawały=sell:v:i6;sprzedawałem=sell:v:i1;sprze'+
+        'dawałam=sell:v:i1;sprzedawałbym=sell:v:c1;sprzedawałabym=sell:v:c1'+
+        ';',
+    'sprzedawałbyś=sell:v:c2;sprzedawałabyś=sell:v:c2;sprzedawałby=sell:v'+
+        ':c3;sprzedawałaby=sell:v:c3;sprzedawałoby=sell:v:c3;sprzedawalibyś'+
+        'my=sell:v:c4;sprzedawałybyśmy=sell:v:c4;sprzedawalibyście=sell:v:c'+
+        '5;',
+    'sprzedawałybyście=sell:v:c5;sprzedawaliby=sell:v:c6;sprzedawałyby=sell'+
+        ':v:c6;sprzedawałeś=sell:v:i2;sprzedawałaś=sell:v:i2;sprzedawaliś'+
+        'my=sell:v:i4;sprzedawałyśmy=sell:v:i4;sprzedawaliście=sell:v:i5;',
+    'sprzedawałyście=sell:v:i5;pisać=write:v:I;piszę=write:v:p1;piszesz=wr'+
+        'ite:v:p2;pisze=write:v:p3;piszemy=write:v:p4;piszecie=write:v:p5;pisz'+
+        'ą=write:v:p6;pisz=write:v:M2;pisał=write:v:i3;pisała=write:v:i3;pi'+
+        'sało=write:v:i3;',
+    'pisali=write:v:i6;pisały=write:v:i6;pisałem=write:v:i1;pisałam=write:v'+
+        ':i1;pisałbym=write:v:c1;pisałabym=write:v:c1;pisałbyś=write:v:c2;'+
+        'pisałabyś=write:v:c2;pisałby=write:v:c3;pisałaby=write:v:c3;pisa'+
+        'łoby=write:v:c3;',
+    'pisalibyśmy=write:v:c4;pisałybyśmy=write:v:c4;pisalibyście=write:v:c5'+
+        ';pisałybyście=write:v:c5;pisaliby=write:v:c6;pisałyby=write:v:c6;p'+
+        'isałeś=write:v:i2;pisałaś=write:v:i2;pisaliśmy=write:v:i4;pisał'+
+        'yśmy=write:v:i4;',
+    'pisaliście=write:v:i5;pisałyście=write:v:i5;skakać=jump:v:I;skaczę=j'+
+        'ump:v:p1;skaczesz=jump:v:p2;skacze=jump:v:p3;skaczemy=jump:v:p4;skacz'+
+        'ecie=jump:v:p5;skaczą=jump:v:p6;skacz=jump:v:M2;skakał=jump:v:i3;sk'+
+        'akała=jump:v:i3;',
+    'skakało=jump:v:i3;skakali=jump:v:i6;skakały=jump:v:i6;skakałem=jump:v:'+
+        'i1;skakałam=jump:v:i1;skakałbym=jump:v:c1;skakałabym=jump:v:c1;ska'+
+        'kałbyś=jump:v:c2;skakałabyś=jump:v:c2;skakałby=jump:v:c3;skakał'+
+        'aby=jump:v:c3;',
+    'skakałoby=jump:v:c3;skakalibyśmy=jump:v:c4;skakałybyśmy=jump:v:c4;ska'+
+        'kalibyście=jump:v:c5;skakałybyście=jump:v:c5;skakaliby=jump:v:c6;s'+
+        'kakałyby=jump:v:c6;skakałeś=jump:v:i2;skakałaś=jump:v:i2;skakali'+
+        'śmy=jump:v:i4;',
+    'skakałyśmy=jump:v:i4;skakaliście=jump:v:i5;skakałyście=jump:v:i5;my'+
+        'ć=wash:v:I;myję=wash:v:p1;myjesz=wash:v:p2;myje=wash:v:p3;myjemy=wa'+
+        'sh:v:p4;myjecie=wash:v:p5;myją=wash:v:p6;myj=wash:v:M2;mył=wash:v:i'+
+        '3;myła=wash:v:i3;',
+    'myło=wash:v:i3;myli=wash:v:i6;myły=wash:v:i6;myłem=wash:v:i1;myłam=wa'+
+        'sh:v:i1;myłbym=wash:v:c1;myłabym=wash:v:c1;myłbyś=wash:v:c2;myła'+
+        'byś=wash:v:c2;myłby=wash:v:c3;myłaby=wash:v:c3;myłoby=wash:v:c3;',
+    'mylibyśmy=wash:v:c4;myłybyśmy=wash:v:c4;mylibyście=wash:v:c5;myłyby'+
+        'ście=wash:v:c5;myliby=wash:v:c6;myłyby=wash:v:c6;myłeś=wash:v:i2;'+
+        'myłaś=wash:v:i2;myliśmy=wash:v:i4;myłyśmy=wash:v:i4;myliście=wa'+
+        'sh:v:i5;',
+    'myłyście=wash:v:i5;płakać=cry:v:I;płaczę=cry:v:p1;płaczesz=cry:v:p'+
+        '2;płacze=cry:v:p3;płaczemy=cry:v:p4;płaczecie=cry:v:p5;płaczą=cr'+
+        'y:v:p6;płacz=cry:v:M2;płakał=cry:v:i3;płakała=cry:v:i3;płakało'+
+        '=cry:v:i3;',
+    'płakali=cry:v:i6;płakały=cry:v:i6;płakałem=cry:v:i1;płakałam=cry:v'+
+        ':i1;płakałbym=cry:v:c1;płakałabym=cry:v:c1;płakałbyś=cry:v:c2;'+
+        'płakałabyś=cry:v:c2;płakałby=cry:v:c3;płakałaby=cry:v:c3;płak'+
+        'ałoby=cry:v:c3;',
+    'płakalibyśmy=cry:v:c4;płakałybyśmy=cry:v:c4;płakalibyście=cry:v:c5'+
+        ';płakałybyście=cry:v:c5;płakaliby=cry:v:c6;płakałyby=cry:v:c6;p'+
+        'łakałeś=cry:v:i2;płakałaś=cry:v:i2;płakaliśmy=cry:v:i4;płaka'+
+        'łyśmy=cry:v:i4;',
+    'płakaliście=cry:v:i5;płakałyście=cry:v:i5;śmiać=laugh:v:I;śmieję'+
+        '=laugh:v:p1;śmiejesz=laugh:v:p2;śmieje=laugh:v:p3;śmiejemy=laugh:v'+
+        ':p4;śmiejecie=laugh:v:p5;śmieją=laugh:v:p6;śmiej=laugh:v:M2;śmia'+
+        'ł=laugh:v:i3;',
+    'śmiała=laugh:v:i3;śmiało=laugh:v:i3;śmiali=laugh:v:i6;śmiały=laugh'+
+        ':v:i6;śmiałem=laugh:v:i1;śmiałam=laugh:v:i1;śmiałbym=laugh:v:c1'+
+        ';śmiałabym=laugh:v:c1;śmiałbyś=laugh:v:c2;śmiałabyś=laugh:v:c'+
+        '2;',
+    'śmiałby=laugh:v:c3;śmiałaby=laugh:v:c3;śmiałoby=laugh:v:c3;śmialib'+
+        'yśmy=laugh:v:c4;śmiałybyśmy=laugh:v:c4;śmialibyście=laugh:v:c5;'+
+        'śmiałybyście=laugh:v:c5;śmialiby=laugh:v:c6;śmiałyby=laugh:v:c6'+
+        ';',
+    'śmiałeś=laugh:v:i2;śmiałaś=laugh:v:i2;śmialiśmy=laugh:v:i4;śmia'+
+        'łyśmy=laugh:v:i4;śmialiście=laugh:v:i5;śmiałyście=laugh:v:i5;w'+
+        'ołać=call:v:I;wołam=call:v:p1;wołasz=call:v:p2;woła=call:v:p3;wo'+
+        'łamy=call:v:p4;',
+    'wołacie=call:v:p5;wołają=call:v:p6;wołaj=call:v:M2;wołał=call:v:i3;'+
+        'wołała=call:v:i3;wołało=call:v:i3;wołali=call:v:i6;wołały=call'+
+        ':v:i6;wołałem=call:v:i1;wołałam=call:v:i1;wołałbym=call:v:c1;',
+    'wołałabym=call:v:c1;wołałbyś=call:v:c2;wołałabyś=call:v:c2;woła'+
+        'łby=call:v:c3;wołałaby=call:v:c3;wołałoby=call:v:c3;wołalibyśm'+
+        'y=call:v:c4;wołałybyśmy=call:v:c4;wołalibyście=call:v:c5;wołał'+
+        'ybyście=call:v:c5;',
+    'wołaliby=call:v:c6;wołałyby=call:v:c6;wołałeś=call:v:i2;wołałaś='+
+        'call:v:i2;wołaliśmy=call:v:i4;wołałyśmy=call:v:i4;wołaliście=c'+
+        'all:v:i5;wołałyście=call:v:i5;potrzebować=need:v:I;potrzebuję=ne'+
+        'ed:v:p1;',
+    'potrzebujesz=need:v:p2;potrzebuje=need:v:p3;potrzebujemy=need:v:p4;potrze'+
+        'bujecie=need:v:p5;potrzebują=need:v:p6;potrzebuj=need:v:M2;potrzebow'+
+        'ał=need:v:i3;potrzebowała=need:v:i3;potrzebowało=need:v:i3;potrzeb'+
+        'owali=need:v:i6;',
+    'potrzebowały=need:v:i6;potrzebowałem=need:v:i1;potrzebowałam=need:v:i1'+
+        ';potrzebowałbym=need:v:c1;potrzebowałabym=need:v:c1;potrzebowałby'+
+        'ś=need:v:c2;potrzebowałabyś=need:v:c2;potrzebowałby=need:v:c3;',
+    'potrzebowałaby=need:v:c3;potrzebowałoby=need:v:c3;potrzebowalibyśmy=ne'+
+        'ed:v:c4;potrzebowałybyśmy=need:v:c4;potrzebowalibyście=need:v:c5;p'+
+        'otrzebowałybyście=need:v:c5;potrzebowaliby=need:v:c6;potrzebowałyb'+
+        'y=need:v:c6;',
+    'potrzebowałeś=need:v:i2;potrzebowałaś=need:v:i2;potrzebowaliśmy=need'+
+        ':v:i4;potrzebowałyśmy=need:v:i4;potrzebowaliście=need:v:i5;potrzeb'+
+        'owałyście=need:v:i5;zapraszać=invite:v:I;zapraszam=invite:v:p1;',
+    'zapraszasz=invite:v:p2;zaprasza=invite:v:p3;zapraszamy=invite:v:p4;zapras'+
+        'zacie=invite:v:p5;zapraszają=invite:v:p6;zapraszaj=invite:v:M2;zapra'+
+        'szał=invite:v:i3;zapraszała=invite:v:i3;zapraszało=invite:v:i3;',
+    'zapraszali=invite:v:i6;zapraszały=invite:v:i6;zapraszałem=invite:v:i1;z'+
+        'apraszałam=invite:v:i1;zapraszałbym=invite:v:c1;zapraszałabym=invi'+
+        'te:v:c1;zapraszałbyś=invite:v:c2;zapraszałabyś=invite:v:c2;zapras'+
+        'załby=invite:v:c3;',
+    'zapraszałaby=invite:v:c3;zapraszałoby=invite:v:c3;zapraszalibyśmy=invi'+
+        'te:v:c4;zapraszałybyśmy=invite:v:c4;zapraszalibyście=invite:v:c5;z'+
+        'apraszałybyście=invite:v:c5;zapraszaliby=invite:v:c6;zapraszałyby='+
+        'invite:v:c6;',
+    'zapraszałeś=invite:v:i2;zapraszałaś=invite:v:i2;zapraszaliśmy=invite'+
+        ':v:i4;zapraszałyśmy=invite:v:i4;zapraszaliście=invite:v:i5;zaprasz'+
+        'ałyście=invite:v:i5;szukać=look_for:v:I;szukam=look_for:v:p1;szuka'+
+        'sz=look_for:v:p2;',
+    'szuka=look_for:v:p3;szukamy=look_for:v:p4;szukacie=look_for:v:p5;szukają'+
+        '=look_for:v:p6;szukaj=look_for:v:M2;szukał=look_for:v:i3;szukała=lo'+
+        'ok_for:v:i3;szukało=look_for:v:i3;szukali=look_for:v:i6;szukały=loo'+
+        'k_for:v:i6;',
+    'szukałem=look_for:v:i1;szukałam=look_for:v:i1;szukałbym=look_for:v:c1;'+
+        'szukałabym=look_for:v:c1;szukałbyś=look_for:v:c2;szukałabyś=look'+
+        '_for:v:c2;szukałby=look_for:v:c3;szukałaby=look_for:v:c3;szukałoby'+
+        '=look_for:v:c3;',
+    'szukalibyśmy=look_for:v:c4;szukałybyśmy=look_for:v:c4;szukalibyście=l'+
+        'ook_for:v:c5;szukałybyście=look_for:v:c5;szukaliby=look_for:v:c6;sz'+
+        'ukałyby=look_for:v:c6;szukałeś=look_for:v:i2;szukałaś=look_for:v'+
+        ':i2;',
+    'szukaliśmy=look_for:v:i4;szukałyśmy=look_for:v:i4;szukaliście=look_fo'+
+        'r:v:i5;szukałyście=look_for:v:i5;czuć=feel:v:I;czuję=feel:v:p1;cz'+
+        'ujesz=feel:v:p2;czuje=feel:v:p3;czujemy=feel:v:p4;czujecie=feel:v:p5;'+
+        'czują=feel:v:p6;',
+    'czuj=feel:v:M2;czuł=feel:v:i3;czuła=feel:v:i3;czuło=feel:v:i3;czuli=fe'+
+        'el:v:i6;czuły=feel:v:i6;czułem=feel:v:i1;czułam=feel:v:i1;czułbym'+
+        '=feel:v:c1;czułabym=feel:v:c1;czułbyś=feel:v:c2;czułabyś=feel:v:'+
+        'c2;',
+    'czułby=feel:v:c3;czułaby=feel:v:c3;czułoby=feel:v:c3;czulibyśmy=feel:'+
+        'v:c4;czułybyśmy=feel:v:c4;czulibyście=feel:v:c5;czułybyście=feel'+
+        ':v:c5;czuliby=feel:v:c6;czułyby=feel:v:c6;czułeś=feel:v:i2;czuła'+
+        'ś=feel:v:i2;',
+    'czuliśmy=feel:v:i4;czułyśmy=feel:v:i4;czuliście=feel:v:i5;czułyście'+
+        '=feel:v:i5;próbować=try:v:I;próbuję=try:v:p1;próbujesz=try:v:p2;'+
+        'próbuje=try:v:p3;próbujemy=try:v:p4;próbujecie=try:v:p5;próbują='+
+        'try:v:p6;',
+    'próbuj=try:v:M2;próbował=try:v:i3;próbowała=try:v:i3;próbowało=try'+
+        ':v:i3;próbowali=try:v:i6;próbowały=try:v:i6;próbowałem=try:v:i1;'+
+        'próbowałam=try:v:i1;próbowałbym=try:v:c1;próbowałabym=try:v:c1;',
+    'próbowałbyś=try:v:c2;próbowałabyś=try:v:c2;próbowałby=try:v:c3;pr'+
+        'óbowałaby=try:v:c3;próbowałoby=try:v:c3;próbowalibyśmy=try:v:c4'+
+        ';próbowałybyśmy=try:v:c4;próbowalibyście=try:v:c5;próbowałyby'+
+        'ście=try:v:c5;',
+    'próbowaliby=try:v:c6;próbowałyby=try:v:c6;próbowałeś=try:v:i2;prób'+
+        'owałaś=try:v:i2;próbowaliśmy=try:v:i4;próbowałyśmy=try:v:i4;pr'+
+        'óbowaliście=try:v:i5;próbowałyście=try:v:i5;studiować=study:v:I'+
+        ';',
+    'studiuję=study:v:p1;studiujesz=study:v:p2;studiuje=study:v:p3;studiujemy'+
+        '=study:v:p4;studiujecie=study:v:p5;studiują=study:v:p6;studiuj=study'+
+        ':v:M2;studiował=study:v:i3;studiowała=study:v:i3;studiowało=study:'+
+        'v:i3;',
+    'studiowali=study:v:i6;studiowały=study:v:i6;studiowałem=study:v:i1;stud'+
+        'iowałam=study:v:i1;studiowałbym=study:v:c1;studiowałabym=study:v:c'+
+        '1;studiowałbyś=study:v:c2;studiowałabyś=study:v:c2;studiowałby=s'+
+        'tudy:v:c3;',
+    'studiowałaby=study:v:c3;studiowałoby=study:v:c3;studiowalibyśmy=study:'+
+        'v:c4;studiowałybyśmy=study:v:c4;studiowalibyście=study:v:c5;studio'+
+        'wałybyście=study:v:c5;studiowaliby=study:v:c6;studiowałyby=study:v'+
+        ':c6;',
+    'studiowałeś=study:v:i2;studiowałaś=study:v:i2;studiowaliśmy=study:v:'+
+        'i4;studiowałyśmy=study:v:i4;studiowaliście=study:v:i5;studiowały'+
+        'ście=study:v:i5;gotować=cook:v:I;gotuję=cook:v:p1;gotujesz=cook:v:'+
+        'p2;gotuje=cook:v:p3;',
+    'gotujemy=cook:v:p4;gotujecie=cook:v:p5;gotują=cook:v:p6;gotuj=cook:v:M2;'+
+        'gotował=cook:v:i3;gotowała=cook:v:i3;gotowało=cook:v:i3;gotowali=c'+
+        'ook:v:i6;gotowały=cook:v:i6;gotowałem=cook:v:i1;gotowałam=cook:v:i'+
+        '1;',
+    'gotowałbym=cook:v:c1;gotowałabym=cook:v:c1;gotowałbyś=cook:v:c2;gotow'+
+        'ałabyś=cook:v:c2;gotowałby=cook:v:c3;gotowałaby=cook:v:c3;gotowa'+
+        'łoby=cook:v:c3;gotowalibyśmy=cook:v:c4;gotowałybyśmy=cook:v:c4;',
+    'gotowalibyście=cook:v:c5;gotowałybyście=cook:v:c5;gotowaliby=cook:v:c6'+
+        ';gotowałyby=cook:v:c6;gotowałeś=cook:v:i2;gotowałaś=cook:v:i2;go'+
+        'towaliśmy=cook:v:i4;gotowałyśmy=cook:v:i4;gotowaliście=cook:v:i5;',
+    'gotowałyście=cook:v:i5;otworzyć=open:v:I;otworzę=open:v:f1;otworzysz='+
+        'open:v:f2;otworzy=open:v:f3;otworzymy=open:v:f4;otworzycie=open:v:f5;'+
+        'otworzą=open:v:f6;otwórz=open:v:M2;otworzył=open:v:i3;otworzyła=o'+
+        'pen:v:i3;',
+    'otworzyło=open:v:i3;otworzyli=open:v:i6;otworzyły=open:v:i6;otworzyłem'+
+        '=open:v:i1;otworzyłam=open:v:i1;otworzyłeś=open:v:i2;otworzyłaś='+
+        'open:v:i2;otworzyliśmy=open:v:i4;otworzyłyśmy=open:v:i4;otworzyli'+
+        'ście=open:v:i5;',
+    'otworzyłyście=open:v:i5;zamknąć=close:v:I;zamknę=close:v:f1;zamknies'+
+        'z=close:v:f2;zamknie=close:v:f3;zamkniemy=close:v:f4;zamkniecie=close'+
+        ':v:f5;zamkną=close:v:f6;zamknij=close:v:M2;zamknął=close:v:i3;zamk'+
+        'nęła=close:v:i3;',
+    'zamknęło=close:v:i3;zamknęli=close:v:i6;zamknęły=close:v:i6;zamkną'+
+        'łem=close:v:i1;zamknęłam=close:v:i1;zamknąłeś=close:v:i2;zamkn'+
+        'ęłaś=close:v:i2;zamknęliśmy=close:v:i4;zamknęłyśmy=close:v:i4'+
+        ';',
+    'zamknęliście=close:v:i5;zamknęłyście=close:v:i5;zrobić=do:v:I:hacer'+
+        ';zrobię=do:v:f1:hacer;zrobisz=do:v:f2:hacer;zrobi=do:v:f3:hacer;zrob'+
+        'imy=do:v:f4:hacer;zrobicie=do:v:f5:hacer;zrobią=do:v:f6:hacer;zrób='+
+        'do:v:M2:hacer;',
+    'zrobił=do:v:i3:hacer;zrobiła=do:v:i3:hacer;zrobiło=do:v:i3:hacer;zrobi'+
+        'li=do:v:i6:hacer;zrobiły=do:v:i6:hacer;zrobiłem=do:v:i1:hacer;zrobi'+
+        'łam=do:v:i1:hacer;zrobiłeś=do:v:i2:hacer;zrobiłaś=do:v:i2:hacer;',
+    'zrobiliśmy=do:v:i4:hacer;zrobiłyśmy=do:v:i4:hacer;zrobiliście=do:v:i5'+
+        ':hacer;zrobiłyście=do:v:i5:hacer;napisać=write:v:I;napiszę=write:'+
+        'v:f1;napiszesz=write:v:f2;napisze=write:v:f3;napiszemy=write:v:f4;nap'+
+        'iszecie=write:v:f5;',
+    'napiszą=write:v:f6;napisz=write:v:M2;napisał=write:v:i3;napisała=write'+
+        ':v:i3;napisało=write:v:i3;napisali=write:v:i6;napisały=write:v:i6;n'+
+        'apisałem=write:v:i1;napisałam=write:v:i1;napisałeś=write:v:i2;',
+    'napisałaś=write:v:i2;napisaliśmy=write:v:i4;napisałyśmy=write:v:i4;n'+
+        'apisaliście=write:v:i5;napisałyście=write:v:i5;przeczytać=read:v:'+
+        'I;przeczytam=read:v:f1;przeczytasz=read:v:f2;przeczyta=read:v:f3;prze'+
+        'czytamy=read:v:f4;',
+    'przeczytacie=read:v:f5;przeczytają=read:v:f6;przeczytaj=read:v:M2;przecz'+
+        'ytał=read:v:i3;przeczytała=read:v:i3;przeczytało=read:v:i3;przeczy'+
+        'tali=read:v:i6;przeczytały=read:v:i6;przeczytałem=read:v:i1;przeczy'+
+        'tałam=read:v:i1;',
+    'przeczytałeś=read:v:i2;przeczytałaś=read:v:i2;przeczytaliśmy=read:v:'+
+        'i4;przeczytałyśmy=read:v:i4;przeczytaliście=read:v:i5;przeczytały'+
+        'ście=read:v:i5;powiedzieć=say:v:I:decir;powiem=say:v:f1:decir;powie'+
+        'sz=say:v:f2:decir;',
+    'powie=say:v:f3:decir;powiemy=say:v:f4:decir;powiecie=say:v:f5:decir;powie'+
+        'dzą=say:v:f6:decir;powiedz=say:v:M2:decir;powiedział=say:v:i3:decir'+
+        ';powiedziała=say:v:i3:decir;powiedziało=say:v:i3:decir;powiedzieli='+
+        'say:v:i6:decir;',
+    'powiedziały=say:v:i6:decir;powiedziałem=say:v:i1:decir;powiedziałam=sa'+
+        'y:v:i1:decir;powiedziałeś=say:v:i2:decir;powiedziałaś=say:v:i2:de'+
+        'cir;powiedzieliśmy=say:v:i4:decir;powiedziałyśmy=say:v:i4:decir;',
+    'powiedzieliście=say:v:i5:decir;powiedziałyście=say:v:i5:decir;zobaczy'+
+        'ć=see:v:I:ver;zobaczę=see:v:f1:ver;zobaczysz=see:v:f2:ver;zobaczy=s'+
+        'ee:v:f3:ver;zobaczymy=see:v:f4:ver;zobaczycie=see:v:f5:ver;zobaczą=s'+
+        'ee:v:f6:ver;',
+    'zobacz=see:v:M2:ver;zobaczył=see:v:i3:ver;zobaczyła=see:v:i3:ver;zobacz'+
+        'yło=see:v:i3:ver;zobaczyli=see:v:i6:ver;zobaczyły=see:v:i6:ver;zoba'+
+        'czyłem=see:v:i1:ver;zobaczyłam=see:v:i1:ver;zobaczyłeś=see:v:i2:v'+
+        'er;',
+    'zobaczyłaś=see:v:i2:ver;zobaczyliśmy=see:v:i4:ver;zobaczyłyśmy=see:v'+
+        ':i4:ver;zobaczyliście=see:v:i5:ver;zobaczyłyście=see:v:i5:ver;zje'+
+        'ść=eat:v:I;zjem=eat:v:f1;zjesz=eat:v:f2;zje=eat:v:f3;zjemy=eat:v:f4'+
+        ';zjecie=eat:v:f5;',
+    'zjedzą=eat:v:f6;zjedz=eat:v:M2;zjadł=eat:v:i3;zjadła=eat:v:i3;zjadło='+
+        'eat:v:i3;zjedli=eat:v:i6;zjadły=eat:v:i6;zjadłem=eat:v:i1;zjadłam='+
+        'eat:v:i1;zjadłeś=eat:v:i2;zjadłaś=eat:v:i2;zjedliśmy=eat:v:i4;zj'+
+        'adłyśmy=eat:v:i4;',
+    'zjedliście=eat:v:i5;zjadłyście=eat:v:i5;wypić=drink:v:I;wypiję=drink'+
+        ':v:f1;wypijesz=drink:v:f2;wypije=drink:v:f3;wypijemy=drink:v:f4;wypij'+
+        'ecie=drink:v:f5;wypiją=drink:v:f6;wypij=drink:v:M2;wypił=drink:v:i3'+
+        ';',
+    'wypiła=drink:v:i3;wypiło=drink:v:i3;wypili=drink:v:i6;wypiły=drink:v:i'+
+        '6;wypiłem=drink:v:i1;wypiłam=drink:v:i1;wypiłeś=drink:v:i2;wypił'+
+        'aś=drink:v:i2;wypiliśmy=drink:v:i4;wypiłyśmy=drink:v:i4;wypiliśc'+
+        'ie=drink:v:i5;',
+    'wypiłyście=drink:v:i5;zapomnieć=forget:v:I;zapomnę=forget:v:f1;zapomn'+
+        'isz=forget:v:f2;zapomni=forget:v:f3;zapomnimy=forget:v:f4;zapomnicie='+
+        'forget:v:f5;zapomną=forget:v:f6;zapomniał=forget:v:i3;zapomniała=f'+
+        'orget:v:i3;',
+    'zapomniało=forget:v:i3;zapomnieli=forget:v:i6;zapomniały=forget:v:i6;za'+
+        'pomniałem=forget:v:i1;zapomniałam=forget:v:i1;zapomniałeś=forget:'+
+        'v:i2;zapomniałaś=forget:v:i2;zapomnieliśmy=forget:v:i4;zapomniały'+
+        'śmy=forget:v:i4;',
+    'zapomnieliście=forget:v:i5;zapomniałyście=forget:v:i5;dać=give:v:I:da'+
+        'r;dam=give:v:f1:dar;dasz=give:v:f2:dar;da=give:v:f3:dar;damy=give:v:f'+
+        '4:dar;dacie=give:v:f5:dar;dadzą=give:v:f6:dar;dał=give:v:i3:dar;da'+
+        'ła=give:v:i3:dar;',
+    'dało=give:v:i3:dar;dali=give:v:i6:dar;dały=give:v:i6:dar;dałem=give:v:'+
+        'i1:dar;dałam=give:v:i1:dar;dałeś=give:v:i2:dar;dałaś=give:v:i2:d'+
+        'ar;daliśmy=give:v:i4:dar;dałyśmy=give:v:i4:dar;daliście=give:v:i5'+
+        ':dar;',
+    'dałyście=give:v:i5:dar;wziąć=take:v:I;wezmę=take:v:f1;weźmiesz=take'+
+        ':v:f2;weźmie=take:v:f3;weźmiemy=take:v:f4;weźmiecie=take:v:f5;wezm'+
+        'ą=take:v:f6;weź=take:v:M2;wziął=take:v:i3;wzięła=take:v:i3;wzi'+
+        'ęło=take:v:i3;',
+    'wzięli=take:v:i6;wzięły=take:v:i6;wziąłem=take:v:i1;wzięłam=take:v'+
+        ':i1;wziąłeś=take:v:i2;wzięłaś=take:v:i2;wzięliśmy=take:v:i4;w'+
+        'zięłyśmy=take:v:i4;wzięliście=take:v:i5;wzięłyście=take:v:i5;',
+    'przyjść=come:v:I:venir;przyjdę=come:v:f1:venir;przyjdziesz=come:v:f2:v'+
+        'enir;przyjdzie=come:v:f3:venir;przyjdziemy=come:v:f4:venir;przyjdziec'+
+        'ie=come:v:f5:venir;przyjdą=come:v:f6:venir;przyjdź=come:v:M2:venir;',
+    'przyszedł=come:v:i3:venir;przyszła=come:v:i3:venir;przyszło=come:v:i3:'+
+        'venir;przyszli=come:v:i6:venir;przyszły=come:v:i6:venir;przyszedłem'+
+        '=come:v:i1:venir;przyszłam=come:v:i1:venir;przyszedłeś=come:v:i2:v'+
+        'enir;',
+    'przyszłaś=come:v:i2:venir;przyszliśmy=come:v:i4:venir;przyszłyśmy=co'+
+        'me:v:i4:venir;przyszliście=come:v:i5:venir;przyszłyście=come:v:i5:'+
+        'venir;pójść=go:v:I:ir;pójdę=go:v:f1:ir;pójdziesz=go:v:f2:ir;pó'+
+        'jdzie=go:v:f3:ir;',
+    'pójdziemy=go:v:f4:ir;pójdziecie=go:v:f5:ir;pójdą=go:v:f6:ir;idź=go:v'+
+        ':M2:ir;poszedł=go:v:i3:ir;poszła=go:v:i3:ir;poszło=go:v:i3:ir;posz'+
+        'li=go:v:i6:ir;poszły=go:v:i6:ir;poszedłem=go:v:i1:ir;poszłam=go:v:'+
+        'i1:ir;',
+    'poszedłeś=go:v:i2:ir;poszłaś=go:v:i2:ir;poszliśmy=go:v:i4:ir;poszły'+
+        'śmy=go:v:i4:ir;poszliście=go:v:i5:ir;poszłyście=go:v:i5:ir;przyje'+
+        'chać=arrive:v:I;przyjadę=arrive:v:f1;przyjedziesz=arrive:v:f2;przyj'+
+        'edzie=arrive:v:f3;',
+    'przyjedziemy=arrive:v:f4;przyjedziecie=arrive:v:f5;przyjadą=arrive:v:f6;'+
+        'przyjedź=arrive:v:M2;przyjechał=arrive:v:i3;przyjechała=arrive:v:i'+
+        '3;przyjechało=arrive:v:i3;przyjechali=arrive:v:i6;przyjechały=arriv'+
+        'e:v:i6;',
+    'przyjechałem=arrive:v:i1;przyjechałam=arrive:v:i1;przyjechałeś=arrive'+
+        ':v:i2;przyjechałaś=arrive:v:i2;przyjechaliśmy=arrive:v:i4;przyjech'+
+        'ałyśmy=arrive:v:i4;przyjechaliście=arrive:v:i5;przyjechałyście=a'+
+        'rrive:v:i5;',
+    'pomóc=help:v:I;pomogę=help:v:f1;pomożesz=help:v:f2;pomoże=help:v:f3;p'+
+        'omożemy=help:v:f4;pomożecie=help:v:f5;pomogą=help:v:f6;pomóż=hel'+
+        'p:v:M2;pomógł=help:v:i3;pomogła=help:v:i3;pomogło=help:v:i3;pomog'+
+        'li=help:v:i6;',
+    'pomogły=help:v:i6;pomógłem=help:v:i1;pomogłam=help:v:i1;pomógłeś=h'+
+        'elp:v:i2;pomogłaś=help:v:i2;pomogliśmy=help:v:i4;pomogłyśmy=help'+
+        ':v:i4;pomogliście=help:v:i5;pomogłyście=help:v:i5;spotkać=meet:v:'+
+        'I;',
+    'spotkam=meet:v:f1;spotkasz=meet:v:f2;spotka=meet:v:f3;spotkamy=meet:v:f4;'+
+        'spotkacie=meet:v:f5;spotkają=meet:v:f6;spotkaj=meet:v:M2;spotkał=me'+
+        'et:v:i3;spotkała=meet:v:i3;spotkało=meet:v:i3;spotkali=meet:v:i6;sp'+
+        'otkały=meet:v:i6;',
+    'spotkałem=meet:v:i1;spotkałam=meet:v:i1;spotkałeś=meet:v:i2;spotkała'+
+        'ś=meet:v:i2;spotkaliśmy=meet:v:i4;spotkałyśmy=meet:v:i4;spotkali'+
+        'ście=meet:v:i5;spotkałyście=meet:v:i5;brać=take:v:I;biorę=take:v'+
+        ':p1;',
+    'bierzesz=take:v:p2;bierze=take:v:p3;bierzemy=take:v:p4;bierzecie=take:v:p'+
+        '5;biorą=take:v:p6;bierz=take:v:M2;brał=take:v:i3;brała=take:v:i3;b'+
+        'rało=take:v:i3;brali=take:v:i6;brały=take:v:i6;brałem=take:v:i1;br'+
+        'ałam=take:v:i1;',
+    'brałbym=take:v:c1;brałabym=take:v:c1;brałbyś=take:v:c2;brałabyś=tak'+
+        'e:v:c2;brałby=take:v:c3;brałaby=take:v:c3;brałoby=take:v:c3;bralib'+
+        'yśmy=take:v:c4;brałybyśmy=take:v:c4;bralibyście=take:v:c5;brałyb'+
+        'yście=take:v:c5;',
+    'braliby=take:v:c6;brałyby=take:v:c6;brałeś=take:v:i2;brałaś=take:v:i'+
+        '2;braliśmy=take:v:i4;brałyśmy=take:v:i4;braliście=take:v:i5;brał'+
+        'yście=take:v:i5;wiedzieć=know:v:I:saber;wiem=know:v:p1:saber;wiesz='+
+        'know:v:p2:saber;',
+    'wie=know:v:p3:saber;wiemy=know:v:p4:saber;wiecie=know:v:p5:saber;wiedzą='+
+        'know:v:p6:saber;wiedz=know:v:M2:saber;wiedział=know:v:i3:saber;wiedz'+
+        'iała=know:v:i3:saber;wiedziało=know:v:i3:saber;wiedzieli=know:v:i6:'+
+        'saber;',
+    'wiedziały=know:v:i6:saber;wiedziałem=know:v:i1:saber;wiedziałam=know:v'+
+        ':i1:saber;wiedziałbym=know:v:c1:saber;wiedziałabym=know:v:c1:saber;'+
+        'wiedziałbyś=know:v:c2:saber;wiedziałabyś=know:v:c2:saber;',
+    'wiedziałby=know:v:c3:saber;wiedziałaby=know:v:c3:saber;wiedziałoby=kno'+
+        'w:v:c3:saber;wiedzielibyśmy=know:v:c4:saber;wiedziałybyśmy=know:v:'+
+        'c4:saber;wiedzielibyście=know:v:c5:saber;wiedziałybyście=know:v:c5'+
+        ':saber;',
+    'wiedzieliby=know:v:c6:saber;wiedziałyby=know:v:c6:saber;wiedziałeś=kno'+
+        'w:v:i2:saber;wiedziałaś=know:v:i2:saber;wiedzieliśmy=know:v:i4:sab'+
+        'er;wiedziałyśmy=know:v:i4:saber;wiedzieliście=know:v:i5:saber;',
+    'wiedziałyście=know:v:i5:saber;umieć=know_how:v:I:saber;umiem=know_how:'+
+        'v:p1:saber;umiesz=know_how:v:p2:saber;umie=know_how:v:p3:saber;umiemy'+
+        '=know_how:v:p4:saber;umiecie=know_how:v:p5:saber;umieją=know_how:v:p'+
+        '6:saber;',
+    'umiej=know_how:v:M2:saber;umiał=know_how:v:i3:saber;umiała=know_how:v:i'+
+        '3:saber;umiało=know_how:v:i3:saber;umieli=know_how:v:i6:saber;umiał'+
+        'y=know_how:v:i6:saber;umiałem=know_how:v:i1:saber;umiałam=know_how:'+
+        'v:i1:saber;',
+    'umiałbym=know_how:v:c1:saber;umiałabym=know_how:v:c1:saber;umiałbyś=k'+
+        'now_how:v:c2:saber;umiałabyś=know_how:v:c2:saber;umiałby=know_how:'+
+        'v:c3:saber;umiałaby=know_how:v:c3:saber;umiałoby=know_how:v:c3:sabe'+
+        'r;',
+    'umielibyśmy=know_how:v:c4:saber;umiałybyśmy=know_how:v:c4:saber;umieli'+
+        'byście=know_how:v:c5:saber;umiałybyście=know_how:v:c5:saber;umieli'+
+        'by=know_how:v:c6:saber;umiałyby=know_how:v:c6:saber;umiałeś=know_h'+
+        'ow:v:i2:saber;',
+    'umiałaś=know_how:v:i2:saber;umieliśmy=know_how:v:i4:saber;umiałyśmy='+
+        'know_how:v:i4:saber;umieliście=know_how:v:i5:saber;umiałyście=know'+
+        '_how:v:i5:saber;rozumieć=understand:v:I;rozumiem=understand:v:p1;',
+    'rozumiesz=understand:v:p2;rozumie=understand:v:p3;rozumiemy=understand:v:'+
+        'p4;rozumiecie=understand:v:p5;rozumieją=understand:v:p6;rozumiej=und'+
+        'erstand:v:M2;rozumiał=understand:v:i3;rozumiała=understand:v:i3;',
+    'rozumiało=understand:v:i3;rozumieli=understand:v:i6;rozumiały=understan'+
+        'd:v:i6;rozumiałem=understand:v:i1;rozumiałam=understand:v:i1;rozumi'+
+        'ałbym=understand:v:c1;rozumiałabym=understand:v:c1;rozumiałbyś=un'+
+        'derstand:v:c2;',
+    'rozumiałabyś=understand:v:c2;rozumiałby=understand:v:c3;rozumiałaby=u'+
+        'nderstand:v:c3;rozumiałoby=understand:v:c3;rozumielibyśmy=understan'+
+        'd:v:c4;rozumiałybyśmy=understand:v:c4;rozumielibyście=understand:v'+
+        ':c5;',
+    'rozumiałybyście=understand:v:c5;rozumieliby=understand:v:c6;rozumiałyb'+
+        'y=understand:v:c6;rozumiałeś=understand:v:i2;rozumiałaś=understan'+
+        'd:v:i2;rozumieliśmy=understand:v:i4;rozumiałyśmy=understand:v:i4;',
+    'rozumieliście=understand:v:i5;rozumiałyście=understand:v:i5;mieć=have'+
+        ':v:I:tener;mam=have:v:p1:tener;masz=have:v:p2:tener;ma=have:v:p3:tene'+
+        'r;mamy=have:v:p4:tener;macie=have:v:p5:tener;mają=have:v:p6:tener;mi'+
+        'ej=have:v:M2:tener;',
+    'miał=have:v:i3:tener;miała=have:v:i3:tener;miało=have:v:i3:tener;mieli'+
+        '=have:v:i6:tener;miały=have:v:i6:tener;miałem=have:v:i1:tener;miał'+
+        'am=have:v:i1:tener;miałbym=have:v:c1:tener;miałabym=have:v:c1:tener'+
+        ';',
+    'miałbyś=have:v:c2:tener;miałabyś=have:v:c2:tener;miałby=have:v:c3:te'+
+        'ner;miałaby=have:v:c3:tener;miałoby=have:v:c3:tener;mielibyśmy=hav'+
+        'e:v:c4:tener;miałybyśmy=have:v:c4:tener;mielibyście=have:v:c5:tene'+
+        'r;',
+    'miałybyście=have:v:c5:tener;mieliby=have:v:c6:tener;miałyby=have:v:c6:'+
+        'tener;miałeś=have:v:i2:tener;miałaś=have:v:i2:tener;mieliśmy=hav'+
+        'e:v:i4:tener;miałyśmy=have:v:i4:tener;mieliście=have:v:i5:tener;',
+    'miałyście=have:v:i5:tener;być=be:v:I:ser;jestem=be:v:p1:ser;jesteś=be'+
+        ':v:p2:ser;jest=be:v:p3:ser;jesteśmy=be:v:p4:ser;jesteście=be:v:p5:s'+
+        'er;są=be:v:p6:ser;bądź=be:v:M2:ser;był=be:v:i3:ser;była=be:v:i3:'+
+        'ser;',
+    'było=be:v:i3:ser;byli=be:v:i6:ser;były=be:v:i6:ser;byłem=be:v:i1:ser;b'+
+        'yłam=be:v:i1:ser;byłbym=be:v:c1:ser;byłabym=be:v:c1:ser;byłbyś=b'+
+        'e:v:c2:ser;byłabyś=be:v:c2:ser;byłby=be:v:c3:ser;byłaby=be:v:c3:s'+
+        'er;',
+    'byłoby=be:v:c3:ser;bylibyśmy=be:v:c4:ser;byłybyśmy=be:v:c4:ser;byliby'+
+        'ście=be:v:c5:ser;byłybyście=be:v:c5:ser;byliby=be:v:c6:ser;byłyby'+
+        '=be:v:c6:ser;byłeś=be:v:i2:ser;byłaś=be:v:i2:ser;byliśmy=be:v:i4'+
+        ':ser;',
+    'byłyśmy=be:v:i4:ser;byliście=be:v:i5:ser;byłyście=be:v:i5:ser;móc=c'+
+        'an:v:I:poder;mogę=can:v:p1:poder;możesz=can:v:p2:poder;może=can:v:'+
+        'p3:poder;możemy=can:v:p4:poder;możecie=can:v:p5:poder;mogą=can:v:p'+
+        '6:poder;',
+    'mógł=can:v:i3:poder;mogła=can:v:i3:poder;mogło=can:v:i3:poder;mogli=c'+
+        'an:v:i6:poder;mogły=can:v:i6:poder;mógłem=can:v:i1:poder;mogłam=c'+
+        'an:v:i1:poder;mógłbym=can:v:c1:poder;mogłabym=can:v:c1:poder;',
+    'mógłbyś=can:v:c2:poder;mogłabyś=can:v:c2:poder;mógłby=can:v:c3:pod'+
+        'er;mogłaby=can:v:c3:poder;mogłoby=can:v:c3:poder;moglibyśmy=can:v:'+
+        'c4:poder;mogłybyśmy=can:v:c4:poder;moglibyście=can:v:c5:poder;',
+    'mogłybyście=can:v:c5:poder;mogliby=can:v:c6:poder;mogłyby=can:v:c6:pod'+
+        'er;mógłeś=can:v:i2:poder;mogłaś=can:v:i2:poder;mogliśmy=can:v:i'+
+        '4:poder;mogłyśmy=can:v:i4:poder;mogliście=can:v:i5:poder;mogłyśc'+
+        'ie=can:v:i5:poder;',
+    'chcieć=want:v:I:querer;chcę=want:v:p1:querer;chcesz=want:v:p2:querer;ch'+
+        'ce=want:v:p3:querer;chcemy=want:v:p4:querer;chcecie=want:v:p5:querer;'+
+        'chcą=want:v:p6:querer;chciej=want:v:M2:querer;chciał=want:v:i3:quer'+
+        'er;',
+    'chciała=want:v:i3:querer;chciało=want:v:i3:querer;chcieli=want:v:i6:que'+
+        'rer;chciały=want:v:i6:querer;chciałem=want:v:i1:querer;chciałam=wa'+
+        'nt:v:i1:querer;chciałbym=want:v:c1:querer;chciałabym=want:v:c1:quer'+
+        'er;',
+    'chciałbyś=want:v:c2:querer;chciałabyś=want:v:c2:querer;chciałby=want'+
+        ':v:c3:querer;chciałaby=want:v:c3:querer;chciałoby=want:v:c3:querer;'+
+        'chcielibyśmy=want:v:c4:querer;chciałybyśmy=want:v:c4:querer;',
+    'chcielibyście=want:v:c5:querer;chciałybyście=want:v:c5:querer;chcielib'+
+        'y=want:v:c6:querer;chciałyby=want:v:c6:querer;chciałeś=want:v:i2:q'+
+        'uerer;chciałaś=want:v:i2:querer;chcieliśmy=want:v:i4:querer;',
+    'chciałyśmy=want:v:i4:querer;chcieliście=want:v:i5:querer;chciałyście'+
+        '=want:v:i5:querer;musieć=must:v:I:deber;muszę=must:v:p1:deber;musis'+
+        'z=must:v:p2:deber;musi=must:v:p3:deber;musimy=must:v:p4:deber;musicie'+
+        '=must:v:p5:deber;',
+    'muszą=must:v:p6:deber;musiał=must:v:i3:deber;musiała=must:v:i3:deber;m'+
+        'usiało=must:v:i3:deber;musieli=must:v:i6:deber;musiały=must:v:i6:de'+
+        'ber;musiałem=must:v:i1:deber;musiałam=must:v:i1:deber;musiałbym=mu'+
+        'st:v:c1:deber;',
+    'musiałabym=must:v:c1:deber;musiałbyś=must:v:c2:deber;musiałabyś=must'+
+        ':v:c2:deber;musiałby=must:v:c3:deber;musiałaby=must:v:c3:deber;musi'+
+        'ałoby=must:v:c3:deber;musielibyśmy=must:v:c4:deber;musiałybyśmy=m'+
+        'ust:v:c4:deber;',
+    'musielibyście=must:v:c5:deber;musiałybyście=must:v:c5:deber;musieliby='+
+        'must:v:c6:deber;musiałyby=must:v:c6:deber;musiałeś=must:v:i2:deber'+
+        ';musiałaś=must:v:i2:deber;musieliśmy=must:v:i4:deber;musiałyśmy='+
+        'must:v:i4:deber;',
+    'musieliście=must:v:i5:deber;musiałyście=must:v:i5:deber;iść=go:v:I:i'+
+        'r;idę=go:v:p1:ir;idziesz=go:v:p2:ir;idzie=go:v:p3:ir;idziemy=go:v:p4'+
+        ':ir;idziecie=go:v:p5:ir;idą=go:v:p6:ir;szedł=go:v:i3:ir;szła=go:v:'+
+        'i3:ir;',
+    'szło=go:v:i3:ir;szli=go:v:i6:ir;szły=go:v:i6:ir;szedłem=go:v:i1:ir;sz'+
+        'łam=go:v:i1:ir;szedłbym=go:v:c1:ir;szłabym=go:v:c1:ir;szedłbyś=g'+
+        'o:v:c2:ir;szłabyś=go:v:c2:ir;szedłby=go:v:c3:ir;szłaby=go:v:c3:ir'+
+        ';szłoby=go:v:c3:ir;',
+    'szlibyśmy=go:v:c4:ir;szłybyśmy=go:v:c4:ir;szlibyście=go:v:c5:ir;szły'+
+        'byście=go:v:c5:ir;szliby=go:v:c6:ir;szłyby=go:v:c6:ir;szedłeś=go:'+
+        'v:i2:ir;szłaś=go:v:i2:ir;szliśmy=go:v:i4:ir;szłyśmy=go:v:i4:ir;',
+    'szliście=go:v:i5:ir;szłyście=go:v:i5:ir;jechać=go:v:I:ir;jadę=go:v:p'+
+        '1:ir;jedziesz=go:v:p2:ir;jedzie=go:v:p3:ir;jedziemy=go:v:p4:ir;jedzie'+
+        'cie=go:v:p5:ir;jadą=go:v:p6:ir;jedź=go:v:M2:ir;jechał=go:v:i3:ir;j'+
+        'echała=go:v:i3:ir;',
+    'jechało=go:v:i3:ir;jechali=go:v:i6:ir;jechały=go:v:i6:ir;jechałem=go:v'+
+        ':i1:ir;jechałam=go:v:i1:ir;jechałbym=go:v:c1:ir;jechałabym=go:v:c1'+
+        ':ir;jechałbyś=go:v:c2:ir;jechałabyś=go:v:c2:ir;jechałby=go:v:c3:'+
+        'ir;',
+    'jechałaby=go:v:c3:ir;jechałoby=go:v:c3:ir;jechalibyśmy=go:v:c4:ir;jech'+
+        'ałybyśmy=go:v:c4:ir;jechalibyście=go:v:c5:ir;jechałybyście=go:v:'+
+        'c5:ir;jechaliby=go:v:c6:ir;jechałyby=go:v:c6:ir;jechałeś=go:v:i2:i'+
+        'r;',
+    'jechałaś=go:v:i2:ir;jechaliśmy=go:v:i4:ir;jechałyśmy=go:v:i4:ir;jech'+
+        'aliście=go:v:i5:ir;jechałyście=go:v:i5:ir;jeść=eat:v:I;jem=eat:v'+
+        ':p1;jesz=eat:v:p2;je=eat:v:p3;jemy=eat:v:p4;jecie=eat:v:p5;jedzą=eat'+
+        ':v:p6;',
+    'jedz=eat:v:M2;jadł=eat:v:i3;jadła=eat:v:i3;jadło=eat:v:i3;jedli=eat:v:'+
+        'i6;jadły=eat:v:i6;jadłem=eat:v:i1;jadłam=eat:v:i1;jadłbym=eat:v:c'+
+        '1;jadłabym=eat:v:c1;jadłbyś=eat:v:c2;jadłabyś=eat:v:c2;jadłby=e'+
+        'at:v:c3;',
+    'jadłaby=eat:v:c3;jadłoby=eat:v:c3;jedlibyśmy=eat:v:c4;jadłybyśmy=eat'+
+        ':v:c4;jedlibyście=eat:v:c5;jadłybyście=eat:v:c5;jedliby=eat:v:c6;j'+
+        'adłyby=eat:v:c6;jadłeś=eat:v:i2;jadłaś=eat:v:i2;jedliśmy=eat:v:'+
+        'i4;',
+    'jadłyśmy=eat:v:i4;jedliście=eat:v:i5;jadłyście=eat:v:i5;pić=drink:v'+
+        ':I;piję=drink:v:p1;pijesz=drink:v:p2;pije=drink:v:p3;pijemy=drink:v:'+
+        'p4;pijecie=drink:v:p5;piją=drink:v:p6;pij=drink:v:M2;pił=drink:v:i3'+
+        ';piła=drink:v:i3;',
+    'piło=drink:v:i3;pili=drink:v:i6;piły=drink:v:i6;piłem=drink:v:i1;piła'+
+        'm=drink:v:i1;piłbym=drink:v:c1;piłabym=drink:v:c1;piłbyś=drink:v:'+
+        'c2;piłabyś=drink:v:c2;piłby=drink:v:c3;piłaby=drink:v:c3;piłoby='+
+        'drink:v:c3;',
+    'pilibyśmy=drink:v:c4;piłybyśmy=drink:v:c4;pilibyście=drink:v:c5;piły'+
+        'byście=drink:v:c5;piliby=drink:v:c6;piłyby=drink:v:c6;piłeś=drink'+
+        ':v:i2;piłaś=drink:v:i2;piliśmy=drink:v:i4;piłyśmy=drink:v:i4;pil'+
+        'iście=drink:v:i5;',
+    'piłyście=drink:v:i5;spać=sleep:v:I;śpię=sleep:v:p1;śpisz=sleep:v:p2'+
+        ';śpi=sleep:v:p3;śpimy=sleep:v:p4;śpicie=sleep:v:p5;śpią=sleep:v:'+
+        'p6;śpij=sleep:v:M2;spał=sleep:v:i3;spała=sleep:v:i3;spało=sleep:v'+
+        ':i3;',
+    'spali=sleep:v:i6;spały=sleep:v:i6;spałem=sleep:v:i1;spałam=sleep:v:i1;'+
+        'spałbym=sleep:v:c1;spałabym=sleep:v:c1;spałbyś=sleep:v:c2;spałab'+
+        'yś=sleep:v:c2;spałby=sleep:v:c3;spałaby=sleep:v:c3;spałoby=sleep:'+
+        'v:c3;',
+    'spalibyśmy=sleep:v:c4;spałybyśmy=sleep:v:c4;spalibyście=sleep:v:c5;sp'+
+        'ałybyście=sleep:v:c5;spaliby=sleep:v:c6;spałyby=sleep:v:c6;spałe'+
+        'ś=sleep:v:i2;spałaś=sleep:v:i2;spaliśmy=sleep:v:i4;spałyśmy=sle'+
+        'ep:v:i4;',
+    'spaliście=sleep:v:i5;spałyście=sleep:v:i5;żyć=live:v:I;żyję=live:v'+
+        ':p1;żyjesz=live:v:p2;żyje=live:v:p3;żyjemy=live:v:p4;żyjecie=live'+
+        ':v:p5;żyją=live:v:p6;żyj=live:v:M2;żył=live:v:i3;żyła=live:v:i'+
+        '3;żyło=live:v:i3;',
+    'żyli=live:v:i6;żyły=live:v:i6;żyłem=live:v:i1;żyłam=live:v:i1;ży'+
+        'łbym=live:v:c1;żyłabym=live:v:c1;żyłbyś=live:v:c2;żyłabyś=li'+
+        've:v:c2;żyłby=live:v:c3;żyłaby=live:v:c3;żyłoby=live:v:c3;żyli'+
+        'byśmy=live:v:c4;',
+    'żyłybyśmy=live:v:c4;żylibyście=live:v:c5;żyłybyście=live:v:c5;ży'+
+        'liby=live:v:c6;żyłyby=live:v:c6;żyłeś=live:v:i2;żyłaś=live:v:'+
+        'i2;żyliśmy=live:v:i4;żyłyśmy=live:v:i4;żyliście=live:v:i5;ży'+
+        'łyście=live:v:i5;',
+    'stać=stand:v:I:estar;stoję=stand:v:p1:estar;stoisz=stand:v:p2:estar;sto'+
+        'i=stand:v:p3:estar;stoimy=stand:v:p4:estar;stoicie=stand:v:p5:estar;s'+
+        'toją=stand:v:p6:estar;stój=stand:v:M2:estar;stał=stand:v:i3:estar;',
+    'stała=stand:v:i3:estar;stało=stand:v:i3:estar;stali=stand:v:i6:estar;st'+
+        'ały=stand:v:i6:estar;stałem=stand:v:i1:estar;stałam=stand:v:i1:est'+
+        'ar;stałbym=stand:v:c1:estar;stałabym=stand:v:c1:estar;stałbyś=sta'+
+        'nd:v:c2:estar;',
+    'stałabyś=stand:v:c2:estar;stałby=stand:v:c3:estar;stałaby=stand:v:c3:'+
+        'estar;stałoby=stand:v:c3:estar;stalibyśmy=stand:v:c4:estar;stałyby'+
+        'śmy=stand:v:c4:estar;stalibyście=stand:v:c5:estar;stałybyście=sta'+
+        'nd:v:c5:estar;',
+    'staliby=stand:v:c6:estar;stałyby=stand:v:c6:estar;stałeś=stand:v:i2:es'+
+        'tar;stałaś=stand:v:i2:estar;staliśmy=stand:v:i4:estar;stałyśmy=s'+
+        'tand:v:i4:estar;staliście=stand:v:i5:estar;stałyście=stand:v:i5:es'+
+        'tar;',
+    'potrafić=be_able:v:I;potrafię=be_able:v:p1;potrafisz=be_able:v:p2;potra'+
+        'fi=be_able:v:p3;potrafimy=be_able:v:p4;potraficie=be_able:v:p5;potraf'+
+        'ią=be_able:v:p6;potraf=be_able:v:M2;potrafił=be_able:v:i3;potrafił'+
+        'a=be_able:v:i3;',
+    'potrafiło=be_able:v:i3;potrafili=be_able:v:i6;potrafiły=be_able:v:i6;po'+
+        'trafiłem=be_able:v:i1;potrafiłam=be_able:v:i1;potrafiłbym=be_able:'+
+        'v:c1;potrafiłabym=be_able:v:c1;potrafiłbyś=be_able:v:c2;potrafiła'+
+        'byś=be_able:v:c2;',
+    'potrafiłby=be_able:v:c3;potrafiłaby=be_able:v:c3;potrafiłoby=be_able:v'+
+        ':c3;potrafilibyśmy=be_able:v:c4;potrafiłybyśmy=be_able:v:c4;potraf'+
+        'ilibyście=be_able:v:c5;potrafiłybyście=be_able:v:c5;potrafiliby=be'+
+        '_able:v:c6;',
+    'potrafiłyby=be_able:v:c6;potrafiłeś=be_able:v:i2;potrafiłaś=be_able:'+
+        'v:i2;potrafiliśmy=be_able:v:i4;potrafiłyśmy=be_able:v:i4;potrafili'+
+        'ście=be_able:v:i5;potrafiłyście=be_able:v:i5;lecieć=fly:v:I;lecę'+
+        '=fly:v:p1;',
+    'lecisz=fly:v:p2;leci=fly:v:p3;lecimy=fly:v:p4;lecicie=fly:v:p5;lecą=fly:'+
+        'v:p6;leć=fly:v:M2;leciał=fly:v:i3;leciała=fly:v:i3;leciało=fly:v:'+
+        'i3;lecieli=fly:v:i6;leciały=fly:v:i6;leciałem=fly:v:i1;leciałam=fl'+
+        'y:v:i1;',
+    'leciałbym=fly:v:c1;leciałabym=fly:v:c1;leciałbyś=fly:v:c2;leciałaby'+
+        'ś=fly:v:c2;leciałby=fly:v:c3;leciałaby=fly:v:c3;leciałoby=fly:v:c'+
+        '3;lecielibyśmy=fly:v:c4;leciałybyśmy=fly:v:c4;lecielibyście=fly:v'+
+        ':c5;',
+    'leciałybyście=fly:v:c5;lecieliby=fly:v:c6;leciałyby=fly:v:c6;leciałe'+
+        'ś=fly:v:i2;leciałaś=fly:v:i2;lecieliśmy=fly:v:i4;leciałyśmy=fly'+
+        ':v:i4;lecieliście=fly:v:i5;leciałyście=fly:v:i5;padać=fall:v:I;pa'+
+        'dam=fall:v:p1;',
+    'padasz=fall:v:p2;pada=fall:v:p3;padamy=fall:v:p4;padacie=fall:v:p5;padaj'+
+        'ą=fall:v:p6;padaj=fall:v:M2;padał=fall:v:i3;padała=fall:v:i3;pada'+
+        'ło=fall:v:i3;padali=fall:v:i6;padały=fall:v:i6;padałem=fall:v:i1;p'+
+        'adałam=fall:v:i1;',
+    'padałbym=fall:v:c1;padałabym=fall:v:c1;padałbyś=fall:v:c2;padałabyś'+
+        '=fall:v:c2;padałby=fall:v:c3;padałaby=fall:v:c3;padałoby=fall:v:c3'+
+        ';padalibyśmy=fall:v:c4;padałybyśmy=fall:v:c4;padalibyście=fall:v:'+
+        'c5;',
+    'padałybyście=fall:v:c5;padaliby=fall:v:c6;padałyby=fall:v:c6;padałeś'+
+        '=fall:v:i2;padałaś=fall:v:i2;padaliśmy=fall:v:i4;padałyśmy=fall:'+
+        'v:i4;padaliście=fall:v:i5;padałyście=fall:v:i5;kosztować=cost:v:I'+
+        ';',
+    'kosztuję=cost:v:p1;kosztujesz=cost:v:p2;kosztuje=cost:v:p3;kosztujemy=co'+
+        'st:v:p4;kosztujecie=cost:v:p5;kosztują=cost:v:p6;kosztuj=cost:v:M2;k'+
+        'osztował=cost:v:i3;kosztowała=cost:v:i3;kosztowało=cost:v:i3;koszt'+
+        'owali=cost:v:i6;',
+    'kosztowały=cost:v:i6;kosztowałem=cost:v:i1;kosztowałam=cost:v:i1;koszt'+
+        'owałbym=cost:v:c1;kosztowałabym=cost:v:c1;kosztowałbyś=cost:v:c2;'+
+        'kosztowałabyś=cost:v:c2;kosztowałby=cost:v:c3;kosztowałaby=cost:v'+
+        ':c3;',
+    'kosztowałoby=cost:v:c3;kosztowalibyśmy=cost:v:c4;kosztowałybyśmy=cost'+
+        ':v:c4;kosztowalibyście=cost:v:c5;kosztowałybyście=cost:v:c5;koszto'+
+        'waliby=cost:v:c6;kosztowałyby=cost:v:c6;kosztowałeś=cost:v:i2;',
+    'kosztowałaś=cost:v:i2;kosztowaliśmy=cost:v:i4;kosztowałyśmy=cost:v:i'+
+        '4;kosztowaliście=cost:v:i5;kosztowałyście=cost:v:i5;przychodzić=c'+
+        'ome:v:I:venir;przychodzę=come:v:p1:venir;przychodzisz=come:v:p2:veni'+
+        'r;',
+    'przychodzi=come:v:p3:venir;przychodzimy=come:v:p4:venir;przychodzicie=com'+
+        'e:v:p5:venir;przychodzą=come:v:p6:venir;przychodz=come:v:M2:venir;pr'+
+        'zychodził=come:v:i3:venir;przychodziła=come:v:i3:venir;przychodził'+
+        'o=come:v:i3:venir;',
+    'przychodzili=come:v:i6:venir;przychodziły=come:v:i6:venir;przychodziłem'+
+        '=come:v:i1:venir;przychodziłam=come:v:i1:venir;przychodziłbym=come:'+
+        'v:c1:venir;przychodziłabym=come:v:c1:venir;przychodziłbyś=come:v:c'+
+        '2:venir;',
+    'przychodziłabyś=come:v:c2:venir;przychodziłby=come:v:c3:venir;przychod'+
+        'ziłaby=come:v:c3:venir;przychodziłoby=come:v:c3:venir;przychodzilib'+
+        'yśmy=come:v:c4:venir;przychodziłybyśmy=come:v:c4:venir;',
+    'przychodzilibyście=come:v:c5:venir;przychodziłybyście=come:v:c5:venir;'+
+        'przychodziliby=come:v:c6:venir;przychodziłyby=come:v:c6:venir;przych'+
+        'odziłeś=come:v:i2:venir;przychodziłaś=come:v:i2:venir;',
+    'przychodziliśmy=come:v:i4:venir;przychodziłyśmy=come:v:i4:venir;przych'+
+        'odziliście=come:v:i5:venir;przychodziłyście=come:v:i5:venir;wychod'+
+        'zić=go_out:v:I;wychodzę=go_out:v:p1;wychodzisz=go_out:v:p2;wychodzi'+
+        '=go_out:v:p3;',
+    'wychodzimy=go_out:v:p4;wychodzicie=go_out:v:p5;wychodzą=go_out:v:p6;wych'+
+        'odz=go_out:v:M2;wychodził=go_out:v:i3;wychodziła=go_out:v:i3;wychod'+
+        'ziło=go_out:v:i3;wychodzili=go_out:v:i6;wychodziły=go_out:v:i6;',
+    'wychodziłem=go_out:v:i1;wychodziłam=go_out:v:i1;wychodziłbym=go_out:v:'+
+        'c1;wychodziłabym=go_out:v:c1;wychodziłbyś=go_out:v:c2;wychodziłab'+
+        'yś=go_out:v:c2;wychodziłby=go_out:v:c3;wychodziłaby=go_out:v:c3;',
+    'wychodziłoby=go_out:v:c3;wychodzilibyśmy=go_out:v:c4;wychodziłybyśmy='+
+        'go_out:v:c4;wychodzilibyście=go_out:v:c5;wychodziłybyście=go_out:v'+
+        ':c5;wychodziliby=go_out:v:c6;wychodziłyby=go_out:v:c6;wychodziłeś='+
+        'go_out:v:i2;',
+    'wychodziłaś=go_out:v:i2;wychodziliśmy=go_out:v:i4;wychodziłyśmy=go_o'+
+        'ut:v:i4;wychodziliście=go_out:v:i5;wychodziłyście=go_out:v:i5;wcho'+
+        'dzić=enter:v:I;wchodzę=enter:v:p1;wchodzisz=enter:v:p2;wchodzi=ente'+
+        'r:v:p3;',
+    'wchodzimy=enter:v:p4;wchodzicie=enter:v:p5;wchodzą=enter:v:p6;wchodz=ent'+
+        'er:v:M2;wchodził=enter:v:i3;wchodziła=enter:v:i3;wchodziło=enter:v'+
+        ':i3;wchodzili=enter:v:i6;wchodziły=enter:v:i6;wchodziłem=enter:v:i1'+
+        ';',
+    'wchodziłam=enter:v:i1;wchodziłbym=enter:v:c1;wchodziłabym=enter:v:c1;w'+
+        'chodziłbyś=enter:v:c2;wchodziłabyś=enter:v:c2;wchodziłby=enter:v'+
+        ':c3;wchodziłaby=enter:v:c3;wchodziłoby=enter:v:c3;wchodzilibyśmy=e'+
+        'nter:v:c4;',
+    'wchodziłybyśmy=enter:v:c4;wchodzilibyście=enter:v:c5;wchodziłybyście'+
+        '=enter:v:c5;wchodziliby=enter:v:c6;wchodziłyby=enter:v:c6;wchodziłe'+
+        'ś=enter:v:i2;wchodziłaś=enter:v:i2;wchodziliśmy=enter:v:i4;',
+    'wchodziłyśmy=enter:v:i4;wchodziliście=enter:v:i5;wchodziłyście=enter'+
+        ':v:i5;bawić_się=play:v:I;bawię=play:v:p1;bawisz=play:v:p2;bawi=pla'+
+        'y:v:p3;bawimy=play:v:p4;bawicie=play:v:p5;bawią=play:v:p6;baw=play:v'+
+        ':M2;',
+    'bawić_sił=play:v:i3;bawić_siła=play:v:i3;bawić_siło=play:v:i3;bawi'+
+        'ć_sili=play:v:i6;bawić_siły=play:v:i6;bawić_siłem=play:v:i1;bawi'+
+        'ć_siłam=play:v:i1;bawić_siłbym=play:v:c1;bawić_siłabym=play:v:c'+
+        '1;',
+    'bawić_siłbyś=play:v:c2;bawić_siłabyś=play:v:c2;bawić_siłby=play:v'+
+        ':c3;bawić_siłaby=play:v:c3;bawić_siłoby=play:v:c3;bawić_silibyś'+
+        'my=play:v:c4;bawić_siłybyśmy=play:v:c4;bawić_silibyście=play:v:c'+
+        '5;',
+    'bawić_siłybyście=play:v:c5;bawić_siliby=play:v:c6;bawić_siłyby=play'+
+        ':v:c6;bawić_siłeś=play:v:i2;bawić_siłaś=play:v:i2;bawić_siliś'+
+        'my=play:v:i4;bawić_siłyśmy=play:v:i4;bawić_siliście=play:v:i5;',
+    'bawić_siłyście=play:v:i5;bawić_się_się=play:v:I;bawię_się=play:v:'+
+        'p1;bawisz_się=play:v:p2;bawi_się=play:v:p3;bawimy_się=play:v:p4;ba'+
+        'wicie_się=play:v:p5;bawią_się=play:v:p6;baw_się=play:v:M2;',
+    'bawić_sił_się=play:v:i3;bawić_siła_się=play:v:i3;bawić_siło_się='+
+        'play:v:i3;bawić_sili_się=play:v:i6;bawić_siły_się=play:v:i6;bawi'+
+        'ć_siłem_się=play:v:i1;bawić_siłam_się=play:v:i1;bawić_siłbym_'+
+        'się=play:v:c1;',
+    'bawić_siłabym_się=play:v:c1;bawić_siłbyś_się=play:v:c2;bawić_sił'+
+        'abyś_się=play:v:c2;bawić_siłby_się=play:v:c3;bawić_siłaby_się'+
+        '=play:v:c3;bawić_siłoby_się=play:v:c3;bawić_silibyśmy_się=play:'+
+        'v:c4;',
+    'bawić_siłybyśmy_się=play:v:c4;bawić_silibyście_się=play:v:c5;bawi'+
+        'ć_siłybyście_się=play:v:c5;bawić_siliby_się=play:v:c6;bawić_si'+
+        'łyby_się=play:v:c6;bawić_siłeś_się=play:v:i2;bawić_siłaś_si'+
+        'ę=play:v:i2;',
+    'bawić_siliśmy_się=play:v:i4;bawić_siłyśmy_się=play:v:i4;bawić_sil'+
+        'iście_się=play:v:i5;bawić_siłyście_się=play:v:i5;nazywać_się='+
+        'call:v:I:llamar;nazywam=call:v:p1:llamar;nazywasz=call:v:p2:llamar;',
+    'nazywa=call:v:p3:llamar;nazywamy=call:v:p4:llamar;nazywacie=call:v:p5:lla'+
+        'mar;nazywają=call:v:p6:llamar;nazywaj=call:v:M2:llamar;nazywać_sił'+
+        '=call:v:i3:llamar;nazywać_siła=call:v:i3:llamar;nazywać_siło=call'+
+        ':v:i3:llamar;',
+    'nazywać_sili=call:v:i6:llamar;nazywać_siły=call:v:i6:llamar;nazywać_s'+
+        'iłem=call:v:i1:llamar;nazywać_siłam=call:v:i1:llamar;nazywać_sił'+
+        'bym=call:v:c1:llamar;nazywać_siłabym=call:v:c1:llamar;',
+    'nazywać_siłbyś=call:v:c2:llamar;nazywać_siłabyś=call:v:c2:llamar;na'+
+        'zywać_siłby=call:v:c3:llamar;nazywać_siłaby=call:v:c3:llamar;nazy'+
+        'wać_siłoby=call:v:c3:llamar;nazywać_silibyśmy=call:v:c4:llamar;',
+    'nazywać_siłybyśmy=call:v:c4:llamar;nazywać_silibyście=call:v:c5:llam'+
+        'ar;nazywać_siłybyście=call:v:c5:llamar;nazywać_siliby=call:v:c6:l'+
+        'lamar;nazywać_siłyby=call:v:c6:llamar;nazywać_siłeś=call:v:i2:ll'+
+        'amar;',
+    'nazywać_siłaś=call:v:i2:llamar;nazywać_siliśmy=call:v:i4:llamar;nazy'+
+        'wać_siłyśmy=call:v:i4:llamar;nazywać_siliście=call:v:i5:llamar;n'+
+        'azywać_siłyście=call:v:i5:llamar;nazywać_się_się=call:v:I:llama'+
+        'r;',
+    'nazywam_się=call:v:p1:llamar;nazywasz_się=call:v:p2:llamar;nazywa_się='+
+        'call:v:p3:llamar;nazywamy_się=call:v:p4:llamar;nazywacie_się=call:v'+
+        ':p5:llamar;nazywają_się=call:v:p6:llamar;nazywaj_się=call:v:M2:lla'+
+        'mar;',
+    'nazywać_sił_się=call:v:i3:llamar;nazywać_siła_się=call:v:i3:llamar;'+
+        'nazywać_siło_się=call:v:i3:llamar;nazywać_sili_się=call:v:i6:lla'+
+        'mar;nazywać_siły_się=call:v:i6:llamar;nazywać_siłem_się=call:v:'+
+        'i1:llamar;',
+    'nazywać_siłam_się=call:v:i1:llamar;nazywać_siłbym_się=call:v:c1:lla'+
+        'mar;nazywać_siłabym_się=call:v:c1:llamar;nazywać_siłbyś_się=ca'+
+        'll:v:c2:llamar;nazywać_siłabyś_się=call:v:c2:llamar;',
+    'nazywać_siłby_się=call:v:c3:llamar;nazywać_siłaby_się=call:v:c3:lla'+
+        'mar;nazywać_siłoby_się=call:v:c3:llamar;nazywać_silibyśmy_się=c'+
+        'all:v:c4:llamar;nazywać_siłybyśmy_się=call:v:c4:llamar;',
+    'nazywać_silibyście_się=call:v:c5:llamar;nazywać_siłybyście_się=cal'+
+        'l:v:c5:llamar;nazywać_siliby_się=call:v:c6:llamar;nazywać_siłyby_'+
+        'się=call:v:c6:llamar;nazywać_siłeś_się=call:v:i2:llamar;',
+    'nazywać_siłaś_się=call:v:i2:llamar;nazywać_siliśmy_się=call:v:i4:l'+
+        'lamar;nazywać_siłyśmy_się=call:v:i4:llamar;nazywać_siliście_si'+
+        'ę=call:v:i5:llamar;nazywać_siłyście_się=call:v:i5:llamar;uczyć_'+
+        'się_się=learn:v:I;',
+    'uczę_się=learn:v:p1;uczysz_się=learn:v:p2;uczy_się=learn:v:p3;uczymy_'+
+        'się=learn:v:p4;uczycie_się=learn:v:p5;uczą_się=learn:v:p6;ucz_si'+
+        'ę=learn:v:M2;uczyć_sił_się=learn:v:i3;uczyć_siła_się=learn:v:i'+
+        '3;',
+    'uczyć_siło_się=learn:v:i3;uczyć_sili_się=learn:v:i6;uczyć_siły_si'+
+        'ę=learn:v:i6;uczyć_siłem_się=learn:v:i1;uczyć_siłam_się=learn:'+
+        'v:i1;uczyć_siłbym_się=learn:v:c1;uczyć_siłabym_się=learn:v:c1;',
+    'uczyć_siłbyś_się=learn:v:c2;uczyć_siłabyś_się=learn:v:c2;uczyć_s'+
+        'iłby_się=learn:v:c3;uczyć_siłaby_się=learn:v:c3;uczyć_siłoby_s'+
+        'ię=learn:v:c3;uczyć_silibyśmy_się=learn:v:c4;uczyć_siłybyśmy_s'+
+        'ię=learn:v:c4;',
+    'uczyć_silibyście_się=learn:v:c5;uczyć_siłybyście_się=learn:v:c5;uc'+
+        'zyć_siliby_się=learn:v:c6;uczyć_siłyby_się=learn:v:c6;uczyć_si'+
+        'łeś_się=learn:v:i2;uczyć_siłaś_się=learn:v:i2;uczyć_siliśmy_'+
+        'się=learn:v:i4;',
+    'uczyć_siłyśmy_się=learn:v:i4;uczyć_siliście_się=learn:v:i5;uczyć_'+
+        'siłyście_się=learn:v:i5;bać_się_się=fear:v:I;boję_się=fear:v:'+
+        'p1;boisz_się=fear:v:p2;boi_się=fear:v:p3;boimy_się=fear:v:p4;boici'+
+        'e_się=fear:v:p5;',
+    'boją_się=fear:v:p6;bał_się=fear:v:i3;bała_się=fear:v:i3;bało_się='+
+        'fear:v:i3;bali_się=fear:v:i6;bały_się=fear:v:i6;bałem_się=fear:v'+
+        ':i1;bałam_się=fear:v:i1;bałbym_się=fear:v:c1;bałabym_się=fear:v'+
+        ':c1;',
+    'bałbyś_się=fear:v:c2;bałabyś_się=fear:v:c2;bałby_się=fear:v:c3;ba'+
+        'łaby_się=fear:v:c3;bałoby_się=fear:v:c3;balibyśmy_się=fear:v:c4'+
+        ';bałybyśmy_się=fear:v:c4;balibyście_się=fear:v:c5;bałybyście_s'+
+        'ię=fear:v:c5;',
+    'baliby_się=fear:v:c6;bałyby_się=fear:v:c6;bałeś_się=fear:v:i2;bała'+
+        'ś_się=fear:v:i2;baliśmy_się=fear:v:i4;bałyśmy_się=fear:v:i4;ba'+
+        'liście_się=fear:v:i5;bałyście_się=fear:v:i5;cieszyć_się_się=b'+
+        'e_glad:v:I;',
+    'cieszę_się=be_glad:v:p1;cieszysz_się=be_glad:v:p2;cieszy_się=be_glad:'+
+        'v:p3;cieszymy_się=be_glad:v:p4;cieszycie_się=be_glad:v:p5;cieszą_s'+
+        'ię=be_glad:v:p6;ciesz_się=be_glad:v:M2;cieszyć_sił_się=be_glad:v'+
+        ':i3;',
+    'cieszyć_siła_się=be_glad:v:i3;cieszyć_siło_się=be_glad:v:i3;cieszy'+
+        'ć_sili_się=be_glad:v:i6;cieszyć_siły_się=be_glad:v:i6;cieszyć_s'+
+        'iłem_się=be_glad:v:i1;cieszyć_siłam_się=be_glad:v:i1;',
+    'cieszyć_siłbym_się=be_glad:v:c1;cieszyć_siłabym_się=be_glad:v:c1;ci'+
+        'eszyć_siłbyś_się=be_glad:v:c2;cieszyć_siłabyś_się=be_glad:v:c'+
+        '2;cieszyć_siłby_się=be_glad:v:c3;cieszyć_siłaby_się=be_glad:v:c'+
+        '3;',
+    'cieszyć_siłoby_się=be_glad:v:c3;cieszyć_silibyśmy_się=be_glad:v:c4;'+
+        'cieszyć_siłybyśmy_się=be_glad:v:c4;cieszyć_silibyście_się=be_g'+
+        'lad:v:c5;cieszyć_siłybyście_się=be_glad:v:c5;cieszyć_siliby_się'+
+        '=be_glad:v:c6;',
+    'cieszyć_siłyby_się=be_glad:v:c6;cieszyć_siłeś_się=be_glad:v:i2;cie'+
+        'szyć_siłaś_się=be_glad:v:i2;cieszyć_siliśmy_się=be_glad:v:i4;c'+
+        'ieszyć_siłyśmy_się=be_glad:v:i4;cieszyć_siliście_się=be_glad:v'+
+        ':i5;',
+    'cieszyć_siłyście_się=be_glad:v:i5;kłaść=put:v:I;kładę=put:v:p1;k'+
+        'ładziesz=put:v:p2;kładzie=put:v:p3;kładziemy=put:v:p4;kładziecie='+
+        'put:v:p5;kładą=put:v:p6;połóż=put:v:M2;kładł=put:v:i3;kładła'+
+        '=put:v:i3;',
+    'kładło=put:v:i3;kładli=put:v:i6;kładły=put:v:i6;kładłem=put:v:i1;k'+
+        'ładłam=put:v:i1;kładłbym=put:v:c1;kładłabym=put:v:c1;kładłby'+
+        'ś=put:v:c2;kładłabyś=put:v:c2;kładłby=put:v:c3;kładłaby=put:v'+
+        ':c3;',
+    'kładłoby=put:v:c3;kładlibyśmy=put:v:c4;kładłybyśmy=put:v:c4;kładl'+
+        'ibyście=put:v:c5;kładłybyście=put:v:c5;kładliby=put:v:c6;kładł'+
+        'yby=put:v:c6;kładłeś=put:v:i2;kładłaś=put:v:i2;kładliśmy=put:'+
+        'v:i4;',
+    'kładłyśmy=put:v:i4;kładliście=put:v:i5;kładłyście=put:v:i5;usią'+
+        'ść=sit_down:v:I;usiądę=sit_down:v:f1;usiądziesz=sit_down:v:f2;us'+
+        'iądzie=sit_down:v:f3;usiądziemy=sit_down:v:f4;usiądziecie=sit_down'+
+        ':v:f5;',
+    'usiądą=sit_down:v:f6;usiądź=sit_down:v:M2;usiadł=sit_down:v:i3;usiad'+
+        'ła=sit_down:v:i3;usiadło=sit_down:v:i3;usiedli=sit_down:v:i6;usiad'+
+        'ły=sit_down:v:i6;usiadłem=sit_down:v:i1;usiadłam=sit_down:v:i1;',
+    'usiadłeś=sit_down:v:i2;usiadłaś=sit_down:v:i2;usiedliśmy=sit_down:v:'+
+        'i4;usiadłyśmy=sit_down:v:i4;usiedliście=sit_down:v:i5;usiadłyści'+
+        'e=sit_down:v:i5;zamówić=order:v:I;zamówię=order:v:f1;zamówisz=or'+
+        'der:v:f2;',
+    'zamówi=order:v:f3;zamówimy=order:v:f4;zamówicie=order:v:f5;zamówią=o'+
+        'rder:v:f6;zamów=order:v:M2;zamówił=order:v:i3;zamówiła=order:v:i'+
+        '3;zamówiło=order:v:i3;zamówili=order:v:i6;zamówiły=order:v:i6;',
+    'zamówiłem=order:v:i1;zamówiłam=order:v:i1;zamówiłeś=order:v:i2;zam'+
+        'ówiłaś=order:v:i2;zamówiliśmy=order:v:i4;zamówiłyśmy=order:v:'+
+        'i4;zamówiliście=order:v:i5;zamówiłyście=order:v:i5;zamawiać=ord'+
+        'er:v:I;',
+    'zamawiam=order:v:p1;zamawiasz=order:v:p2;zamawia=order:v:p3;zamawiamy=ord'+
+        'er:v:p4;zamawiacie=order:v:p5;zamawiają=order:v:p6;zamawiaj=order:v:'+
+        'M2;zamawiał=order:v:i3;zamawiała=order:v:i3;zamawiało=order:v:i3;',
+    'zamawiali=order:v:i6;zamawiały=order:v:i6;zamawiałem=order:v:i1;zamawia'+
+        'łam=order:v:i1;zamawiałbym=order:v:c1;zamawiałabym=order:v:c1;zama'+
+        'wiałbyś=order:v:c2;zamawiałabyś=order:v:c2;zamawiałby=order:v:c3'+
+        ';',
+    'zamawiałaby=order:v:c3;zamawiałoby=order:v:c3;zamawialibyśmy=order:v:c'+
+        '4;zamawiałybyśmy=order:v:c4;zamawialibyście=order:v:c5;zamawiałyb'+
+        'yście=order:v:c5;zamawialiby=order:v:c6;zamawiałyby=order:v:c6;',
+    'zamawiałeś=order:v:i2;zamawiałaś=order:v:i2;zamawialiśmy=order:v:i4;'+
+        'zamawiałyśmy=order:v:i4;zamawialiście=order:v:i5;zamawiałyście=o'+
+        'rder:v:i5;pochodzić=come:v:I:venir;pochodzę=come:v:p1:venir;',
+    'pochodzisz=come:v:p2:venir;pochodzi=come:v:p3:venir;pochodzimy=come:v:p4:'+
+        'venir;pochodzicie=come:v:p5:venir;pochodzą=come:v:p6:venir;pochodz=c'+
+        'ome:v:M2:venir;pochodził=come:v:i3:venir;pochodziła=come:v:i3:venir'+
+        ';',
+    'pochodziło=come:v:i3:venir;pochodzili=come:v:i6:venir;pochodziły=come:v'+
+        ':i6:venir;pochodziłem=come:v:i1:venir;pochodziłam=come:v:i1:venir;p'+
+        'ochodziłbym=come:v:c1:venir;pochodziłabym=come:v:c1:venir;',
+    'pochodziłbyś=come:v:c2:venir;pochodziłabyś=come:v:c2:venir;pochodził'+
+        'by=come:v:c3:venir;pochodziłaby=come:v:c3:venir;pochodziłoby=come:v'+
+        ':c3:venir;pochodzilibyśmy=come:v:c4:venir;pochodziłybyśmy=come:v:c'+
+        '4:venir;',
+    'pochodzilibyście=come:v:c5:venir;pochodziłybyście=come:v:c5:venir;poch'+
+        'odziliby=come:v:c6:venir;pochodziłyby=come:v:c6:venir;pochodziłeś='+
+        'come:v:i2:venir;pochodziłaś=come:v:i2:venir;pochodziliśmy=come:v:i'+
+        '4:venir;',
+    'pochodziłyśmy=come:v:i4:venir;pochodziliście=come:v:i5:venir;pochodzi'+
+        'łyście=come:v:i5:venir;odpowiadać=answer:v:I;odpowiadam=answer:v:p'+
+        '1;odpowiadasz=answer:v:p2;odpowiada=answer:v:p3;odpowiadamy=answer:v:'+
+        'p4;',
+    'odpowiadacie=answer:v:p5;odpowiadają=answer:v:p6;odpowiadaj=answer:v:M2;'+
+        'odpowiadał=answer:v:i3;odpowiadała=answer:v:i3;odpowiadało=answer:'+
+        'v:i3;odpowiadali=answer:v:i6;odpowiadały=answer:v:i6;odpowiadałem=a'+
+        'nswer:v:i1;',
+    'odpowiadałam=answer:v:i1;odpowiadałbym=answer:v:c1;odpowiadałabym=answ'+
+        'er:v:c1;odpowiadałbyś=answer:v:c2;odpowiadałabyś=answer:v:c2;odpo'+
+        'wiadałby=answer:v:c3;odpowiadałaby=answer:v:c3;odpowiadałoby=answe'+
+        'r:v:c3;',
+    'odpowiadalibyśmy=answer:v:c4;odpowiadałybyśmy=answer:v:c4;odpowiadalib'+
+        'yście=answer:v:c5;odpowiadałybyście=answer:v:c5;odpowiadaliby=answ'+
+        'er:v:c6;odpowiadałyby=answer:v:c6;odpowiadałeś=answer:v:i2;',
+    'odpowiadałaś=answer:v:i2;odpowiadaliśmy=answer:v:i4;odpowiadałyśmy=a'+
+        'nswer:v:i4;odpowiadaliście=answer:v:i5;odpowiadałyście=answer:v:i5'+
+        ';opowiadać=tell:v:I;opowiadam=tell:v:p1;opowiadasz=tell:v:p2;opowiad'+
+        'a=tell:v:p3;',
+    'opowiadamy=tell:v:p4;opowiadacie=tell:v:p5;opowiadają=tell:v:p6;opowiada'+
+        'j=tell:v:M2;opowiadał=tell:v:i3;opowiadała=tell:v:i3;opowiadało=te'+
+        'll:v:i3;opowiadali=tell:v:i6;opowiadały=tell:v:i6;opowiadałem=tell:'+
+        'v:i1;',
+    'opowiadałam=tell:v:i1;opowiadałbym=tell:v:c1;opowiadałabym=tell:v:c1;o'+
+        'powiadałbyś=tell:v:c2;opowiadałabyś=tell:v:c2;opowiadałby=tell:v'+
+        ':c3;opowiadałaby=tell:v:c3;opowiadałoby=tell:v:c3;opowiadalibyśmy='+
+        'tell:v:c4;',
+    'opowiadałybyśmy=tell:v:c4;opowiadalibyście=tell:v:c5;opowiadałybyści'+
+        'e=tell:v:c5;opowiadaliby=tell:v:c6;opowiadałyby=tell:v:c6;opowiadał'+
+        'eś=tell:v:i2;opowiadałaś=tell:v:i2;opowiadaliśmy=tell:v:i4;',
+    'opowiadałyśmy=tell:v:i4;opowiadaliście=tell:v:i5;opowiadałyście=tell'+
+        ':v:i5;wysyłać=send:v:I;wysyłam=send:v:p1;wysyłasz=send:v:p2;wysy'+
+        'ła=send:v:p3;wysyłamy=send:v:p4;wysyłacie=send:v:p5;wysyłają=sen'+
+        'd:v:p6;',
+    'wysyłaj=send:v:M2;wysyłał=send:v:i3;wysyłała=send:v:i3;wysyłało=se'+
+        'nd:v:i3;wysyłali=send:v:i6;wysyłały=send:v:i6;wysyłałem=send:v:i'+
+        '1;wysyłałam=send:v:i1;wysyłałbym=send:v:c1;wysyłałabym=send:v:c'+
+        '1;',
+    'wysyłałbyś=send:v:c2;wysyłałabyś=send:v:c2;wysyłałby=send:v:c3;wy'+
+        'syłałaby=send:v:c3;wysyłałoby=send:v:c3;wysyłalibyśmy=send:v:c4'+
+        ';wysyłałybyśmy=send:v:c4;wysyłalibyście=send:v:c5;wysyłałybyś'+
+        'cie=send:v:c5;',
+    'wysyłaliby=send:v:c6;wysyłałyby=send:v:c6;wysyłałeś=send:v:i2;wysy'+
+        'łałaś=send:v:i2;wysyłaliśmy=send:v:i4;wysyłałyśmy=send:v:i4;w'+
+        'ysyłaliście=send:v:i5;wysyłałyście=send:v:i5;wygrywać=win:v:I;w'+
+        'ygrywam=win:v:p1;',
+    'wygrywasz=win:v:p2;wygrywa=win:v:p3;wygrywamy=win:v:p4;wygrywacie=win:v:p'+
+        '5;wygrywają=win:v:p6;wygrywaj=win:v:M2;wygrywał=win:v:i3;wygrywała'+
+        '=win:v:i3;wygrywało=win:v:i3;wygrywali=win:v:i6;wygrywały=win:v:i6;',
+    'wygrywałem=win:v:i1;wygrywałam=win:v:i1;wygrywałbym=win:v:c1;wygrywał'+
+        'abym=win:v:c1;wygrywałbyś=win:v:c2;wygrywałabyś=win:v:c2;wygrywa'+
+        'łby=win:v:c3;wygrywałaby=win:v:c3;wygrywałoby=win:v:c3;wygrywaliby'+
+        'śmy=win:v:c4;',
+    'wygrywałybyśmy=win:v:c4;wygrywalibyście=win:v:c5;wygrywałybyście=win'+
+        ':v:c5;wygrywaliby=win:v:c6;wygrywałyby=win:v:c6;wygrywałeś=win:v:i'+
+        '2;wygrywałaś=win:v:i2;wygrywaliśmy=win:v:i4;wygrywałyśmy=win:v:i'+
+        '4;',
+    'wygrywaliście=win:v:i5;wygrywałyście=win:v:i5;przegrywać=lose:v:I;prz'+
+        'egrywam=lose:v:p1;przegrywasz=lose:v:p2;przegrywa=lose:v:p3;przegrywa'+
+        'my=lose:v:p4;przegrywacie=lose:v:p5;przegrywają=lose:v:p6;przegrywaj'+
+        '=lose:v:M2;',
+    'przegrywał=lose:v:i3;przegrywała=lose:v:i3;przegrywało=lose:v:i3;przeg'+
+        'rywali=lose:v:i6;przegrywały=lose:v:i6;przegrywałem=lose:v:i1;przeg'+
+        'rywałam=lose:v:i1;przegrywałbym=lose:v:c1;przegrywałabym=lose:v:c1'+
+        ';',
+    'przegrywałbyś=lose:v:c2;przegrywałabyś=lose:v:c2;przegrywałby=lose:v'+
+        ':c3;przegrywałaby=lose:v:c3;przegrywałoby=lose:v:c3;przegrywalibyś'+
+        'my=lose:v:c4;przegrywałybyśmy=lose:v:c4;przegrywalibyście=lose:v:c'+
+        '5;',
+    'przegrywałybyście=lose:v:c5;przegrywaliby=lose:v:c6;przegrywałyby=lose'+
+        ':v:c6;przegrywałeś=lose:v:i2;przegrywałaś=lose:v:i2;przegrywaliś'+
+        'my=lose:v:i4;przegrywałyśmy=lose:v:i4;przegrywaliście=lose:v:i5;',
+    'przegrywałyście=lose:v:i5;umierać=die:v:I;umieram=die:v:p1;umierasz=di'+
+        'e:v:p2;umiera=die:v:p3;umieramy=die:v:p4;umieracie=die:v:p5;umierają'+
+        '=die:v:p6;umieraj=die:v:M2;umierał=die:v:i3;umierała=die:v:i3;umier'+
+        'ało=die:v:i3;',
+    'umierali=die:v:i6;umierały=die:v:i6;umierałem=die:v:i1;umierałam=die:v'+
+        ':i1;umierałbym=die:v:c1;umierałabym=die:v:c1;umierałbyś=die:v:c2;'+
+        'umierałabyś=die:v:c2;umierałby=die:v:c3;umierałaby=die:v:c3;umier'+
+        'ałoby=die:v:c3;',
+    'umieralibyśmy=die:v:c4;umierałybyśmy=die:v:c4;umieralibyście=die:v:c5'+
+        ';umierałybyście=die:v:c5;umieraliby=die:v:c6;umierałyby=die:v:c6;u'+
+        'mierałeś=die:v:i2;umierałaś=die:v:i2;umieraliśmy=die:v:i4;umiera'+
+        'łyśmy=die:v:i4;',
+    'umieraliście=die:v:i5;umierałyście=die:v:i5;sprzątać=clean:v:I;sprz'+
+        'ątam=clean:v:p1;sprzątasz=clean:v:p2;sprząta=clean:v:p3;sprzątamy'+
+        '=clean:v:p4;sprzątacie=clean:v:p5;sprzątają=clean:v:p6;sprzątaj=c'+
+        'lean:v:M2;',
+    'sprzątał=clean:v:i3;sprzątała=clean:v:i3;sprzątało=clean:v:i3;sprz'+
+        'ątali=clean:v:i6;sprzątały=clean:v:i6;sprzątałem=clean:v:i1;sprz'+
+        'ątałam=clean:v:i1;sprzątałbym=clean:v:c1;sprzątałabym=clean:v:c'+
+        '1;',
+    'sprzątałbyś=clean:v:c2;sprzątałabyś=clean:v:c2;sprzątałby=clean:v'+
+        ':c3;sprzątałaby=clean:v:c3;sprzątałoby=clean:v:c3;sprzątalibyśm'+
+        'y=clean:v:c4;sprzątałybyśmy=clean:v:c4;sprzątalibyście=clean:v:c'+
+        '5;',
+    'sprzątałybyście=clean:v:c5;sprzątaliby=clean:v:c6;sprzątałyby=clean'+
+        ':v:c6;sprzątałeś=clean:v:i2;sprzątałaś=clean:v:i2;sprzątaliśm'+
+        'y=clean:v:i4;sprzątałyśmy=clean:v:i4;sprzątaliście=clean:v:i5;',
+    'sprzątałyście=clean:v:i5;latać=fly:v:I;latam=fly:v:p1;latasz=fly:v:p2'+
+        ';lata=fly:v:p3;latamy=fly:v:p4;latacie=fly:v:p5;latają=fly:v:p6;lata'+
+        'j=fly:v:M2;latał=fly:v:i3;latała=fly:v:i3;latało=fly:v:i3;latali=f'+
+        'ly:v:i6;',
+    'latały=fly:v:i6;latałem=fly:v:i1;latałam=fly:v:i1;latałbym=fly:v:c1;l'+
+        'atałabym=fly:v:c1;latałbyś=fly:v:c2;latałabyś=fly:v:c2;latałby='+
+        'fly:v:c3;latałaby=fly:v:c3;latałoby=fly:v:c3;latalibyśmy=fly:v:c4;',
+    'latałybyśmy=fly:v:c4;latalibyście=fly:v:c5;latałybyście=fly:v:c5;lat'+
+        'aliby=fly:v:c6;latałyby=fly:v:c6;latałeś=fly:v:i2;latałaś=fly:v:'+
+        'i2;lataliśmy=fly:v:i4;latałyśmy=fly:v:i4;lataliście=fly:v:i5;lata'+
+        'łyście=fly:v:i5;',
+    'oglądać=watch:v:I;oglądam=watch:v:p1;oglądasz=watch:v:p2;ogląda=watc'+
+        'h:v:p3;oglądamy=watch:v:p4;oglądacie=watch:v:p5;oglądają=watch:v:'+
+        'p6;oglądaj=watch:v:M2;oglądał=watch:v:i3;oglądała=watch:v:i3;ogl'+
+        'ądało=watch:v:i3;',
+    'oglądali=watch:v:i6;oglądały=watch:v:i6;oglądałem=watch:v:i1;ogląda'+
+        'łam=watch:v:i1;oglądałbym=watch:v:c1;oglądałabym=watch:v:c1;ogl'+
+        'ądałbyś=watch:v:c2;oglądałabyś=watch:v:c2;oglądałby=watch:v:c'+
+        '3;',
+    'oglądałaby=watch:v:c3;oglądałoby=watch:v:c3;oglądalibyśmy=watch:v:c'+
+        '4;oglądałybyśmy=watch:v:c4;oglądalibyście=watch:v:c5;oglądałyb'+
+        'yście=watch:v:c5;oglądaliby=watch:v:c6;oglądałyby=watch:v:c6;',
+    'oglądałeś=watch:v:i2;oglądałaś=watch:v:i2;oglądaliśmy=watch:v:i4;'+
+        'oglądałyśmy=watch:v:i4;oglądaliście=watch:v:i5;oglądałyście=w'+
+        'atch:v:i5;uśmiechać_się=smile:v:I;uśmiecham=smile:v:p1;uśmiechas'+
+        'z=smile:v:p2;',
+    'uśmiecha=smile:v:p3;uśmiechamy=smile:v:p4;uśmiechacie=smile:v:p5;uśmi'+
+        'echają=smile:v:p6;uśmiechaj=smile:v:M2;uśmiechać_sił=smile:v:i3;'+
+        'uśmiechać_siła=smile:v:i3;uśmiechać_siło=smile:v:i3;uśmiechać'+
+        '_sili=smile:v:i6;',
+    'uśmiechać_siły=smile:v:i6;uśmiechać_siłem=smile:v:i1;uśmiechać_si'+
+        'łam=smile:v:i1;uśmiechać_siłbym=smile:v:c1;uśmiechać_siłabym=s'+
+        'mile:v:c1;uśmiechać_siłbyś=smile:v:c2;uśmiechać_siłabyś=smile'+
+        ':v:c2;',
+    'uśmiechać_siłby=smile:v:c3;uśmiechać_siłaby=smile:v:c3;uśmiechać_'+
+        'siłoby=smile:v:c3;uśmiechać_silibyśmy=smile:v:c4;uśmiechać_sił'+
+        'ybyśmy=smile:v:c4;uśmiechać_silibyście=smile:v:c5;',
+    'uśmiechać_siłybyście=smile:v:c5;uśmiechać_siliby=smile:v:c6;uśmiec'+
+        'hać_siłyby=smile:v:c6;uśmiechać_siłeś=smile:v:i2;uśmiechać_si'+
+        'łaś=smile:v:i2;uśmiechać_siliśmy=smile:v:i4;uśmiechać_siłyśm'+
+        'y=smile:v:i4;',
+    'uśmiechać_siliście=smile:v:i5;uśmiechać_siłyście=smile:v:i5;uśmie'+
+        'chać_się_się=smile:v:I;uśmiecham_się=smile:v:p1;uśmiechasz_się'+
+        '=smile:v:p2;uśmiecha_się=smile:v:p3;uśmiechamy_się=smile:v:p4;',
+    'uśmiechacie_się=smile:v:p5;uśmiechają_się=smile:v:p6;uśmiechaj_się'+
+        '=smile:v:M2;uśmiechać_sił_się=smile:v:i3;uśmiechać_siła_się=s'+
+        'mile:v:i3;uśmiechać_siło_się=smile:v:i3;uśmiechać_sili_się=smi'+
+        'le:v:i6;',
+    'uśmiechać_siły_się=smile:v:i6;uśmiechać_siłem_się=smile:v:i1;uśm'+
+        'iechać_siłam_się=smile:v:i1;uśmiechać_siłbym_się=smile:v:c1;u'+
+        'śmiechać_siłabym_się=smile:v:c1;uśmiechać_siłbyś_się=smile:v'+
+        ':c2;',
+    'uśmiechać_siłabyś_się=smile:v:c2;uśmiechać_siłby_się=smile:v:c3;'+
+        'uśmiechać_siłaby_się=smile:v:c3;uśmiechać_siłoby_się=smile:v:'+
+        'c3;uśmiechać_silibyśmy_się=smile:v:c4;uśmiechać_siłybyśmy_si'+
+        'ę=smile:v:c4;',
+    'uśmiechać_silibyście_się=smile:v:c5;uśmiechać_siłybyście_się=smi'+
+        'le:v:c5;uśmiechać_siliby_się=smile:v:c6;uśmiechać_siłyby_się=s'+
+        'mile:v:c6;uśmiechać_siłeś_się=smile:v:i2;uśmiechać_siłaś_si'+
+        'ę=smile:v:i2;',
+    'uśmiechać_siliśmy_się=smile:v:i4;uśmiechać_siłyśmy_się=smile:v:i'+
+        '4;uśmiechać_siliście_się=smile:v:i5;uśmiechać_siłyście_się=s'+
+        'mile:v:i5;krzyczeć=shout:v:I;krzyczę=shout:v:p1;krzyczysz=shout:v:p'+
+        '2;',
+    'krzyczy=shout:v:p3;krzyczymy=shout:v:p4;krzyczycie=shout:v:p5;krzyczą=sh'+
+        'out:v:p6;krzycz=shout:v:M2;krzyczał=shout:v:i3;krzyczała=shout:v:i3'+
+        ';krzyczało=shout:v:i3;krzyczeli=shout:v:i6;krzyczały=shout:v:i6;',
+    'krzyczałem=shout:v:i1;krzyczałam=shout:v:i1;krzyczałbym=shout:v:c1;krz'+
+        'yczałabym=shout:v:c1;krzyczałbyś=shout:v:c2;krzyczałabyś=shout:v'+
+        ':c2;krzyczałby=shout:v:c3;krzyczałaby=shout:v:c3;krzyczałoby=shout'+
+        ':v:c3;',
+    'krzyczelibyśmy=shout:v:c4;krzyczałybyśmy=shout:v:c4;krzyczelibyście=s'+
+        'hout:v:c5;krzyczałybyście=shout:v:c5;krzyczeliby=shout:v:c6;krzycza'+
+        'łyby=shout:v:c6;krzyczałeś=shout:v:i2;krzyczałaś=shout:v:i2;',
+    'krzyczeliśmy=shout:v:i4;krzyczałyśmy=shout:v:i4;krzyczeliście=shout:v'+
+        ':i5;krzyczałyście=shout:v:i5;wierzyć=believe:v:I;wierzę=believe:v'+
+        ':p1;wierzysz=believe:v:p2;wierzy=believe:v:p3;wierzymy=believe:v:p4;',
+    'wierzycie=believe:v:p5;wierzą=believe:v:p6;wierz=believe:v:M2;wierzył=b'+
+        'elieve:v:i3;wierzyła=believe:v:i3;wierzyło=believe:v:i3;wierzyli=be'+
+        'lieve:v:i6;wierzyły=believe:v:i6;wierzyłem=believe:v:i1;wierzyłam='+
+        'believe:v:i1;',
+    'wierzyłbym=believe:v:c1;wierzyłabym=believe:v:c1;wierzyłbyś=believe:v'+
+        ':c2;wierzyłabyś=believe:v:c2;wierzyłby=believe:v:c3;wierzyłaby=be'+
+        'lieve:v:c3;wierzyłoby=believe:v:c3;wierzylibyśmy=believe:v:c4;',
+    'wierzyłybyśmy=believe:v:c4;wierzylibyście=believe:v:c5;wierzyłybyści'+
+        'e=believe:v:c5;wierzyliby=believe:v:c6;wierzyłyby=believe:v:c6;wierz'+
+        'yłeś=believe:v:i2;wierzyłaś=believe:v:i2;wierzyliśmy=believe:v:i'+
+        '4;',
+    'wierzyłyśmy=believe:v:i4;wierzyliście=believe:v:i5;wierzyłyście=beli'+
+        'eve:v:i5;nienawidzić=hate:v:I;nienawidzę=hate:v:p1;nienawidzisz=hat'+
+        'e:v:p2;nienawidzi=hate:v:p3;nienawidzimy=hate:v:p4;nienawidzicie=hate'+
+        ':v:p5;',
+    'nienawidzą=hate:v:p6;nienawidz=hate:v:M2;nienawidził=hate:v:i3;nienawid'+
+        'ziła=hate:v:i3;nienawidziło=hate:v:i3;nienawidzili=hate:v:i6;nienaw'+
+        'idziły=hate:v:i6;nienawidziłem=hate:v:i1;nienawidziłam=hate:v:i1;',
+    'nienawidziłbym=hate:v:c1;nienawidziłabym=hate:v:c1;nienawidziłbyś=hat'+
+        'e:v:c2;nienawidziłabyś=hate:v:c2;nienawidziłby=hate:v:c3;nienawidz'+
+        'iłaby=hate:v:c3;nienawidziłoby=hate:v:c3;nienawidzilibyśmy=hate:v:'+
+        'c4;',
+    'nienawidziłybyśmy=hate:v:c4;nienawidzilibyście=hate:v:c5;nienawidziły'+
+        'byście=hate:v:c5;nienawidziliby=hate:v:c6;nienawidziłyby=hate:v:c6;'+
+        'nienawidziłeś=hate:v:i2;nienawidziłaś=hate:v:i2;nienawidziliśmy='+
+        'hate:v:i4;',
+    'nienawidziłyśmy=hate:v:i4;nienawidziliście=hate:v:i5;nienawidziłyści'+
+        'e=hate:v:i5;prowadzić=drive:v:I;prowadzę=drive:v:p1;prowadzisz=driv'+
+        'e:v:p2;prowadzi=drive:v:p3;prowadzimy=drive:v:p4;prowadzicie=drive:v:'+
+        'p5;',
+    'prowadzą=drive:v:p6;prowadz=drive:v:M2;prowadził=drive:v:i3;prowadziła'+
+        '=drive:v:i3;prowadziło=drive:v:i3;prowadzili=drive:v:i6;prowadziły='+
+        'drive:v:i6;prowadziłem=drive:v:i1;prowadziłam=drive:v:i1;prowadził'+
+        'bym=drive:v:c1;',
+    'prowadziłabym=drive:v:c1;prowadziłbyś=drive:v:c2;prowadziłabyś=drive'+
+        ':v:c2;prowadziłby=drive:v:c3;prowadziłaby=drive:v:c3;prowadziłoby='+
+        'drive:v:c3;prowadzilibyśmy=drive:v:c4;prowadziłybyśmy=drive:v:c4;',
+    'prowadzilibyście=drive:v:c5;prowadziłybyście=drive:v:c5;prowadziliby=d'+
+        'rive:v:c6;prowadziłyby=drive:v:c6;prowadziłeś=drive:v:i2;prowadzi'+
+        'łaś=drive:v:i2;prowadziliśmy=drive:v:i4;prowadziłyśmy=drive:v:i4'+
+        ';',
+    'prowadziliście=drive:v:i5;prowadziłyście=drive:v:i5;świecić=shine:v:'+
+        'I;świecę=shine:v:p1;świecisz=shine:v:p2;świeci=shine:v:p3;świeci'+
+        'my=shine:v:p4;świecicie=shine:v:p5;świecą=shine:v:p6;świec=shine:'+
+        'v:M2;',
+    'świecił=shine:v:i3;świeciła=shine:v:i3;świeciło=shine:v:i3;świecil'+
+        'i=shine:v:i6;świeciły=shine:v:i6;świeciłem=shine:v:i1;świeciłam'+
+        '=shine:v:i1;świeciłbym=shine:v:c1;świeciłabym=shine:v:c1;świeci'+
+        'łbyś=shine:v:c2;',
+    'świeciłabyś=shine:v:c2;świeciłby=shine:v:c3;świeciłaby=shine:v:c3;'+
+        'świeciłoby=shine:v:c3;świecilibyśmy=shine:v:c4;świeciłybyśmy=s'+
+        'hine:v:c4;świecilibyście=shine:v:c5;świeciłybyście=shine:v:c5;',
+    'świeciliby=shine:v:c6;świeciłyby=shine:v:c6;świeciłeś=shine:v:i2;ś'+
+        'wieciłaś=shine:v:i2;świeciliśmy=shine:v:i4;świeciłyśmy=shine:v'+
+        ':i4;świeciliście=shine:v:i5;świeciłyście=shine:v:i5;budzić_się'+
+        '=wake_up:v:I;',
+    'budzę=wake_up:v:p1;budzisz=wake_up:v:p2;budzi=wake_up:v:p3;budzimy=wake_'+
+        'up:v:p4;budzicie=wake_up:v:p5;budzą=wake_up:v:p6;budz=wake_up:v:M2;b'+
+        'udzić_sił=wake_up:v:i3;budzić_siła=wake_up:v:i3;budzić_siło=wak'+
+        'e_up:v:i3;',
+    'budzić_sili=wake_up:v:i6;budzić_siły=wake_up:v:i6;budzić_siłem=wake_'+
+        'up:v:i1;budzić_siłam=wake_up:v:i1;budzić_siłbym=wake_up:v:c1;budz'+
+        'ić_siłabym=wake_up:v:c1;budzić_siłbyś=wake_up:v:c2;budzić_siła'+
+        'byś=wake_up:v:c2;',
+    'budzić_siłby=wake_up:v:c3;budzić_siłaby=wake_up:v:c3;budzić_siłoby='+
+        'wake_up:v:c3;budzić_silibyśmy=wake_up:v:c4;budzić_siłybyśmy=wake'+
+        '_up:v:c4;budzić_silibyście=wake_up:v:c5;budzić_siłybyście=wake_u'+
+        'p:v:c5;',
+    'budzić_siliby=wake_up:v:c6;budzić_siłyby=wake_up:v:c6;budzić_siłeś='+
+        'wake_up:v:i2;budzić_siłaś=wake_up:v:i2;budzić_siliśmy=wake_up:v:'+
+        'i4;budzić_siłyśmy=wake_up:v:i4;budzić_siliście=wake_up:v:i5;',
+    'budzić_siłyście=wake_up:v:i5;budzić_się_się=wake_up:v:I;budzę_się'+
+        '=wake_up:v:p1;budzisz_się=wake_up:v:p2;budzi_się=wake_up:v:p3;budzi'+
+        'my_się=wake_up:v:p4;budzicie_się=wake_up:v:p5;budzą_się=wake_up:v'+
+        ':p6;',
+    'budz_się=wake_up:v:M2;budzić_sił_się=wake_up:v:i3;budzić_siła_się='+
+        'wake_up:v:i3;budzić_siło_się=wake_up:v:i3;budzić_sili_się=wake_u'+
+        'p:v:i6;budzić_siły_się=wake_up:v:i6;budzić_siłem_się=wake_up:v:'+
+        'i1;',
+    'budzić_siłam_się=wake_up:v:i1;budzić_siłbym_się=wake_up:v:c1;budzi'+
+        'ć_siłabym_się=wake_up:v:c1;budzić_siłbyś_się=wake_up:v:c2;budz'+
+        'ić_siłabyś_się=wake_up:v:c2;budzić_siłby_się=wake_up:v:c3;',
+    'budzić_siłaby_się=wake_up:v:c3;budzić_siłoby_się=wake_up:v:c3;budzi'+
+        'ć_silibyśmy_się=wake_up:v:c4;budzić_siłybyśmy_się=wake_up:v:c4'+
+        ';budzić_silibyście_się=wake_up:v:c5;budzić_siłybyście_się=wake'+
+        '_up:v:c5;',
+    'budzić_siliby_się=wake_up:v:c6;budzić_siłyby_się=wake_up:v:c6;budzi'+
+        'ć_siłeś_się=wake_up:v:i2;budzić_siłaś_się=wake_up:v:i2;budzi'+
+        'ć_siliśmy_się=wake_up:v:i4;budzić_siłyśmy_się=wake_up:v:i4;',
+    'budzić_siliście_się=wake_up:v:i5;budzić_siłyście_się=wake_up:v:i5;'+
+        'wstawać=get_up:v:I;wstaję=get_up:v:p1;wstajesz=get_up:v:p2;wstaje=g'+
+        'et_up:v:p3;wstajemy=get_up:v:p4;wstajecie=get_up:v:p5;wstają=get_up:'+
+        'v:p6;',
+    'wstaj=get_up:v:M2;wstawał=get_up:v:i3;wstawała=get_up:v:i3;wstawało=ge'+
+        't_up:v:i3;wstawali=get_up:v:i6;wstawały=get_up:v:i6;wstawałem=get_u'+
+        'p:v:i1;wstawałam=get_up:v:i1;wstawałbym=get_up:v:c1;wstawałabym=ge'+
+        't_up:v:c1;',
+    'wstawałbyś=get_up:v:c2;wstawałabyś=get_up:v:c2;wstawałby=get_up:v:c3'+
+        ';wstawałaby=get_up:v:c3;wstawałoby=get_up:v:c3;wstawalibyśmy=get_u'+
+        'p:v:c4;wstawałybyśmy=get_up:v:c4;wstawalibyście=get_up:v:c5;',
+    'wstawałybyście=get_up:v:c5;wstawaliby=get_up:v:c6;wstawałyby=get_up:v:'+
+        'c6;wstawałeś=get_up:v:i2;wstawałaś=get_up:v:i2;wstawaliśmy=get_u'+
+        'p:v:i4;wstawałyśmy=get_up:v:i4;wstawaliście=get_up:v:i5;wstawały'+
+        'ście=get_up:v:i5;',
+    'dostawać=receive:v:I;dostaję=receive:v:p1;dostajesz=receive:v:p2;dostaj'+
+        'e=receive:v:p3;dostajemy=receive:v:p4;dostajecie=receive:v:p5;dostaj'+
+        'ą=receive:v:p6;dostaj=receive:v:M2;dostawał=receive:v:i3;dostawała'+
+        '=receive:v:i3;',
+    'dostawało=receive:v:i3;dostawali=receive:v:i6;dostawały=receive:v:i6;do'+
+        'stawałem=receive:v:i1;dostawałam=receive:v:i1;dostawałbym=receive:'+
+        'v:c1;dostawałabym=receive:v:c1;dostawałbyś=receive:v:c2;dostawała'+
+        'byś=receive:v:c2;',
+    'dostawałby=receive:v:c3;dostawałaby=receive:v:c3;dostawałoby=receive:v'+
+        ':c3;dostawalibyśmy=receive:v:c4;dostawałybyśmy=receive:v:c4;dostaw'+
+        'alibyście=receive:v:c5;dostawałybyście=receive:v:c5;dostawaliby=re'+
+        'ceive:v:c6;',
+    'dostawałyby=receive:v:c6;dostawałeś=receive:v:i2;dostawałaś=receive:'+
+        'v:i2;dostawaliśmy=receive:v:i4;dostawałyśmy=receive:v:i4;dostawali'+
+        'ście=receive:v:i5;dostawałyście=receive:v:i5;dostać=get:v:I;dosta'+
+        'nę=get:v:f1;',
+    'dostaniesz=get:v:f2;dostanie=get:v:f3;dostaniemy=get:v:f4;dostaniecie=get'+
+        ':v:f5;dostaną=get:v:f6;dostań=get:v:M2;dostał=get:v:i3;dostała=ge'+
+        't:v:i3;dostało=get:v:i3;dostali=get:v:i6;dostały=get:v:i6;dostałem'+
+        '=get:v:i1;',
+    'dostałam=get:v:i1;dostałeś=get:v:i2;dostałaś=get:v:i2;dostaliśmy=ge'+
+        't:v:i4;dostałyśmy=get:v:i4;dostaliście=get:v:i5;dostałyście=get:'+
+        'v:i5;znaleźć=find:v:I;znajdę=find:v:f1;znajdziesz=find:v:f2;znajdz'+
+        'ie=find:v:f3;',
+    'znajdziemy=find:v:f4;znajdziecie=find:v:f5;znajdą=find:v:f6;znajdź=find'+
+        ':v:M2;znalazł=find:v:i3;znalazła=find:v:i3;znalazło=find:v:i3;znal'+
+        'eźli=find:v:i6;znalazły=find:v:i6;znalazłem=find:v:i1;znalazłam=f'+
+        'ind:v:i1;',
+    'znalazłeś=find:v:i2;znalazłaś=find:v:i2;znaleźliśmy=find:v:i4;znala'+
+        'złyśmy=find:v:i4;znaleźliście=find:v:i5;znalazłyście=find:v:i5;'+
+        'spotykać=meet:v:I;spotykam=meet:v:p1;spotykasz=meet:v:p2;spotyka=mee'+
+        't:v:p3;',
+    'spotykamy=meet:v:p4;spotykacie=meet:v:p5;spotykają=meet:v:p6;spotykaj=me'+
+        'et:v:M2;spotykał=meet:v:i3;spotykała=meet:v:i3;spotykało=meet:v:i3'+
+        ';spotykali=meet:v:i6;spotykały=meet:v:i6;spotykałem=meet:v:i1;spoty'+
+        'kałam=meet:v:i1;',
+    'spotykałbym=meet:v:c1;spotykałabym=meet:v:c1;spotykałbyś=meet:v:c2;sp'+
+        'otykałabyś=meet:v:c2;spotykałby=meet:v:c3;spotykałaby=meet:v:c3;s'+
+        'potykałoby=meet:v:c3;spotykalibyśmy=meet:v:c4;spotykałybyśmy=meet'+
+        ':v:c4;',
+    'spotykalibyście=meet:v:c5;spotykałybyście=meet:v:c5;spotykaliby=meet:v'+
+        ':c6;spotykałyby=meet:v:c6;spotykałeś=meet:v:i2;spotykałaś=meet:v'+
+        ':i2;spotykaliśmy=meet:v:i4;spotykałyśmy=meet:v:i4;spotykaliście=m'+
+        'eet:v:i5;',
+    'spotykałyście=meet:v:i5;malować=paint:v:I;maluję=paint:v:p1;malujesz='+
+        'paint:v:p2;maluje=paint:v:p3;malujemy=paint:v:p4;malujecie=paint:v:p5'+
+        ';malują=paint:v:p6;maluj=paint:v:M2;malował=paint:v:i3;malowała=pa'+
+        'int:v:i3;',
+    'malowało=paint:v:i3;malowali=paint:v:i6;malowały=paint:v:i6;malowałem='+
+        'paint:v:i1;malowałam=paint:v:i1;malowałbym=paint:v:c1;malowałabym='+
+        'paint:v:c1;malowałbyś=paint:v:c2;malowałabyś=paint:v:c2;malowałb'+
+        'y=paint:v:c3;',
+    'malowałaby=paint:v:c3;malowałoby=paint:v:c3;malowalibyśmy=paint:v:c4;m'+
+        'alowałybyśmy=paint:v:c4;malowalibyście=paint:v:c5;malowałybyście'+
+        '=paint:v:c5;malowaliby=paint:v:c6;malowałyby=paint:v:c6;malowałeś='+
+        'paint:v:i2;',
+    'malowałaś=paint:v:i2;malowaliśmy=paint:v:i4;malowałyśmy=paint:v:i4;m'+
+        'alowaliście=paint:v:i5;malowałyście=paint:v:i5;rysować=draw:v:I;r'+
+        'ysuję=draw:v:p1;rysujesz=draw:v:p2;rysuje=draw:v:p3;rysujemy=draw:v:'+
+        'p4;',
+    'rysujecie=draw:v:p5;rysują=draw:v:p6;rysuj=draw:v:M2;rysował=draw:v:i3;'+
+        'rysowała=draw:v:i3;rysowało=draw:v:i3;rysowali=draw:v:i6;rysowały='+
+        'draw:v:i6;rysowałem=draw:v:i1;rysowałam=draw:v:i1;rysowałbym=draw:'+
+        'v:c1;',
+    'rysowałabym=draw:v:c1;rysowałbyś=draw:v:c2;rysowałabyś=draw:v:c2;rys'+
+        'owałby=draw:v:c3;rysowałaby=draw:v:c3;rysowałoby=draw:v:c3;rysowal'+
+        'ibyśmy=draw:v:c4;rysowałybyśmy=draw:v:c4;rysowalibyście=draw:v:c5'+
+        ';',
+    'rysowałybyście=draw:v:c5;rysowaliby=draw:v:c6;rysowałyby=draw:v:c6;rys'+
+        'owałeś=draw:v:i2;rysowałaś=draw:v:i2;rysowaliśmy=draw:v:i4;rysow'+
+        'ałyśmy=draw:v:i4;rysowaliście=draw:v:i5;rysowałyście=draw:v:i5;w'+
+        'oleć=prefer:v:I;',
+    'wolę=prefer:v:p1;wolisz=prefer:v:p2;woli=prefer:v:p3;wolimy=prefer:v:p4;'+
+        'wolicie=prefer:v:p5;wolą=prefer:v:p6;wolał=prefer:v:i3;wolała=pref'+
+        'er:v:i3;wolało=prefer:v:i3;woleli=prefer:v:i6;wolały=prefer:v:i6;wo'+
+        'lałem=prefer:v:i1;',
+    'wolałam=prefer:v:i1;wolałbym=prefer:v:c1;wolałabym=prefer:v:c1;wolałb'+
+        'yś=prefer:v:c2;wolałabyś=prefer:v:c2;wolałby=prefer:v:c3;wolałab'+
+        'y=prefer:v:c3;wolałoby=prefer:v:c3;wolelibyśmy=prefer:v:c4;wolałyb'+
+        'yśmy=prefer:v:c4;',
+    'wolelibyście=prefer:v:c5;wolałybyście=prefer:v:c5;woleliby=prefer:v:c6'+
+        ';wolałyby=prefer:v:c6;wolałeś=prefer:v:i2;wolałaś=prefer:v:i2;wo'+
+        'leliśmy=prefer:v:i4;wolałyśmy=prefer:v:i4;woleliście=prefer:v:i5;',
+    'wolałyście=prefer:v:i5;jeździć=travel:v:I;jeżdżę=travel:v:p1;jeźd'+
+        'zisz=travel:v:p2;jeździ=travel:v:p3;jeździmy=travel:v:p4;jeździcie'+
+        '=travel:v:p5;jeżdżą=travel:v:p6;jeźdź=travel:v:M2;jeździł=trav'+
+        'el:v:i3;',
+    'jeździła=travel:v:i3;jeździło=travel:v:i3;jeździli=travel:v:i6;jeźd'+
+        'ziły=travel:v:i6;jeździłem=travel:v:i1;jeździłam=travel:v:i1;je'+
+        'ździłbym=travel:v:c1;jeździłabym=travel:v:c1;jeździłbyś=travel'+
+        ':v:c2;',
+    'jeździłabyś=travel:v:c2;jeździłby=travel:v:c3;jeździłaby=travel:v:'+
+        'c3;jeździłoby=travel:v:c3;jeździlibyśmy=travel:v:c4;jeździłyby'+
+        'śmy=travel:v:c4;jeździlibyście=travel:v:c5;jeździłybyście=trave'+
+        'l:v:c5;',
+    'jeździliby=travel:v:c6;jeździłyby=travel:v:c6;jeździłeś=travel:v:i2'+
+        ';jeździłaś=travel:v:i2;jeździliśmy=travel:v:i4;jeździłyśmy=tr'+
+        'avel:v:i4;jeździliście=travel:v:i5;jeździłyście=travel:v:i5;rosn'+
+        'ąć=grow:v:I;',
+    'rosnę=grow:v:p1;rośniesz=grow:v:p2;rośnie=grow:v:p3;rośniemy=grow:v:p'+
+        '4;rośniecie=grow:v:p5;rosną=grow:v:p6;rośnij=grow:v:M2;rósł=grow'+
+        ':v:i3;rosła=grow:v:i3;rosło=grow:v:i3;rośli=grow:v:i6;rosły=grow:'+
+        'v:i6;',
+    'rósłem=grow:v:i1;rosłam=grow:v:i1;rósłbym=grow:v:c1;rosłabym=grow:v'+
+        ':c1;rósłbyś=grow:v:c2;rosłabyś=grow:v:c2;rósłby=grow:v:c3;ros'+
+        'łaby=grow:v:c3;rosłoby=grow:v:c3;roślibyśmy=grow:v:c4;rosłybyśm'+
+        'y=grow:v:c4;',
+    'roślibyście=grow:v:c5;rosłybyście=grow:v:c5;rośliby=grow:v:c6;rosły'+
+        'by=grow:v:c6;rósłeś=grow:v:i2;rosłaś=grow:v:i2;rośliśmy=grow:v'+
+        ':i4;rosłyśmy=grow:v:i4;rośliście=grow:v:i5;rosłyście=grow:v:i5;'+
+        'nosić=wear:v:I;',
+    'noszę=wear:v:p1;nosisz=wear:v:p2;nosi=wear:v:p3;nosimy=wear:v:p4;nosicie'+
+        '=wear:v:p5;noszą=wear:v:p6;noś=wear:v:M2;nosił=wear:v:i3;nosiła=w'+
+        'ear:v:i3;nosiło=wear:v:i3;nosili=wear:v:i6;nosiły=wear:v:i6;nosiłe'+
+        'm=wear:v:i1;',
+    'nosiłam=wear:v:i1;nosiłbym=wear:v:c1;nosiłabym=wear:v:c1;nosiłbyś=we'+
+        'ar:v:c2;nosiłabyś=wear:v:c2;nosiłby=wear:v:c3;nosiłaby=wear:v:c3;'+
+        'nosiłoby=wear:v:c3;nosilibyśmy=wear:v:c4;nosiłybyśmy=wear:v:c4;',
+    'nosilibyście=wear:v:c5;nosiłybyście=wear:v:c5;nosiliby=wear:v:c6;nosi'+
+        'łyby=wear:v:c6;nosiłeś=wear:v:i2;nosiłaś=wear:v:i2;nosiliśmy=we'+
+        'ar:v:i4;nosiłyśmy=wear:v:i4;nosiliście=wear:v:i5;nosiłyście=wear'+
+        ':v:i5;',
+    'prosić=ask_for:v:I;proszę=ask_for:v:p1;prosisz=ask_for:v:p2;prosi=ask_f'+
+        'or:v:p3;prosimy=ask_for:v:p4;prosicie=ask_for:v:p5;proszą=ask_for:v:'+
+        'p6;proś=ask_for:v:M2;prosił=ask_for:v:i3;prosiła=ask_for:v:i3;pros'+
+        'iło=ask_for:v:i3;',
+    'prosili=ask_for:v:i6;prosiły=ask_for:v:i6;prosiłem=ask_for:v:i1;prosił'+
+        'am=ask_for:v:i1;prosiłbym=ask_for:v:c1;prosiłabym=ask_for:v:c1;pros'+
+        'iłbyś=ask_for:v:c2;prosiłabyś=ask_for:v:c2;prosiłby=ask_for:v:c3'+
+        ';',
+    'prosiłaby=ask_for:v:c3;prosiłoby=ask_for:v:c3;prosilibyśmy=ask_for:v:c'+
+        '4;prosiłybyśmy=ask_for:v:c4;prosilibyście=ask_for:v:c5;prosiłyby'+
+        'ście=ask_for:v:c5;prosiliby=ask_for:v:c6;prosiłyby=ask_for:v:c6;',
+    'prosiłeś=ask_for:v:i2;prosiłaś=ask_for:v:i2;prosiliśmy=ask_for:v:i4;'+
+        'prosiłyśmy=ask_for:v:i4;prosiliście=ask_for:v:i5;prosiłyście=ask'+
+        '_for:v:i5;zacząć=begin:v:I;zacznę=begin:v:f1;zaczniesz=begin:v:f2;'+
+        'zacznie=begin:v:f3;',
+    'zaczniemy=begin:v:f4;zaczniecie=begin:v:f5;zaczną=begin:v:f6;zacznij=beg'+
+        'in:v:M2;zaczął=begin:v:i3;zaczęła=begin:v:i3;zaczęło=begin:v:i3'+
+        ';zaczęli=begin:v:i6;zaczęły=begin:v:i6;zacząłem=begin:v:i1;zacz'+
+        'ęłam=begin:v:i1;',
+    'zacząłeś=begin:v:i2;zaczęłaś=begin:v:i2;zaczęliśmy=begin:v:i4;zac'+
+        'zęłyśmy=begin:v:i4;zaczęliście=begin:v:i5;zaczęłyście=begin:v'+
+        ':i5;skończyć=finish:v:I;skończę=finish:v:f1;skończysz=finish:v:f'+
+        '2;',
+    'skończy=finish:v:f3;skończymy=finish:v:f4;skończycie=finish:v:f5;skoń'+
+        'czą=finish:v:f6;skończ=finish:v:M2;skończył=finish:v:i3;skończy'+
+        'ła=finish:v:i3;skończyło=finish:v:i3;skończyli=finish:v:i6;skońc'+
+        'zyły=finish:v:i6;',
+    'skończyłem=finish:v:i1;skończyłam=finish:v:i1;skończyłeś=finish:v:'+
+        'i2;skończyłaś=finish:v:i2;skończyliśmy=finish:v:i4;skończyłyś'+
+        'my=finish:v:i4;skończyliście=finish:v:i5;skończyłyście=finish:v:'+
+        'i5;',
+    'wrócić=return:v:I;wrócę=return:v:f1;wrócisz=return:v:f2;wróci=retur'+
+        'n:v:f3;wrócimy=return:v:f4;wrócicie=return:v:f5;wrócą=return:v:f6'+
+        ';wróc=return:v:M2;wrócił=return:v:i3;wróciła=return:v:i3;wróci'+
+        'ło=return:v:i3;',
+    'wrócili=return:v:i6;wróciły=return:v:i6;wróciłem=return:v:i1;wróci'+
+        'łam=return:v:i1;wróciłeś=return:v:i2;wróciłaś=return:v:i2;wró'+
+        'ciliśmy=return:v:i4;wróciłyśmy=return:v:i4;wróciliście=return:v'+
+        ':i5;',
+    'wróciłyście=return:v:i5;zapłacić=pay:v:I;zapłacę=pay:v:f1;zapłaci'+
+        'sz=pay:v:f2;zapłaci=pay:v:f3;zapłacimy=pay:v:f4;zapłacicie=pay:v:f'+
+        '5;zapłacą=pay:v:f6;zapłac=pay:v:M2;zapłacił=pay:v:i3;zapłaciła'+
+        '=pay:v:i3;',
+    'zapłaciło=pay:v:i3;zapłacili=pay:v:i6;zapłaciły=pay:v:i6;zapłaciłe'+
+        'm=pay:v:i1;zapłaciłam=pay:v:i1;zapłaciłeś=pay:v:i2;zapłaciłaś'+
+        '=pay:v:i2;zapłaciliśmy=pay:v:i4;zapłaciłyśmy=pay:v:i4;zapłacili'+
+        'ście=pay:v:i5;',
+    'zapłaciłyście=pay:v:i5;usłyszeć=hear:v:I;usłyszę=hear:v:f1;usłysz'+
+        'ysz=hear:v:f2;usłyszy=hear:v:f3;usłyszymy=hear:v:f4;usłyszycie=hea'+
+        'r:v:f5;usłyszą=hear:v:f6;usłysz=hear:v:M2;usłyszał=hear:v:i3;us'+
+        'łyszała=hear:v:i3;',
+    'usłyszało=hear:v:i3;usłyszeli=hear:v:i6;usłyszały=hear:v:i6;usłysza'+
+        'łem=hear:v:i1;usłyszałam=hear:v:i1;usłyszałeś=hear:v:i2;usłysz'+
+        'ałaś=hear:v:i2;usłyszeliśmy=hear:v:i4;usłyszałyśmy=hear:v:i4;',
+    'usłyszeliście=hear:v:i5;usłyszałyście=hear:v:i5;zrozumieć=understan'+
+        'd:v:I;zrozumiem=understand:v:f1;zrozumiesz=understand:v:f2;zrozumie=u'+
+        'nderstand:v:f3;zrozumiemy=understand:v:f4;zrozumiecie=understand:v:f5'+
+        ';',
+    'zrozumieją=understand:v:f6;zrozum=understand:v:M2;zrozumiał=understand:'+
+        'v:i3;zrozumiała=understand:v:i3;zrozumiało=understand:v:i3;zrozumie'+
+        'li=understand:v:i6;zrozumiały=understand:v:i6;zrozumiałem=understan'+
+        'd:v:i1;',
+    'zrozumiałam=understand:v:i1;zrozumiałeś=understand:v:i2;zrozumiałaś='+
+        'understand:v:i2;zrozumieliśmy=understand:v:i4;zrozumiałyśmy=unders'+
+        'tand:v:i4;zrozumieliście=understand:v:i5;zrozumiałyście=understand'+
+        ':v:i5;',
+    'będę=be:v:B1:ser;będziesz=be:v:B2:ser;będzie=be:v:B3:ser;będziemy=be'+
+        ':v:B4:ser;będziecie=be:v:B5:ser;będą=be:v:B6:ser;mam_na_imię=call'+
+        ':v:p1:llamar;masz_na_imię=call:v:p2:llamar;ma_na_imię=call:v:p3:lla'+
+        'mar;',
+    'mamy_na_imię=call:v:p4:llamar;macie_na_imię=call:v:p5:llamar;mają_na_i'+
+        'mię=call:v:p6:llamar;pada_deszcz=rain:v:p3:llover;padał_deszcz=rain'+
+        ':v:i3:llover;będzie_padać=rain:v:f3:llover;poproszę=have:v:f1:tene'+
+        'r;',
+    'poprosimy=have:v:f4:tener;szachy=chess:n:s:nagil;szachów=chess:n:s:nagil'+
+        ';szachach=chess:n:s:nagil;szachami=chess:n:s:nagil;ja=I:s:1;ty=you:s:'+
+        '2;on=he:s:3;ona=she:s:3;ono=it:s:3;my=we:s:4;wy=you:s:5;oni=they:s:6;'+
+        'one=they:s:6;',
+    'pan=you:s:2;pani=you:s:2;państwo=you:s:5;mnie=me:o;mi=me:o;mię=me:o;cie'+
+        'bie=you:o;cię=you:o;tobie=you:o;ci=you:o;go=him:o;jego=him:o;jemu=hi'+
+        'm:o;mu=him:o;niego=him:o;nim=him:o;ją=her:o;jej=her:o;nią=her:o;nie'+
+        'j=her:o;nas=us:o;',
+    'nam=us:o;was=you:o;wam=you:o;ich=them:o;im=them:o;je=them:o;nich=them:o;n'+
+        'imi=them:o;tobą=you:o;mną=me:o;wami=you:o;nami=us:o;mój=my:x;moi=m'+
+        'y:x;twoi=your:x;nasi=our:x;wasi=your:x;swoi=his:x;moja=my:x;moje=my:x'+
+        ';mojego=my:x;',
+    'mojej=my:x;mojemu=my:x;moim=my:x;moją=my:x;moich=my:x;moimi=my:x;twój=y'+
+        'our:x;twoja=your:x;twoje=your:x;twojego=your:x;twojej=your:x;twoim=yo'+
+        'ur:x;twoją=your:x;twoich=your:x;jego=his:x;jej=her:x;nasz=our:x;nasz'+
+        'a=our:x;',
+    'nasze=our:x;naszego=our:x;naszej=our:x;naszym=our:x;naszą=our:x;naszych='+
+        'our:x;wasz=your:x;wasza=your:x;wasze=your:x;waszego=your:x;waszej=you'+
+        'r:x;waszym=your:x;waszą=your:x;waszych=your:x;ich=their:x;swój=his:'+
+        'x;swoja=his:x;',
+    'swoje=his:x;swojego=his:x;swojej=his:x;swoim=his:x;swoją=his:x;ten=this:'+
+        'd;ta=this:d;to=this:d;tego=this:d;tej=this:d;temu=this:d;tym=this:d;t'+
+        'ę=this:d;tą=this:d;ci=these:d;te=these:d;tych=these:d;tymi=these:d;'+
+        'co=what:w;',
+    'kto=who:w;gdzie=where:w;kiedy=when:w;dlaczego=why:w;jak=how:w;jaki=which:'+
+        'w;jaka=which:w;jakie=which:w;który=which:w;która=which:w;które=whi'+
+        'ch:w;ile=how_many:w;skąd=where_from:w;dokąd=where_to:w;czyj=whose:w'+
+        ';w=in:e;we=in:e;',
+    'na=on:e;do=to:e;z=with:e;ze=with:e;od=from:e;dla=for:e;o=about:e;po=after'+
+        ':e;przy=at:e;bez=without:e;pod=under:e;nad=over:e;za=behind:e;przed=i'+
+        'n_front_of:e;ode=from:e;między=between:e;przez=through:e;u=at:e;obok'+
+        '=next_to:e;',
+    'koło=near:e;wśród=among:e;ku=toward:e;dzięki=thanks_to:e;podczas=duri'+
+        'ng:e;i=and:c;a=and:c;oraz=and:c;ale=but:c;lecz=but:c;lub=or:c;albo=or'+
+        ':c;że=that:c;bo=because:c;ponieważ=because:c;jeśli=if:c;jeżeli=if'+
+        ':c;gdy=when:c;',
+    'chociaż=although:c;więc=so:c;aby=so_that:c;żeby=so_that:c;czy=whether:'+
+        'c;zanim=before:c;dopóki=until:c;teraz=now:r;dziś=today:r;dzisiaj=to'+
+        'day:r;jutro=tomorrow:r;wczoraj=yesterday:r;dziś_wieczorem=tonight:r;'+
+        'zawsze=always:r;',
+    'często=often:r;czasem=sometimes:r;czasami=sometimes:r;już=already:r;jes'+
+        'zcze=still:r;znowu=again:r;znów=again:r;też=also:r;także=also:r;ty'+
+        'lko=only:r;może=maybe:r;tutaj=here:r;tu=here:r;tam=there:r;razem=tog'+
+        'ether:r;',
+    'bardzo=very:r;prawie=almost:r;wcześnie=early:r;późno=late:r;daleko=far'+
+        ':r;blisko=near:r;dobrze=well:r;źle=badly:r;szybko=quickly:r;wolno=sl'+
+        'owly:r;nigdy=never:r;niedawno=recently:r;wkrótce=soon:r;rano=in_the_'+
+        'morning:r;',
+    'wieczorem=in_the_evening:r;zimno=cold:r;ciepło=warm:r;gorąco=hot:r;troc'+
+        'hę=a_little:r;zimą=in_winter:r;wiosną=in_spring:r;latem=in_summer:'+
+        'r;jesienią=in_autumn:r;o_pierwszej=at_one:r;o_drugiej=at_two:r;o_trz'+
+        'eciej=at_three:r;',
+    'o_czwartej=at_four:r;o_piątej=at_five:r;o_szóstej=at_six:r;o_siódmej=a'+
+        't_seven:r;o_ósmej=at_eight:r;o_dziewiątej=at_nine:r;o_dziesiątej=a'+
+        't_ten:r;o_jedenastej=at_eleven:r;o_dwunastej=at_twelve:r;wolniej=slow'+
+        'ly:r;',
+    'szybciej=quickly:r;naprawdę=really:r;zbyt=too:r;bardziej=more:r;mniej=le'+
+        'ss:r;wszędzie=everywhere:r;nigdzie=nowhere:r;dalej=further:r;potem=t'+
+        'hen:r;wtedy=then:r;następnie=then:r;najpierw=first:r;w_zeszłym_roku'+
+        '=last_year:r;',
+    'w_tym_roku=this_year:r;po_polsku=Polish:z:s:n;po_angielsku=English:z:s:n;'+
+        'po_francusku=French:z:s:n;po_niemiecku=German:z:s:n;po_hiszpańsku=Sp'+
+        'anish:z:s:n;po_włosku=Italian:z:s:n;po_rosyjsku=Russian:z:s:n;',
+    'po_norwesku=Norwegian:z:s:n;po_szwedzku=Swedish:z:s:n;ile_masz_lat=How_ol'+
+        'd_are_you:j;ile_macie_lat=How_old_are_you:j;cześć=Hello:j;witaj=Wel'+
+        'come:j;witam=Welcome:j;dzień_dobry=Good_morning:j;dobry_wieczór=Goo'+
+        'd_evening:j;',
+    'dobranoc=Good_night:j;do_widzenia=Goodbye:j;dziękuję=Thank_you:j;dzięk'+
+        'uje=Thank_you:j;proszę=please:j;przepraszam=Sorry:j;tak=Yes:j;nie=No'+
+        ':j;dziękuję_bardzo=Thank_you_very_much:j;jak_się_masz=How_are_you:'+
+        'j;',
+    'na_zdrowie=Cheers:j;gratulacje=Congratulations:j;do_zobaczenia=See_you_so'+
+        'on:j;miło_mi_cię_poznać=Nice_to_meet_you:j;miło_mi_pana_poznać=N'+
+        'ice_to_meet_you:j;nie=not:g;nic=anything:q;nikt=anyone:q;wszyscy=all:'+
+        'u;wszystko=all:u;',
+    'wszystkie=all:u;każdy=each:u;każda=each:u;każde=each:u;kilka=some:u;tr'+
+        'ochę=a_little:u;wiele=many:u;dużo=many:u;mało=few:u;kilku=some:u;n'+
+        'iektórzy=some:u;obie=both:u;oba=both:u;wszystkich=all:u;jeden=a:t;je'+
+        'dna=a:t;jedno=a:t;',
+    'jednego=a:t;jedną=a:t;jednej=a:t;jednemu=a:t;jednym=a:t;dwa=two:u:1;dwie'+
+        '=two:u:1;dwóch=two:u:1;trzy=three:u:1;trzech=three:u:1;cztery=four:u'+
+        ':1;czterech=four:u:1;pięć=five:u:1;sześć=six:u:1;siedem=seven:u:1'+
+        ';osiem=eight:u:1;',
+    'dziewięć=nine:u:1;dziesięć=ten:u:1;jedenaście=eleven:u:1;dwanaście='+
+        'twelve:u:1;dwadzieścia=twenty:u:1;trzydzieści=thirty:u:1;czterdzie'+
+        'ści=forty:u:1;pięćdziesiąt=fifty:u:1;sto=one_hundred:u:1;tysiąc='+
+        'one_thousand:u:1;',
+    'dwieście=two_hundred:u:1;zero=zero:u:1;Polska=Poland:z:s:n;Polsce=Poland'+
+        ':z:s:n;Polskę=Poland:z:s:n;Polską=Poland:z:s:n;Warszawa=Warsaw:z:s:'+
+        'n;Warszawy=Warsaw:z:s:g;Warszawie=Warsaw:z:s:n;Warszawę=Warsaw:z:s:n'+
+        ';',
+    'Kraków=Krakow:z:s:n;Krakowa=Krakow:z:s:g;Krakowie=Krakow:z:s:n;Gdańsk=G'+
+        'dansk:z:s:n;Gdańska=Gdansk:z:s:g;Gdańsku=Gdansk:z:s:n;Wrocław=Wroc'+
+        'law:z:s:n;Wrocławia=Wroclaw:z:s:g;Wrocławiu=Wroclaw:z:s:n;Poznań=P'+
+        'oznan:z:s:n;',
+    'Poznania=Poznan:z:s:g;Poznaniu=Poznan:z:s:n;Niemcy=Germany:z:s:n;Niemiec='+
+        'Germany:z:s:g;Niemczech=Germany:z:s:n;Francja=France:z:s:n;Francji=Fr'+
+        'ance:z:s:g;Francję=France:z:s:n;Anglia=England:z:s:n;Anglii=England:'+
+        'z:s:g;',
+    'Hiszpania=Spain:z:s:n;Hiszpanii=Spain:z:s:g;Włochy=Italy:z:s:n;Włoch=It'+
+        'aly:z:s:g;Włoszech=Italy:z:s:n;Rosja=Russia:z:s:n;Rosji=Russia:z:s:g'+
+        ';Norwegia=Norway:z:s:n;Norwegii=Norway:z:s:g;Szwecja=Sweden:z:s:n;Szw'+
+        'ecji=Sweden:z:s:g;',
+    'Dania=Denmark:z:s:n;Danii=Denmark:z:s:g;Europa=Europe:z:s:n;Europie=Europ'+
+        'e:z:s:n;Londyn=London:z:s:n;Londynu=London:z:s:g;Londynie=London:z:s:'+
+        'n;Paryż=Paris:z:s:n;Paryża=Paris:z:s:g;Paryżu=Paris:z:s:n;Berlin=B'+
+        'erlin:z:s:n;',
+    'Berlina=Berlin:z:s:g;Berlinie=Berlin:z:s:n;Rzym=Rome:z:s:n;Rzymu=Rome:z:s'+
+        ':g;Rzymie=Rome:z:s:n;Oslo=Oslo:z:s:n;Kanada=Canada:z:s:n;Kanadzie=Can'+
+        'ada:z:s:n;Ameryka=America:z:s:n;Ameryce=America:z:s:n;poniedziałek=M'+
+        'onday:z:s:n;',
+    'poniedziałku=Monday:z:s:n;wtorek=Tuesday:z:s:n;wtorku=Tuesday:z:s:n;śro'+
+        'da=Wednesday:z:s:n;środę=Wednesday:z:s:n;środy=Wednesday:z:s:n;czw'+
+        'artek=Thursday:z:s:n;czwartku=Thursday:z:s:n;piątek=Friday:z:s:n;pi'+
+        'ątku=Friday:z:s:n;',
+    'sobota=Saturday:z:s:n;sobotę=Saturday:z:s:n;soboty=Saturday:z:s:n;niedzi'+
+        'ela=Sunday:z:s:n;niedzielę=Sunday:z:s:n;niedzieli=Sunday:z:s:n;stycz'+
+        'eń=January:z:s:n;stycznia=January:z:s:g;styczniu=January:z:s:n;luty='+
+        'February:z:s:n;',
+    'lutego=February:z:s:g;lutym=February:z:s:n;marzec=March:z:s:n;marca=March'+
+        ':z:s:g;marcu=March:z:s:n;kwiecień=April:z:s:n;kwietnia=April:z:s:g;k'+
+        'wietniu=April:z:s:n;maj=May:z:s:n;maja=May:z:s:g;maju=May:z:s:n;czerw'+
+        'iec=June:z:s:n;',
+    'czerwca=June:z:s:g;czerwcu=June:z:s:n;lipiec=July:z:s:n;lipca=July:z:s:g;'+
+        'lipcu=July:z:s:n;sierpień=August:z:s:n;sierpnia=August:z:s:g;sierpni'+
+        'u=August:z:s:n;wrzesień=September:z:s:n;września=September:z:s:g;',
+    'wrześniu=September:z:s:n;październik=October:z:s:n;października=Octobe'+
+        'r:z:s:g;październiku=October:z:s:n;listopad=November:z:s:n;listopada'+
+        '=November:z:s:g;listopadzie=November:z:s:n;grudzień=December:z:s:n;',
+    'grudnia=December:z:s:g;grudniu=December:z:s:n;Anna=Anna:z:s:n;Anny=Anna:z'+
+        ':s:g;Annie=Anna:z:s:n;Annę=Anna:z:s:n;Anną=Anna:z:s:n;Maria=Maria:z'+
+        ':s:n;Marii=Maria:z:s:g;Marię=Maria:z:s:n;Marią=Maria:z:s:n;Ewa=Ewa:'+
+        'z:s:n;',
+    'Ewy=Ewa:z:s:g;Ewie=Ewa:z:s:n;Ewę=Ewa:z:s:n;Kasia=Kasia:z:s:n;Kasi=Kasia:'+
+        'z:s:g;Kasię=Kasia:z:s:n;Agnieszka=Agnieszka:z:s:n;Agnieszki=Agnieszk'+
+        'a:z:s:g;Agnieszce=Agnieszka:z:s:n;Agnieszkę=Agnieszka:z:s:n;Jan=Jan:'+
+        'z:s:n;',
+    'Jana=Jan:z:s:g;Janowi=Jan:z:s:n;Janem=Jan:z:s:n;Piotr=Peter:z:s:n;Piotra='+
+        'Peter:z:s:g;Piotrowi=Peter:z:s:n;Piotrem=Peter:z:s:n;Adam=Adam:z:s:n;'+
+        'Adama=Adam:z:s:g;Adamowi=Adam:z:s:n;Adamem=Adam:z:s:n;Marek=Marek:z:s'+
+        ':n;',
+    'Marka=Marek:z:s:g;Markowi=Marek:z:s:n;Markiem=Marek:z:s:n;Tomasz=Thomas:z'+
+        ':s:n;Tomasza=Thomas:z:s:g;Tomaszowi=Thomas:z:s:n;Tomaszem=Thomas:z:s:'+
+        'n;Paweł=Paul:z:s:n;Pawła=Paul:z:s:g;Pawłowi=Paul:z:s:n;Pawłem=Pau'+
+        'l:z:s:n;',
+    'Michał=Michael:z:s:n;Michała=Michael:z:s:g;Michałowi=Michael:z:s:n;Mic'+
+        'hałem=Michael:z:s:n;Krzysztof=Christopher:z:s:n;Krzysztofa=Christoph'+
+        'er:z:s:g;Krzysztofowi=Christopher:z:s:n;Krzysztofem=Christopher:z:s:n'+
+        ';'
+  );
+
+  { Roumain : formes de surface (voir mkro.py) }
+  RoData: Array[0..335] Of String = (
+    'copil=child:n:s;copii=child:n:p;copilul=child:n:sD;copiii=child:n:pD;copi'+
+        'lului=child:n:sD:g;copiilor=child:n:pD:g;băiat=boy:n:s;băieți=boy:'+
+        'n:p;băiatul=boy:n:sD;băieții=boy:n:pD;băiatului=boy:n:sD:g;băie'+
+        'ților=boy:n:pD:g;',
+    'bărbat=man:n:s;bărbați=man:n:p;bărbatul=man:n:sD;bărbații=man:n:pD;'+
+        'bărbatului=man:n:sD:g;bărbaților=man:n:pD:g;prieten=friend:n:s;pri'+
+        'eteni=friend:n:p;prietenul=friend:n:sD;prietenii=friend:n:pD;prietenu'+
+        'lui=friend:n:sD:g;',
+    'prietenilor=friend:n:pD:g;frate=brother:n:s;frați=brother:n:p;fratele=br'+
+        'other:n:sD;frații=brother:n:pD;fratelui=brother:n:sD:g;fraților=bro'+
+        'ther:n:pD:g;tată=father:n:s;tați=father:n:p;tatăl=father:n:sD;taț'+
+        'ii=father:n:pD;',
+    'tatălui=father:n:sD:g;taților=father:n:pD:g;fiu=son:n:s;fii=son:n:p;fiu'+
+        'l=son:n:sD;fiii=son:n:pD;fiului=son:n:sD:g;fiilor=son:n:pD:g;profesor'+
+        '=teacher:n:s;profesori=teacher:n:p;profesorul=teacher:n:sD;profesorii'+
+        '=teacher:n:pD;',
+    'profesorului=teacher:n:sD:g;profesorilor=teacher:n:pD:g;student=student:n'+
+        ':s;studenți=student:n:p;studentul=student:n:sD;studenții=student:n:'+
+        'pD;studentului=student:n:sD:g;studenților=student:n:pD:g;doctor=doct'+
+        'or:n:s;',
+    'doctori=doctor:n:p;doctorul=doctor:n:sD;doctorii=doctor:n:pD;doctorului=d'+
+        'octor:n:sD:g;doctorilor=doctor:n:pD:g;medic=doctor:n:s;medici=doctor:'+
+        'n:p;medicul=doctor:n:sD;medicii=doctor:n:pD;medicului=doctor:n:sD:g;',
+    'medicilor=doctor:n:pD:g;elev=pupil:n:s;elevi=pupil:n:p;elevul=pupil:n:sD;'+
+        'elevii=pupil:n:pD;elevului=pupil:n:sD:g;elevilor=pupil:n:pD:g;câine='+
+        'dog:n:s;câini=dog:n:p;câinele=dog:n:sD;câinii=dog:n:pD;câineleui='+
+        'dog:n:sD:g;',
+    'câinilor=dog:n:pD:g;cal=horse:n:s;cai=horse:n:p;calul=horse:n:sD;caii=ho'+
+        'rse:n:pD;calului=horse:n:sD:g;cailor=horse:n:pD:g;pește=fish:n:s;pe'+
+        'ști=fish:n:p;peștele=fish:n:sD;peștii=fish:n:pD;peșteleui=fish:n:'+
+        'sD:g;',
+    'peștilor=fish:n:pD:g;om=person:n:s;oameni=person:n:p;omul=person:n:sD;oa'+
+        'menii=person:n:pD;omului=person:n:sD:g;oamenilor=person:n:pD:g;vecin='+
+        'neighbor:n:s;vecini=neighbor:n:p;vecinul=neighbor:n:sD;vecinii=neighb'+
+        'or:n:pD;',
+    'vecinului=neighbor:n:sD:g;vecinilor=neighbor:n:pD:g;domn=gentleman:n:s;do'+
+        'mni=gentleman:n:p;domnul=gentleman:n:sD;domnii=gentleman:n:pD;domnulu'+
+        'i=gentleman:n:sD:g;domnilor=gentleman:n:pD:g;soț=husband:n:s;soți=h'+
+        'usband:n:p;',
+    'soțul=husband:n:sD;soții=husband:n:pD;soțului=husband:n:sD:g;soților='+
+        'husband:n:pD:g;bunic=grandfather:n:s;bunici=grandfather:n:p;bunicul=g'+
+        'randfather:n:sD;bunicii=grandfather:n:pD+sD:g;bunicului=grandfather:n'+
+        ':sD:g;',
+    'bunicilor=grandfather:n:pD:g;unchi=uncle:n:s+p;unchiul=uncle:n:sD;unchii='+
+        'uncle:n:pD;unchiului=uncle:n:sD:g;unchilor=uncle:n:pD:g;nepot=nephew:'+
+        'n:s;nepoți=nephew:n:p;nepotul=nephew:n:sD;nepoții=nephew:n:pD;nepot'+
+        'ului=nephew:n:sD:g;',
+    'nepoților=nephew:n:pD:g;ospătar=waiter:n:s;ospătari=waiter:n:p;ospăta'+
+        'rul=waiter:n:sD;ospătarii=waiter:n:pD;ospătarului=waiter:n:sD:g;osp'+
+        'ătarilor=waiter:n:pD:g;șofer=driver:n:s;șoferi=driver:n:p;șoferul'+
+        '=driver:n:sD;',
+    'șoferii=driver:n:pD;șoferului=driver:n:sD:g;șoferilor=driver:n:pD:g;in'+
+        'giner=engineer:n:s;ingineri=engineer:n:p;inginerul=engineer:n:sD;ingi'+
+        'nerii=engineer:n:pD;inginerului=engineer:n:sD:g;inginerilor=engineer:'+
+        'n:pD:g;',
+    'polițist=policeman:n:s;polițiști=policeman:n:p;polițistul=policeman:n'+
+        ':sD;polițiștii=policeman:n:pD;polițistului=policeman:n:sD:g;poliț'+
+        'iștilor=policeman:n:pD:g;actor=actor:n:s;actori=actor:n:p;actorul=ac'+
+        'tor:n:sD;',
+    'actorii=actor:n:pD;actorului=actor:n:sD:g;actorilor=actor:n:pD:g;bucătar'+
+        '=cook:n:s;bucătari=cook:n:p;bucătarul=cook:n:sD;bucătarii=cook:n:p'+
+        'D;bucătarului=cook:n:sD:g;bucătarilor=cook:n:pD:g;copac=tree:n:s;co'+
+        'paci=tree:n:p;',
+    'copacul=tree:n:sD;copacii=tree:n:pD;copacului=tree:n:sD:g;copacilor=tree:'+
+        'n:pD:g;cartof=potato:n:s;cartofi=potato:n:p;cartoful=potato:n:sD;cart'+
+        'ofii=potato:n:pD;cartofului=potato:n:sD:g;cartofilor=potato:n:pD:g;so'+
+        'are=sun:n:s+p;',
+    'soarele=sun:n:sD+pD;soarelui=sun:n:sD:g;soarelor=sun:n:pD:g;munte=mountai'+
+        'n:n:s;munți=mountain:n:p;muntele=mountain:n:sD;munții=mountain:n:pD'+
+        ';munteleui=mountain:n:sD:g;munților=mountain:n:pD:g;oraș=city:n:s;o'+
+        'rașe=city:n:p;',
+    'orașul=city:n:sD;orașele=city:n:pD;orașului=city:n:sD:g;orașelor=city'+
+        ':n:pD:g;film=film:n:s;filme=film:n:p;filmul=film:n:sD;filmele=film:n:'+
+        'pD;filmului=film:n:sD:g;filmelor=film:n:pD:g;telefon=telephone:n:s;',
+    'telefoane=telephone:n:p;telefonul=telephone:n:sD;telefoanele=telephone:n:'+
+        'pD;telefonului=telephone:n:sD:g;telefoanelor=telephone:n:pD:g;autobuz'+
+        '=bus:n:s;autobuze=bus:n:p;autobuzul=bus:n:sD;autobuzele=bus:n:pD;auto'+
+        'buzului=bus:n:sD:g;',
+    'autobuzelor=bus:n:pD:g;tren=train:n:s;trenuri=train:n:p;trenul=train:n:sD'+
+        ';trenurii=train:n:pD;trenului=train:n:sD:g;trenurilor=train:n:pD:g;av'+
+        'ion=plane:n:s;avioane=plane:n:p;avionul=plane:n:sD;avioanele=plane:n:'+
+        'pD;',
+    'avionului=plane:n:sD:g;avioanelor=plane:n:pD:g;birou=office:n:s;birouri=o'+
+        'ffice:n:p;biroul=office:n:sD;birourile=office:n:pD;biroului=office:n:'+
+        'sD:g;birourilor=office:n:pD:g;loc=place:n:s;locuri=place:n:p;locul=pl'+
+        'ace:n:sD;',
+    'locurii=place:n:pD;locului=place:n:sD:g;locurilor=place:n:pD:g;nume=name:'+
+        'n:s+p;numele=name:n:sD+pD;numelui=name:n:sD:g;numelor=name:n:pD:g;luc'+
+        'ru=thing:n:s;lucruri=thing:n:p;lucrul=thing:n:sD;lucrurii=thing:n:pD;',
+    'lucrului=thing:n:sD:g;lucrurilor=thing:n:pD:g;magazin=shop:n:s;magazine=s'+
+        'hop:n:p;magazinul=shop:n:sD;magazinele=shop:n:pD;magazinului=shop:n:s'+
+        'D:g;magazinelor=shop:n:pD:g;restaurant=restaurant:n:s;restaurante=res'+
+        'taurant:n:p;',
+    'restaurantul=restaurant:n:sD;restaurantele=restaurant:n:pD;restaurantului'+
+        '=restaurant:n:sD:g;restaurantelor=restaurant:n:pD:g;hotel=hotel:n:s;h'+
+        'oteluri=hotel:n:p;hotelul=hotel:n:sD;hotelurii=hotel:n:pD;hotelului=h'+
+        'otel:n:sD:g;',
+    'hotelurilor=hotel:n:pD:g;parc=park:n:s;parcuri=park:n:p;parcul=park:n:sD;'+
+        'parcurii=park:n:pD;parcului=park:n:sD:g;parcurilor=park:n:pD:g;aeropo'+
+        'rt=airport:n:s;aeroporturi=airport:n:p;aeroportul=airport:n:sD;',
+    'aeroporturii=airport:n:pD;aeroportului=airport:n:sD:g;aeroporturilor=airp'+
+        'ort:n:pD:g;spital=hospital:n:s;spitale=hospital:n:p;spitalul=hospital'+
+        ':n:sD;spitalele=hospital:n:pD;spitalului=hospital:n:sD:g;spitalelor=h'+
+        'ospital:n:pD:g;',
+    'teatru=theater:n:s;teatre=theater:n:p;teatrul=theater:n:sD;teatrele=theat'+
+        'er:n:pD;teatrului=theater:n:sD:g;teatrelor=theater:n:pD:g;muzeu=museu'+
+        'm:n:s;muzee=museum:n:p;muzeul=museum:n:sD;muzeele=museum:n:pD;muzeulu'+
+        'i=museum:n:sD:g;',
+    'muzeelor=museum:n:pD:g;pod=bridge:n:s;poduri=bridge:n:p;podul=bridge:n:sD'+
+        ';podurii=bridge:n:pD;podului=bridge:n:sD:g;podurilor=bridge:n:pD:g;dr'+
+        'um=road:n:s;drumuri=road:n:p;drumul=road:n:sD;drumurii=road:n:pD;drum'+
+        'ului=road:n:sD:g;',
+    'drumurilor=road:n:pD:g;râu=river:n:s;râuri=river:n:p;râul=river:n:sD;r'+
+        'âurii=river:n:pD;râului=river:n:sD:g;râurilor=river:n:pD:g;lac=lak'+
+        'e:n:s;lacuri=lake:n:p;lacul=lake:n:sD;lacurii=lake:n:pD;lacului=lake:'+
+        'n:sD:g;',
+    'lacurilor=lake:n:pD:g;vin=wine:n:s;vinuri=wine:n:p;vinul=wine:n:sD;vinuri'+
+        'i=wine:n:pD;vinului=wine:n:sD:g;vinurilor=wine:n:pD:g;suc=juice:n:s;s'+
+        'ucuri=juice:n:p;sucul=juice:n:sD;sucurii=juice:n:pD;sucului=juice:n:s'+
+        'D:g;',
+    'sucurilor=juice:n:pD:g;ceai=tea:n:s;ceaiuri=tea:n:p;ceaiul=tea:n:sD;ceaiu'+
+        'rii=tea:n:pD;ceaiului=tea:n:sD:g;ceaiurilor=tea:n:pD:g;pat=bed:n:s;pa'+
+        'turi=bed:n:p;patul=bed:n:sD;paturii=bed:n:pD;patului=bed:n:sD:g;patur'+
+        'ilor=bed:n:pD:g;',
+    'scaun=chair:n:s;scaune=chair:n:p;scaunul=chair:n:sD;scaunele=chair:n:pD;s'+
+        'caunului=chair:n:sD:g;scaunelor=chair:n:pD:g;ceas=clock:n:s;ceasuri=c'+
+        'lock:n:p;ceasul=clock:n:sD;ceasurii=clock:n:pD;ceasului=clock:n:sD:g;',
+    'ceasurilor=clock:n:pD:g;calculator=computer:n:s;calculatoare=computer:n:p'+
+        ';calculatorul=computer:n:sD;calculatoarele=computer:n:pD;calculatorul'+
+        'ui=computer:n:sD:g;calculatoarelor=computer:n:pD:g;număr=number:n:s;'+
+        'numere=number:n:p;',
+    'numărul=number:n:sD;numerele=number:n:pD;numărului=number:n:sD:g;numere'+
+        'lor=number:n:pD:g;ou=egg:n:s;ouă=egg:n:p;oul=egg:n:sD;ouăle=egg:n:p'+
+        'D;oului=egg:n:sD:g;ouălor=egg:n:pD:g;apartament=apartment:n:s;',
+    'apartamente=apartment:n:p;apartamentul=apartment:n:sD;apartamentele=apart'+
+        'ment:n:pD;apartamentului=apartment:n:sD:g;apartamentelor=apartment:n:'+
+        'pD:g;geam=window:n:s;geamuri=window:n:p;geamul=window:n:sD;geamurii=w'+
+        'indow:n:pD;',
+    'geamului=window:n:sD:g;geamurilor=window:n:pD:g;ziar=newspaper:n:s;ziare='+
+        'newspaper:n:p;ziarul=newspaper:n:sD;ziarele=newspaper:n:pD;ziarului=n'+
+        'ewspaper:n:sD:g;ziarelor=newspaper:n:pD:g;bilet=ticket:n:s;bilete=tic'+
+        'ket:n:p;',
+    'biletul=ticket:n:sD;biletele=ticket:n:pD;biletului=ticket:n:sD:g;biletelo'+
+        'r=ticket:n:pD:g;mesaj=message:n:s;mesaje=message:n:p;mesajul=message:'+
+        'n:sD;mesajele=message:n:pD;mesajului=message:n:sD:g;mesajelor=message'+
+        ':n:pD:g;',
+    'cadou=gift:n:s;cadouri=gift:n:p;cadoul=gift:n:sD;cadourii=gift:n:pD;cadou'+
+        'lui=gift:n:sD:g;cadourilor=gift:n:pD:g;pahar=glass:n:s;pahare=glass:n'+
+        ':p;paharul=glass:n:sD;paharele=glass:n:pD;paharului=glass:n:sD:g;paha'+
+        'relor=glass:n:pD:g;',
+    'câmp=field:n:s;câmpuri=field:n:p;câmpul=field:n:sD;câmpurii=field:n:p'+
+        'D;câmpului=field:n:sD:g;câmpurilor=field:n:pD:g;sat=village:n:s;sat'+
+        'e=village:n:p;satul=village:n:sD;satele=village:n:pD;satului=village:'+
+        'n:sD:g;',
+    'satelor=village:n:pD:g;sandviș=sandwich:n:s;sandvișuri=sandwich:n:p;san'+
+        'dvișul=sandwich:n:sD;sandvișurii=sandwich:n:pD;sandvișului=sandwic'+
+        'h:n:sD:g;sandvișurilor=sandwich:n:pD:g;măr=apple:n:s;mere=apple:n:p'+
+        ';mărul=apple:n:sD;',
+    'merele=apple:n:pD;mărului=apple:n:sD:g;merelor=apple:n:pD:g;pui=chicken:'+
+        'n:s+p;puiul=chicken:n:sD;puii=chicken:n:pD;puiului=chicken:n:sD:g;pui'+
+        'lor=chicken:n:pD:g;ochi=eye:n:s+p;ochiul=eye:n:sD;ochii=eye:n:pD;ochi'+
+        'ului=eye:n:sD:g;',
+    'ochilor=eye:n:pD:g;picior=leg:n:s;picioare=leg:n:p;piciorul=leg:n:sD;pici'+
+        'oarele=leg:n:pD;piciorului=leg:n:sD:g;picioarelor=leg:n:pD:g;cap=head'+
+        ':n:s;capete=head:n:p;capul=head:n:sD;capetele=head:n:pD;capului=head:'+
+        'n:sD:g;',
+    'capetelor=head:n:pD:g;examen=exam:n:s;examene=exam:n:p;examenul=exam:n:sD'+
+        ';examenele=exam:n:pD;examenului=exam:n:sD:g;examenelor=exam:n:pD:g;pr'+
+        'ogram=program:n:s;programe=program:n:p;programul=program:n:sD;program'+
+        'ele=program:n:pD;',
+    'programului=program:n:sD:g;programelor=program:n:pD:g;cartier=neighborhoo'+
+        'd:n:s;cartiere=neighborhood:n:p;cartierul=neighborhood:n:sD;cartierel'+
+        'e=neighborhood:n:pD;cartierului=neighborhood:n:sD:g;cartierelor=neigh'+
+        'borhood:n:pD:g;',
+    'timp=time:n:s;timpuri=time:n:p;timpul=time:n:sD;timpurii=time:n:pD;timpul'+
+        'ui=time:n:sD:g;timpurilor=time:n:pD:g;pizza=pizza:n:s+sD;pizze=pizza:'+
+        'n:p;pizzele=pizza:n:pD;pizzei=pizza:n:sD:g;pizzelor=pizza:n:pD:g;banc'+
+        'ă=bank:n:s;',
+    'bănci=bank:n:p;banca=bank:n:sD;băncile=bank:n:pD;băncii=bank:n:sD:g;b'+
+        'ăncilor=bank:n:pD:g;lapte=milk:n:s+p;laptele=milk:n:sD+pD;laptelui=m'+
+        'ilk:n:sD:g;laptelor=milk:n:pD:g;orez=rice:n:s;orezuri=rice:n:p;orezul'+
+        '=rice:n:sD;',
+    'orezurii=rice:n:pD;orezului=rice:n:sD:g;orezurilor=rice:n:pD:g;zahăr=sug'+
+        'ar:n:s;zahăruri=sugar:n:p;zahărul=sugar:n:sD;zahărurii=sugar:n:pD;'+
+        'zahărului=sugar:n:sD:g;zahărurilor=sugar:n:pD:g;miere=honey:n:s;mie'+
+        'ri=honey:n:p;',
+    'mierea=honey:n:sD;mierile=honey:n:pD;mierii=honey:n:sD:g;mierilor=honey:n'+
+        ':pD:g;fruct=fruit:n:s;fructe=fruit:n:p;fructul=fruit:n:sD;fructele=fr'+
+        'uit:n:pD;fructului=fruit:n:sD:g;fructelor=fruit:n:pD:g;mâncare=food:'+
+        'n:s;',
+    'mâncăruri=food:n:p;mâncarea=food:n:sD;mâncărurile=food:n:pD;mâncăr'+
+        'ii=food:n:sD:g;mâncărurilor=food:n:pD:g;băutură=drink:n:s;băutur'+
+        'i=drink:n:p;băutura=drink:n:sD;băuturile=drink:n:pD;băuturii=drink'+
+        ':n:sD:g;',
+    'băuturilor=drink:n:pD:g;sticlă=bottle:n:s;sticle=bottle:n:p;sticla=bott'+
+        'le:n:sD;sticlele=bottle:n:pD;sticlei=bottle:n:sD:g;sticlelor=bottle:n'+
+        ':pD:g;cană=cup:n:s;căni=cup:n:p;cana=cup:n:sD;cănile=cup:n:pD;căn'+
+        'ii=cup:n:sD:g;',
+    'cănilor=cup:n:pD:g;farfurie=plate:n:s;farfurii=plate:n:p;farfuria=plate:'+
+        'n:sD;farfuriile=plate:n:pD;farfuriei=plate:n:sD:g;farfuriilor=plate:n'+
+        ':pD:g;lingură=spoon:n:s;linguri=spoon:n:p;lingura=spoon:n:sD;linguri'+
+        'le=spoon:n:pD;',
+    'lingurii=spoon:n:sD:g;lingurilor=spoon:n:pD:g;cuțit=knife:n:s;cuțite=kn'+
+        'ife:n:p;cuțitul=knife:n:sD;cuțitele=knife:n:pD;cuțitului=knife:n:s'+
+        'D:g;cuțitelor=knife:n:pD:g;geantă=bag:n:s;genți=bag:n:p;geanta=bag'+
+        ':n:sD;',
+    'gențile=bag:n:pD;genții=bag:n:sD:g;genților=bag:n:pD:g;haină=coat:n:s'+
+        ';haine=coat:n:p;haina=coat:n:sD;hainele=coat:n:pD;hainei=coat:n:sD:g;'+
+        'hainelor=coat:n:pD:g;preț=price:n:s;prețuri=price:n:p;prețul=price'+
+        ':n:sD;',
+    'prețurii=price:n:pD;prețului=price:n:sD:g;prețurilor=price:n:pD:g;munc'+
+        'ă=work:n:s;munci=work:n:p;munca=work:n:sD;muncile=work:n:pD;muncii=w'+
+        'ork:n:sD:g;muncilor=work:n:pD:g;cuvânt=word:n:s;cuvinte=word:n:p;cuv'+
+        'ântul=word:n:sD;',
+    'cuvintele=word:n:pD;cuvântului=word:n:sD:g;cuvintelor=word:n:pD:g;propoz'+
+        'iție=sentence:n:s;propoziții=sentence:n:p;propoziția=sentence:n:sD'+
+        ';propozițiile=sentence:n:pD;propoziției=sentence:n:sD:g;',
+    'propozițiilor=sentence:n:pD:g;fotbal=football:n:s+p;fotbalul=football:n:'+
+        'sD;fotbali=football:n:pD;fotbalului=football:n:sD:g;fotballor=footbal'+
+        'l:n:pD:g;tenis=tennis:n:s+p;tenisul=tennis:n:sD;tenisi=tennis:n:pD;',
+    'tenisului=tennis:n:sD:g;tenislor=tennis:n:pD:g;șah=chess:n:s+p;șahul=ch'+
+        'ess:n:sD;șahi=chess:n:pD;șahului=chess:n:sD:g;șahlor=chess:n:pD:g;'+
+        'revistă=magazine:n:s;reviste=magazine:n:p;revista=magazine:n:sD;',
+    'revistele=magazine:n:pD;revistei=magazine:n:sD:g;revistelor=magazine:n:pD'+
+        ':g;scrisoare=letter:n:s;scrisori=letter:n:p;scrisoarea=letter:n:sD;sc'+
+        'risorile=letter:n:pD;scrisorii=letter:n:sD:g;scrisorilor=letter:n:pD:'+
+        'g;',
+    'călătorie=trip:n:s;călătorii=trip:n:p;călătoria=trip:n:sD;călător'+
+        'iile=trip:n:pD;călătoriei=trip:n:sD:g;călătoriilor=trip:n:pD:g;va'+
+        'canță=vacation:n:s;vacanțe=vacation:n:p;vacanța=vacation:n:sD;',
+    'vacanțele=vacation:n:pD;vacanței=vacation:n:sD:g;vacanțelor=vacation:n'+
+        ':pD:g;farmacie=pharmacy:n:s;farmacii=pharmacy:n:p;farmacia=pharmacy:n'+
+        ':sD;farmaciile=pharmacy:n:pD;farmaciei=pharmacy:n:sD:g;farmaciilor=ph'+
+        'armacy:n:pD:g;',
+    'poștă=post_office:n:s;poște=post_office:n:p;poșta=post_office:n:sD;po'+
+        'ștele=post_office:n:pD;poștei=post_office:n:sD:g;poștelor=post_off'+
+        'ice:n:pD:g;plajă=beach:n:s;plaje=beach:n:p;plaja=beach:n:sD;plajele='+
+        'beach:n:pD;',
+    'plajei=beach:n:sD:g;plajelor=beach:n:pD:g;pădure=forest:n:s;păduri=fore'+
+        'st:n:p;pădurea=forest:n:sD;pădurile=forest:n:pD;pădurii=forest:n:s'+
+        'D:g;pădurilor=forest:n:pD:g;vânt=wind:n:s;vânturi=wind:n:p;vântul'+
+        '=wind:n:sD;',
+    'vânturii=wind:n:pD;vântului=wind:n:sD:g;vânturilor=wind:n:pD:g;nor=clo'+
+        'ud:n:s;nori=cloud:n:p;norul=cloud:n:sD;norii=cloud:n:pD;norului=cloud'+
+        ':n:sD:g;norilor=cloud:n:pD:g;cer=sky:n:s;ceruri=sky:n:p;cerul=sky:n:s'+
+        'D;cerurii=sky:n:pD;',
+    'cerului=sky:n:sD:g;cerurilor=sky:n:pD:g;vreme=weather:n:s;vremuri=weather'+
+        ':n:p;vremea=weather:n:sD;vremurile=weather:n:pD;vremii=weather:n:sD:g'+
+        ';vremurilor=weather:n:pD:g;an=year:n:s;ani=year:n:p;anul=year:n:sD;an'+
+        'ii=year:n:pD;',
+    'anului=year:n:sD:g;anilor=year:n:pD:g;dejun=lunch:n:s;dejunuri=lunch:n:p;'+
+        'dejunul=lunch:n:sD;dejunurii=lunch:n:pD;dejunului=lunch:n:sD:g;dejunu'+
+        'rilor=lunch:n:pD:g;amiază=noon:n:s;amiezi=noon:n:p;amiaza=noon:n:sD;'+
+        'amiezile=noon:n:pD;',
+    'amiezii=noon:n:sD:g;amiezilor=noon:n:pD:g;temperatură=temperature:n:s;te'+
+        'mperaturi=temperature:n:p;temperatura=temperature:n:sD;temperaturile='+
+        'temperature:n:pD;temperaturii=temperature:n:sD:g;temperaturilor=tempe'+
+        'rature:n:pD:g;',
+    'casă=house:n:s;case=house:n:p;casa=house:n:sD;casele=house:n:pD;casei=ho'+
+        'use:n:sD:g;caselor=house:n:pD:g;fată=girl:n:s;fete=girl:n:p;fata=gir'+
+        'l:n:sD;fetele=girl:n:pD;fetei=girl:n:sD:g;fetelor=girl:n:pD:g;femeie='+
+        'woman:n:s;',
+    'femei=woman:n:p;femeia=woman:n:sD;femeile=woman:n:pD;femeii=woman:n:sD:g;'+
+        'femeilor=woman:n:pD:g;mamă=mother:n:s;mame=mother:n:p;mama=mother:n:'+
+        'sD;mamele=mother:n:pD;mamei=mother:n:sD:g;mamelor=mother:n:pD:g;soră'+
+        '=sister:n:s;',
+    'surori=sister:n:p;sora=sister:n:sD;surorile=sister:n:pD;sorei=sister:n:sD'+
+        ':g;surorilor=sister:n:pD:g;fiică=daughter:n:s;fiice=daughter:n:p;fii'+
+        'ca=daughter:n:sD;fiicele=daughter:n:pD;fiicei=daughter:n:sD:g;fiicelo'+
+        'r=daughter:n:pD:g;',
+    'școală=school:n:s;școli=school:n:p;școala=school:n:sD;școlile=school'+
+        ':n:pD;școlii=school:n:sD:g;școlilor=school:n:pD:g;carte=book:n:s;c'+
+        'ărți=book:n:p;cartea=book:n:sD;cărțile=book:n:pD;cărții=book:n:'+
+        'sD:g;',
+    'cărților=book:n:pD:g;masă=table:n:s;mese=table:n:p;masa=table:n:sD;mes'+
+        'ele=table:n:pD;mesei=table:n:sD:g;meselor=table:n:pD:g;stradă=street'+
+        ':n:s;străzi=street:n:p;strada=street:n:sD;străzile=street:n:pD;str'+
+        'ăzii=street:n:sD:g;',
+    'străzilor=street:n:pD:g;zi=day:n:s;zile=day:n:p;ziua=day:n:sD;zilele=day'+
+        ':n:pD;zilei=day:n:sD:g;zilelor=day:n:pD:g;noapte=night:n:s;nopți=nig'+
+        'ht:n:p;noaptea=night:n:sD;nopțile=night:n:pD;nopții=night:n:sD:g;',
+    'nopților=night:n:pD:g;săptămână=week:n:s;săptămâni=week:n:p;săpt'+
+        'ămâna=week:n:sD;săptămânile=week:n:pD;săptămânii=week:n:sD:g;'+
+        'săptămânilor=week:n:pD:g;lună=month:n:s;luni=month:n:p;luna=month'+
+        ':n:sD;',
+    'lunile=month:n:pD;lunii=month:n:sD:g;lunilor=month:n:pD:g;oră=hour:n:s;o'+
+        're=hour:n:p;ora=hour:n:sD;orele=hour:n:pD;orei=hour:n:sD:g;orelor=hou'+
+        'r:n:pD:g;țară=country:n:s;țări=country:n:p;țara=country:n:sD;ț'+
+        'ările=country:n:pD;',
+    'țării=country:n:sD:g;țărilor=country:n:pD:g;apă=water:n:s;ape=water:'+
+        'n:p;apa=water:n:sD;apele=water:n:pD;apei=water:n:sD:g;apelor=water:n:'+
+        'pD:g;cafea=coffee:n:s;cafele=coffee:n:p;cafeaua=coffee:n:sD;cafelele='+
+        'coffee:n:pD;',
+    'cafelei=coffee:n:sD:g;cafelelor=coffee:n:pD:g;bere=beer:n:s;beri=beer:n:p'+
+        ';berea=beer:n:sD;berile=beer:n:pD;berii=beer:n:sD:g;berilor=beer:n:pD'+
+        ':g;pâine=bread:n:s;pâini=bread:n:p;pâinea=bread:n:sD;pâinile=brea'+
+        'd:n:pD;',
+    'pâinii=bread:n:sD:g;pâinilor=bread:n:pD:g;mașină=car:n:s;mașini=car:'+
+        'n:p;mașina=car:n:sD;mașinile=car:n:pD;mașinii=car:n:sD:g;mașinilo'+
+        'r=car:n:pD:g;grădină=garden:n:s;grădini=garden:n:p;grădina=garden'+
+        ':n:sD;',
+    'grădinile=garden:n:pD;grădinii=garden:n:sD:g;grădinilor=garden:n:pD:g;'+
+        'bibliotecă=library:n:s;biblioteci=library:n:p;biblioteca=library:n:s'+
+        'D;bibliotecile=library:n:pD;bibliotecii=library:n:sD:g;bibliotecilor='+
+        'library:n:pD:g;',
+    'cameră=room:n:s;camere=room:n:p;camera=room:n:sD;camerele=room:n:pD;came'+
+        'rei=room:n:sD:g;camerelor=room:n:pD:g;bucătărie=kitchen:n:s;bucăt'+
+        'ării=kitchen:n:p;bucătăria=kitchen:n:sD;bucătăriile=kitchen:n:pD'+
+        ';',
+    'bucătăriei=kitchen:n:sD:g;bucătăriilor=kitchen:n:pD:g;baie=bathroom:n'+
+        ':s;băi=bathroom:n:p;baia=bathroom:n:sD;băile=bathroom:n:pD;băii=ba'+
+        'throom:n:sD:g;băilor=bathroom:n:pD:g;fereastră=window:n:s;ferestre='+
+        'window:n:p;',
+    'fereastra=window:n:sD;ferestrele=window:n:pD;ferestrei=window:n:sD:g;fere'+
+        'strelor=window:n:pD:g;ușă=door:n:s;uși=door:n:p;ușa=door:n:sD;uș'+
+        'ile=door:n:pD;ușii=door:n:sD:g;ușilor=door:n:pD:g;floare=flower:n:s'+
+        ';flori=flower:n:p;',
+    'floarea=flower:n:sD;florile=flower:n:pD;florii=flower:n:sD:g;florilor=flo'+
+        'wer:n:pD:g;pisică=cat:n:s;pisici=cat:n:p;pisica=cat:n:sD;pisicile=ca'+
+        't:n:pD;pisicii=cat:n:sD:g;pisicilor=cat:n:pD:g;vacă=cow:n:s;vaci=cow'+
+        ':n:p;vaca=cow:n:sD;',
+    'vacile=cow:n:pD;vacii=cow:n:sD:g;vacilor=cow:n:pD:g;pasăre=bird:n:s;păs'+
+        'ări=bird:n:p;pasărea=bird:n:sD;păsările=bird:n:pD;păsării=bird:'+
+        'n:sD:g;păsărilor=bird:n:pD:g;familie=family:n:s;familii=family:n:p;',
+    'familia=family:n:sD;familiile=family:n:pD;familiei=family:n:sD:g;familiil'+
+        'or=family:n:pD:g;prietenă=friend:n:s;prietene=friend:n:p;prietena=fr'+
+        'iend:n:sD;prietenele=friend:n:pD;prietenei=friend:n:sD:g;prietenelor='+
+        'friend:n:pD:g;',
+    'profesoară=teacher:n:s;profesoare=teacher:n:p;profesoara=teacher:n:sD;pr'+
+        'ofesoarele=teacher:n:pD;profesoarei=teacher:n:sD:g;profesoarelor=teac'+
+        'her:n:pD:g;studentă=student:n:s;studente=student:n:p;studenta=studen'+
+        't:n:sD;',
+    'studentele=student:n:pD;studentei=student:n:sD:g;studentelor=student:n:pD'+
+        ':g;vecină=neighbor:n:s;vecine=neighbor:n:p;vecina=neighbor:n:sD;veci'+
+        'nele=neighbor:n:pD;vecinei=neighbor:n:sD:g;vecinelor=neighbor:n:pD:g;',
+    'întrebare=question:n:s;întrebări=question:n:p;întrebarea=question:n:s'+
+        'D;întrebările=question:n:pD;întrebării=question:n:sD:g;întrebăr'+
+        'ilor=question:n:pD:g;problemă=problem:n:s;probleme=problem:n:p;probl'+
+        'ema=problem:n:sD;',
+    'problemele=problem:n:pD;problemei=problem:n:sD:g;problemelor=problem:n:pD'+
+        ':g;poveste=story:n:s;povești=story:n:p;povestea=story:n:sD;poveștil'+
+        'e=story:n:pD;poveștii=story:n:sD:g;poveștilor=story:n:pD:g;limbă=l'+
+        'anguage:n:s;',
+    'limbi=language:n:p;limba=language:n:sD;limbile=language:n:pD;limbii=langu'+
+        'age:n:sD:g;limbilor=language:n:pD:g;gară=station:n:s;gări=station:n'+
+        ':p;gara=station:n:sD;gările=station:n:pD;gării=station:n:sD:g;gări'+
+        'lor=station:n:pD:g;',
+    'mână=hand:n:s;mâini=hand:n:p;mâna=hand:n:sD;mâinile=hand:n:pD;mâini'+
+        'i=hand:n:sD:g;mâinilor=hand:n:pD:g;ureche=ear:n:s;urechi=ear:n:p;ure'+
+        'chea=ear:n:sD;urechile=ear:n:pD;urechii=ear:n:sD:g;urechilor=ear:n:pD'+
+        ':g;',
+    'inimă=heart:n:s;inimi=heart:n:p;inima=heart:n:sD;inimile=heart:n:pD;inim'+
+        'ii=heart:n:sD:g;inimilor=heart:n:pD:g;viață=life:n:s;vieți=life:n:'+
+        'p;viața=life:n:sD;viețile=life:n:pD;vieții=life:n:sD:g;vieților=l'+
+        'ife:n:pD:g;',
+    'lume=world:n:s;lumi=world:n:p;lumea=world:n:sD;lumile=world:n:pD;lumii=wo'+
+        'rld:n:sD:g;lumilor=world:n:pD:g;cafenea=cafe:n:s;cafenele=cafe:n:p;ca'+
+        'feneaua=cafe:n:sD;cafenelele=cafe:n:pD;cafenelei=cafe:n:sD:g;cafenele'+
+        'lor=cafe:n:pD:g;',
+    'supă=soup:n:s;supe=soup:n:p;supa=soup:n:sD;supele=soup:n:pD;supei=soup:n'+
+        ':sD:g;supelor=soup:n:pD:g;salată=salad:n:s;salate=salad:n:p;salata=s'+
+        'alad:n:sD;salatele=salad:n:pD;salatei=salad:n:sD:g;salatelor=salad:n:'+
+        'pD:g;',
+    'ciocolată=chocolate:n:s;ciocolate=chocolate:n:p;ciocolata=chocolate:n:sD'+
+        ';ciocolatele=chocolate:n:pD;ciocolatei=chocolate:n:sD:g;ciocolatelor='+
+        'chocolate:n:pD:g;banană=banana:n:s;banane=banana:n:p;banana=banana:n'+
+        ':sD;',
+    'bananele=banana:n:pD;bananei=banana:n:sD:g;bananelor=banana:n:pD:g;portoc'+
+        'ală=orange:n:s;portocale=orange:n:p;portocala=orange:n:sD;portocalel'+
+        'e=orange:n:pD;portocalei=orange:n:sD:g;portocalelor=orange:n:pD:g;roc'+
+        'hie=dress:n:s;',
+    'rochii=dress:n:p;rochia=dress:n:sD;rochiile=dress:n:pD;rochiei=dress:n:sD'+
+        ':g;rochiilor=dress:n:pD:g;cămașă=shirt:n:s;cămăși=shirt:n:p;că'+
+        'mașa=shirt:n:sD;cămășile=shirt:n:pD;cămășii=shirt:n:sD:g;',
+    'cămășilor=shirt:n:pD:g;valiză=suitcase:n:s;valize=suitcase:n:p;valiza'+
+        '=suitcase:n:sD;valizele=suitcase:n:pD;valizei=suitcase:n:sD:g;valizel'+
+        'or=suitcase:n:pD:g;vară=summer:n:s;veri=summer:n:p;vara=summer:n:sD;'+
+        'verile=summer:n:pD;',
+    'verii=summer:n:sD:g;verilor=summer:n:pD:g;iarnă=winter:n:s;ierni=winter:'+
+        'n:p;iarna=winter:n:sD;iernile=winter:n:pD;iernii=winter:n:sD:g;iernil'+
+        'or=winter:n:pD:g;toamnă=autumn:n:s;toamne=autumn:n:p;toamna=autumn:n'+
+        ':sD;',
+    'toamnele=autumn:n:pD;toamnei=autumn:n:sD:g;toamnelor=autumn:n:pD:g;primă'+
+        'vară=spring:n:s;primăveri=spring:n:p;primăvara=spring:n:sD;primăv'+
+        'erile=spring:n:pD;primăverii=spring:n:sD:g;primăverilor=spring:n:pD'+
+        ':g;mare=sea:n:s;',
+    'mări=sea:n:p;marea=sea:n:sD;mările=sea:n:pD;mării=sea:n:sD:g;mărilor='+
+        'sea:n:pD:g;stea=star:n:s;stele=star:n:p;steaua=star:n:sD;stelele=star'+
+        ':n:pD;stelei=star:n:sD:g;stelelor=star:n:pD:g;cină=dinner:n:s;cine=d'+
+        'inner:n:p;',
+    'cina=dinner:n:sD;cinele=dinner:n:pD;cinei=dinner:n:sD:g;cinelor=dinner:n:'+
+        'pD:g;prânz=lunch:n:s;prânzuri=lunch:n:p;prânzul=lunch:n:sD;prânzu'+
+        'rile=lunch:n:pD;prânzului=lunch:n:sD:g;prânzurilor=lunch:n:pD:g;plo'+
+        'aie=rain:n:s;',
+    'ploi=rain:n:p;ploaia=rain:n:sD;ploile=rain:n:pD;ploii=rain:n:sD:g;ploilor'+
+        '=rain:n:pD:g;zăpadă=snow:n:s;zăpezi=snow:n:p;zăpada=snow:n:sD;ză'+
+        'pezile=snow:n:pD;zăpezii=snow:n:sD:g;zăpezilor=snow:n:pD:g;muzică='+
+        'music:n:s;',
+    'muzici=music:n:p;muzica=music:n:sD;muzicile=music:n:pD;muzicii=music:n:sD'+
+        ':g;muzicilor=music:n:pD:g;clasă=class:n:s;clase=class:n:p;clasa=clas'+
+        's:n:sD;clasele=class:n:pD;clasei=class:n:sD:g;claselor=class:n:pD:g;l'+
+        'ecție=lesson:n:s;',
+    'lecții=lesson:n:p;lecția=lesson:n:sD;lecțiile=lesson:n:pD;lecției=les'+
+        'son:n:sD:g;lecțiilor=lesson:n:pD:g;companie=company:n:s;companii=com'+
+        'pany:n:p;compania=company:n:sD;companiile=company:n:pD;companiei=comp'+
+        'any:n:sD:g;',
+    'companiilor=company:n:pD:g;firmă=company:n:s;firme=company:n:p;firma=com'+
+        'pany:n:sD;firmele=company:n:pD;firmei=company:n:sD:g;firmelor=company'+
+        ':n:pD:g;prăvălie=shop:n:s;prăvălii=shop:n:p;prăvălia=shop:n:sD;',
+    'prăvăliile=shop:n:pD;prăvăliei=shop:n:sD:g;prăvăliilor=shop:n:pD:g;'+
+        'piață=market:n:s;piețe=market:n:p;piața=market:n:sD;piețele=mark'+
+        'et:n:pD;pieței=market:n:sD:g;piețelor=market:n:pD:g;biserică=churc'+
+        'h:n:s;',
+    'biserici=church:n:p;biserica=church:n:sD;bisericile=church:n:pD;bisericii'+
+        '=church:n:sD:g;bisericilor=church:n:pD:g;nuntă=wedding:n:s;nunți=we'+
+        'dding:n:p;nunta=wedding:n:sD;nunțile=wedding:n:pD;nunții=wedding:n:'+
+        'sD:g;',
+    'nunților=wedding:n:pD:g;dimineață=morning:n:s;dimineți=morning:n:p;di'+
+        'mineața=morning:n:sD;diminețile=morning:n:pD;dimineții=morning:n:s'+
+        'D:g;dimineților=morning:n:pD:g;seară=evening:n:s;seri=evening:n:p;s'+
+        'eara=evening:n:sD;',
+    'serile=evening:n:pD;serii=evening:n:sD:g;serilor=evening:n:pD:g;ceapă=on'+
+        'ion:n:s;cepe=onion:n:p;ceapa=onion:n:sD;cepele=onion:n:pD;cepei=onion'+
+        ':n:sD:g;cepelor=onion:n:pD:g;stație=station:n:s;stații=station:n:p;',
+    'stația=station:n:sD;stațiile=station:n:pD;stației=station:n:sD:g;staț'+
+        'iilor=station:n:pD:g;adevăr=truth:n:s;adevăruri=truth:n:p;adevărul'+
+        '=truth:n:sD;adevărurii=truth:n:pD;adevărului=truth:n:sD:g;adevărur'+
+        'ilor=truth:n:pD:g;',
+    'minciună=lie:n:s;minciuni=lie:n:p;minciuna=lie:n:sD;minciunile=lie:n:pD;'+
+        'minciunii=lie:n:sD:g;minciunilor=lie:n:pD:g;coleg=colleague:n:s;coleg'+
+        'i=colleague:n:p;colegul=colleague:n:sD;colegii=colleague:n:pD;',
+    'colegului=colleague:n:sD:g;colegilor=colleague:n:pD:g;idee=idea:n:s;idei='+
+        'idea:n:p;ideea=idea:n:sD;ideile=idea:n:pD;ideii=idea:n:sD:g;ideilor=i'+
+        'dea:n:pD:g;toaletă=toilet:n:s;toalete=toilet:n:p;toaleta=toilet:n:sD'+
+        ';',
+    'toaletele=toilet:n:pD;toaletei=toilet:n:sD:g;toaletelor=toilet:n:pD:g;asi'+
+        'stentă=nurse:n:s;asistente=nurse:n:p;asistenta=nurse:n:sD;asistentel'+
+        'e=nurse:n:pD;asistentei=nurse:n:sD:g;asistentelor=nurse:n:pD:g;canape'+
+        'a=sofa:n:s;',
+    'canapele=sofa:n:p;canapeaua=sofa:n:sD;canapelele=sofa:n:pD;canapelei=sofa'+
+        ':n:sD:g;canapelelor=sofa:n:pD:g;centru=center:n:s;centre=center:n:p;c'+
+        'entrul=center:n:sD;centrele=center:n:pD;centrului=center:n:sD:g;centr'+
+        'elor=center:n:pD:g;',
+    'tablă=board:n:s;table=board:n:p;tabla=board:n:sD;tablele=board:n:pD;tabl'+
+        'ei=board:n:sD:g;tablelor=board:n:pD:g;bunică=grandmother:n:s;bunice='+
+        'grandmother:n:p;bunica=grandmother:n:sD;bunicele=grandmother:n:pD;',
+    'bunicelor=grandmother:n:pD:g;bani=money:n:s+p;banii=money:n:sD+pD;banilor'+
+        '=money:n:sD:g+pD:g;foame=hunger:n:s+p;foamea=hunger:n:sD;foamele=hung'+
+        'er:n:pD;foamei=hunger:n:sD:g;foamelor=hunger:n:pD:g;brânză=cheese:n'+
+        ':s;',
+    'brânzeturi=cheese:n:p;brânza=cheese:n:sD;brânzeturile=cheese:n:pD;brâ'+
+        'nzei=cheese:n:sD:g;brânzeturilor=cheese:n:pD:g;carne=meat:n:s;cărnu'+
+        'ri=meat:n:p;carnea=meat:n:sD;cărnurile=meat:n:pD;cărnii=meat:n:sD:g'+
+        ';',
+    'cărnurilor=meat:n:pD:g;minute=minute:n:s+p;minutea=minute:n:sD;minutele='+
+        'minute:n:pD;minuteei=minute:n:sD:g;minutelor=minute:n:pD:g;mare=big:a'+
+        ':s;mari=big:a:p;marele=big:a:sD;marea=big:a:sD;marii=big:a:pD;marile='+
+        'big:a:pD;',
+    'mic=small:a:s;mică=small:a:s;mici=small:a:p;micul=small:a:sD;mica=small:'+
+        'a:sD;micii=small:a:pD;micile=small:a:pD;frumos=beautiful:a:s;frumoas'+
+        'ă=beautiful:a:s;frumoși=beautiful:a:p;frumoase=beautiful:a:p;frumos'+
+        'ul=beautiful:a:sD;',
+    'frumoasa=beautiful:a:sD;frumoșii=beautiful:a:pD;frumoasele=beautiful:a:p'+
+        'D;bun=good:a:s;bună=good:a:s;buni=good:a:p;bune=good:a:p;bunul=good:'+
+        'a:sD;buna=good:a:sD;bunii=good:a:pD;bunele=good:a:pD;rău=bad:a:s;rea'+
+        '=bad:a:s;',
+    'răi=bad:a:p;rele=bad:a:p;răul=bad:a:sD;reaa=bad:a:sD;răii=bad:a:pD;rel'+
+        'ele=bad:a:pD;nou=new:a:s;nouă=new:a:s;noi=new:a:p;noul=new:a:sD;noua'+
+        '=new:a:sD;noii=new:a:pD;noile=new:a:pD;vechi=old:a:s+p;veche=old:a:s;'+
+        'vechiul=old:a:sD;',
+    'vechea=old:a:sD;vechii=old:a:pD;vechile=old:a:pD;bătrân=old:a:s;bătrâ'+
+        'nă=old:a:s;bătrâni=old:a:p;bătrâne=old:a:p;bătrânul=old:a:sD;b'+
+        'ătrâna=old:a:sD;bătrânii=old:a:pD;bătrânele=old:a:pD;tânăr=yo'+
+        'ung:a:s;',
+    'tânără=young:a:s;tineri=young:a:p;tinere=young:a:p;tânărul=young:a:s'+
+        'D;tânăra=young:a:sD;tinerii=young:a:pD;tinerele=young:a:pD;înalt=t'+
+        'all:a:s;înaltă=tall:a:s;înalți=tall:a:p;înalte=tall:a:p;înaltul'+
+        '=tall:a:sD;',
+    'înalta=tall:a:sD;înalții=tall:a:pD;înaltele=tall:a:pD;scund=short:a:s'+
+        ';scundă=short:a:s;scunzi=short:a:p;scunde=short:a:p;scundul=short:a:'+
+        'sD;scunda=short:a:sD;scunzii=short:a:pD;scundele=short:a:pD;lung=long'+
+        ':a:s;',
+    'lungă=long:a:s;lungi=long:a:p;lungul=long:a:sD;lunga=long:a:sD;lungii=lo'+
+        'ng:a:pD;lungile=long:a:pD;scurt=short:a:s;scurtă=short:a:s;scurți=s'+
+        'hort:a:p;scurte=short:a:p;scurtul=short:a:sD;scurta=short:a:sD;scurț'+
+        'ii=short:a:pD;',
+    'scurtele=short:a:pD;gros=fat:a:s;groasă=fat:a:s;groși=fat:a:p;groase=fa'+
+        't:a:p;grosul=fat:a:sD;groasa=fat:a:sD;groșii=fat:a:pD;groasele=fat:a'+
+        ':pD;slab=thin:a:s;slabă=thin:a:s;slabi=thin:a:p;slabe=thin:a:p;slabu'+
+        'l=thin:a:sD;',
+    'slaba=thin:a:sD;slabii=thin:a:pD;slabele=thin:a:pD;cald=warm:a:s;caldă=w'+
+        'arm:a:s;calzi=warm:a:p;calde=warm:a:p;caldul=warm:a:sD;calda=warm:a:s'+
+        'D;calzii=warm:a:pD;caldele=warm:a:pD;rece=cold:a:s;reci=cold:a:p;rece'+
+        'le=cold:a:sD;',
+    'recea=cold:a:sD;recii=cold:a:pD;recile=cold:a:pD;fierbinte=hot:a:s;fierbi'+
+        'nți=hot:a:p;fierbintele=hot:a:sD;fierbintea=hot:a:sD;fierbinții=hot'+
+        ':a:pD;fierbințile=hot:a:pD;scump=expensive:a:s;scumpă=expensive:a:s'+
+        ';',
+    'scumpi=expensive:a:p;scumpe=expensive:a:p;scumpul=expensive:a:sD;scumpa=e'+
+        'xpensive:a:sD;scumpii=expensive:a:pD;scumpele=expensive:a:pD;ieftin=c'+
+        'heap:a:s;ieftină=cheap:a:s;ieftini=cheap:a:p;ieftine=cheap:a:p;iefti'+
+        'nul=cheap:a:sD;',
+    'ieftina=cheap:a:sD;ieftinii=cheap:a:pD;ieftinele=cheap:a:pD;ușor=easy:a:'+
+        's;ușoară=easy:a:s;ușori=easy:a:p;ușoare=easy:a:p;ușorul=easy:a:s'+
+        'D;ușoara=easy:a:sD;ușorii=easy:a:pD;ușoarele=easy:a:pD;greu=diffic'+
+        'ult:a:s;',
+    'grea=difficult:a:s;grei=difficult:a:p;grele=difficult:a:p;greul=difficult'+
+        ':a:sD;greaa=difficult:a:sD;greii=difficult:a:pD;grelele=difficult:a:p'+
+        'D;important=important:a:s;importantă=important:a:s;importanți=impor'+
+        'tant:a:p;',
+    'importante=important:a:p;importantul=important:a:sD;importanta=important:'+
+        'a:sD;importanții=important:a:pD;importantele=important:a:pD;interesa'+
+        'nt=interesting:a:s;interesantă=interesting:a:s;interesanți=interest'+
+        'ing:a:p;',
+    'interesante=interesting:a:p;interesantul=interesting:a:sD;interesanta=int'+
+        'eresting:a:sD;interesanții=interesting:a:pD;interesantele=interestin'+
+        'g:a:pD;plictisitor=boring:a:s;plictisitoare=boring:a:s+p;plictisitori'+
+        '=boring:a:p;',
+    'plictisitorul=boring:a:sD;plictisitoarea=boring:a:sD;plictisitorii=boring'+
+        ':a:pD;plictisitoarele=boring:a:pD;amuzant=funny:a:s;amuzantă=funny:a'+
+        ':s;amuzanți=funny:a:p;amuzante=funny:a:p;amuzantul=funny:a:sD;amuzan'+
+        'ta=funny:a:sD;',
+    'amuzanții=funny:a:pD;amuzantele=funny:a:pD;rapid=fast:a:s;rapidă=fast:a'+
+        ':s;rapizi=fast:a:p;rapide=fast:a:p;rapidul=fast:a:sD;rapida=fast:a:sD'+
+        ';rapizii=fast:a:pD;rapidele=fast:a:pD;lent=slow:a:s;lentă=slow:a:s;l'+
+        'enți=slow:a:p;',
+    'lente=slow:a:p;lentul=slow:a:sD;lenta=slow:a:sD;lenții=slow:a:pD;lentele'+
+        '=slow:a:pD;puternic=strong:a:s;puternică=strong:a:s;puternici=strong'+
+        ':a:p;puternice=strong:a:p;puternicul=strong:a:sD;puternica=strong:a:s'+
+        'D;',
+    'puternicii=strong:a:pD;puternicele=strong:a:pD;curat=clean:a:s;curată=cl'+
+        'ean:a:s;curați=clean:a:p;curate=clean:a:p;curatul=clean:a:sD;curata='+
+        'clean:a:sD;curații=clean:a:pD;curatele=clean:a:pD;murdar=dirty:a:s;m'+
+        'urdară=dirty:a:s;',
+    'murdari=dirty:a:p;murdare=dirty:a:p;murdarul=dirty:a:sD;murdara=dirty:a:s'+
+        'D;murdarii=dirty:a:pD;murdarele=dirty:a:pD;plin=full:a:s;plină=full:'+
+        'a:s;plini=full:a:p;pline=full:a:p;plinul=full:a:sD;plina=full:a:sD;pl'+
+        'inii=full:a:pD;',
+    'plinele=full:a:pD;gol=empty:a:s;goală=empty:a:s;goi=empty:a:p;goale=empt'+
+        'y:a:p;golul=empty:a:sD;goala=empty:a:sD;goii=empty:a:pD;goalele=empty'+
+        ':a:pD;deschis=open:a:s;deschisă=open:a:s;deschiși=open:a:p;deschise'+
+        '=open:a:p;',
+    'deschisul=open:a:sD;deschisa=open:a:sD;deschișii=open:a:pD;deschisele=op'+
+        'en:a:pD;închis=closed:a:s;închisă=closed:a:s;închiși=closed:a:p;'+
+        'închise=closed:a:p;închisul=closed:a:sD;închisa=closed:a:sD;închi'+
+        'șii=closed:a:pD;',
+    'închisele=closed:a:pD;gata=ready:a:s+p;gataul=ready:a:sD;gataa=ready:a:s'+
+        'D;gatai=ready:a:pD;gatale=ready:a:pD;ocupat=busy:a:s;ocupată=busy:a:'+
+        's;ocupați=busy:a:p;ocupate=busy:a:p;ocupatul=busy:a:sD;ocupata=busy:'+
+        'a:sD;',
+    'ocupații=busy:a:pD;ocupatele=busy:a:pD;liber=free:a:s;liberă=free:a:s;l'+
+        'iberi=free:a:p;libere=free:a:p;liberul=free:a:sD;libera=free:a:sD;lib'+
+        'erii=free:a:pD;liberele=free:a:pD;roșu=red:a:s;roșie=red:a:s;roșii'+
+        '=red:a:p;',
+    'roșul=red:a:sD;roșiea=red:a:sD;roșiii=red:a:pD;roșiile=red:a:pD;albas'+
+        'tru=blue:a:s;albastră=blue:a:s;albaștri=blue:a:p;albastre=blue:a:p;'+
+        'albastrul=blue:a:sD;albastra=blue:a:sD;albaștrii=blue:a:pD;albastrel'+
+        'e=blue:a:pD;',
+    'verde=green:a:s;verzi=green:a:p;verdele=green:a:sD;verdea=green:a:sD;verz'+
+        'ii=green:a:pD;verzile=green:a:pD;galben=yellow:a:s;galbenă=yellow:a:'+
+        's;galbeni=yellow:a:p;galbene=yellow:a:p;galbenul=yellow:a:sD;galbena='+
+        'yellow:a:sD;',
+    'galbenii=yellow:a:pD;galbenele=yellow:a:pD;negru=black:a:s;neagră=black:'+
+        'a:s;negri=black:a:p;negre=black:a:p;negrul=black:a:sD;neagra=black:a:'+
+        'sD;negrii=black:a:pD;negrele=black:a:pD;alb=white:a:s;albă=white:a:s'+
+        ';albi=white:a:p;',
+    'albe=white:a:p;albul=white:a:sD;alba=white:a:sD;albii=white:a:pD;albele=w'+
+        'hite:a:pD;maro=brown:a:s+p;maroul=brown:a:sD;maroa=brown:a:sD;maroi=b'+
+        'rown:a:pD;marole=brown:a:pD;gri=gray:a:s+p;griul=gray:a:sD;gria=gray:'+
+        'a:sD;',
+    'grii=gray:a:pD;grile=gray:a:pD;roz=pink:a:s+p;rozul=pink:a:sD;roza=pink:a'+
+        ':sD;rozi=pink:a:pD;rozle=pink:a:pD;același=same:a:s;aceeași=same:a:'+
+        's;aceiași=same:a:p;aceleași=same:a:p;acelașiul=same:a:sD;aceeașia'+
+        '=same:a:sD;',
+    'aceiașii=same:a:pD;aceleașile=same:a:pD;diferit=different:a:s;diferită'+
+        '=different:a:s;diferiți=different:a:p;diferite=different:a:p;diferit'+
+        'ul=different:a:sD;diferita=different:a:sD;diferiții=different:a:pD;',
+    'diferitele=different:a:pD;primul=first:a:s;prima=first:a:s;primii=first:a'+
+        ':p;primele=first:a:p;primulul=first:a:sD;primaa=first:a:sD;primiii=fi'+
+        'rst:a:pD;primelele=first:a:pD;ultimul=last:a:s;ultima=last:a:s;ultimi'+
+        'i=last:a:p;',
+    'ultimele=last:a:p;ultimulul=last:a:sD;ultimaa=last:a:sD;ultimiii=last:a:p'+
+        'D;ultimelele=last:a:pD;următor=next:a:s;următoare=next:a:s+p;următ'+
+        'ori=next:a:p;următorul=next:a:sD;următoarea=next:a:sD;următorii=ne'+
+        'xt:a:pD;',
+    'următoarele=next:a:pD;obosit=tired:a:s;obosită=tired:a:s;obosiți=tired'+
+        ':a:p;obosite=tired:a:p;obositul=tired:a:sD;obosita=tired:a:sD;obosiț'+
+        'ii=tired:a:pD;obositele=tired:a:pD;flămând=hungry:a:s;flămândă=h'+
+        'ungry:a:s;',
+    'flămânzi=hungry:a:p;flămânde=hungry:a:p;flămândul=hungry:a:sD;flăm'+
+        'ânda=hungry:a:sD;flămânzii=hungry:a:pD;flămândele=hungry:a:pD;î'+
+        'nsetat=thirsty:a:s;însetată=thirsty:a:s;însetați=thirsty:a:p;îns'+
+        'etate=thirsty:a:p;',
+    'însetatul=thirsty:a:sD;însetata=thirsty:a:sD;însetații=thirsty:a:pD;'+
+        'însetatele=thirsty:a:pD;fericit=happy:a:s;fericită=happy:a:s;ferici'+
+        'ți=happy:a:p;fericite=happy:a:p;fericitul=happy:a:sD;fericita=happy:'+
+        'a:sD;',
+    'fericiții=happy:a:pD;fericitele=happy:a:pD;trist=sad:a:s;tristă=sad:a:s'+
+        ';triști=sad:a:p;triste=sad:a:p;tristul=sad:a:sD;trista=sad:a:sD;tri'+
+        'știi=sad:a:pD;tristele=sad:a:pD;amabil=kind:a:s;amabilă=kind:a:s;am'+
+        'abili=kind:a:p;',
+    'amabile=kind:a:p;amabilul=kind:a:sD;amabila=kind:a:sD;amabilii=kind:a:pD;'+
+        'amabilele=kind:a:pD;drăguț=nice:a:s;drăguță=nice:a:s;drăguți=n'+
+        'ice:a:p;drăguțe=nice:a:p;drăguțul=nice:a:sD;drăguța=nice:a:sD;',
+    'drăguții=nice:a:pD;drăguțele=nice:a:pD;sigur=sure:a:s;sigură=sure:a:'+
+        's;siguri=sure:a:p;sigure=sure:a:p;sigurul=sure:a:sD;sigura=sure:a:sD;'+
+        'sigurii=sure:a:pD;sigurele=sure:a:pD;adevărat=true:a:s;adevărată=t'+
+        'rue:a:s;',
+    'adevărați=true:a:p;adevărate=true:a:p;adevăratul=true:a:sD;adevărata'+
+        '=true:a:sD;adevărații=true:a:pD;adevăratele=true:a:pD;faimos=famou'+
+        's:a:s;faimoasă=famous:a:s;faimoși=famous:a:p;faimoase=famous:a:p;fa'+
+        'imosul=famous:a:sD;',
+    'faimoasa=famous:a:sD;faimoșii=famous:a:pD;faimoasele=famous:a:pD;linișt'+
+        'it=quiet:a:s;liniștită=quiet:a:s;liniștiți=quiet:a:p;liniștite=q'+
+        'uiet:a:p;liniștitul=quiet:a:sD;liniștita=quiet:a:sD;liniștiții=qu'+
+        'iet:a:pD;',
+    'liniștitele=quiet:a:pD;căsătorit=married:a:s;căsătorită=married:a:s'+
+        ';căsătoriți=married:a:p;căsătorite=married:a:p;căsătoritul=mar'+
+        'ried:a:sD;căsătorita=married:a:sD;căsătoriții=married:a:pD;',
+    'căsătoritele=married:a:pD;bolnav=sick:a:s;bolnavă=sick:a:s;bolnavi=sic'+
+        'k:a:p;bolnave=sick:a:p;bolnavul=sick:a:sD;bolnava=sick:a:sD;bolnavii='+
+        'sick:a:pD;bolnavele=sick:a:pD;sănătos=healthy:a:s;sănătoasă=heal'+
+        'thy:a:s;',
+    'sănătoși=healthy:a:p;sănătoase=healthy:a:p;sănătosul=healthy:a:sD;'+
+        'sănătoasa=healthy:a:sD;sănătoșii=healthy:a:pD;sănătoasele=heal'+
+        'thy:a:pD;bogat=rich:a:s;bogată=rich:a:s;bogați=rich:a:p;bogate=rich'+
+        ':a:p;',
+    'bogatul=rich:a:sD;bogata=rich:a:sD;bogații=rich:a:pD;bogatele=rich:a:pD;'+
+        'sărac=poor:a:s;săracă=poor:a:s;săraci=poor:a:p;sărace=poor:a:p;s'+
+        'ăracul=poor:a:sD;săraca=poor:a:sD;săracii=poor:a:pD;săracele=poor'+
+        ':a:pD;',
+    'cumsecade=decent:a:s+p;cumsecadele=decent:a:sD+pD;cumsecadea=decent:a:sD;'+
+        'cumsecadei=decent:a:pD;inteligent=smart:a:s;inteligentă=smart:a:s;in'+
+        'teligenți=smart:a:p;inteligente=smart:a:p;inteligentul=smart:a:sD;',
+    'inteligenta=smart:a:sD;inteligenții=smart:a:pD;inteligentele=smart:a:pD;'+
+        'prost=stupid:a:s;proastă=stupid:a:s;proști=stupid:a:p;proaste=stupi'+
+        'd:a:p;prostul=stupid:a:sD;proasta=stupid:a:sD;proștii=stupid:a:pD;',
+    'proastele=stupid:a:pD;vesel=cheerful:a:s;veselă=cheerful:a:s;veseli=chee'+
+        'rful:a:p;vesele=cheerful:a:p;veselul=cheerful:a:sD;vesela=cheerful:a:'+
+        'sD;veselii=cheerful:a:pD;veselele=cheerful:a:pD;serios=serious:a:s;',
+    'serioasă=serious:a:s;serioși=serious:a:p;serioase=serious:a:p;seriosul='+
+        'serious:a:sD;serioasa=serious:a:sD;serioșii=serious:a:pD;serioasele='+
+        'serious:a:pD;singur=alone:a:s;singură=alone:a:s;singuri=alone:a:p;si'+
+        'ngure=alone:a:p;',
+    'singurul=alone:a:sD;singura=alone:a:sD;singurii=alone:a:pD;singurele=alon'+
+        'e:a:pD;curios=curious:a:s;curioasă=curious:a:s;curioși=curious:a:p;'+
+        'curioase=curious:a:p;curiosul=curious:a:sD;curioasa=curious:a:sD;curi'+
+        'oșii=curious:a:pD;',
+    'curioasele=curious:a:pD;periculos=dangerous:a:s;periculoasă=dangerous:a:'+
+        's;periculoși=dangerous:a:p;periculoase=dangerous:a:p;periculosul=dan'+
+        'gerous:a:sD;periculoasa=dangerous:a:sD;periculoșii=dangerous:a:pD;',
+    'periculoasele=dangerous:a:pD;român=Romanian:a:s;română=Romanian:a:s;ro'+
+        'mâni=Romanian:a:p;române=Romanian:a:p;românul=Romanian:a:sD;român'+
+        'a=Romanian:a:sD;românii=Romanian:a:pD;românele=Romanian:a:pD;român'+
+        'esc=Romanian:a:s;',
+    'românească=Romanian:a:s;românești=Romanian:a:p;românescul=Romanian:a'+
+        ':sD;româneasca=Romanian:a:sD;româneștii=Romanian:a:pD;româneștil'+
+        'e=Romanian:a:pD;englez=English:a:s;engleză=English:a:s;englezi=Engli'+
+        'sh:a:p;',
+    'engleze=English:a:p;englezul=English:a:sD;engleza=English:a:sD;englezii=E'+
+        'nglish:a:pD;englezele=English:a:pD;francez=French:a:s;franceză=Frenc'+
+        'h:a:s;francezi=French:a:p;franceze=French:a:p;francezul=French:a:sD;',
+    'franceza=French:a:sD;francezii=French:a:pD;francezele=French:a:pD;german='+
+        'German:a:s;germană=German:a:s;germani=German:a:p;germane=German:a:p;'+
+        'germanul=German:a:sD;germana=German:a:sD;germanii=German:a:pD;germane'+
+        'le=German:a:pD;',
+    'spaniol=Spanish:a:s;spaniolă=Spanish:a:s;spanioli=Spanish:a:p;spaniole=S'+
+        'panish:a:p;spaniolul=Spanish:a:sD;spaniola=Spanish:a:sD;spaniolii=Spa'+
+        'nish:a:pD;spaniolele=Spanish:a:pD;italian=Italian:a:s;italiană=Itali'+
+        'an:a:s;',
+    'italieni=Italian:a:p;italiene=Italian:a:p;italianul=Italian:a:sD;italiana'+
+        '=Italian:a:sD;italienii=Italian:a:pD;italienele=Italian:a:pD;rus=Russ'+
+        'ian:a:s;rusă=Russian:a:s;ruși=Russian:a:p;ruse=Russian:a:p;rusul=Ru'+
+        'ssian:a:sD;',
+    'rusa=Russian:a:sD;rușii=Russian:a:pD;rusele=Russian:a:pD;polonez=Polish:'+
+        'a:s;poloneză=Polish:a:s;polonezi=Polish:a:p;poloneze=Polish:a:p;polo'+
+        'nezul=Polish:a:sD;poloneza=Polish:a:sD;polonezii=Polish:a:pD;poloneze'+
+        'le=Polish:a:pD;',
+    'străin=foreign:a:s;străină=foreign:a:s;străini=foreign:a:p;străine=f'+
+        'oreign:a:p;străinul=foreign:a:sD;străina=foreign:a:sD;străinii=for'+
+        'eign:a:pD;străinele=foreign:a:pD;local=local:a:s;locală=local:a:s;l'+
+        'ocali=local:a:p;',
+    'locale=local:a:p;localul=local:a:sD;locala=local:a:sD;localii=local:a:pD;'+
+        'localele=local:a:pD;ciudat=strange:a:s;ciudată=strange:a:s;ciudați='+
+        'strange:a:p;ciudate=strange:a:p;ciudatul=strange:a:sD;ciudata=strange'+
+        ':a:sD;',
+    'ciudații=strange:a:pD;ciudatele=strange:a:pD;necesar=necessary:a:s;neces'+
+        'ară=necessary:a:s;necesari=necessary:a:p;necesare=necessary:a:p;nece'+
+        'sarul=necessary:a:sD;necesara=necessary:a:sD;necesarii=necessary:a:pD'+
+        ';',
+    'necesarele=necessary:a:pD;posibil=possible:a:s;posibilă=possible:a:s;pos'+
+        'ibili=possible:a:p;posibile=possible:a:p;posibilul=possible:a:sD;posi'+
+        'bila=possible:a:sD;posibilii=possible:a:pD;posibilele=possible:a:pD;s'+
+        'pecial=special:a:s;',
+    'specială=special:a:s;speciali=special:a:p;speciale=special:a:p;specialul'+
+        '=special:a:sD;speciala=special:a:sD;specialii=special:a:pD;specialele'+
+        '=special:a:pD;simplu=simple:a:s;simplă=simple:a:s;simpli=simple:a:p;'+
+        'simple=simple:a:p;',
+    'simplul=simple:a:sD;simpla=simple:a:sD;simplii=simple:a:pD;simplele=simpl'+
+        'e:a:pD;întreg=whole:a:s;întreagă=whole:a:s;întregi=whole:a:p;înt'+
+        'regul=whole:a:sD;întreaga=whole:a:sD;întregii=whole:a:pD;întregile'+
+        '=whole:a:pD;',
+    'mulți=many:a:s+p;multe=many:a:s+p;mulțiul=many:a:sD;multea=many:a:sD;mu'+
+        'lții=many:a:pD;multele=many:a:pD;fi=be:v:I:ser;sunt=be:v:p1:ser+p6:s'+
+        'er;ești=be:v:p2:ser;este=be:v:p3:ser+M2:ser;suntem=be:v:p4:ser;',
+    'sunteți=be:v:p5:ser+M5:ser;fost=be:v:P:ser;fie=be:v:p3:ser+p6:ser;eram=b'+
+        'e:v:m1:ser+m4:ser;erai=be:v:m2:ser;era=be:v:m3:ser;erați=be:v:m5:ser'+
+        ';erau=be:v:m6:ser;avea=have:v:I:tener+m3:tener;am=have:v:p1:tener;',
+    'ai=have:v:p2:tener+M2:tener;are=have:v:p3:tener;avem=have:v:p4:tener;ave'+
+        'ți=have:v:p5:tener+M5:tener;au=have:v:p6:tener;avut=have:v:P:tener;a'+
+        'ibă=have:v:p3:tener+p6:tener;aveam=have:v:m1:tener+m4:tener;aveai=ha'+
+        've:v:m2:tener;',
+    'aveați=have:v:m5:tener;aveau=have:v:m6:tener;face=do:v:I:hacer+p3:hacer;'+
+        'fac=do:v:p1:hacer+p6:hacer;faci=do:v:p2:hacer;facem=do:v:p4:hacer;fac'+
+        'eți=do:v:p5:hacer+M5:hacer;fă=do:v:M2:hacer;făcut=do:v:P:hacer;',
+    'facă=do:v:p3:hacer+p6:hacer;făceam=do:v:m1:hacer+m4:hacer;făceai=do:v:'+
+        'm2:hacer;făcea=do:v:m3:hacer;făceați=do:v:m5:hacer;făceau=do:v:m6'+
+        ':hacer;merge=go:v:I:ir+p3:ir+M2:ir;merg=go:v:p1:ir+p6:ir;mergi=go:v:p'+
+        '2:ir;',
+    'mergem=go:v:p4:ir;mergeți=go:v:p5:ir+M5:ir;mers=go:v:P:ir;meargă=go:v:p'+
+        '3:ir+p6:ir;mergeam=go:v:m1:ir+m4:ir;mergeai=go:v:m2:ir;mergea=go:v:m3'+
+        ':ir;mergeați=go:v:m5:ir;mergeau=go:v:m6:ir;veni=come:v:I:venir;',
+    'vin=come:v:p1:venir+p6:venir;vii=come:v:p2:venir;vine=come:v:p3:venir;ven'+
+        'im=come:v:p4:venir;veniți=come:v:p5:venir+M5:venir;vino=come:v:M2:ve'+
+        'nir;venit=come:v:P:venir;vină=come:v:p3:venir+p6:venir;veneam=come:v'+
+        ':m1:venir+m4:venir;',
+    'veneai=come:v:m2:venir;venea=come:v:m3:venir;veneați=come:v:m5:venir;ven'+
+        'eau=come:v:m6:venir;vedea=see:v:I:ver+m3:ver;văd=see:v:p1:ver+p6:ver'+
+        ';vezi=see:v:p2:ver;vede=see:v:p3:ver+M2:ver;vedem=see:v:p4:ver;',
+    'vedeți=see:v:p5:ver+M5:ver;văzut=see:v:P:ver;vadă=see:v:p3:ver+p6:ver;'+
+        'vedeam=see:v:m1:ver+m4:ver;vedeai=see:v:m2:ver;vedeați=see:v:m5:ver;'+
+        'vedeau=see:v:m6:ver;spune=say:v:I:decir+p3:decir+M2:decir;spun=say:v:'+
+        'p1:decir+p6:decir;',
+    'spui=say:v:p2:decir;spunem=say:v:p4:decir;spuneți=say:v:p5:decir+M5:deci'+
+        'r;spus=say:v:P:decir;spună=say:v:p3:decir+p6:decir;spuneam=say:v:m1:'+
+        'decir+m4:decir;spuneai=say:v:m2:decir;spunea=say:v:m3:decir;spuneați'+
+        '=say:v:m5:decir;',
+    'spuneau=say:v:m6:decir;ști=know:v:I:saber;știu=know:v:p1:saber+p6:saber'+
+        ';știi=know:v:p2:saber;știe=know:v:p3:saber+M2:saber+p6:saber;știm='+
+        'know:v:p4:saber;știți=know:v:p5:saber+M5:saber;știut=know:v:P:sabe'+
+        'r;',
+    'știam=know:v:m1:saber+m4:saber;știai=know:v:m2:saber;știa=know:v:m3:sa'+
+        'ber;știați=know:v:m5:saber;știau=know:v:m6:saber;cunoaște=know:v:'+
+        'I+p3+M2;cunosc=know:v:p1+p6;cunoști=know:v:p2;cunoaștem=know:v:p4;',
+    'cunoașteți=know:v:p5+M5;cunoscut=know:v:P;cunoșteam=know:v:m1+m4;cuno'+
+        'șteai=know:v:m2;cunoștea=know:v:m3;cunoșteați=know:v:m5;cunoștea'+
+        'u=know:v:m6;putea=can:v:I:poder+m3:poder;pot=can:v:p1:poder+p6:poder;',
+    'poți=can:v:p2:poder;poate=can:v:p3:poder+M2:poder;putem=can:v:p4:poder;p'+
+        'uteți=can:v:p5:poder+M5:poder;putut=can:v:P:poder;poată=can:v:p3:po'+
+        'der+p6:poder;puteam=can:v:m1:poder+m4:poder;puteai=can:v:m2:poder;',
+    'puteați=can:v:m5:poder;puteau=can:v:m6:poder;vrea=want:v:I:querer+p3:que'+
+        'rer+M2:querer;vreau=want:v:p1:querer;vrei=want:v:p2:querer;vrem=want:'+
+        'v:p4:querer;vreți=want:v:p5:querer+M5:querer;vor=want:v:p6:querer+B6'+
+        ':ser;',
+    'vrut=want:v:P:querer;voiam=want:v:m1:querer+m4:querer;voiai=want:v:m2:que'+
+        'rer;voia=want:v:m3:querer;voiați=want:v:m5:querer;voiau=want:v:m6:qu'+
+        'erer;trebui=must:v:I:deber;trebuie=must:v:p3:deber+M2:deber;trebuit=m'+
+        'ust:v:P:deber;',
+    'trebuiam=must:v:m1:deber+m4:deber;trebuiai=must:v:m2:deber;trebuia=must:v'+
+        ':m3:deber;trebuiați=must:v:m5:deber;trebuiau=must:v:m6:deber;da=give'+
+        ':v:I:dar;dau=give:v:p1:dar+p6:dar;dai=give:v:p2:dar;dă=give:v:p3:dar'+
+        '+M2:dar;',
+    'dăm=give:v:p4:dar;dați=give:v:p5:dar+M5:dar;dat=give:v:P:dar;dea=give:v'+
+        ':p3:dar+p6:dar;dădeam=give:v:m1:dar+m4:dar;dădeai=give:v:m2:dar;dă'+
+        'dea=give:v:m3:dar;dădeați=give:v:m5:dar;dădeau=give:v:m6:dar;lua=t'+
+        'ake:v:I+m3;',
+    'iau=take:v:p1+p6;iei=take:v:p2;ia=take:v:p3+M2+p6;luăm=take:v:p4;luați='+
+        'take:v:p5+M5+m5;luat=take:v:P;luam=take:v:m1+m4;luai=take:v:m2;luau=t'+
+        'ake:v:m6;mânca=eat:v:I+m3;mănânc=eat:v:p1;mănânci=eat:v:p2;',
+    'mănâncă=eat:v:p3+p6+M2;mâncăm=eat:v:p4;mâncați=eat:v:p5+M5+m5;mân'+
+        'cat=eat:v:P;mănânce=eat:v:p3+p6;mâncam=eat:v:m1+m4;mâncai=eat:v:m'+
+        '2;mâncau=eat:v:m6;bea=drink:v:I+p3+M2+m3;beau=drink:v:p1+p6+m6;bei=d'+
+        'rink:v:p2;',
+    'bem=drink:v:p4;beți=drink:v:p5+M5;băut=drink:v:P;beam=drink:v:m1+m4;bea'+
+        'i=drink:v:m2;beați=drink:v:m5;dormi=sleep:v:I+p2;dorm=sleep:v:p1+p6;'+
+        'doarme=sleep:v:p3+M2;dormim=sleep:v:p4;dormiți=sleep:v:p5+M5;dormit='+
+        'sleep:v:P;',
+    'doarmă=sleep:v:p3+p6;dormeam=sleep:v:m1+m4;dormeai=sleep:v:m2;dormea=sle'+
+        'ep:v:m3;dormeați=sleep:v:m5;dormeau=sleep:v:m6;citi=read:v:I;citesc='+
+        'read:v:p1+p6;citești=read:v:p2;citește=read:v:p3+M2;citim=read:v:p4'+
+        ';',
+    'citiți=read:v:p5+M5;citit=read:v:P;citească=read:v:p3+p6;citeam=read:v:'+
+        'm1+m4;citeai=read:v:m2;citea=read:v:m3;citeați=read:v:m5;citeau=read'+
+        ':v:m6;scrie=write:v:I+p3+M2+p6;scriu=write:v:p1+p6;scrii=write:v:p2;s'+
+        'criem=write:v:p4;',
+    'scrieți=write:v:p5+M5;scris=write:v:P;scriam=write:v:m1+m4;scriai=write:'+
+        'v:m2;scria=write:v:m3;scriați=write:v:m5;scriau=write:v:m6;vorbi=spe'+
+        'ak:v:I;vorbesc=speak:v:p1+p6;vorbești=speak:v:p2;vorbește=speak:v:p'+
+        '3+M2;',
+    'vorbim=speak:v:p4;vorbiți=speak:v:p5+M5;vorbit=speak:v:P;vorbească=spea'+
+        'k:v:p3+p6;vorbeam=speak:v:m1+m4;vorbeai=speak:v:m2;vorbea=speak:v:m3;'+
+        'vorbeați=speak:v:m5;vorbeau=speak:v:m6;locui=live:v:I;locuiesc=live:'+
+        'v:p1+p6;',
+    'locuiești=live:v:p2;locuiește=live:v:p3+M2;locuim=live:v:p4;locuiți=li'+
+        've:v:p5+M5;locuit=live:v:P;locuiească=live:v:p3+p6;locuiam=live:v:m1'+
+        '+m4;locuiai=live:v:m2;locuia=live:v:m3;locuiați=live:v:m5;locuiau=li'+
+        've:v:m6;',
+    'lucra=work:v:I+m3;lucrez=work:v:p1;lucrezi=work:v:p2;lucrează=work:v:p3+'+
+        'p6+M2;lucrăm=work:v:p4;lucrați=work:v:p5+M5+m5;lucrat=work:v:P;lucr'+
+        'eze=work:v:p3+p6;lucram=work:v:m1+m4;lucrai=work:v:m2;lucrau=work:v:m'+
+        '6;',
+    'învăța=learn:v:I+m3;învăț=learn:v:p1;înveți=learn:v:p2;învață='+
+        'learn:v:p3+p6+M2;învățăm=learn:v:p4;învățați=learn:v:p5+M5+m5'+
+        ';învățat=learn:v:P;învațe=learn:v:p3+p6;învățam=learn:v:m1+m4'+
+        ';',
+    'învățai=learn:v:m2;învățau=learn:v:m6;înțelege=understand:v:I+p3+'+
+        'M2;înțeleg=understand:v:p1+p6;înțelegi=understand:v:p2;înțelege'+
+        'm=understand:v:p4;înțelegeți=understand:v:p5+M5;înțeles=understa'+
+        'nd:v:P;',
+    'înțelegeam=understand:v:m1+m4;înțelegeai=understand:v:m2;înțelegea='+
+        'understand:v:m3;înțelegeați=understand:v:m5;înțelegeau=understan'+
+        'd:v:m6;iubi=love:v:I;iubesc=love:v:p1+p6;iubești=love:v:p2;iubește='+
+        'love:v:p3+M2;',
+    'iubim=love:v:p4;iubiți=love:v:p5+M5;iubit=love:v:P;iubească=love:v:p3+p'+
+        '6;iubeam=love:v:m1+m4;iubeai=love:v:m2;iubea=love:v:m3;iubeați=love:'+
+        'v:m5;iubeau=love:v:m6;cumpăra=buy:v:I+m3;cumpăr=buy:v:p1;cumperi=bu'+
+        'y:v:p2;',
+    'cumpără=buy:v:p3+p6+M2;cumpărăm=buy:v:p4;cumpărați=buy:v:p5+M5+m5;c'+
+        'umpărat=buy:v:P;cumpăre=buy:v:p3+p6;cumpăram=buy:v:m1+m4;cumpărai'+
+        '=buy:v:m2;cumpărau=buy:v:m6;vinde=sell:v:I+p3+M2;vând=sell:v:p1+p6;'+
+        'vinzi=sell:v:p2;',
+    'vindem=sell:v:p4;vindeți=sell:v:p5+M5;vândut=sell:v:P;vindeam=sell:v:m1'+
+        '+m4;vindeai=sell:v:m2;vindea=sell:v:m3;vindeați=sell:v:m5;vindeau=se'+
+        'll:v:m6;deschide=open:v:I+p3+M2;deschid=open:v:p1+p6;deschizi=open:v:'+
+        'p2;',
+    'deschidem=open:v:p4;deschideți=open:v:p5+M5;deschis=open:v:P;deschideam='+
+        'open:v:m1+m4;deschideai=open:v:m2;deschidea=open:v:m3;deschideați=op'+
+        'en:v:m5;deschideau=open:v:m6;închide=close:v:I+p3+M2;închid=close:v'+
+        ':p1+p6;',
+    'închizi=close:v:p2;închidem=close:v:p4;închideți=close:v:p5+M5;închi'+
+        's=close:v:P;închideam=close:v:m1+m4;închideai=close:v:m2;închidea='+
+        'close:v:m3;închideați=close:v:m5;închideau=close:v:m6;aștepta=wai'+
+        't:v:I+m3;',
+    'aștept=wait:v:p1;aștepți=wait:v:p2;așteaptă=wait:v:p3+p6+M2;aștept'+
+        'ăm=wait:v:p4;așteptați=wait:v:p5+M5+m5;așteptat=wait:v:P;așteapt'+
+        'e=wait:v:p3+p6;așteptam=wait:v:m1+m4;așteptai=wait:v:m2;așteptau=w'+
+        'ait:v:m6;',
+    'juca=play:v:I+m3;joc=play:v:p1;joci=play:v:p2;joacă=play:v:p3+p6+M2;juc'+
+        'ăm=play:v:p4;jucați=play:v:p5+M5+m5;jucat=play:v:P;joace=play:v:p3+'+
+        'p6;jucam=play:v:m1+m4;jucai=play:v:m2;jucau=play:v:m6;cânta=sing:v:I'+
+        '+m3;cânt=sing:v:p1;',
+    'cânți=sing:v:p2;cântă=sing:v:p3+p6+M2;cântăm=sing:v:p4;cântați=si'+
+        'ng:v:p5+M5+m5;cântat=sing:v:P;cânte=sing:v:p3+p6;cântam=sing:v:m1+'+
+        'm4;cântai=sing:v:m2;cântau=sing:v:m6;dansa=dance:v:I+m3;dansez=danc'+
+        'e:v:p1;',
+    'dansezi=dance:v:p2;dansează=dance:v:p3+p6+M2;dansăm=dance:v:p4;dansați'+
+        '=dance:v:p5+M5+m5;dansat=dance:v:P;danseze=dance:v:p3+p6;dansam=dance'+
+        ':v:m1+m4;dansai=dance:v:m2;dansau=dance:v:m6;călători=travel:v:I;',
+    'călătoresc=travel:v:p1+p6;călătorești=travel:v:p2;călătorește=tra'+
+        'vel:v:p3+M2;călătorim=travel:v:p4;călătoriți=travel:v:p5+M5;căl'+
+        'ătorit=travel:v:P;călătorească=travel:v:p3+p6;călătoream=travel'+
+        ':v:m1+m4;',
+    'călătoreai=travel:v:m2;călătorea=travel:v:m3;călătoreați=travel:v:'+
+        'm5;călătoreau=travel:v:m6;ajuta=help:v:I+m3;ajut=help:v:p1;ajuți=h'+
+        'elp:v:p2;ajută=help:v:p3+p6+M2;ajutăm=help:v:p4;ajutați=help:v:p5+'+
+        'M5+m5;',
+    'ajutat=help:v:P;ajute=help:v:p3+p6;ajutam=help:v:m1+m4;ajutai=help:v:m2;a'+
+        'jutau=help:v:m6;întreba=ask:v:I+m3;întreb=ask:v:p1;întrebi=ask:v:p'+
+        '2;întreabă=ask:v:p3+p6+M2;întrebăm=ask:v:p4;întrebați=ask:v:p5+'+
+        'M5+m5;',
+    'întrebat=ask:v:P;întreabe=ask:v:p3+p6;întrebam=ask:v:m1+m4;întrebai=a'+
+        'sk:v:m2;întrebau=ask:v:m6;răspunde=answer:v:I+p3+M2;răspund=answer'+
+        ':v:p1+p6;răspunzi=answer:v:p2;răspundem=answer:v:p4;răspundeți=an'+
+        'swer:v:p5+M5;',
+    'răspuns=answer:v:P;răspundeam=answer:v:m1+m4;răspundeai=answer:v:m2;r'+
+        'ăspundea=answer:v:m3;răspundeați=answer:v:m5;răspundeau=answer:v:'+
+        'm6;sta=stay:v:I;stau=stay:v:p1+p6;stai=stay:v:p2;stă=stay:v:p3+M2;st'+
+        'ăm=stay:v:p4;',
+    'stați=stay:v:p5+M5;stat=stay:v:P;ste=stay:v:p3+p6;stăteam=stay:v:m1+m4;'+
+        'stăteai=stay:v:m2;stătea=stay:v:m3;stăteați=stay:v:m5;stăteau=st'+
+        'ay:v:m6;începe=begin:v:I+p3+M2;încep=begin:v:p1+p6;începi=begin:v:'+
+        'p2;',
+    'începem=begin:v:p4;începeți=begin:v:p5+M5;început=begin:v:P;începeam'+
+        '=begin:v:m1+m4;începeai=begin:v:m2;începea=begin:v:m3;începeați=b'+
+        'egin:v:m5;începeau=begin:v:m6;termina=finish:v:I+m3;termin=finish:v:'+
+        'p1;',
+    'termini=finish:v:p2;termină=finish:v:p3+p6+M2;terminăm=finish:v:p4;term'+
+        'inați=finish:v:p5+M5+m5;terminat=finish:v:P;termine=finish:v:p3+p6;t'+
+        'erminam=finish:v:m1+m4;terminai=finish:v:m2;terminau=finish:v:m6;aler'+
+        'ga=run:v:I+m3;',
+    'alerg=run:v:p1;alergi=run:v:p2;aleargă=run:v:p3+p6+M2;alergăm=run:v:p4;'+
+        'alergați=run:v:p5+M5+m5;alergat=run:v:P;alerge=run:v:p3+p6;alergam=r'+
+        'un:v:m1+m4;alergai=run:v:m2;alergau=run:v:m6;înota=swim:v:I+m3;înot'+
+        '=swim:v:p1;',
+    'înoți=swim:v:p2;înoată=swim:v:p3+p6+M2;înotăm=swim:v:p4;înotați=s'+
+        'wim:v:p5+M5+m5;înotat=swim:v:P;înoate=swim:v:p3+p6;înotam=swim:v:m'+
+        '1+m4;înotai=swim:v:m2;înotau=swim:v:m6;pleca=leave:v:I+m3;plec=leav'+
+        'e:v:p1;',
+    'pleci=leave:v:p2;pleacă=leave:v:p3+p6+M2;plecăm=leave:v:p4;plecați=lea'+
+        've:v:p5+M5+m5;plecat=leave:v:P;pleace=leave:v:p3+p6;plecam=leave:v:m1'+
+        '+m4;plecai=leave:v:m2;plecau=leave:v:m6;ajunge=arrive:v:I+p3+M2;ajung'+
+        '=arrive:v:p1+p6;',
+    'ajungi=arrive:v:p2;ajungem=arrive:v:p4;ajungeți=arrive:v:p5+M5;ajuns=arr'+
+        'ive:v:P;ajungeam=arrive:v:m1+m4;ajungeai=arrive:v:m2;ajungea=arrive:v'+
+        ':m3;ajungeați=arrive:v:m5;ajungeau=arrive:v:m6;intra=enter:v:I+m3;in'+
+        'tru=enter:v:p1;',
+    'intri=enter:v:p2;intră=enter:v:p3+p6+M2;intrăm=enter:v:p4;intrați=ente'+
+        'r:v:p5+M5+m5;intrat=enter:v:P;intre=enter:v:p3+p6;intram=enter:v:m1+m'+
+        '4;intrai=enter:v:m2;intrau=enter:v:m6;ieși=go_out:v:I+p2;ies=go_out:'+
+        'v:p1+p6;',
+    'iese=go_out:v:p3+M2;ieșim=go_out:v:p4;ieșiți=go_out:v:p5+M5;ieșit=go_'+
+        'out:v:P;ieșeam=go_out:v:m1+m4;ieșeai=go_out:v:m2;ieșea=go_out:v:m3'+
+        ';ieșeați=go_out:v:m5;ieșeau=go_out:v:m6;ruga=ask_for:v:I+m3;rog=as'+
+        'k_for:v:p1;',
+    'rogi=ask_for:v:p2;roagă=ask_for:v:p3+p6+M2;rugăm=ask_for:v:p4;rugați=a'+
+        'sk_for:v:p5+M5+m5;rugat=ask_for:v:P;roage=ask_for:v:p3+p6;rugam=ask_f'+
+        'or:v:m1+m4;rugai=ask_for:v:m2;rugau=ask_for:v:m6;găsi=find:v:I;găse'+
+        'sc=find:v:p1+p6;',
+    'găsești=find:v:p2;găsește=find:v:p3+M2;găsim=find:v:p4;găsiți=find'+
+        ':v:p5+M5;găsit=find:v:P;găsească=find:v:p3+p6;găseam=find:v:m1+m4'+
+        ';găseai=find:v:m2;găsea=find:v:m3;găseați=find:v:m5;găseau=find:'+
+        'v:m6;',
+    'căuta=look_for:v:I+m3;caut=look_for:v:p1;cauți=look_for:v:p2;caută=loo'+
+        'k_for:v:p3+p6+M2;căutăm=look_for:v:p4;căutați=look_for:v:p5+M5+m5'+
+        ';căutat=look_for:v:P;caute=look_for:v:p3+p6;căutam=look_for:v:m1+m4'+
+        ';',
+    'căutai=look_for:v:m2;căutau=look_for:v:m6;chema=call:v:I+m3;chem=call:v'+
+        ':p1;chemi=call:v:p2;cheamă=call:v:p3+p6+M2;chemăm=call:v:p4;chemaț'+
+        'i=call:v:p5+M5+m5;chemat=call:v:P;cheame=call:v:p3+p6;chemam=call:v:m'+
+        '1+m4;',
+    'chemai=call:v:m2;chemau=call:v:m6;numi=call:v:*I:llamar;numesc=call:v:*p1'+
+        ':llamar+*p6:llamar;numești=call:v:*p2:llamar;numește=call:v:*p3:lla'+
+        'mar+M2:llamar;numim=call:v:*p4:llamar;numiți=call:v:*p5:llamar+M5:ll'+
+        'amar;',
+    'numit=call:v:*P:llamar;numească=call:v:*p3:llamar+p6:llamar;numeam=call:'+
+        'v:*m1:llamar+*m4:llamar;numeai=call:v:*m2:llamar;numea=call:v:*m3:lla'+
+        'mar;numeați=call:v:*m5:llamar;numeau=call:v:*m6:llamar;gândi=think:'+
+        'v:*I;',
+    'gândesc=think:v:*p1+*p6;gândești=think:v:*p2;gândește=think:v:*p3+M2'+
+        ';gândim=think:v:*p4;gândiți=think:v:*p5+M5;gândit=think:v:*P;gân'+
+        'dească=think:v:*p3+p6;gândeam=think:v:*m1+*m4;gândeai=think:v:*m2;',
+    'gândea=think:v:*m3;gândeați=think:v:*m5;gândeau=think:v:*m6;crede=bel'+
+        'ieve:v:I+p3+M2;cred=believe:v:p1+p6;crezi=believe:v:p2;credem=believe'+
+        ':v:p4;credeți=believe:v:p5+M5;crezut=believe:v:P;credeam=believe:v:m'+
+        '1+m4;',
+    'credeai=believe:v:m2;credea=believe:v:m3;credeați=believe:v:m5;credeau=b'+
+        'elieve:v:m6;uita=forget:v:I+m3;uit=forget:v:p1;uiți=forget:v:p2;uit'+
+        'ă=forget:v:p3+p6+M2;uităm=forget:v:p4;uitați=forget:v:p5+M5+m5;uit'+
+        'at=forget:v:P;',
+    'uite=forget:v:p3+p6;uitam=forget:v:m1+m4;uitai=forget:v:m2;uitau=forget:v'+
+        ':m6;aduce=bring:v:I+p3;aduc=bring:v:p1+p6;aduci=bring:v:p2;aducem=bri'+
+        'ng:v:p4;aduceți=bring:v:p5+M5;adu=bring:v:M2;adus=bring:v:P;aduceam='+
+        'bring:v:m1+m4;',
+    'aduceai=bring:v:m2;aducea=bring:v:m3;aduceați=bring:v:m5;aduceau=bring:v'+
+        ':m6;trimite=send:v:I+p3+M2;trimit=send:v:p1+p6;trimiți=send:v:p2;tri'+
+        'mitem=send:v:p4;trimiteți=send:v:p5+M5;trimis=send:v:P;trimiteam=sen'+
+        'd:v:m1+m4;',
+    'trimiteai=send:v:m2;trimitea=send:v:m3;trimiteați=send:v:m5;trimiteau=se'+
+        'nd:v:m6;plăti=pay:v:I;plătesc=pay:v:p1+p6;plătești=pay:v:p2;plăt'+
+        'ește=pay:v:p3+M2;plătim=pay:v:p4;plătiți=pay:v:p5+M5;plătit=pay:'+
+        'v:P;',
+    'plătească=pay:v:p3+p6;plăteam=pay:v:m1+m4;plăteai=pay:v:m2;plătea=pa'+
+        'y:v:m3;plăteați=pay:v:m5;plăteau=pay:v:m6;costa=cost:v:I+m3;costă'+
+        '=cost:v:p3+p6+M2;costat=cost:v:P;coste=cost:v:p3+p6;costam=cost:v:m1+'+
+        'm4;',
+    'costai=cost:v:m2;costați=cost:v:m5;costau=cost:v:m6;găti=cook:v:I;găte'+
+        'sc=cook:v:p1+p6;gătești=cook:v:p2;gătește=cook:v:p3+M2;gătim=coo'+
+        'k:v:p4;gătiți=cook:v:p5+M5;gătit=cook:v:P;gătească=cook:v:p3+p6;',
+    'găteam=cook:v:m1+m4;găteai=cook:v:m2;gătea=cook:v:m3;găteați=cook:v:'+
+        'm5;găteau=cook:v:m6;spăla=wash:v:*I+*m3;spăl=wash:v:*p1;speli=wash'+
+        ':v:*p2;spală=wash:v:*p3+*p6+M2;spălăm=wash:v:*p4;spălați=wash:v:'+
+        '*p5+M5+*m5;',
+    'spălat=wash:v:*P;spale=wash:v:*p3+p6;spălam=wash:v:*m1+*m4;spălai=wash'+
+        ':v:*m2;spălau=wash:v:*m6;curăța=clean:v:I+m3;curăț=clean:v:p1;cu'+
+        'reți=clean:v:p2;curăță=clean:v:p3+p6+M2;curățăm=clean:v:p4;',
+    'curățați=clean:v:p5+M5+m5;curățat=clean:v:P;curățe=clean:v:p3+p6;c'+
+        'urățam=clean:v:m1+m4;curățai=clean:v:m2;curățau=clean:v:m6;cond'+
+        'uce=drive:v:I+p3+M2;conduc=drive:v:p1+p6;conduci=drive:v:p2;conducem='+
+        'drive:v:p4;',
+    'conduceți=drive:v:p5+M5;condus=drive:v:P;conduceam=drive:v:m1+m4;conduce'+
+        'ai=drive:v:m2;conducea=drive:v:m3;conduceați=drive:v:m5;conduceau=dr'+
+        'ive:v:m6;zbura=fly:v:I+m3;zbor=fly:v:p1;zbori=fly:v:p2;zboară=fly:v:'+
+        'p3+p6+M2;',
+    'zburăm=fly:v:p4;zburați=fly:v:p5+M5+m5;zburat=fly:v:P;zboare=fly:v:p3+p'+
+        '6;zburam=fly:v:m1+m4;zburai=fly:v:m2;zburau=fly:v:m6;plânge=cry:v:I+'+
+        'p3+M2;plâng=cry:v:p1+p6;plângi=cry:v:p2;plângem=cry:v:p4;plângeț'+
+        'i=cry:v:p5+M5;',
+    'plâns=cry:v:P;plângeam=cry:v:m1+m4;plângeai=cry:v:m2;plângea=cry:v:m3'+
+        ';plângeați=cry:v:m5;plângeau=cry:v:m6;râde=laugh:v:I+p3+M2;râd=l'+
+        'augh:v:p1+p6;râzi=laugh:v:p2;râdem=laugh:v:p4;râdeți=laugh:v:p5+M'+
+        '5;râs=laugh:v:P;',
+    'râdeam=laugh:v:m1+m4;râdeai=laugh:v:m2;râdea=laugh:v:m3;râdeați=laug'+
+        'h:v:m5;râdeau=laugh:v:m6;muri=die:v:I;mor=die:v:p1+p6;mori=die:v:p2;'+
+        'moare=die:v:p3+M2;murim=die:v:p4;muriți=die:v:p5+M5;murit=die:v:P;mu'+
+        'ream=die:v:m1+m4;',
+    'mureai=die:v:m2;murea=die:v:m3;mureați=die:v:m5;mureau=die:v:m6;trăi=li'+
+        've:v:I;trăiesc=live:v:p1+p6;trăiești=live:v:p2;trăiește=live:v:p'+
+        '3+M2;trăim=live:v:p4;trăiți=live:v:p5+M5;trăit=live:v:P;trăieasc'+
+        'ă=live:v:p3+p6;',
+    'trăiam=live:v:m1+m4;trăiai=live:v:m2;trăia=live:v:m3;trăiați=live:v:'+
+        'm5;trăiau=live:v:m6;câștiga=win:v:I+m3;câștig=win:v:p1;câștigi'+
+        '=win:v:p2;câștigă=win:v:p3+p6+M2;câștigăm=win:v:p4;câștigați'+
+        '=win:v:p5+M5+m5;',
+    'câștigat=win:v:P;câștige=win:v:p3+p6;câștigam=win:v:m1+m4;câștiga'+
+        'i=win:v:m2;câștigau=win:v:m6;pierde=lose:v:I+p3+M2;pierd=lose:v:p1+'+
+        'p6;pierzi=lose:v:p2;pierdem=lose:v:p4;pierdeți=lose:v:p5+M5;pierdut='+
+        'lose:v:P;',
+    'pierdeam=lose:v:m1+m4;pierdeai=lose:v:m2;pierdea=lose:v:m3;pierdeați=los'+
+        'e:v:m5;pierdeau=lose:v:m6;primi=receive:v:I;primesc=receive:v:p1+p6;p'+
+        'rimești=receive:v:p2;primește=receive:v:p3+M2;primim=receive:v:p4;',
+    'primiți=receive:v:p5+M5;primit=receive:v:P;primească=receive:v:p3+p6;pr'+
+        'imeam=receive:v:m1+m4;primeai=receive:v:m2;primea=receive:v:m3;primea'+
+        'ți=receive:v:m5;primeau=receive:v:m6;ține=hold:v:I+p3+M2;țin=hold:'+
+        'v:p1+p6;',
+    'ții=hold:v:p2;ținem=hold:v:p4;țineți=hold:v:p5+M5;ținut=hold:v:P;ți'+
+        'nă=hold:v:p3+p6;țineam=hold:v:m1+m4;țineai=hold:v:m2;ținea=hold:v'+
+        ':m3;țineați=hold:v:m5;țineau=hold:v:m6;pune=put:v:I+p3+M2;pun=put:'+
+        'v:p1+p6;',
+    'pui=put:v:p2;punem=put:v:p4;puneți=put:v:p5+M5;pus=put:v:P;pună=put:v:p'+
+        '3+p6;puneam=put:v:m1+m4;puneai=put:v:m2;punea=put:v:m3;puneați=put:v'+
+        ':m5;puneau=put:v:m6;ploua=rain:v:I:llover+m3:llover;plouă=rain:v:p3:'+
+        'llover+M2:llover;',
+    'plouat=rain:v:P:llover;ploue=rain:v:p3:llover+p6:llover;plouam=rain:v:m1:'+
+        'llover+m4:llover;plouai=rain:v:m2:llover;plouați=rain:v:m5:llover;pl'+
+        'ouau=rain:v:m6:llover;urî=hate:v:I;urăsc=hate:v:p1+p6;urăști=hate'+
+        ':v:p2;',
+    'urăște=hate:v:p3+M2;urâm=hate:v:p4;urâți=hate:v:p5+M5;urât=hate:v:P'+
+        ';dori=wish:v:I;doresc=wish:v:p1+p6;dorești=wish:v:p2;dorește=wish:v'+
+        ':p3+M2;dorim=wish:v:p4;doriți=wish:v:p5+M5;dorit=wish:v:P;dorească='+
+        'wish:v:p3+p6;',
+    'doream=wish:v:m1+m4;doreai=wish:v:m2;dorea=wish:v:m3;doreați=wish:v:m5;d'+
+        'oreau=wish:v:m6;prefera=prefer:v:I+m3;prefer=prefer:v:p1;preferi=pref'+
+        'er:v:p2;preferă=prefer:v:p3+p6+M2;preferăm=prefer:v:p4;preferați=p'+
+        'refer:v:p5+M5+m5;',
+    'preferat=prefer:v:P;prefere=prefer:v:p3+p6;preferam=prefer:v:m1+m4;prefer'+
+        'ai=prefer:v:m2;preferau=prefer:v:m6;încerca=try:v:I+m3;încerc=try:v'+
+        ':p1;încerci=try:v:p2;încearcă=try:v:p3+p6+M2;încercăm=try:v:p4;',
+    'încercați=try:v:p5+M5+m5;încercat=try:v:P;încearce=try:v:p3+p6;încer'+
+        'cam=try:v:m1+m4;încercai=try:v:m2;încercau=try:v:m6;folosi=use:v:I;'+
+        'folosesc=use:v:p1+p6;folosești=use:v:p2;folosește=use:v:p3+M2;folos'+
+        'im=use:v:p4;',
+    'folosiți=use:v:p5+M5;folosit=use:v:P;folosească=use:v:p3+p6;foloseam=us'+
+        'e:v:m1+m4;foloseai=use:v:m2;folosea=use:v:m3;foloseați=use:v:m5;folo'+
+        'seau=use:v:m6;arăta=show:v:I+m3;arăt=show:v:p1;arăți=show:v:p2;',
+    'arată=show:v:p3+p6+M2;arătăm=show:v:p4;arătați=show:v:p5+M5+m5;arăt'+
+        'at=show:v:P;arate=show:v:p3+p6;arătam=show:v:m1+m4;arătai=show:v:m2'+
+        ';arătau=show:v:m6;desena=draw:v:I+m3;desenez=draw:v:p1;desenezi=draw'+
+        ':v:p2;',
+    'desenează=draw:v:p3+p6+M2;desenăm=draw:v:p4;desenați=draw:v:p5+M5+m5;d'+
+        'esenat=draw:v:P;deseneze=draw:v:p3+p6;desenam=draw:v:m1+m4;desenai=dr'+
+        'aw:v:m2;desenau=draw:v:m6;picta=paint:v:I+m3;pictez=paint:v:p1;pictez'+
+        'i=paint:v:p2;',
+    'pictează=paint:v:p3+p6+M2;pictăm=paint:v:p4;pictați=paint:v:p5+M5+m5;p'+
+        'ictat=paint:v:P;picteze=paint:v:p3+p6;pictam=paint:v:m1+m4;pictai=pai'+
+        'nt:v:m2;pictau=paint:v:m6;vizita=visit:v:I+m3;vizitez=visit:v:p1;vizi'+
+        'tezi=visit:v:p2;',
+    'vizitează=visit:v:p3+p6+M2;vizităm=visit:v:p4;vizitați=visit:v:p5+M5+m'+
+        '5;vizitat=visit:v:P;viziteze=visit:v:p3+p6;vizitam=visit:v:m1+m4;vizi'+
+        'tai=visit:v:m2;vizitau=visit:v:m6;întâlni=meet:v:I;întâlnesc=meet'+
+        ':v:p1+p6;',
+    'întâlnești=meet:v:p2;întâlnește=meet:v:p3+M2;întâlnim=meet:v:p4;'+
+        'întâlniți=meet:v:p5+M5;întâlnit=meet:v:P;întâlnească=meet:v:p'+
+        '3+p6;întâlneam=meet:v:m1+m4;întâlneai=meet:v:m2;întâlnea=meet:v'+
+        ':m3;',
+    'întâlneați=meet:v:m5;întâlneau=meet:v:m6;studia=study:v:I+m3;studiez'+
+        '=study:v:p1;studiezi=study:v:p2;studiază=study:v:p3+p6+M2;studiem=st'+
+        'udy:v:p4;studiați=study:v:p5+M5+m5;studiat=study:v:P;studiaze=study:'+
+        'v:p3+p6;',
+    'studiam=study:v:m1+m4;studiai=study:v:m2;studiau=study:v:m6;trezi=wake_up'+
+        ':v:*I;trezesc=wake_up:v:*p1+*p6;trezești=wake_up:v:*p2;trezește=wak'+
+        'e_up:v:*p3+M2;trezim=wake_up:v:*p4;treziți=wake_up:v:*p5+M5;trezit=w'+
+        'ake_up:v:*P;',
+    'trezească=wake_up:v:*p3+p6;trezeam=wake_up:v:*m1+*m4;trezeai=wake_up:v:*'+
+        'm2;trezea=wake_up:v:*m3;trezeați=wake_up:v:*m5;trezeau=wake_up:v:*m6'+
+        ';grăbi=hurry:v:*I;grăbesc=hurry:v:*p1+*p6;grăbești=hurry:v:*p2;',
+    'grăbește=hurry:v:*p3+M2;grăbim=hurry:v:*p4;grăbiți=hurry:v:*p5+M5;gr'+
+        'ăbit=hurry:v:*P;grăbească=hurry:v:*p3+p6;grăbeam=hurry:v:*m1+*m4;'+
+        'grăbeai=hurry:v:*m2;grăbea=hurry:v:*m3;grăbeați=hurry:v:*m5;grăb'+
+        'eau=hurry:v:*m6;',
+    'plimba=walk:v:*I+*m3;plimb=walk:v:*p1;plimbi=walk:v:*p2;plimbă=walk:v:*p'+
+        '3+*p6+M2;plimbăm=walk:v:*p4;plimbați=walk:v:*p5+M5+*m5;plimbat=walk'+
+        ':v:*P;plimbe=walk:v:*p3+p6;plimbam=walk:v:*m1+*m4;plimbai=walk:v:*m2;'+
+        'plimbau=walk:v:*m6;',
+    'simți=feel:v:*I+*p2;simt=feel:v:*p1+*p6;simte=feel:v:*p3+M2;simțim=feel'+
+        ':v:*p4;simțiți=feel:v:*p5+M5;simțit=feel:v:*P;simțeam=feel:v:*m1+'+
+        '*m4;simțeai=feel:v:*m2;simțea=feel:v:*m3;simțeați=feel:v:*m5;sim'+
+        'țeau=feel:v:*m6;',
+    'culca=go_to_bed:v:*I+*m3;culc=go_to_bed:v:*p1;culci=go_to_bed:v:*p2;culc'+
+        'ă=go_to_bed:v:*p3+*p6+M2;culcăm=go_to_bed:v:*p4;culcați=go_to_bed:'+
+        'v:*p5+M5+*m5;culcat=go_to_bed:v:*P;culce=go_to_bed:v:*p3+p6;culcam=go'+
+        '_to_bed:v:*m1+*m4;',
+    'culcai=go_to_bed:v:*m2;culcau=go_to_bed:v:*m6;distra=enjoy:v:*I+*m3;distr'+
+        'ez=enjoy:v:*p1;distrezi=enjoy:v:*p2;distrează=enjoy:v:*p3+*p6+M2;dis'+
+        'trăm=enjoy:v:*p4;distrați=enjoy:v:*p5+M5+*m5;distrat=enjoy:v:*P;',
+    'distreze=enjoy:v:*p3+p6;distram=enjoy:v:*m1+*m4;distrai=enjoy:v:*m2;distr'+
+        'au=enjoy:v:*m6;bucura=be_glad:v:*I+*m3;bucur=be_glad:v:*p1;bucuri=be_'+
+        'glad:v:*p2;bucură=be_glad:v:*p3+*p6+M2;bucurăm=be_glad:v:*p4;',
+    'bucurați=be_glad:v:*p5+M5+*m5;bucurat=be_glad:v:*P;bucure=be_glad:v:*p3+'+
+        'p6;bucuram=be_glad:v:*m1+*m4;bucurai=be_glad:v:*m2;bucurau=be_glad:v:'+
+        '*m6;plăcea=like:v:I;plac=like:v:p1+p6;placi=like:v:p2;place=like:v:p'+
+        '3+M2;',
+    'plăcem=like:v:p4;plăceți=like:v:p5+M5;plăcut=like:v:P;părea=seem:v:I'+
+        '+m3;par=seem:v:p1+p6;pari=seem:v:p2;pare=seem:v:p3+M2;părem=seem:v:p'+
+        '4;păreți=seem:v:p5+M5;părut=seem:v:P;păream=seem:v:m1+m4;păreai='+
+        'seem:v:m2;',
+    'păreați=seem:v:m5;păreau=seem:v:m6;rămâne=stay:v:I+p3+M2;rămân=sta'+
+        'y:v:p1+p6;rămâi=stay:v:p2;rămânem=stay:v:p4;rămâneți=stay:v:p5'+
+        '+M5;rămas=stay:v:P;rămâneam=stay:v:m1+m4;rămâneai=stay:v:m2;răm'+
+        'ânea=stay:v:m3;',
+    'rămâneați=stay:v:m5;rămâneau=stay:v:m6;cădea=fall:v:I+m3;cad=fall:v'+
+        ':p1+p6;cazi=fall:v:p2;cade=fall:v:p3+M2;cădem=fall:v:p4;cădeți=fal'+
+        'l:v:p5+M5;căzut=fall:v:P;cădeam=fall:v:m1+m4;cădeai=fall:v:m2;căd'+
+        'eați=fall:v:m5;',
+    'cădeau=fall:v:m6;sări=jump:v:I;sar=jump:v:p1+p6;sari=jump:v:p2;sare=jum'+
+        'p:v:p3+M2;sărim=jump:v:p4;săriți=jump:v:p5+M5;sărit=jump:v:P;săr'+
+        'eam=jump:v:m1+m4;săreai=jump:v:m2;sărea=jump:v:m3;săreați=jump:v:'+
+        'm5;',
+    'săreau=jump:v:m6;tăia=cut:v:I+m3;tai=cut:v:p1+p2;taie=cut:v:p3+p6+M2;t'+
+        'ăiem=cut:v:p4;tăiați=cut:v:p5+M5+m5;tăiat=cut:v:P;tăiam=cut:v:m1'+
+        '+m4;tăiai=cut:v:m2;tăiau=cut:v:m6;construi=build:v:I;construiesc=bu'+
+        'ild:v:p1+p6;',
+    'construiești=build:v:p2;construiește=build:v:p3+M2;construim=build:v:p4'+
+        ';construiți=build:v:p5+M5;construit=build:v:P;construiească=build:v'+
+        ':p3+p6;construiam=build:v:m1+m4;construiai=build:v:m2;construia=build'+
+        ':v:m3;',
+    'construiați=build:v:m5;construiau=build:v:m6;naște=give_birth:v:I+p3+M2'+
+        ';nasc=give_birth:v:p1+p6;naști=give_birth:v:p2;naștem=give_birth:v:'+
+        'p4;nașteți=give_birth:v:p5+M5;născut=give_birth:v:P;nașteam=give_'+
+        'birth:v:m1+m4;',
+    'nașteai=give_birth:v:m2;naștea=give_birth:v:m3;nașteați=give_birth:v:'+
+        'm5;nașteau=give_birth:v:m6;reuși=succeed:v:I;reușesc=succeed:v:p1+'+
+        'p6;reușești=succeed:v:p2;reușește=succeed:v:p3+M2;reușim=succeed'+
+        ':v:p4;',
+    'reușiți=succeed:v:p5+M5;reușit=succeed:v:P;reușească=succeed:v:p3+p6'+
+        ';reușeam=succeed:v:m1+m4;reușeai=succeed:v:m2;reușea=succeed:v:m3;'+
+        'reușeați=succeed:v:m5;reușeau=succeed:v:m6;continua=continue:v:I+m'+
+        '3;',
+    'continui=continue:v:p1+p2;continuă=continue:v:p3+p6+M2;continuăm=contin'+
+        'ue:v:p4;continuați=continue:v:p5+M5+m5;continuat=continue:v:P;contin'+
+        'ue=continue:v:p3+p6;continuam=continue:v:m1+m4;continuai=continue:v:m'+
+        '2;',
+    'continuau=continue:v:m6;decide=decide:v:I+p3+M2;decid=decide:v:p1+p6;deci'+
+        'zi=decide:v:p2;decidem=decide:v:p4;decideți=decide:v:p5+M5;decis=dec'+
+        'ide:v:P;decideam=decide:v:m1+m4;decideai=decide:v:m2;decidea=decide:v'+
+        ':m3;',
+    'decideați=decide:v:m5;decideau=decide:v:m6;comanda=order:v:I+m3;comand=o'+
+        'rder:v:p1;comanzi=order:v:p2;comandă=order:v:p3+p6+M2;comandăm=orde'+
+        'r:v:p4;comandați=order:v:p5+M5+m5;comandat=order:v:P;comande=order:v'+
+        ':p3+p6;',
+    'comandam=order:v:m1+m4;comandai=order:v:m2;comandau=order:v:m6;spera=hope'+
+        ':v:I+m3;sper=hope:v:p1;speri=hope:v:p2;speră=hope:v:p3+p6+M2;sperăm'+
+        '=hope:v:p4;sperați=hope:v:p5+M5+m5;sperat=hope:v:P;spere=hope:v:p3+p'+
+        '6;',
+    'speram=hope:v:m1+m4;sperai=hope:v:m2;sperau=hope:v:m6;suna=ring:v:I+m3;su'+
+        'n=ring:v:p1;suni=ring:v:p2;sună=ring:v:p3+p6+M2;sunăm=ring:v:p4;sun'+
+        'ați=ring:v:p5+M5+m5;sunat=ring:v:P;sune=ring:v:p3+p6;sunam=ring:v:m1'+
+        '+m4;',
+    'sunai=ring:v:m2;sunau=ring:v:m6;purta=wear:v:I+m3;port=wear:v:p1;porți=w'+
+        'ear:v:p2;poartă=wear:v:p3+p6+M2;purtăm=wear:v:p4;purtați=wear:v:p5'+
+        '+M5+m5;purtat=wear:v:P;poarte=wear:v:p3+p6;purtam=wear:v:m1+m4;purtai'+
+        '=wear:v:m2;',
+    'purtau=wear:v:m6;așeza=sit_down:v:*I+*m3;așez=sit_down:v:*p1;așezi=sit'+
+        '_down:v:*p2;așază=sit_down:v:*p3+*p6+M2;așezăm=sit_down:v:*p4;aș'+
+        'ezați=sit_down:v:*p5+M5+*m5;așezat=sit_down:v:*P;așaze=sit_down:v:'+
+        '*p3+p6;',
+    'așezam=sit_down:v:*m1+*m4;așezai=sit_down:v:*m2;așezau=sit_down:v:*m6;'+
+        'întoarce=return:v:*I+*p3+M2;întorc=return:v:*p1+*p6;întorci=return'+
+        ':v:*p2;întoarcem=return:v:*p4;întoarceți=return:v:*p5+M5;întors=r'+
+        'eturn:v:*P;',
+    'întoarceam=return:v:*m1+*m4;întoarceai=return:v:*m2;întoarcea=return:v'+
+        ':*m3;întoarceați=return:v:*m5;întoarceau=return:v:*m6;voi=will:v:B'+
+        '1:ser;vei=will:v:B2:ser;va=will:v:B3:ser;vom=will:v:B4:ser;veți=will'+
+        ':v:B5:ser;',
+    'aș=would:v:C1:ser;ar=would:v:C3:ser+C6:ser;a=have:v:p3:tener;e=be:v:p3:s'+
+        'er;o_să=will:v:Q0:ser;mă_cheamă=call:v:p1:llamar;te_cheamă=call:v'+
+        ':p2:llamar;îl_cheamă=call:v:p3:llamar;ne_cheamă=call:v:p4:llamar;',
+    'vă_cheamă=call:v:p5:llamar;îi_cheamă=call:v:p6:llamar;o_cheamă=call:'+
+        'v:p3:llamar;îmi_place=like:v:p1;îți_place=like:v:p2;îi_place=like'+
+        ':v:p3;ne_place=like:v:p4;vă_place=like:v:p5;le_place=like:v:p6;mi_pl'+
+        'ace=like:v:p1;',
+    'ți_place=like:v:p2;îmi_plac=like:v:p1;îți_plac=like:v:p2;îi_plac=lik'+
+        'e:v:p3;ne_plac=like:v:p4;vă_plac=like:v:p5;le_plac=like:v:p6;mi_plac'+
+        '=like:v:p1;ți_plac=like:v:p2;eu=I:s:1;tu=you:s:2;el=he:s:3;ea=she:s:'+
+        '3;noi=we:s:4;',
+    'voi=you:s:5;ei=they:s:6;ele=they:s:6;dumneavoastră=you:s:5;dumneata=you:'+
+        's:2;mă=me:o;mine=me:o;te=you:o;tine=you:o;îl=him:o;pe_el=him:o;o=he'+
+        'r:o;ne=us:o;vă=you:o;îi=him:o;le=them:o;îmi=me:o;îți=you:o;își'+
+        '=himself:o;mi=me:o;',
+    'ți=you:o;meu=my:x;mea=my:x;mei=my:x;mele=my:x;tău=your:x;ta=your:x;tăi'+
+        '=your:x;tale=your:x;său=his:x;sa=his:x;săi=his:x;sale=his:x;nostru='+
+        'our:x;noastră=our:x;noștri=our:x;noastre=our:x;vostru=your:x;voastr'+
+        'ă=your:x;',
+    'voștri=your:x;voastre=your:x;lor=their:x;lui=his:x;acest=this:d;această'+
+        '=this:d;acești=these:d;aceste=these:d;acel=that:d;acea=that:d;acei=t'+
+        'hose:d;acele=those:d;ăsta=this:d:p;asta=this:d:p;ăștia=these:d:p;a'+
+        'stea=these:d:p;',
+    'ăla=that:d:p;aia=that:d:p;ăia=those:d:p;alea=those:d:p;acesta=this:d:p;'+
+        'aceasta=this:d:p;aceștia=these:d:p;acestea=these:d:p;acela=that:d:p;'+
+        'aceea=that:d:p;ce=what:w;cine=who:w;unde=where:w;când=when:w;cum=how'+
+        ':w;de_ce=why:w;',
+    'care=which:w;câți=how_many:w;câte=how_many:w;cât=how_much:w;de_unde=w'+
+        'here_from:w;încotro=where:w;în=in:e;pe=on:e;la=at:e;de=of:e;din=fro'+
+        'm:e;cu=with:e;fără=without:e;pentru=for:e;sub=under:e;peste=over:e;'+
+        'între=between:e;',
+    'către=toward:e;după=after:e;înainte_de=before:e;lângă=next_to:e;prin'+
+        '=through:e;despre=about:e;spre=toward:e;până_la=until:e;în_fața=i'+
+        'n_front_of:e;în_spatele=behind:e;aproape_de=near:e;și=and:c;dar=but'+
+        ':c;sau=or:c;',
+    'că=that:c;deoarece=because:c;pentru_că=because:c;dacă=if:c;deși=altho'+
+        'ugh:c;iar=and:c;ci=but:c;încât=so_that:c;ca=as:c;acum=now:r;azi=tod'+
+        'ay:r;astăzi=today:r;mâine=tomorrow:r;ieri=yesterday:r;diseară=toni'+
+        'ght:r;',
+    'mereu=always:r;des=often:r;uneori=sometimes:r;deja=already:r;încă=still'+
+        ':r;din_nou=again:r;doar=only:r;poate=maybe:r;aici=here:r;acolo=there:'+
+        'r;împreună=together:r;foarte=very:r;aproape=almost:r;devreme=early:'+
+        'r;târziu=late:r;',
+    'departe=far:r;bine=well:r;rău=badly:r;repede=quickly:r;încet=slowly:r;n'+
+        'iciodată=never:r;recent=recently:r;curând=soon:r;mult=much:r;puțin'+
+        '=a_little:r;prea=too:r;mai=more:r;atunci=then:r;apoi=then:r;întâi=f'+
+        'irst:r;',
+    'seara=in_the_evening:r;dimineața=in_the_morning:r;noaptea=at_night:r;var'+
+        'a=in_summer:r;iarna=in_winter:r;primăvara=in_spring:r;toamna=in_autu'+
+        'mn:r;acasă=at_home:r;mai_rar=slowly:r;drept_înainte=straight_ahead:'+
+        'r;',
+    'în_fiecare_dimineață=every_morning:r;în_fiecare_seară=every_evening:'+
+        'r;în_fiecare_săptămână=every_week:r;în_fiecare_an=every_year:r;'+
+        'acum_o_oră=an_hour_ago:r;acum_o_zi=a_day_ago:r;acum_o_săptămână='+
+        'a_week_ago:r;',
+    'acum_un_an=a_year_ago:r;acum_o_lună=a_month_ago:r;de_la=from:e;de_pe=fro'+
+        'm:e;mâine_dimineață=tomorrow_morning:r;mâine_seară=tomorrow_even'+
+        'ing:r;azi_dimineață=this_morning:r;azi_noapte=tonight:r;în_fiecare'+
+        '_zi=every_day:r;',
+    'la_ora_unu=at_one:r;la_ora_două=at_two:r;la_ora_trei=at_three:r;la_ora_p'+
+        'atru=at_four:r;la_ora_cinci=at_five:r;la_ora_șase=at_six:r;la_ora_ș'+
+        'apte=at_seven:r;la_ora_opt=at_eight:r;la_ora_nouă=at_nine:r;la_ora_z'+
+        'ece=at_ten:r;',
+    'la_ora_unsprezece=at_eleven:r;la_ora_douăsprezece=at_twelve:r;frig=cold:'+
+        'r;românește=Romanian:z:s;englezește=English:z:s;franțuzește=Fren'+
+        'ch:z:s;nemțește=German:z:s;spaniolește=Spanish:z:s;într=in:e;dint'+
+        'r=from:e;',
+    'printr=through:e;la_fel=the_same:r;chiar=really:r;totuși=nevertheless:r;'+
+        'nici=neither:r;așa=so:r;câți_ani_ai=How_old_are_you:j;câți_ani_a'+
+        'veți=How_old_are_you:j;scuzați_mă=Excuse_me:j;mi_e_foame=I_am_hung'+
+        'ry:j;',
+    'ți_e_foame=Are_you_hungry:j;mi_e_sete=I_am_thirsty:j;mi_e_frig=I_am_cold'+
+        ':j;mi_e_cald=I_am_hot:j;mi_e_somn=I_am_sleepy:j;mi_e_dor=I_miss_you:j'+
+        ';bună=Hello:j;salut=Hello:j;bună_ziua=Good_morning:j;bună_diminea'+
+        'ța=Good_morning:j;',
+    'bună_seara=Good_evening:j;noapte_bună=Good_night:j;la_revedere=Goodbye:'+
+        'j;mulțumesc=Thank_you:j;mulțumesc_mult=Thank_you_very_much:j;vă_ro'+
+        'g=please:j;te_rog=please:j;scuze=Sorry:j;scuzați-mă=Sorry:j;pardon='+
+        'Sorry:j;da=Yes:j;',
+    'bine_ați_venit=Welcome:j;felicitări=Congratulations:j;noroc=Cheers:j;ce'+
+        '_mai_faci=How_are_you:j;ce_mai_faceți=How_are_you:j;cum_ești=How_ar'+
+        'e_you:j;cum_sunteți=How_are_you:j;cu_plăcere=You_are_welcome:j;',
+    'nu_face_nimic=Never_mind:j;drum_bun=Have_a_good_trip:j;nu=not:g;nimic=not'+
+        'hing:q;nimeni=nobody:q;niciun=no:q;nicio=no:q;toți=all:u;toate=all:u'+
+        ';tot=all:u;fiecare=each:u;niște=some:u;unii=some:u;unele=some:u;câ'+
+        'țiva=some:u;',
+    'câteva=some:u;mulți=many:u;multe=many:u;puțini=few:u;puține=few:u;am'+
+        'ândoi=both:u;amândouă=both:u;ceva=something:u;cineva=somebody:u;mu'+
+        'lt=much:u;destul=enough:u;un=a:t;o=a:t;unul=one:t;doi=two:u:1;două=t'+
+        'wo:u:1;',
+    'trei=three:u:1;patru=four:u:1;cinci=five:u:1;șase=six:u:1;șapte=seven:u'+
+        ':1;opt=eight:u:1;nouă=nine:u:1;zece=ten:u:1;unsprezece=eleven:u:1;do'+
+        'isprezece=twelve:u:1;douăsprezece=twelve:u:1;douăzeci=twenty:u:1;tr'+
+        'eizeci=thirty:u:1;',
+    'patruzeci=forty:u:1;cincizeci=fifty:u:1;o_sută=one_hundred:u:1;sută=one'+
+        '_hundred:u:1;o_mie=one_thousand:u:1;mie=one_thousand:u:1;zero=zero:u:'+
+        '1;doua=two:u:1;România=Romania:z:s;României=Romania:z:s;Franța=Fra'+
+        'nce:z:s;',
+    'Franței=France:z:s;Germania=Germany:z:s;Germaniei=Germany:z:s;Spania=Spa'+
+        'in:z:s;Spaniei=Spain:z:s;Italia=Italy:z:s;Italiei=Italy:z:s;Anglia=En'+
+        'gland:z:s;Angliei=England:z:s;Moldova=Moldova:z:s;Moldovei=Moldova:z:'+
+        's;',
+    'Ungaria=Hungary:z:s;Ungariei=Hungary:z:s;Polonia=Poland:z:s;Poloniei=Pola'+
+        'nd:z:s;Rusia=Russia:z:s;Rusiei=Russia:z:s;Ucraina=Ukraine:z:s;Ucraine'+
+        'i=Ukraine:z:s;Europa=Europe:z:s;Americii=America:z:s;America=America:'+
+        'z:s;',
+    'București=Bucharest:z:s;Bucureștiul=Bucharest:z:s;Bucureștiului=Buchar'+
+        'est:z:s;Cluj=Cluj:z:s;Clujul=Cluj:z:s;Timișoara=Timisoara:z:s;Iași='+
+        'Iasi:z:s;Brașov=Brasov:z:s;Constanța=Constanta:z:s;Sibiu=Sibiu:z:s;'+
+        'Londra=London:z:s;',
+    'Parisul=Paris:z:s;Paris=Paris:z:s;Berlin=Berlin:z:s;Berlinul=Berlin:z:s;R'+
+        'oma=Rome:z:s;Viena=Vienna:z:s;Budapesta=Budapest:z:s;Chișinău=Chisi'+
+        'nau:z:s;română=Romanian:z:s;româna=Romanian:z:s;engleza=English:z:'+
+        's;',
+    'franceza=French:z:s;germana=German:z:s;spaniola=Spanish:z:s;italiana=Ital'+
+        'ian:z:s;rusa=Russian:z:s;poloneza=Polish:z:s;engleză=English:z:s;fra'+
+        'nceză=French:z:s;germană=German:z:s;spaniolă=Spanish:z:s;italiană'+
+        '=Italian:z:s;',
+    'rusă=Russian:z:s;poloneză=Polish:z:s;maghiară=Hungarian:z:s;portughez'+
+        'ă=Portuguese:z:s;Ion=Ion:z:s;Maria=Maria:z:s;Mariei=Maria:z:sD:g;Ana'+
+        '=Ana:z:s;Anei=Ana:z:sD:g;Elena=Elena:z:s;Elenei=Elena:z:sD:g;Ioana=Io'+
+        'ana:z:s;',
+    'Ioanei=Ioana:z:sD:g;Mihai=Mihai:z:s;Andrei=Andrei:z:s;Vasile=Vasile:z:s;M'+
+        'ihaela=Mihaela:z:s;Mihaelei=Mihaela:z:sD:g;Cristina=Cristina:z:s;Cris'+
+        'tinei=Cristina:z:sD:g;Adrian=Adrian:z:s;Alexandru=Alexandru:z:s;Gabri'+
+        'ela=Gabriela:z:s;',
+    'Gabrielei=Gabriela:z:sD:g;Daniel=Daniel:z:s;Popescu=Popescu:z:s;Ionescu=I'+
+        'onescu:z:s;luni=Monday:z:s;marți=Tuesday:z:s;miercuri=Wednesday:z:s;'+
+        'joi=Thursday:z:s;vineri=Friday:z:s;sâmbătă=Saturday:z:s;duminică='+
+        'Sunday:z:s;',
+    'ianuarie=January:z:s;februarie=February:z:s;martie=March:z:s;aprilie=Apri'+
+        'l:z:s;iunie=June:z:s;iulie=July:z:s;august=August:z:s;septembrie=Sept'+
+        'ember:z:s;octombrie=October:z:s;noiembrie=November:z:s;decembrie=Dece'+
+        'mber:z:s;'
+  );
+
+  { Catalan : formes de surface (voir mkca.py) }
+  CaData: Array[0..307] Of String = (
+    'home=man:n:s;homes=man:n:p;nen=boy:n:s;nens=boy:n:p;nena=girl:n:s;nenes=g'+
+        'irl:n:p;noi=boy:n:s;nois=boy:n:p;noia=girl:n:s;noies=girl:n:p;pare=fa'+
+        'ther:n:s;pares=father:n:p;germà=brother:n:s;germans=brother:n:p;fill'+
+        '=son:n:s;',
+    'fills=son:n:p;amic=friend:n:s;amics=friend:n:p;amiga=friend:n:s;amigues=f'+
+        'riend:n:p;professor=teacher:n:s;professors=teacher:n:p;professora=tea'+
+        'cher:n:s;professores=teacher:n:p;estudiant=student:n:s;estudiants=stu'+
+        'dent:n:p;',
+    'metge=doctor:n:s;metges=doctor:n:p;gos=dog:n:s;gossos=dog:n:p;gat=cat:n:s'+
+        ';gats=cat:n:p;cavall=horse:n:s;cavalls=horse:n:p;peix=fish:n:s;peixos'+
+        '=fish:n:p;ocell=bird:n:s;ocells=bird:n:p;cotxe=car:n:s;cotxes=car:n:p'+
+        ';autobús=bus:n:s;',
+    'autobusos=bus:n:p;tren=train:n:s;trens=train:n:p;avió=plane:n:s;avions=p'+
+        'lane:n:p;bicicleta=bicycle:n:s;bicicletes=bicycle:n:p;llibre=book:n:s'+
+        ';llibres=book:n:p;diari=newspaper:n:s;diaris=newspaper:n:p;telèfon=t'+
+        'elephone:n:s;',
+    'telèfons=telephone:n:p;ordinador=computer:n:s;ordinadors=computer:n:p;ca'+
+        'rrer=street:n:s;carrers=street:n:p;poble=village:n:s;pobles=village:n'+
+        ':p;ciutat=city:n:s;ciutats=city:n:p;país=country:n:s;països=country'+
+        ':n:p;riu=river:n:s;',
+    'rius=river:n:p;mar=sea:n:s;mars=sea:n:p;llac=lake:n:s;llacs=lake:n:p;parc'+
+        '=park:n:s;parcs=park:n:p;jardí=garden:n:s;jardins=garden:n:p;restaur'+
+        'ant=restaurant:n:s;restaurants=restaurant:n:p;hotel=hotel:n:s;hotels='+
+        'hotel:n:p;',
+    'museu=museum:n:s;museus=museum:n:p;teatre=theater:n:s;teatres=theater:n:p'+
+        ';cinema=cinema:n:s;cinemes=cinema:n:p;banc=bank:n:s;bancs=bank:n:p;me'+
+        'rcat=market:n:s;mercats=market:n:p;aeroport=airport:n:s;aeroports=air'+
+        'port:n:p;',
+    'hospital=hospital:n:s;hospitals=hospital:n:p;hora=hour:n:s;hores=hour:n:p'+
+        ';dia=day:n:s;dies=day:n:p;setmana=week:n:s;setmanes=week:n:p;mes=mont'+
+        'h:n:s;mesos=month:n:p;any=year:n:s;anys=year:n:p;matí=morning:n:s;ma'+
+        'tins=morning:n:p;',
+    'vespre=evening:n:s;vespres=evening:n:p;nit=night:n:s;nits=night:n:p;temps'+
+        '=time:n:s+p;moment=moment:n:s;moments=moment:n:p;nom=name:n:s;noms=na'+
+        'me:n:p;cap=head:n:s;caps=head:n:p;ull=eye:n:s;ulls=eye:n:p;mà=hand:n'+
+        ':s;mans=hand:n:p;',
+    'peu=foot:n:s;peus=foot:n:p;cor=heart:n:s;cors=heart:n:p;pa=bread:n:s;pans'+
+        '=bread:n:p;vi=wine:n:s;vins=wine:n:p;cafè=coffee:n:s;cafès=coffee:n'+
+        ':p;te=tea:n:s;tes=tea:n:p;aigua=water:n:s;aigües=water:n:p;llet=milk'+
+        ':n:s;',
+    'llets=milk:n:p;suc=juice:n:s;sucs=juice:n:p;formatge=cheese:n:s;formatges'+
+        '=cheese:n:p;arròs=rice:n:s;arrossos=rice:n:p;sucre=sugar:n:s;sucres='+
+        'sugar:n:p;ou=egg:n:s;ous=egg:n:p;poma=apple:n:s;pomes=apple:n:p;taron'+
+        'ja=orange:n:s;',
+    'taronges=orange:n:p;plàtan=banana:n:s;plàtans=banana:n:p;pizza=pizza:n:'+
+        's;pizzes=pizza:n:p;sopa=soup:n:s;sopes=soup:n:p;amanida=salad:n:s;ama'+
+        'nides=salad:n:p;carn=meat:n:s;carns=meat:n:p;pollastre=chicken:n:s;',
+    'pollastres=chicken:n:p;entrepà=sandwich:n:s;entrepans=sandwich:n:p;dinar'+
+        '=lunch:n:s;dinars=lunch:n:p;sopar=dinner:n:s;sopars=dinner:n:p;esmorz'+
+        'ar=breakfast:n:s;esmorzars=breakfast:n:p;taula=table:n:s;taules=table'+
+        ':n:p;',
+    'cadira=chair:n:s;cadires=chair:n:p;llit=bed:n:s;llits=bed:n:p;porta=door:'+
+        'n:s;portes=door:n:p;finestra=window:n:s;finestres=window:n:p;casa=hou'+
+        'se:n:s;cases=house:n:p;plaça=square:n:s;places=square:n:p;habitació'+
+        '=room:n:s;',
+    'habitacions=room:n:p;cuina=kitchen:n:s;cuines=kitchen:n:p;bany=bathroom:n'+
+        ':s;banys=bathroom:n:p;escola=school:n:s;escoles=school:n:p;biblioteca'+
+        '=library:n:s;biblioteques=library:n:p;botiga=shop:n:s;botigues=shop:n'+
+        ':p;',
+    'farmàcia=pharmacy:n:s;farmàcies=pharmacy:n:p;estació=station:n:s;estac'+
+        'ions=station:n:p;carta=letter:n:s;cartes=letter:n:p;pregunta=question'+
+        ':n:s;preguntes=question:n:p;resposta=answer:n:s;respostes=answer:n:p;',
+    'problema=problem:n:s;problemes=problem:n:p;història=story:n:s;històries'+
+        '=story:n:p;idea=idea:n:s;idees=idea:n:p;família=family:n:s;famílies'+
+        '=family:n:p;mare=mother:n:s;mares=mother:n:p;germana=sister:n:s;germa'+
+        'nes=sister:n:p;',
+    'filla=daughter:n:s;filles=daughter:n:p;dona=woman:n:s;dones=woman:n:p;sen'+
+        'yor=gentleman:n:s;senyors=gentleman:n:p;senyora=lady:n:s;senyores=lad'+
+        'y:n:p;veí=neighbor:n:s;veïns=neighbor:n:p;música=music:n:s;músiqu'+
+        'es=music:n:p;',
+    'feina=work:n:s;feines=work:n:p;treball=work:n:s;treballs=work:n:p;futbol='+
+        'football:n:s+p;tennis=tennis:n:s+p;roba=clothes:n:s+p;samarreta=shirt'+
+        ':n:s;samarretes=shirt:n:p;vestit=dress:n:s;vestits=dress:n:p;abric=co'+
+        'at:n:s;',
+    'abrics=coat:n:p;rellotge=clock:n:s;rellotges=clock:n:p;clau=key:n:s;claus'+
+        '=key:n:p;bossa=bag:n:s;bosses=bag:n:p;maleta=suitcase:n:s;maletes=sui'+
+        'tcase:n:p;flor=flower:n:s;flors=flower:n:p;arbre=tree:n:s;arbres=tree'+
+        ':n:p;',
+    'muntanya=mountain:n:s;muntanyes=mountain:n:p;platja=beach:n:s;platges=bea'+
+        'ch:n:p;bosc=forest:n:s;boscos=forest:n:p;cel=sky:n:s;cels=sky:n:p;sol'+
+        '=sun:n:s;sols=sun:n:p;lluna=moon:n:s;llunes=moon:n:p;pluja=rain:n:s;p'+
+        'luges=rain:n:p;',
+    'neu=snow:n:s;neus=snow:n:p;vent=wind:n:s;vents=wind:n:p;núvol=cloud:n:s;'+
+        'núvols=cloud:n:p;estiu=summer:n:s;estius=summer:n:p;hivern=winter:n:'+
+        's;hiverns=winter:n:p;primavera=spring:n:s;primaveres=spring:n:p;tardo'+
+        'r=autumn:n:s;',
+    'tardors=autumn:n:p;diner=money:n:s;diners=money:n:p;camp=field:n:s;camps='+
+        'field:n:p;empresa=company:n:s;empreses=company:n:p;infermera=nurse:n:'+
+        's;infermeres=nurse:n:p;infermer=nurse:n:s;infermers=nurse:n:p;centre='+
+        'center:n:s;',
+    'centres=center:n:p;lavabo=toilet:n:s;lavabos=toilet:n:p;església=church:'+
+        'n:s;esglésies=church:n:p;sofà=sofa:n:s;sofàs=sofa:n:p;àvia=grandm'+
+        'other:n:s;àvies=grandmother:n:p;avi=grandfather:n:s;avis=grandfather'+
+        ':n:p;',
+    'pel·lícula=film:n:s;pel·lícules=film:n:p;pissarra=board:n:s;pissarres'+
+        '=board:n:p;bitllet=ticket:n:s;bitllets=ticket:n:p;pont=bridge:n:s;pon'+
+        'ts=bridge:n:p;camí=road:n:s;camins=road:n:p;viatge=trip:n:s;viatges='+
+        'trip:n:p;',
+    'vacança=vacation:n:s;vacances=vacation:n:p;regal=gift:n:s;regals=gift:n:'+
+        'p;got=glass:n:s;gots=glass:n:p;ampolla=bottle:n:s;ampolles=bottle:n:p'+
+        ';ganivet=knife:n:s;ganivets=knife:n:p;cullera=spoon:n:s;culleres=spoo'+
+        'n:n:p;',
+    'plat=plate:n:s;plats=plate:n:p;preu=price:n:s;preus=price:n:p;número=num'+
+        'ber:n:s;números=number:n:p;paraula=word:n:s;paraules=word:n:p;frase='+
+        'sentence:n:s;frases=sentence:n:p;exàmen=exam:n:s;exàmens=exam:n:p;',
+    'programa=program:n:s;programes=program:n:p;barri=neighborhood:n:s;barris='+
+        'neighborhood:n:p;apartament=apartment:n:s;apartaments=apartment:n:p;g'+
+        'ran=big:a:s;grans=big:a:p;petit=small:a:s;petita=small:a:s;petits=sma'+
+        'll:a:p;',
+    'petites=small:a:p;bonic=beautiful:a:s;bonica=beautiful:a:s;bonics=beautif'+
+        'ul:a:p;boniques=beautiful:a:p;bo=good:a:s;bona=good:a:s;bons=good:a:p'+
+        ';bones=good:a:p;dolent=bad:a:s;dolenta=bad:a:s;dolents=bad:a:p;dolent'+
+        'es=bad:a:p;',
+    'nou=new:a:s;nova=new:a:s;nous=new:a:p;noves=new:a:p;vell=old:a:s;vella=ol'+
+        'd:a:s;vells=old:a:p;velles=old:a:p;jove=young:a:s;joves=young:a:p;alt'+
+        '=tall:a:s;alta=tall:a:s;alts=tall:a:p;altes=tall:a:p;baix=short:a:s;b'+
+        'aixa=short:a:s;',
+    'baixos=short:a:p;baixes=short:a:p;llarg=long:a:s;llarga=long:a:s;llargs=l'+
+        'ong:a:p;llargues=long:a:p;curt=short:a:s;curta=short:a:s;curts=short:'+
+        'a:p;curtes=short:a:p;gros=fat:a:s;grossa=fat:a:s;grossos=fat:a:p;gros'+
+        'ses=fat:a:p;',
+    'prim=thin:a:s;prima=thin:a:s;prims=thin:a:p;primes=thin:a:p;calent=warm:a'+
+        ':s;calenta=warm:a:s;calents=warm:a:p;calentes=warm:a:p;fred=cold:a:s;'+
+        'freda=cold:a:s;freds=cold:a:p;fredes=cold:a:p;car=expensive:a:s;cara='+
+        'expensive:a:s;',
+    'cars=expensive:a:p;cares=expensive:a:p;barat=cheap:a:s;barata=cheap:a:s;b'+
+        'arats=cheap:a:p;barates=cheap:a:p;fàcil=easy:a:s;fàcils=easy:a:p;di'+
+        'fícil=difficult:a:s;difícils=difficult:a:p;important=important:a:s;',
+    'importants=important:a:p;interessant=interesting:a:s;interessants=interes'+
+        'ting:a:p;avorrit=boring:a:s;avorrida=boring:a:s;avorrits=boring:a:p;a'+
+        'vorrides=boring:a:p;divertit=funny:a:s;divertida=funny:a:s;divertits='+
+        'funny:a:p;',
+    'divertides=funny:a:p;ràpid=fast:a:s;ràpida=fast:a:s;ràpids=fast:a:p;r'+
+        'àpides=fast:a:p;lent=slow:a:s;lenta=slow:a:s;lents=slow:a:p;lentes=s'+
+        'low:a:p;fort=strong:a:s;forta=strong:a:s;forts=strong:a:p;fortes=stro'+
+        'ng:a:p;',
+    'feble=weak:a:s;febles=weak:a:p;net=clean:a:s;neta=clean:a:s;nets=clean:a:'+
+        'p;netes=clean:a:p;brut=dirty:a:s;bruta=dirty:a:s;bruts=dirty:a:p;brut'+
+        'es=dirty:a:p;ple=full:a:s;plena=full:a:s;plens=full:a:p;plenes=full:a'+
+        ':p;buit=empty:a:s;',
+    'buida=empty:a:s;buits=empty:a:p;buides=empty:a:p;obert=open:a:s;oberta=op'+
+        'en:a:s;oberts=open:a:p;obertes=open:a:p;tancat=closed:a:s;tancada=clo'+
+        'sed:a:s;tancats=closed:a:p;tancades=closed:a:p;lliure=free:a:s;lliure'+
+        's=free:a:p;',
+    'ocupat=busy:a:s;ocupada=busy:a:s;ocupats=busy:a:p;ocupades=busy:a:p;verme'+
+        'll=red:a:s;vermella=red:a:s;vermells=red:a:p;vermelles=red:a:p;blau=b'+
+        'lue:a:s;blava=blue:a:s;blaus=blue:a:p;blaves=blue:a:p;verd=green:a:s;'+
+        'verda=green:a:s;',
+    'verds=green:a:p;verdes=green:a:p;groc=yellow:a:s;groga=yellow:a:s;grocs=y'+
+        'ellow:a:p;grogues=yellow:a:p;negre=black:a:s;negra=black:a:s;negres=b'+
+        'lack:a:p;blanc=white:a:s;blanca=white:a:s;blancs=white:a:p;blanques=w'+
+        'hite:a:p;',
+    'marró=brown:a:s;marrons=brown:a:p;gris=gray:a:s;grisa=gray:a:s;grisos=gr'+
+        'ay:a:p;grises=gray:a:p;rosa=pink:a:s;roses=pink:a:p;mateix=same:a:s;m'+
+        'ateixa=same:a:s;mateixos=same:a:p;mateixes=same:a:p;diferent=differen'+
+        't:a:s;',
+    'diferents=different:a:p;primer=first:a:s;primera=first:a:s;primers=first:'+
+        'a:p;primeres=first:a:p;últim=last:a:s;última=last:a:s;últims=last:'+
+        'a:p;últimes=last:a:p;cansat=tired:a:s;cansada=tired:a:s;cansats=tire'+
+        'd:a:p;',
+    'cansades=tired:a:p;content=happy:a:s;contenta=happy:a:s;contents=happy:a:'+
+        'p;contentes=happy:a:p;trist=sad:a:s;trista=sad:a:s;trists=sad:a:p;tri'+
+        'stes=sad:a:p;amable=kind:a:s;amables=kind:a:p;simpàtic=nice:a:s;simp'+
+        'àtica=nice:a:s;',
+    'simpàtics=nice:a:p;simpàtiques=nice:a:p;segur=sure:a:s;segura=sure:a:s;'+
+        'segurs=sure:a:p;segures=sure:a:p;cert=true:a:s;certa=true:a:s;certs=t'+
+        'rue:a:p;certes=true:a:p;famós=famous:a:s;famosa=famous:a:s;famosos=f'+
+        'amous:a:p;',
+    'famoses=famous:a:p;casat=married:a:s;casada=married:a:s;casats=married:a:'+
+        'p;casades=married:a:p;malalt=sick:a:s;malalta=sick:a:s;malalts=sick:a'+
+        ':p;malaltes=sick:a:p;sa=healthy:a:s;sana=healthy:a:s;sans=healthy:a:p'+
+        ';sanes=healthy:a:p;',
+    'ric=rich:a:s;rica=rich:a:s;rics=rich:a:p;riques=rich:a:p;pobre=poor:a:s;p'+
+        'obres=poor:a:p;llest=smart:a:s;llesta=smart:a:s;llestos=smart:a:p;lle'+
+        'stes=smart:a:p;tonto=stupid:a:s;tonta=stupid:a:s;tontos=stupid:a:p;to'+
+        'ntes=stupid:a:p;',
+    'alegre=cheerful:a:s;alegres=cheerful:a:p;seriós=serious:a:s;seriosa=seri'+
+        'ous:a:s;seriosos=serious:a:p;serioses=serious:a:p;curiós=curious:a:s'+
+        ';curiosa=curious:a:s;curiosos=curious:a:p;curioses=curious:a:p;perill'+
+        'ós=dangerous:a:s;',
+    'perillosa=dangerous:a:s;perillosos=dangerous:a:p;perilloses=dangerous:a:p'+
+        ';estranger=foreign:a:s;estrangera=foreign:a:s;estrangers=foreign:a:p;'+
+        'estrangeres=foreign:a:p;local=local:a:s;locals=local:a:p;estrany=stra'+
+        'nge:a:s;',
+    'estranya=strange:a:s;estranys=strange:a:p;estranyes=strange:a:p;necessari'+
+        '=necessary:a:s;necessària=necessary:a:s;necessaris=necessary:a:p;nec'+
+        'essàries=necessary:a:p;possible=possible:a:s;possibles=possible:a:p;',
+    'especial=special:a:s;especials=special:a:p;simple=simple:a:s;simples=simp'+
+        'le:a:p;sencer=whole:a:s;sencera=whole:a:s;sencers=whole:a:p;senceres='+
+        'whole:a:p;català=Catalan:a:s;catalana=Catalan:a:s;catalans=Catalan:a'+
+        ':p;',
+    'catalanes=Catalan:a:p;espanyol=Spanish:a:s;espanyola=Spanish:a:s;espanyol'+
+        's=Spanish:a:p;espanyoles=Spanish:a:p;francès=French:a:s;francesa=Fre'+
+        'nch:a:s;francesos=French:a:p;franceses=French:a:p;alemany=German:a:s;',
+    'alemanya=German:a:s;alemanys=German:a:p;alemanyes=German:a:p;italià=Ital'+
+        'ian:a:s;italiana=Italian:a:s;italians=Italian:a:p;italianes=Italian:a'+
+        ':p;rus=Russian:a:s;russa=Russian:a:s;russos=Russian:a:p;russes=Russia'+
+        'n:a:p;',
+    'anglès=English:a:s;anglesa=English:a:s;anglesos=English:a:p;angleses=Eng'+
+        'lish:a:p;portuguès=Portuguese:a:s;portuguesa=Portuguese:a:s;portugue'+
+        'sos=Portuguese:a:p;portugueses=Portuguese:a:p;molt=many:a:s;molta=man'+
+        'y:a:s;',
+    'molts=many:a:p;moltes=many:a:p;poc=few:a:s;poca=few:a:s;pocs=few:a:p;poqu'+
+        'es=few:a:p;tot=all:a:s;tota=all:a:s;tots=all:a:p;totes=all:a:p;sol=al'+
+        'one:a:s;sola=alone:a:s;sols=alone:a:p;soles=alone:a:p;cantar=sing:v:I'+
+        ';canto=sing:v:p1;',
+    'cantes=sing:v:p2;canta=sing:v:p3+M2;cantem=sing:v:p4;canteu=sing:v:p5+M5;'+
+        'canten=sing:v:p6;cantat=sing:v:P;cantava=sing:v:m1+m3;cantaves=sing:v'+
+        ':m2;cantàvem=sing:v:m4;cantàveu=sing:v:m5;cantaven=sing:v:m6;cantar'+
+        'é=sing:v:f1;',
+    'cantaràs=sing:v:f2;cantarà=sing:v:f3;cantarem=sing:v:f4;cantareu=sing:v'+
+        ':f5;cantaran=sing:v:f6;cantaria=sing:v:c1+c3;cantaries=sing:v:c2;cant'+
+        'aríem=sing:v:c4;cantaríeu=sing:v:c5;cantarien=sing:v:c6;parlar=spea'+
+        'k:v:I;',
+    'parlo=speak:v:p1;parles=speak:v:p2;parla=speak:v:p3+M2;parlem=speak:v:p4;'+
+        'parleu=speak:v:p5+M5;parlen=speak:v:p6;parlat=speak:v:P;parlava=speak'+
+        ':v:m1+m3;parlaves=speak:v:m2;parlàvem=speak:v:m4;parlàveu=speak:v:m'+
+        '5;',
+    'parlaven=speak:v:m6;parlaré=speak:v:f1;parlaràs=speak:v:f2;parlarà=spe'+
+        'ak:v:f3;parlarem=speak:v:f4;parlareu=speak:v:f5;parlaran=speak:v:f6;p'+
+        'arlaria=speak:v:c1+c3;parlaries=speak:v:c2;parlaríem=speak:v:c4;parl'+
+        'aríeu=speak:v:c5;',
+    'parlarien=speak:v:c6;treballar=work:v:I;treballo=work:v:p1;treballes=work'+
+        ':v:p2;treballa=work:v:p3+M2;treballem=work:v:p4;treballeu=work:v:p5+M'+
+        '5;treballen=work:v:p6;treballat=work:v:P;treballava=work:v:m1+m3;treb'+
+        'allaves=work:v:m2;',
+    'treballàvem=work:v:m4;treballàveu=work:v:m5;treballaven=work:v:m6;treba'+
+        'llaré=work:v:f1;treballaràs=work:v:f2;treballarà=work:v:f3;treball'+
+        'arem=work:v:f4;treballareu=work:v:f5;treballaran=work:v:f6;treballari'+
+        'a=work:v:c1+c3;',
+    'treballaries=work:v:c2;treballaríem=work:v:c4;treballaríeu=work:v:c5;tr'+
+        'eballarien=work:v:c6;estudiar=study:v:I;estudio=study:v:p1;estudies=s'+
+        'tudy:v:p2;estudia=study:v:p3+M2;estudiem=study:v:p4;estudieu=study:v:'+
+        'p5+M5;',
+    'estudien=study:v:p6;estudiat=study:v:P;estudiava=study:v:m1+m3;estudiaves'+
+        '=study:v:m2;estudiàvem=study:v:m4;estudiàveu=study:v:m5;estudiaven='+
+        'study:v:m6;estudiaré=study:v:f1;estudiaràs=study:v:f2;estudiarà=st'+
+        'udy:v:f3;',
+    'estudiarem=study:v:f4;estudiareu=study:v:f5;estudiaran=study:v:f6;estudia'+
+        'ria=study:v:c1+c3;estudiaries=study:v:c2;estudiaríem=study:v:c4;estu'+
+        'diaríeu=study:v:c5;estudiarien=study:v:c6;comprar=buy:v:I;compro=buy'+
+        ':v:p1;',
+    'compres=buy:v:p2;compra=buy:v:p3+M2;comprem=buy:v:p4;compreu=buy:v:p5+M5;'+
+        'compren=buy:v:p6;comprat=buy:v:P;comprava=buy:v:m1+m3;compraves=buy:v'+
+        ':m2;compràvem=buy:v:m4;compràveu=buy:v:m5;compraven=buy:v:m6;compra'+
+        'ré=buy:v:f1;',
+    'compraràs=buy:v:f2;comprarà=buy:v:f3;comprarem=buy:v:f4;comprareu=buy:v'+
+        ':f5;compraran=buy:v:f6;compraria=buy:v:c1+c3;compraries=buy:v:c2;comp'+
+        'raríem=buy:v:c4;compraríeu=buy:v:c5;comprarien=buy:v:c6;esperar=wai'+
+        't:v:I;',
+    'espero=wait:v:p1;esperes=wait:v:p2;espera=wait:v:p3+M2;esperem=wait:v:p4;'+
+        'espereu=wait:v:p5+M5;esperen=wait:v:p6;esperat=wait:v:P;esperava=wait'+
+        ':v:m1+m3;esperaves=wait:v:m2;esperàvem=wait:v:m4;esperàveu=wait:v:m'+
+        '5;',
+    'esperaven=wait:v:m6;esperaré=wait:v:f1;esperaràs=wait:v:f2;esperarà=wa'+
+        'it:v:f3;esperarem=wait:v:f4;esperareu=wait:v:f5;esperaran=wait:v:f6;e'+
+        'speraria=wait:v:c1+c3;esperaries=wait:v:c2;esperaríem=wait:v:c4;espe'+
+        'raríeu=wait:v:c5;',
+    'esperarien=wait:v:c6;jugar=play:v:I;jugo=play:v:p1;jugues=play:v:p2;juga='+
+        'play:v:p3+M2;juguem=play:v:p4;jugueu=play:v:p5+M5;juguen=play:v:p6;ju'+
+        'gat=play:v:P;jugava=play:v:m1+m3;jugaves=play:v:m2;jugàvem=play:v:m4'+
+        ';',
+    'jugàveu=play:v:m5;jugaven=play:v:m6;jugaré=play:v:f1;jugaràs=play:v:f2'+
+        ';jugarà=play:v:f3;jugarem=play:v:f4;jugareu=play:v:f5;jugaran=play:v'+
+        ':f6;jugaria=play:v:c1+c3;jugaries=play:v:c2;jugaríem=play:v:c4;jugar'+
+        'íeu=play:v:c5;',
+    'jugarien=play:v:c6;ballar=dance:v:I;ballo=dance:v:p1;balles=dance:v:p2;ba'+
+        'lla=dance:v:p3+M2;ballem=dance:v:p4;balleu=dance:v:p5+M5;ballen=dance'+
+        ':v:p6;ballat=dance:v:P;ballava=dance:v:m1+m3;ballaves=dance:v:m2;ball'+
+        'àvem=dance:v:m4;',
+    'ballàveu=dance:v:m5;ballaven=dance:v:m6;ballaré=dance:v:f1;ballaràs=da'+
+        'nce:v:f2;ballarà=dance:v:f3;ballarem=dance:v:f4;ballareu=dance:v:f5;'+
+        'ballaran=dance:v:f6;ballaria=dance:v:c1+c3;ballaries=dance:v:c2;balla'+
+        'ríem=dance:v:c4;',
+    'ballaríeu=dance:v:c5;ballarien=dance:v:c6;viatjar=travel:v:I;viatjo=trav'+
+        'el:v:p1;viatges=travel:v:p2;viatja=travel:v:p3+M2;viatgem=travel:v:p4'+
+        ';viatgeu=travel:v:p5+M5;viatgen=travel:v:p6;viatjat=travel:v:P;viatja'+
+        'va=travel:v:m1+m3;',
+    'viatjaves=travel:v:m2;viatjàvem=travel:v:m4;viatjàveu=travel:v:m5;viatj'+
+        'aven=travel:v:m6;viatjaré=travel:v:f1;viatjaràs=travel:v:f2;viatjar'+
+        'à=travel:v:f3;viatjarem=travel:v:f4;viatjareu=travel:v:f5;viatjaran='+
+        'travel:v:f6;',
+    'viatjaria=travel:v:c1+c3;viatjaries=travel:v:c2;viatjaríem=travel:v:c4;v'+
+        'iatjaríeu=travel:v:c5;viatjarien=travel:v:c6;ajudar=help:v:I;ajudo=h'+
+        'elp:v:p1;ajudes=help:v:p2;ajuda=help:v:p3+M2;ajudem=help:v:p4;ajudeu='+
+        'help:v:p5+M5;',
+    'ajuden=help:v:p6;ajudat=help:v:P;ajudava=help:v:m1+m3;ajudaves=help:v:m2;'+
+        'ajudàvem=help:v:m4;ajudàveu=help:v:m5;ajudaven=help:v:m6;ajudaré=h'+
+        'elp:v:f1;ajudaràs=help:v:f2;ajudarà=help:v:f3;ajudarem=help:v:f4;aj'+
+        'udareu=help:v:f5;',
+    'ajudaran=help:v:f6;ajudaria=help:v:c1+c3;ajudaries=help:v:c2;ajudaríem=h'+
+        'elp:v:c4;ajudaríeu=help:v:c5;ajudarien=help:v:c6;preguntar=ask:v:I;p'+
+        'regunto=ask:v:p1;preguntes=ask:v:p2;pregunta=ask:v:p3+M2;preguntem=as'+
+        'k:v:p4;',
+    'pregunteu=ask:v:p5+M5;pregunten=ask:v:p6;preguntat=ask:v:P;preguntava=ask'+
+        ':v:m1+m3;preguntaves=ask:v:m2;preguntàvem=ask:v:m4;preguntàveu=ask:'+
+        'v:m5;preguntaven=ask:v:m6;preguntaré=ask:v:f1;preguntaràs=ask:v:f2;',
+    'preguntarà=ask:v:f3;preguntarem=ask:v:f4;preguntareu=ask:v:f5;preguntara'+
+        'n=ask:v:f6;preguntaria=ask:v:c1+c3;preguntaries=ask:v:c2;preguntaríe'+
+        'm=ask:v:c4;preguntaríeu=ask:v:c5;preguntarien=ask:v:c6;acabar=finish'+
+        ':v:I;',
+    'acabo=finish:v:p1;acabes=finish:v:p2;acaba=finish:v:p3+M2;acabem=finish:v'+
+        ':p4;acabeu=finish:v:p5+M5;acaben=finish:v:p6;acabat=finish:v:P;acabav'+
+        'a=finish:v:m1+m3;acabaves=finish:v:m2;acabàvem=finish:v:m4;acabàveu'+
+        '=finish:v:m5;',
+    'acabaven=finish:v:m6;acabaré=finish:v:f1;acabaràs=finish:v:f2;acabarà='+
+        'finish:v:f3;acabarem=finish:v:f4;acabareu=finish:v:f5;acabaran=finish'+
+        ':v:f6;acabaria=finish:v:c1+c3;acabaries=finish:v:c2;acabaríem=finish'+
+        ':v:c4;',
+    'acabaríeu=finish:v:c5;acabarien=finish:v:c6;arribar=arrive:v:I;arribo=ar'+
+        'rive:v:p1;arribes=arrive:v:p2;arriba=arrive:v:p3+M2;arribem=arrive:v:'+
+        'p4;arribeu=arrive:v:p5+M5;arriben=arrive:v:p6;arribat=arrive:v:P;',
+    'arribava=arrive:v:m1+m3;arribaves=arrive:v:m2;arribàvem=arrive:v:m4;arri'+
+        'bàveu=arrive:v:m5;arribaven=arrive:v:m6;arribaré=arrive:v:f1;arriba'+
+        'ràs=arrive:v:f2;arribarà=arrive:v:f3;arribarem=arrive:v:f4;arribare'+
+        'u=arrive:v:f5;',
+    'arribaran=arrive:v:f6;arribaria=arrive:v:c1+c3;arribaries=arrive:v:c2;arr'+
+        'ibaríem=arrive:v:c4;arribaríeu=arrive:v:c5;arribarien=arrive:v:c6;e'+
+        'ntrar=enter:v:I;entro=enter:v:p1;entres=enter:v:p2;entra=enter:v:p3+M'+
+        '2;',
+    'entrem=enter:v:p4;entreu=enter:v:p5+M5;entren=enter:v:p6;entrat=enter:v:P'+
+        ';entrava=enter:v:m1+m3;entraves=enter:v:m2;entràvem=enter:v:m4;entr'+
+        'àveu=enter:v:m5;entraven=enter:v:m6;entraré=enter:v:f1;entraràs=en'+
+        'ter:v:f2;',
+    'entrarà=enter:v:f3;entrarem=enter:v:f4;entrareu=enter:v:f5;entraran=ente'+
+        'r:v:f6;entraria=enter:v:c1+c3;entraries=enter:v:c2;entraríem=enter:v'+
+        ':c4;entraríeu=enter:v:c5;entrarien=enter:v:c6;demanar=ask_for:v:I;de'+
+        'mano=ask_for:v:p1;',
+    'demanes=ask_for:v:p2;demana=ask_for:v:p3+M2;demanem=ask_for:v:p4;demaneu='+
+        'ask_for:v:p5+M5;demanen=ask_for:v:p6;demanat=ask_for:v:P;demanava=ask'+
+        '_for:v:m1+m3;demanaves=ask_for:v:m2;demanàvem=ask_for:v:m4;demanàve'+
+        'u=ask_for:v:m5;',
+    'demanaven=ask_for:v:m6;demanaré=ask_for:v:f1;demanaràs=ask_for:v:f2;dem'+
+        'anarà=ask_for:v:f3;demanarem=ask_for:v:f4;demanareu=ask_for:v:f5;dem'+
+        'anaran=ask_for:v:f6;demanaria=ask_for:v:c1+c3;demanaries=ask_for:v:c2'+
+        ';',
+    'demanaríem=ask_for:v:c4;demanaríeu=ask_for:v:c5;demanarien=ask_for:v:c6'+
+        ';trobar=find:v:I;trobo=find:v:p1;trobes=find:v:p2;troba=find:v:p3+M2;'+
+        'trobem=find:v:p4;trobeu=find:v:p5+M5;troben=find:v:p6;trobat=find:v:P'+
+        ';',
+    'trobava=find:v:m1+m3;trobaves=find:v:m2;trobàvem=find:v:m4;trobàveu=fin'+
+        'd:v:m5;trobaven=find:v:m6;trobaré=find:v:f1;trobaràs=find:v:f2;trob'+
+        'arà=find:v:f3;trobarem=find:v:f4;trobareu=find:v:f5;trobaran=find:v:'+
+        'f6;',
+    'trobaria=find:v:c1+c3;trobaries=find:v:c2;trobaríem=find:v:c4;trobaríeu'+
+        '=find:v:c5;trobarien=find:v:c6;buscar=look_for:v:I;busco=look_for:v:p'+
+        '1;busques=look_for:v:p2;busca=look_for:v:p3+M2;busquem=look_for:v:p4;',
+    'busqueu=look_for:v:p5+M5;busquen=look_for:v:p6;buscat=look_for:v:P;buscav'+
+        'a=look_for:v:m1+m3;buscaves=look_for:v:m2;buscàvem=look_for:v:m4;bus'+
+        'càveu=look_for:v:m5;buscaven=look_for:v:m6;buscaré=look_for:v:f1;',
+    'buscaràs=look_for:v:f2;buscarà=look_for:v:f3;buscarem=look_for:v:f4;bus'+
+        'careu=look_for:v:f5;buscaran=look_for:v:f6;buscaria=look_for:v:c1+c3;'+
+        'buscaries=look_for:v:c2;buscaríem=look_for:v:c4;buscaríeu=look_for:'+
+        'v:c5;',
+    'buscarien=look_for:v:c6;cridar=call:v:I;crido=call:v:p1;crides=call:v:p2;'+
+        'crida=call:v:p3+M2;cridem=call:v:p4;crideu=call:v:p5+M5;criden=call:v'+
+        ':p6;cridat=call:v:P;cridava=call:v:m1+m3;cridaves=call:v:m2;cridàvem'+
+        '=call:v:m4;',
+    'cridàveu=call:v:m5;cridaven=call:v:m6;cridaré=call:v:f1;cridaràs=call:'+
+        'v:f2;cridarà=call:v:f3;cridarem=call:v:f4;cridareu=call:v:f5;cridara'+
+        'n=call:v:f6;cridaria=call:v:c1+c3;cridaries=call:v:c2;cridaríem=call'+
+        ':v:c4;',
+    'cridaríeu=call:v:c5;cridarien=call:v:c6;pensar=think:v:I;penso=think:v:p'+
+        '1;penses=think:v:p2;pensa=think:v:p3+M2;pensem=think:v:p4;penseu=thin'+
+        'k:v:p5+M5;pensen=think:v:p6;pensat=think:v:P;pensava=think:v:m1+m3;pe'+
+        'nsaves=think:v:m2;',
+    'pensàvem=think:v:m4;pensàveu=think:v:m5;pensaven=think:v:m6;pensaré=th'+
+        'ink:v:f1;pensaràs=think:v:f2;pensarà=think:v:f3;pensarem=think:v:f4'+
+        ';pensareu=think:v:f5;pensaran=think:v:f6;pensaria=think:v:c1+c3;pensa'+
+        'ries=think:v:c2;',
+    'pensaríem=think:v:c4;pensaríeu=think:v:c5;pensarien=think:v:c6;oblidar='+
+        'forget:v:I;oblido=forget:v:p1;oblides=forget:v:p2;oblida=forget:v:p3+'+
+        'M2;oblidem=forget:v:p4;oblideu=forget:v:p5+M5;obliden=forget:v:p6;obl'+
+        'idat=forget:v:P;',
+    'oblidava=forget:v:m1+m3;oblidaves=forget:v:m2;oblidàvem=forget:v:m4;obli'+
+        'dàveu=forget:v:m5;oblidaven=forget:v:m6;oblidaré=forget:v:f1;oblida'+
+        'ràs=forget:v:f2;oblidarà=forget:v:f3;oblidarem=forget:v:f4;oblidare'+
+        'u=forget:v:f5;',
+    'oblidaran=forget:v:f6;oblidaria=forget:v:c1+c3;oblidaries=forget:v:c2;obl'+
+        'idaríem=forget:v:c4;oblidaríeu=forget:v:c5;oblidarien=forget:v:c6;p'+
+        'ortar=bring:v:I;porto=bring:v:p1;portes=bring:v:p2;porta=bring:v:p3+M'+
+        '2;',
+    'portem=bring:v:p4;porteu=bring:v:p5+M5;porten=bring:v:p6;portat=bring:v:P'+
+        ';portava=bring:v:m1+m3;portaves=bring:v:m2;portàvem=bring:v:m4;port'+
+        'àveu=bring:v:m5;portaven=bring:v:m6;portaré=bring:v:f1;portaràs=br'+
+        'ing:v:f2;',
+    'portarà=bring:v:f3;portarem=bring:v:f4;portareu=bring:v:f5;portaran=brin'+
+        'g:v:f6;portaria=bring:v:c1+c3;portaries=bring:v:c2;portaríem=bring:v'+
+        ':c4;portaríeu=bring:v:c5;portarien=bring:v:c6;enviar=send:v:I;envio='+
+        'send:v:p1;',
+    'envies=send:v:p2;envia=send:v:p3+M2;enviem=send:v:p4;envieu=send:v:p5+M5;'+
+        'envien=send:v:p6;enviat=send:v:P;enviava=send:v:m1+m3;enviaves=send:v'+
+        ':m2;enviàvem=send:v:m4;enviàveu=send:v:m5;enviaven=send:v:m6;enviar'+
+        'é=send:v:f1;',
+    'enviaràs=send:v:f2;enviarà=send:v:f3;enviarem=send:v:f4;enviareu=send:v'+
+        ':f5;enviaran=send:v:f6;enviaria=send:v:c1+c3;enviaries=send:v:c2;envi'+
+        'aríem=send:v:c4;enviaríeu=send:v:c5;enviarien=send:v:c6;pagar=pay:v'+
+        ':I;pago=pay:v:p1;',
+    'pagues=pay:v:p2;paga=pay:v:p3+M2;paguem=pay:v:p4;pagueu=pay:v:p5+M5;pague'+
+        'n=pay:v:p6;pagat=pay:v:P;pagava=pay:v:m1+m3;pagaves=pay:v:m2;pagàvem'+
+        '=pay:v:m4;pagàveu=pay:v:m5;pagaven=pay:v:m6;pagaré=pay:v:f1;pagarà'+
+        's=pay:v:f2;',
+    'pagarà=pay:v:f3;pagarem=pay:v:f4;pagareu=pay:v:f5;pagaran=pay:v:f6;pagar'+
+        'ia=pay:v:c1+c3;pagaries=pay:v:c2;pagaríem=pay:v:c4;pagaríeu=pay:v:c'+
+        '5;pagarien=pay:v:c6;costar=cost:v:I;costo=cost:v:p1;costes=cost:v:p2;'+
+        'costa=cost:v:p3+M2;',
+    'costem=cost:v:p4;costeu=cost:v:p5+M5;costen=cost:v:p6;costat=cost:v:P;cos'+
+        'tava=cost:v:m1+m3;costaves=cost:v:m2;costàvem=cost:v:m4;costàveu=co'+
+        'st:v:m5;costaven=cost:v:m6;costaré=cost:v:f1;costaràs=cost:v:f2;cos'+
+        'tarà=cost:v:f3;',
+    'costarem=cost:v:f4;costareu=cost:v:f5;costaran=cost:v:f6;costaria=cost:v:'+
+        'c1+c3;costaries=cost:v:c2;costaríem=cost:v:c4;costaríeu=cost:v:c5;c'+
+        'ostarien=cost:v:c6;cuinar=cook:v:I;cuino=cook:v:p1;cuines=cook:v:p2;c'+
+        'uina=cook:v:p3+M2;',
+    'cuinem=cook:v:p4;cuineu=cook:v:p5+M5;cuinen=cook:v:p6;cuinat=cook:v:P;cui'+
+        'nava=cook:v:m1+m3;cuinaves=cook:v:m2;cuinàvem=cook:v:m4;cuinàveu=co'+
+        'ok:v:m5;cuinaven=cook:v:m6;cuinaré=cook:v:f1;cuinaràs=cook:v:f2;cui'+
+        'narà=cook:v:f3;',
+    'cuinarem=cook:v:f4;cuinareu=cook:v:f5;cuinaran=cook:v:f6;cuinaria=cook:v:'+
+        'c1+c3;cuinaries=cook:v:c2;cuinaríem=cook:v:c4;cuinaríeu=cook:v:c5;c'+
+        'uinarien=cook:v:c6;rentar=wash:v:I;rento=wash:v:p1;rentes=wash:v:p2;r'+
+        'enta=wash:v:p3+M2;',
+    'rentem=wash:v:p4;renteu=wash:v:p5+M5;renten=wash:v:p6;rentat=wash:v:P;ren'+
+        'tava=wash:v:m1+m3;rentaves=wash:v:m2;rentàvem=wash:v:m4;rentàveu=wa'+
+        'sh:v:m5;rentaven=wash:v:m6;rentaré=wash:v:f1;rentaràs=wash:v:f2;ren'+
+        'tarà=wash:v:f3;',
+    'rentarem=wash:v:f4;rentareu=wash:v:f5;rentaran=wash:v:f6;rentaria=wash:v:'+
+        'c1+c3;rentaries=wash:v:c2;rentaríem=wash:v:c4;rentaríeu=wash:v:c5;r'+
+        'entarien=wash:v:c6;netejar=clean:v:I;netejo=clean:v:p1;neteges=clean:'+
+        'v:p2;',
+    'neteja=clean:v:p3+M2;netegem=clean:v:p4;netegeu=clean:v:p5+M5;netegen=cle'+
+        'an:v:p6;netejat=clean:v:P;netejava=clean:v:m1+m3;netejaves=clean:v:m2'+
+        ';netejàvem=clean:v:m4;netejàveu=clean:v:m5;netejaven=clean:v:m6;net'+
+        'ejaré=clean:v:f1;',
+    'netejaràs=clean:v:f2;netejarà=clean:v:f3;netejarem=clean:v:f4;netejareu'+
+        '=clean:v:f5;netejaran=clean:v:f6;netejaria=clean:v:c1+c3;netejaries=c'+
+        'lean:v:c2;netejaríem=clean:v:c4;netejaríeu=clean:v:c5;netejarien=cl'+
+        'ean:v:c6;',
+    'volar=fly:v:I;volo=fly:v:p1;voles=fly:v:p2;vola=fly:v:p3+M2;volem=fly:v:p'+
+        '4+p4:querer;voleu=fly:v:p5+M5+p5:querer+M5:querer;volen=fly:v:p6+p6:q'+
+        'uerer;volat=fly:v:P;volava=fly:v:m1+m3;volaves=fly:v:m2;volàvem=fly:'+
+        'v:m4;',
+    'volàveu=fly:v:m5;volaven=fly:v:m6;volaré=fly:v:f1;volaràs=fly:v:f2;vol'+
+        'arà=fly:v:f3;volarem=fly:v:f4;volareu=fly:v:f5;volaran=fly:v:f6;vola'+
+        'ria=fly:v:c1+c3;volaries=fly:v:c2;volaríem=fly:v:c4;volaríeu=fly:v:'+
+        'c5;',
+    'volarien=fly:v:c6;plorar=cry:v:I;ploro=cry:v:p1;plores=cry:v:p2;plora=cry'+
+        ':v:p3+M2;plorem=cry:v:p4;ploreu=cry:v:p5+M5;ploren=cry:v:p6;plorat=cr'+
+        'y:v:P;plorava=cry:v:m1+m3;ploraves=cry:v:m2;ploràvem=cry:v:m4;plorà'+
+        'veu=cry:v:m5;',
+    'ploraven=cry:v:m6;ploraré=cry:v:f1;ploraràs=cry:v:f2;plorarà=cry:v:f3;'+
+        'plorarem=cry:v:f4;plorareu=cry:v:f5;ploraran=cry:v:f6;ploraria=cry:v:'+
+        'c1+c3;ploraries=cry:v:c2;ploraríem=cry:v:c4;ploraríeu=cry:v:c5;plor'+
+        'arien=cry:v:c6;',
+    'guanyar=win:v:I;guanyo=win:v:p1;guanyes=win:v:p2;guanya=win:v:p3+M2;guany'+
+        'em=win:v:p4;guanyeu=win:v:p5+M5;guanyen=win:v:p6;guanyat=win:v:P;guan'+
+        'yava=win:v:m1+m3;guanyaves=win:v:m2;guanyàvem=win:v:m4;guanyàveu=wi'+
+        'n:v:m5;',
+    'guanyaven=win:v:m6;guanyaré=win:v:f1;guanyaràs=win:v:f2;guanyarà=win:v'+
+        ':f3;guanyarem=win:v:f4;guanyareu=win:v:f5;guanyaran=win:v:f6;guanyari'+
+        'a=win:v:c1+c3;guanyaries=win:v:c2;guanyaríem=win:v:c4;guanyaríeu=wi'+
+        'n:v:c5;',
+    'guanyarien=win:v:c6;posar=put:v:I;poso=put:v:p1;poses=put:v:p2;posa=put:v'+
+        ':p3+M2;posem=put:v:p4;poseu=put:v:p5+M5;posen=put:v:p6;posat=put:v:P;'+
+        'posava=put:v:m1+m3;posaves=put:v:m2;posàvem=put:v:m4;posàveu=put:v:'+
+        'm5;',
+    'posaven=put:v:m6;posaré=put:v:f1;posaràs=put:v:f2;posarà=put:v:f3;posa'+
+        'rem=put:v:f4;posareu=put:v:f5;posaran=put:v:f6;posaria=put:v:c1+c3;po'+
+        'saries=put:v:c2;posaríem=put:v:c4;posaríeu=put:v:c5;posarien=put:v:'+
+        'c6;',
+    'desitjar=wish:v:I;desitjo=wish:v:p1;desitges=wish:v:p2;desitja=wish:v:p3+'+
+        'M2;desitgem=wish:v:p4;desitgeu=wish:v:p5+M5;desitgen=wish:v:p6;desitj'+
+        'at=wish:v:P;desitjava=wish:v:m1+m3;desitjaves=wish:v:m2;desitjàvem=w'+
+        'ish:v:m4;',
+    'desitjàveu=wish:v:m5;desitjaven=wish:v:m6;desitjaré=wish:v:f1;desitjar'+
+        'às=wish:v:f2;desitjarà=wish:v:f3;desitjarem=wish:v:f4;desitjareu=wi'+
+        'sh:v:f5;desitjaran=wish:v:f6;desitjaria=wish:v:c1+c3;desitjaries=wish'+
+        ':v:c2;',
+    'desitjaríem=wish:v:c4;desitjaríeu=wish:v:c5;desitjarien=wish:v:c6;prova'+
+        'r=try:v:I;provo=try:v:p1;proves=try:v:p2;prova=try:v:p3+M2;provem=try'+
+        ':v:p4;proveu=try:v:p5+M5;proven=try:v:p6;provat=try:v:P;provava=try:v'+
+        ':m1+m3;',
+    'provaves=try:v:m2;provàvem=try:v:m4;provàveu=try:v:m5;provaven=try:v:m6'+
+        ';provaré=try:v:f1;provaràs=try:v:f2;provarà=try:v:f3;provarem=try:'+
+        'v:f4;provareu=try:v:f5;provaran=try:v:f6;provaria=try:v:c1+c3;provari'+
+        'es=try:v:c2;',
+    'provaríem=try:v:c4;provaríeu=try:v:c5;provarien=try:v:c6;utilitzar=use:'+
+        'v:I;utilitzo=use:v:p1;utilitzes=use:v:p2;utilitza=use:v:p3+M2;utilitz'+
+        'em=use:v:p4;utilitzeu=use:v:p5+M5;utilitzen=use:v:p6;utilitzat=use:v:'+
+        'P;',
+    'utilitzava=use:v:m1+m3;utilitzaves=use:v:m2;utilitzàvem=use:v:m4;utilitz'+
+        'àveu=use:v:m5;utilitzaven=use:v:m6;utilitzaré=use:v:f1;utilitzaràs'+
+        '=use:v:f2;utilitzarà=use:v:f3;utilitzarem=use:v:f4;utilitzareu=use:v'+
+        ':f5;',
+    'utilitzaran=use:v:f6;utilitzaria=use:v:c1+c3;utilitzaries=use:v:c2;utilit'+
+        'zaríem=use:v:c4;utilitzaríeu=use:v:c5;utilitzarien=use:v:c6;mostrar'+
+        '=show:v:I;mostro=show:v:p1;mostres=show:v:p2;mostra=show:v:p3+M2;most'+
+        'rem=show:v:p4;',
+    'mostreu=show:v:p5+M5;mostren=show:v:p6;mostrat=show:v:P;mostrava=show:v:m'+
+        '1+m3;mostraves=show:v:m2;mostràvem=show:v:m4;mostràveu=show:v:m5;mo'+
+        'straven=show:v:m6;mostraré=show:v:f1;mostraràs=show:v:f2;mostrarà='+
+        'show:v:f3;',
+    'mostrarem=show:v:f4;mostrareu=show:v:f5;mostraran=show:v:f6;mostraria=sho'+
+        'w:v:c1+c3;mostraries=show:v:c2;mostraríem=show:v:c4;mostraríeu=show'+
+        ':v:c5;mostrarien=show:v:c6;dibuixar=draw:v:I;dibuixo=draw:v:p1;dibuix'+
+        'es=draw:v:p2;',
+    'dibuixa=draw:v:p3+M2;dibuixem=draw:v:p4;dibuixeu=draw:v:p5+M5;dibuixen=dr'+
+        'aw:v:p6;dibuixat=draw:v:P;dibuixava=draw:v:m1+m3;dibuixaves=draw:v:m2'+
+        ';dibuixàvem=draw:v:m4;dibuixàveu=draw:v:m5;dibuixaven=draw:v:m6;dib'+
+        'uixaré=draw:v:f1;',
+    'dibuixaràs=draw:v:f2;dibuixarà=draw:v:f3;dibuixarem=draw:v:f4;dibuixare'+
+        'u=draw:v:f5;dibuixaran=draw:v:f6;dibuixaria=draw:v:c1+c3;dibuixaries='+
+        'draw:v:c2;dibuixaríem=draw:v:c4;dibuixaríeu=draw:v:c5;dibuixarien=d'+
+        'raw:v:c6;',
+    'pintar=paint:v:I;pinto=paint:v:p1;pintes=paint:v:p2;pinta=paint:v:p3+M2;p'+
+        'intem=paint:v:p4;pinteu=paint:v:p5+M5;pinten=paint:v:p6;pintat=paint:'+
+        'v:P;pintava=paint:v:m1+m3;pintaves=paint:v:m2;pintàvem=paint:v:m4;pi'+
+        'ntàveu=paint:v:m5;',
+    'pintaven=paint:v:m6;pintaré=paint:v:f1;pintaràs=paint:v:f2;pintarà=pai'+
+        'nt:v:f3;pintarem=paint:v:f4;pintareu=paint:v:f5;pintaran=paint:v:f6;p'+
+        'intaria=paint:v:c1+c3;pintaries=paint:v:c2;pintaríem=paint:v:c4;pint'+
+        'aríeu=paint:v:c5;',
+    'pintarien=paint:v:c6;visitar=visit:v:I;visito=visit:v:p1;visites=visit:v:'+
+        'p2;visita=visit:v:p3+M2;visitem=visit:v:p4;visiteu=visit:v:p5+M5;visi'+
+        'ten=visit:v:p6;visitat=visit:v:P;visitava=visit:v:m1+m3;visitaves=vis'+
+        'it:v:m2;',
+    'visitàvem=visit:v:m4;visitàveu=visit:v:m5;visitaven=visit:v:m6;visitar'+
+        'é=visit:v:f1;visitaràs=visit:v:f2;visitarà=visit:v:f3;visitarem=vi'+
+        'sit:v:f4;visitareu=visit:v:f5;visitaran=visit:v:f6;visitaria=visit:v:'+
+        'c1+c3;',
+    'visitaries=visit:v:c2;visitaríem=visit:v:c4;visitaríeu=visit:v:c5;visit'+
+        'arien=visit:v:c6;mirar=look_at:v:I;miro=look_at:v:p1;mires=look_at:v:'+
+        'p2;mira=look_at:v:p3+M2;mirem=look_at:v:p4;mireu=look_at:v:p5+M5;mire'+
+        'n=look_at:v:p6;',
+    'mirat=look_at:v:P;mirava=look_at:v:m1+m3;miraves=look_at:v:m2;miràvem=lo'+
+        'ok_at:v:m4;miràveu=look_at:v:m5;miraven=look_at:v:m6;miraré=look_at'+
+        ':v:f1;miraràs=look_at:v:f2;mirarà=look_at:v:f3;mirarem=look_at:v:f4'+
+        ';',
+    'mirareu=look_at:v:f5;miraran=look_at:v:f6;miraria=look_at:v:c1+c3;mirarie'+
+        's=look_at:v:c2;miraríem=look_at:v:c4;miraríeu=look_at:v:c5;mirarien'+
+        '=look_at:v:c6;escoltar=listen:v:I;escolto=listen:v:p1;escoltes=listen'+
+        ':v:p2;',
+    'escolta=listen:v:p3+M2;escoltem=listen:v:p4;escolteu=listen:v:p5+M5;escol'+
+        'ten=listen:v:p6;escoltat=listen:v:P;escoltava=listen:v:m1+m3;escoltav'+
+        'es=listen:v:m2;escoltàvem=listen:v:m4;escoltàveu=listen:v:m5;escolt'+
+        'aven=listen:v:m6;',
+    'escoltaré=listen:v:f1;escoltaràs=listen:v:f2;escoltarà=listen:v:f3;esc'+
+        'oltarem=listen:v:f4;escoltareu=listen:v:f5;escoltaran=listen:v:f6;esc'+
+        'oltaria=listen:v:c1+c3;escoltaries=listen:v:c2;escoltaríem=listen:v:'+
+        'c4;',
+    'escoltaríeu=listen:v:c5;escoltarien=listen:v:c6;necessitar=need:v:I;nece'+
+        'ssito=need:v:p1;necessites=need:v:p2;necessita=need:v:p3+M2;necessite'+
+        'm=need:v:p4;necessiteu=need:v:p5+M5;necessiten=need:v:p6;necessitat=n'+
+        'eed:v:P;',
+    'necessitava=need:v:m1+m3;necessitaves=need:v:m2;necessitàvem=need:v:m4;n'+
+        'ecessitàveu=need:v:m5;necessitaven=need:v:m6;necessitaré=need:v:f1;'+
+        'necessitaràs=need:v:f2;necessitarà=need:v:f3;necessitarem=need:v:f4'+
+        ';',
+    'necessitareu=need:v:f5;necessitaran=need:v:f6;necessitaria=need:v:c1+c3;n'+
+        'ecessitaries=need:v:c2;necessitaríem=need:v:c4;necessitaríeu=need:v'+
+        ':c5;necessitarien=need:v:c6;estimar=love:v:I;estimo=love:v:p1;estimes'+
+        '=love:v:p2;',
+    'estima=love:v:p3+M2;estimem=love:v:p4;estimeu=love:v:p5+M5;estimen=love:v'+
+        ':p6;estimat=love:v:P;estimava=love:v:m1+m3;estimaves=love:v:m2;estim'+
+        'àvem=love:v:m4;estimàveu=love:v:m5;estimaven=love:v:m6;estimaré=lo'+
+        've:v:f1;',
+    'estimaràs=love:v:f2;estimarà=love:v:f3;estimarem=love:v:f4;estimareu=lo'+
+        've:v:f5;estimaran=love:v:f6;estimaria=love:v:c1+c3;estimaries=love:v:'+
+        'c2;estimaríem=love:v:c4;estimaríeu=love:v:c5;estimarien=love:v:c6;c'+
+        'aminar=walk:v:I;',
+    'camino=walk:v:p1;camines=walk:v:p2;camina=walk:v:p3+M2;caminem=walk:v:p4;'+
+        'camineu=walk:v:p5+M5;caminen=walk:v:p6;caminat=walk:v:P;caminava=walk'+
+        ':v:m1+m3;caminaves=walk:v:m2;caminàvem=walk:v:m4;caminàveu=walk:v:m'+
+        '5;',
+    'caminaven=walk:v:m6;caminaré=walk:v:f1;caminaràs=walk:v:f2;caminarà=wa'+
+        'lk:v:f3;caminarem=walk:v:f4;caminareu=walk:v:f5;caminaran=walk:v:f6;c'+
+        'aminaria=walk:v:c1+c3;caminaries=walk:v:c2;caminaríem=walk:v:c4;cami'+
+        'naríeu=walk:v:c5;',
+    'caminarien=walk:v:c6;nedar=swim:v:I;nedo=swim:v:p1;nedes=swim:v:p2;neda=s'+
+        'wim:v:p3+M2;nedem=swim:v:p4;nedeu=swim:v:p5+M5;neden=swim:v:p6;nedat='+
+        'swim:v:P;nedava=swim:v:m1+m3;nedaves=swim:v:m2;nedàvem=swim:v:m4;ned'+
+        'àveu=swim:v:m5;',
+    'nedaven=swim:v:m6;nedaré=swim:v:f1;nedaràs=swim:v:f2;nedarà=swim:v:f3;'+
+        'nedarem=swim:v:f4;nedareu=swim:v:f5;nedaran=swim:v:f6;nedaria=swim:v:'+
+        'c1+c3;nedaries=swim:v:c2;nedaríem=swim:v:c4;nedaríeu=swim:v:c5;neda'+
+        'rien=swim:v:c6;',
+    'tornar=return:v:I;torno=return:v:p1;tornes=return:v:p2;torna=return:v:p3+'+
+        'M2;tornem=return:v:p4;torneu=return:v:p5+M5;tornen=return:v:p6;tornat'+
+        '=return:v:P;tornava=return:v:m1+m3;tornaves=return:v:m2;tornàvem=ret'+
+        'urn:v:m4;',
+    'tornàveu=return:v:m5;tornaven=return:v:m6;tornaré=return:v:f1;tornaràs'+
+        '=return:v:f2;tornarà=return:v:f3;tornarem=return:v:f4;tornareu=retur'+
+        'n:v:f5;tornaran=return:v:f6;tornaria=return:v:c1+c3;tornaries=return:'+
+        'v:c2;',
+    'tornaríem=return:v:c4;tornaríeu=return:v:c5;tornarien=return:v:c6;deixa'+
+        'r=leave:v:I;deixo=leave:v:p1;deixes=leave:v:p2;deixa=leave:v:p3+M2;de'+
+        'ixem=leave:v:p4;deixeu=leave:v:p5+M5;deixen=leave:v:p6;deixat=leave:v'+
+        ':P;',
+    'deixava=leave:v:m1+m3;deixaves=leave:v:m2;deixàvem=leave:v:m4;deixàveu='+
+        'leave:v:m5;deixaven=leave:v:m6;deixaré=leave:v:f1;deixaràs=leave:v:'+
+        'f2;deixarà=leave:v:f3;deixarem=leave:v:f4;deixareu=leave:v:f5;deixar'+
+        'an=leave:v:f6;',
+    'deixaria=leave:v:c1+c3;deixaries=leave:v:c2;deixaríem=leave:v:c4;deixar'+
+        'íeu=leave:v:c5;deixarien=leave:v:c6;passejar=walk:v:I;passejo=walk:v'+
+        ':p1;passeges=walk:v:p2;passeja=walk:v:p3+M2;passegem=walk:v:p4;passeg'+
+        'eu=walk:v:p5+M5;',
+    'passegen=walk:v:p6;passejat=walk:v:P;passejava=walk:v:m1+m3;passejaves=wa'+
+        'lk:v:m2;passejàvem=walk:v:m4;passejàveu=walk:v:m5;passejaven=walk:v'+
+        ':m6;passejaré=walk:v:f1;passejaràs=walk:v:f2;passejarà=walk:v:f3;',
+    'passejarem=walk:v:f4;passejareu=walk:v:f5;passejaran=walk:v:f6;passejaria'+
+        '=walk:v:c1+c3;passejaries=walk:v:c2;passejaríem=walk:v:c4;passejarí'+
+        'eu=walk:v:c5;passejarien=walk:v:c6;explicar=explain:v:I;explico=expla'+
+        'in:v:p1;',
+    'expliques=explain:v:p2;explica=explain:v:p3+M2;expliquem=explain:v:p4;exp'+
+        'liqueu=explain:v:p5+M5;expliquen=explain:v:p6;explicat=explain:v:P;ex'+
+        'plicava=explain:v:m1+m3;explicaves=explain:v:m2;explicàvem=explain:v'+
+        ':m4;',
+    'explicàveu=explain:v:m5;explicaven=explain:v:m6;explicaré=explain:v:f1;'+
+        'explicaràs=explain:v:f2;explicarà=explain:v:f3;explicarem=explain:v'+
+        ':f4;explicareu=explain:v:f5;explicaran=explain:v:f6;explicaria=explai'+
+        'n:v:c1+c3;',
+    'explicaries=explain:v:c2;explicaríem=explain:v:c4;explicaríeu=explain:v'+
+        ':c5;explicarien=explain:v:c6;contestar=answer:v:I;contesto=answer:v:p'+
+        '1;contestes=answer:v:p2;contesta=answer:v:p3+M2;contestem=answer:v:p4'+
+        ';',
+    'contesteu=answer:v:p5+M5;contesten=answer:v:p6;contestat=answer:v:P;conte'+
+        'stava=answer:v:m1+m3;contestaves=answer:v:m2;contestàvem=answer:v:m4'+
+        ';contestàveu=answer:v:m5;contestaven=answer:v:m6;contestaré=answer:'+
+        'v:f1;',
+    'contestaràs=answer:v:f2;contestarà=answer:v:f3;contestarem=answer:v:f4;'+
+        'contestareu=answer:v:f5;contestaran=answer:v:f6;contestaria=answer:v:'+
+        'c1+c3;contestaries=answer:v:c2;contestaríem=answer:v:c4;contestaríe'+
+        'u=answer:v:c5;',
+    'contestarien=answer:v:c6;saltar=jump:v:I;salto=jump:v:p1;saltes=jump:v:p2'+
+        ';salta=jump:v:p3+M2;saltem=jump:v:p4;salteu=jump:v:p5+M5;salten=jump:'+
+        'v:p6;saltat=jump:v:P;saltava=jump:v:m1+m3;saltaves=jump:v:m2;saltàve'+
+        'm=jump:v:m4;',
+    'saltàveu=jump:v:m5;saltaven=jump:v:m6;saltaré=jump:v:f1;saltaràs=jump:'+
+        'v:f2;saltarà=jump:v:f3;saltarem=jump:v:f4;saltareu=jump:v:f5;saltara'+
+        'n=jump:v:f6;saltaria=jump:v:c1+c3;saltaries=jump:v:c2;saltaríem=jump'+
+        ':v:c4;',
+    'saltaríeu=jump:v:c5;saltarien=jump:v:c6;ensenyar=teach:v:I;ensenyo=teach'+
+        ':v:p1;ensenyes=teach:v:p2;ensenya=teach:v:p3+M2;ensenyem=teach:v:p4;e'+
+        'nsenyeu=teach:v:p5+M5;ensenyen=teach:v:p6;ensenyat=teach:v:P;ensenyav'+
+        'a=teach:v:m1+m3;',
+    'ensenyaves=teach:v:m2;ensenyàvem=teach:v:m4;ensenyàveu=teach:v:m5;ensen'+
+        'yaven=teach:v:m6;ensenyaré=teach:v:f1;ensenyaràs=teach:v:f2;ensenya'+
+        'rà=teach:v:f3;ensenyarem=teach:v:f4;ensenyareu=teach:v:f5;ensenyaran'+
+        '=teach:v:f6;',
+    'ensenyaria=teach:v:c1+c3;ensenyaries=teach:v:c2;ensenyaríem=teach:v:c4;e'+
+        'nsenyaríeu=teach:v:c5;ensenyarien=teach:v:c6;trucar=call:v:I;truco=c'+
+        'all:v:p1;truques=call:v:p2;truca=call:v:p3+M2;truquem=call:v:p4;truqu'+
+        'eu=call:v:p5+M5;',
+    'truquen=call:v:p6;trucat=call:v:P;trucava=call:v:m1+m3;trucaves=call:v:m2'+
+        ';trucàvem=call:v:m4;trucàveu=call:v:m5;trucaven=call:v:m6;trucaré='+
+        'call:v:f1;trucaràs=call:v:f2;trucarà=call:v:f3;trucarem=call:v:f4;t'+
+        'rucareu=call:v:f5;',
+    'trucaran=call:v:f6;trucaria=call:v:c1+c3;trucaries=call:v:c2;trucaríem=c'+
+        'all:v:c4;trucaríeu=call:v:c5;trucarien=call:v:c6;tancar=close:v:I;ta'+
+        'nco=close:v:p1;tanques=close:v:p2;tanca=close:v:p3+M2;tanquem=close:v'+
+        ':p4;',
+    'tanqueu=close:v:p5+M5;tanquen=close:v:p6;tancat=close:v:P;tancava=close:v'+
+        ':m1+m3;tancaves=close:v:m2;tancàvem=close:v:m4;tancàveu=close:v:m5;'+
+        'tancaven=close:v:m6;tancaré=close:v:f1;tancaràs=close:v:f2;tancarà'+
+        '=close:v:f3;',
+    'tancarem=close:v:f4;tancareu=close:v:f5;tancaran=close:v:f6;tancaria=clos'+
+        'e:v:c1+c3;tancaries=close:v:c2;tancaríem=close:v:c4;tancaríeu=close'+
+        ':v:c5;tancarien=close:v:c6;sonar=ring:v:I;sono=ring:v:p1;sones=ring:v'+
+        ':p2;',
+    'sona=ring:v:p3+M2;sonem=ring:v:p4;soneu=ring:v:p5+M5;sonen=ring:v:p6;sona'+
+        't=ring:v:P;sonava=ring:v:m1+m3;sonaves=ring:v:m2;sonàvem=ring:v:m4;s'+
+        'onàveu=ring:v:m5;sonaven=ring:v:m6;sonaré=ring:v:f1;sonaràs=ring:v'+
+        ':f2;',
+    'sonarà=ring:v:f3;sonarem=ring:v:f4;sonareu=ring:v:f5;sonaran=ring:v:f6;s'+
+        'onaria=ring:v:c1+c3;sonaries=ring:v:c2;sonaríem=ring:v:c4;sonaríeu='+
+        'ring:v:c5;sonarien=ring:v:c6;començar=begin:v:I;començo=begin:v:p1;',
+    'comences=begin:v:p2;comença=begin:v:p3+M2;comencem=begin:v:p4;comenceu=b'+
+        'egin:v:p5+M5;comencen=begin:v:p6;començat=begin:v:P;començava=begin'+
+        ':v:m1+m3;començaves=begin:v:m2;començàvem=begin:v:m4;començàveu='+
+        'begin:v:m5;',
+    'començaven=begin:v:m6;començaré=begin:v:f1;començaràs=begin:v:f2;com'+
+        'ençarà=begin:v:f3;començarem=begin:v:f4;començareu=begin:v:f5;com'+
+        'ençaran=begin:v:f6;començaria=begin:v:c1+c3;començaries=begin:v:c2'+
+        ';',
+    'començaríem=begin:v:c4;començaríeu=begin:v:c5;començarien=begin:v:c6'+
+        ';menjar=eat:v:I;menjo=eat:v:p1;menges=eat:v:p2;menja=eat:v:p3+M2;meng'+
+        'em=eat:v:p4;mengeu=eat:v:p5+M5;mengen=eat:v:p6;menjat=eat:v:P;menjava'+
+        '=eat:v:m1+m3;',
+    'menjaves=eat:v:m2;menjàvem=eat:v:m4;menjàveu=eat:v:m5;menjaven=eat:v:m6'+
+        ';menjaré=eat:v:f1;menjaràs=eat:v:f2;menjarà=eat:v:f3;menjarem=eat:'+
+        'v:f4;menjareu=eat:v:f5;menjaran=eat:v:f6;menjaria=eat:v:c1+c3;menjari'+
+        'es=eat:v:c2;',
+    'menjaríem=eat:v:c4;menjaríeu=eat:v:c5;menjarien=eat:v:c6;cenar=have_din'+
+        'ner:v:I;ceno=have_dinner:v:p1;cenes=have_dinner:v:p2;cena=have_dinner'+
+        ':v:p3+M2;cenem=have_dinner:v:p4;ceneu=have_dinner:v:p5+M5;cenen=have_'+
+        'dinner:v:p6;',
+    'cenat=have_dinner:v:P;cenava=have_dinner:v:m1+m3;cenaves=have_dinner:v:m2'+
+        ';cenàvem=have_dinner:v:m4;cenàveu=have_dinner:v:m5;cenaven=have_din'+
+        'ner:v:m6;cenaré=have_dinner:v:f1;cenaràs=have_dinner:v:f2;cenarà=h'+
+        'ave_dinner:v:f3;',
+    'cenarem=have_dinner:v:f4;cenareu=have_dinner:v:f5;cenaran=have_dinner:v:f'+
+        '6;cenaria=have_dinner:v:c1+c3;cenaries=have_dinner:v:c2;cenaríem=hav'+
+        'e_dinner:v:c4;cenaríeu=have_dinner:v:c5;cenarien=have_dinner:v:c6;di'+
+        'nar=have_lunch:v:I;',
+    'dino=have_lunch:v:p1;dines=have_lunch:v:p2;dina=have_lunch:v:p3+M2;dinem='+
+        'have_lunch:v:p4;dineu=have_lunch:v:p5+M5;dinen=have_lunch:v:p6;dinat='+
+        'have_lunch:v:P;dinava=have_lunch:v:m1+m3;dinaves=have_lunch:v:m2;',
+    'dinàvem=have_lunch:v:m4;dinàveu=have_lunch:v:m5;dinaven=have_lunch:v:m6'+
+        ';dinaré=have_lunch:v:f1;dinaràs=have_lunch:v:f2;dinarà=have_lunch:'+
+        'v:f3;dinarem=have_lunch:v:f4;dinareu=have_lunch:v:f5;dinaran=have_lun'+
+        'ch:v:f6;',
+    'dinaria=have_lunch:v:c1+c3;dinaries=have_lunch:v:c2;dinaríem=have_lunch:'+
+        'v:c4;dinaríeu=have_lunch:v:c5;dinarien=have_lunch:v:c6;esmorzar=have'+
+        '_breakfast:v:I;esmorzo=have_breakfast:v:p1;esmorzes=have_breakfast:v:'+
+        'p2;',
+    'esmorza=have_breakfast:v:p3+M2;esmorzem=have_breakfast:v:p4;esmorzeu=have'+
+        '_breakfast:v:p5+M5;esmorzen=have_breakfast:v:p6;esmorzat=have_breakfa'+
+        'st:v:P;esmorzava=have_breakfast:v:m1+m3;esmorzaves=have_breakfast:v:m'+
+        '2;',
+    'esmorzàvem=have_breakfast:v:m4;esmorzàveu=have_breakfast:v:m5;esmorzave'+
+        'n=have_breakfast:v:m6;esmorzaré=have_breakfast:v:f1;esmorzaràs=have'+
+        '_breakfast:v:f2;esmorzarà=have_breakfast:v:f3;esmorzarem=have_breakf'+
+        'ast:v:f4;',
+    'esmorzareu=have_breakfast:v:f5;esmorzaran=have_breakfast:v:f6;esmorzaria='+
+        'have_breakfast:v:c1+c3;esmorzaries=have_breakfast:v:c2;esmorzaríem=h'+
+        'ave_breakfast:v:c4;esmorzaríeu=have_breakfast:v:c5;esmorzarien=have_'+
+        'breakfast:v:c6;',
+    'preferir=prefer:v:I;prefereixo=prefer:v:p1;prefereixes=prefer:v:p2;prefer'+
+        'eix=prefer:v:p3+M2;preferim=prefer:v:p4;preferiu=prefer:v:p5+M5;prefe'+
+        'reixen=prefer:v:p6;preferit=prefer:v:P;preferia=prefer:v:m1+m3;prefer'+
+        'ies=prefer:v:m2;',
+    'preferíem=prefer:v:m4;preferíeu=prefer:v:m5;preferien=prefer:v:m6;prefe'+
+        'riré=prefer:v:f1;preferiràs=prefer:v:f2;preferirà=prefer:v:f3;pref'+
+        'erirem=prefer:v:f4;preferireu=prefer:v:f5;preferiran=prefer:v:f6;',
+    'preferiria=prefer:v:c1+c3;preferiries=prefer:v:c2;preferiríem=prefer:v:c'+
+        '4;preferiríeu=prefer:v:c5;preferirien=prefer:v:c6;construir=build:v:'+
+        'I;construeixo=build:v:p1;construeixes=build:v:p2;construeix=build:v:p'+
+        '3+M2;',
+    'construim=build:v:p4;construiu=build:v:p5+M5;construeixen=build:v:p6;cons'+
+        'truit=build:v:P;construia=build:v:m1+m3;construies=build:v:m2;constru'+
+        'íem=build:v:m4;construíeu=build:v:m5;construien=build:v:m6;construi'+
+        'ré=build:v:f1;',
+    'construiràs=build:v:f2;construirà=build:v:f3;construirem=build:v:f4;con'+
+        'struireu=build:v:f5;construiran=build:v:f6;construiria=build:v:c1+c3;'+
+        'construiries=build:v:c2;construiríem=build:v:c4;construiríeu=build:'+
+        'v:c5;',
+    'construirien=build:v:c6;decidir=decide:v:I;decideixo=decide:v:p1;decideix'+
+        'es=decide:v:p2;decideix=decide:v:p3+M2;decidim=decide:v:p4;decidiu=de'+
+        'cide:v:p5+M5;decideixen=decide:v:p6;decidit=decide:v:P;decidia=decide'+
+        ':v:m1+m3;',
+    'decidies=decide:v:m2;decidíem=decide:v:m4;decidíeu=decide:v:m5;decidien'+
+        '=decide:v:m6;decidiré=decide:v:f1;decidiràs=decide:v:f2;decidirà=d'+
+        'ecide:v:f3;decidirem=decide:v:f4;decidireu=decide:v:f5;decidiran=deci'+
+        'de:v:f6;',
+    'decidiria=decide:v:c1+c3;decidiries=decide:v:c2;decidiríem=decide:v:c4;d'+
+        'ecidiríeu=decide:v:c5;decidirien=decide:v:c6;partir=leave:v:I;partei'+
+        'xo=leave:v:p1;parteixes=leave:v:p2;parteix=leave:v:p3+M2;partim=leave'+
+        ':v:p4;',
+    'partiu=leave:v:p5+M5;parteixen=leave:v:p6;partit=leave:v:P;partia=leave:v'+
+        ':m1+m3;parties=leave:v:m2;partíem=leave:v:m4;partíeu=leave:v:m5;par'+
+        'tien=leave:v:m6;partiré=leave:v:f1;partiràs=leave:v:f2;partirà=lea'+
+        've:v:f3;',
+    'partirem=leave:v:f4;partireu=leave:v:f5;partiran=leave:v:f6;partiria=leav'+
+        'e:v:c1+c3;partiries=leave:v:c2;partiríem=leave:v:c4;partiríeu=leave'+
+        ':v:c5;partirien=leave:v:c6;servir=serve:v:I;serveixo=serve:v:p1;serve'+
+        'ixes=serve:v:p2;',
+    'serveix=serve:v:p3+M2;servim=serve:v:p4;serviu=serve:v:p5+M5;serveixen=se'+
+        'rve:v:p6;servit=serve:v:P;servia=serve:v:m1+m3;servies=serve:v:m2;ser'+
+        'víem=serve:v:m4;servíeu=serve:v:m5;servien=serve:v:m6;serviré=serv'+
+        'e:v:f1;',
+    'serviràs=serve:v:f2;servirà=serve:v:f3;servirem=serve:v:f4;servireu=ser'+
+        've:v:f5;serviran=serve:v:f6;serviria=serve:v:c1+c3;serviries=serve:v:'+
+        'c2;serviríem=serve:v:c4;serviríeu=serve:v:c5;servirien=serve:v:c6;l'+
+        'legir=read:v:I;',
+    'llegeixo=read:v:p1;llegeixes=read:v:p2;llegeix=read:v:p3+M2;llegim=read:v'+
+        ':p4;llegiu=read:v:p5+M5;llegeixen=read:v:p6;llegit=read:v:P;llegia=re'+
+        'ad:v:m1+m3;llegies=read:v:m2;llegíem=read:v:m4;llegíeu=read:v:m5;ll'+
+        'egien=read:v:m6;',
+    'llegiré=read:v:f1;llegiràs=read:v:f2;llegirà=read:v:f3;llegirem=read:v'+
+        ':f4;llegireu=read:v:f5;llegiran=read:v:f6;llegiria=read:v:c1+c3;llegi'+
+        'ries=read:v:c2;llegiríem=read:v:c4;llegiríeu=read:v:c5;llegirien=re'+
+        'ad:v:c6;',
+    'dormir=sleep:v:I;dormo=sleep:v:p1;dorms=sleep:v:p2;dorm=sleep:v:p3+M2;dor'+
+        'mim=sleep:v:p4;dormiu=sleep:v:p5+M5;dormen=sleep:v:p6;dormit=sleep:v:'+
+        'P;dormia=sleep:v:m1+m3;dormies=sleep:v:m2;dormíem=sleep:v:m4;dormíe'+
+        'u=sleep:v:m5;',
+    'dormien=sleep:v:m6;dormiré=sleep:v:f1;dormiràs=sleep:v:f2;dormirà=slee'+
+        'p:v:f3;dormirem=sleep:v:f4;dormireu=sleep:v:f5;dormiran=sleep:v:f6;do'+
+        'rmiria=sleep:v:c1+c3;dormiries=sleep:v:c2;dormiríem=sleep:v:c4;dormi'+
+        'ríeu=sleep:v:c5;',
+    'dormirien=sleep:v:c6;ser=be:v:I:ser;sóc=be:v:p1:ser;ets=be:v:p2:ser;és='+
+        'be:v:p3:ser;som=be:v:p4:ser;sou=be:v:p5:ser+M5:ser;són=be:v:p6:ser;s'+
+        'igues=be:v:M2:ser;estat=be:v:P:ser+P:estar;eria=be:v:m1:ser+m3:ser;er'+
+        'ies=be:v:m2:ser;',
+    'eríem=be:v:m4:ser;eríeu=be:v:m5:ser;erien=be:v:m6:ser;seré=be:v:f1:ser'+
+        ';seràs=be:v:f2:ser;serà=be:v:f3:ser;serem=be:v:f4:ser;sereu=be:v:f5'+
+        ':ser;seran=be:v:f6:ser;seria=be:v:c1:ser+c3:ser;series=be:v:c2:ser;se'+
+        'ríem=be:v:c4:ser;',
+    'seríeu=be:v:c5:ser;serien=be:v:c6:ser;estar=be:v:I:estar;estic=be:v:p1:e'+
+        'star;estàs=be:v:p2:estar;està=be:v:p3:estar+M2:estar;estem=be:v:p4:'+
+        'estar;esteu=be:v:p5:estar+M5:estar;estan=be:v:p6:estar;estava=be:v:m1'+
+        ':estar+m3:estar;',
+    'estaves=be:v:m2:estar;estàvem=be:v:m4:estar;estàveu=be:v:m5:estar;estav'+
+        'en=be:v:m6:estar;estaré=be:v:f1:estar;estaràs=be:v:f2:estar;estarà'+
+        '=be:v:f3:estar;estarem=be:v:f4:estar;estareu=be:v:f5:estar;estaran=be'+
+        ':v:f6:estar;',
+    'estaria=be:v:c1:estar+c3:estar;estaries=be:v:c2:estar;estaríem=be:v:c4:e'+
+        'star;estaríeu=be:v:c5:estar;estarien=be:v:c6:estar;haver=have:v:I:te'+
+        'ner;he=have:v:p1:tener;has=have:v:p2:tener;ha=have:v:p3:tener+M2:tene'+
+        'r;',
+    'hem=have:v:p4:tener;heu=have:v:p5:tener+M5:tener;han=have:v:p6:tener;hagu'+
+        't=have:v:P:tener;havia=have:v:m1:tener+m3:tener;havies=have:v:m2:tene'+
+        'r;havíem=have:v:m4:tener;havíeu=have:v:m5:tener;havien=have:v:m6:te'+
+        'ner;',
+    'hauré=have:v:f1:tener;hauràs=have:v:f2:tener;haurà=have:v:f3:tener;hau'+
+        'rem=have:v:f4:tener;haureu=have:v:f5:tener;hauran=have:v:f6:tener;hau'+
+        'ria=have:v:c1:tener+c3:tener;hauries=have:v:c2:tener;hauríem=have:v:'+
+        'c4:tener;',
+    'hauríeu=have:v:c5:tener;haurien=have:v:c6:tener;tenir=have:v:I:tener;tin'+
+        'c=have:v:p1:tener;tens=have:v:p2:tener;té=have:v:p3:tener+M2:tener;t'+
+        'enim=have:v:p4:tener;teniu=have:v:p5:tener+M5:tener;tenen=have:v:p6:t'+
+        'ener;',
+    'tingut=have:v:P:tener;tenia=have:v:m1:tener+m3:tener;tenies=have:v:m2:ten'+
+        'er;teníem=have:v:m4:tener;teníeu=have:v:m5:tener;tenien=have:v:m6:t'+
+        'ener;tindré=have:v:f1:tener;tindràs=have:v:f2:tener;tindrà=have:v:'+
+        'f3:tener;',
+    'tindrem=have:v:f4:tener;tindreu=have:v:f5:tener;tindran=have:v:f6:tener;t'+
+        'indria=have:v:c1:tener+c3:tener;tindries=have:v:c2:tener;tindríem=ha'+
+        've:v:c4:tener;tindríeu=have:v:c5:tener;tindrien=have:v:c6:tener;anar'+
+        '=go:v:I:ir;',
+    'vaig=go:v:p1:ir;vas=go:v:p2:ir;va=go:v:p3:ir;anem=go:v:p4:ir;aneu=go:v:p5'+
+        ':ir+M5:ir;van=go:v:p6:ir;ves=go:v:M2:ir;anat=go:v:P:ir;anava=go:v:m1:'+
+        'ir+m3:ir;anaves=go:v:m2:ir;anàvem=go:v:m4:ir;anàveu=go:v:m5:ir;anav'+
+        'en=go:v:m6:ir;',
+    'aniré=go:v:f1:ir;aniràs=go:v:f2:ir;anirà=go:v:f3:ir;anirem=go:v:f4:ir;'+
+        'anireu=go:v:f5:ir;aniran=go:v:f6:ir;aniria=go:v:c1:ir+c3:ir;aniries=g'+
+        'o:v:c2:ir;aniríem=go:v:c4:ir;aniríeu=go:v:c5:ir;anirien=go:v:c6:ir;'+
+        'fer=do:v:I:hacer;',
+    'faig=do:v:p1:hacer;fas=do:v:p2:hacer;fa=do:v:p3:hacer+M2:hacer;fem=do:v:p'+
+        '4:hacer;feu=do:v:p5:hacer+M5:hacer;fan=do:v:p6:hacer;fet=do:v:P:hacer'+
+        ';feia=do:v:m1:hacer+m3:hacer;feies=do:v:m2:hacer;feíem=do:v:m4:hacer'+
+        ';',
+    'feíeu=do:v:m5:hacer;feien=do:v:m6:hacer;faré=do:v:f1:hacer;faràs=do:v:'+
+        'f2:hacer;farà=do:v:f3:hacer;farem=do:v:f4:hacer;fareu=do:v:f5:hacer;'+
+        'faran=do:v:f6:hacer;faria=do:v:c1:hacer+c3:hacer;faries=do:v:c2:hacer'+
+        ';',
+    'faríem=do:v:c4:hacer;faríeu=do:v:c5:hacer;farien=do:v:c6:hacer;dir=say:'+
+        'v:I:decir;dic=say:v:p1:decir;dius=say:v:p2:decir;diu=say:v:p3:decir+M'+
+        '2:decir;diem=say:v:p4:decir;dieu=say:v:p5:decir+M5:decir;diuen=say:v:'+
+        'p6:decir;',
+    'dit=say:v:P:decir;deia=say:v:m1:decir+m3:decir;deies=say:v:m2:decir;deíe'+
+        'm=say:v:m4:decir;deíeu=say:v:m5:decir;deien=say:v:m6:decir;diré=say'+
+        ':v:f1:decir;diràs=say:v:f2:decir;dirà=say:v:f3:decir;direm=say:v:f4'+
+        ':decir;',
+    'direu=say:v:f5:decir;diran=say:v:f6:decir;diria=say:v:c1:decir+c3:decir;d'+
+        'iries=say:v:c2:decir;diríem=say:v:c4:decir;diríeu=say:v:c5:decir;di'+
+        'rien=say:v:c6:decir;veure=see:v:I:ver;veig=see:v:p1:ver;veus=see:v:p2'+
+        ':ver;',
+    'veu=see:v:p3:ver+M2:ver;veiem=see:v:p4:ver;veieu=see:v:p5:ver+M5:ver;veue'+
+        'n=see:v:p6:ver;vist=see:v:P:ver;veiia=see:v:m1:ver+m3:ver;veiies=see:'+
+        'v:m2:ver;veiíem=see:v:m4:ver;veiíeu=see:v:m5:ver;veiien=see:v:m6:ve'+
+        'r;',
+    'veuré=see:v:f1:ver;veuràs=see:v:f2:ver;veurà=see:v:f3:ver;veurem=see:v'+
+        ':f4:ver;veureu=see:v:f5:ver;veuran=see:v:f6:ver;veuria=see:v:c1:ver+c'+
+        '3:ver;veuries=see:v:c2:ver;veuríem=see:v:c4:ver;veuríeu=see:v:c5:ve'+
+        'r;',
+    'veurien=see:v:c6:ver;venir=come:v:I:venir;vinc=come:v:p1:venir;véns=come'+
+        ':v:p2:venir;ve=come:v:p3:venir+M2:venir;venim=come:v:p4:venir;veniu=c'+
+        'ome:v:p5:venir+M5:venir;vénen=come:v:p6:venir;vingut=come:v:P:venir;',
+    'venia=come:v:m1:venir+m3:venir+m1+m3;venies=come:v:m2:venir+m2;veníem=co'+
+        'me:v:m4:venir+m4;veníeu=come:v:m5:venir+m5;venien=come:v:m6:venir+m6'+
+        ';vindré=come:v:f1:venir;vindràs=come:v:f2:venir;vindrà=come:v:f3:v'+
+        'enir;',
+    'vindrem=come:v:f4:venir;vindreu=come:v:f5:venir;vindran=come:v:f6:venir;v'+
+        'indria=come:v:c1:venir+c3:venir;vindries=come:v:c2:venir;vindríem=co'+
+        'me:v:c4:venir;vindríeu=come:v:c5:venir;vindrien=come:v:c6:venir;pode'+
+        'r=can:v:I:poder;',
+    'puc=can:v:p1:poder;pots=can:v:p2:poder;pot=can:v:p3:poder+M2:poder;podem='+
+        'can:v:p4:poder;podeu=can:v:p5:poder+M5:poder;poden=can:v:p6:poder;pog'+
+        'ut=can:v:P:poder;podia=can:v:m1:poder+m3:poder;podies=can:v:m2:poder;',
+    'podíem=can:v:m4:poder;podíeu=can:v:m5:poder;podien=can:v:m6:poder;podr'+
+        'é=can:v:f1:poder;podràs=can:v:f2:poder;podrà=can:v:f3:poder;podrem'+
+        '=can:v:f4:poder;podreu=can:v:f5:poder;podran=can:v:f6:poder;',
+    'podria=can:v:c1:poder+c3:poder;podries=can:v:c2:poder;podríem=can:v:c4:p'+
+        'oder;podríeu=can:v:c5:poder;podrien=can:v:c6:poder;voler=want:v:I:qu'+
+        'erer;vull=want:v:p1:querer;vols=want:v:p2:querer;vol=want:v:p3:querer'+
+        '+M2:querer;',
+    'volgut=want:v:P:querer;volia=want:v:m1:querer+m3:querer;volies=want:v:m2:'+
+        'querer;volíem=want:v:m4:querer;volíeu=want:v:m5:querer;volien=want:'+
+        'v:m6:querer;voldré=want:v:f1:querer;voldràs=want:v:f2:querer;voldr'+
+        'à=want:v:f3:querer;',
+    'voldrem=want:v:f4:querer;voldreu=want:v:f5:querer;voldran=want:v:f6:quere'+
+        'r;voldria=want:v:c1:querer+c3:querer;voldries=want:v:c2:querer;voldr'+
+        'íem=want:v:c4:querer;voldríeu=want:v:c5:querer;voldrien=want:v:c6:q'+
+        'uerer;',
+    'saber=know:v:I:saber;sé=know:v:p1:saber;saps=know:v:p2:saber;sap=know:v:'+
+        'p3:saber+M2:saber;sabem=know:v:p4:saber;sabeu=know:v:p5:saber+M5:sabe'+
+        'r;saben=know:v:p6:saber;sabut=know:v:P:saber;sabia=know:v:m1:saber+m3'+
+        ':saber;',
+    'sabies=know:v:m2:saber;sabíem=know:v:m4:saber;sabíeu=know:v:m5:saber;sa'+
+        'bien=know:v:m6:saber;sabré=know:v:f1:saber;sabràs=know:v:f2:saber;s'+
+        'abrà=know:v:f3:saber;sabrem=know:v:f4:saber;sabreu=know:v:f5:saber;',
+    'sabran=know:v:f6:saber;sabria=know:v:c1:saber+c3:saber;sabries=know:v:c2:'+
+        'saber;sabríem=know:v:c4:saber;sabríeu=know:v:c5:saber;sabrien=know:'+
+        'v:c6:saber;deure=must:v:I:deber;dec=must:v:p1:deber;deus=must:v:p2:de'+
+        'ber;',
+    'deu=must:v:p3:deber+M2:deber;devem=must:v:p4:deber;deveu=must:v:p5:deber+'+
+        'M5:deber;deuen=must:v:p6:deber;degut=must:v:P:deber;devia=must:v:m1:d'+
+        'eber+m3:deber;devies=must:v:m2:deber;devíem=must:v:m4:deber;devíeu='+
+        'must:v:m5:deber;',
+    'devien=must:v:m6:deber;deuré=must:v:f1:deber;deuràs=must:v:f2:deber;deu'+
+        'rà=must:v:f3:deber;deurem=must:v:f4:deber;deureu=must:v:f5:deber;deu'+
+        'ran=must:v:f6:deber;deuria=must:v:c1:deber+c3:deber;deuries=must:v:c2'+
+        ':deber;',
+    'deuríem=must:v:c4:deber;deuríeu=must:v:c5:deber;deurien=must:v:c6:deber'+
+        ';prendre=take:v:I;prenc=take:v:p1;prens=take:v:p2;pren=take:v:p3+M2;p'+
+        'renem=take:v:p4;preneu=take:v:p5+M5;prenen=take:v:p6;pres=take:v:P;pr'+
+        'enia=take:v:m1+m3;',
+    'prenies=take:v:m2;preníem=take:v:m4;preníeu=take:v:m5;prenien=take:v:m6'+
+        ';prendré=take:v:f1;prendràs=take:v:f2;prendrà=take:v:f3;prendrem=t'+
+        'ake:v:f4;prendreu=take:v:f5;prendran=take:v:f6;prendria=take:v:c1+c3;',
+    'prendries=take:v:c2;prendríem=take:v:c4;prendríeu=take:v:c5;prendrien=t'+
+        'ake:v:c6;beure=drink:v:I;bec=drink:v:p1;beus=drink:v:p2;beu=drink:v:p'+
+        '3+M2;bevem=drink:v:p4;beveu=drink:v:p5+M5;beuen=drink:v:p6;begut=drin'+
+        'k:v:P;',
+    'bevia=drink:v:m1+m3;bevies=drink:v:m2;bevíem=drink:v:m4;bevíeu=drink:v:'+
+        'm5;bevien=drink:v:m6;beuré=drink:v:f1;beuràs=drink:v:f2;beurà=drin'+
+        'k:v:f3;beurem=drink:v:f4;beureu=drink:v:f5;beuran=drink:v:f6;beuria=d'+
+        'rink:v:c1+c3;',
+    'beuries=drink:v:c2;beuríem=drink:v:c4;beuríeu=drink:v:c5;beurien=drink:'+
+        'v:c6;escriure=write:v:I;escric=write:v:p1;escrius=write:v:p2;escriu=w'+
+        'rite:v:p3+M2;escrivim=write:v:p4;escriviu=write:v:p5+M5;escriuen=writ'+
+        'e:v:p6;',
+    'escrit=write:v:P;escrivia=write:v:m1+m3;escrivies=write:v:m2;escrivíem=w'+
+        'rite:v:m4;escrivíeu=write:v:m5;escrivien=write:v:m6;escriuré=write:'+
+        'v:f1;escriuràs=write:v:f2;escriurà=write:v:f3;escriurem=write:v:f4;',
+    'escriureu=write:v:f5;escriuran=write:v:f6;escriuria=write:v:c1+c3;escriur'+
+        'ies=write:v:c2;escriuríem=write:v:c4;escriuríeu=write:v:c5;escriuri'+
+        'en=write:v:c6;viure=live:v:I;visc=live:v:p1;vius=live:v:p2;viu=live:v'+
+        ':p3+M2;',
+    'vivim=live:v:p4;viviu=live:v:p5+M5;viuen=live:v:p6;viscut=live:v:P;vivia='+
+        'live:v:m1+m3;vivies=live:v:m2;vivíem=live:v:m4;vivíeu=live:v:m5;viv'+
+        'ien=live:v:m6;viuré=live:v:f1;viuràs=live:v:f2;viurà=live:v:f3;viu'+
+        'rem=live:v:f4;',
+    'viureu=live:v:f5;viuran=live:v:f6;viuria=live:v:c1+c3;viuries=live:v:c2;v'+
+        'iuríem=live:v:c4;viuríeu=live:v:c5;viurien=live:v:c6;entendre=under'+
+        'stand:v:I;entenc=understand:v:p1;entens=understand:v:p2;entén=unders'+
+        'tand:v:p3+M2;',
+    'entenem=understand:v:p4;enteneu=understand:v:p5+M5;entenen=understand:v:p'+
+        '6;entès=understand:v:P;entenia=understand:v:m1+m3;entenies=understan'+
+        'd:v:m2;enteníem=understand:v:m4;enteníeu=understand:v:m5;entenien=u'+
+        'nderstand:v:m6;',
+    'entendré=understand:v:f1;entendràs=understand:v:f2;entendrà=understand'+
+        ':v:f3;entendrem=understand:v:f4;entendreu=understand:v:f5;entendran=u'+
+        'nderstand:v:f6;entendria=understand:v:c1+c3;entendries=understand:v:c'+
+        '2;',
+    'entendríem=understand:v:c4;entendríeu=understand:v:c5;entendrien=unders'+
+        'tand:v:c6;vendre=sell:v:I;venc=sell:v:p1;vens=sell:v:p2;ven=sell:v:p3'+
+        '+M2;venem=sell:v:p4;veneu=sell:v:p5+M5;venen=sell:v:p6;venut=sell:v:P'+
+        ';vendré=sell:v:f1;',
+    'vendràs=sell:v:f2;vendrà=sell:v:f3;vendrem=sell:v:f4;vendreu=sell:v:f5;'+
+        'vendran=sell:v:f6;vendria=sell:v:c1+c3;vendries=sell:v:c2;vendríem=s'+
+        'ell:v:c4;vendríeu=sell:v:c5;vendrien=sell:v:c6;obrir=open:v:I;obro=o'+
+        'pen:v:p1;',
+    'obres=open:v:p2;obre=open:v:p3+M2;obrim=open:v:p4;obriu=open:v:p5+M5;obre'+
+        'n=open:v:p6;obert=open:v:P;obria=open:v:m1+m3;obries=open:v:m2;obríe'+
+        'm=open:v:m4;obríeu=open:v:m5;obrien=open:v:m6;obriré=open:v:f1;obri'+
+        'ràs=open:v:f2;',
+    'obrirà=open:v:f3;obrirem=open:v:f4;obrireu=open:v:f5;obriran=open:v:f6;o'+
+        'briria=open:v:c1+c3;obriries=open:v:c2;obriríem=open:v:c4;obriríeu='+
+        'open:v:c5;obririen=open:v:c6;respondre=answer:v:I;responc=answer:v:p1'+
+        ';',
+    'respons=answer:v:p2;respon=answer:v:p3+M2;responem=answer:v:p4;responeu=a'+
+        'nswer:v:p5+M5;responen=answer:v:p6;respost=answer:v:P;responia=answer'+
+        ':v:m1+m3;responies=answer:v:m2;responíem=answer:v:m4;responíeu=answ'+
+        'er:v:m5;',
+    'responien=answer:v:m6;respondré=answer:v:f1;respondràs=answer:v:f2;resp'+
+        'ondrà=answer:v:f3;respondrem=answer:v:f4;respondreu=answer:v:f5;resp'+
+        'ondran=answer:v:f6;respondria=answer:v:c1+c3;respondries=answer:v:c2;',
+    'respondríem=answer:v:c4;respondríeu=answer:v:c5;respondrien=answer:v:c6'+
+        ';córrer=run:v:I;corro=run:v:p1;corres=run:v:p2;corre=run:v:p3+M2;cor'+
+        'rem=run:v:p4;correu=run:v:p5+M5;corren=run:v:p6;corregut=run:v:P;corr'+
+        'ia=run:v:m1+m3;',
+    'corries=run:v:m2;corríem=run:v:m4;corríeu=run:v:m5;corrien=run:v:m6;cor'+
+        'reré=run:v:f1;correràs=run:v:f2;correrà=run:v:f3;correrem=run:v:f4'+
+        ';correreu=run:v:f5;correran=run:v:f6;correria=run:v:c1+c3;correries=r'+
+        'un:v:c2;',
+    'correríem=run:v:c4;correríeu=run:v:c5;correrien=run:v:c6;creure=believe'+
+        ':v:I;crec=believe:v:p1;creus=believe:v:p2;creu=believe:v:p3+M2;creiem'+
+        '=believe:v:p4;creieu=believe:v:p5+M5;creuen=believe:v:p6;cregut=belie'+
+        've:v:P;',
+    'creiia=believe:v:m1+m3;creiies=believe:v:m2;creiíem=believe:v:m4;creiíe'+
+        'u=believe:v:m5;creiien=believe:v:m6;creuré=believe:v:f1;creuràs=bel'+
+        'ieve:v:f2;creurà=believe:v:f3;creurem=believe:v:f4;creureu=believe:v'+
+        ':f5;',
+    'creuran=believe:v:f6;creuria=believe:v:c1+c3;creuries=believe:v:c2;creur'+
+        'íem=believe:v:c4;creuríeu=believe:v:c5;creurien=believe:v:c6;conèi'+
+        'xer=know:v:I;conec=know:v:p1;coneixes=know:v:p2;coneix=know:v:p3+M2;',
+    'coneixem=know:v:p4+f4;coneixeu=know:v:p5+M5+f5;coneixen=know:v:p6;conegut'+
+        '=know:v:P;coneixia=know:v:m1+m3+c1+c3;coneixies=know:v:m2+c2;coneixí'+
+        'em=know:v:m4+c4;coneixíeu=know:v:m5+c5;coneixien=know:v:m6+c6;coneix'+
+        'é=know:v:f1;',
+    'coneixàs=know:v:f2;coneixà=know:v:f3;coneixan=know:v:f6;morir=die:v:I;m'+
+        'oro=die:v:p1;mors=die:v:p2;mor=die:v:p3+M2;morim=die:v:p4;moriu=die:v'+
+        ':p5+M5;moren=die:v:p6;mort=die:v:P;moria=die:v:m1+m3;mories=die:v:m2;'+
+        'moríem=die:v:m4;',
+    'moríeu=die:v:m5;morien=die:v:m6;moriré=die:v:f1;moriràs=die:v:f2;morir'+
+        'à=die:v:f3;morirem=die:v:f4;morireu=die:v:f5;moriran=die:v:f6;moriri'+
+        'a=die:v:c1+c3;moriries=die:v:c2;moriríem=die:v:c4;moriríeu=die:v:c5'+
+        ';moririen=die:v:c6;',
+    'perdre=lose:v:I;perdo=lose:v:p1;perds=lose:v:p2;perd=lose:v:p3+M2;perdem='+
+        'lose:v:p4;perdeu=lose:v:p5+M5;perden=lose:v:p6;perdut=lose:v:P;perdia'+
+        '=lose:v:m1+m3;perdies=lose:v:m2;perdíem=lose:v:m4;perdíeu=lose:v:m5'+
+        ';perdien=lose:v:m6;',
+    'perdré=lose:v:f1;perdràs=lose:v:f2;perdrà=lose:v:f3;perdrem=lose:v:f4;'+
+        'perdreu=lose:v:f5;perdran=lose:v:f6;perdria=lose:v:c1+c3;perdries=los'+
+        'e:v:c2;perdríem=lose:v:c4;perdríeu=lose:v:c5;perdrien=lose:v:c6;reb'+
+        're=receive:v:I;',
+    'rebo=receive:v:p1;reps=receive:v:p2;rep=receive:v:p3+M2;rebem=receive:v:p'+
+        '4;rebeu=receive:v:p5+M5;reben=receive:v:p6;rebut=receive:v:P;rebia=re'+
+        'ceive:v:m1+m3;rebies=receive:v:m2;rebíem=receive:v:m4;rebíeu=receiv'+
+        'e:v:m5;',
+    'rebien=receive:v:m6;rebré=receive:v:f1;rebràs=receive:v:f2;rebrà=recei'+
+        've:v:f3;rebrem=receive:v:f4;rebreu=receive:v:f5;rebran=receive:v:f6;r'+
+        'ebria=receive:v:c1+c3;rebries=receive:v:c2;rebríem=receive:v:c4;rebr'+
+        'íeu=receive:v:c5;',
+    'rebrien=receive:v:c6;riure=laugh:v:I;ric=laugh:v:p1;rius=laugh:v:p2;riu=l'+
+        'augh:v:p3+M2;riem=laugh:v:p4;rieu=laugh:v:p5+M5;riuen=laugh:v:p6;rigu'+
+        't=laugh:v:P;riia=laugh:v:m1+m3;riies=laugh:v:m2;riíem=laugh:v:m4;ri'+
+        'íeu=laugh:v:m5;',
+    'riien=laugh:v:m6;riuré=laugh:v:f1;riuràs=laugh:v:f2;riurà=laugh:v:f3;r'+
+        'iurem=laugh:v:f4;riureu=laugh:v:f5;riuran=laugh:v:f6;riuria=laugh:v:c'+
+        '1+c3;riuries=laugh:v:c2;riuríem=laugh:v:c4;riuríeu=laugh:v:c5;riuri'+
+        'en=laugh:v:c6;',
+    'conduir=drive:v:I;condueixo=drive:v:p1;condueixes=drive:v:p2;condueix=dri'+
+        've:v:p3+M2;conduïm=drive:v:p4;conduïu=drive:v:p5+M5;condueixen=driv'+
+        'e:v:p6;conduït=drive:v:P;conduïia=drive:v:m1+m3;conduïies=drive:v:'+
+        'm2;',
+    'conduïíem=drive:v:m4;conduïíeu=drive:v:m5;conduïien=drive:v:m6;condu'+
+        'iré=drive:v:f1;conduiràs=drive:v:f2;conduirà=drive:v:f3;conduirem='+
+        'drive:v:f4;conduireu=drive:v:f5;conduiran=drive:v:f6;conduiria=drive:'+
+        'v:c1+c3;',
+    'conduiries=drive:v:c2;conduiríem=drive:v:c4;conduiríeu=drive:v:c5;condu'+
+        'irien=drive:v:c6;aprendre=learn:v:I;aprenc=learn:v:p1;aprens=learn:v:'+
+        'p2;aprèn=learn:v:p3+M2;aprenem=learn:v:p4;apreneu=learn:v:p5+M5;apre'+
+        'nen=learn:v:p6;',
+    'après=learn:v:P;aprenia=learn:v:m1+m3;aprenies=learn:v:m2;apreníem=lear'+
+        'n:v:m4;apreníeu=learn:v:m5;aprenien=learn:v:m6;aprendré=learn:v:f1;'+
+        'aprendràs=learn:v:f2;aprendrà=learn:v:f3;aprendrem=learn:v:f4;apren'+
+        'dreu=learn:v:f5;',
+    'aprendran=learn:v:f6;aprendria=learn:v:c1+c3;aprendries=learn:v:c2;aprend'+
+        'ríem=learn:v:c4;aprendríeu=learn:v:c5;aprendrien=learn:v:c6;manteni'+
+        'r=keep:v:I;mantinc=keep:v:p1;mantens=keep:v:p2;manté=keep:v:p3+M2;ma'+
+        'ntenim=keep:v:p4;',
+    'manteniu=keep:v:p5+M5;mantenen=keep:v:p6;mantingut=keep:v:P;mantenia=keep'+
+        ':v:m1+m3;mantenies=keep:v:m2;manteníem=keep:v:m4;manteníeu=keep:v:m'+
+        '5;mantenien=keep:v:m6;mantindré=keep:v:f1;mantindràs=keep:v:f2;mant'+
+        'indrà=keep:v:f3;',
+    'mantindrem=keep:v:f4;mantindreu=keep:v:f5;mantindran=keep:v:f6;mantindria'+
+        '=keep:v:c1+c3;mantindries=keep:v:c2;mantindríem=keep:v:c4;mantindrí'+
+        'eu=keep:v:c5;mantindrien=keep:v:c6;sentir=feel:v:I;sento=feel:v:p1;se'+
+        'nts=feel:v:p2;',
+    'sent=feel:v:p3+M2;sentim=feel:v:p4;sentiu=feel:v:p5+M5;senten=feel:v:p6;s'+
+        'entit=feel:v:P;sentia=feel:v:m1+m3;senties=feel:v:m2;sentíem=feel:v:'+
+        'm4;sentíeu=feel:v:m5;sentien=feel:v:m6;sentiré=feel:v:f1;sentiràs='+
+        'feel:v:f2;',
+    'sentirà=feel:v:f3;sentirem=feel:v:f4;sentireu=feel:v:f5;sentiran=feel:v:'+
+        'f6;sentiria=feel:v:c1+c3;sentiries=feel:v:c2;sentiríem=feel:v:c4;sen'+
+        'tiríeu=feel:v:c5;sentirien=feel:v:c6;ploure=rain:v:I:llover;',
+    'plou=rain:v:p3:llover+M2:llover;ploun=rain:v:p6:llover;plogut=rain:v:P:ll'+
+        'over;ploiia=rain:v:m1:llover+m3:llover;ploiies=rain:v:m2:llover;ploi'+
+        'íem=rain:v:m4:llover;ploiíeu=rain:v:m5:llover;ploiien=rain:v:m6:llo'+
+        'ver;',
+    'plouré=rain:v:f1:llover;plouràs=rain:v:f2:llover;plourà=rain:v:f3:llov'+
+        'er;plourem=rain:v:f4:llover;ploureu=rain:v:f5:llover;plouran=rain:v:f'+
+        '6:llover;plouria=rain:v:c1:llover+c3:llover;plouries=rain:v:c2:llover'+
+        ';',
+    'plouríem=rain:v:c4:llover;plouríeu=rain:v:c5:llover;plourien=rain:v:c6:'+
+        'llover;dur=bring:v:I;duc=bring:v:p1;dus=bring:v:p2;du=bring:v:p3+M2;d'+
+        'uem=bring:v:p4;dueu=bring:v:p5+M5;duen=bring:v:p6;dut=bring:v:P;duia='+
+        'bring:v:m1+m3;',
+    'duies=bring:v:m2;duíem=bring:v:m4;duíeu=bring:v:m5;duien=bring:v:m6;dur'+
+        'é=bring:v:f1;duràs=bring:v:f2;durà=bring:v:f3;durem=bring:v:f4;dur'+
+        'eu=bring:v:f5;duran=bring:v:f6;duria=bring:v:c1+c3;duries=bring:v:c2;'+
+        'duríem=bring:v:c4;',
+    'duríeu=bring:v:c5;durien=bring:v:c6;seure=sit:v:I;sec=sit:v:p1;seus=sit:'+
+        'v:p2;seu=sit:v:p3+M2;seiem=sit:v:p4;seieu=sit:v:p5+M5;seuen=sit:v:p6;'+
+        'segut=sit:v:P;seiia=sit:v:m1+m3;seiies=sit:v:m2;seiíem=sit:v:m4;sei'+
+        'íeu=sit:v:m5;',
+    'seiien=sit:v:m6;seuré=sit:v:f1;seuràs=sit:v:f2;seurà=sit:v:f3;seurem=s'+
+        'it:v:f4;seureu=sit:v:f5;seuran=sit:v:f6;seuria=sit:v:c1+c3;seuries=si'+
+        't:v:c2;seuríem=sit:v:c4;seuríeu=sit:v:c5;seurien=sit:v:c6;caure=fal'+
+        'l:v:I;',
+    'caic=fall:v:p1;caus=fall:v:p2;cau=fall:v:p3+M2;caiem=fall:v:p4;caieu=fall'+
+        ':v:p5+M5;cauen=fall:v:p6;caigut=fall:v:P;caiia=fall:v:m1+m3;caiies=fa'+
+        'll:v:m2;caiíem=fall:v:m4;caiíeu=fall:v:m5;caiien=fall:v:m6;cauré=f'+
+        'all:v:f1;',
+    'cauràs=fall:v:f2;caurà=fall:v:f3;caurem=fall:v:f4;caureu=fall:v:f5;caur'+
+        'an=fall:v:f6;cauria=fall:v:c1+c3;cauries=fall:v:c2;cauríem=fall:v:c4'+
+        ';cauríeu=fall:v:c5;caurien=fall:v:c6;sortir=go_out:v:I;surto=go_out:'+
+        'v:p1;',
+    'surts=go_out:v:p2;surt=go_out:v:p3+M2;sortim=go_out:v:p4;sortiu=go_out:v:'+
+        'p5+M5;surten=go_out:v:p6;sortit=go_out:v:P;sortia=go_out:v:m1+m3;sort'+
+        'ies=go_out:v:m2;sortíem=go_out:v:m4;sortíeu=go_out:v:m5;sortien=go_'+
+        'out:v:m6;',
+    'sortiré=go_out:v:f1;sortiràs=go_out:v:f2;sortirà=go_out:v:f3;sortirem='+
+        'go_out:v:f4;sortireu=go_out:v:f5;sortiran=go_out:v:f6;sortiria=go_out'+
+        ':v:c1+c3;sortiries=go_out:v:c2;sortiríem=go_out:v:c4;sortiríeu=go_o'+
+        'ut:v:c5;',
+    'sortirien=go_out:v:c6;gent=people:n:p;he_de=must:v:p1:deber;has_de=must:v'+
+        ':p2:deber;ha_de=must:v:p3:deber;hem_de=must:v:p4:deber;heu_de=must:v:'+
+        'p5:deber;han_de=must:v:p6:deber;hi_ha=there_is:v:p3:haber;hi_havia=th'+
+        'ere_is:v:m3:haber;',
+    'hi_haurà=there_is:v:f3:haber;hi_ha_hagut=there_is:v:i3:haber;em_dic=call'+
+        ':v:p1:llamar;et_dius=call:v:p2:llamar;es_diu=call:v:p3:llamar;ens_die'+
+        'm=call:v:p4:llamar;us_dieu=call:v:p5:llamar;es_diuen=call:v:p6:llamar'+
+        ';',
+    'm_agrada=like:v:p1;et_agrada=like:v:p2;li_agrada=like:v:p3;ens_agrada=lik'+
+        'e:v:p4;us_agrada=like:v:p5;els_agrada=like:v:p6;m_agraden=like:v:p1;e'+
+        't_agraden=like:v:p2;li_agraden=like:v:p3;ens_agraden=like:v:p4;us_agr'+
+        'aden=like:v:p5;',
+    'els_agraden=like:v:p6;em_agrada=like:v:p1;em_agraden=like:v:p1;t_agrada=l'+
+        'ike:v:p2;t_agraden=like:v:p2;jo=I:s:1;tu=you:s:2;ell=he:s:3;ella=she:'+
+        's:3;nosaltres=we:s:4;vosaltres=you:s:5;ells=they:s:6;elles=they:s:6;v'+
+        'ostè=you:s:2;',
+    'vostès=you:s:5;em=me:o;et=you:o;ens=us:o;us=you:o;li=him:o;ho=it:o;mi=me'+
+        ':o;m=me:o;t=you:o;n=them:o;hi=there:o;meu=my:x;meva=my:x;meus=my:x;me'+
+        'ves=my:x;teu=your:x;teva=your:x;teus=your:x;teves=your:x;seu=his:x;se'+
+        'va=his:x;',
+    'seus=his:x;seves=his:x;nostre=our:x;nostra=our:x;nostres=our:x;vostre=you'+
+        'r:x;vostra=your:x;vostres=your:x;aquest=this:d;aquesta=this:d;aquests'+
+        '=these:d;aquestes=these:d;aquell=that:d;aquella=that:d;aquells=those:'+
+        'd;aquelles=those:d;',
+    'això=this:d;allò=that:d;qui=who:w;què=what:w;on=where:w;quan=when:w;co'+
+        'm=how:w;per_què=why:w;quin=which:w;quina=which:w;quins=which:w;quine'+
+        's=which:w;quant=how_much:w;quanta=how_much:w;quants=how_many:w;quante'+
+        's=how_many:w;',
+    'd_on=where_from:w;a=to:e;de=of:e;en=in:e;amb=with:e;per=for:e;sense=witho'+
+        'ut:e;sota=under:e;sobre=on:e;entre=between:e;cap_a=toward:e;fins_a=un'+
+        'til:e;després_de=after:e;abans_de=before:e;davant_de=in_front_of:e;d'+
+        'arrere_de=behind:e;',
+    'a_el_costat_de=next_to:e;prop_de=near:e;a_prop_de=near:e;segons=according'+
+        '_to:e;durant=during:e;des_de=from:e;contra=against:e;dins_de=inside:e'+
+        ';fora_de=outside:e;i=and:c;però=but:c;o=or:c;que=that:c;perquè=beca'+
+        'use:c;si=if:c;',
+    'encara_que=although:c;mentre=while:c;doncs=so:c;ni=nor:c;ara=now:r;avui=t'+
+        'oday:r;demà=tomorrow:r;ahir=yesterday:r;sempre=always:r;sovint=often'+
+        ':r;de_vegades=sometimes:r;ja=already:r;encara=still:r;també=also:r;n'+
+        'omés=only:r;',
+    'potser=maybe:r;aquí=here:r;allà=there:r;junts=together:r;molt=very:r;ga'+
+        'irebé=almost:r;aviat=soon:r;tard=late:r;lluny=far:r;bé=well:r;malam'+
+        'ent=badly:r;lentament=slowly:r;mai=never:r;cada_dia=every_day:r;',
+    'aquest_matí=this_morning:r;aquesta_nit=tonight:r;demà_al_matí=tomorrow'+
+        '_morning:r;ahir_a_la_nit=last_night:r;ben=very:r;més=more:r;menys=le'+
+        'ss:r;prou=enough:r;massa=too:r;després=then:r;llavors=then:r;primer='+
+        'first:r;',
+    'hola=Hello:j;perdoni=Excuse_me:j;quants_anys_tens=How_old_are_you:j;quant'+
+        's_anys_teniu=How_old_are_you:j;tenia_fam=I_was_hungry:j;tenia_set=I_w'+
+        'as_thirsty:j;tenia_fred=I_was_cold:j;tenia_calor=I_was_hot:j;tenia_so'+
+        'n=I_was_sleepy:j;',
+    'adéu=Goodbye:j;bon_dia=Good_morning:j;bona_tarda=Good_afternoon:j;bona_n'+
+        'it=Good_night:j;gràcies=Thank_you:j;moltes_gràcies=Thank_you_very_m'+
+        'uch:j;si_us_plau=please:j;perdó=Sorry:j;disculpa=Sorry:j;disculpi=Ex'+
+        'cuse_me:j;',
+    'benvingut=Welcome:j;benvinguda=Welcome:j;felicitats=Congratulations:j;sal'+
+        'ut=Cheers:j;de_res=You_are_welcome:j;com_estàs=How_are_you:j;com_va='+
+        'How_are_you:j;fins_demà=See_you_tomorrow:j;fins_aviat=See_you_soon:j'+
+        ';sí=Yes:j;',
+    'bon_viatge=Have_a_good_trip:j;tinc_fam=I_am_hungry:j;tinc_set=I_am_thirst'+
+        'y:j;tinc_son=I_am_sleepy:j;tinc_fred=I_am_cold:j;tinc_calor=I_am_hot:'+
+        'j;tinc_por=I_am_afraid:j;fa_fred=It_is_cold:j;fa_calor=It_is_hot:j;fa'+
+        '_sol=It_is_sunny:j;',
+    'fa_vent=It_is_windy:j;fa_bon_temps=The_weather_is_nice:j;fa_mal_temps=The'+
+        '_weather_is_bad:j;no=not:g;res=nothing:q;ningú=nobody:q;tots=all:u;t'+
+        'otes=all:u;cada=each:u;alguns=some:u;algunes=some:u;uns=some:u;unes=s'+
+        'ome:u;molts=many:u;',
+    'una_mica_de=a_little:r;molt_de=much:u;molta_de=much:u;poc_de=little:u;poc'+
+        'a_de=little:u;moltes=many:u;pocs=few:u;poques=few:u;tant=so_much:u;al'+
+        'guna=some:u;algun=some:u;molta=much:u;poca=little:u;el=the:t;la=the:t'+
+        ';els=the:t;',
+    'les=the:t;un=a:t;una=a:t;dos=two:u:1;dues=two:u:1;tres=three:u:1;quatre=f'+
+        'our:u:1;cinc=five:u:1;sis=six:u:1;set=seven:u:1;vuit=eight:u:1;nou=ni'+
+        'ne:u:1;deu=ten:u:1;onze=eleven:u:1;dotze=twelve:u:1;vint=twenty:u:1;t'+
+        'renta=thirty:u:1;',
+    'quaranta=forty:u:1;cinquanta=fifty:u:1;seixanta=sixty:u:1;setanta=seventy'+
+        ':u:1;vuitanta=eighty:u:1;noranta=ninety:u:1;cent=one_hundred:u:1;mil='+
+        'one_thousand:u:1;zero=zero:u:1;Catalunya=Catalonia:z;Barcelona=Barcel'+
+        'ona:z;',
+    'Girona=Girona:z;Lleida=Lleida:z;Tarragona=Tarragona:z;València=Valencia:'+
+        'z;Mallorca=Majorca:z;Espanya=Spain:z;França=France:z;Alemanya=German'+
+        'y:z;Itàlia=Italy:z;Anglaterra=England:z;Portugal=Portugal:z;Andorra='+
+        'Andorra:z;',
+    'Europa=Europe:z;Amèrica=America:z;Madrid=Madrid:z;París=Paris:z;Londres'+
+        '=London:z;Berlín=Berlin:z;Roma=Rome:z;Brussel·les=Brussels:z;Joan=J'+
+        'oan:z;Maria=Maria:z;Anna=Anna:z;Pere=Pere:z;Jordi=Jordi:z;Marta=Marta'+
+        ':z;Carles=Carles:z;',
+    'Laura=Laura:z;Núria=Nuria:z;Josep=Josep:z;David=David:z;Sílvia=Silvia:z'+
+        ';Albert=Albert:z;Montserrat=Montserrat:z;català=Catalan:z;castellà='+
+        'Spanish:z;espanyol=Spanish:z;francès=French:z;anglès=English:z;alem'+
+        'any=German:z;',
+    'italià=Italian:z;portuguès=Portuguese:z;rus=Russian:z;xinès=Chinese:z;'+
+        'japonès=Japanese:z;àrab=Arabic:z;dilluns=Monday:z;dimarts=Tuesday:z'+
+        ';dimecres=Wednesday:z;dijous=Thursday:z;divendres=Friday:z;dissabte=S'+
+        'aturday:z;',
+    'diumenge=Sunday:z;gener=January:z;febrer=February:z;març=March:z;abril=A'+
+        'pril:z;maig=May:z;juny=June:z;juliol=July:z;agost=August:z;setembre=S'+
+        'eptember:z;octubre=October:z;novembre=November:z;desembre=December:z;'
+  );
+
   { Innu-aimun : mots et phrases (voir logic5zg) }
   MoeData: Array[0..13] Of String = (
     'mecatina=grande montagne (Mécatina);assi=terre, sol;maikan=loup;anapi=fi'+
@@ -4555,6 +11260,28 @@ Begin
   Else If W = 'athens' Then ProperFr := 'Athènes'
   Else If W = 'cairo' Then ProperFr := 'Le Caire'
   Else If W = 'rome' Then ProperFr := 'Rome'
+  Else If W = 'catalonia' Then ProperFr := 'Catalogne'
+  Else If W = 'barcelona' Then ProperFr := 'Barcelone'
+  Else If W = 'majorca' Then ProperFr := 'Majorque'
+  Else If W = 'valencia' Then ProperFr := 'Valence'
+  Else If W = 'andorra' Then ProperFr := 'Andorre'
+  Else If W = 'tarragona' Then ProperFr := 'Tarragone'
+  Else If W = 'lleida' Then ProperFr := 'Lérida'
+  Else If W = 'madrid' Then ProperFr := 'Madrid'
+  Else If W = 'romania' Then ProperFr := 'Roumanie'
+  Else If W = 'bucharest' Then ProperFr := 'Bucarest'
+  Else If W = 'hungary' Then ProperFr := 'Hongrie'
+  Else If W = 'ukraine' Then ProperFr := 'Ukraine'
+  Else If W = 'moldova' Then ProperFr := 'Moldavie'
+  Else If W = 'budapest' Then ProperFr := 'Budapest'
+  Else If W = 'chisinau' Then ProperFr := 'Chișinău'
+  Else If W = 'mr' Then ProperFr := 'M.'
+  Else If W = 'mrs' Then ProperFr := 'Mme'
+  Else If W = 'warsaw' Then ProperFr := 'Varsovie'
+  Else If W = 'krakow' Then ProperFr := 'Cracovie'
+  Else If W = 'gdansk' Then ProperFr := 'Gdańsk'
+  Else If W = 'wroclaw' Then ProperFr := 'Wrocław'
+  Else If W = 'poznan' Then ProperFr := 'Poznań'
   Else If W = 'iceland' Then ProperFr := 'Islande'
   Else If W = 'reykjavik' Then ProperFr := 'Reykjavik'
   Else If W = 'malta' Then ProperFr := 'Malte'
@@ -4618,8 +11345,10 @@ Begin
          'australia') Or
      (W = 'ireland') Or (W = 'scotland') Or (W = 'sweden') Or (W = 'norway') Or
          (W = 'poland') Or
-     (W = 'greece') Or (W = 'iceland') Or (W = 'gaul') Or (W = 'britain') Or (W
-         = 'turkey') Or (W = 'egypt') Or (W = 'algeria') Or (W = 'tunisia') Then
+     (W = 'catalonia') Or (W = 'andorra') Or (W = 'romania') Or (W = 'hungary')
+         Or (W = 'ukraine') Or (W = 'moldova') Or (W = 'greece') Or (W =
+         'iceland') Or (W = 'gaul') Or (W = 'britain') Or (W = 'turkey') Or (W =
+         'egypt') Or (W = 'algeria') Or (W = 'tunisia') Then
     CountryKind := 'f'
   Else If (W = 'canada') Or (W = 'portugal') Or (W = 'japan') Or (W = 'brazil')
       Or (W = 'mexico') Or
@@ -4664,7 +11393,8 @@ Begin
                 (W = 'japanese') Or (W = 'russian') Or (W = 'portuguese') Or (W
                     = 'arabic') Or (W = 'swedish') Or (W = 'danish') Or (W =
                     'welsh') Or (W = 'afrikaans') Or (W = 'maltese') Or (W =
-                    'icelandic');
+                    'icelandic') Or (W = 'dutch') Or (W = 'norwegian') Or (W =
+                    'polish') Or (W = 'romanian') Or (W = 'catalan');
 End;
 
 { ------------------------------------------------------------------ }
@@ -4947,16 +11677,18 @@ End;
 Function IsMassNoun(Const W: String): Boolean;
 Begin
   IsMassNoun := InList(W,
-      'water bread cheese meat rice sugar salt money coffee tea milk wine beer'+
-      ' juice food fruit chocolate soup salad fish time weather rain snow wind'+
-      ' music information news help');
+      'lunch dinner breakfast chess football tennis water bread cheese meat ri'+
+      'ce sugar salt money coffee tea milk wine beer juice food fruit chocolat'+
+      'e soup salad fish time weather rain snow wind music information news he'+
+      'lp');
 End;
 
 Function IsLanguage(Const W: String): Boolean;
 Begin
   IsLanguage := InList(W,
       'english french german spanish italian chinese japanese russian portugue'+
-      'se arabic swedish danish welsh afrikaans maltese icelandic');
+      'se arabic swedish danish welsh afrikaans maltese icelandic dutch norweg'+
+      'ian polish romanian catalan');
 End;
 
 Function IsProfession(Const W: String): Boolean;
@@ -5886,7 +12618,8 @@ Begin
       If (W = 'in') And IsCalendar(Tk[K].W) And Not InList(Tk[K].W,
           'monday tuesday wednesday thursday friday saturday sunday english fr'+
           'ench german spanish italian chinese japanese russian portuguese ara'+
-          'bic swedish danish welsh afrikaans maltese icelandic') Then
+          'bic swedish danish welsh afrikaans maltese icelandic dutch norwegia'+
+          'n polish romanian catalan') Then
       Begin
         TranslatePP := 'en ' + Lex[Tk[K].N].Fr;
         I := K + 1;
@@ -6620,6 +13353,18 @@ Begin
   ParseVG(I, VG);
   CurVG := VG;
   Next := VG.Next;
+  { nothing / anything / nobody / anyone : ne ... rien, ne ... personne }
+  For K := Next To B Do
+    If InList(Tk[K].W, 'nothing anything nobody anyone anybody') Then
+    Begin
+      VG.Neg := True;
+      CurVG.Neg := True;
+      If InList(Tk[K].W, 'nothing anything') Then VG.NegWord := 'rien' Else
+          VG.NegWord := 'personne';
+      CurVG.NegWord := VG.NegWord;
+      Tk[K].Orig := '';
+      Tk[K].W := '';
+    End;
   AuxType := 'a';
   VerbEn := '';
   Inf0 := '';
@@ -8123,7 +14868,8 @@ Begin
        Not InList(Tk[K].W,
            'monday tuesday wednesday thursday friday saturday sunday english f'+
            'rench german spanish italian chinese japanese russian portuguese a'+
-           'rabic swedish danish welsh afrikaans maltese icelandic') Then
+           'rabic swedish danish welsh afrikaans maltese icelandic dutch norwe'+
+           'gian polish romanian catalan') Then
     Begin
       TranslatePPDe := 'im ' + Lex[Tk[K].N].De;
       I := K + 1;
@@ -16700,7 +23446,7 @@ Type
   End;
 
 Var
-  SpLex: Array[1..1200] Of TSp;
+  SpLex: Array[1..2000] Of TSp;
   SpCount: Integer;
   ST: Array[0..MaxTokens + 1] Of TSTok;
   SN: Integer;
@@ -17911,7 +24657,7 @@ Begin
       NP.DetTok := I;
       NP.Kind := 'n';
       NP.Text := ST[I].En;
-      NP.Plural := ST[I].En <> '1';
+      NP.Plural := (ST[I].En <> '1') And (ST[I].En <> 'one');
       Inc(I);
     End;
   End;
@@ -17946,7 +24692,8 @@ Begin
     NP.Plural := ST[I].Plu;
     If (NP.DetTok > 0) And (ST[NP.DetTok].Cat = 'D') Then
       NP.Plural := ST[NP.DetTok].Plu;
-    If (NP.Kind = 'n') And (NP.Text <> '1') Then NP.Plural := True;
+    If (NP.Kind = 'n') And (NP.Text <> '1') And (NP.Text <> 'one') Then
+        NP.Plural := True;
     Inc(I);
     While I <= SN Do
     Begin
@@ -18070,8 +24817,8 @@ Begin
   End;
   If NP.Head = 0 Then
   Begin
-    If NP.DetTok > 0 Then RenderNPEs := Join(ST[NP.DetTok].En, NP.Text) Else
-        RenderNPEs := NP.Text;
+    If (NP.DetTok > 0) And (NP.Kind <> 'n') Then RenderNPEs :=
+        Join(ST[NP.DetTok].En, NP.Text) Else RenderNPEs := NP.Text;
     Exit;
   End;
   Core := Join(SpAdjText(NP), SpNounText(NP));
@@ -18401,7 +25148,8 @@ Begin
           If InList(ST[I].W, 'en ne') And (NP.Head > 0) And (ST[NP.Head].En =
               'home') Then Prep := 'at';
           If InList(ST[I].W, 'en ne') And (NP.Head > 0) And
-              InList(ST[NP.Head].En, 'table floor wall roof') Then Prep := 'on';
+              InList(ST[NP.Head].En, 'table floor wall roof board desk') Then
+              Prep := 'on';
           If (ST[I].W = 'por') And (NP.Head > 0) And InList(ST[NP.Head].En,
               'morning afternoon night evening') Then
           Begin
@@ -18424,6 +25172,16 @@ Begin
           { texte de l'objet seul, pour "a" personnel }
           SI[J].Pers := I + 1;
           Inc(I, 1 + NP.Used);
+          { complement du nom : la maison de mon frere }
+          If (Prep = 'of') And (J >= 2) And (SI[J - 1].Kind = 'N') And (Not SI[J
+              - 1].Pron) And
+             (SI[J - 1].Last = SI[J].First - 1) Then
+          Begin
+            SI[J - 1].Text := SI[J - 1].Text + ' ' + SI[J].Text;
+            SI[J - 1].Prep := SI[J - 1].Text;
+            SI[J - 1].Last := SI[J].Last;
+            Dec(SIN);
+          End;
         End
         Else If (I < B) And (ST[I].W = 'a') And (ST[I + 1].Cat = 'V') And (ST[I
             + 1].Tns = 'I') Then
@@ -18850,7 +25608,18 @@ Begin
       If ST[I].Cat In ['Z', 'N'] Then Tail := Join(Tail, ST[I].Orig);
     If Slot = 1 Then Res := 'My name is'
     Else If Slot = 2 Then Res := 'Your name is'
-    Else Res := 'His name is';
+    Else If Slot = 4 Then Res := 'Our name is'
+    Else If Slot = 5 Then Res := 'Your name is'
+    Else If Slot = 6 Then Res := 'Their name is'
+    Else
+    Begin
+      Res := 'His name is';
+      For I := A To Vf - 1 Do
+        If ((ST[I].Cat = 'P') And (ST[I].En = 'she')) Or
+           ((ST[I].Cat = 'N') And InList(ST[I].En,
+               'sister mother woman girl wife daughter friend teacher')) Then
+          Res := 'Her name is';
+    End;
     TranslateClauseEs := Join(Res, Tail);
     Exit;
   End;
@@ -19328,7 +26097,7 @@ Begin
       AlSpIndex := I;
       Exit;
     End;
-  If SpCount < 1200 Then
+  If SpCount < 2000 Then
   Begin
     Inc(SpCount);
     SpLex[SpCount].Es := Key;
@@ -31614,6 +38383,6217 @@ Begin
 End;
 
 { ------------------------------------------------------------------ }
+{ NEERLANDAIS -> ANGLAIS : lexique de formes, jetons et etiquetage      }
+{ ------------------------------------------------------------------ }
+{ Declinaisons (quatre cas, article defini suffixe), conjugaisons et    }
+{ adjectifs sont engendres a la construction (mkis.py) : le programme   }
+{ cherche une forme de surface et applique ensuite l'ordre des mots     }
+{ (verbe en 2e position) avant de reutiliser l'analyse de l'espagnol.   }
+
+Type
+  TNl = Record
+    F1: String[28];
+    En: String[26];
+    Pos: Char;
+    Plu, Def: Boolean;
+    PluAlt: Boolean;
+    Cases: String[5];
+    NAlt: Integer;
+    ATn: Array[1..4] Of Char;
+    ASl: Array[1..4] Of Integer;
+    Num: Boolean;
+    Enc: Boolean;
+    SpIdx: Integer;
+    Slot: Integer;
+  End;
+
+Var
+  NlLex: Array[1..1600] Of TNl;
+  NlCount: Integer;
+  SourceNl: Boolean;
+
+Procedure LoadDutch;
+Var
+  I, J: Integer;
+  Line, Item, Key, En, Pos1, Code, Alt, K1, Cs: String;
+Begin
+  NlCount := 0;
+  For I := 0 To High(NlData) Do
+  Begin
+    Line := NlData[I];
+    While Line <> '' Do
+    Begin
+      Item := CopyUntil(Line, ';');
+      If (Item <> '') And (NlCount < 1600) Then
+      Begin
+        Key := CopyUntil(Item, '=');
+        En := CopyUntil(Item, ':');
+        Pos1 := CopyUntil(Item, ':');
+        Code := Item;
+        Inc(NlCount);
+        FillChar(NlLex[NlCount], SizeOf(TNl), 0);
+        NlLex[NlCount].F1 := FrLower(ReplaceChar(Key, '_', ' '));
+        NlLex[NlCount].En := ReplaceChar(En, '_', ' ');
+        NlLex[NlCount].Pos := Pos1[1];
+        Cs := '';
+        K1 := '';
+        J := 0;
+        While Code <> '' Do
+        Begin
+          Alt := CopyUntil(Code, '+');
+          Inc(J);
+          If Pos1[1] = 'v' Then
+          Begin
+            If J <= 4 Then
+            Begin
+              NlLex[NlCount].ATn[J] := Alt[1];
+              If Alt[1] = 'E' Then NlLex[NlCount].ATn[J] := 'p';
+              If Alt[1] = 'e' Then NlLex[NlCount].ATn[J] := 'i';
+              If (Alt[1] = 'E') Or (Alt[1] = 'e') Then NlLex[NlCount].Enc :=
+                  True;
+              If (Length(Alt) > 1) And (Alt[2] In ['0'..'9']) Then
+              Begin
+                NlLex[NlCount].ASl[J] := Ord(Alt[2]) - Ord('0');
+                If (Length(Alt) > 3) And (Alt[3] = ':') Then K1 := Copy(Alt, 4,
+                    12);
+              End
+              Else If (Length(Alt) > 2) And (Alt[2] = ':') Then K1 := Copy(Alt,
+                  3, 12);
+              NlLex[NlCount].NAlt := J;
+            End;
+          End
+          Else If Pos1[1] = 'n' Then
+          Begin
+            If J = 1 Then
+            Begin
+              NlLex[NlCount].Plu := Alt[1] = 'p';
+              NlLex[NlCount].Def := (Length(Alt) > 1) And (Alt[2] = 'D');
+            End
+            Else If (Alt[1] = 'p') <> NlLex[NlCount].Plu Then
+                NlLex[NlCount].PluAlt := True;
+            If Pos(':', Alt) > 0 Then
+              If Pos(Alt[Pos(':', Alt) + 1], Cs) = 0 Then Cs := Cs +
+                  Alt[Pos(':', Alt) + 1];
+          End
+          Else If Pos1[1] = 'a' Then
+          Begin
+            If J = 1 Then NlLex[NlCount].Plu := Alt[1] = 'p';
+          End
+          Else If Pos1[1] = 's' Then NlLex[NlCount].Slot := Ord(Alt[1]) -
+              Ord('0')
+          Else If Pos1[1] = 'u' Then NlLex[NlCount].Num := Alt = '1';
+        End;
+        NlLex[NlCount].Cases := Cs;
+        If Pos1[1] = 'v' Then
+        Begin
+          If K1 <> '' Then NlLex[NlCount].SpIdx := AlSpIndex(K1,
+              NlLex[NlCount].En)
+          Else NlLex[NlCount].SpIdx := AlSpIndex('is:' + NlLex[NlCount].En,
+              NlLex[NlCount].En);
+        End;
+      End;
+    End;
+  End;
+End;
+
+Function NlFind(Const W, Kinds: String): Integer;
+Var
+  I: Integer;
+Begin
+  NlFind := 0;
+  For I := 1 To NlCount Do
+    If (NlLex[I].F1 = W) And (Pos(NlLex[I].Pos, Kinds) > 0) Then
+    Begin
+      NlFind := I;
+      Exit;
+    End;
+End;
+
+Procedure NlTokenize(Const S0: String);
+Var
+  S, Word1, Low: String;
+  I, L: Integer;
+  C: Char;
+  Cap: Boolean;
+Begin
+  SN := 0;
+  SEnd := #0;
+  S := '';
+  I := 1;
+  While I <= Length(S0) Do
+  Begin
+    If (S0[I] = #$C2) And (I < Length(S0)) And ((S0[I + 1] = #$AB) Or (S0[I + 1]
+        = #$BB) Or (S0[I + 1] = #$A0)) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 2);
+    End
+    Else If (S0[I] = #$E2) And (I + 2 <= Length(S0)) And (S0[I + 1] = #$80) And
+            ((S0[I + 2] = #$99) Or (S0[I + 2] = #$98)) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 3);
+    End
+    Else
+    Begin
+      S := S + S0[I];
+      Inc(I);
+    End;
+  End;
+  L := Length(S);
+  I := 1;
+  While I <= L Do
+  Begin
+    C := S[I];
+    If FrWordByte(C) Then
+    Begin
+      Word1 := '';
+      While (I <= L) And FrWordByte(S[I]) Do
+      Begin
+        Word1 := Word1 + S[I];
+        Inc(I);
+      End;
+      Cap := (Word1 <> '') And (((Word1[1] >= 'A') And (Word1[1] <= 'Z')) Or
+             ((Word1[1] = #$C3) And (Length(Word1) > 1) And (Word1[2] >= #$80)
+                 And (Word1[2] <= #$9E)));
+      Low := FrLower(Word1);
+      SPush(Low, Word1, Cap, False, False);
+    End
+    Else
+    Begin
+      If (C = '.') Or (C = '?') Or (C = '!') Then
+      Begin
+        If SEnd = #0 Then SEnd := C;
+        If C = '?' Then SEnd := '?';
+      End
+      Else If (C = ',') Or (C = ';') Or (C = ':') Then
+      Begin
+        SPush(',', ',', False, True, False);
+        ST[SN].Cat := ',';
+      End;
+      Inc(I);
+    End;
+  End;
+End;
+
+Procedure NlMergeMultiword;
+Var
+  I, K, Len, L: Integer;
+  Key: String;
+  Bad, Found: Boolean;
+Begin
+  I := 1;
+  While I < SN Do
+  Begin
+    Found := False;
+    For Len := 3 Downto 2 Do
+      If (Not Found) And (I + Len - 1 <= SN) Then
+      Begin
+        Key := '';
+        Bad := False;
+        For K := I To I + Len - 1 Do
+        Begin
+          If ST[K].Punct Then Bad := True;
+          Key := Join(Key, ST[K].W);
+        End;
+        If Not Bad Then
+        Begin
+          L := NlFind(Key, 'rpcjw');
+          If L > 0 Then
+          Begin
+            Found := True;
+            ST[I].W := Key;
+            ST[I].Orig := Key;
+            For K := I + 1 To SN - Len + 1 Do
+              ST[K] := ST[K + Len - 1];
+            Dec(SN, Len - 1);
+          End;
+        End;
+      End;
+    Inc(I);
+  End;
+End;
+
+Function NlNextNounish(I: Integer): Boolean;
+Var
+  K: Integer;
+Begin
+  NlNextNounish := False;
+  If (I > SN) Or ST[I].Punct Then Exit;
+  K := NlFind(ST[I].W, 'nadxuzt');
+  NlNextNounish := K > 0;
+End;
+
+Function NlNextVerbal(I: Integer): Boolean;
+Var
+  K: Integer;
+Begin
+  NlNextVerbal := False;
+  If (I > SN) Or ST[I].Punct Then Exit;
+  If ST[I].W = 'ekki' Then
+  Begin
+    NlNextVerbal := True;
+    Exit;
+  End;
+  K := NlFind(ST[I].W, 'v');
+  NlNextVerbal := K > 0;
+End;
+
+Function NlVerbKey2(I: Integer): String;
+Begin
+  If (I >= 1) And (I <= SN) And (ST[I].Cat = 'V') And (ST[I].Idx > 0) Then
+    NlVerbKey2 := SpPlain(SpLex[ST[I].Idx].Es)
+  Else
+    NlVerbKey2 := '';
+End;
+
+Function NlOnlyPlural(I: Integer): Boolean;
+Var
+  K, J: Integer;
+  Has3: Boolean;
+Begin
+  NlOnlyPlural := False;
+  If (I > SN) Or ST[I].Punct Then Exit;
+  K := NlFind(ST[I].W, 'v');
+  If K = 0 Then Exit;
+  Has3 := False;
+  For J := 1 To NlLex[K].NAlt Do
+    If (NlLex[K].ASl[J] = 3) And (NlLex[K].ATn[J] In ['p', 'i']) Then Has3 :=
+        True;
+  NlOnlyPlural := Not Has3;
+End;
+
+{ un article est suivi d'un nom, ou d'un adjectif puis d'un nom }
+Function NlArticleFollows(I: Integer): Boolean;
+Begin
+  NlArticleFollows := False;
+  If (I > SN) Or ST[I].Punct Then Exit;
+  If NlFind(ST[I].W, 'nut') > 0 Then
+    NlArticleFollows := True
+  Else If (NlFind(ST[I].W, 'a') > 0) And (I < SN) And (NlFind(ST[I + 1].W, 'n')
+      > 0) Then
+    NlArticleFollows := True;
+End;
+
+Procedure NlPickCat(I: Integer);
+Var
+  W: String;
+  Prev: Char;
+  Idx: Integer;
+  PrefNoun: Boolean;
+Begin
+  W := ST[I].W;
+  If I > 1 Then Prev := ST[I - 1].Cat Else Prev := '.';
+  If ST[I].Punct Then
+  Begin
+    ST[I].Cat := ',';
+    Exit;
+  End;
+  If IsDigitsOnly(W) Then
+  Begin
+    ST[I].Cat := 'U';
+    ST[I].En := W;
+    Exit;
+  End;
+  If W = 'niet' Then
+  Begin
+    ST[I].Cat := 'G';
+    Exit;
+  End;
+  { 't et 'n : het et een }
+  If (W = 't') And (ST[I].Cl = 'ap') Then W := 'het';
+  If (W = 'n') And (ST[I].Cl = 'ap') Then W := 'een';
+  If W = 'een' Then
+  Begin
+    ST[I].Cat := 'D';
+    ST[I].Kind := 'i';
+    Exit;
+  End;
+  If W = 'de' Then
+  Begin
+    ST[I].Cat := 'D';
+    ST[I].Kind := 'd';
+    Exit;
+  End;
+  If W = 'het' Then
+  Begin
+    If NlArticleFollows(I + 1) Then
+    Begin
+      ST[I].Cat := 'D';
+      ST[I].Kind := 'd';
+    End
+    Else
+    Begin
+      ST[I].Cat := 'P';
+      ST[I].En := 'it';
+      ST[I].Slot := 3;
+    End;
+    Exit;
+  End;
+  { possessifs et pronoms ambigus }
+  If W = 'zijn' Then
+  Begin
+    If (Prev <> 'P') And Not ((I > 1) And (ST[I - 1].W = 'er')) And
+        NlNextNounish(I + 1) And (Not NlNextVerbal(I + 1)) Then
+    Begin
+      ST[I].Cat := 'S';
+      ST[I].En := 'his';
+      Exit;
+    End;
+  End;
+  If (W = 'ons') Or (W = 'hun') Or (W = 'haar') Then
+  Begin
+    If NlNextNounish(I + 1) And (Not NlNextVerbal(I + 1)) Then
+    Begin
+      ST[I].Cat := 'S';
+      If W = 'ons' Then ST[I].En := 'our' Else If W = 'hun' Then ST[I].En :=
+          'their' Else ST[I].En := 'her';
+      Exit;
+    End;
+    ST[I].Cat := 'O';
+    If W = 'ons' Then ST[I].En := 'us' Else If W = 'hun' Then ST[I].En := 'them'
+        Else ST[I].En := 'her';
+    Exit;
+  End;
+  If (W = 'dat') And ((Prev = 'V') Or (Prev = ',')) And (I < SN) Then
+  Begin
+    ST[I].Cat := 'C';
+    ST[I].En := 'that';
+    Exit;
+  End;
+  If (W = 'dag') And (SN > 2) Then
+  Begin
+    ST[I].Cat := 'N';
+    ST[I].En := 'day';
+    Exit;
+  End;
+  PrefNoun := Prev In ['D', 'S', 'T', 'Q', 'U', 'A'];
+  If (W = 'weer') And (Prev = 'D') Then
+  Begin
+    ST[I].Cat := 'N';
+    ST[I].En := 'weather';
+    Exit;
+  End;
+  If W = 'goed' Then
+  Begin
+    If (Prev In ['D', 'S', 'T', 'Q', 'U', 'A', ',']) Or ((Prev = 'V') And
+        (NlVerbKey2(I - 1) = 'ser')) Or
+       ((I < SN) And (NlFind(ST[I + 1].W, 'v') > 0) And (NlFind(ST[I + 1].W,
+           'n') = 0) And InList(ST[I + 1].W, 'is zijn was waren ben bent')) Then
+    Begin
+      ST[I].Cat := 'A';
+      ST[I].En := 'good';
+    End
+    Else
+    Begin
+      ST[I].Cat := 'R';
+      ST[I].En := 'well';
+    End;
+    Exit;
+  End;
+  If PrefNoun Then Idx := NlFind(W, 'n') Else Idx := 0;
+  If W = 'zijn' Then Idx := NlFind(W, 'v');
+  If (Idx = 0) And (W <> 'zijn') Then Idx := NlFind(W, 'wsoxdqgcjruzpe');
+  If Idx = 0 Then Idx := NlFind(W, 'v');
+  If Idx = 0 Then Idx := NlFind(W, 'n');
+  If Idx = 0 Then Idx := NlFind(W, 'a');
+  If Idx = 0 Then
+  Begin
+    ST[I].Cat := 'Z';
+    Exit;
+  End;
+  ST[I].En := NlLex[Idx].En;
+  Case NlLex[Idx].Pos Of
+    'w':
+    Begin
+      ST[I].Cat := 'W';
+      If W = 'waar' Then ST[I].W := 'donde'
+      Else If W = 'wie' Then ST[I].W := 'quien'
+      Else If W = 'wanneer' Then ST[I].W := 'cuando'
+      Else If W = 'hoe' Then ST[I].W := 'como'
+      Else If (W = 'welke') Or (W = 'welk') Then ST[I].W := 'cual'
+      Else If W = 'hoeveel' Then ST[I].W := 'cuantos'
+      Else If W = 'waarom' Then ST[I].W := 'por que'
+      Else ST[I].W := 'que';
+    End;
+    's':
+    Begin
+      ST[I].Cat := 'P';
+      ST[I].Slot := NlLex[Idx].Slot;
+      { zij / ze : elle ou ils, d'apres le verbe suivant }
+      If (W = 'zij') Or (W = 'ze') Then
+      Begin
+        If (I < SN) And NlOnlyPlural(I + 1) Then
+        Begin
+          ST[I].En := 'they';
+          ST[I].Slot := 6;
+        End;
+      End;
+    End;
+    'o':
+    Begin
+      ST[I].Cat := 'O';
+      If W = 'zich' Then ST[I].En := '';
+    End;
+    'x':
+    Begin
+      ST[I].Cat := 'S';
+    End;
+    'd':
+    Begin
+      ST[I].Cat := 'T';
+      ST[I].Plu := InList(W, 'deze');
+    End;
+    'g': ST[I].Cat := 'G';
+    'q': ST[I].Cat := 'g';
+    'c': ST[I].Cat := 'C';
+    'r': ST[I].Cat := 'R';
+    'j': ST[I].Cat := 'J';
+    'e':
+    Begin
+      ST[I].Cat := 'E';
+      If (W = 'in') Or (W = 'op') Or (W = 'bij') Then ST[I].W := 'en'
+      Else If W = 'naar' Then ST[I].W := 'a'
+      Else If W = 'van' Then ST[I].W := 'de'
+      Else If W = 'uit' Then ST[I].W := 'desde'
+      Else If W = 'zonder' Then ST[I].W := 'sin'
+      Else If W = 'met' Then ST[I].W := 'con'
+      Else If W = 'voor' Then ST[I].W := 'para';
+    End;
+    'u':
+    Begin
+      If NlLex[Idx].Num Then ST[I].Cat := 'U' Else ST[I].Cat := 'Q';
+      ST[I].Plu := InList(W, 'alle veel weinig beide enkele meeste sommige');
+      If W = 'geen' Then ST[I].En := 'no';
+    End;
+    'z':
+    Begin
+      ST[I].Cat := 'Z';
+      ST[I].Orig := ST[I].En;
+      ST[I].Cap := True;
+    End;
+    'v':
+    Begin
+      ST[I].Cat := 'V';
+      ST[I].Idx := NlLex[Idx].SpIdx;
+      ST[I].Tns := NlLex[Idx].ATn[1];
+      ST[I].Slot := NlLex[Idx].ASl[1];
+      ST[I].Kind := ' ';
+      ST[I].Cl := '';
+    End;
+    'n':
+    Begin
+      ST[I].Cat := 'N';
+      ST[I].Plu := NlLex[Idx].Plu;
+      ST[I].Cl := '';
+    End;
+    'a':
+    Begin
+      ST[I].Cat := 'A';
+      ST[I].Plu := False;
+    End;
+  End;
+End;
+
+{ ------------------------------------------------------------------ }
+{ NEERLANDAIS -> ANGLAIS : ordre des mots et phrase complete            }
+{ ------------------------------------------------------------------ }
+
+Function NlVerbKey(I: Integer): String;
+Begin
+  If (I >= 1) And (I <= SN) And (ST[I].Cat = 'V') And (ST[I].Idx > 0) Then
+    NlVerbKey := SpPlain(SpLex[ST[I].Idx].Es)
+  Else
+    NlVerbKey := '';
+End;
+
+Procedure NlInsert(Pos1: Integer);
+Var
+  K: Integer;
+Begin
+  If SN >= MaxTokens Then Exit;
+  For K := SN Downto Pos1 Do
+    ST[K + 1] := ST[K];
+  Inc(SN);
+  FillChar(ST[Pos1], SizeOf(TSTok), 0);
+  ST[Pos1].Tns := ' ';
+End;
+
+{ fin du groupe nominal sujet qui commence en K (0 s'il n'y en a pas) }
+Function NlSubjEnd(K: Integer): Integer;
+Var
+  J: Integer;
+Begin
+  NlSubjEnd := 0;
+  If (K < 1) Or (K > SN) Then Exit;
+  If ST[K].Cat = 'P' Then
+  Begin
+    NlSubjEnd := K;
+    Exit;
+  End;
+  J := K;
+  While (J <= SN) And (ST[J].Cat In ['D', 'S', 'T', 'Q', 'U']) Do Inc(J);
+  While (J <= SN) And (ST[J].Cat = 'A') Do Inc(J);
+  If (J <= SN) And (ST[J].Cat = 'N') Then
+    NlSubjEnd := J
+  Else If (J <= SN) And (ST[J].Cat = 'Z') And ST[J].Cap And (J > 1) Then
+  Begin
+    While (J < SN) And (ST[J + 1].Cat = 'Z') Do Inc(J);
+    NlSubjEnd := J;
+  End;
+End;
+
+Function NlSubjBefore(I: Integer): Boolean;
+Var
+  J: Integer;
+Begin
+  NlSubjBefore := False;
+  If I <= 1 Then Exit;
+  If ST[I - 1].Cat = 'P' Then
+  Begin
+    NlSubjBefore := True;
+    Exit;
+  End;
+  J := I - 1;
+  While (J >= 1) And (ST[J].Cat In ['N', 'A', 'D', 'S', 'T', 'Q', 'U', 'Z']) Do
+      Dec(J);
+  If J < I - 1 Then
+    NlSubjBefore := (J < 1) Or (ST[J].Cat <> 'E');
+End;
+
+Procedure NlMoveBlock(From1, To1, Dest: Integer);
+Var
+  Tmp: Array[1..12] Of TSTok;
+  N, K: Integer;
+Begin
+  N := To1 - From1 + 1;
+  If (N < 1) Or (N > 12) Or (Dest >= From1) Then Exit;
+  For K := 1 To N Do Tmp[K] := ST[From1 + K - 1];
+  For K := From1 - 1 Downto Dest Do ST[K + N] := ST[K];
+  For K := 1 To N Do ST[Dest + K - 1] := Tmp[K];
+End;
+
+Function NlFirstW: String;
+Var
+  K: Integer;
+Begin
+  NlFirstW := '';
+  For K := 1 To SN Do
+    If ST[K].Cat = 'W' Then
+    Begin
+      NlFirstW := ST[K].W;
+      Exit;
+    End;
+End;
+
+{ le groupe nominal qui commence en K contient-il un adjectif ? }
+Function NlNPHasAdj(K: Integer): Boolean;
+Var
+  J: Integer;
+Begin
+  NlNPHasAdj := False;
+  J := K;
+  While (J <= SN) And (ST[J].Cat In ['D', 'S', 'T', 'Q', 'U', 'A']) Do
+  Begin
+    If ST[J].Cat = 'A' Then NlNPHasAdj := True;
+    Inc(J);
+  End;
+  If (J <= SN) And (ST[J].Cat = 'N') And (J < SN) And (ST[J + 1].Cat = 'A') Then
+      NlNPHasAdj := True;
+End;
+
+{ Choisit parmi les lectures d'une forme verbale (infinitif, personnes, supin) }
+Procedure NlResolveVerb(I: Integer);
+Var
+  Idx, J, K, Want, Pick: Integer;
+  PrevV: Boolean;
+Begin
+  Idx := NlFind(ST[I].W, 'v');
+  If (Idx = 0) Or (NlLex[Idx].NAlt < 2) Then
+  Begin
+    If ST[I].Kind = 'z' Then
+    Begin
+      If ST[I].Tns = 'I' Then ST[I].Tns := 'p';
+      ST[I].Kind := ' ';
+    End;
+    Exit;
+  End;
+  Want := 0;
+  PrevV := False;
+  J := I - 1;
+  While (J >= 1) And (ST[J].Cat In ['G', 'R']) Do Dec(J);
+  If (J >= 1) And (ST[J].Cat = 'P') Then Want := ST[J].Slot
+  Else If (J >= 1) And (ST[J].Cat = 'V') Then PrevV := True
+  Else If (J >= 1) And (ST[J].Cat In ['N', 'Z']) Then
+  Begin
+    If ST[J].Plu Then Want := 6 Else Want := 3;
+  End
+  Else
+  Begin
+    { sujet apres le verbe : question ou inversion }
+    K := I + 1;
+    While (K <= SN) And (ST[K].Cat In ['G', 'R']) Do Inc(K);
+    If (K <= SN) And (ST[K].Cat = 'P') Then Want := ST[K].Slot
+    Else If (K <= SN) And (ST[K].Cat In ['D', 'N', 'Z', 'S']) Then Want := 3;
+  End;
+  Pick := 0;
+  If PrevV Then
+  Begin
+    For K := 1 To NlLex[Idx].NAlt Do
+      If (Pick = 0) And (NlLex[Idx].ATn[K] = 'P') And (NlVerbKey(J) = 'tener')
+          Then Pick := K;
+    For K := 1 To NlLex[Idx].NAlt Do
+      If (Pick = 0) And (NlLex[Idx].ATn[K] = 'I') Then Pick := K;
+    For K := 1 To NlLex[Idx].NAlt Do
+      If (Pick = 0) And (NlLex[Idx].ATn[K] = 'P') Then Pick := K;
+  End;
+  If (Pick = 0) And (Want > 0) Then
+    For K := 1 To NlLex[Idx].NAlt Do
+      If (Pick = 0) And (NlLex[Idx].ATn[K] In ['p', 'i']) And (NlLex[Idx].ASl[K]
+          = Want) Then Pick := K;
+  If Pick = 0 Then
+    For K := 1 To NlLex[Idx].NAlt Do
+      If (Pick = 0) And (NlLex[Idx].ATn[K] In ['p', 'i']) And (NlLex[Idx].ASl[K]
+          = 3) Then Pick := K;
+  If Pick = 0 Then
+    For K := 1 To NlLex[Idx].NAlt Do
+      If (Pick = 0) And (NlLex[Idx].ATn[K] In ['p', 'i', 'M']) Then Pick := K;
+  If Pick = 0 Then Pick := 1;
+  ST[I].Tns := NlLex[Idx].ATn[Pick];
+  ST[I].Slot := NlLex[Idx].ASl[Pick];
+  If ST[I].Slot = 0 Then ST[I].Slot := 3;
+  ST[I].Kind := ' ';
+End;
+
+{ verbes auxiliaires et modaux qui appellent un verbe en fin de proposition }
+Function NlIsAux(I: Integer): Boolean;
+Begin
+  NlIsAux := (ST[I].Cat = 'V') And InList(ST[I].W,
+      'heb hebt heeft hebben had hadden ben bent is zijn was waren zal zult zu'+
+      'llen zou zouden kan kunt kunnen kon konden wil wilt willen wilde wilden'+
+      ' moet moeten moest moesten mag mogen mocht mochten ga gaat gaan ging gi'+
+      'ngen');
+End;
+
+{ fin de la proposition qui commence en A : avant une virgule ou une conjonction
+  }
+Function NlClauseEnd(A: Integer): Integer;
+Var
+  K: Integer;
+Begin
+  K := A;
+  While (K < SN) And (Not (ST[K + 1].Cat = ',')) And
+        (Not ((ST[K + 1].Cat = 'C') And InList(ST[K + 1].W,
+            'dat omdat als toen terwijl wanneer zodat hoewel voordat nadat en '+
+            'maar of want'))) Do
+    Inc(K);
+  NlClauseEnd := K;
+End;
+
+{ Dans la proposition principale le verbe non fini est en fin de phrase : il
+  passe
+  juste apres l'auxiliaire ; dans une subordonnee, le groupe verbal final passe
+  apres le sujet. }
+Procedure NlFixClauses;
+Var
+  A, B, I, J, E, Last, FirstV: Integer;
+  Sub: Boolean;
+  T1, T2: TSTok;
+Begin
+  A := 1;
+  While A <= SN Do
+  Begin
+    If ST[A].Cat = ',' Then
+      Inc(A)
+    Else
+    Begin
+      Sub := (ST[A].Cat = 'C') And InList(ST[A].W,
+          'dat omdat als toen terwijl wanneer zodat hoewel voordat nadat');
+      B := NlClauseEnd(A);
+      If Sub Then
+      Begin
+        Last := B;
+        While (Last > A) And (ST[Last].Cat = 'G') Do Dec(Last);
+        J := Last;
+        While (J > A) And (ST[J].Cat = 'V') Do Dec(J);
+        If J < Last Then
+        Begin
+          E := NlSubjEnd(A + 1);
+          If (E > 0) And (E < J + 1) And (Last - J <= 3) Then
+          Begin
+            { participe puis auxiliaire : on inverse }
+            If (Last - J = 2) And NlIsAux(Last) And (ST[J + 1].Tns = 'P') Then
+            Begin
+              T1 := ST[J + 1];
+              T2 := ST[Last];
+              ST[J + 1] := T2;
+              ST[Last] := T1;
+            End;
+            NlMoveBlock(J + 1, Last, E + 1);
+          End;
+        End;
+      End
+      Else
+      Begin
+        FirstV := 0;
+        For I := A To B Do
+          If (FirstV = 0) And NlIsAux(I) Then FirstV := I;
+        If FirstV > 0 Then
+        Begin
+          Last := 0;
+          For I := B Downto FirstV + 1 Do
+            If (Last = 0) And (ST[I].Cat = 'V') And (Not NlIsAux(I) Or
+                (ST[I].Tns = 'P')) Then Last := I;
+          If (Last > FirstV + 1) Then NlMoveBlock(Last, Last, FirstV + 1);
+        End;
+      End;
+      A := B + 1;
+    End;
+  End;
+End;
+
+Procedure NlClassify;
+Var
+  I, J, K, E: Integer;
+  Key, Owner: String;
+Begin
+  NlMergeMultiword;
+  For I := 1 To SN Do
+    NlPickCat(I);
+  { om te + verbe : infinitif }
+  For I := 1 To SN - 2 Do
+    If (ST[I].W = 'om') And (ST[I + 1].W = 'te') And (ST[I + 2].Cat = 'V') Then
+    Begin
+      ST[I].Cat := ' ';
+      ST[I + 1].Cat := ' ';
+      ST[I + 2].Tns := 'I';
+    End;
+  ARemoveConsumed;
+  { genitif : Jans boek }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'Z') And ST[I].Cap And (Length(ST[I].Orig) > 3) And
+       (ST[I].Orig[Length(ST[I].Orig)] = 's') And (ST[I + 1].Cat In ['N', 'A'])
+           Then
+    Begin
+      ST[I].Orig := Copy(ST[I].Orig, 1, Length(ST[I].Orig) - 1);
+      Owner := ST[I].Orig;
+      ST[0] := ST[I];
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If ST[K].Cat = 'N' Then
+      Begin
+        For J := I To K - 1 Do
+          ST[J] := ST[J + 1];
+        FillChar(ST[K], SizeOf(TSTok), 0);
+        ST[K].Tns := ' ';
+        ST[K].Cat := 'E';
+        ST[K].W := 'de';
+        ST[K].Orig := 'de';
+        ST[K].En := 'of';
+        NlInsert(K + 1);
+        ST[K + 1] := ST[0];
+        ST[K + 1].Orig := Owner;
+        ST[K + 1].Cap := True;
+        Break;
+      End;
+    End;
+  { demonstratif seul : ce / cela }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'T') And ((I = SN) Or Not (ST[I + 1].Cat In ['N', 'A']))
+        Then
+    Begin
+      ST[I].Cat := 'P';
+      ST[I].Slot := 3;
+    End;
+  { om acht uur = a huit heures }
+  For I := 1 To SN - 2 Do
+    If (ST[I].Cat = 'E') And (ST[I].W = 'om') And (ST[I + 1].Cat = 'U') And
+        (ST[I + 2].Cat = 'N') And
+       (ST[I + 2].En = 'hour') Then
+    Begin
+      ST[I].En := 'at';
+      ST[I].W := 'en';
+      ST[I + 2].Cat := ' ';
+    End;
+  ARemoveConsumed;
+  { choix de la lecture des formes verbales ambigues }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'V' Then NlResolveVerb(I);
+  { er is + groupe nominal : il y a }
+  For I := 1 To SN - 2 Do
+    If (ST[I].Cat = 'R') And (ST[I].W = 'er') And (ST[I + 1].Cat = 'V') And
+        (NlVerbKey(I + 1) = 'ser') Then
+    Begin
+      ST[I].Cat := ' ';
+      ST[I + 1].Idx := AlSpIndex('haber', 'have');
+      ST[I + 1].W := 'hay';
+    End;
+  ARemoveConsumed;
+  { adjectifs devant un nom sans determinant : nom puis adjectifs }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cat = 'A') And ((I = 1) Or Not (ST[I - 1].Cat In ['D', 'S', 'T',
+        'Q', 'U', 'A'])) Then
+    Begin
+      K := I;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If (ST[K].Cat = 'N') And (K - I <= 3) Then
+      Begin
+        ST[0] := ST[K];
+        For J := K Downto I + 1 Do
+          ST[J] := ST[J - 1];
+        ST[I] := ST[0];
+        I := K;
+      End
+      Else
+        I := K;
+    End;
+    Inc(I);
+  End;
+  { inversion : Vandaag ga ik -> Vandaag ik ga ; Spreek je ? -> je spreekt ? }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'i']) And (Not NlSubjBefore(I))
+        And
+       Not ((I > 1) And (ST[I - 1].Cat = 'C') And (ST[I - 1].En = 'and')) Then
+    Begin
+      E := NlSubjEnd(I + 1);
+      If (E > 0) And (E - I <= 8) Then
+        If (NlVerbKey(I) <> 'haber') Or (ST[I + 1].Cat = 'P') Then
+        Begin
+          NlMoveBlock(I + 1, E, I);
+          I := E;
+        End;
+    End;
+    Inc(I);
+  End;
+  { on repasse sur les formes verbales ambigues dont le sujet vient de bouger }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'V' Then NlResolveVerb(I);
+  { verbe final -> juste apres l'auxiliaire }
+  NlFixClauses;
+  { geen + nom = negation du verbe }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'Q') And (ST[I].W = 'geen') And (ST[I + 1].Cat In ['N', 'A',
+        'Z']) Then
+    Begin
+      J := I - 1;
+      While (J >= 1) And Not ((ST[J].Cat = 'V') And (ST[J].Tns In ['p', 'i']))
+          Do Dec(J);
+      If J >= 1 Then
+      Begin
+        ST[I].Cat := 'G';
+        ST[I].En := '';
+      End;
+    End;
+  { niet : avant le premier verbe fini de la proposition }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'G') Then
+    Begin
+      J := I - 1;
+      While (J >= 1) And (ST[J].Cat <> ',') And Not ((ST[J].Cat = 'C') And
+          InList(ST[J].W, 'en maar of want dat omdat als toen')) And
+            Not ((ST[J].Cat = 'V') And (ST[J].Tns In ['p', 'i', 'M'])) Do
+                Dec(J);
+      If (J >= 1) And (ST[J].Cat = 'V') Then
+      Begin
+        ST[0] := ST[I];
+        For K := I Downto J + 1 Do
+          ST[K] := ST[K - 1];
+        ST[J] := ST[0];
+      End;
+    End;
+  { houden van = aimer }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'V') And (ST[I].En = 'hold') And (ST[I + 1].Cat = 'E') And
+        (ST[I + 1].W = 'de') Then
+    Begin
+      ST[I].En := 'like';
+      ST[I].Idx := AlSpIndex('nl:houdenvan', 'like');
+      ST[I + 1].Cat := ' ';
+    End;
+  { temps composes : hebben / zijn + participe = passe ; zullen + infinitif =
+    futur }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'i']) Then
+    Begin
+      J := I + 1;
+      While (J <= SN) And (ST[J].Cat In ['R', 'G', 'P', 'O']) Do Inc(J);
+      If (J <= SN) And (ST[J].Cat = 'V') Then
+      Begin
+        If (ST[J].Tns = 'P') And ((NlVerbKey(I) = 'tener') Or
+           ((NlVerbKey(I) = 'ser') And InList(ST[J].En,
+               'go come arrive return leave fall die stay be'))) Then
+        Begin
+          If ST[I].Tns = 'p' Then
+          Begin
+            ST[J].Tns := 'i';
+            ST[J].Slot := ST[I].Slot;
+            ST[I].Cat := ' ';
+          End
+          Else
+          Begin
+            ST[I].Idx := AlSpIndex('haber', 'have');
+            ST[I].En := 'have';
+          End;
+        End
+        Else If (ST[I].W = 'zal') Or (ST[I].W = 'zult') Or (ST[I].W = 'zullen')
+            Then
+        Begin
+          ST[J].Tns := 'f';
+          ST[J].Slot := ST[I].Slot;
+          ST[I].Cat := ' ';
+        End
+        Else If (ST[I].W = 'zou') Or (ST[I].W = 'zouden') Then
+        Begin
+          ST[J].Tns := 'c';
+          ST[J].Slot := ST[I].Slot;
+          ST[I].Cat := ' ';
+        End
+        Else If InList(NlVerbKey(I), 'poder querer deber') And (ST[J].Tns In
+            ['p', 'P']) Then
+          ST[J].Tns := 'I'
+        Else If (NlVerbKey(I) = 'ir') And (ST[J].Tns In ['p', 'I']) And (J = I +
+            1) Then
+          ST[J].Tns := 'I';
+      End;
+    End;
+  ARemoveConsumed;
+  { nom singulier sans determinant : article indefini }
+  I := 1;
+  While I <= SN Do
+  Begin
+    If (ST[I].Cat = 'N') And (Not ST[I].Plu) And (Not IsMassNoun(ST[I].En)) Then
+    Begin
+      K := I;
+      While (K > 1) And (ST[K - 1].Cat = 'A') Do Dec(K);
+      If ((K = 1) Or Not (ST[K - 1].Cat In ['D', 'S', 'T', 'Q', 'U'])) And
+         Not IsLanguage(LowerAscii(ST[I].En)) And (K > 1) And (ST[K - 1].Cat =
+             'V') Then
+      Begin
+        NlInsert(K);
+        ST[K].Cat := 'D';
+        ST[K].Kind := 'i';
+        ST[K].W := 'een';
+        Inc(I);
+      End;
+    End;
+    Inc(I);
+  End;
+  { le pluriel de l'article suit celui du nom }
+  For I := 1 To SN - 1 Do
+    If ST[I].Cat = 'D' Then
+    Begin
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If ST[K].Cat = 'N' Then ST[I].Plu := ST[K].Plu;
+    End;
+  { demonstratif seul : ce / cela }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'T') And ((I = SN) Or Not (ST[I + 1].Cat In ['N', 'A']))
+        Then
+    Begin
+      ST[I].Cat := 'P';
+      ST[I].Slot := 3;
+    End;
+  { impératif en tete de phrase }
+  If (SN >= 1) And (ST[1].Cat = 'V') And (ST[1].Tns In ['M', 'I']) And (SEnd <>
+      '?') Then
+  Begin
+    ST[1].Tns := 'M';
+    ST[1].Slot := 2;
+  End;
+  { personne du verbe d'apres le sujet qui precede }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'i', 'f', 'c']) Then
+    Begin
+      J := I - 1;
+      While (J >= 1) And (ST[J].Cat In ['R', 'G']) Do Dec(J);
+      If (J >= 1) And (ST[J].Cat = 'P') Then
+        ST[I].Slot := ST[J].Slot
+      Else If (J >= 1) And (ST[J].Cat In ['N', 'Z']) Then
+      Begin
+        ST[I].Slot := 3;
+        If ST[J].Plu And (ST[J].Cat = 'N') Then ST[I].Slot := 6;
+      End
+      Else If ST[I].Slot = 0 Then ST[I].Slot := 3;
+    End;
+  { expressions verbales }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'V' Then
+    Begin
+      Key := NlVerbKey(I);
+      If Key = 'haber' Then
+      Begin
+        ST[I].W := 'hay';
+        ST[I].Slot := 3;
+      End
+      Else If Key = 'llover' Then
+      Begin
+        ST[I].Kind := 'g';
+        If (I > 1) And (ST[I - 1].Cat = 'P') And (ST[I - 1].W = 'het') Then ST[I
+            - 1].Cat := ' ';
+      End
+      Else If Key = 'llamar' Then
+        ST[I].Kind := 'r';
+    End;
+  ARemoveConsumed;
+  { gaan + infinitif : aller + a + infinitif }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cat = 'V') And (NlVerbKey(I) = 'ir') And (ST[I + 1].Cat = 'V') And
+        (ST[I + 1].Tns = 'I') And
+       (SN < MaxTokens) Then
+    Begin
+      NlInsert(I + 1);
+      ST[I + 1].Cat := 'E';
+      ST[I + 1].W := 'a';
+      ST[I + 1].Orig := 'a';
+      ST[I + 1].En := 'to';
+      Inc(I);
+    End;
+    Inc(I);
+  End;
+  { complement d'une preposition : pronom de groupe nominal }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'O') And (ST[I - 1].Cat = 'E') And (ST[I].En <> '') Then
+      ST[I].Cat := 'B';
+  { quantificateur pluriel : le nom est au pluriel }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'Q') And ST[I].Plu Then
+    Begin
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If ST[K].Cat = 'N' Then ST[K].Plu := True;
+    End;
+  { pronoms complements apres le verbe : enclitiques }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'O') And (ST[I - 1].Cat = 'V') And (ST[I].En <> '') Then
+    Begin
+      ST[I - 1].Cl := ST[I].En;
+      ST[I].Cat := ' ';
+    End;
+  ARemoveConsumed;
+End;
+
+Function NlTranslateSentence(Const Sentence: String): String;
+Var
+  Res: String;
+Begin
+  NlTokenize(Sentence);
+  If SN = 0 Then
+  Begin
+    NlTranslateSentence := '';
+    Exit;
+  End;
+  NlClassify;
+  If SN = 0 Then
+  Begin
+    NlTranslateSentence := '';
+    Exit;
+  End;
+  Res := TranslateTokensEs(1, SN, SEnd = '?');
+  If (SEnd = '?') And (Length(Res) > 8) And (Copy(Res, Length(Res) - 7, 8) =
+      ' name is') Then
+    Res := 'What is ' + LowerAscii(Copy(Res, 1, Length(Res) - 8)) + ' name';
+  Res := UpperFirst(FixEnglish(Res));
+  If SEnd <> #0 Then Res := Res + SEnd;
+  NlTranslateSentence := Res;
+End;
+
+{ ------------------------------------------------------------------ }
+{ NORVEGIEN -> ANGLAIS : lexique de formes, jetons et etiquetage      }
+{ ------------------------------------------------------------------ }
+{ Declinaisons (quatre cas, article defini suffixe), conjugaisons et    }
+{ adjectifs sont engendres a la construction (mkis.py) : le programme   }
+{ cherche une forme de surface et applique ensuite l'ordre des mots     }
+{ (verbe en 2e position) avant de reutiliser l'analyse de l'espagnol.   }
+
+Type
+  TNb = Record
+    F1: String[28];
+    En: String[26];
+    Pos: Char;
+    Plu, Def: Boolean;
+    PluAlt: Boolean;
+    Cases: String[5];
+    NAlt: Integer;
+    ATn: Array[1..4] Of Char;
+    ASl: Array[1..4] Of Integer;
+    Num: Boolean;
+    Enc: Boolean;
+    SpIdx: Integer;
+    Slot: Integer;
+  End;
+
+Var
+  NbLex: Array[1..1700] Of TNb;
+  NbCount: Integer;
+  SourceNb: Boolean;
+
+Procedure LoadNorwegian;
+Var
+  I, J: Integer;
+  Line, Item, Key, En, Pos1, Code, Alt, K1, Cs: String;
+Begin
+  NbCount := 0;
+  For I := 0 To High(NbData) Do
+  Begin
+    Line := NbData[I];
+    While Line <> '' Do
+    Begin
+      Item := CopyUntil(Line, ';');
+      If (Item <> '') And (NbCount < 1700) Then
+      Begin
+        Key := CopyUntil(Item, '=');
+        En := CopyUntil(Item, ':');
+        Pos1 := CopyUntil(Item, ':');
+        Code := Item;
+        Inc(NbCount);
+        FillChar(NbLex[NbCount], SizeOf(TNb), 0);
+        NbLex[NbCount].F1 := FrLower(ReplaceChar(Key, '_', ' '));
+        NbLex[NbCount].En := ReplaceChar(En, '_', ' ');
+        NbLex[NbCount].Pos := Pos1[1];
+        Cs := '';
+        K1 := '';
+        J := 0;
+        While Code <> '' Do
+        Begin
+          Alt := CopyUntil(Code, '+');
+          Inc(J);
+          If Pos1[1] = 'v' Then
+          Begin
+            If J <= 4 Then
+            Begin
+              NbLex[NbCount].ATn[J] := Alt[1];
+              If Alt[1] = 'E' Then NbLex[NbCount].ATn[J] := 'p';
+              If Alt[1] = 'e' Then NbLex[NbCount].ATn[J] := 'i';
+              If (Alt[1] = 'E') Or (Alt[1] = 'e') Then NbLex[NbCount].Enc :=
+                  True;
+              If (Length(Alt) > 1) And (Alt[2] In ['0'..'9']) Then
+              Begin
+                NbLex[NbCount].ASl[J] := Ord(Alt[2]) - Ord('0');
+                If (Length(Alt) > 3) And (Alt[3] = ':') Then K1 := Copy(Alt, 4,
+                    12);
+              End
+              Else If (Length(Alt) > 2) And (Alt[2] = ':') Then K1 := Copy(Alt,
+                  3, 12);
+              NbLex[NbCount].NAlt := J;
+            End;
+          End
+          Else If Pos1[1] = 'n' Then
+          Begin
+            If J = 1 Then
+            Begin
+              NbLex[NbCount].Plu := Alt[1] = 'p';
+              NbLex[NbCount].Def := (Length(Alt) > 1) And (Alt[2] = 'D');
+            End
+            Else If (Alt[1] = 'p') <> NbLex[NbCount].Plu Then
+                NbLex[NbCount].PluAlt := True;
+            If Pos(':', Alt) > 0 Then
+              If Pos(Alt[Pos(':', Alt) + 1], Cs) = 0 Then Cs := Cs +
+                  Alt[Pos(':', Alt) + 1];
+          End
+          Else If Pos1[1] = 'a' Then
+          Begin
+            If J = 1 Then NbLex[NbCount].Plu := Alt[1] = 'p';
+          End
+          Else If Pos1[1] = 's' Then NbLex[NbCount].Slot := Ord(Alt[1]) -
+              Ord('0')
+          Else If Pos1[1] = 'u' Then NbLex[NbCount].Num := Alt = '1';
+        End;
+        NbLex[NbCount].Cases := Cs;
+        If Pos1[1] = 'v' Then
+        Begin
+          If K1 <> '' Then NbLex[NbCount].SpIdx := AlSpIndex(K1,
+              NbLex[NbCount].En)
+          Else NbLex[NbCount].SpIdx := AlSpIndex('is:' + NbLex[NbCount].En,
+              NbLex[NbCount].En);
+        End;
+      End;
+    End;
+  End;
+End;
+
+Function NbFind(Const W, Kinds: String): Integer;
+Var
+  I: Integer;
+Begin
+  NbFind := 0;
+  For I := 1 To NbCount Do
+    If (NbLex[I].F1 = W) And (Pos(NbLex[I].Pos, Kinds) > 0) Then
+    Begin
+      NbFind := I;
+      Exit;
+    End;
+End;
+
+Procedure NbTokenize(Const S0: String);
+Var
+  S, Word1, Low: String;
+  I, L: Integer;
+  C: Char;
+  Cap: Boolean;
+Begin
+  SN := 0;
+  SEnd := #0;
+  S := '';
+  I := 1;
+  While I <= Length(S0) Do
+  Begin
+    If (S0[I] = #$C2) And (I < Length(S0)) And ((S0[I + 1] = #$AB) Or (S0[I + 1]
+        = #$BB) Or (S0[I + 1] = #$A0)) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 2);
+    End
+    Else If (S0[I] = #$E2) And (I + 2 <= Length(S0)) And (S0[I + 1] = #$80) And
+            ((S0[I + 2] = #$99) Or (S0[I + 2] = #$98)) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 3);
+    End
+    Else
+    Begin
+      S := S + S0[I];
+      Inc(I);
+    End;
+  End;
+  L := Length(S);
+  I := 1;
+  While I <= L Do
+  Begin
+    C := S[I];
+    If FrWordByte(C) Then
+    Begin
+      Word1 := '';
+      While (I <= L) And FrWordByte(S[I]) Do
+      Begin
+        Word1 := Word1 + S[I];
+        Inc(I);
+      End;
+      Cap := (Word1 <> '') And (((Word1[1] >= 'A') And (Word1[1] <= 'Z')) Or
+             ((Word1[1] = #$C3) And (Length(Word1) > 1) And (Word1[2] >= #$80)
+                 And (Word1[2] <= #$9E)));
+      Low := FrLower(Word1);
+      SPush(Low, Word1, Cap, False, False);
+    End
+    Else
+    Begin
+      If (C = '.') Or (C = '?') Or (C = '!') Then
+      Begin
+        If SEnd = #0 Then SEnd := C;
+        If C = '?' Then SEnd := '?';
+      End
+      Else If (C = ',') Or (C = ';') Or (C = ':') Then
+      Begin
+        SPush(',', ',', False, True, False);
+        ST[SN].Cat := ',';
+      End;
+      Inc(I);
+    End;
+  End;
+End;
+
+Procedure NbMergeMultiword;
+Var
+  I, K, Len, L: Integer;
+  Key: String;
+  Bad, Found: Boolean;
+Begin
+  I := 1;
+  While I < SN Do
+  Begin
+    Found := False;
+    For Len := 3 Downto 2 Do
+      If (Not Found) And (I + Len - 1 <= SN) Then
+      Begin
+        Key := '';
+        Bad := False;
+        For K := I To I + Len - 1 Do
+        Begin
+          If ST[K].Punct Then Bad := True;
+          Key := Join(Key, ST[K].W);
+        End;
+        If Not Bad Then
+        Begin
+          L := NbFind(Key, 'rpcjw');
+          If L > 0 Then
+          Begin
+            Found := True;
+            ST[I].W := Key;
+            ST[I].Orig := Key;
+            For K := I + 1 To SN - Len + 1 Do
+              ST[K] := ST[K + Len - 1];
+            Dec(SN, Len - 1);
+          End;
+        End;
+      End;
+    Inc(I);
+  End;
+End;
+
+Function NbNextNounish(I: Integer): Boolean;
+Var
+  K: Integer;
+Begin
+  NbNextNounish := False;
+  If (I > SN) Or ST[I].Punct Then Exit;
+  K := NbFind(ST[I].W, 'nadxuz');
+  NbNextNounish := K > 0;
+End;
+
+Function NbNextVerbal(I: Integer): Boolean;
+Var
+  K: Integer;
+Begin
+  NbNextVerbal := False;
+  If (I > SN) Or ST[I].Punct Then Exit;
+  If ST[I].W = 'ekki' Then
+  Begin
+    NbNextVerbal := True;
+    Exit;
+  End;
+  K := NbFind(ST[I].W, 'v');
+  NbNextVerbal := K > 0;
+End;
+
+{ un article est suivi d'un adjectif puis d'un nom au defini : det store huset }
+Function NbArticleFollows(I: Integer): Boolean;
+Var
+  K: Integer;
+Begin
+  NbArticleFollows := False;
+  If (I > SN) Or ST[I].Punct Then Exit;
+  If (NbFind(ST[I].W, 'a') > 0) And (I < SN) Then
+  Begin
+    K := NbFind(ST[I + 1].W, 'n');
+    If K > 0 Then NbArticleFollows := NbLex[K].Def;
+  End;
+End;
+
+Function NbVerbKey2(I: Integer): String;
+Begin
+  If (I >= 1) And (I <= SN) And (ST[I].Cat = 'V') And (ST[I].Idx > 0) Then
+    NbVerbKey2 := SpPlain(SpLex[ST[I].Idx].Es)
+  Else
+    NbVerbKey2 := '';
+End;
+
+Procedure NbPickCat(I: Integer);
+Var
+  W: String;
+  Prev: Char;
+  Idx: Integer;
+  PrefNoun: Boolean;
+Begin
+  W := ST[I].W;
+  If I > 1 Then Prev := ST[I - 1].Cat Else Prev := '.';
+  If ST[I].Punct Then
+  Begin
+    ST[I].Cat := ',';
+    Exit;
+  End;
+  If IsDigitsOnly(W) Then
+  Begin
+    ST[I].Cat := 'U';
+    ST[I].En := W;
+    Exit;
+  End;
+  If W = 'ikke' Then
+  Begin
+    ST[I].Cat := 'G';
+    Exit;
+  End;
+  { å devant un verbe : marque de l'infinitif }
+  If (W = 'å') And NbNextVerbal(I + 1) Then
+  Begin
+    ST[I].Cat := ' ';
+    Exit;
+  End;
+  { en / ei / et : article indefini }
+  If InList(W, 'en ei et') Then
+  Begin
+    ST[I].Cat := 'D';
+    ST[I].Kind := 'i';
+    Exit;
+  End;
+  { den / det / de : article devant adjectif + nom defini, sinon pronom }
+  If InList(W, 'den det de') Then
+  Begin
+    If NbArticleFollows(I + 1) Then
+    Begin
+      ST[I].Cat := 'D';
+      ST[I].Kind := 'd';
+      ST[I].Plu := W = 'de';
+    End
+    Else
+    Begin
+      ST[I].Cat := 'P';
+      If W = 'de' Then
+      Begin
+        ST[I].En := 'they';
+        ST[I].Slot := 6;
+      End
+      Else
+      Begin
+        ST[I].En := 'it';
+        ST[I].Slot := 3;
+      End;
+    End;
+    Exit;
+  End;
+  If (W = 'godt') Or (W = 'bra') Then
+  Begin
+    If (Prev = 'V') And (NbVerbKey2(I - 1) = 'ser') Then
+    Begin
+      ST[I].Cat := 'A';
+      ST[I].En := 'good';
+    End
+    Else
+    Begin
+      ST[I].Cat := 'R';
+      ST[I].En := 'well';
+    End;
+    Exit;
+  End;
+  PrefNoun := (Prev In ['D', 'S', 'T', 'Q', 'U', 'A']) Or ((Prev = 'V') And
+      (NbVerbKey2(I - 1) = 'ser'));
+  { imperatif isole au milieu d'une phrase : plutot un nom }
+  If (Not PrefNoun) And (I > 1) And (NbFind(W, 'n') > 0) Then
+  Begin
+    Idx := NbFind(W, 'v');
+    If (Idx > 0) And (NbLex[Idx].NAlt = 1) And (NbLex[Idx].ATn[1] = 'M') Then
+        PrefNoun := True;
+  End;
+  If PrefNoun Then Idx := NbFind(W, 'n') Else Idx := 0;
+  If Idx = 0 Then Idx := NbFind(W, 'wsoxdqgcjruzpet');
+  If Idx = 0 Then Idx := NbFind(W, 'v');
+  If Idx = 0 Then Idx := NbFind(W, 'n');
+  If Idx = 0 Then Idx := NbFind(W, 'a');
+  If Idx = 0 Then
+  Begin
+    ST[I].Cat := 'Z';
+    Exit;
+  End;
+  ST[I].En := NbLex[Idx].En;
+  Case NbLex[Idx].Pos Of
+    'w':
+    Begin
+      ST[I].Cat := 'W';
+      If W = 'hvor' Then ST[I].W := 'donde'
+      Else If W = 'hvem' Then ST[I].W := 'quien'
+      Else If W = 'når' Then ST[I].W := 'cuando'
+      Else If W = 'hvordan' Then ST[I].W := 'como'
+      Else If Copy(W, 1, 5) = 'hvilk' Then ST[I].W := 'cual'
+      Else If W = 'hvor mange' Then ST[I].W := 'cuantos'
+      Else If W = 'hvor mye' Then ST[I].W := 'cuantos'
+      Else If W = 'hvorfor' Then ST[I].W := 'por que'
+      Else ST[I].W := 'que';
+    End;
+    's':
+    Begin
+      ST[I].Cat := 'P';
+      ST[I].Slot := NbLex[Idx].Slot;
+    End;
+    'o':
+    Begin
+      ST[I].Cat := 'O';
+      If W = 'seg' Then ST[I].En := '';
+    End;
+    'x':
+    Begin
+      ST[I].Cat := 'S';
+      ST[I].Kind := 'x';
+    End;
+    'd':
+    Begin
+      ST[I].Cat := 'T';
+      ST[I].Plu := W = 'disse';
+      If ST[I].Plu Then ST[I].En := 'these';
+    End;
+    'g': ST[I].Cat := 'G';
+    'q': ST[I].Cat := 'g';
+    'c': ST[I].Cat := 'C';
+    'r': ST[I].Cat := 'R';
+    'j': ST[I].Cat := 'J';
+    'p', 'e':
+    Begin
+      ST[I].Cat := 'E';
+      If (W = 'i') Or (W = 'på') Or (W = 'ved') Then ST[I].W := 'en'
+      Else If W = 'til' Then ST[I].W := 'a'
+      Else If W = 'av' Then ST[I].W := 'de'
+      Else If W = 'fra' Then ST[I].W := 'desde'
+      Else If W = 'uten' Then ST[I].W := 'sin'
+      Else If W = 'med' Then ST[I].W := 'con'
+      Else If W = 'for' Then ST[I].W := 'para';
+    End;
+    'u':
+    Begin
+      If NbLex[Idx].Num Then ST[I].Cat := 'U' Else ST[I].Cat := 'Q';
+      ST[I].Plu := InList(W, 'alle mange få begge noen');
+      If W = 'noen' Then ST[I].Plu := True;
+    End;
+    't':
+    Begin
+      ST[I].Cat := 'D';
+      ST[I].Kind := 'i';
+    End;
+    'z':
+    Begin
+      ST[I].Cat := 'Z';
+      ST[I].Orig := ST[I].En;
+      ST[I].Cap := True;
+    End;
+    'v':
+    Begin
+      ST[I].Cat := 'V';
+      ST[I].Idx := NbLex[Idx].SpIdx;
+      ST[I].Tns := NbLex[Idx].ATn[1];
+      ST[I].Slot := NbLex[Idx].ASl[1];
+      ST[I].Kind := ' ';
+      ST[I].Cl := '';
+    End;
+    'n':
+    Begin
+      ST[I].Cat := 'N';
+      ST[I].Plu := NbLex[Idx].Plu;
+      ST[I].Cl := '';
+      If NbLex[Idx].Def Then ST[I].Cl := 'def';
+    End;
+    'a':
+    Begin
+      ST[I].Cat := 'A';
+      ST[I].Plu := NbLex[Idx].Plu;
+    End;
+  End;
+End;
+
+{ ------------------------------------------------------------------ }
+{ NORVEGIEN -> ANGLAIS : ordre des mots et phrase complete            }
+{ ------------------------------------------------------------------ }
+
+Function NbVerbKey(I: Integer): String;
+Begin
+  If (I >= 1) And (I <= SN) And (ST[I].Cat = 'V') And (ST[I].Idx > 0) Then
+    NbVerbKey := SpPlain(SpLex[ST[I].Idx].Es)
+  Else
+    NbVerbKey := '';
+End;
+
+Procedure NbInsert(Pos1: Integer);
+Var
+  K: Integer;
+Begin
+  If SN >= MaxTokens Then Exit;
+  For K := SN Downto Pos1 Do
+    ST[K + 1] := ST[K];
+  Inc(SN);
+  FillChar(ST[Pos1], SizeOf(TSTok), 0);
+  ST[Pos1].Tns := ' ';
+End;
+
+{ fin du groupe nominal sujet qui commence en K (0 s'il n'y en a pas) }
+Function NbSubjEnd(K: Integer): Integer;
+Var
+  J: Integer;
+Begin
+  NbSubjEnd := 0;
+  If (K < 1) Or (K > SN) Then Exit;
+  If ST[K].Cat = 'P' Then
+  Begin
+    NbSubjEnd := K;
+    Exit;
+  End;
+  J := K;
+  While (J <= SN) And (ST[J].Cat In ['D', 'S', 'T', 'Q', 'U']) Do Inc(J);
+  While (J <= SN) And (ST[J].Cat = 'A') Do Inc(J);
+  If (J <= SN) And (ST[J].Cat = 'N') Then
+    NbSubjEnd := J
+  Else If (J <= SN) And (ST[J].Cat = 'Z') And ST[J].Cap And (J > 1) Then
+  Begin
+    While (J < SN) And (ST[J + 1].Cat = 'Z') Do Inc(J);
+    NbSubjEnd := J;
+  End;
+End;
+
+Function NbSubjBefore(I: Integer): Boolean;
+Var
+  J: Integer;
+Begin
+  NbSubjBefore := False;
+  If I <= 1 Then Exit;
+  If ST[I - 1].Cat = 'P' Then
+  Begin
+    NbSubjBefore := True;
+    Exit;
+  End;
+  J := I - 1;
+  While (J >= 1) And (ST[J].Cat In ['N', 'A', 'D', 'S', 'T', 'Q', 'U', 'Z']) Do
+      Dec(J);
+  If J < I - 1 Then
+    NbSubjBefore := (J < 1) Or (ST[J].Cat <> 'E');
+End;
+
+Procedure NbMoveBlock(From1, To1, Dest: Integer);
+Var
+  Tmp: Array[1..12] Of TSTok;
+  N, K: Integer;
+Begin
+  N := To1 - From1 + 1;
+  If (N < 1) Or (N > 12) Or (Dest >= From1) Then Exit;
+  For K := 1 To N Do Tmp[K] := ST[From1 + K - 1];
+  For K := From1 - 1 Downto Dest Do ST[K + N] := ST[K];
+  For K := 1 To N Do ST[Dest + K - 1] := Tmp[K];
+End;
+
+Function NbFirstW: String;
+Var
+  K: Integer;
+Begin
+  NbFirstW := '';
+  For K := 1 To SN Do
+    If ST[K].Cat = 'W' Then
+    Begin
+      NbFirstW := ST[K].W;
+      Exit;
+    End;
+End;
+
+{ le groupe nominal qui commence en K contient-il un adjectif ? }
+Function NbNPHasAdj(K: Integer): Boolean;
+Var
+  J: Integer;
+Begin
+  NbNPHasAdj := False;
+  J := K;
+  While (J <= SN) And (ST[J].Cat In ['D', 'S', 'T', 'Q', 'U', 'A']) Do
+  Begin
+    If ST[J].Cat = 'A' Then NbNPHasAdj := True;
+    Inc(J);
+  End;
+  If (J <= SN) And (ST[J].Cat = 'N') And (J < SN) And (ST[J + 1].Cat = 'A') Then
+      NbNPHasAdj := True;
+End;
+
+{ Choisit parmi les lectures d'une forme verbale (infinitif, personnes, supin) }
+Procedure NbResolveVerb(I: Integer);
+Var
+  Idx, J, K, Want, Pick: Integer;
+  PrevV: Boolean;
+Begin
+  Idx := NbFind(ST[I].W, 'v');
+  If (Idx = 0) Or (NbLex[Idx].NAlt < 2) Then
+  Begin
+    If ST[I].Kind = 'z' Then
+    Begin
+      If ST[I].Tns = 'I' Then ST[I].Tns := 'p';
+      ST[I].Kind := ' ';
+    End;
+    Exit;
+  End;
+  Want := 0;
+  PrevV := False;
+  J := I - 1;
+  While (J >= 1) And (ST[J].Cat In ['G', 'R']) Do Dec(J);
+  If (J >= 1) And (ST[J].Cat = 'P') Then Want := ST[J].Slot
+  Else If (J >= 1) And (ST[J].Cat = 'V') Then PrevV := True
+  Else If (J >= 1) And (ST[J].Cat In ['N', 'Z']) Then
+  Begin
+    If ST[J].Plu Then Want := 6 Else Want := 3;
+  End
+  Else
+  Begin
+    { sujet apres le verbe : question ou inversion }
+    K := I + 1;
+    While (K <= SN) And (ST[K].Cat In ['G', 'R']) Do Inc(K);
+    If (K <= SN) And (ST[K].Cat = 'P') Then Want := ST[K].Slot
+    Else If (K <= SN) And (ST[K].Cat In ['D', 'N', 'Z', 'S']) Then Want := 3;
+  End;
+  Pick := 0;
+  If (I = 1) And (SEnd = '!') Then
+    For K := 1 To NbLex[Idx].NAlt Do
+      If (Pick = 0) And (NbLex[Idx].ATn[K] = 'M') Then Pick := K;
+  If (Pick = 0) And PrevV Then
+  Begin
+    For K := 1 To NbLex[Idx].NAlt Do
+      If (Pick = 0) And (NbLex[Idx].ATn[K] = 'P') And (NbVerbKey(J) = 'tener')
+          Then Pick := K;
+    For K := 1 To NbLex[Idx].NAlt Do
+      If (Pick = 0) And (NbLex[Idx].ATn[K] = 'I') Then Pick := K;
+    For K := 1 To NbLex[Idx].NAlt Do
+      If (Pick = 0) And (NbLex[Idx].ATn[K] = 'P') Then Pick := K;
+  End;
+  If (Pick = 0) And (Want > 0) Then
+    For K := 1 To NbLex[Idx].NAlt Do
+      If (Pick = 0) And (NbLex[Idx].ATn[K] In ['p', 'i']) And (NbLex[Idx].ASl[K]
+          = Want) Then Pick := K;
+  If Pick = 0 Then
+    For K := 1 To NbLex[Idx].NAlt Do
+      If (Pick = 0) And (NbLex[Idx].ATn[K] In ['p', 'i']) And (NbLex[Idx].ASl[K]
+          = 3) Then Pick := K;
+  If Pick = 0 Then
+    For K := 1 To NbLex[Idx].NAlt Do
+      If (Pick = 0) And (NbLex[Idx].ATn[K] In ['p', 'i', 'M']) Then Pick := K;
+  If Pick = 0 Then Pick := 1;
+  ST[I].Tns := NbLex[Idx].ATn[Pick];
+  ST[I].Slot := NbLex[Idx].ASl[Pick];
+  If ST[I].Slot = 0 Then ST[I].Slot := 3;
+  ST[I].Kind := ' ';
+End;
+
+Procedure NbClassify;
+Var
+  I, J, K, E: Integer;
+  Key, Owner: String;
+Begin
+  NbMergeMultiword;
+  For I := 1 To SN Do
+    NbPickCat(I);
+  ARemoveConsumed;
+  { genitif d'un nom propre : Annas bok }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'Z') And ST[I].Cap And (Length(ST[I].Orig) > 3) And
+       (ST[I].Orig[Length(ST[I].Orig)] = 's') And (ST[I + 1].Cat In ['N', 'A'])
+           Then
+    Begin
+      ST[I].Orig := Copy(ST[I].Orig, 1, Length(ST[I].Orig) - 1);
+      Owner := ST[I].Orig;
+      ST[0] := ST[I];
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If ST[K].Cat = 'N' Then
+      Begin
+        For J := I To K - 1 Do
+          ST[J] := ST[J + 1];
+        FillChar(ST[K], SizeOf(TSTok), 0);
+        ST[K].Tns := ' ';
+        ST[K].Cat := 'E';
+        ST[K].W := 'de';
+        ST[K].Orig := 'de';
+        ST[K].En := 'of';
+        NbInsert(K + 1);
+        ST[K + 1] := ST[0];
+        ST[K + 1].Orig := Owner;
+        ST[K + 1].Cap := True;
+        Break;
+      End;
+    End;
+  { possessif postpose : hunden min = mon chien }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'S') And (ST[I].Kind = 'x') And (ST[I - 1].Cat In ['N',
+        'A']) Then
+    Begin
+      J := I - 1;
+      While (J > 1) And (ST[J].Cat = 'A') Do Dec(J);
+      If ST[J].Cat = 'N' Then
+      Begin
+        ST[0] := ST[I];
+        ST[0].Kind := ' ';
+        For K := I Downto J + 1 Do
+          ST[K] := ST[K - 1];
+        ST[J] := ST[0];
+        ST[J + 1].Cl := '';
+      End;
+    End;
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'S') Then ST[I].Kind := ' ';
+  { demonstratif seul : ce / cela }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'T') And ((I = SN) Or Not (ST[I + 1].Cat In ['N', 'A']))
+        Then
+    Begin
+      ST[I].Cat := 'P';
+      ST[I].Slot := 3;
+      If ST[I].Plu Then ST[I].Slot := 6;
+    End;
+  { articles definis portes par le suffixe du nom }
+  I := 1;
+  While I <= SN Do
+  Begin
+    If (ST[I].Cat = 'N') And (Pos('def', ST[I].Cl) > 0) Then
+    Begin
+      K := I;
+      While (K > 1) And (ST[K - 1].Cat = 'A') Do Dec(K);
+      If (K = 1) Or Not (ST[K - 1].Cat In ['D', 'S', 'T', 'Q', 'U']) Then
+      Begin
+        NbInsert(K);
+        ST[K].Cat := 'D';
+        ST[K].Kind := 'd';
+        ST[K].Plu := ST[I + 1].Plu;
+        ST[K].W := 'el';
+        ST[K].Orig := 'el';
+        Inc(I);
+      End;
+    End;
+    Inc(I);
+  End;
+  { adjectifs devant un nom sans determinant : nom puis adjectifs }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cat = 'A') And ((I = 1) Or Not (ST[I - 1].Cat In ['D', 'S', 'T',
+        'Q', 'U', 'A'])) Then
+    Begin
+      K := I;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If (ST[K].Cat = 'N') And (K - I <= 3) Then
+      Begin
+        ST[0] := ST[K];
+        For J := K Downto I + 1 Do
+          ST[J] := ST[J - 1];
+        ST[I] := ST[0];
+        I := K;
+      End
+      Else
+        I := K;
+    End;
+    Inc(I);
+  End;
+  { choix de la lecture des formes verbales ambigues }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'V' Then NbResolveVerb(I);
+  { det er + groupe nominal indefini : il y a }
+  For I := 1 To SN - 2 Do
+    If (ST[I].Cat = 'P') And (ST[I].W = 'det') And (ST[I + 1].Cat = 'V') And
+        (NbVerbKey(I + 1) = 'ser') And
+       (ST[I + 2].Cat In ['D', 'N', 'Q', 'U']) And (ST[I + 2].Kind <> 'd') And
+           Not NbNPHasAdj(I + 2) Then
+    Begin
+      ST[I].Cat := ' ';
+      ST[I + 1].Idx := AlSpIndex('haber', 'have');
+      ST[I + 1].W := 'hay';
+    End;
+  { inversion : I dag går jeg -> I dag jeg går ; Snakker du ? -> du snakker ?
+    }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'i']) And (Not NbSubjBefore(I))
+        And
+       Not ((I > 1) And (ST[I - 1].Cat = 'C') And (ST[I - 1].En = 'and')) Then
+    Begin
+      E := NbSubjEnd(I + 1);
+      If (E > 0) And (E - I <= 8) Then
+        If (NbVerbKey(I) <> 'haber') Or (ST[I + 1].Cat = 'P') Then
+        Begin
+          NbMoveBlock(I + 1, E, I);
+          I := E;
+        End;
+    End;
+    Inc(I);
+  End;
+  { og + verbe sans sujet : meme sujet que la proposition precedente }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'i']) And (ST[I - 1].Cat = 'C')
+        And (ST[I - 1].En = 'and') And
+       (SN < MaxTokens) Then
+    Begin
+      K := 0;
+      For J := I - 2 Downto 1 Do
+        If (K = 0) And (ST[J].Cat = 'P') Then K := J;
+      If K > 0 Then
+      Begin
+        NbInsert(I);
+        ST[I].Cat := 'P';
+        ST[I].En := ST[K].En;
+        ST[I].Slot := ST[K].Slot;
+        ST[I].W := ST[K].W;
+        ST[I].Orig := ST[K].Orig;
+        Break;
+      End;
+      For J := 1 To I - 2 Do
+        If (K = 0) And (ST[J].Cat = 'N') Then K := J;
+      If K > 0 Then
+      Begin
+        NbInsert(I);
+        ST[I].Cat := 'P';
+        ST[I].W := 'han';
+        ST[I].Orig := 'han';
+        If ST[K].Plu Then
+        Begin
+          ST[I].En := 'they';
+          ST[I].Slot := 6;
+        End
+        Else
+        Begin
+          ST[I].En := 'he';
+          ST[I].Slot := 3;
+        End;
+        Break;
+      End;
+    End;
+  { ikke apres le verbe -> avant le verbe }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'G') And (ST[I - 1].Cat = 'V') And (ST[I - 1].Tns In ['p',
+        'i', 'M']) Then
+    Begin
+      ST[0] := ST[I];
+      ST[I] := ST[I - 1];
+      ST[I - 1] := ST[0];
+    End;
+  { ha + supin : temps compose ; skal + infinitif : aller + a + infinitif }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'i']) Then
+    Begin
+      J := I + 1;
+      While (J <= SN) And (ST[J].Cat In ['R', 'G', 'P', 'O']) Do Inc(J);
+      If (J <= SN) And (ST[J].Cat = 'V') Then
+      Begin
+        If (NbVerbKey(I) = 'tener') And (ST[I].En = 'have') And (ST[J].Tns =
+            'P') Then
+        Begin
+          If ST[I].Tns = 'p' Then
+          Begin
+            ST[J].Tns := 'i';
+            ST[J].Slot := ST[I].Slot;
+            ST[I].Cat := ' ';
+          End
+          Else
+          Begin
+            ST[I].Idx := AlSpIndex('haber', 'have');
+            ST[I].En := 'have';
+          End;
+        End
+        Else If (NbVerbKey(I) = 'ir') And (ST[J].Tns = 'I') And (J = I + 1) And
+            (SN < MaxTokens) Then
+        Begin
+          NbInsert(J);
+          ST[J].Cat := 'E';
+          ST[J].W := 'a';
+          ST[J].Orig := 'a';
+          ST[J].En := 'to';
+        End;
+      End;
+    End;
+  ARemoveConsumed;
+  { nom singulier sans determinant : article indefini }
+  I := 1;
+  While I <= SN Do
+  Begin
+    If (ST[I].Cat = 'N') And (Not ST[I].Plu) And (Not IsMassNoun(ST[I].En)) Then
+    Begin
+      K := I;
+      While (K > 1) And (ST[K - 1].Cat = 'A') Do Dec(K);
+      If ((K = 1) Or Not (ST[K - 1].Cat In ['D', 'S', 'T', 'Q', 'U'])) And Not
+          IsLanguage(LowerAscii(ST[I].En)) Then
+      Begin
+        NbInsert(K);
+        ST[K].Cat := 'D';
+        ST[K].Kind := 'i';
+        ST[K].W := 'en';
+        Inc(I);
+      End;
+    End;
+    Inc(I);
+  End;
+  { le pluriel de l'article suit celui du nom }
+  For I := 1 To SN - 1 Do
+    If ST[I].Cat = 'D' Then
+    Begin
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If ST[K].Cat = 'N' Then ST[I].Plu := ST[K].Plu;
+    End;
+  { impératif en tete de phrase }
+  If (SN >= 1) And (ST[1].Cat = 'V') And (ST[1].Tns = 'M') And (SEnd <> '?')
+      Then
+  Begin
+    ST[1].Slot := 2;
+  End;
+  { personne du verbe d'apres le sujet qui precede }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'i', 'f']) Then
+    Begin
+      J := I - 1;
+      While (J >= 1) And (ST[J].Cat In ['R', 'G']) Do Dec(J);
+      If (J >= 1) And (ST[J].Cat = 'P') Then
+        ST[I].Slot := ST[J].Slot
+      Else If (J >= 1) And (ST[J].Cat In ['N', 'Z']) Then
+      Begin
+        ST[I].Slot := 3;
+        If ST[J].Plu And (ST[J].Cat = 'N') Then ST[I].Slot := 6;
+      End
+      Else If ST[I].Slot = 0 Then ST[I].Slot := 3;
+    End;
+  { expressions verbales : heter, regner }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'V' Then
+    Begin
+      Key := NbVerbKey(I);
+      If Key = 'haber' Then
+      Begin
+        ST[I].W := 'hay';
+        ST[I].Slot := 3;
+      End
+      Else If Key = 'llover' Then
+      Begin
+        ST[I].Kind := 'g';
+        If (I > 1) And (ST[I - 1].Cat = 'P') And (ST[I - 1].W = 'det') Then ST[I
+            - 1].Cat := ' ';
+      End
+      Else If Key = 'llamar' Then
+        ST[I].Kind := 'r'
+      Else If (ST[I].En = 'call') And (I < SN) And (ST[I + 1].Cat = 'E') And
+          (ST[I + 1].En = 'to') Then
+        ST[I + 1].Cat := ' ';
+    End;
+  ARemoveConsumed;
+  { complement d'une preposition : pronom de groupe nominal }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'O') And (ST[I - 1].Cat = 'E') And (ST[I].En <> '') Then
+      ST[I].Cat := 'B';
+  { quantificateur pluriel : le nom est au pluriel }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'Q') And ST[I].Plu Then
+    Begin
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If ST[K].Cat = 'N' Then ST[K].Plu := True;
+    End;
+  { pronoms complements apres le verbe : enclitiques }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'O') And (ST[I - 1].Cat = 'V') And (ST[I].En <> '') Then
+    Begin
+      ST[I - 1].Cl := ST[I].En;
+      ST[I].Cat := ' ';
+    End;
+  ARemoveConsumed;
+End;
+
+Function NbTranslateSentence(Const Sentence: String): String;
+Var
+  Res: String;
+Begin
+  NbTokenize(Sentence);
+  If SN = 0 Then
+  Begin
+    NbTranslateSentence := '';
+    Exit;
+  End;
+  NbClassify;
+  If SN = 0 Then
+  Begin
+    NbTranslateSentence := '';
+    Exit;
+  End;
+  Res := TranslateTokensEs(1, SN, SEnd = '?');
+  If (SEnd = '?') And (Length(Res) > 8) And (Copy(Res, Length(Res) - 7, 8) =
+      ' name is') Then
+    Res := 'What is ' + LowerAscii(Copy(Res, 1, Length(Res) - 8)) + ' name';
+  Res := UpperFirst(FixEnglish(Res));
+  If SEnd <> #0 Then Res := Res + SEnd;
+  NbTranslateSentence := Res;
+End;
+
+{ ------------------------------------------------------------------ }
+{ POLONAIS -> ANGLAIS : lexique de formes, jetons et etiquetage        }
+{ ------------------------------------------------------------------ }
+{ Declinaisons (sept cas), conjugaisons et adjectifs sont engendres a   }
+{ la construction (mkpl.py) : le programme cherche une forme de surface }
+{ puis ajoute les articles, le sujet omis et l'ordre des mots avant de   }
+{ reutiliser l'analyse de l'espagnol.                                   }
+
+Type
+  TPl = Record
+    F1: String[30];
+    En: String[26];
+    Pos: Char;
+    Plu: Boolean;
+    PluAlt: Boolean;
+    Cases: String[8];
+    Alts: String[40];
+    NAlt: Integer;
+    ATn: Array[1..4] Of Char;
+    ASl: Array[1..4] Of Integer;
+    Num: Boolean;
+    SpIdx: Integer;
+    Slot: Integer;
+  End;
+
+Var
+  PlLex: Array[1..12000] Of TPl;
+  PlCount: Integer;
+  SourcePl: Boolean;
+
+Procedure LoadPolish;
+Var
+  I, J, P: Integer;
+  Line, Item, Key, En, Pos1, Code, Alt, K1, Cs: String;
+Begin
+  PlCount := 0;
+  For I := 0 To High(PlData) Do
+  Begin
+    Line := PlData[I];
+    While Line <> '' Do
+    Begin
+      Item := CopyUntil(Line, ';');
+      If (Item <> '') And (PlCount < 12000) Then
+      Begin
+        Key := CopyUntil(Item, '=');
+        En := CopyUntil(Item, ':');
+        Pos1 := CopyUntil(Item, ':');
+        Code := Item;
+        Inc(PlCount);
+        FillChar(PlLex[PlCount], SizeOf(TPl), 0);
+        PlLex[PlCount].F1 := FrLower(ReplaceChar(Key, '_', ' '));
+        PlLex[PlCount].En := ReplaceChar(En, '_', ' ');
+        PlLex[PlCount].Pos := Pos1[1];
+        Cs := '';
+        K1 := '';
+        J := 0;
+        While Code <> '' Do
+        Begin
+          Alt := CopyUntil(Code, '+');
+          Inc(J);
+          If Pos1[1] = 'v' Then
+          Begin
+            If J <= 4 Then
+            Begin
+              PlLex[PlCount].ATn[J] := Alt[1];
+              If (Length(Alt) > 1) And (Alt[2] In ['0'..'9']) Then
+              Begin
+                PlLex[PlCount].ASl[J] := Ord(Alt[2]) - Ord('0');
+                If (Length(Alt) > 3) And (Alt[3] = ':') Then K1 := Copy(Alt, 4,
+                    12);
+              End
+              Else If (Length(Alt) > 2) And (Alt[2] = ':') Then K1 := Copy(Alt,
+                  3, 12);
+              PlLex[PlCount].NAlt := J;
+            End;
+          End
+          Else If Pos1[1] In ['n', 'a', 'z'] Then
+          Begin
+            If Length(PlLex[PlCount].Alts) + Length(Alt) < 39 Then
+              If PlLex[PlCount].Alts = '' Then PlLex[PlCount].Alts := Alt
+              Else PlLex[PlCount].Alts := PlLex[PlCount].Alts + '+' + Alt;
+            If J = 1 Then PlLex[PlCount].Plu := Alt[1] = 'p'
+            Else If (Alt[1] = 'p') <> PlLex[PlCount].Plu Then
+                PlLex[PlCount].PluAlt := True;
+            P := Pos(':', Alt);
+            If P > 0 Then
+              While P < Length(Alt) Do
+              Begin
+                Inc(P);
+                If Pos(Alt[P], Cs) = 0 Then Cs := Cs + Alt[P];
+              End;
+          End
+          Else If Pos1[1] = 's' Then PlLex[PlCount].Slot := Ord(Alt[1]) -
+              Ord('0')
+          Else If Pos1[1] = 'u' Then PlLex[PlCount].Num := Alt = '1';
+        End;
+        PlLex[PlCount].Cases := Cs;
+        If Pos1[1] = 'v' Then
+        Begin
+          If K1 <> '' Then PlLex[PlCount].SpIdx := AlSpIndex(K1,
+              PlLex[PlCount].En)
+          Else PlLex[PlCount].SpIdx := AlSpIndex('is:' + PlLex[PlCount].En,
+              PlLex[PlCount].En);
+        End;
+      End;
+    End;
+  End;
+End;
+
+Function PlFind(Const W, Kinds: String): Integer;
+Var
+  I: Integer;
+Begin
+  PlFind := 0;
+  For I := 1 To PlCount Do
+    If (PlLex[I].F1 = W) And (Pos(PlLex[I].Pos, Kinds) > 0) Then
+    Begin
+      PlFind := I;
+      Exit;
+    End;
+End;
+
+{ minuscules : lettres latines, accents latin-1 et lettres polonaises }
+Function PlLower(Const S: String): String;
+Var
+  I: Integer;
+  R: String;
+Begin
+  R := FrLower(S);
+  I := 1;
+  While I < Length(R) Do
+  Begin
+    If R[I] = #$C4 Then
+    Begin
+      If (R[I + 1] = #$84) Or (R[I + 1] = #$86) Or (R[I + 1] = #$98) Then
+        R[I + 1] := Chr(Ord(R[I + 1]) + 1);
+      Inc(I);
+    End
+    Else If R[I] = #$C5 Then
+    Begin
+      If (R[I + 1] = #$81) Or (R[I + 1] = #$83) Or (R[I + 1] = #$9A) Or
+         (R[I + 1] = #$B9) Or (R[I + 1] = #$BB) Then
+        R[I + 1] := Chr(Ord(R[I + 1]) + 1);
+      Inc(I);
+    End
+    Else If R[I] = #$C3 Then Inc(I);
+    Inc(I);
+  End;
+  PlLower := R;
+End;
+
+Function PlCapital(Const W: String): Boolean;
+Begin
+  PlCapital := False;
+  If W = '' Then Exit;
+  If (W[1] >= 'A') And (W[1] <= 'Z') Then PlCapital := True
+  Else If Length(W) > 1 Then
+  Begin
+    If (W[1] = #$C3) And (W[2] >= #$80) And (W[2] <= #$9E) Then PlCapital :=
+        True
+    Else If (W[1] = #$C4) And ((W[2] = #$84) Or (W[2] = #$86) Or (W[2] = #$98))
+        Then PlCapital := True
+    Else If (W[1] = #$C5) And ((W[2] = #$81) Or (W[2] = #$83) Or (W[2] = #$9A)
+        Or
+            (W[2] = #$B9) Or (W[2] = #$BB)) Then PlCapital := True;
+  End;
+End;
+
+Procedure PlTokenize(Const S0: String);
+Var
+  S, Word1: String;
+  I, L: Integer;
+  C: Char;
+Begin
+  SN := 0;
+  SEnd := #0;
+  S := '';
+  I := 1;
+  While I <= Length(S0) Do
+  Begin
+    If (S0[I] = #$C2) And (I < Length(S0)) And ((S0[I + 1] = #$AB) Or (S0[I + 1]
+        = #$BB) Or (S0[I + 1] = #$A0)) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 2);
+    End
+    Else If (S0[I] = #$E2) And (I + 2 <= Length(S0)) And (S0[I + 1] = #$80) And
+            (S0[I + 2] >= #$93) And (S0[I + 2] <= #$9E) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 3);
+    End
+    Else
+    Begin
+      S := S + S0[I];
+      Inc(I);
+    End;
+  End;
+  L := Length(S);
+  I := 1;
+  While I <= L Do
+  Begin
+    C := S[I];
+    If FrWordByte(C) Then
+    Begin
+      Word1 := '';
+      While (I <= L) And FrWordByte(S[I]) Do
+      Begin
+        Word1 := Word1 + S[I];
+        Inc(I);
+      End;
+      SPush(PlLower(Word1), Word1, PlCapital(Word1), False, False);
+    End
+    Else
+    Begin
+      If (C = '.') Or (C = '?') Or (C = '!') Then
+      Begin
+        If SEnd = #0 Then SEnd := C;
+        If C = '?' Then SEnd := '?';
+      End
+      Else If (C = ',') Or (C = ';') Or (C = ':') Then
+      Begin
+        SPush(',', ',', False, True, False);
+        ST[SN].Cat := ',';
+      End;
+      Inc(I);
+    End;
+  End;
+End;
+
+Procedure PlMergeMultiword;
+Var
+  I, K, Len, L: Integer;
+  Key: String;
+  Bad, Found: Boolean;
+Begin
+  I := 1;
+  While I < SN Do
+  Begin
+    Found := False;
+    For Len := 4 Downto 2 Do
+      If (Not Found) And (I + Len - 1 <= SN) Then
+      Begin
+        Key := '';
+        Bad := False;
+        For K := I To I + Len - 1 Do
+        Begin
+          If ST[K].Punct Then Bad := True;
+          Key := Join(Key, ST[K].W);
+        End;
+        If Not Bad Then
+        Begin
+          L := PlFind(Key, 'rpcjwvz');
+          If L > 0 Then
+          Begin
+            Found := True;
+            ST[I].W := Key;
+            ST[I].Orig := Key;
+            For K := I + 1 To SN - Len + 1 Do
+              ST[K] := ST[K + Len - 1];
+            Dec(SN, Len - 1);
+          End;
+        End;
+      End;
+    Inc(I);
+  End;
+End;
+
+Function PlNextNounish(I: Integer): Boolean;
+Begin
+  PlNextNounish := False;
+  If (I > SN) Or ST[I].Punct Then Exit;
+  PlNextNounish := PlFind(ST[I].W, 'nadxuz') > 0;
+End;
+
+Function PlNextVerbal(I: Integer): Boolean;
+Begin
+  PlNextVerbal := False;
+  If (I > SN) Or ST[I].Punct Then Exit;
+  If ST[I].W = 'nie' Then
+  Begin
+    PlNextVerbal := True;
+    Exit;
+  End;
+  PlNextVerbal := PlFind(ST[I].W, 'v') > 0;
+End;
+
+Function PlVerbKey2(I: Integer): String;
+Begin
+  If (I >= 1) And (I <= SN) And (ST[I].Cat = 'V') And (ST[I].Idx > 0) Then
+    PlVerbKey2 := SpPlain(SpLex[ST[I].Idx].Es)
+  Else
+    PlVerbKey2 := '';
+End;
+
+{ prepositions : cle espagnole quand le moteur a une regle propre }
+Function PlPrepKey(Const En, W: String): String;
+Begin
+  PlPrepKey := W;
+  If (En = 'in') Or (En = 'on') Or (En = 'at') Then PlPrepKey := 'en'
+  Else If En = 'to' Then PlPrepKey := 'a'
+  Else If En = 'of' Then PlPrepKey := 'de'
+  Else If (En = 'from') Then PlPrepKey := 'desde'
+  Else If En = 'for' Then PlPrepKey := 'para';
+End;
+
+{ cas regis par une preposition }
+Function PlPrepCases(Const W: String): String;
+Begin
+  PlPrepCases := '';
+  If InList(W, 'do od bez dla u obok koło wśród podczas') Then PlPrepCases :=
+      'g'
+  Else If InList(W, 'z ze') Then PlPrepCases := 'gi'
+  Else If InList(W, 'w we na o') Then PlPrepCases := 'la'
+  Else If InList(W, 'po') Then PlPrepCases := 'la'
+  Else If InList(W, 'przy') Then PlPrepCases := 'l'
+  Else If InList(W, 'pod nad za') Then PlPrepCases := 'ia'
+  Else If InList(W, 'przed między') Then PlPrepCases := 'i'
+  Else If W = 'przez' Then PlPrepCases := 'a'
+  Else If InList(W, 'dzięki ku') Then PlPrepCases := 'd';
+End;
+
+{ nombre d'un nom a plusieurs lectures (szkoly = pluriel ou genitif) }
+Function PlAltPlural(Idx, I: Integer): Boolean;
+Var
+  Alts, Alt, Want, Cs: String;
+  J, Q: Integer;
+  Pick: String;
+  Done: Boolean;
+Begin
+  PlAltPlural := PlLex[Idx].Plu;
+  J := I - 1;
+  While (J >= 1) And (ST[J].Cat In ['A', 'S', 'T', 'D']) Do Dec(J);
+  Want := 'n';
+  If J >= 1 Then
+  Begin
+    If (ST[J].Cat = 'E') And (ST[J].Cl <> '') Then Want := ST[J].Cl
+    Else If ST[J].Cat = 'V' Then Want := 'a'
+    Else If ST[J].Cat = 'U' Then
+    Begin
+      If InList(ST[J].W, 'jeden jedna jedno') Then Want := 'n'
+      Else If InList(ST[J].W, 'dwa dwie trzy cztery') Then Want := 'p'
+      Else Want := 'g';
+    End;
+  End;
+  Alts := PlLex[Idx].Alts;
+  Pick := '';
+  Done := False;
+  While (Alts <> '') And Not Done Do
+  Begin
+    Alt := CopyUntil(Alts, '+');
+    If Want = 'p' Then
+    Begin
+      If Alt[1] = 'p' Then
+      Begin
+        Pick := Alt;
+        Done := True;
+      End;
+    End
+    Else
+    Begin
+      Cs := Copy(Alt, 3, 8);
+      For Q := 1 To Length(Want) Do
+        If (Not Done) And (Pos(Want[Q], Cs) > 0) Then
+        Begin
+          Pick := Alt;
+          Done := True;
+        End;
+    End;
+  End;
+  If Pick <> '' Then PlAltPlural := Pick[1] = 'p';
+End;
+
+Procedure PlPickCat(I: Integer);
+Var
+  W: String;
+  Prev: Char;
+  Idx, K, Q: Integer;
+  PrefNoun: Boolean;
+Begin
+  W := ST[I].W;
+  If I > 1 Then Prev := ST[I - 1].Cat Else Prev := '.';
+  If ST[I].Punct Then
+  Begin
+    ST[I].Cat := ',';
+    Exit;
+  End;
+  If IsDigitsOnly(W) Then
+  Begin
+    ST[I].Cat := 'U';
+    ST[I].En := W;
+    Exit;
+  End;
+  { czy en tete : marque de question ; sie : pronom reflechi omis }
+  If (W = 'czy') And (I = 1) Then
+  Begin
+    ST[I].Cat := ' ';
+    SEnd := '?';
+    Exit;
+  End;
+  If W = 'się' Then
+  Begin
+    ST[I].Cat := ' ';
+    Exit;
+  End;
+  If (W = 'nie') Or (W = 'tak') Then
+  Begin
+    If (I = SN) Or ST[I + 1].Punct Then
+    Begin
+      ST[I].Cat := 'J';
+      If W = 'nie' Then ST[I].En := 'No' Else ST[I].En := 'Yes';
+    End
+    Else If W = 'nie' Then
+      ST[I].Cat := 'G'
+    Else
+    Begin
+      ST[I].Cat := 'R';
+      ST[I].En := 'so';
+    End;
+    Exit;
+  End;
+  { blisko + genitif : pres de }
+  If (W = 'blisko') And PlNextNounish(I + 1) And (PlFind(ST[I + 1].W, 'n') > 0)
+      Then
+  Begin
+    ST[I].Cat := 'E';
+    ST[I].En := 'near';
+    ST[I].Cl := 'g';
+    Exit;
+  End;
+  { z Polski : le pays, pas l'adjectif }
+  If (W = 'polski') And (Prev = 'E') And Not PlNextNounish(I + 1) Then
+  Begin
+    ST[I].Cat := 'Z';
+    ST[I].Cap := True;
+    ST[I].Orig := 'Poland';
+    ST[I].En := 'Poland';
+    Exit;
+  End;
+  { pan / pani devant un nom propre : titre }
+  If ((W = 'pan') Or (W = 'pani')) And (I < SN) And PlCapital(ST[I + 1].Orig)
+      And
+     Not ST[I + 1].Punct Then
+  Begin
+    ST[I].Cat := 'Z';
+    ST[I].Cap := True;
+    If W = 'pan' Then ST[I].Orig := 'Mr' Else ST[I].Orig := 'Mrs';
+    ST[I].En := ST[I].Orig;
+    Exit;
+  End;
+  PrefNoun := Prev In ['D', 'S', 'T', 'Q', 'U', 'A'];
+  If PrefNoun Then Idx := PlFind(W, 'n') Else Idx := 0;
+  If Idx = 0 Then Idx := PlFind(W, 'wsoxdqgcjruzpet');
+  If Idx = 0 Then Idx := PlFind(W, 'v');
+  If Idx = 0 Then Idx := PlFind(W, 'n');
+  If Idx = 0 Then Idx := PlFind(W, 'a');
+  If Idx = 0 Then
+  Begin
+    ST[I].Cat := 'Z';
+    Exit;
+  End;
+  { pronom complement ou determinant ? (ich dom, ci ludzie, je = mange) }
+  If PlLex[Idx].Pos = 'o' Then
+  Begin
+    K := PlFind(W, 'xd');
+    If (K > 0) And PlNextNounish(I + 1) And
+       Not ((Prev = 'V') And (PlVerbKey2(I - 1) = 'dar')) Then Idx := K
+    Else
+    Begin
+      K := PlFind(W, 'v');
+      Q := I - 1;
+      While (Q >= 1) And (ST[Q].Cat In ['G', 'R']) Do Dec(Q);
+      If (K > 0) And (Q >= 1) And (ST[Q].Cat In ['P', 'N', 'Z']) And Not
+          PlNextVerbal(I + 1) Then Idx := K;
+    End;
+  End;
+  ST[I].En := PlLex[Idx].En;
+  Case PlLex[Idx].Pos Of
+    'w':
+    Begin
+      ST[I].Cat := 'W';
+      If W = 'gdzie' Then ST[I].W := 'donde'
+      Else If W = 'kto' Then ST[I].W := 'quien'
+      Else If W = 'kiedy' Then ST[I].W := 'cuando'
+      Else If W = 'jak' Then ST[I].W := 'como'
+      Else If (W = 'skąd') Or (W = 'dokąd') Then ST[I].W := 'donde'
+      Else If W = 'dlaczego' Then ST[I].W := 'por que'
+      Else If ST[I].En = 'which' Then ST[I].W := 'cual'
+      Else If ST[I].En = 'how many' Then ST[I].W := 'cuantos'
+      Else ST[I].W := 'que';
+    End;
+    's':
+    Begin
+      ST[I].Cat := 'P';
+      ST[I].Slot := PlLex[Idx].Slot;
+    End;
+    'o': ST[I].Cat := 'O';
+    'x':
+    Begin
+      ST[I].Cat := 'S';
+      ST[I].Kind := ' ';
+    End;
+    't':
+    Begin
+      ST[I].Cat := 'D';
+      ST[I].Kind := 'i';
+      ST[I].W := 'un';
+    End;
+    'd':
+    Begin
+      ST[I].Cat := 'T';
+      ST[I].Plu := PlLex[Idx].En = 'these';
+    End;
+    'g': ST[I].Cat := 'G';
+    'q': ST[I].Cat := 'g';
+    'c': ST[I].Cat := 'C';
+    'r': ST[I].Cat := 'R';
+    'j': ST[I].Cat := 'J';
+    'p', 'e':
+    Begin
+      ST[I].Cat := 'E';
+      ST[I].W := PlPrepKey(PlLex[Idx].En, W);
+      ST[I].Cl := PlPrepCases(W);
+    End;
+    'u':
+    Begin
+      If PlLex[Idx].Num Then ST[I].Cat := 'U' Else ST[I].Cat := 'Q';
+      ST[I].Plu := InList(W,
+          'wszyscy wszystkie wszystkich oba obie wiele kilka kilku mało niekt'+
+          'órzy dużo');
+    End;
+    'z':
+    Begin
+      ST[I].Cat := 'Z';
+      ST[I].Orig := ST[I].En;
+      ST[I].Cap := True;
+    End;
+    'v':
+    Begin
+      ST[I].Cat := 'V';
+      ST[I].Idx := PlLex[Idx].SpIdx;
+      ST[I].Tns := PlLex[Idx].ATn[1];
+      ST[I].Slot := PlLex[Idx].ASl[1];
+      ST[I].Kind := ' ';
+      ST[I].Cl := '';
+    End;
+    'n':
+    Begin
+      ST[I].Cat := 'N';
+      ST[I].Plu := PlLex[Idx].Plu;
+      If PlLex[Idx].PluAlt Then ST[I].Plu := PlAltPlural(Idx, I);
+      ST[I].Cl := '';
+    End;
+    'a':
+    Begin
+      ST[I].Cat := 'A';
+      ST[I].Plu := PlLex[Idx].Plu;
+    End;
+  End;
+End;
+
+{ ------------------------------------------------------------------ }
+{ POLONAIS -> ANGLAIS : sujet omis, articles, ordre et phrase complete }
+{ ------------------------------------------------------------------ }
+
+Function PlVerbKey(I: Integer): String;
+Begin
+  If (I >= 1) And (I <= SN) And (ST[I].Cat = 'V') And (ST[I].Idx > 0) Then
+    PlVerbKey := SpPlain(SpLex[ST[I].Idx].Es)
+  Else
+    PlVerbKey := '';
+End;
+
+Procedure PlInsert(Pos1: Integer);
+Var
+  K: Integer;
+Begin
+  If SN >= MaxTokens Then Exit;
+  For K := SN Downto Pos1 Do
+    ST[K + 1] := ST[K];
+  Inc(SN);
+  FillChar(ST[Pos1], SizeOf(TSTok), 0);
+  ST[Pos1].Tns := ' ';
+End;
+
+{ cas du mot du jeton I (lettres n g d a i l) }
+Function PlCases(I: Integer): String;
+Var
+  K: Integer;
+Begin
+  PlCases := '';
+  K := 0;
+  If ST[I].Cat = 'N' Then K := PlFind(ST[I].W, 'n')
+  Else If ST[I].Cat = 'A' Then K := PlFind(ST[I].W, 'a')
+  Else If ST[I].Cat = 'Z' Then K := PlFind(ST[I].W, 'z');
+  If K > 0 Then PlCases := PlLex[K].Cases;
+End;
+
+{ le jeton peut-il etre un sujet (nominatif) ? }
+Function PlIsSubj(I: Integer; Strict: Boolean): Boolean;
+Var
+  C: String;
+Begin
+  PlIsSubj := False;
+  If (I < 1) Or (I > SN) Then Exit;
+  If ST[I].Cat = 'P' Then
+  Begin
+    PlIsSubj := True;
+    Exit;
+  End;
+  If Not (ST[I].Cat In ['N', 'Z']) Then Exit;
+  C := PlCases(I);
+  If C = '' Then
+    PlIsSubj := (ST[I].Cat = 'Z') And ST[I].Cap And (Not Strict)
+  Else
+    PlIsSubj := Pos('n', C) > 0;
+End;
+
+{ fin du groupe nominal qui commence en K ; 0 s'il n'y en a pas }
+Function PlSubjEnd(K: Integer): Integer;
+Var
+  J: Integer;
+Begin
+  PlSubjEnd := 0;
+  If (K < 1) Or (K > SN) Then Exit;
+  If ST[K].Cat = 'P' Then
+  Begin
+    PlSubjEnd := K;
+    Exit;
+  End;
+  J := K;
+  While (J <= SN) And (ST[J].Cat In ['D', 'S', 'T', 'Q', 'U']) Do Inc(J);
+  While (J <= SN) And (ST[J].Cat = 'A') Do Inc(J);
+  If (J <= SN) And (ST[J].Cat = 'N') Then
+    PlSubjEnd := J
+  Else If (J <= SN) And (ST[J].Cat = 'Z') And ST[J].Cap Then
+  Begin
+    While (J < SN) And (ST[J + 1].Cat = 'Z') Do Inc(J);
+    PlSubjEnd := J;
+  End;
+End;
+
+Function PlSubjBefore(I: Integer): Boolean;
+Var
+  J, K: Integer;
+Begin
+  PlSubjBefore := False;
+  J := I - 1;
+  While (J >= 1) And (ST[J].Cat In ['G', 'R']) Do Dec(J);
+  If J < 1 Then Exit;
+  If ST[J].Cat = 'P' Then
+  Begin
+    PlSubjBefore := True;
+    Exit;
+  End;
+  If (ST[J].Cat = 'W') And (ST[J].W = 'quien') Then
+  Begin
+    PlSubjBefore := True;
+    Exit;
+  End;
+  If ST[J].Cat In ['N', 'Z'] Then
+  Begin
+    { dom mojego brata jest : on remonte jusqu'au nom qui precede "de" }
+    K := J;
+    While (K >= 1) And (ST[K].Cat In ['N', 'A', 'S', 'T', 'Z']) Do Dec(K);
+    If (K >= 1) And (ST[K].Cat = 'E') And (ST[K].Orig = 'de') And (K > 1) And
+       (ST[K - 1].Cat = 'N') Then
+      J := K - 1;
+    If Not PlIsSubj(J, False) Then Exit;
+    K := J;
+    While (K >= 1) And (ST[K].Cat In ['N', 'A', 'D', 'S', 'T', 'Q', 'U', 'Z'])
+        Do Dec(K);
+    PlSubjBefore := (K < 1) Or (ST[K].Cat <> 'E');
+  End;
+End;
+
+{ un sujet nominatif suit-il le verbe en I ? renvoie la fin du groupe }
+Function PlSubjAfter(I: Integer): Integer;
+Var
+  E: Integer;
+Begin
+  PlSubjAfter := 0;
+  If ST[I].Slot In [1, 2, 4, 5] Then Exit;
+  E := PlSubjEnd(I + 1);
+  If (E = 0) Or (E - I > 8) Then Exit;
+  If ST[E].Cat = 'P' Then Exit;
+  If Not PlIsSubj(E, True) Then Exit;
+  If (Pos('a', PlCases(E)) > 0) And (PlVerbKey(I) <> 'ser') And
+     Not InList(ST[I].En,
+         'arrive come go live stand lie sit sleep fall rain work walk run stay'+
+         ' return cost be') Then Exit;
+  PlSubjAfter := E;
+End;
+
+Procedure PlMoveBlock(From1, To1, Dest: Integer);
+Var
+  Tmp: Array[1..12] Of TSTok;
+  N, K: Integer;
+Begin
+  N := To1 - From1 + 1;
+  If (N < 1) Or (N > 12) Or (Dest >= From1) Then Exit;
+  For K := 1 To N Do Tmp[K] := ST[From1 + K - 1];
+  For K := From1 - 1 Downto Dest Do ST[K + N] := ST[K];
+  For K := 1 To N Do ST[Dest + K - 1] := Tmp[K];
+End;
+
+Function PlHasWh: Boolean;
+Var
+  K: Integer;
+Begin
+  PlHasWh := False;
+  For K := 1 To SN Do
+    If ST[K].Cat = 'W' Then PlHasWh := True;
+End;
+
+{ Choisit parmi les lectures d'une forme verbale }
+Procedure PlResolveVerb(I: Integer);
+Var
+  Idx, J, K, Want, Pick: Integer;
+Begin
+  Idx := PlFind(ST[I].W, 'v');
+  If (Idx = 0) Or (PlLex[Idx].NAlt < 2) Then Exit;
+  Want := 0;
+  J := I - 1;
+  While (J >= 1) And (ST[J].Cat In ['G', 'R']) Do Dec(J);
+  If (J >= 1) And (ST[J].Cat = 'P') Then Want := ST[J].Slot
+  Else If (J >= 1) And (ST[J].Cat In ['N', 'Z']) Then
+  Begin
+    If ST[J].Plu Then Want := 6 Else Want := 3;
+  End;
+  Pick := 0;
+  If Want > 0 Then
+    For K := 1 To PlLex[Idx].NAlt Do
+      If (Pick = 0) And (PlLex[Idx].ASl[K] = Want) Then Pick := K;
+  If Pick = 0 Then Pick := 1;
+  ST[I].Tns := PlLex[Idx].ATn[Pick];
+  ST[I].Slot := PlLex[Idx].ASl[Pick];
+End;
+
+{ sujet pronominal pour un verbe sans sujet exprime }
+Procedure PlMakePronoun(Pos1, Slot: Integer; Const VW: String; Impers: Boolean);
+Var
+  L: Integer;
+Begin
+  ST[Pos1].Cat := 'P';
+  ST[Pos1].Slot := Slot;
+  ST[Pos1].Tns := ' ';
+  Case Slot Of
+    1: Begin ST[Pos1].En := 'I'; ST[Pos1].W := 'ja'; End;
+    2: Begin ST[Pos1].En := 'you'; ST[Pos1].W := 'ty'; End;
+    4: Begin ST[Pos1].En := 'we'; ST[Pos1].W := 'my'; End;
+    5: Begin ST[Pos1].En := 'you'; ST[Pos1].W := 'wy'; End;
+    6: Begin ST[Pos1].En := 'they'; ST[Pos1].W := 'oni'; End;
+  Else
+    Begin
+      ST[Pos1].Slot := 3;
+      ST[Pos1].En := 'he';
+      ST[Pos1].W := 'on';
+      L := Length(VW);
+      If Impers Then
+      Begin
+        ST[Pos1].En := 'it';
+        ST[Pos1].W := 'ono';
+      End
+      Else If (L >= 3) And (Copy(VW, L - 2, 3) = #$C5#$82'a') Then
+      Begin
+        ST[Pos1].En := 'she';
+        ST[Pos1].W := 'ona';
+      End
+      Else If (L >= 3) And (Copy(VW, L - 2, 3) = #$C5#$82'o') Then
+      Begin
+        ST[Pos1].En := 'it';
+        ST[Pos1].W := 'ono';
+      End;
+    End;
+  End;
+  ST[Pos1].Orig := ST[Pos1].W;
+End;
+
+Function PlDefinite(K: Integer): Boolean;
+Var
+  J: Integer;
+  VBefore, VAfter: Boolean;
+Begin
+  PlDefinite := False;
+  If (K > 1) And (ST[K - 1].Cat = 'E') And (ST[K - 1].W = 'de') And (ST[K -
+      1].Orig = 'de') Then
+  Begin
+    PlDefinite := True;
+    Exit;
+  End;
+  VBefore := False;
+  VAfter := False;
+  For J := 1 To SN Do
+    If ST[J].Cat = 'V' Then
+    Begin
+      If J < K Then VBefore := True Else VAfter := True;
+    End;
+  { complement au locatif : w ogrodzie = dans le jardin }
+  If (K > 1) And (ST[K - 1].Cat = 'E') And (Pos('l', ST[K - 1].Cl) > 0) And
+     (Pos('l', PlCases(K)) > 0) And ((K = SN) Or (ST[K + 1].Cat <> 'A')) Then
+  Begin
+    PlDefinite := True;
+    Exit;
+  End;
+  { do domu, do sklepu : vers le lieu }
+  If (K > 1) And (ST[K - 1].Cat = 'E') And (ST[K - 1].En = 'to') And (ST[K -
+      1].Cl = 'g') And
+     (Pos('g', PlCases(K)) > 0) And ((K = SN) Or (ST[K + 1].Cat <> 'A')) Then
+  Begin
+    PlDefinite := True;
+    Exit;
+  End;
+  { przed domem, pod stolem : position precise }
+  If (K > 1) And (ST[K - 1].Cat = 'E') And
+     (((ST[K - 1].En = 'in front of') Or (ST[K - 1].En = 'under') Or (ST[K -
+         1].En = 'over') Or (ST[K - 1].En = 'behind') Or (ST[K - 1].En =
+         'between') Or (ST[K - 1].En = 'near') Or (ST[K - 1].En = 'next to')))
+         And
+     ((K = SN) Or (ST[K + 1].Cat <> 'A')) Then
+  Begin
+    PlDefinite := True;
+    Exit;
+  End;
+  { impératif : ouvre la porte }
+  For J := 1 To K - 1 Do
+    If (ST[J].Cat = 'V') And (ST[J].Tns = 'M') And (ST[K - 1].Cat <> 'E') Then
+    Begin
+      PlDefinite := True;
+      Exit;
+    End;
+  If VBefore Or (Not VAfter) Then Exit;
+  If (K > 1) And (ST[K - 1].Cat = 'E') Then Exit;
+  PlDefinite := Pos('n', PlCases(K)) > 0;
+End;
+
+Procedure PlClassify;
+Var
+  I, J, K, E: Integer;
+  Key: String;
+  Fin, SerSeen: Boolean;
+Begin
+  PlMergeMultiword;
+  For I := 1 To SN Do
+    PlPickCat(I);
+  ARemoveConsumed;
+  { interrogatif apres une virgule ou un verbe : subordonnee }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'W') And (ST[I].W <> 'quien') And
+       ((ST[I - 1].Cat = 'V') Or ((ST[I - 1].Cat = ',') And (I > 2) And (ST[I -
+           2].Cat = 'V'))) Then
+    Begin
+      ST[I].Cat := 'C';
+      If ST[I - 1].Cat = ',' Then ST[I - 1].Cat := ' ';
+    End;
+  ARemoveConsumed;
+  { interjection au milieu d'une phrase : minuscule }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'J') And (ST[I].En <> '') And (ST[I].En[1] In ['A'..'Z'])
+        Then
+      ST[I].En[1] := Chr(Ord(ST[I].En[1]) + 32);
+  { prosze + infinitif : imperatif poli }
+  For I := 1 To SN - 1 Do
+    If (ST[I].W = 'proszę') And (ST[I + 1].Cat = 'V') And (ST[I + 1].Tns = 'I')
+        And (SN < MaxTokens) Then
+    Begin
+      ST[I].Cat := 'J';
+      ST[I].En := 'please';
+      ST[I + 1].Tns := 'M';
+      ST[I + 1].Slot := 2;
+      PlInsert(I + 1);
+      ST[I + 1].Cat := ',';
+      ST[I + 1].Punct := True;
+      ST[I + 1].W := ',';
+      Break;
+    End;
+  { padac deszcz : il pleut }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'V') And (ST[I].En = 'fall') And (ST[I + 1].Cat = 'N') And
+        (ST[I + 1].En = 'rain') Then
+    Begin
+      ST[I].Idx := AlSpIndex('llover', 'rain');
+      ST[I].En := 'rain';
+      ST[I + 1].Cat := ' ';
+    End;
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].En = 'fall') And (ST[I - 1].Cat = 'N') And
+        (ST[I - 1].En = 'rain') Then
+    Begin
+      ST[I].Idx := AlSpIndex('llover', 'rain');
+      ST[I].En := 'rain';
+      ST[I - 1].Cat := ' ';
+    End;
+  ARemoveConsumed;
+  { robic + plat : faire ; preparer }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'V') And (PlVerbKey(I) = 'hacer') Then
+    Begin
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat In ['A', 'D', 'S', 'T', 'Q', 'U']) Do
+          Inc(K);
+      If (ST[K].Cat = 'N') And InList(ST[K].En,
+          'soup cake lunch dinner breakfast coffee tea salad sandwich bread pi'+
+          'zza') Then
+      Begin
+        ST[I].Idx := AlSpIndex('is:make', 'make');
+        ST[I].En := 'make';
+      End;
+    End;
+  { skad : where ... from }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'W') And (ST[I].En = 'where from') And (SN < MaxTokens) Then
+    Begin
+      ST[I].W := 'donde';
+      ST[I].En := 'where';
+      Inc(SN);
+      FillChar(ST[SN], SizeOf(TSTok), 0);
+      ST[SN].Tns := ' ';
+      ST[SN].Cat := 'E';
+      ST[SN].W := 'desde';
+      ST[SN].Orig := 'desde';
+      ST[SN].En := 'from';
+    End;
+  { z + pays ou ville au genitif : from ; czekac na : wait for ; w + jour : on }
+  For I := 1 To SN - 1 Do
+    If ST[I].Cat = 'E' Then
+    Begin
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If (ST[I].Cl = 'gi') And (ST[K].Cat = 'Z') And
+         (((Pos('g', PlCases(K)) > 0) And (Pos('n', PlCases(K)) = 0)) Or
+             (ST[K].Orig = 'Poland')) Then
+      Begin
+        ST[I].En := 'from';
+        ST[I].W := 'desde';
+      End;
+      If (ST[I].En = 'on') And (I > 1) And (ST[I - 1].Cat = 'V') And (ST[I -
+          1].En = 'wait') Then
+      Begin
+        ST[I].En := 'for';
+        ST[I].W := 'para';
+      End;
+      If (ST[I].En = 'in') And (ST[K].Cat = 'Z') And
+         InList(LowerAscii(ST[K].Orig),
+             'monday tuesday wednesday thursday friday saturday sunday') Then
+      Begin
+        ST[I].En := 'on';
+        ST[I].W := 'sobre';
+      End;
+    End;
+  { mam dwadziescia lat : I am twenty years old }
+  For I := 1 To SN - 2 Do
+    If (ST[I].Cat = 'V') And (PlVerbKey(I) = 'tener') Then
+      For J := I + 1 To SN - 1 Do
+        If (ST[J].Cat = 'U') And (ST[J + 1].Cat = 'N') And (ST[J + 1].En =
+            'year') And
+           (SN < MaxTokens) Then
+        Begin
+          ST[I].Idx := AlSpIndex('ser', 'be');
+          ST[I].En := 'be';
+          PlInsert(J + 2);
+          ST[J + 2].Cat := 'R';
+          ST[J + 2].En := 'old';
+          ST[J + 2].W := 'viejo';
+          ST[J + 2].Orig := 'old';
+          Break;
+        End;
+  { prosze : "please" en tete de phrase }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'R') And (ST[I].En = 'please') And (ST[I].W = 'proszę')
+        Then
+    Begin
+      ST[0] := ST[I];
+      For J := I Downto 2 Do
+        ST[J] := ST[J - 1];
+      ST[1] := ST[0];
+    End;
+  { grac w : jouer a (sans preposition) }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'V') And (ST[I].En = 'play') And (Copy(ST[I].W, 1, 2) =
+        'gr') And
+       (ST[I + 1].Cat = 'E') And (ST[I + 1].En = 'in') Then
+      ST[I + 1].Cat := ' ';
+  ARemoveConsumed;
+  { przed = devant ou avant selon le nom }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'E') And (ST[I].En = 'in front of') And (ST[I + 1].Cat In
+        ['N', 'A']) Then
+    Begin
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If InList(ST[K].En,
+          'lunch dinner breakfast day week month year hour lesson night evenin'+
+          'g work time morning') Then
+      Begin
+        ST[I].En := 'before';
+        ST[I].W := 'antes de';
+      End;
+    End;
+  { la virgule polonaise avant que / parce que disparait }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = ',') And (ST[I + 1].Cat = 'C') And
+       InList(ST[I + 1].W, 'że aby żeby bo ponieważ jeśli jeżeli gdy czy')
+           Then
+      ST[I].Cat := ' ';
+  ARemoveConsumed;
+  { genitif apres un nom : dom brata -> dom de brata }
+  I := 2;
+  While I <= SN Do
+  Begin
+    If ST[I].Cat In ['N', 'Z', 'A', 'S', 'T'] Then
+    Begin
+      K := I;
+      While (K <= SN) And (ST[K].Cat In ['A', 'S', 'T']) Do Inc(K);
+      If (K <= SN) And (ST[K].Cat In ['N', 'Z']) And (ST[I - 1].Cat = 'N') And
+         (Pos('g', PlCases(K)) > 0) And (Pos('n', PlCases(K)) = 0) And
+         ((ST[I].Cat <> 'A') Or (Pos('g', PlCases(I)) > 0)) Then
+      Begin
+        PlInsert(I);
+        ST[I].Cat := 'E';
+        ST[I].W := 'de';
+        ST[I].Orig := 'de';
+        ST[I].En := 'of';
+        Inc(I, K - I + 1);
+      End;
+    End;
+    Inc(I);
+  End;
+  { demonstratif seul : ce / cela }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'T') And ((I = SN) Or Not (ST[I + 1].Cat In ['N', 'A']))
+        Then
+    Begin
+      ST[I].Cat := 'P';
+      ST[I].Slot := 3;
+      If ST[I].Plu Then ST[I].Slot := 6;
+      If ST[I].W = 'to' Then ST[I].En := 'it';
+      If (I < SN) And (ST[I + 1].Cat = 'V') And (ST[I + 1].Slot = 6) And
+          (ST[I].W = 'to') Then
+      Begin
+        ST[I].En := 'they';
+        ST[I].Slot := 6;
+      End;
+    End;
+  { adjectifs devant un nom sans determinant : nom puis adjectifs }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cat = 'A') And ((I = 1) Or Not (ST[I - 1].Cat In ['D', 'S', 'T',
+        'Q', 'U', 'A'])) Then
+    Begin
+      K := I;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If (ST[K].Cat = 'N') And (K - I <= 3) Then
+      Begin
+        ST[0] := ST[K];
+        For J := K Downto I + 1 Do
+          ST[J] := ST[J - 1];
+        ST[I] := ST[0];
+        I := K;
+      End
+      Else
+        I := K;
+    End;
+    Inc(I);
+  End;
+  { choix de la lecture des formes verbales ambigues }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'V' Then PlResolveVerb(I);
+  { jak sie nazywasz : what is your name }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'W') And (ST[I].W = 'como') And (ST[I + 1].Cat = 'V') And
+       (PlVerbKey(I + 1) = 'llamar') Then
+    Begin
+      ST[I].W := 'que';
+      ST[I].En := 'what';
+    End;
+  { futur : bede + infinitif ou participe en -l }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns = 'B') Then
+    Begin
+      J := I + 1;
+      While (J <= SN) And (ST[J].Cat In ['R', 'G', 'P', 'O']) Do Inc(J);
+      If (J <= SN) And (ST[J].Cat = 'V') And (ST[J].Tns In ['I', 'i']) Then
+      Begin
+        ST[J].Tns := 'f';
+        ST[J].Slot := ST[I].Slot;
+        ST[I].Cat := ' ';
+      End
+      Else
+        ST[I].Tns := 'f';
+    End;
+  ARemoveConsumed;
+  { jest + groupe nominal : il y a }
+  If Not PlHasWh Then
+    For I := 1 To SN - 1 Do
+      If (ST[I].Cat = 'V') And (ST[I].Tns = 'p') And (ST[I].Slot In [3, 6]) And
+         (PlVerbKey(I) = 'ser') And (Not PlSubjBefore(I)) Then
+      Begin
+        J := I + 1;
+        While (J <= SN) And (ST[J].Cat = 'R') Do Inc(J);
+        If (J <= SN) And (ST[J].Cat In ['N', 'Q', 'U', 'A']) And (PlSubjEnd(J) >
+            0) And
+           (ST[PlSubjEnd(J)].Cat = 'N') Then
+        Begin
+          ST[I].Idx := AlSpIndex('haber', 'have');
+          ST[I].W := 'hay';
+          ST[I].Slot := 3;
+        End;
+      End;
+  { sujet omis : insertion du pronom d'apres la personne du verbe }
+  I := 1;
+  While I <= SN Do
+  Begin
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'i', 'f']) And (ST[I].Slot > 0)
+        And
+       (PlVerbKey(I) <> 'haber') And (PlVerbKey(I) <> 'llover') And
+       (Not PlSubjBefore(I)) And (PlSubjAfter(I) = 0) And (SN < MaxTokens) Then
+    Begin
+      J := I - 1;
+      While (J >= 1) And (ST[J].Cat = 'G') Do Dec(J);
+      Fin := (I < SN) And (ST[I + 1].Cat = 'R') And (PlVerbKey(I) = 'ser') And
+          (ST[I].Slot = 3);
+      PlInsert(J + 1);
+      PlMakePronoun(J + 1, ST[I + 1].Slot, ST[I + 1].W, Fin);
+      I := I + 1;
+      { Dzisiaj jest zimno : it is cold today }
+      If Fin And (J = 1) And (ST[1].Cat = 'R') Then
+      Begin
+        ST[0] := ST[1];
+        For K := 1 To SN - 1 Do
+          ST[K] := ST[K + 1];
+        ST[SN] := ST[0];
+        Dec(I);
+      End;
+    End;
+    Inc(I);
+  End;
+  { sujet apres le verbe : inversion }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'i', 'f']) And (Not
+        PlSubjBefore(I)) And
+       (PlVerbKey(I) <> 'haber') Then
+    Begin
+      E := PlSubjAfter(I);
+      If E > 0 Then
+      Begin
+        PlMoveBlock(I + 1, E, I);
+        I := E;
+      End;
+    End;
+    Inc(I);
+  End;
+  { double negation : nie ... nic }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'g' Then
+      For J := 1 To I - 1 Do
+        If ST[J].Cat = 'G' Then ST[J].Cat := ' ';
+  ARemoveConsumed;
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'W') And (ST[I].W = 'cuantos') Then
+      For J := I + 1 To SN Do
+        If (ST[J].Cat = 'V') And (ST[J].En = 'cost') Then
+        Begin
+          ST[I].W := 'cuanto';
+          ST[I].En := 'how much';
+        End;
+  { instrumental sans preposition : par le train, avec un stylo ; datif : a }
+  I := 2;
+  While I <= SN Do
+  Begin
+    If (ST[I].Cat = 'N') And (Not (ST[I - 1].Cat In ['E', 'D'])) Then
+    Begin
+      K := I;
+      While (K > 1) And (ST[K - 1].Cat In ['A', 'S', 'T', 'Q', 'U']) Do Dec(K);
+      Key := PlCases(I);
+      Fin := False;
+      SerSeen := False;
+      For J := 1 To K - 1 Do
+        If ST[J].Cat = 'V' Then
+        Begin
+          Fin := True;
+          If PlVerbKey(J) = 'ser' Then SerSeen := True;
+        End;
+      If Fin And (K > 1) And (ST[K - 1].Cat <> 'E') And (ST[K - 1].Cat <> 'N')
+          And
+         (Not SerSeen) And (Key = 'i') And (SN < MaxTokens) Then
+      Begin
+        E := I;
+        PlInsert(K);
+        ST[K].Cat := 'E';
+        If InList(ST[E + 1].En, 'train car bus plane bicycle boat ship') Then
+        Begin
+          ST[K].W := 'en';
+          ST[K].En := 'in';
+        End
+        Else
+        Begin
+          ST[K].W := 'con';
+          ST[K].En := 'with';
+        End;
+        ST[K].Orig := ST[K].W;
+        Inc(I);
+      End
+      Else If Fin And (K > 1) And (ST[K - 1].Cat <> 'E') And (Pos('d', Key) > 0)
+          And
+              (Pos('n', Key) = 0) And (Pos('a', Key) = 0) And (Pos('g', Key) =
+                  0) And
+              (SN < MaxTokens) Then
+      Begin
+        PlInsert(K);
+        ST[K].Cat := 'E';
+        ST[K].W := 'a';
+        ST[K].En := 'to';
+        ST[K].Orig := 'a';
+        Inc(I);
+      End;
+    End;
+    Inc(I);
+  End;
+  { ile masz ksiazek : le nom suit l'interrogatif }
+  For I := 1 To SN - 2 Do
+    If (ST[I].Cat = 'W') And (ST[I].W = 'cuantos') And (ST[I + 1].Cat <> 'N')
+        Then
+    Begin
+      K := I + 1;
+      While (K <= SN) And (ST[K].Cat <> 'N') Do Inc(K);
+      If K <= SN Then
+      Begin
+        PlMoveBlock(K, K, I + 1);
+        Break;
+      End;
+    End;
+  { nom singulier sans determinant : article }
+  I := 1;
+  While I <= SN Do
+  Begin
+    If (ST[I].Cat = 'N') And (Not ST[I].Plu) And (Not IsMassNoun(ST[I].En)) Then
+    Begin
+      K := I;
+      While (K > 1) And (ST[K - 1].Cat = 'A') Do Dec(K);
+      If ((K = 1) Or Not (ST[K - 1].Cat In ['D', 'S', 'T', 'Q', 'U'])) And Not
+          IsLanguage(LowerAscii(ST[I].En)) Then
+      Begin
+        Fin := PlDefinite(I);
+        PlInsert(K);
+        ST[K].Cat := 'D';
+        If Fin Then
+        Begin
+          ST[K].Kind := 'd';
+          ST[K].W := 'el';
+        End
+        Else
+        Begin
+          ST[K].Kind := 'i';
+          ST[K].W := 'un';
+        End;
+        Inc(I);
+      End;
+    End;
+    Inc(I);
+  End;
+  { le pluriel de l'article suit celui du nom }
+  For I := 1 To SN - 1 Do
+    If ST[I].Cat = 'D' Then
+    Begin
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If ST[K].Cat = 'N' Then ST[I].Plu := ST[K].Plu;
+    End;
+  { imperatif }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns = 'M') Then ST[I].Slot := 2;
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'i', 'f']) And (ST[I].Slot = 0)
+        Then ST[I].Slot := 3;
+  { expressions verbales : nazywac sie, padac deszcz }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'V' Then
+    Begin
+      Key := PlVerbKey(I);
+      If Key = 'haber' Then
+      Begin
+        ST[I].W := 'hay';
+        ST[I].Slot := 3;
+      End
+      Else If Key = 'llover' Then
+        ST[I].Kind := 'g'
+      Else If Key = 'llamar' Then
+        ST[I].Kind := 'r'
+      Else If (ST[I].En = 'call') And (I < SN) And (ST[I + 1].Cat = 'E') And
+          (ST[I + 1].En = 'to') Then
+        ST[I + 1].Cat := ' ';
+    End;
+  ARemoveConsumed;
+  { complement d'une preposition : pronom de groupe nominal }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'O') And (ST[I - 1].Cat = 'E') And (ST[I].En <> '') Then
+      ST[I].Cat := 'B';
+  { quantificateur : accord avec le nom suivant }
+  For I := 1 To SN - 1 Do
+    If ST[I].Cat = 'Q' Then
+    Begin
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If ST[K].Cat = 'N' Then
+      Begin
+        ST[I].Plu := ST[K].Plu;
+        If Not ST[K].Plu Then
+        Begin
+          If (ST[I].W = 'dużo') Or (ST[I].W = 'wiele') Then ST[I].En := 'much'
+          Else If ST[I].W = 'mało' Then ST[I].En := 'little';
+        End;
+      End;
+    End;
+  { pronoms complements a cote du verbe : formes liees }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'O') And (ST[I - 1].Cat = 'V') And (ST[I].En <> '') Then
+    Begin
+      ST[I - 1].Cl := ST[I].En;
+      ST[I].Cat := ' ';
+    End;
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'O') And (ST[I + 1].Cat = 'V') And (ST[I].En <> '') And
+       (ST[I + 1].Cl = '') Then
+    Begin
+      ST[I + 1].Cl := ST[I].En;
+      ST[I].Cat := ' ';
+    End;
+  ARemoveConsumed;
+End;
+
+Function PlTranslateSentence(Const Sentence: String): String;
+Var
+  Res: String;
+Begin
+  PlTokenize(Sentence);
+  If SN = 0 Then
+  Begin
+    PlTranslateSentence := '';
+    Exit;
+  End;
+  PlClassify;
+  If SN = 0 Then
+  Begin
+    PlTranslateSentence := '';
+    Exit;
+  End;
+  Res := TranslateTokensEs(1, SN, SEnd = '?');
+  If (SEnd = '?') And (Length(Res) > 8) And (Copy(Res, Length(Res) - 7, 8) =
+      ' name is') Then
+    Res := 'What is ' + LowerAscii(Copy(Res, 1, Length(Res) - 8)) + ' name';
+  Res := UpperFirst(FixEnglish(Res));
+  If SEnd <> #0 Then Res := Res + SEnd;
+  PlTranslateSentence := Res;
+End;
+
+{ ------------------------------------------------------------------ }
+{ ROUMAIN -> ANGLAIS : lexique de formes, jetons et etiquetage        }
+{ ------------------------------------------------------------------ }
+{ Les formes (article defini suffixe, genitif-datif, conjugaisons,      }
+{ adjectifs) sont engendrees a la construction (mkro.py). Le programme  }
+{ cherche une forme de surface, retablit le sujet omis et les articles, }
+{ range les auxiliaires puis reutilise l'analyse de l'espagnol.         }
+
+Type
+  TRo = Record
+    F1: String[30];
+    En: String[26];
+    Pos: Char;
+    Plu, Def, Refl: Boolean;
+    Cases: String[8];
+    Alts: String[40];
+    NAlt: Integer;
+    ATn: Array[1..4] Of Char;
+    ASl: Array[1..4] Of Integer;
+    Num: Boolean;
+    Post: Boolean;
+    SpIdx: Integer;
+    Slot: Integer;
+  End;
+
+Var
+  RoLex: Array[1..6000] Of TRo;
+  RoCount: Integer;
+  SourceRo: Boolean;
+
+Procedure LoadRomanian;
+Var
+  I, J, P: Integer;
+  Line, Item, Key, En, Pos1, Code, Alt, K1, Cs: String;
+Begin
+  RoCount := 0;
+  For I := 0 To High(RoData) Do
+  Begin
+    Line := RoData[I];
+    While Line <> '' Do
+    Begin
+      Item := CopyUntil(Line, ';');
+      If (Item <> '') And (RoCount < 6000) Then
+      Begin
+        Key := CopyUntil(Item, '=');
+        En := CopyUntil(Item, ':');
+        Pos1 := CopyUntil(Item, ':');
+        Code := Item;
+        Inc(RoCount);
+        FillChar(RoLex[RoCount], SizeOf(TRo), 0);
+        RoLex[RoCount].F1 := FrLower(ReplaceChar(Key, '_', ' '));
+        RoLex[RoCount].En := ReplaceChar(En, '_', ' ');
+        RoLex[RoCount].Pos := Pos1[1];
+        Cs := '';
+        K1 := '';
+        J := 0;
+        While Code <> '' Do
+        Begin
+          Alt := CopyUntil(Code, '+');
+          Inc(J);
+          If Pos1[1] = 'v' Then
+          Begin
+            If (Alt <> '') And (Alt[1] = '*') Then
+            Begin
+              RoLex[RoCount].Refl := True;
+              Alt := Copy(Alt, 2, 30);
+            End;
+            If J <= 4 Then
+            Begin
+              RoLex[RoCount].ATn[J] := Alt[1];
+              If (Length(Alt) > 1) And (Alt[2] In ['0'..'9']) Then
+              Begin
+                RoLex[RoCount].ASl[J] := Ord(Alt[2]) - Ord('0');
+                If (Length(Alt) > 3) And (Alt[3] = ':') Then K1 := Copy(Alt, 4,
+                    12);
+              End
+              Else If (Length(Alt) > 2) And (Alt[2] = ':') Then K1 := Copy(Alt,
+                  3, 12);
+              RoLex[RoCount].NAlt := J;
+            End;
+          End
+          Else If Pos1[1] In ['n', 'a', 'z'] Then
+          Begin
+            If Length(RoLex[RoCount].Alts) + Length(Alt) < 39 Then
+              If RoLex[RoCount].Alts = '' Then RoLex[RoCount].Alts := Alt
+              Else RoLex[RoCount].Alts := RoLex[RoCount].Alts + '+' + Alt;
+            If J = 1 Then
+            Begin
+              RoLex[RoCount].Plu := Alt[1] = 'p';
+              RoLex[RoCount].Def := (Length(Alt) > 1) And (Alt[2] = 'D');
+            End;
+            P := Pos(':', Alt);
+            If P > 0 Then
+              While P < Length(Alt) Do
+              Begin
+                Inc(P);
+                If Pos(Alt[P], Cs) = 0 Then Cs := Cs + Alt[P];
+              End;
+          End
+          Else If Pos1[1] = 's' Then RoLex[RoCount].Slot := Ord(Alt[1]) -
+              Ord('0')
+          Else If Pos1[1] = 'u' Then RoLex[RoCount].Num := Alt = '1'
+          Else If Pos1[1] = 'd' Then RoLex[RoCount].Post := Alt = 'p';
+        End;
+        RoLex[RoCount].Cases := Cs;
+        If Pos1[1] = 'v' Then
+        Begin
+          If K1 <> '' Then RoLex[RoCount].SpIdx := AlSpIndex(K1,
+              RoLex[RoCount].En)
+          Else RoLex[RoCount].SpIdx := AlSpIndex('is:' + RoLex[RoCount].En,
+              RoLex[RoCount].En);
+        End;
+      End;
+    End;
+  End;
+End;
+
+Function RoFind(Const W, Kinds: String): Integer;
+Var
+  I: Integer;
+Begin
+  RoFind := 0;
+  For I := 1 To RoCount Do
+    If (RoLex[I].F1 = W) And (Pos(RoLex[I].Pos, Kinds) > 0) Then
+    Begin
+      RoFind := I;
+      Exit;
+    End;
+End;
+
+{ minuscules : latin-1 et lettres roumaines (virgule souscrite) }
+Function RoLower(Const S: String): String;
+Var
+  I: Integer;
+  R: String;
+Begin
+  R := FrLower(S);
+  I := 1;
+  While I < Length(R) Do
+  Begin
+    If R[I] = #$C4 Then
+    Begin
+      If R[I + 1] = #$82 Then R[I + 1] := #$83;
+      Inc(I);
+    End
+    Else If R[I] = #$C8 Then
+    Begin
+      If (R[I + 1] = #$98) Or (R[I + 1] = #$9A) Then R[I + 1] := Chr(Ord(R[I +
+          1]) + 1);
+      Inc(I);
+    End
+    Else If (R[I] = #$C3) Or (R[I] = #$C5) Then Inc(I);
+    Inc(I);
+  End;
+  RoLower := R;
+End;
+
+Function RoCapital(Const W: String): Boolean;
+Begin
+  RoCapital := False;
+  If W = '' Then Exit;
+  If (W[1] >= 'A') And (W[1] <= 'Z') Then RoCapital := True
+  Else If Length(W) > 1 Then
+  Begin
+    If (W[1] = #$C3) And (W[2] >= #$80) And (W[2] <= #$9E) Then RoCapital :=
+        True
+    Else If (W[1] = #$C4) And (W[2] = #$82) Then RoCapital := True
+    Else If (W[1] = #$C8) And ((W[2] = #$98) Or (W[2] = #$9A)) Then RoCapital :=
+        True;
+  End;
+End;
+
+Procedure RoTokenize(Const S0: String);
+Var
+  S, Word1: String;
+  I, L: Integer;
+  C: Char;
+Begin
+  SN := 0;
+  SEnd := #0;
+  S := '';
+  I := 1;
+  While I <= Length(S0) Do
+  Begin
+    If (S0[I] = #$C2) And (I < Length(S0)) And ((S0[I + 1] = #$AB) Or (S0[I + 1]
+        = #$BB) Or (S0[I + 1] = #$A0)) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 2);
+    End
+    Else If (S0[I] = #$E2) And (I + 2 <= Length(S0)) And (S0[I + 1] = #$80) And
+            (S0[I + 2] >= #$93) And (S0[I + 2] <= #$9E) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 3);
+    End
+    Else If (S0[I] = #$C5) And (I < Length(S0)) And
+            ((S0[I + 1] = #$9E) Or (S0[I + 1] = #$9F) Or (S0[I + 1] = #$A2) Or
+                (S0[I + 1] = #$A3)) Then
+    Begin
+      { cedille -> virgule souscrite }
+      S := S + #$C8;
+      Case S0[I + 1] Of
+        #$9E: S := S + #$98;
+        #$9F: S := S + #$99;
+        #$A2: S := S + #$9A;
+      Else
+        S := S + #$9B;
+      End;
+      Inc(I, 2);
+    End
+    Else
+    Begin
+      S := S + S0[I];
+      Inc(I);
+    End;
+  End;
+  L := Length(S);
+  I := 1;
+  While I <= L Do
+  Begin
+    C := S[I];
+    If FrWordByte(C) Then
+    Begin
+      Word1 := '';
+      While (I <= L) And FrWordByte(S[I]) Do
+      Begin
+        Word1 := Word1 + S[I];
+        Inc(I);
+      End;
+      SPush(RoLower(Word1), Word1, RoCapital(Word1), False, False);
+    End
+    Else
+    Begin
+      If (C = '.') Or (C = '?') Or (C = '!') Then
+      Begin
+        If SEnd = #0 Then SEnd := C;
+        If C = '?' Then SEnd := '?';
+      End
+      Else If (C = ',') Or (C = ';') Or (C = ':') Then
+      Begin
+        SPush(',', ',', False, True, False);
+        ST[SN].Cat := ',';
+      End;
+      Inc(I);
+    End;
+  End;
+End;
+
+Procedure RoMergeMultiword;
+Var
+  I, K, Len, L: Integer;
+  Key: String;
+  Bad, Found: Boolean;
+Begin
+  I := 1;
+  While I < SN Do
+  Begin
+    Found := False;
+    For Len := 4 Downto 2 Do
+      If (Not Found) And (I + Len - 1 <= SN) Then
+      Begin
+        Key := '';
+        Bad := False;
+        For K := I To I + Len - 1 Do
+        Begin
+          If ST[K].Punct Then Bad := True;
+          Key := Join(Key, ST[K].W);
+        End;
+        If Not Bad Then
+        Begin
+          L := RoFind(Key, 'rpcjwvzoe');
+          If L > 0 Then
+          Begin
+            Found := True;
+            ST[I].W := Key;
+            ST[I].Orig := Key;
+            For K := I + 1 To SN - Len + 1 Do
+              ST[K] := ST[K + Len - 1];
+            Dec(SN, Len - 1);
+          End;
+        End;
+      End;
+    Inc(I);
+  End;
+End;
+
+Function RoNextNounish(I: Integer): Boolean;
+Begin
+  RoNextNounish := False;
+  If (I > SN) Or ST[I].Punct Then Exit;
+  RoNextNounish := RoFind(ST[I].W, 'nadxuz') > 0;
+End;
+
+Function RoNextVerbal(I: Integer): Boolean;
+Begin
+  RoNextVerbal := False;
+  If (I > SN) Or ST[I].Punct Then Exit;
+  If ST[I].W = 'nu' Then
+  Begin
+    RoNextVerbal := True;
+    Exit;
+  End;
+  RoNextVerbal := RoFind(ST[I].W, 'v') > 0;
+End;
+
+{ le mot suivant est-il un verbe ayant une lecture participe (P) / infinitif (I)
+  ? }
+Function RoHasTense(I: Integer; T: Char): Boolean;
+Var
+  K, J: Integer;
+Begin
+  RoHasTense := False;
+  If (I > SN) Or ST[I].Punct Then Exit;
+  K := RoFind(ST[I].W, 'v');
+  If K = 0 Then Exit;
+  For J := 1 To RoLex[K].NAlt Do
+    If RoLex[K].ATn[J] = T Then RoHasTense := True;
+End;
+
+Function RoVerbKey2(I: Integer): String;
+Begin
+  If (I >= 1) And (I <= SN) And (ST[I].Cat = 'V') And (ST[I].Idx > 0) Then
+    RoVerbKey2 := SpPlain(SpLex[ST[I].Idx].Es)
+  Else
+    RoVerbKey2 := '';
+End;
+
+Function RoPrepKey(Const En, W: String): String;
+Begin
+  RoPrepKey := W;
+  If (En = 'in') Or (En = 'on') Or (En = 'at') Then RoPrepKey := 'en'
+  Else If En = 'to' Then RoPrepKey := 'a'
+  Else If En = 'of' Then RoPrepKey := 'de'
+  Else If En = 'from' Then RoPrepKey := 'desde'
+  Else If En = 'for' Then RoPrepKey := 'para';
+End;
+
+{ nombre d'un nom a plusieurs lectures (rare) : lecture du premier cas }
+Procedure RoPickCat(I: Integer);
+Var
+  W: String;
+  Prev: Char;
+  Idx, K, Q: Integer;
+  PrefNoun, PrefAdj: Boolean;
+Begin
+  W := ST[I].W;
+  If I > 1 Then Prev := ST[I - 1].Cat Else Prev := '.';
+  If ST[I].Punct Then
+  Begin
+    ST[I].Cat := ',';
+    Exit;
+  End;
+  If IsDigitsOnly(W) Then
+  Begin
+    ST[I].Cat := 'U';
+    ST[I].En := W;
+    Exit;
+  End;
+  { reflexif / passif : se omis ; elisions l-am, n-am, s-a }
+  If W = 'se' Then
+  Begin
+    ST[I].Cat := ' ';
+    Exit;
+  End;
+  If ((W = 's') Or (W = 'm') Or (W = 't') Or (W = 'v')) And RoNextVerbal(I + 1)
+      Then
+  Begin
+    ST[I].Cat := ' ';
+    Exit;
+  End;
+  If W = 'n' Then
+  Begin
+    ST[I].Cat := 'G';
+    Exit;
+  End;
+  If W = 'nu' Then
+  Begin
+    If (I = SN) Or ST[I + 1].Punct Then
+    Begin
+      ST[I].Cat := 'J';
+      ST[I].En := 'No';
+    End
+    Else
+      ST[I].Cat := 'G';
+    Exit;
+  End;
+  { sa : marque du subjonctif }
+  If W = 'să' Then
+  Begin
+    ST[I].Cat := 'y';
+    ST[I].Kind := 's';
+    Exit;
+  End;
+  { a : auxiliaire (a cantat), marque de l'infinitif (a canta) }
+  If W = 'a' Then
+  Begin
+    If RoHasTense(I + 1, 'P') Then
+    Begin
+      Idx := RoFind('a', 'v');
+      If Idx > 0 Then
+      Begin
+        ST[I].En := RoLex[Idx].En;
+        ST[I].Cat := 'V';
+        ST[I].Idx := RoLex[Idx].SpIdx;
+        ST[I].Tns := 'p';
+        ST[I].Slot := 3;
+        Exit;
+      End;
+    End;
+    If RoNextVerbal(I + 1) Then
+    Begin
+      ST[I].Cat := 'y';
+      ST[I].Kind := 'i';
+    End
+    Else
+      ST[I].Cat := ' ';
+    Exit;
+  End;
+  { o : article, pronom (o vad) }
+  If W = 'o' Then
+  Begin
+    If (I < SN) And Not ST[I + 1].Punct And Not RoNextVerbal(I + 1) And
+       (RoFind(ST[I + 1].W, 'ocwpe') = 0) Then
+    Begin
+      ST[I].Cat := 'D';
+      ST[I].Kind := 'i';
+      ST[I].W := 'un';
+      Exit;
+    End;
+  End;
+  { voi merge : futur ; voi mergeti : vous }
+  If (W = 'voi') And RoHasTense(I + 1, 'I') Then
+  Begin
+    Idx := RoFind('voi', 'v');
+    If Idx > 0 Then
+    Begin
+      ST[I].En := RoLex[Idx].En;
+      ST[I].Cat := 'V';
+      ST[I].Idx := RoLex[Idx].SpIdx;
+      ST[I].Tns := 'B';
+      ST[I].Slot := 1;
+      Exit;
+    End;
+  End;
+  { lui + nom : de ; lui seul : possessif }
+  If W = 'lui' Then
+  Begin
+    If (I < SN) And (ST[I + 1].Cap Or (RoFind(ST[I + 1].W, 'nz') > 0)) And Not
+        ST[I + 1].Punct Then
+    Begin
+      ST[I].Cat := 'E';
+      ST[I].En := 'of';
+      ST[I].W := 'de';
+      ST[I].Orig := 'de';
+      Exit;
+    End;
+  End;
+  { care : pronom relatif apres un nom }
+  If (W = 'care') And (Prev = 'N') Then
+  Begin
+    ST[I].Cat := 'C';
+    ST[I].En := 'that';
+    Exit;
+  End;
+  { la : a (mouvement) ou a (lieu) }
+  If W = 'la' Then
+  Begin
+    ST[I].Cat := 'E';
+    ST[I].En := 'at';
+    ST[I].W := 'en';
+    If (I < SN) And ST[I + 1].Cap And (RoFind(ST[I + 1].W, 'z') > 0) And (I > 1)
+        Then
+      ST[I].En := 'in';
+    K := I - 1;
+    While (K >= 1) And (ST[K].Cat In ['R', 'G', 'P']) Do Dec(K);
+    If (K >= 1) And (ST[K].Cat = 'V') And
+       InList(ST[K].En, 'go come return walk run drive travel fly arrive leave')
+           Then
+    Begin
+      ST[I].En := 'to';
+      ST[I].W := 'a';
+    End;
+    Exit;
+  End;
+  PrefNoun := Prev In ['D', 'S', 'T', 'Q', 'U', 'A'];
+  PrefAdj := (Prev = 'N') Or ((Prev = 'V') And (RoVerbKey2(I - 1) = 'ser')) Or
+             ((Prev = 'R') And (I >= 3) And (ST[I - 2].Cat = 'V'));
+  If PrefNoun Then Idx := RoFind(W, 'n') Else Idx := 0;
+  If (Idx = 0) And PrefAdj Then Idx := RoFind(W, 'a');
+  If Idx = 0 Then Idx := RoFind(W, 'wsoxdqgcjruzpet');
+  If Idx = 0 Then Idx := RoFind(W, 'v');
+  If Idx = 0 Then Idx := RoFind(W, 'n');
+  If Idx = 0 Then Idx := RoFind(W, 'a');
+  If Idx = 0 Then
+  Begin
+    ST[I].Cat := 'Z';
+    Exit;
+  End;
+  { mult, putin : quantificateur devant un nom, adverbe sinon }
+  If (RoLex[Idx].Pos = 'r') And (RoFind(W, 'u') > 0) And RoNextNounish(I + 1)
+      Then
+    Idx := RoFind(W, 'u');
+  { pronom complement ou possessif / determinant ? }
+  If RoLex[Idx].Pos = 'o' Then
+  Begin
+    K := RoFind(W, 'xd');
+    If (K > 0) And (Prev In ['N', 'A']) And Not RoNextVerbal(I + 1) Then Idx :=
+        K
+    Else
+    Begin
+      K := RoFind(W, 'v');
+      Q := I - 1;
+      While (Q >= 1) And (ST[Q].Cat In ['G', 'R']) Do Dec(Q);
+      If (K > 0) And (Q >= 1) And (ST[Q].Cat In ['P', 'N', 'Z']) And Not
+          RoNextVerbal(I + 1) Then Idx := K;
+    End;
+  End;
+  { ei : ils, ou possessif apres un nom }
+  If (W = 'ei') And (Prev = 'N') And Not RoNextVerbal(I + 1) Then
+  Begin
+    ST[I].Cat := 'S';
+    ST[I].En := 'her';
+    ST[I].Kind := 'x';
+    Exit;
+  End;
+  ST[I].En := RoLex[Idx].En;
+  Case RoLex[Idx].Pos Of
+    'w':
+    Begin
+      ST[I].Cat := 'W';
+      If W = 'unde' Then ST[I].W := 'donde'
+      Else If W = 'cine' Then ST[I].W := 'quien'
+      Else If W = 'când' Then ST[I].W := 'cuando'
+      Else If W = 'cum' Then ST[I].W := 'como'
+      Else If W = 'de ce' Then ST[I].W := 'por que'
+      Else If W = 'de unde' Then ST[I].W := 'donde'
+      Else If W = 'încotro' Then ST[I].W := 'donde'
+      Else If ST[I].En = 'which' Then ST[I].W := 'cual'
+      Else If ST[I].En = 'how many' Then ST[I].W := 'cuantos'
+      Else If ST[I].En = 'how much' Then ST[I].W := 'cuanto'
+      Else ST[I].W := 'que';
+    End;
+    's':
+    Begin
+      ST[I].Cat := 'P';
+      ST[I].Slot := RoLex[Idx].Slot;
+    End;
+    'o': ST[I].Cat := 'O';
+    'x':
+    Begin
+      ST[I].Cat := 'S';
+      ST[I].Kind := 'x';
+    End;
+    'd':
+    Begin
+      ST[I].Cat := 'T';
+      ST[I].Kind := ' ';
+      ST[I].Plu := InList(ST[I].En, 'these those');
+      If RoLex[Idx].Post Then ST[I].Kind := 'x';
+    End;
+    'g': ST[I].Cat := 'G';
+    'q': ST[I].Cat := 'g';
+    'c': ST[I].Cat := 'C';
+    'r': ST[I].Cat := 'R';
+    'j': ST[I].Cat := 'J';
+    'p', 'e':
+    Begin
+      ST[I].Cat := 'E';
+      ST[I].W := RoPrepKey(RoLex[Idx].En, W);
+    End;
+    'u':
+    Begin
+      If RoLex[Idx].Num Then ST[I].Cat := 'U' Else ST[I].Cat := 'Q';
+      ST[I].Plu := InList(W,
+          'toți toate mulți multe puțini puține unii unele câțiva câtev'+
+          'a amândoi amândouă niște');
+    End;
+    't':
+    Begin
+      ST[I].Cat := 'D';
+      ST[I].Kind := 'i';
+      ST[I].W := 'un';
+    End;
+    'z':
+    Begin
+      ST[I].Cat := 'Z';
+      ST[I].Orig := ST[I].En;
+      ST[I].Cap := True;
+    End;
+    'v':
+    Begin
+      ST[I].Cat := 'V';
+      ST[I].Idx := RoLex[Idx].SpIdx;
+      ST[I].Tns := RoLex[Idx].ATn[1];
+      ST[I].Slot := RoLex[Idx].ASl[1];
+      ST[I].Kind := ' ';
+      ST[I].Cl := '';
+      If RoLex[Idx].Refl Then ST[I].Cl := '*';
+    End;
+    'n':
+    Begin
+      ST[I].Cat := 'N';
+      ST[I].Plu := RoLex[Idx].Plu;
+      ST[I].Cl := '';
+      If RoLex[Idx].Def Then ST[I].Cl := 'def';
+      If Pos('g', RoLex[Idx].Cases) > 0 Then ST[I].Cl := ST[I].Cl + 'g';
+    End;
+    'a':
+    Begin
+      ST[I].Cat := 'A';
+      ST[I].Plu := RoLex[Idx].Plu;
+      ST[I].Cl := '';
+      If RoLex[Idx].Def Then ST[I].Cl := 'def';
+    End;
+  End;
+End;
+
+{ ------------------------------------------------------------------ }
+{ ROUMAIN -> ANGLAIS : sujet omis, auxiliaires, articles et phrase     }
+{ ------------------------------------------------------------------ }
+
+Function RoVerbKey(I: Integer): String;
+Begin
+  If (I >= 1) And (I <= SN) And (ST[I].Cat = 'V') And (ST[I].Idx > 0) Then
+    RoVerbKey := SpPlain(SpLex[ST[I].Idx].Es)
+  Else
+    RoVerbKey := '';
+End;
+
+Procedure RoInsert(Pos1: Integer);
+Var
+  K: Integer;
+Begin
+  If SN >= MaxTokens Then Exit;
+  For K := SN Downto Pos1 Do
+    ST[K + 1] := ST[K];
+  Inc(SN);
+  FillChar(ST[Pos1], SizeOf(TSTok), 0);
+  ST[Pos1].Tns := ' ';
+End;
+
+{ cas du mot du jeton I (g = genitif-datif) }
+Function RoCases(I: Integer): String;
+Var
+  K: Integer;
+Begin
+  RoCases := '';
+  If ST[I].Cat = 'N' Then
+  Begin
+    If Pos('g', ST[I].Cl) > 0 Then RoCases := 'g';
+  End
+  Else If ST[I].Cat = 'Z' Then
+  Begin
+    K := RoFind(ST[I].W, 'z');
+    If K > 0 Then RoCases := RoLex[K].Cases;
+  End;
+End;
+
+Function RoIsSubj(I: Integer): Boolean;
+Begin
+  RoIsSubj := False;
+  If (I < 1) Or (I > SN) Then Exit;
+  If ST[I].Cat = 'P' Then RoIsSubj := True
+  Else If ST[I].Cat = 'N' Then RoIsSubj := Pos('g', RoCases(I)) = 0
+  Else If ST[I].Cat = 'Z' Then
+    RoIsSubj := (Pos('g', RoCases(I)) = 0) And Not
+        IsCalendar(LowerAscii(ST[I].Orig));
+End;
+
+Function RoSubjEnd(K: Integer): Integer;
+Var
+  J: Integer;
+Begin
+  RoSubjEnd := 0;
+  If (K < 1) Or (K > SN) Then Exit;
+  If ST[K].Cat = 'P' Then
+  Begin
+    RoSubjEnd := K;
+    Exit;
+  End;
+  J := K;
+  While (J <= SN) And (ST[J].Cat In ['D', 'S', 'T', 'Q', 'U']) Do Inc(J);
+  While (J <= SN) And (ST[J].Cat = 'A') Do Inc(J);
+  If (J <= SN) And (ST[J].Cat = 'N') Then
+    RoSubjEnd := J
+  Else If (J <= SN) And (ST[J].Cat = 'Z') And ST[J].Cap Then
+  Begin
+    While (J < SN) And (ST[J + 1].Cat = 'Z') Do Inc(J);
+    RoSubjEnd := J;
+  End;
+End;
+
+Function RoSubjBefore(I: Integer): Boolean;
+Var
+  J, K: Integer;
+Begin
+  RoSubjBefore := False;
+  J := I - 1;
+  While (J >= 1) And (ST[J].Cat In ['G', 'R']) Do Dec(J);
+  If J < 1 Then Exit;
+  If ST[J].Cat = 'P' Then
+  Begin
+    RoSubjBefore := True;
+    Exit;
+  End;
+  If (ST[J].Cat = 'W') And (ST[J].W = 'quien') Then
+  Begin
+    RoSubjBefore := True;
+    Exit;
+  End;
+  If ST[J].Cat In ['N', 'Z'] Then
+  Begin
+    K := J;
+    While (K >= 1) And (ST[K].Cat In ['N', 'A', 'S', 'T', 'Z', 'D', 'Q', 'U'])
+        Do Dec(K);
+    { casa copilului este : on remonte au-dela de "de" }
+    If (K >= 1) And (ST[K].Cat = 'E') And (ST[K].Orig = 'de') And (K > 1) And
+       (ST[K - 1].Cat = 'N') Then
+      J := K - 1;
+    If Not RoIsSubj(J) Then Exit;
+    K := J;
+    While (K >= 1) And (ST[K].Cat In ['N', 'A', 'D', 'S', 'T', 'Q', 'U', 'Z'])
+        Do Dec(K);
+    RoSubjBefore := (K < 1) Or (ST[K].Cat <> 'E');
+  End;
+End;
+
+{ le groupe nominal dont la tete est en E est-il defini ? }
+Function RoDefNP(E: Integer): Boolean;
+Var
+  K: Integer;
+Begin
+  RoDefNP := False;
+  K := E - 1;
+  While (K >= 1) And (ST[K].Cat In ['A', 'Q', 'U']) Do Dec(K);
+  If (K >= 1) And (ST[K].Cat In ['S', 'T']) Then RoDefNP := True
+  Else If (K >= 1) And (ST[K].Cat = 'D') And (ST[K].Kind = 'd') Then RoDefNP :=
+      True;
+End;
+
+Function RoHasWh: Boolean;
+Var
+  K: Integer;
+Begin
+  RoHasWh := False;
+  For K := 1 To SN Do
+    If ST[K].Cat = 'W' Then RoHasWh := True;
+End;
+
+{ un sujet suit-il le verbe en I ? renvoie la fin du groupe }
+Function RoSubjAfter(I: Integer): Integer;
+Var
+  E: Integer;
+Begin
+  RoSubjAfter := 0;
+  If ST[I].Slot In [1, 2, 4, 5] Then Exit;
+  If (RoVerbKey(I) = 'ser') And (I < SN) And (ST[I + 1].Cat = 'P') And RoHasWh
+      Then
+  Begin
+    RoSubjAfter := I + 1;
+    Exit;
+  End;
+  E := RoSubjEnd(I + 1);
+  If (E = 0) Or (E - I > 8) Then Exit;
+  If ST[E].Cat = 'P' Then Exit;
+  If Not RoIsSubj(E) Then Exit;
+  If (RoVerbKey(I) = 'ser') And (Not RoDefNP(E)) Then Exit;
+  If (RoVerbKey(I) <> 'ser') And
+     Not InList(ST[I].En,
+         'arrive come go live stand lie sit sleep fall rain work walk run stay'+
+         ' return cost ring be') Then Exit;
+  RoSubjAfter := E;
+End;
+
+Procedure RoMoveBlock(From1, To1, Dest: Integer);
+Var
+  Tmp: Array[1..12] Of TSTok;
+  N, K: Integer;
+Begin
+  N := To1 - From1 + 1;
+  If (N < 1) Or (N > 12) Or (Dest >= From1) Then Exit;
+  For K := 1 To N Do Tmp[K] := ST[From1 + K - 1];
+  For K := From1 - 1 Downto Dest Do ST[K + N] := ST[K];
+  For K := 1 To N Do ST[Dest + K - 1] := Tmp[K];
+End;
+
+{ Choisit parmi les lectures d'une forme verbale }
+Procedure RoResolveVerb(I: Integer);
+Var
+  Idx, J, K, Want, Pick: Integer;
+  WantT: Char;
+Begin
+  Idx := RoFind(ST[I].W, 'v');
+  If (Idx = 0) Or (RoLex[Idx].NAlt < 2) Then Exit;
+  Want := 0;
+  WantT := ' ';
+  J := I - 1;
+  While (J >= 1) And (ST[J].Cat In ['G', 'R']) Do Dec(J);
+  If (J >= 1) And (ST[J].Cat = 'y') And (ST[J].Kind = 'i') Then WantT := 'I'
+  Else If (J >= 1) And (ST[J].Cat = 'V') And (ST[J].Tns In ['B', 'C']) Then
+      WantT := 'I'
+  Else If (J >= 1) And (ST[J].Cat = 'V') And (RoVerbKey(J) = 'tener') And
+      (ST[J].Tns = 'p') Then WantT := 'P'
+  Else If (J >= 1) And (ST[J].Cat = 'V') And (ST[J].Tns In ['p', 'm']) And
+          InList(RoVerbKey(J), 'poder querer deber saber') Then WantT := 'I'
+  Else If (J >= 1) And (ST[J].Cat = 'P') Then Want := ST[J].Slot
+  Else If (J >= 1) And (ST[J].Cat In ['N', 'Z']) Then
+  Begin
+    If ST[J].Plu Then Want := 6 Else Want := 3;
+  End;
+  Pick := 0;
+  If WantT <> ' ' Then
+    For K := 1 To RoLex[Idx].NAlt Do
+      If (Pick = 0) And (RoLex[Idx].ATn[K] = WantT) Then Pick := K;
+  If (Pick = 0) And (I = 1) And (SEnd = '!') Then
+    For K := 1 To RoLex[Idx].NAlt Do
+      If (Pick = 0) And (RoLex[Idx].ATn[K] = 'M') Then Pick := K;
+  { sunt : je suis / ils sont d'apres l'attribut }
+  If (Pick = 0) And (Want = 0) And (ST[I].W = 'sunt') Then
+  Begin
+    K := I + 1;
+    While (K <= SN) And (ST[K].Cat In ['R', 'D', 'Q']) Do Inc(K);
+    If (K <= SN) And (ST[K].Cat In ['N', 'A']) And ST[K].Plu Then Want := 6 Else
+        Want := 1;
+  End;
+  If (Pick = 0) And (Want > 0) Then
+    For K := 1 To RoLex[Idx].NAlt Do
+      If (Pick = 0) And (RoLex[Idx].ATn[K] In ['p', 'm']) And (RoLex[Idx].ASl[K]
+          = Want) Then Pick := K;
+  If Pick = 0 Then
+    For K := 1 To RoLex[Idx].NAlt Do
+      If (Pick = 0) And (RoLex[Idx].ATn[K] In ['p', 'm']) Then Pick := K;
+  If Pick = 0 Then Pick := 1;
+  ST[I].Tns := RoLex[Idx].ATn[Pick];
+  ST[I].Slot := RoLex[Idx].ASl[Pick];
+  ST[I].Kind := ' ';
+End;
+
+{ sujet pronominal pour un verbe sans sujet exprime }
+Procedure RoMakePronoun(Pos1, Slot: Integer; Impers: Boolean);
+Begin
+  ST[Pos1].Cat := 'P';
+  ST[Pos1].Slot := Slot;
+  ST[Pos1].Tns := ' ';
+  Case Slot Of
+    1: Begin ST[Pos1].En := 'I'; ST[Pos1].W := 'eu'; End;
+    2: Begin ST[Pos1].En := 'you'; ST[Pos1].W := 'tu'; End;
+    4: Begin ST[Pos1].En := 'we'; ST[Pos1].W := 'noi'; End;
+    5: Begin ST[Pos1].En := 'you'; ST[Pos1].W := 'voi'; End;
+    6: Begin ST[Pos1].En := 'they'; ST[Pos1].W := 'ei'; End;
+  Else
+    Begin
+      ST[Pos1].Slot := 3;
+      If Impers Then
+      Begin
+        ST[Pos1].En := 'it';
+        ST[Pos1].W := 'ea';
+      End
+      Else
+      Begin
+        ST[Pos1].En := 'he';
+        ST[Pos1].W := 'el';
+      End;
+    End;
+  End;
+  ST[Pos1].Orig := ST[Pos1].W;
+End;
+
+Procedure RoClassify;
+Var
+  I, J, K, E: Integer;
+  Key: String;
+  Fin, SerSeen: Boolean;
+Begin
+  RoMergeMultiword;
+  For I := 1 To SN Do
+    RoPickCat(I);
+  ARemoveConsumed;
+  { la virgule roumaine avant que / parce que disparait }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = ',') And (ST[I + 1].Cat = 'C') And
+       InList(ST[I + 1].W, 'că dacă deoarece pentru încât') Then
+      ST[I].Cat := ' ';
+  ARemoveConsumed;
+  { interrogatif apres un verbe ou une virgule : subordonnee }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'W') And (ST[I].W <> 'quien') And
+       ((ST[I - 1].Cat = 'V') Or ((ST[I - 1].Cat = ',') And (I > 2) And (ST[I -
+           2].Cat = 'V'))) Then
+    Begin
+      ST[I].Cat := 'C';
+      If ST[I - 1].Cat = ',' Then ST[I - 1].Cat := ' ';
+    End;
+  ARemoveConsumed;
+  { interjection au milieu d'une phrase : minuscule }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'J') And (ST[I].En <> '') And (ST[I].En[1] In ['A'..'Z'])
+        Then
+      ST[I].En[1] := Chr(Ord(ST[I].En[1]) + 32);
+  { jour ou mois en tete : complement de temps }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'Z') And ((I = 1) Or (ST[I - 1].Cat = ',')) Then
+    Begin
+      If InList(LowerAscii(ST[I].Orig),
+          'monday tuesday wednesday thursday friday saturday sunday') Then
+      Begin
+        ST[I].Cat := 'R';
+        ST[I].En := 'on ' + ST[I].Orig;
+      End
+      Else If InList(LowerAscii(ST[I].Orig),
+          'january february march april may june july august september october'+
+          ' november december') Then
+      Begin
+        ST[I].Cat := 'R';
+        ST[I].En := 'in ' + ST[I].Orig;
+      End;
+    End;
+  { de unde : where ... from }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'W') And (ST[I].En = 'where from') And (SN < MaxTokens) Then
+    Begin
+      ST[I].W := 'donde';
+      ST[I].En := 'where';
+      Inc(SN);
+      FillChar(ST[SN], SizeOf(TSTok), 0);
+      ST[SN].Tns := ' ';
+      ST[SN].Cat := 'E';
+      ST[SN].W := 'desde';
+      ST[SN].Orig := 'desde';
+      ST[SN].En := 'from';
+    End;
+  { pe devant un nom propre ou un pronom : marque de l'objet }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'E') And (ST[I].En = 'on') And (ST[I + 1].Cat In ['Z', 'P'])
+        Then
+    Begin
+      ST[I].Cat := ' ';
+      If ST[I + 1].Cat = 'P' Then ST[I + 1].Cat := 'B';
+    End;
+  ARemoveConsumed;
+  { pronom reflechi devant un verbe reflechi : omis }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'O') And (ST[I + 1].Cat = 'V') And (ST[I + 1].Cl = '*') Then
+      ST[I].Cat := ' ';
+  ARemoveConsumed;
+  { genitif apres un nom : cartea copilului -> cartea de copilului }
+  I := 2;
+  While I <= SN Do
+  Begin
+    If (ST[I].Cat = 'N') And (Pos('g', ST[I].Cl) > 0) And (ST[I - 1].Cat = 'N')
+        Then
+    Begin
+      RoInsert(I);
+      ST[I].Cat := 'E';
+      ST[I].W := 'de';
+      ST[I].Orig := 'de';
+      ST[I].En := 'of';
+      Inc(I);
+    End
+    Else If (ST[I].Cat = 'Z') And (Pos('g', RoCases(I)) > 0) And (ST[I - 1].Cat
+        = 'N') Then
+    Begin
+      RoInsert(I);
+      ST[I].Cat := 'E';
+      ST[I].W := 'de';
+      ST[I].Orig := 'de';
+      ST[I].En := 'of';
+      Inc(I);
+    End;
+    Inc(I);
+  End;
+  { possessif / demonstratif postpose : casa mea -> mea casa }
+  For I := 2 To SN Do
+    If (ST[I].Cat In ['S', 'T']) And (ST[I].Kind = 'x') And (ST[I - 1].Cat In
+        ['N', 'A']) Then
+    Begin
+      J := I - 1;
+      While (J > 1) And (ST[J].Cat = 'A') Do Dec(J);
+      If ST[J].Cat = 'N' Then
+      Begin
+        ST[0] := ST[I];
+        ST[0].Kind := ' ';
+        For K := I Downto J + 1 Do
+          ST[K] := ST[K - 1];
+        ST[J] := ST[0];
+        ST[J + 1].Cl := '';
+      End;
+    End;
+  For I := 1 To SN Do
+    If ST[I].Cat In ['S', 'T'] Then ST[I].Kind := ' ';
+  { demonstratif seul : ce / cela }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'T') And ((I = SN) Or Not (ST[I + 1].Cat In ['N', 'A']))
+        Then
+    Begin
+      ST[I].Cat := 'P';
+      ST[I].Slot := 3;
+      If ST[I].Plu Then ST[I].Slot := 6;
+      If (ST[I].En = 'this') Or (ST[I].En = 'that') Then ST[I].En := 'it';
+      If ST[I].Plu Then ST[I].En := 'they';
+    End;
+  { articles definis portes par le suffixe du nom }
+  I := 1;
+  While I <= SN Do
+  Begin
+    If ((ST[I].Cat = 'N') Or (ST[I].Cat = 'A')) And (Pos('def', ST[I].Cl) > 0)
+        Then
+    Begin
+      K := I;
+      While (K > 1) And (ST[K - 1].Cat = 'A') Do Dec(K);
+      If (K = 1) Or Not (ST[K - 1].Cat In ['D', 'S', 'T', 'Q', 'U']) Then
+      Begin
+        If (ST[I].Cat = 'A') And ((I = SN) Or (ST[I + 1].Cat <> 'N')) Then
+          ST[I].Cl := ''
+        Else
+        Begin
+          J := I;
+          RoInsert(K);
+          ST[K].Cat := 'D';
+          ST[K].Kind := 'd';
+          ST[K].W := 'el';
+          ST[K].Plu := ST[J + 1].Plu;
+          ST[J + 1].Cl := Copy(ST[J + 1].Cl, 4, 5);
+          Inc(I);
+        End;
+      End
+      Else
+        ST[I].Cl := Copy(ST[I].Cl, 4, 5);
+    End;
+    Inc(I);
+  End;
+  { adjectifs devant un nom sans determinant : nom puis adjectifs }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cat = 'A') And ((I = 1) Or Not (ST[I - 1].Cat In ['D', 'S', 'T',
+        'Q', 'U', 'A'])) Then
+    Begin
+      K := I;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If (ST[K].Cat = 'N') And (K - I <= 3) Then
+      Begin
+        ST[0] := ST[K];
+        For J := K Downto I + 1 Do
+          ST[J] := ST[J - 1];
+        ST[I] := ST[0];
+        I := K;
+      End
+      Else
+        I := K;
+    End;
+    Inc(I);
+  End;
+  { choix de la lecture des formes verbales ambigues }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'V' Then RoResolveVerb(I);
+  { adjectif apres un verbe d'action : adverbe (canta frumos) }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'A') And (Not ST[I].Plu) And (ST[I - 1].Cat = 'V') And
+       (RoVerbKey(I - 1) <> 'ser') And (RoVerbKey(I - 1) <> 'estar') And
+       ((I = SN) Or (ST[I + 1].Cat <> 'N')) And (ST[I].Cl = '') Then
+    Begin
+      ST[I].Cat := 'R';
+      If ST[I].En = 'good' Then ST[I].En := 'well'
+      Else If ST[I].En = 'bad' Then ST[I].En := 'badly'
+      Else If (ST[I].En <> 'fast') And (ST[I].En <> 'hard') And (ST[I].En <>
+          'late') And (ST[I].En <> 'early') Then
+      Begin
+        If ST[I].En[Length(ST[I].En)] = 'y' Then
+          ST[I].En := Copy(ST[I].En, 1, Length(ST[I].En) - 1) + 'ily'
+        Else
+          ST[I].En := ST[I].En + 'ly';
+      End;
+    End;
+  { cum te cheama : what is your name }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'W') And (ST[I].W = 'como') And (ST[I + 1].Cat = 'V') And
+       (RoVerbKey(I + 1) = 'llamar') Then
+    Begin
+      ST[I].W := 'que';
+      ST[I].En := 'what';
+    End;
+  { perfect compose : am citit = j'ai lu ; aux conditionnel : ai merge }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'V') And (RoVerbKey(I) = 'tener') And (ST[I].Tns = 'p') Then
+    Begin
+      J := I + 1;
+      While (J <= SN) And (ST[J].Cat In ['R', 'G']) Do Inc(J);
+      If (J <= SN) And (ST[J].Cat = 'V') And (ST[J].Tns = 'P') Then
+      Begin
+        ST[J].Tns := 'i';
+        ST[J].Slot := ST[I].Slot;
+        ST[I].Cat := ' ';
+      End
+      Else If (J <= SN) And (ST[J].Cat = 'V') And (ST[J].Tns = 'p') And
+          RoHasTense(J, 'I') And
+              (Not RoHasTense(J, 'P')) And InList(ST[I].W, 'ai am ați') And
+                  (ST[I].Slot <> 3) Then
+      Begin
+        ST[J].Tns := 'c';
+        ST[J].Slot := ST[I].Slot;
+        ST[I].Cat := ' ';
+      End;
+    End;
+  { futur : voi merge ; conditionnel : as merge ; o sa merg }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['B', 'C', 'Q']) Then
+    Begin
+      J := I + 1;
+      While (J <= SN) And (ST[J].Cat In ['R', 'G', 'P', 'O', 'y']) Do Inc(J);
+      If (J <= SN) And (ST[J].Cat = 'V') Then
+      Begin
+        If ST[I].Tns = 'C' Then ST[J].Tns := 'c' Else ST[J].Tns := 'f';
+        If (ST[I].Tns = 'C') And ((RoVerbKey(J) = 'querer') Or (ST[J].En =
+            'wish')) Then
+        Begin
+          ST[J].Idx := AlSpIndex('is:like', 'like');
+          ST[J].En := 'like';
+        End;
+        If ST[I].Slot > 0 Then ST[J].Slot := ST[I].Slot;
+        ST[I].Cat := ' ';
+      End
+      Else If ST[I].Tns = 'Q' Then
+        ST[I].Cat := ' '
+      Else If ST[I].Tns = 'B' Then
+        ST[I].Tns := 'f'
+      Else
+        ST[I].Tns := 'p';
+    End;
+  { vreau sa mananc : vouloir + infinitif }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'V') And (ST[I + 1].Cat = 'y') And (ST[I + 1].Kind = 's')
+        Then
+    Begin
+      J := I + 2;
+      While (J <= SN) And (ST[J].Cat In ['O', 'R', 'G']) Do Inc(J);
+      If (J <= SN) And (ST[J].Cat = 'V') And (ST[J].Tns In ['p', 'm']) Then
+      Begin
+        If (ST[I].Slot = 3) And (RoVerbKey(I) = 'deber') Then ST[I].Slot :=
+            ST[J].Slot;
+        ST[J].Tns := 'I';
+        ST[I + 1].Cat := ' ';
+      End;
+    End;
+  { este important sa citesti : it is important to read }
+  For I := 2 To SN - 1 Do
+    If (ST[I].Cat = 'y') And (ST[I].Kind = 's') And (ST[I - 1].Cat In ['A',
+        'N']) Then
+    Begin
+      J := I + 1;
+      While (J <= SN) And (ST[J].Cat In ['O', 'R', 'G']) Do Inc(J);
+      If (J <= SN) And (ST[J].Cat = 'V') And (ST[J].Tns In ['p', 'm']) Then
+      Begin
+        ST[J].Tns := 'I';
+        { este important sa citesti, este timpul sa plec : it is important to
+          read }
+        ST[I].Kind := 'k';
+        If (ST[I - 1].Cat = 'N') And (ST[I - 1].En = 'time') And (I > 2) And
+            (ST[I - 2].Cat = 'D') Then
+          ST[I - 2].Cat := ' ';
+      End;
+    End;
+  { vă rog, vorbiți : imperatif poli }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'J') And (ST[I].En = 'please') Then
+    Begin
+      J := I + 1;
+      If (J <= SN) And (ST[J].Cat = ',') Then Inc(J);
+      If (J <= SN) And (ST[J].Cat = 'V') And (ST[J].Tns = 'p') And (ST[J].Slot
+          In [2, 5]) Then
+      Begin
+        ST[J].Tns := 'M';
+        ST[J].Slot := 2;
+      End;
+    End;
+  { sa devant un verbe isole, a devant un infinitif : omis }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'y') And (ST[I].Kind <> 'k') Then ST[I].Cat := ' ';
+  ARemoveConsumed;
+  { de cinci ani, de o saptamana : for }
+  For I := 2 To SN - 1 Do
+    If (ST[I].Cat = 'E') And (ST[I].En = 'of') And (ST[I].W = 'de') And (ST[I -
+        1].Cat <> 'N') Then
+    Begin
+      K := I + 1;
+      If (ST[K].Cat In ['U', 'D']) And (K < SN) Then Inc(K);
+      If (ST[K].Cat = 'N') And InList(ST[K].En,
+          'year week month day hour minute') Then
+      Begin
+        ST[I].En := 'for';
+        ST[I].W := 'para';
+      End;
+    End;
+  { acasa apres un verbe de mouvement : to the house }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'R') And (ST[I].W = 'acasă') And (ST[I - 1].Cat = 'V') And
+       InList(ST[I - 1].En,
+           'go come return walk run drive travel fly arrive leave') And (SN <
+           MaxTokens - 1) Then
+    Begin
+      ST[I].Cat := 'E';
+      ST[I].W := 'a';
+      ST[I].En := 'to';
+      RoInsert(I + 1);
+      ST[I + 1].Cat := 'D';
+      ST[I + 1].Kind := 'd';
+      ST[I + 1].W := 'el';
+      RoInsert(I + 2);
+      ST[I + 2].Cat := 'N';
+      ST[I + 2].En := 'house';
+      ST[I + 2].W := 'casă';
+      ST[I + 2].Orig := 'casă';
+      Break;
+    End;
+  { este + groupe nominal indefini + lieu : il y a }
+  If Not RoHasWh Then
+    For I := 1 To SN - 2 Do
+      If (ST[I].Cat = 'V') And (ST[I].Tns = 'p') And ((ST[I].Slot In [3, 6]) Or
+          (ST[I].W = 'sunt')) And
+         (RoVerbKey(I) = 'ser') And (Not RoSubjBefore(I)) Then
+      Begin
+        J := I + 1;
+        While (J <= SN) And (ST[J].Cat = 'R') Do Inc(J);
+        Fin := False;
+        For K := 1 To SN Do
+          If ST[K].Cat = 'E' Then Fin := True;
+        If Fin And (J <= SN) And
+           ((((ST[J].Cat = 'D') And (ST[J].Kind = 'i')) And (ST[I].W <> 'sunt'))
+               Or
+            ((ST[J].Cat = 'N') And ST[J].Plu) Or (ST[J].Cat = 'Q') Or (ST[J].Cat
+                = 'U')) Then
+        Begin
+          ST[I].Idx := AlSpIndex('haber', 'have');
+          ST[I].W := 'hay';
+          ST[I].Slot := 3;
+        End;
+      End;
+  { sujet omis : insertion du pronom d'apres la personne du verbe }
+  I := 1;
+  While I <= SN Do
+  Begin
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'm', 'i', 'f', 'c']) And
+        (ST[I].Slot > 0) And
+       (RoVerbKey(I) <> 'haber') And (RoVerbKey(I) <> 'llover') And
+       (Not RoSubjBefore(I)) And (RoSubjAfter(I) = 0) And (SN < MaxTokens) Then
+    Begin
+      J := I - 1;
+      While (J >= 1) And (ST[J].Cat In ['G', 'O']) Do Dec(J);
+      Fin := (I < SN) And (RoVerbKey(I) = 'ser') And (ST[I].Slot = 3) And
+             ((ST[I + 1].Cat = 'R') Or ((ST[I + 1].Cat = 'A') And
+              InList(ST[I + 1].En,
+                  'warm cold difficult easy beautiful possible necessary impor'+
+                  'tant interesting')));
+      { este timpul, ieri a fost luni : it }
+      If (Not Fin) And (I < SN) And (RoVerbKey(I) = 'ser') And (ST[I].Slot = 3)
+          Then
+      Begin
+        K := I + 1;
+        While (K <= SN) And (ST[K].Cat In ['D', 'R']) Do Inc(K);
+        If (K <= SN) And (((ST[K].Cat = 'N') And (ST[K].En = 'time')) Or
+           ((ST[K].Cat = 'R') And (Copy(ST[K].En, 1, 3) = 'on ')) Or (ST[K].Cat
+               = 'Z')) And
+           (Not ST[K].Cap Or IsCalendar(LowerAscii(ST[K].Orig))) Then Fin :=
+               True;
+      End;
+      { este un oras : it is a city (un nom de chose) }
+      If (Not Fin) And (I < SN) And (RoVerbKey(I) = 'ser') And (ST[I].Slot = 3)
+          And
+         (ST[I + 1].Cat = 'D') And (ST[I + 1].Kind = 'i') Then
+      Begin
+        K := I + 2;
+        While (K <= SN) And (ST[K].Cat = 'A') Do Inc(K);
+        If (K <= SN) And (ST[K].Cat = 'N') And Not SpIsPersonEn(ST[K].En) Then
+            Fin := True;
+      End;
+      RoInsert(J + 1);
+      RoMakePronoun(J + 1, ST[I + 1].Slot, Fin);
+      I := I + 1;
+      { Azi este frig : it is cold today }
+      If Fin And (J = 1) And (ST[1].Cat = 'R') Then
+      Begin
+        ST[0] := ST[1];
+        For K := 1 To SN - 1 Do
+          ST[K] := ST[K + 1];
+        ST[SN] := ST[0];
+        Dec(I);
+      End;
+    End;
+    Inc(I);
+  End;
+  { sujet apres le verbe : inversion }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'm', 'i', 'f', 'c']) And (Not
+        RoSubjBefore(I)) And
+       (RoVerbKey(I) <> 'haber') Then
+    Begin
+      E := RoSubjAfter(I);
+      If E > 0 Then
+      Begin
+        RoMoveBlock(I + 1, E, I);
+        I := E;
+      End;
+    End;
+    Inc(I);
+  End;
+  { double negation : nu ... nimic }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'g' Then
+    Begin
+      If ST[I].En = 'nothing' Then ST[I].En := 'anything'
+      Else If ST[I].En = 'nobody' Then ST[I].En := 'anyone'
+      Else If ST[I].En = 'no' Then ST[I].En := 'any';
+      For J := 1 To I - 1 Do
+        If ST[J].Cat = 'G' Then ST[J].Cat := ' ';
+    End;
+  ARemoveConsumed;
+  { datif sans preposition : i-am dat cartea copilului -> a l'enfant }
+  I := 2;
+  While I <= SN Do
+  Begin
+    If (ST[I].Cat = 'N') And (Pos('g', ST[I].Cl) > 0) Then
+    Begin
+      K := I;
+      While (K > 1) And (ST[K - 1].Cat In ['D', 'A', 'S', 'T', 'Q', 'U']) Do
+          Dec(K);
+      Fin := False;
+      For J := 1 To K - 1 Do
+        If ST[J].Cat = 'V' Then Fin := True;
+      If Fin And (K > 1) And (Not (ST[K - 1].Cat In ['E', 'N'])) And (SN <
+          MaxTokens) Then
+      Begin
+        RoInsert(K);
+        ST[K].Cat := 'E';
+        ST[K].W := 'a';
+        ST[K].En := 'to';
+        ST[K].Orig := 'a';
+        Inc(I);
+      End;
+    End;
+    Inc(I);
+  End;
+  { am treizeci de ani : j'ai trente ans -> I am thirty years old }
+  For I := 1 To SN - 2 Do
+    If (ST[I].Cat = 'V') And (RoVerbKey(I) = 'tener') Then
+      For J := I + 1 To SN - 1 Do
+        If ST[J].Cat = 'U' Then
+        Begin
+          K := J + 1;
+          If (K <= SN) And (ST[K].Cat = 'E') And (ST[K].En = 'of') Then
+          Begin
+            ST[K].Cat := ' ';
+            Inc(K);
+          End;
+          If (K <= SN) And (ST[K].Cat = 'N') And (ST[K].En = 'year') And (SN <
+              MaxTokens) Then
+          Begin
+            ST[I].Idx := AlSpIndex('ser', 'be');
+            ST[I].En := 'be';
+            ST[K].Plu := True;
+            RoInsert(K + 1);
+            ST[K + 1].Cat := 'R';
+            ST[K + 1].En := 'old';
+            ST[K + 1].W := 'viejo';
+            ST[K + 1].Orig := 'old';
+          End;
+          Break;
+        End;
+  ARemoveConsumed;
+  { nom singulier sans determinant : article indefini }
+  I := 1;
+  While I <= SN Do
+  Begin
+    If (ST[I].Cat = 'N') And (Not ST[I].Plu) And (Not IsMassNoun(ST[I].En)) Then
+    Begin
+      K := I;
+      While (K > 1) And (ST[K - 1].Cat = 'A') Do Dec(K);
+      If ((K = 1) Or Not (ST[K - 1].Cat In ['D', 'S', 'T', 'Q', 'U'])) And Not
+          IsLanguage(LowerAscii(ST[I].En)) And
+         Not ((K > 1) And (ST[K - 1].Cat = 'E') And (ST[K - 1].En = 'of')) Then
+      Begin
+        Fin := (K > 1) And (ST[K - 1].Cat = 'E') And (ST[K - 1].Orig <> 'de')
+            And
+               ((ST[K - 1].En = 'in') Or (ST[K - 1].En = 'on') Or (ST[K - 1].En
+                   = 'at') Or
+                (ST[K - 1].En = 'to') Or (ST[K - 1].En = 'under') Or (ST[K -
+                    1].En = 'near') Or
+                (ST[K - 1].En = 'behind') Or (ST[K - 1].En = 'between') Or (ST[K
+                    - 1].En = 'over')) And
+               (K = I);
+        RoInsert(K);
+        ST[K].Cat := 'D';
+        If Fin Then
+        Begin
+          ST[K].Kind := 'd';
+          ST[K].W := 'el';
+        End
+        Else
+        Begin
+          ST[K].Kind := 'i';
+          ST[K].W := 'un';
+        End;
+        Inc(I);
+      End;
+    End;
+    Inc(I);
+  End;
+  { le pluriel de l'article suit celui du nom }
+  For I := 1 To SN - 1 Do
+    If ST[I].Cat = 'D' Then
+    Begin
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If ST[K].Cat = 'N' Then ST[I].Plu := ST[K].Plu;
+    End;
+  { imperatif }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns = 'M') Then
+    Begin
+      If ST[I].Slot = 0 Then ST[I].Slot := 2;
+      ST[I].Tns := 'M';
+    End;
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'm', 'i', 'f', 'c']) And
+        (ST[I].Slot = 0) Then ST[I].Slot := 3;
+  { expressions verbales : ma cheama, ploua }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'V' Then
+    Begin
+      Key := RoVerbKey(I);
+      ST[I].Cl := '';
+      If Key = 'haber' Then
+      Begin
+        ST[I].W := 'hay';
+        ST[I].Slot := 3;
+      End
+      Else If Key = 'llover' Then
+        ST[I].Kind := 'g'
+      Else If Key = 'llamar' Then
+        ST[I].Kind := 'r'
+      Else If (ST[I].En = 'call') And (I < SN) And (ST[I + 1].Cat = 'E') And
+          (ST[I + 1].En = 'to') Then
+        ST[I + 1].Cat := ' ';
+    End;
+  ARemoveConsumed;
+  { complement d'une preposition : pronom de groupe nominal }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'O') And (ST[I - 1].Cat = 'E') And (ST[I].En <> '') Then
+      ST[I].Cat := 'B';
+  { quantificateur : accord avec le nom suivant }
+  For I := 1 To SN - 1 Do
+    If ST[I].Cat = 'Q' Then
+    Begin
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If ST[K].Cat = 'N' Then
+      Begin
+        ST[I].Plu := ST[K].Plu;
+        If Not ST[K].Plu Then
+        Begin
+          If (ST[I].W = 'mult') Or (ST[I].W = 'multe') Then ST[I].En := 'much'
+          Else If (ST[I].W = 'puțin') Or (ST[I].W = 'puține') Then ST[I].En :=
+              'little';
+        End;
+      End;
+    End;
+  { mă poți ajuta : le pronom va avec l'infinitif }
+  For I := 1 To SN - 2 Do
+    If (ST[I].Cat = 'O') And (ST[I + 1].Cat = 'V') And (ST[I + 2].Cat = 'V') And
+       (ST[I + 2].Tns = 'I') And (ST[I].En <> '') And (ST[I + 2].Cl = '') Then
+    Begin
+      ST[I + 2].Cl := ST[I].En;
+      ST[I].Cat := ' ';
+    End;
+  { pronoms complements a cote du verbe : formes liees }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'O') And (ST[I - 1].Cat = 'V') And (ST[I].En <> '') Then
+    Begin
+      ST[I - 1].Cl := ST[I].En;
+      ST[I].Cat := ' ';
+    End;
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'O') And (ST[I + 1].Cat = 'V') And (ST[I].En <> '') And
+       (ST[I + 1].Cl = '') Then
+    Begin
+      ST[I + 1].Cl := ST[I].En;
+      ST[I].Cat := ' ';
+    End;
+  ARemoveConsumed;
+End;
+
+Function RoTranslateSentence(Const Sentence: String): String;
+Var
+  Res, Res2: String;
+  K, M: Integer;
+Begin
+  RoTokenize(Sentence);
+  If SN = 0 Then
+  Begin
+    RoTranslateSentence := '';
+    Exit;
+  End;
+  RoClassify;
+  If SN = 0 Then
+  Begin
+    RoTranslateSentence := '';
+    Exit;
+  End;
+  M := 0;
+  For K := 1 To SN Do
+    If (ST[K].Cat = 'y') And (ST[K].Kind = 'k') Then M := K;
+  If (M > 1) And (M < SN) Then
+  Begin
+    Res := TranslateTokensEs(1, M - 1, False);
+    Res2 := '';
+    K := M + 1;
+    While (K <= SN) And (ST[K].Cat <> 'V') Do Inc(K);
+    If K <= SN Then
+    Begin
+      Res2 := ST[K].En;
+      If ST[K].Cl <> '' Then Res2 := Join(Res2, ST[K].Cl);
+      If K < SN Then Res2 := Join(Res2, TranslateTokensEs(K + 1, SN, False));
+    End;
+    Res := Res + ' to ' + Res2;
+  End
+  Else
+    Res := TranslateTokensEs(1, SN, SEnd = '?');
+  If (SEnd = '?') And (Length(Res) > 8) And (Copy(Res, Length(Res) - 7, 8) =
+      ' name is') Then
+    Res := 'What is ' + LowerAscii(Copy(Res, 1, Length(Res) - 8)) + ' name';
+  Res := UpperFirst(FixEnglish(Res));
+  If SEnd <> #0 Then Res := Res + SEnd;
+  RoTranslateSentence := Res;
+End;
+
+{ ------------------------------------------------------------------ }
+{ CATALAN -> ANGLAIS : lexique de formes, jetons et etiquetage        }
+{ ------------------------------------------------------------------ }
+{ Pluriels, conjugaisons (present, imparfait, futur, conditionnel,      }
+{ participe) et adjectifs sont engendres a la construction (mkca.py).   }
+{ Le programme cherche une forme de surface, retablit le sujet omis,    }
+{ range les auxiliaires puis reutilise l'analyse de l'espagnol.         }
+
+Type
+  TCa = Record
+    F1: String[30];
+    En: String[26];
+    Pos: Char;
+    Plu: Boolean;
+    NAlt: Integer;
+    ATn: Array[1..4] Of Char;
+    ASl: Array[1..4] Of Integer;
+    Num: Boolean;
+    SpIdx: Integer;
+    Slot: Integer;
+  End;
+
+Var
+  CaLex: Array[1..5000] Of TCa;
+  CaCount: Integer;
+  SourceCa: Boolean;
+
+Procedure LoadCatalan;
+Var
+  I, J: Integer;
+  Line, Item, Key, En, Pos1, Code, Alt, K1: String;
+Begin
+  CaCount := 0;
+  For I := 0 To High(CaData) Do
+  Begin
+    Line := CaData[I];
+    While Line <> '' Do
+    Begin
+      Item := CopyUntil(Line, ';');
+      If (Item <> '') And (CaCount < 5000) Then
+      Begin
+        Key := CopyUntil(Item, '=');
+        En := CopyUntil(Item, ':');
+        Pos1 := CopyUntil(Item, ':');
+        Code := Item;
+        Inc(CaCount);
+        FillChar(CaLex[CaCount], SizeOf(TCa), 0);
+        CaLex[CaCount].F1 := FrLower(ReplaceChar(Key, '_', ' '));
+        CaLex[CaCount].En := ReplaceChar(En, '_', ' ');
+        CaLex[CaCount].Pos := Pos1[1];
+        K1 := '';
+        J := 0;
+        While Code <> '' Do
+        Begin
+          Alt := CopyUntil(Code, '+');
+          Inc(J);
+          If Pos1[1] = 'v' Then
+          Begin
+            If J <= 4 Then
+            Begin
+              CaLex[CaCount].ATn[J] := Alt[1];
+              If (Length(Alt) > 1) And (Alt[2] In ['0'..'9']) Then
+              Begin
+                CaLex[CaCount].ASl[J] := Ord(Alt[2]) - Ord('0');
+                If (Length(Alt) > 3) And (Alt[3] = ':') Then K1 := Copy(Alt, 4,
+                    12);
+              End
+              Else If (Length(Alt) > 2) And (Alt[2] = ':') Then K1 := Copy(Alt,
+                  3, 12);
+              CaLex[CaCount].NAlt := J;
+            End;
+          End
+          Else If Pos1[1] In ['n', 'a'] Then
+          Begin
+            If J = 1 Then CaLex[CaCount].Plu := Alt[1] = 'p';
+          End
+          Else If Pos1[1] = 's' Then CaLex[CaCount].Slot := Ord(Alt[1]) -
+              Ord('0')
+          Else If Pos1[1] = 'u' Then CaLex[CaCount].Num := Alt = '1';
+        End;
+        If Pos1[1] = 'v' Then
+        Begin
+          If K1 <> '' Then CaLex[CaCount].SpIdx := AlSpIndex(K1,
+              CaLex[CaCount].En)
+          Else CaLex[CaCount].SpIdx := AlSpIndex('is:' + CaLex[CaCount].En,
+              CaLex[CaCount].En);
+        End;
+      End;
+    End;
+  End;
+End;
+
+Function CaFind(Const W, Kinds: String): Integer;
+Var
+  I: Integer;
+Begin
+  CaFind := 0;
+  For I := 1 To CaCount Do
+    If (CaLex[I].F1 = W) And (Pos(CaLex[I].Pos, Kinds) > 0) Then
+    Begin
+      CaFind := I;
+      Exit;
+    End;
+End;
+
+Procedure CaTokenize(Const S0: String);
+Var
+  S, Word1: String;
+  I, L: Integer;
+  C: Char;
+  Cap: Boolean;
+Begin
+  SN := 0;
+  SEnd := #0;
+  S := '';
+  I := 1;
+  While I <= Length(S0) Do
+  Begin
+    If (S0[I] = #$C2) And (I < Length(S0)) And ((S0[I + 1] = #$AB) Or (S0[I + 1]
+        = #$BB) Or (S0[I + 1] = #$A0)) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 2);
+    End
+    Else If (S0[I] = #$E2) And (I + 2 <= Length(S0)) And (S0[I + 1] = #$80) And
+            (S0[I + 2] >= #$93) And (S0[I + 2] <= #$9E) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 3);
+    End
+    Else
+    Begin
+      S := S + S0[I];
+      Inc(I);
+    End;
+  End;
+  L := Length(S);
+  I := 1;
+  While I <= L Do
+  Begin
+    C := S[I];
+    If FrWordByte(C) Then
+    Begin
+      Word1 := '';
+      While (I <= L) And FrWordByte(S[I]) Do
+      Begin
+        Word1 := Word1 + S[I];
+        Inc(I);
+      End;
+      Cap := (Word1 <> '') And (((Word1[1] >= 'A') And (Word1[1] <= 'Z')) Or
+             ((Word1[1] = #$C3) And (Length(Word1) > 1) And (Word1[2] >= #$80)
+                 And (Word1[2] <= #$9E)));
+      SPush(FrLower(Word1), Word1, Cap, False, False);
+    End
+    Else
+    Begin
+      If (C = '.') Or (C = '?') Or (C = '!') Then
+      Begin
+        If SEnd = #0 Then SEnd := C;
+        If C = '?' Then SEnd := '?';
+      End
+      Else If (C = ',') Or (C = ';') Or (C = ':') Then
+      Begin
+        SPush(',', ',', False, True, False);
+        ST[SN].Cat := ',';
+      End;
+      Inc(I);
+    End;
+  End;
+End;
+
+Procedure CaMergeMultiword;
+Var
+  I, K, Len, L: Integer;
+  Key: String;
+  Bad, Found: Boolean;
+Begin
+  I := 1;
+  While I < SN Do
+  Begin
+    Found := False;
+    For Len := 4 Downto 2 Do
+      If (Not Found) And (I + Len - 1 <= SN) Then
+      Begin
+        Key := '';
+        Bad := False;
+        For K := I To I + Len - 1 Do
+        Begin
+          If ST[K].Punct Then Bad := True;
+          Key := Join(Key, ST[K].W);
+        End;
+        If Not Bad Then
+        Begin
+          L := CaFind(Key, 'rpcjwvzoeu');
+          If L > 0 Then
+          Begin
+            Found := True;
+            ST[I].W := Key;
+            ST[I].Orig := Key;
+            For K := I + 1 To SN - Len + 1 Do
+              ST[K] := ST[K + Len - 1];
+            Dec(SN, Len - 1);
+          End;
+        End;
+      End;
+    Inc(I);
+  End;
+End;
+
+Function CaNextNounish(I: Integer): Boolean;
+Begin
+  CaNextNounish := False;
+  If (I > SN) Or ST[I].Punct Then Exit;
+  CaNextNounish := CaFind(ST[I].W, 'nadxuz') > 0;
+End;
+
+Function CaNextVerbal(I: Integer): Boolean;
+Begin
+  CaNextVerbal := False;
+  If (I > SN) Or ST[I].Punct Then Exit;
+  If ST[I].W = 'no' Then
+  Begin
+    CaNextVerbal := True;
+    Exit;
+  End;
+  CaNextVerbal := CaFind(ST[I].W, 'v') > 0;
+End;
+
+Function CaVerbKey2(I: Integer): String;
+Begin
+  If (I >= 1) And (I <= SN) And (ST[I].Cat = 'V') And (ST[I].Idx > 0) Then
+    CaVerbKey2 := SpPlain(SpLex[ST[I].Idx].Es)
+  Else
+    CaVerbKey2 := '';
+End;
+
+Function CaPrepKey(Const En, W: String): String;
+Begin
+  CaPrepKey := W;
+  If (En = 'in') Or (En = 'on') Or (En = 'at') Then CaPrepKey := 'en'
+  Else If En = 'to' Then CaPrepKey := 'a'
+  Else If En = 'of' Then CaPrepKey := 'de'
+  Else If En = 'from' Then CaPrepKey := 'desde'
+  Else If En = 'for' Then CaPrepKey := 'para';
+End;
+
+Procedure CaPickCat(I: Integer);
+Var
+  W: String;
+  Prev: Char;
+  Idx, K, Q: Integer;
+  PrefNoun, PrefAdj: Boolean;
+Begin
+  W := ST[I].W;
+  If I > 1 Then Prev := ST[I - 1].Cat Else Prev := '.';
+  If ST[I].Punct Then
+  Begin
+    ST[I].Cat := ',';
+    Exit;
+  End;
+  If IsDigitsOnly(W) Then
+  Begin
+    ST[I].Cat := 'U';
+    ST[I].En := W;
+    Exit;
+  End;
+  { pronoms clitiques sans valeur : s, hi, n }
+  If (W = 's') Or (W = 'hi') Or (W = 'n') Then
+  Begin
+    ST[I].Cat := ' ';
+    Exit;
+  End;
+  If W = 'no' Then
+  Begin
+    If (I = SN) Or ST[I + 1].Punct Then
+    Begin
+      ST[I].Cat := 'J';
+      ST[I].En := 'No';
+    End
+    Else
+      ST[I].Cat := 'G';
+    Exit;
+  End;
+  { l' : article devant un nom, pronom devant un verbe }
+  If W = 'l' Then
+  Begin
+    If (I < SN) And ST[I + 1].Cap And Not CaNextVerbal(I + 1) Then
+    Begin
+      ST[I].Cat := ' ';
+      Exit;
+    End;
+    If CaNextVerbal(I + 1) And Not CaNextNounish(I + 1) Then
+    Begin
+      ST[I].Cat := 'O';
+      ST[I].En := 'it';
+    End
+    Else
+    Begin
+      ST[I].Cat := 'D';
+      ST[I].Kind := 'd';
+      ST[I].W := 'el';
+    End;
+    Exit;
+  End;
+  { el, la, els, les : article ou pronom complement }
+  If InList(W, 'el la els les') Then
+  Begin
+    If CaNextVerbal(I + 1) And Not CaNextNounish(I + 1) Then
+    Begin
+      ST[I].Cat := 'O';
+      If W = 'el' Then ST[I].En := 'him'
+      Else If W = 'la' Then ST[I].En := 'her'
+      Else ST[I].En := 'them';
+    End
+    Else
+    Begin
+      If (I < SN) And ST[I + 1].Cap Then
+      Begin
+        ST[I].Cat := ' ';
+        Exit;
+      End;
+      ST[I].Cat := 'D';
+      ST[I].Kind := 'd';
+      ST[I].Plu := (W = 'els') Or (W = 'les');
+      ST[I].En := 'the';
+      ST[I].W := 'el';
+    End;
+    Exit;
+  End;
+  { m, t, d : formes elidees }
+  If (W = 'm') Or (W = 't') Then
+  Begin
+    If CaNextVerbal(I + 1) Then
+    Begin
+      ST[I].Cat := 'O';
+      If W = 'm' Then ST[I].En := 'me' Else ST[I].En := 'you';
+    End
+    Else
+      ST[I].Cat := ' ';
+    Exit;
+  End;
+  If W = 'd' Then
+  Begin
+    ST[I].Cat := 'E';
+    ST[I].En := 'of';
+    ST[I].W := 'de';
+    Exit;
+  End;
+  { a : mouvement (to), lieu (at / in), heure }
+  If (W = 'a') And Not ((I > 1) And (ST[I - 1].Cat = 'E')) Then
+  Begin
+    ST[I].Cat := 'E';
+    ST[I].En := 'in';
+    ST[I].W := 'en';
+    K := I - 1;
+    While (K >= 1) And (ST[K].Cat In ['R', 'G', 'P', 'O']) Do Dec(K);
+    If (I < SN) And (ST[I + 1].W = 'les') And (I + 2 <= SN) And (CaFind(ST[I +
+        2].W, 'u') > 0) Then
+    Begin
+      ST[I].En := 'at';
+      ST[I].W := 'a';
+    End
+    Else If ((K >= 1) And (ST[K].Cat = 'V') And
+       InList(ST[K].En,
+           'go come return walk run drive travel fly arrive leave')) Or
+       CaNextVerbal(I + 1) Or
+       ((K >= 1) And (ST[K].Cat = 'V') And
+        InList(ST[K].En,
+            'give send show tell bring teach offer sell lend ask begin')) Then
+    Begin
+      ST[I].En := 'to';
+      ST[I].W := 'a';
+    End
+    Else If (I < SN) And (ST[I + 1].Cap Or (CaFind(ST[I + 1].W, 'z') > 0)) Then
+      ST[I].En := 'in';
+    Exit;
+  End;
+  { en devant un verbe : pronom omis }
+  If (W = 'en') And CaNextVerbal(I + 1) Then
+  Begin
+    ST[I].Cat := ' ';
+    Exit;
+  End;
+  { molt bo : adverbe devant un adjectif }
+  If (CaFind(W, 'r') > 0) And (I < SN) And (CaFind(ST[I + 1].W, 'a') > 0) And
+     (CaFind(ST[I + 1].W, 'n') = 0) And (Prev <> 'D') And (Prev <> 'S') And
+         (Prev <> 'Q') Then
+  Begin
+    Idx := CaFind(W, 'r');
+    ST[I].Cat := 'R';
+    ST[I].En := CaLex[Idx].En;
+    Exit;
+  End;
+  PrefNoun := Prev In ['D', 'S', 'T', 'Q', 'U', 'A'];
+  PrefAdj := (Prev = 'N') Or ((Prev = 'V') And (CaVerbKey2(I - 1) = 'ser')) Or
+             ((Prev = 'V') And (CaVerbKey2(I - 1) = 'estar')) Or
+             ((Prev = 'R') And (I >= 3) And (ST[I - 2].Cat = 'V'));
+  If PrefNoun Then Idx := CaFind(W, 'n') Else Idx := 0;
+  If (Idx = 0) And PrefAdj Then Idx := CaFind(W, 'a');
+  If Idx = 0 Then Idx := CaFind(W, 'wsoxdqgcjruzpet');
+  If Idx = 0 Then Idx := CaFind(W, 'v');
+  If Idx = 0 Then Idx := CaFind(W, 'n');
+  If Idx = 0 Then Idx := CaFind(W, 'a');
+  If Idx = 0 Then
+  Begin
+    ST[I].Cat := 'Z';
+    Exit;
+  End;
+  { molt, poc : quantificateur devant un nom }
+  If (CaLex[Idx].Pos = 'r') And (CaFind(W, 'u') > 0) And CaNextNounish(I + 1)
+      Then
+    Idx := CaFind(W, 'u');
+  ST[I].En := CaLex[Idx].En;
+  Case CaLex[Idx].Pos Of
+    'w':
+    Begin
+      ST[I].Cat := 'W';
+      If W = 'on' Then ST[I].W := 'donde'
+      Else If W = 'qui' Then ST[I].W := 'quien'
+      Else If W = 'quan' Then ST[I].W := 'cuando'
+      Else If W = 'com' Then ST[I].W := 'como'
+      Else If W = 'per què' Then ST[I].W := 'por que'
+      Else If ST[I].En = 'which' Then ST[I].W := 'cual'
+      Else If ST[I].En = 'how many' Then ST[I].W := 'cuantos'
+      Else If ST[I].En = 'how much' Then ST[I].W := 'cuanto'
+      Else ST[I].W := 'que';
+    End;
+    's':
+    Begin
+      ST[I].Cat := 'P';
+      ST[I].Slot := CaLex[Idx].Slot;
+    End;
+    'o': ST[I].Cat := 'O';
+    'x':
+    Begin
+      ST[I].Cat := 'S';
+      ST[I].Kind := ' ';
+    End;
+    'd':
+    Begin
+      ST[I].Cat := 'T';
+      ST[I].Kind := ' ';
+      ST[I].Plu := InList(ST[I].En, 'these those');
+    End;
+    'g': ST[I].Cat := 'G';
+    'q': ST[I].Cat := 'g';
+    'c': ST[I].Cat := 'C';
+    'r': ST[I].Cat := 'R';
+    'j': ST[I].Cat := 'J';
+    'p', 'e':
+    Begin
+      ST[I].Cat := 'E';
+      ST[I].W := CaPrepKey(CaLex[Idx].En, W);
+    End;
+    'u':
+    Begin
+      If CaLex[Idx].Num Then ST[I].Cat := 'U' Else ST[I].Cat := 'Q';
+      ST[I].Plu := InList(W,
+          'tots totes alguns algunes uns unes molts moltes pocs poques');
+    End;
+    't':
+    Begin
+      ST[I].Cat := 'D';
+      ST[I].Kind := 'i';
+      ST[I].W := 'un';
+    End;
+    'z':
+    Begin
+      ST[I].Cat := 'Z';
+      ST[I].Orig := ST[I].En;
+      ST[I].Cap := True;
+    End;
+    'v':
+    Begin
+      ST[I].Cat := 'V';
+      ST[I].Idx := CaLex[Idx].SpIdx;
+      ST[I].Tns := CaLex[Idx].ATn[1];
+      ST[I].Slot := CaLex[Idx].ASl[1];
+      ST[I].Kind := ' ';
+      ST[I].Cl := '';
+    End;
+    'n':
+    Begin
+      ST[I].Cat := 'N';
+      ST[I].Plu := CaLex[Idx].Plu;
+      ST[I].Cl := '';
+    End;
+    'a':
+    Begin
+      ST[I].Cat := 'A';
+      ST[I].Plu := CaLex[Idx].Plu;
+      ST[I].Cl := '';
+    End;
+  End;
+End;
+
+{ ------------------------------------------------------------------ }
+{ CATALAN -> ANGLAIS : sujet omis, auxiliaires, articles et phrase    }
+{ ------------------------------------------------------------------ }
+
+Function CaVerbKey(I: Integer): String;
+Begin
+  If (I >= 1) And (I <= SN) And (ST[I].Cat = 'V') And (ST[I].Idx > 0) Then
+    CaVerbKey := SpPlain(SpLex[ST[I].Idx].Es)
+  Else
+    CaVerbKey := '';
+End;
+
+Procedure CaInsert(Pos1: Integer);
+Var
+  K: Integer;
+Begin
+  If SN >= MaxTokens Then Exit;
+  For K := SN Downto Pos1 Do
+    ST[K + 1] := ST[K];
+  Inc(SN);
+  FillChar(ST[Pos1], SizeOf(TSTok), 0);
+  ST[Pos1].Tns := ' ';
+End;
+
+Function CaIsSubj(I: Integer): Boolean;
+Begin
+  CaIsSubj := False;
+  If (I < 1) Or (I > SN) Then Exit;
+  If ST[I].Cat = 'P' Then CaIsSubj := True
+  Else If ST[I].Cat = 'N' Then CaIsSubj := True
+  Else If ST[I].Cat = 'Z' Then CaIsSubj := Not
+      IsCalendar(LowerAscii(ST[I].Orig));
+End;
+
+Function CaSubjEnd(K: Integer): Integer;
+Var
+  J: Integer;
+Begin
+  CaSubjEnd := 0;
+  If (K < 1) Or (K > SN) Then Exit;
+  If ST[K].Cat = 'P' Then
+  Begin
+    CaSubjEnd := K;
+    Exit;
+  End;
+  J := K;
+  While (J <= SN) And (ST[J].Cat In ['D', 'S', 'T', 'Q', 'U']) Do Inc(J);
+  While (J <= SN) And (ST[J].Cat = 'A') Do Inc(J);
+  If (J <= SN) And (ST[J].Cat = 'N') Then
+  Begin
+    CaSubjEnd := J;
+    If (J < SN) And (ST[J + 1].Cat = 'A') Then CaSubjEnd := J + 1;
+  End
+  Else If (J <= SN) And (ST[J].Cat = 'Z') And ST[J].Cap Then
+  Begin
+    While (J < SN) And (ST[J + 1].Cat = 'Z') Do Inc(J);
+    CaSubjEnd := J;
+  End;
+End;
+
+Function CaSubjBefore(I: Integer): Boolean;
+Var
+  J, K: Integer;
+Begin
+  CaSubjBefore := False;
+  J := I - 1;
+  While (J >= 1) And (ST[J].Cat In ['G', 'R', 'O']) Do Dec(J);
+  If J < 1 Then Exit;
+  If ST[J].Cat = 'P' Then
+  Begin
+    CaSubjBefore := True;
+    Exit;
+  End;
+  If (ST[J].Cat = 'W') And (ST[J].W = 'quien') Then
+  Begin
+    CaSubjBefore := True;
+    Exit;
+  End;
+  If ST[J].Cat = 'A' Then
+  Begin
+    K := J;
+    While (K >= 1) And (ST[K].Cat In ['A', 'N', 'D', 'S', 'T', 'Q', 'U', 'Z'])
+        Do Dec(K);
+    If (K < J) And (ST[K + 1].Cat In ['D', 'N', 'S', 'T', 'Q', 'U', 'Z']) Then J
+        := J;
+  End;
+  If ST[J].Cat In ['N', 'Z', 'A'] Then
+  Begin
+    K := J;
+    While (K >= 1) And (ST[K].Cat In ['N', 'A', 'D', 'S', 'T', 'Q', 'U', 'Z'])
+        Do Dec(K);
+    { el llibre de la nena es : on remonte au-dela de "de" }
+    If (K >= 1) And (ST[K].Cat = 'E') And (ST[K].En = 'of') Then
+    Begin
+      J := K - 1;
+      K := J;
+      While (K >= 1) And (ST[K].Cat In ['N', 'A', 'D', 'S', 'T', 'Q', 'U', 'Z'])
+          Do Dec(K);
+    End;
+    If J < 1 Then Exit;
+    If Not (ST[J].Cat In ['N', 'Z', 'A']) Then Exit;
+    CaSubjBefore := (K < 1) Or (ST[K].Cat <> 'E');
+  End;
+End;
+
+Function CaHasWh: Boolean;
+Var
+  K: Integer;
+Begin
+  CaHasWh := False;
+  For K := 1 To SN Do
+    If ST[K].Cat = 'W' Then CaHasWh := True;
+End;
+
+{ le groupe nominal dont la tete est en E est-il defini ? }
+Function CaDefNP(E: Integer): Boolean;
+Var
+  K: Integer;
+Begin
+  CaDefNP := False;
+  K := E - 1;
+  While (K >= 1) And (ST[K].Cat In ['A', 'Q', 'U']) Do Dec(K);
+  If (K >= 1) And (ST[K].Cat In ['S', 'T']) Then CaDefNP := True
+  Else If (K >= 1) And (ST[K].Cat = 'D') And (ST[K].Kind = 'd') Then CaDefNP :=
+      True
+  Else If ST[E].Cat = 'Z' Then CaDefNP := True;
+End;
+
+{ un sujet suit-il le verbe en I ? renvoie la fin du groupe }
+Function CaSubjAfter(I: Integer): Integer;
+Var
+  E: Integer;
+Begin
+  CaSubjAfter := 0;
+  If ST[I].Slot In [1, 2, 4, 5] Then Exit;
+  If (CaVerbKey(I) = 'ser') And (I < SN) And (ST[I + 1].Cat = 'P') And CaHasWh
+      Then
+  Begin
+    CaSubjAfter := I + 1;
+    Exit;
+  End;
+  E := CaSubjEnd(I + 1);
+  If (E = 0) Or (E - I > 8) Then Exit;
+  If ST[E].Cat = 'P' Then Exit;
+  If ST[E].Cat = 'A' Then Dec(E);
+  If Not CaIsSubj(E) Then Exit;
+  If ((CaVerbKey(I) = 'ser') Or (CaVerbKey(I) = 'estar')) And (Not CaDefNP(E))
+      Then Exit;
+  If (CaVerbKey(I) <> 'ser') And (CaVerbKey(I) <> 'estar') And
+     Not InList(ST[I].En,
+         'arrive come go live stand lie sit sleep fall rain work walk run stay'+
+         ' return cost ring') Then Exit;
+  CaSubjAfter := CaSubjEnd(I + 1);
+End;
+
+Procedure CaMoveBlock(From1, To1, Dest: Integer);
+Var
+  Tmp: Array[1..12] Of TSTok;
+  N, K: Integer;
+Begin
+  N := To1 - From1 + 1;
+  If (N < 1) Or (N > 12) Or (Dest >= From1) Then Exit;
+  For K := 1 To N Do Tmp[K] := ST[From1 + K - 1];
+  For K := From1 - 1 Downto Dest Do ST[K + N] := ST[K];
+  For K := 1 To N Do ST[Dest + K - 1] := Tmp[K];
+End;
+
+{ Choisit parmi les lectures d'une forme verbale }
+Procedure CaResolveVerb(I: Integer);
+Var
+  Idx, J, K, Want, Pick: Integer;
+  WantT: Char;
+Begin
+  Idx := CaFind(ST[I].W, 'v');
+  If (Idx = 0) Or (CaLex[Idx].NAlt < 2) Then Exit;
+  Want := 0;
+  WantT := ' ';
+  J := I - 1;
+  While (J >= 1) And (ST[J].Cat In ['G', 'R']) Do Dec(J);
+  If (J >= 1) And (ST[J].Cat = 'V') And (CaVerbKey(J) = 'tener') And (ST[J].Tns
+      = 'p') And
+     (ST[J].W[1] = 'h') Then WantT := 'P'
+  Else If (J >= 1) And (ST[J].Cat = 'V') And (ST[J].Tns In ['p', 'm']) And
+          InList(CaVerbKey(J), 'poder querer deber saber ir') Then WantT := 'I'
+  Else If (J >= 1) And (ST[J].Cat = 'P') Then Want := ST[J].Slot
+  Else If (J >= 1) And (ST[J].Cat In ['N', 'Z']) Then
+  Begin
+    If ST[J].Plu Then Want := 6 Else Want := 3;
+  End;
+  If (WantT = ' ') And (J >= 1) And (ST[J].Cat = 'E') And (ST[J].W = 'a') Then
+      WantT := 'I';
+  Pick := 0;
+  If WantT <> ' ' Then
+    For K := 1 To CaLex[Idx].NAlt Do
+      If (Pick = 0) And (CaLex[Idx].ATn[K] = WantT) Then Pick := K;
+  If (Pick = 0) And (I = 1) And (SEnd = '!') Then
+    For K := 1 To CaLex[Idx].NAlt Do
+      If (Pick = 0) And (CaLex[Idx].ATn[K] = 'M') Then Pick := K;
+  If (Pick = 0) And (Want > 0) Then
+    For K := 1 To CaLex[Idx].NAlt Do
+      If (Pick = 0) And (CaLex[Idx].ATn[K] In ['p', 'm', 'f', 'c']) And
+          (CaLex[Idx].ASl[K] = Want) Then Pick := K;
+  If Pick = 0 Then
+    For K := 1 To CaLex[Idx].NAlt Do
+      If (Pick = 0) And (CaLex[Idx].ATn[K] In ['p', 'm', 'f', 'c']) Then Pick :=
+          K;
+  If Pick = 0 Then Pick := 1;
+  ST[I].Tns := CaLex[Idx].ATn[Pick];
+  ST[I].Slot := CaLex[Idx].ASl[Pick];
+  ST[I].Kind := ' ';
+End;
+
+Procedure CaMakePronoun(Pos1, Slot: Integer; Impers: Boolean);
+Begin
+  ST[Pos1].Cat := 'P';
+  ST[Pos1].Slot := Slot;
+  ST[Pos1].Tns := ' ';
+  Case Slot Of
+    1: Begin ST[Pos1].En := 'I'; ST[Pos1].W := 'jo'; End;
+    2: Begin ST[Pos1].En := 'you'; ST[Pos1].W := 'tu'; End;
+    4: Begin ST[Pos1].En := 'we'; ST[Pos1].W := 'nosaltres'; End;
+    5: Begin ST[Pos1].En := 'you'; ST[Pos1].W := 'vosaltres'; End;
+    6: Begin ST[Pos1].En := 'they'; ST[Pos1].W := 'ells'; End;
+  Else
+    Begin
+      ST[Pos1].Slot := 3;
+      If Impers Then
+      Begin
+        ST[Pos1].En := 'it';
+        ST[Pos1].W := 'ho';
+      End
+      Else
+      Begin
+        ST[Pos1].En := 'he';
+        ST[Pos1].W := 'ell';
+      End;
+    End;
+  End;
+  ST[Pos1].Orig := ST[Pos1].W;
+End;
+
+Procedure CaClassify;
+Var
+  I, J, K, E: Integer;
+  Key: String;
+  Fin: Boolean;
+Begin
+  { contractions : al, del, pel }
+  I := 1;
+  While I <= SN Do
+  Begin
+    If InList(ST[I].W, 'al als del dels pel pels') And (SN < MaxTokens) Then
+    Begin
+      Key := ST[I].W;
+      CaInsert(I + 1);
+      ST[I + 1].Cat := '?';
+      ST[I + 1].W := 'el';
+      ST[I + 1].Orig := 'el';
+      If (Key = 'als') Or (Key = 'dels') Or (Key = 'pels') Then ST[I + 1].W :=
+          'els';
+      If (Copy(Key, 1, 1) = 'a') Then ST[I].W := 'a'
+      Else If Copy(Key, 1, 1) = 'd' Then ST[I].W := 'de'
+      Else ST[I].W := 'per';
+      Inc(I);
+    End;
+    Inc(I);
+  End;
+  CaMergeMultiword;
+  For I := 1 To SN Do
+    CaPickCat(I);
+  ARemoveConsumed;
+  { interrogatif apres un verbe ou une virgule : subordonnee }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'W') And (ST[I].W <> 'quien') And
+       ((ST[I - 1].Cat = 'V') Or ((ST[I - 1].Cat = ',') And (I > 2) And (ST[I -
+           2].Cat = 'V'))) Then
+    Begin
+      ST[I].Cat := 'C';
+      If ST[I - 1].Cat = ',' Then ST[I - 1].Cat := ' ';
+    End;
+  ARemoveConsumed;
+  { interjection au milieu d'une phrase : minuscule }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'J') And (ST[I].En <> '') And (ST[I].En[1] In ['A'..'Z'])
+        And
+       (Copy(ST[I].En, 1, 2) <> 'I ') And (Copy(ST[I].En, 1, 6) <> 'It is ')
+           Then
+      ST[I].En[1] := Chr(Ord(ST[I].En[1]) + 32);
+  { d'on : where ... from }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'W') And (ST[I].En = 'where from') And (SN < MaxTokens) Then
+    Begin
+      ST[I].W := 'donde';
+      ST[I].En := 'where';
+      Inc(SN);
+      FillChar(ST[SN], SizeOf(TSTok), 0);
+      ST[SN].Tns := ' ';
+      ST[SN].Cat := 'E';
+      ST[SN].W := 'desde';
+      ST[SN].Orig := 'desde';
+      ST[SN].En := 'from';
+    End;
+  { jour ou mois en tete : complement de temps }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'Z') And ((I = 1) Or (ST[I - 1].Cat = ',')) Then
+    Begin
+      If InList(LowerAscii(ST[I].Orig),
+          'monday tuesday wednesday thursday friday saturday sunday') Then
+      Begin
+        ST[I].Cat := 'R';
+        ST[I].En := 'on ' + ST[I].Orig;
+      End
+      Else If InList(LowerAscii(ST[I].Orig),
+          'january february march april may june july august september october'+
+          ' november december') Then
+      Begin
+        ST[I].Cat := 'R';
+        ST[I].En := 'in ' + ST[I].Orig;
+      End;
+    End;
+  { el meu llibre : l'article disparait devant le possessif }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'D') And (ST[I].Kind = 'd') And (ST[I + 1].Cat = 'S') Then
+      ST[I].Cat := ' ';
+  ARemoveConsumed;
+  { a les sis : at six }
+  For I := 1 To SN - 2 Do
+    If (ST[I].Cat = 'E') And (ST[I].W = 'a') And (ST[I].En = 'at') And (ST[I +
+        1].Cat = 'D') And
+       (ST[I + 2].Cat = 'U') Then
+    Begin
+      ST[I].Cat := ' ';
+      ST[I + 1].Cat := ' ';
+      ST[I + 2].Cat := 'R';
+      ST[I + 2].En := 'at ' + ST[I + 2].En;
+    End;
+  ARemoveConsumed;
+  { a casa : at home }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'E') And (ST[I].W = 'en') And ((ST[I].En = 'in') Or
+        (ST[I].En = 'at')) And
+       (ST[I + 1].Cat = 'N') And (ST[I + 1].En = 'house') And (ST[I + 1].W =
+           'casa') And Not ST[I + 1].Plu Then
+    Begin
+      ST[I].Cat := ' ';
+      ST[I + 1].Cat := 'R';
+      ST[I + 1].En := 'at home';
+    End;
+  ARemoveConsumed;
+  { demonstratif seul : ce / cela }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'T') And ((I = SN) Or Not (ST[I + 1].Cat In ['N', 'A']))
+        Then
+    Begin
+      ST[I].Cat := 'P';
+      ST[I].Slot := 3;
+      If ST[I].Plu Then ST[I].Slot := 6;
+      If (ST[I].En = 'this') Or (ST[I].En = 'that') Then ST[I].En := 'it';
+      If ST[I].Plu Then ST[I].En := 'they';
+    End;
+  { adjectifs devant un nom sans determinant : nom puis adjectifs }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cat = 'A') And ((I = 1) Or Not (ST[I - 1].Cat In ['D', 'S', 'T',
+        'Q', 'U', 'A'])) Then
+    Begin
+      K := I;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If (ST[K].Cat = 'N') And (K - I <= 3) Then
+      Begin
+        ST[0] := ST[K];
+        For J := K Downto I + 1 Do
+          ST[J] := ST[J - 1];
+        ST[I] := ST[0];
+        I := K;
+      End
+      Else
+        I := K;
+    End;
+    Inc(I);
+  End;
+  { choix de la lecture des formes verbales ambigues }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'V' Then CaResolveVerb(I);
+  { voldria : would like }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns = 'c') And (CaVerbKey(I) = 'querer')
+        Then
+    Begin
+      ST[I].Idx := AlSpIndex('is:like', 'like');
+      ST[I].En := 'like';
+    End;
+  { fa fred, tinc fam : sujet, verbe et attribut }
+  I := 1;
+  While I <= SN Do
+  Begin
+    If (ST[I].Cat = 'J') And (SN < MaxTokens - 2) And
+       ((Copy(ST[I].En, 1, 6) = 'It is ') Or (Copy(ST[I].En, 1, 5) = 'I am ') Or
+        (Copy(ST[I].En, 1, 6) = 'I was ')) Then
+    Begin
+      Key := ST[I].En;
+      CaInsert(I + 1);
+      CaInsert(I + 1);
+      ST[I + 2].Cat := 'A';
+      ST[I + 2].W := 'caliente';
+      ST[I + 2].Orig := 'caliente';
+      ST[I + 1].Cat := 'V';
+      ST[I + 1].Idx := AlSpIndex('ser', 'be');
+      ST[I + 1].En := 'be';
+      ST[I + 1].Tns := 'p';
+      ST[I + 1].W := 'es';
+      If Copy(Key, 1, 6) = 'It is ' Then
+      Begin
+        ST[I + 2].En := Copy(Key, 7, 20);
+        CaMakePronoun(I, 3, True);
+        ST[I + 1].Slot := 3;
+      End
+      Else If Copy(Key, 1, 6) = 'I was ' Then
+      Begin
+        ST[I + 2].En := Copy(Key, 7, 20);
+        CaMakePronoun(I, 1, False);
+        ST[I + 1].Slot := 1;
+        ST[I + 1].Tns := 'm';
+      End
+      Else
+      Begin
+        ST[I + 2].En := Copy(Key, 6, 20);
+        CaMakePronoun(I, 1, False);
+        ST[I + 1].Slot := 1;
+      End;
+      If ST[I + 2].En = 'sunny' Then ST[I + 2].Cat := 'A';
+      If (I > 1) And (ST[1].Cat = 'R') And (I = 2) Then
+      Begin
+        ST[0] := ST[1];
+        For K := 1 To SN - 1 Do
+          ST[K] := ST[K + 1];
+        ST[SN] := ST[0];
+      End;
+    End;
+    Inc(I);
+  End;
+  { com et dius : what is your name }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'W') And (ST[I].W = 'como') And (ST[I + 1].Cat = 'V') And
+       (CaVerbKey(I + 1) = 'llamar') Then
+    Begin
+      ST[I].W := 'que';
+      ST[I].En := 'what';
+    End;
+  { passe compose : he cantat ; passe perifrastique : vaig cantar }
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns = 'p') Then
+    Begin
+      J := I + 1;
+      While (J <= SN) And (ST[J].Cat In ['R', 'G']) Do Inc(J);
+      If (J <= SN) And (ST[J].Cat = 'V') Then
+      Begin
+        If (CaVerbKey(I) = 'tener') And (ST[I].W[1] = 'h') And (ST[J].Tns = 'P')
+            Then
+        Begin
+          ST[J].Tns := 'i';
+          ST[J].Slot := ST[I].Slot;
+          ST[I].Cat := ' ';
+        End
+        Else If InList(ST[I].W, 'vaig vas va vam vau van') And (CaVerbKey(I) =
+            'ir') And
+                (ST[J].Tns = 'I') Then
+        Begin
+          ST[J].Tns := 'i';
+          ST[J].Slot := ST[I].Slot;
+          ST[I].Cat := ' ';
+        End;
+      End;
+    End;
+  ARemoveConsumed;
+  { tinc vint anys : I am twenty years old }
+  For I := 1 To SN - 2 Do
+    If (ST[I].Cat = 'V') And (CaVerbKey(I) = 'tener') And (ST[I].W[1] = 't')
+        Then
+      For J := I + 1 To SN - 1 Do
+        If (ST[J].Cat = 'U') And (ST[J + 1].Cat = 'N') And (ST[J + 1].En =
+            'year') And (SN < MaxTokens) Then
+        Begin
+          ST[I].Idx := AlSpIndex('ser', 'be');
+          ST[I].En := 'be';
+          ST[J + 1].Plu := True;
+          CaInsert(J + 2);
+          ST[J + 2].Cat := 'R';
+          ST[J + 2].En := 'old';
+          ST[J + 2].W := 'viejo';
+          ST[J + 2].Orig := 'old';
+          Break;
+        End;
+  { sujet omis : insertion du pronom d'apres la personne du verbe }
+  I := 1;
+  While I <= SN Do
+  Begin
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'm', 'i', 'f', 'c']) And
+        (ST[I].Slot > 0) And
+       (CaVerbKey(I) <> 'haber') And (CaVerbKey(I) <> 'llover') And
+       (Not CaSubjBefore(I)) And (CaSubjAfter(I) = 0) And (SN < MaxTokens) Then
+    Begin
+      J := I - 1;
+      While (J >= 1) And (ST[J].Cat In ['G', 'O']) Do Dec(J);
+      Fin := (I < SN) And ((CaVerbKey(I) = 'ser') Or (CaVerbKey(I) = 'estar'))
+          And (ST[I].Slot = 3) And
+             ((ST[I + 1].Cat = 'R') Or ((ST[I + 1].Cat = 'A') And
+              InList(ST[I + 1].En,
+                  'warm cold difficult easy beautiful possible necessary impor'+
+                  'tant interesting')));
+      If (Not Fin) And (I < SN) And (CaVerbKey(I) = 'ser') And (ST[I].Slot = 3)
+          Then
+      Begin
+        K := I + 1;
+        While (K <= SN) And (ST[K].Cat In ['D', 'R']) Do Inc(K);
+        If (K <= SN) And (((ST[K].Cat = 'N') And (ST[K].En = 'time')) Or
+            (ST[K].Cat = 'Z')) And
+           (Not ST[K].Cap Or IsCalendar(LowerAscii(ST[K].Orig))) Then Fin :=
+               True;
+        If (K <= SN) And (K = I + 2) And (ST[I + 1].Cat = 'D') And (ST[I +
+            1].Kind = 'i') And
+           (ST[K].Cat = 'N') And Not SpIsPersonEn(ST[K].En) Then Fin := True;
+      End;
+      CaInsert(J + 1);
+      CaMakePronoun(J + 1, ST[I + 1].Slot, Fin);
+      I := I + 1;
+      If Fin And (J = 1) And (ST[1].Cat = 'R') Then
+      Begin
+        ST[0] := ST[1];
+        For K := 1 To SN - 1 Do
+          ST[K] := ST[K + 1];
+        ST[SN] := ST[0];
+        Dec(I);
+      End;
+    End;
+    Inc(I);
+  End;
+  { sujet apres le verbe : inversion }
+  I := 1;
+  While I < SN Do
+  Begin
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'm', 'i', 'f', 'c']) And (Not
+        CaSubjBefore(I)) And
+       (CaVerbKey(I) <> 'haber') Then
+    Begin
+      E := CaSubjAfter(I);
+      If E > 0 Then
+      Begin
+        CaMoveBlock(I + 1, E, I);
+        I := E;
+      End;
+    End;
+    Inc(I);
+  End;
+  { double negation : no ... res }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'g' Then
+    Begin
+      If ST[I].En = 'nothing' Then ST[I].En := 'anything'
+      Else If ST[I].En = 'nobody' Then ST[I].En := 'anyone'
+      Else If ST[I].En = 'no' Then ST[I].En := 'any';
+      For J := 1 To I - 1 Do
+        If ST[J].Cat = 'G' Then ST[J].Cat := ' ';
+    End;
+  ARemoveConsumed;
+  { nom singulier sans determinant : article }
+  I := 1;
+  While I <= SN Do
+  Begin
+    If (ST[I].Cat = 'N') And (Not ST[I].Plu) And (Not IsMassNoun(ST[I].En)) Then
+    Begin
+      K := I;
+      While (K > 1) And (ST[K - 1].Cat = 'A') Do Dec(K);
+      If ((K = 1) Or Not (ST[K - 1].Cat In ['D', 'S', 'T', 'Q', 'U'])) And Not
+          IsLanguage(LowerAscii(ST[I].En)) And
+         Not ((K > 1) And (ST[K - 1].Cat = 'E') And (ST[K - 1].En = 'of')) Then
+      Begin
+        Fin := (K > 1) And (ST[K - 1].Cat = 'E') And
+               ((ST[K - 1].En = 'in') Or (ST[K - 1].En = 'on') Or (ST[K - 1].En
+                   = 'at') Or
+                (ST[K - 1].En = 'to') Or (ST[K - 1].En = 'under') Or (ST[K -
+                    1].En = 'near') Or
+                (ST[K - 1].En = 'behind') Or (ST[K - 1].En = 'between') Or (ST[K
+                    - 1].En = 'over')) And
+               (K = I);
+        CaInsert(K);
+        ST[K].Cat := 'D';
+        If Fin Then
+        Begin
+          ST[K].Kind := 'd';
+          ST[K].W := 'el';
+        End
+        Else
+        Begin
+          ST[K].Kind := 'i';
+          ST[K].W := 'un';
+        End;
+        Inc(I);
+      End;
+    End;
+    Inc(I);
+  End;
+  { le pluriel de l'article suit celui du nom }
+  For I := 1 To SN - 1 Do
+    If ST[I].Cat = 'D' Then
+    Begin
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If ST[K].Cat = 'N' Then ST[I].Plu := ST[K].Plu;
+    End;
+  { imperatif }
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns = 'M') Then
+    Begin
+      If ST[I].Slot = 0 Then ST[I].Slot := 2;
+      ST[I].Tns := 'M';
+    End;
+  For I := 1 To SN Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'm', 'i', 'f', 'c']) And
+        (ST[I].Slot = 0) Then ST[I].Slot := 3;
+  { expressions verbales : em dic, plou, hi ha }
+  For I := 1 To SN Do
+    If ST[I].Cat = 'V' Then
+    Begin
+      Key := CaVerbKey(I);
+      If Key = 'haber' Then
+      Begin
+        ST[I].W := 'hay';
+        ST[I].Slot := 3;
+      End
+      Else If Key = 'llover' Then
+        ST[I].Kind := 'g'
+      Else If Key = 'llamar' Then
+        ST[I].Kind := 'r'
+      Else If (ST[I].En = 'call') And (I < SN) And (ST[I + 1].Cat = 'E') And
+          (ST[I + 1].En = 'to') Then
+        ST[I + 1].Cat := ' ';
+    End;
+  ARemoveConsumed;
+  { complement d'une preposition : pronom de groupe nominal }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'O') And (ST[I - 1].Cat = 'E') And (ST[I].En <> '') Then
+      ST[I].Cat := 'B';
+  { quantificateur : accord avec le nom suivant }
+  For I := 1 To SN - 1 Do
+    If ST[I].Cat = 'Q' Then
+    Begin
+      K := I + 1;
+      While (K < SN) And (ST[K].Cat = 'A') Do Inc(K);
+      If ST[K].Cat = 'N' Then
+      Begin
+        ST[I].Plu := ST[K].Plu;
+        If ST[K].Plu And (ST[I].En = 'much') Then ST[I].En := 'many';
+        If Not ST[K].Plu Then
+        Begin
+          If (ST[I].W = 'molt') Or (ST[I].W = 'molta') Then ST[I].En := 'much'
+          Else If (ST[I].W = 'poc') Or (ST[I].W = 'poca') Then ST[I].En :=
+              'little';
+        End;
+      End;
+    End;
+  { em pots ajudar : le pronom va avec l'infinitif }
+  For I := 1 To SN - 2 Do
+    If (ST[I].Cat = 'O') And (ST[I + 1].Cat = 'V') And (ST[I + 2].Cat = 'V') And
+       (ST[I + 2].Tns = 'I') And (ST[I].En <> '') And (ST[I + 2].Cl = '') Then
+    Begin
+      ST[I + 2].Cl := ST[I].En;
+      ST[I].Cat := ' ';
+    End;
+  { pronoms complements a cote du verbe : formes liees }
+  For I := 2 To SN Do
+    If (ST[I].Cat = 'O') And (ST[I - 1].Cat = 'V') And (ST[I].En <> '') Then
+    Begin
+      ST[I - 1].Cl := ST[I].En;
+      ST[I].Cat := ' ';
+    End;
+  For I := 1 To SN - 1 Do
+    If (ST[I].Cat = 'O') And (ST[I + 1].Cat = 'V') And (ST[I].En <> '') And
+       (ST[I + 1].Cl = '') Then
+    Begin
+      ST[I + 1].Cl := ST[I].En;
+      ST[I].Cat := ' ';
+    End;
+  ARemoveConsumed;
+End;
+
+Function CaTranslateSentence(Const Sentence: String): String;
+Var
+  Res: String;
+Begin
+  CaTokenize(Sentence);
+  If SN = 0 Then
+  Begin
+    CaTranslateSentence := '';
+    Exit;
+  End;
+  CaClassify;
+  If SN = 0 Then
+  Begin
+    CaTranslateSentence := '';
+    Exit;
+  End;
+  Res := TranslateTokensEs(1, SN, SEnd = '?');
+  If (SEnd = '?') And (Length(Res) > 8) And (Copy(Res, Length(Res) - 7, 8) =
+      ' name is') Then
+    Res := 'What is ' + LowerAscii(Copy(Res, 1, Length(Res) - 8)) + ' name';
+  Res := UpperFirst(FixEnglish(Res));
+  If SEnd <> #0 Then Res := Res + SEnd;
+  CaTranslateSentence := Res;
+End;
+
+{ ------------------------------------------------------------------ }
 { Phrases toutes faites                                               }
 { ------------------------------------------------------------------ }
 
@@ -32497,7 +45477,8 @@ Var
   Key, Res, Pair, En: String;
   I, N: Integer;
   Question: Boolean;
-  SD, SJ, SE, SQ, SP, SV, SDa, SIt, SLa, SCy, SAf, SMt, SIc: Boolean;
+  SD, SJ, SE, SQ, SP, SV, SDa, SIt, SLa, SCy, SAf, SMt, SIc, SNl, SNb, SPl, SRo,
+      SCa: Boolean;
 Begin
   If SourceMoe Then
   Begin
@@ -32511,9 +45492,14 @@ Begin
   End;
   If SourceDe Or SourceJa Or SourceEs Or SourceSq Or SourcePt Or SourceSv Or
       SourceDa Or SourceIt Or SourceLa Or SourceCy Or SourceAf Or SourceMt Or
-      SourceIc Then
+      SourceIc Or SourceNl Or SourceNb Or SourcePl Or SourceRo Or SourceCa Then
   Begin
-    If SourceIc Then Res := IcTranslateSentence(Sentence)
+    If SourceCa Then Res := CaTranslateSentence(Sentence)
+    Else If SourceRo Then Res := RoTranslateSentence(Sentence)
+    Else If SourcePl Then Res := PlTranslateSentence(Sentence)
+    Else If SourceNb Then Res := NbTranslateSentence(Sentence)
+    Else If SourceNl Then Res := NlTranslateSentence(Sentence)
+    Else If SourceIc Then Res := IcTranslateSentence(Sentence)
     Else If SourceMt Then Res := MtTranslateSentence(Sentence)
     Else If SourceAf Then Res := AfTranslateSentence(Sentence)
     Else If SourceCy Then Res := CyTranslateSentence(Sentence)
@@ -32542,6 +45528,16 @@ Begin
       SAf := SourceAf;
       SMt := SourceMt;
       SIc := SourceIc;
+      SNl := SourceNl;
+      SNb := SourceNb;
+      SourceNb := False;
+      SPl := SourcePl;
+      SourcePl := False;
+      SRo := SourceRo;
+      SourceRo := False;
+      SCa := SourceCa;
+      SourceCa := False;
+      SourceNl := False;
       SourceIc := False;
       SourceMt := False;
       SourceAf := False;
@@ -32569,6 +45565,11 @@ Begin
       SourceAf := SAf;
       SourceMt := SMt;
       SourceIc := SIc;
+      SourceNl := SNl;
+      SourceNb := SNb;
+      SourcePl := SPl;
+      SourceRo := SRo;
+      SourceCa := SCa;
     End;
     TranslateSentence := Res;
     Exit;
@@ -32686,8 +45687,8 @@ Begin
   Writeln;
   Writeln('Options :');
   Writeln('  -f, --from-lang  Code ISO 639-1 de la langue source (en, fr, de, '+
-      'ja en romaji, es, sq, pt, sv, da, it, la, cy, af, mt, is, mt, is, fro).'
-      );
+      'ja en romaji, es, sq, pt, sv, da, it, la, cy, af, mt, is, nl, no, pl, r'+
+      'o, ca, fro).');
   Writeln('  -t, --to-lang    Code ISO 639-1 de la langue cible (fr, de, en).');
   Writeln('  -l, --list       Affiche les paires de langues disponibles.');
   Writeln('  -V, --version    Affiche la version.');
@@ -32695,6 +45696,7 @@ Begin
   Writeln;
   Writeln('Codes de langue :');
   Writeln('  af = afrikaans');
+  Writeln('  ca = catalan');
   Writeln('  cy = gallois');
   Writeln('  da = danois');
   Writeln('  de = allemand');
@@ -32708,7 +45710,11 @@ Begin
   Writeln('  la = latin');
   Writeln('  moe = innu-aimun (montagnais)');
   Writeln('  mt = maltais');
+  Writeln('  nl = neerlandais');
+  Writeln('  no = norvegien (bokmal)');
+  Writeln('  pl = polonais');
   Writeln('  pt = portugais');
+  Writeln('  ro = roumain');
   Writeln('  sq = albanais');
   Writeln('  sv = suedois');
   Writeln;
@@ -32744,6 +45750,11 @@ BEGIN
   LoadAfrikaans;
   LoadMaltese;
   LoadIcelandic;
+  LoadDutch;
+  LoadNorwegian;
+  LoadPolish;
+  LoadRomanian;
+  LoadCatalan;
   LoadOldFrench;
   LoadMoe;
   FromLang := '';
@@ -32828,6 +45839,16 @@ BEGIN
     Writeln('mt -> en');
     Writeln('is -> fr');
     Writeln('is -> en');
+    Writeln('nl -> fr');
+    Writeln('nl -> en');
+    Writeln('no -> fr');
+    Writeln('no -> en');
+    Writeln('pl -> fr');
+    Writeln('pl -> en');
+    Writeln('ro -> fr');
+    Writeln('ro -> en');
+    Writeln('ca -> fr');
+    Writeln('ca -> en');
     Writeln('moe -> fr (innu-aimun : phrases et mots connus seulement)');
     Writeln('fro -> fr (ancien francais : modernisation mot a mot)');
     Halt(0);
@@ -32838,6 +45859,7 @@ BEGIN
     Halt(2);
   End;
   If (FromLang = 'inn') Or (FromLang = 'innu') Then FromLang := 'moe';
+  If (FromLang = 'nb') Or (FromLang = 'nn') Then FromLang := 'no';
   If (FromLang = 'roman') Or (FromLang = 'romanz') Or (FromLang = 'ofr') Then
       FromLang := 'fro';
   If FromLang = 'fro' Then
@@ -32879,7 +45901,12 @@ BEGIN
           ((FromLang = 'cy') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
           ((FromLang = 'af') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
           ((FromLang = 'mt') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
-          ((FromLang = 'is') And ((ToLang = 'fr') Or (ToLang = 'en')))) Then
+          ((FromLang = 'is') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
+          ((FromLang = 'nl') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
+          ((FromLang = 'no') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
+          ((FromLang = 'pl') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
+          ((FromLang = 'ro') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
+          ((FromLang = 'ca') And ((ToLang = 'fr') Or (ToLang = 'en')))) Then
   Begin
     Writeln('Erreur : aucun modele de traduction de ', FromLang, ' vers ',
         ToLang,
@@ -32888,7 +45915,9 @@ BEGIN
                 'n, sq -> fr, sq -> en, pt -> fr, pt -> en, sv -> fr, sv -> en'+
                 ', da -> fr, da -> en, it -> fr, it -> en, la -> fr, la -> en,'+
                 ' cy -> fr, cy -> en, af -> fr, af -> en, mt -> fr, mt -> en, '+
-                'is -> fr, is -> en, fro -> fr).');
+                'is -> fr, is -> en, nl -> fr, nl -> en, no -> fr, no -> en, p'+
+                'l -> fr, pl -> en, ro -> fr, ro -> en, ca -> fr, ca -> en, fr'+
+                'o -> fr).');
     Halt(1);
   End;
   SourceDe := FromLang = 'de';
@@ -32904,12 +45933,19 @@ BEGIN
   SourceAf := FromLang = 'af';
   SourceMt := FromLang = 'mt';
   SourceIc := FromLang = 'is';
+  SourceCa := FromLang = 'ca';
+  SourceRo := FromLang = 'ro';
+  SourcePl := FromLang = 'pl';
+  SourceNb := FromLang = 'no';
+  SourceNl := FromLang = 'nl';
   DeToEn := (SourceDe Or SourceJa Or SourceEs Or SourceSq Or SourcePt Or
       SourceSv Or SourceDa Or SourceIt Or SourceLa Or SourceCy Or SourceAf Or
-      SourceMt Or SourceIc) And (ToLang = 'en');
+      SourceMt Or SourceIc Or SourceNl Or SourceNb Or SourcePl Or SourceRo Or
+      SourceCa) And (ToLang = 'en');
   DePivot := (SourceDe Or SourceJa Or SourceEs Or SourceSq Or SourcePt Or
       SourceSv Or SourceDa Or SourceIt Or SourceLa Or SourceCy Or SourceAf Or
-      SourceMt Or SourceIc) And (Not DeToEn);
+      SourceMt Or SourceIc Or SourceNl Or SourceNb Or SourcePl Or SourceRo Or
+      SourceCa) And (Not DeToEn);
   If SourceDe Then InitDeSpecials;
   TargetDe := ToLang = 'de';
   TargetEn := ToLang = 'en';
