@@ -10,6 +10,10 @@ Voici la liste des différents fichiers proposés dans OCR-0 :
 			<th>Nom</th>
 			<th>Description</th>	
 		</tr>
+		<tr>
+			<td><b>LINGUA-CLI.PAS</b></td>
+			<td>Cette commande permet de detecter la langue d'un texte.</td>
+		</tr>
 	    <tr>
 			<td><b>TESSERACT.PAS</b></td>
 			<td>Cette commande permet de lancer la reconnaissance de caracteres d'une image.</td>
