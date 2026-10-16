@@ -40,7 +40,7 @@ Const
   ScriptHangul = 10;
 
   { Mots les plus frequents : 'code mot mot mot ...' (UTF-8, minuscules). }
-  WordLists: Array[0..64] Of String = (
+  WordLists: Array[0..65] Of String = (
     'en the of and to a in is that it was for on are with as his they at be this from have or by one had not but what all were when we there can an your which their said if do will each about how up out them then she many',
     'en some so these would other into has more her two like him see could no make than been its who now my did only may very after where most also much before any our me just such here because over between both those while',
     'en without during don isn didn doesn s t',
@@ -60,6 +60,7 @@ Const
     'nl waar hoe dus meer veel al wel geen kan kunnen moet zou nu toch onder tegen na tussen',
     'sv och i att det som en på är av för med till den har de inte om ett men var jag sig från vi så kan man när år hans där blir ska hon eller mycket sin nu alla efter vid över under ut bara utan mot också dem ha',
     'sv hade då här vara denna detta dessa vad vem hur vilken sedan skulle kunde blev',
+    'da jeg jer os hvem hvorfor dejligt godt',
     'da og i at det en den til er som på de med han af for ikke der var mig sig men et har om vi min havde ham hun nu over da fra du ud sin dem os op man hans hvor eller hvad skal selv her alle vil blev kunne ind når være',
     'da dog noget ville jo deres efter ned skulle denne end dette mit også under have dig anden hende mine alt meget sit sine vor mod disse hvis din nogle hos blive mange ad bliver',
     'no og i det er som en på til av for med at ikke den har de om et var jeg han men fra vi kan så å skal ble eller hva også nå ut seg meg deg henne ham dem noe mye hun vært sin sitt sine hvor når bare etter over',
