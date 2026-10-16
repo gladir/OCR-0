@@ -11,6 +11,10 @@ Voici la liste des différents fichiers proposés dans OCR-0 :
 			<th>Description</th>	
 		</tr>
 		<tr>
+			<td><b>ARGOS-TRANSLATE.PAS</b></td>
+			<td>Cette commande permet de traduire une phrase de l'anglais vers le français ou l'allemand, et du français vers l'anglais (traducteur à règles).</td>
+		</tr>        
+		<tr>
 			<td><b>FASTTEXT.PAS</b></td>
 			<td>Cette commande permet de lancer l'outil de classification de texte.</td>
 		</tr>
