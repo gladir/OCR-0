@@ -11,6 +11,10 @@ Voici la liste des différents fichiers proposés dans OCR-0 :
 			<th>Description</th>	
 		</tr>
 		<tr>
+			<td><b>FASTTEXT.PAS</b></td>
+			<td>Cette commande permet de lancer l'outil de classification de texte.</td>
+		</tr>
+		<tr>
 			<td><b>LINGUA-CLI.PAS</b></td>
 			<td>Cette commande permet de detecter la langue d'un texte.</td>
 		</tr>
