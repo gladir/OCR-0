@@ -8,7 +8,9 @@
   Argos Translate utilise des reseaux de neurones (OpenNMT / CTranslate2) dont les
   modeles pesent plusieurs dizaines de Mo : ils ne sont pas realisables en Pascal.
   Ce clone est un traducteur A REGLES, sans reseau : anglais -> francais, anglais ->
-  allemand et francais -> anglais.
+  allemand, francais -> anglais, allemand -> anglais, allemand -> francais,
+  japonais (romaji) -> anglais, japonais (romaji) -> francais, espagnol -> anglais
+  et espagnol -> francais.
     - lexique d'environ 600 mots (noms avec genre, adjectifs avec accord et place,
       verbes avec groupe et auxiliaire, adverbes, prepositions) ;
     - verbes irreguliers francais (present, futur, conditionnel, imparfait, participe) ;
@@ -26,6 +28,16 @@
       imparfait, passe compose), pronoms, negation (ne ... pas), inversions et "est-ce
       que", groupes nominaux, puis generation anglaise (auxiliaires do/will/have, -s,
       temps du passe, ordre des adjectifs).
+    - allemand -> anglais : formes conjuguees, participes, prefixes separables, cas des
+      groupes nominaux (article, genre), ordre des mots (verbe 2e / verbe final), puis
+      generation anglaise ; allemand -> francais passe par l'anglais (traduction pivot).
+    - japonais (romaji) : particules (wa, ga, o, ni, de, to, no...), formes polies et
+      neutres des verbes et des adjectifs (-masu, -te, -ta, -nai, -tai), copule desu,
+      lexique d'environ 350 mots ; japonais -> francais passe par l'anglais.
+    - espagnol : formes conjuguees (presents, preterit, imparfait, futur, conditionnel,
+      participes, gerondifs, verbes irreguliers et a diphtongue), pronoms sujets omis
+      et enclitiques, accords noms/adjectifs, ser/estar/haber/tener, gustar, hay,
+      lexique d'environ 450 mots ; espagnol -> francais passe par l'anglais.
   Il traduit correctement des phrases simples ; une phrase complexe peut donner une
   traduction approximative, et un mot inconnu est conserve tel quel.
 }
@@ -228,6 +240,71 @@ Const
     'brought=bring:b;built=build:b;sold=sell:b;sent=send:b;began=begin:p;begun=begin:q;drove=drive:p;driven=drive:q;read=read:b;put=put:b;cut=cut:b;chose=choose:p;chosen=choose:q;forgot=forget:p;forgotten=forget:q;',
     'understood=understand:b;became=become:p;won=win:b;broke=break:p;broken=break:q;fell=fall:p;fallen=fall:q;swam=swim:p;swum=swim:q;wore=wear:p;worn=wear:q;taught=teach:b;sang=sing:p;sung=sing:q;died=die:b;children=child:n;men=man:n;',
     'women=woman:n;feet=foot:n;teeth=tooth:n;mice=mouse:n;people=person:n;wives=wife:n;knives=knife:n;lives=life:n;leaves=leaf:n;'
+  );
+
+  { Japonais (romaji) : romaji=anglais:categorie }
+  JaData: Array[0..24] Of String = (
+    'hito=person:n;otoko_no_hito=man:n;onna_no_hito=woman:n;otoko_no_ko=boy:n;onna_no_ko=girl:n;kodomo=child:n;tomodachi=friend:n;kazoku=family:n;haha=mother:n;okaasan=mother:n;chichi=father:n;otousan=father:n;ani=brother:n;',
+    'oniisan=brother:n;otouto=brother:n;ane=sister:n;oneesan=sister:n;imouto=sister:n;kyoudai=brother:n;musuko=son:n;musume=daughter:n;otto=husband:n;tsuma=wife:n;sensei=teacher:n;gakusei=student:n;isha=doctor:n;kangoshi=nurse:n;',
+    'kaishain=employee:n;ie=house:n;uchi=house:n;heya=room:n;daidokoro=kitchen:n;mado=window:n;doa=door:n;tsukue=table:n;isu=chair:n;teeburu=table:n;beddo=bed:n;gakkou=school:n;daigaku=university:n;kaisha=company:n;mise=shop:n;',
+    'eki=station:n;kuukou=airport:n;byouin=hospital:n;ginkou=bank:n;toshokan=library:n;resutoran=restaurant:n;hoteru=hotel:n;machi=city:n;kuni=country:n;koen=park:n;kouen=park:n;umi=sea:n;yama=mountain:n;kawa=river:n;ki=tree:n;',
+    'hana=flower:n;niwa=garden:n;mizu=water:n;ocha=tea:n;koohii=coffee:n;gyuunyuu=milk:n;biiru=beer:n;wain=wine:n;pan=bread:n;gohan=rice:n;niku=meat:n;sakana=fish:n;yasai=vegetable:n;kudamono=fruit:n;ringo=apple:n;tamago=egg:n;',
+    'sushi=sushi:n;ryouri=meal:n;asagohan=breakfast:n;hirugohan=lunch:n;bangohan=dinner:n;hon=book:n;shinbun=newspaper:n;zasshi=magazine:n;tegami=letter:n;denwa=phone:s;konpyuutaa=computer:n;kuruma=car:n;densha=train:n;basu=bus:n;',
+    'hikouki=plane:n;jitensha=bike:n;fune=boat:n;michi=road:n;ame=rain:n;yuki=snow:n;kaze=wind:n;sora=sky:n;inu=dog:n;neko=cat:n;tori=bird:n;uma=horse:n;namae=name:n;kotoba=word:n;nihongo=Japanese:n;eigo=English:n;furansugo=French:n;',
+    'doitsugo=German:n;jikan=time:n;shigoto=work:n;okane=money:n;kippu=ticket:n;kaban=bag:n;kagi=key:n;tokei=watch:n;kasa=umbrella:n;kutsu=shoe:n;fuku=clothes:n;shashin=photo:n;eiga=movie:n;ongaku=music:n;uta=song:n;',
+    'tanjoubi=birthday:n;purezento=present:n;mondai=problem:n;shitsumon=question:n;kotae=answer:n;tenki=weather:n;toire=toilet:n;ue=top:l;shita=bottom:l;naka=inside:l;mae=front:l;ushiro=back:l;tonari=next:l;soba=near:l;kyou=today:r;',
+    'ashita=tomorrow:r;kinou=yesterday:r;ima=now:r;asa=morning:r;mainichi=every_day:r;maiasa=every_morning:r;konban=tonight:r;kesa=this_morning:r;totemo=very:r;yoku=often:r;tokidoki=sometimes:r;itsumo=always:r;mou=already:r;',
+    'mada=still:r;sugu=soon:r;sukoshi=a_little:r;takusan=a_lot:r;zenzen=never:r;issho_ni=together:r;koko=here:r;soko=there:r;asoko=there:r;taberu=eat:v1;nomu=drink:v5;iku=go:v5;kuru=come:vk;suru=do:vs;miru=see:v1;kiku=listen:v5;',
+    'yomu=read:v5;kaku=write:v5;hanasu=speak:v5;au=meet:v5;kau=buy:v5;uru=sell:v5;aruku=walk:v5;hashiru=run:v5;oyogu=swim:v5;neru=sleep:v1;okiru=get_up:v1;hataraku=work:v5;wakaru=understand:v5;shiru=know:v5;omou=think:v5;iu=say:v5;',
+    'kangaeru=think:v1;oshieru=teach:v1;narau=learn:v5;tsukuru=make:v5;tsukau=use:v5;motsu=have:v5;miseru=show:v1;ageru=give:v1;kureru=give:v1;morau=receive:v5;toru=take:v5;okuru=send:v5;yobu=call:v5;matsu=wait:v5;suwaru=sit:v5;',
+    'hairu=enter:v5;deru=leave:v1;kaeru=return:v5;tsuku=arrive:v5;noru=ride:v5;oriru=get_off:v1;akeru=open:v1;shimeru=close:v1;hajimeru=begin:v1;owaru=end:v5;wasureru=forget:v1;oboeru=remember:v1;sagasu=look_for:v5;mitsukeru=find:v1;',
+    'tetsudau=help:v5;utau=sing:v5;odoru=dance:v5;asobu=play:v5;warau=laugh:v5;naku=cry:v5;shinu=die:v5;sumu=live:v5;naru=become:v5;dekiru=can:v1;arau=wash:v5;kiru=wear:v1;aru=exist:va;iru=exist:vi;kaeru=return:v5;benkyou=study:s;',
+    'ryokou=travel:s;sanpo=walk:s;kekkon=marry:s;shokuji=eat:s;sentaku=wash:s;souji=clean:s;kaimono=shop:s;unten=drive:s;ookii=big:ia;chiisai=small:ia;atarashii=new:ia;furui=old:ia;takai=expensive:ia;yasui=cheap:ia;ii=good:ii;',
+    'yoi=good:ii;warui=bad:ia;atsui=hot:ia;samui=cold:ia;tsumetai=cold:ia;oishii=delicious:ia;tanoshii=pleasant:ia;omoshiroi=interesting:ia;muzukashii=difficult:ia;yasashii=easy:ia;isogashii=busy:ia;ureshii=happy:ia;kanashii=sad:ia;',
+    'nagai=long:ia;mijikai=short:ia;hayai=fast:ia;osoi=slow:ia;hiroi=large:ia;semai=small:ia;tooi=far:ia;chikai=near:ia;akai=red:ia;aoi=blue:ia;shiroi=white:ia;kuroi=black:ia;wakai=young:ia;kawaii=pretty:ia;utsukushii=beautiful:ia;',
+    'itai=painful:ia;hoshii=want:ia;kirei=beautiful:na;shizuka=quiet:na;nigiyaka=lively:na;yuumei=famous:na;genki=happy:na;suki=like:na;kirai=dislike:na;daisuki=love:na;jouzu=good:na;heta=bad:na;benri=convenient:na;',
+    'taisetsu=important:na;daijoubu=fine:na;hima=free:na;kantan=easy:na;shinsetsu=kind:na;nan=what:w;nani=what:w;dare=who:w;donata=who:w;doko=where:w;itsu=when:w;naze=why:w;doushite=why:w;dou=how:w;ikura=how_much:w;ikutsu=how_many:w;',
+    'dono=which:w;konnichiwa=Hello:j;ohayou=Good_morning:j;ohayou_gozaimasu=Good_morning:j;konbanwa=Good_evening:j;oyasumi_nasai=Good_night:j;sayounara=Goodbye:j;arigatou=Thank_you:j;arigatou_gozaimasu=Thank_you:j;',
+    'sumimasen=Excuse_me:j;gomen_nasai=Sorry:j;hai=Yes:j;iie=No:j;kudasai=please:j;onegai_shimasu=please:j;furu=rain:v5;nihon=Japan:n;amerika=America:n;furansu=France:n;doitsu=Germany:n;igirisu=England:n;chuugoku=China:n;',
+    'kankoku=Korea:n;toukyou=Tokyo:n;kyouto=Kyoto:n;oosaka=Osaka:n;pari=Paris:n;rondon=London:n;nyuuyooku=New_York:n;shukudai=homework:n;kyoushitsu=classroom:n;tsukue=desk:n;pen=pen:n;enpitsu=pencil:n;kamera=camera:n;',
+    'terebi=television:n;rajio=radio:n;heya=room:n;biru=building:n;yuubinkyoku=post_office:n;kouban=police_station:n;yakkyoku=pharmacy:n;supa=supermarket:n;kissaten=cafe:n;mise=shop:n;kirai=dislike:na;yasumu=rest:v5;tomaru=stop:v5;',
+    'tsutomeru=work:v1;kariru=borrow:v1;kasu=lend:v5;kaesu=return:v5;tazuneru=ask:v1;kotaeru=answer:v1;warau=laugh:v5;nemuru=sleep:v5;dochira=where:w;dore=which:w;'
+  );
+
+  { Espagnol : espagnol=anglais:categorie }
+  SpData: Array[0..31] Of String = (
+    'hombre=man:n;mujer=woman:n;chico=boy:n;chica=girl:n;niño=child:n;niña=girl:n;amigo=friend:n;amiga=friend:n;familia=family:n;madre=mother:n;padre=father:n;hermano=brother:n;hermana=sister:n;hijo=son:n;hija=daughter:n;',
+    'marido=husband:n;esposa=wife:n;esposo=husband:n;profesor=teacher:n;profesora=teacher:n;estudiante=student:n;medico=doctor:n;enfermera=nurse:n;persona=person:n;gente=people:n;señor=gentleman:n;señora=lady:n;casa=house:n;',
+    'habitacion=room:n;cocina=kitchen:n;baño=bathroom:n;dormitorio=bedroom:n;puerta=door:n;ventana=window:n;mesa=table:n;silla=chair:n;cama=bed:n;escuela=school:n;colegio=school:n;universidad=university:n;clase=class:n;',
+    'oficina=office:n;tienda=shop:n;mercado=market:n;restaurante=restaurant:n;hotel=hotel:n;hospital=hospital:n;biblioteca=library:n;banco=bank:n;aeropuerto=airport:n;estacion=station:n;museo=museum:n;iglesia=church:n;cine=cinema:n;',
+    'teatro=theater:n;playa=beach:n;mar=sea:n;rio=river:n;montaña=mountain:n;bosque=forest:n;jardin=garden:n;parque=park:n;arbol=tree:n;flor=flower:n;ciudad=city:n;pueblo=village:n;pais=country:n;calle=street:n;carretera=road:n;',
+    'mundo=world:n;agua=water:n;comida=food:n;pan=bread:n;queso=cheese:n;carne=meat:n;pescado=fish:n;manzana=apple:n;naranja=orange:n;platano=banana:n;huevo=egg:n;arroz=rice:n;ensalada=salad:n;sopa=soup:n;pastel=cake:n;cafe=coffee:n;',
+    'te=tea:n;leche=milk:n;vino=wine:n;cerveza=beer:n;zumo=juice:n;jugo=juice:n;desayuno=breakfast:n;almuerzo=lunch:n;cena=dinner:n;dinero=money:n;precio=price:n;libro=book:n;carta=letter:n;periodico=newspaper:n;revista=magazine:n;',
+    'telefono=phone:n;ordenador=computer:n;computadora=computer:n;coche=car:n;carro=car:n;autobus=bus:n;tren=train:n;avion=plane:n;bicicleta=bike:n;barco=boat:n;nombre=name:n;idioma=language:n;palabra=word:n;pregunta=question:n;',
+    'respuesta=answer:n;problema=problem:n;idea=idea:n;historia=story:n;cosa=thing:n;lugar=place:n;trabajo=work:n;tiempo=time:n;dia=day:n;noche=night:n;semana=week:n;mes=month:n;año=year:n;hora=hour:n;minuto=minute:n;musica=music:n;',
+    'cancion=song:n;pelicula=movie:n;juego=game:n;regalo=gift:n;fiesta=party:n;viaje=trip:n;billete=ticket:n;boleto=ticket:n;maleta=suitcase:n;llave=key:n;bolsa=bag:n;perro=dog:n;gato=cat:n;pajaro=bird:n;caballo=horse:n;',
+    'animal=animal:n;lluvia=rain:n;nieve=snow:n;viento=wind:n;sol=sun:n;luna=moon:n;cielo=sky:n;cabeza=head:n;mano=hand:n;pie=foot:n;ojo=eye:n;boca=mouth:n;cara=face:n;corazon=heart:n;camisa=shirt:n;vestido=dress:n;zapato=shoe:n;',
+    'sombrero=hat:n;lunes=Monday:n;martes=Tuesday:n;miercoles=Wednesday:n;jueves=Thursday:n;viernes=Friday:n;sabado=Saturday:n;domingo=Sunday:n;enero=January:n;febrero=February:n;marzo=March:n;abril=April:n;mayo=May:n;junio=June:n;',
+    'julio=July:n;agosto=August:n;septiembre=September:n;octubre=October:n;noviembre=November:n;diciembre=December:n;español=Spanish:n;ingles=English:n;frances=French:n;aleman=German:n;italiano=Italian:n;chino=Chinese:n;',
+    'japones=Japanese:n;portugues=Portuguese:n;ruso=Russian:n;arabe=Arabic:n;bueno=good:a;malo=bad:a;grande=big:a;pequeño=small:a;largo=long:a;corto=short:a;alto=tall:a;bajo=short:a;nuevo=new:a;viejo=old:a;joven=young:a;',
+    'bonito=pretty:a;bello=beautiful:a;hermoso=beautiful:a;feliz=happy:a;triste=sad:a;cansado=tired:a;enfermo=sick:a;caliente=hot:a;frio=cold:a;caro=expensive:a;barato=cheap:a;facil=easy:a;dificil=difficult:a;importante=important:a;',
+    'interesante=interesting:a;aburrido=boring:a;divertido=funny:a;rapido=fast:a;lento=slow:a;fuerte=strong:a;debil=weak:a;rico=rich:a;pobre=poor:a;limpio=clean:a;sucio=dirty:a;lleno=full:a;vacio=empty:a;abierto=open:a;',
+    'cerrado=closed:a;listo=ready:a;ocupado=busy:a;libre=free:a;rojo=red:a;azul=blue:a;verde=green:a;amarillo=yellow:a;negro=black:a;blanco=white:a;marron=brown:a;gris=gray:a;rosa=pink:a;mismo=same:a;diferente=different:a;otro=other:a;',
+    'primero=first:a;ultimo=last:a;proximo=next:a;delicioso=delicious:a;tranquilo=quiet:a;amable=kind:a;simpatico=nice:a;contento=glad:a;preocupado=worried:a;seguro=sure:a;verdadero=true:a;famoso=famous:a;popular=popular:a;',
+    'especial=special:a;cansada=tired:a;calor=hot:a;orgulloso=proud:a;nervioso=nervous:a;perdido=lost:a;ser=be:v;estar=be:v;tener=have:v;haber=have:v;hacer=do:v;ir=go:v;venir=come:v;ver=see:v;mirar=look_at:v;oir=hear:v;',
+    'escuchar=listen_to:v;hablar=speak:v;decir=say:v;preguntar=ask:v;responder=answer:v;entender=understand:v;saber=know:v;conocer=know:v;pensar=think:v;creer=believe:v;sentir=feel:v;encontrar=find:v;dar=give:v;tomar=take:v;',
+    'poner=put:v;comprar=buy:v;vender=sell:v;pagar=pay:v;comer=eat:v;beber=drink:v;cocinar=cook:v;dormir=sleep:v;vivir=live:v;trabajar=work:v;estudiar=study:v;aprender=learn:v;enseñar=teach:v;leer=read:v;escribir=write:v;jugar=play:v;',
+    'cantar=sing:v;bailar=dance:v;correr=run:v;caminar=walk:v;conducir=drive:v;viajar=travel:v;llegar=arrive:v;salir=leave:v;quedar=stay:v;volver=return:v;empezar=begin:v;terminar=finish:v;abrir=open:v;cerrar=close:v;ayudar=help:v;',
+    'esperar=wait:v;llamar=call:v;visitar=visit:v;usar=use:v;olvidar=forget:v;elegir=choose:v;decidir=decide:v;disfrutar=enjoy:v;enviar=send:v;traer=bring:v;llevar=carry:v;costar=cost:v;cambiar=change:v;parecer=seem:v;mostrar=show:v;',
+    'nadar=swim:v;reir=laugh:v;llorar=cry:v;morir=die:v;ganar=win:v;perder=lose:v;romper=break:v;construir=build:v;entrar=enter:v;lavar=wash:v;limpiar=clean:v;cortar=cut:v;preferir=prefer:v;recordar=remember:v;recibir=receive:v;',
+    'pedir=ask_for:v;querer=want:v;poder=can:v;deber=must:v;necesitar=need:v;gustar=like:v;llover=rain:v;nacer=be_born:v;amar=love:v;odiar=hate:v;muy=very:r;tambien=also:r;siempre=always:r;nunca=never:r;a_menudo=often:r;',
+    'a_veces=sometimes:r;ahora=now:r;hoy=today:r;ayer=yesterday:r;anoche=last_night:r;aqui=here:r;alli=there:r;ahi=there:r;bien=well:r;mal=badly:r;despacio=slowly:r;otra_vez=again:r;pronto=soon:r;ya=already:r;todavia=still:r;',
+    'solo=only:r;realmente=really:r;mucho=a_lot:r;poco=a_little:r;juntos=together:r;casi=almost:r;entonces=then:r;temprano=early:r;tarde=late:r;lejos=far:r;cerca=near:r;fuera=outside:r;dentro=inside:r;quizas=maybe:r;claro=of_course:r;',
+    'por_supuesto=of_course:r;mañana=tomorrow:r;a=to:p;de=of:p;en=in:p;con=with:p;sin=without:p;por=for:p;para=for:p;sobre=on:p;entre=between:p;hasta=until:p;desde=from:p;hacia=toward:p;durante=during:p;antes_de=before:p;',
+    'despues_de=after:p;cerca_de=near:p;lejos_de=far_from:p;delante_de=in_front_of:p;detras_de=behind:p;debajo_de=under:p;encima_de=above:p;al_lado_de=next_to:p;dentro_de=inside:p;fuera_de=out_of:p;y=and:c;e=and:c;o=or:c;u=or:c;',
+    'pero=but:c;porque=because:c;si=if:c;cuando=when:c;mientras=while:c;que=that:c;aunque=although:c;como=as:c;hola=Hello:j;adios=Goodbye:j;gracias=Thank_you:j;por_favor=please:j;perdon=Excuse_me:j;lo_siento=I_am_sorry:j;',
+    'buenos_dias=Good_morning:j;buenas_tardes=Good_afternoon:j;buenas_noches=Good_night:j;bienvenido=Welcome:j;felicidades=Congratulations:j;salud=Cheers:j;que=what:w;quien=who:w;donde=where:w;cuando=when:w;como=how:w;por_que=why:w;',
+    'cuanto=how_much:w;cuantos=how_many:w;cual=which:w;pizza=pizza:n;paris=Paris:n;esta_noche=tonight:r;esta_mañana=this morning:r;esta_tarde=this afternoon:r;hoy_en_dia=nowadays:r;'
   );
 
 Var
@@ -1518,7 +1595,8 @@ Begin
 
   { that : conjonction (que) apres un verbe de pensee ou de parole }
   For I := 2 To TN - 1 Do
-    If (Tk[I].W = 'that') And (Tk[I - 1].Tag = 'V') And (Tk[I + 1].Tag In ['P', 'D', 'S', 'T', 'N', 'Z']) Then
+    If (Tk[I].W = 'that') And (Tk[I - 1].Tag = 'V') And (Tk[I + 1].Tag In ['P', 'D', 'S', 'T', 'N', 'Z']) And
+       Not ((Tk[I + 1].Tag = 'N') And (Not Tk[I + 1].NPlural)) Then
     Begin
       Tk[I].Tag := 'C';
       Tk[I].O := FindLex('that', 'c');
@@ -2337,6 +2415,17 @@ Begin
   I := J;
 End;
 
+Function WhTailFr(Const W: String): String;
+Begin
+  If W = 'where' Then WhTailFr := 'où'
+  Else If W = 'when' Then WhTailFr := 'quand'
+  Else If W = 'why' Then WhTailFr := 'pourquoi'
+  Else If W = 'how' Then WhTailFr := 'comment'
+  Else If (W = 'who') Or (W = 'whom') Then WhTailFr := 'qui'
+  Else If W = 'which' Then WhTailFr := 'quel'
+  Else WhTailFr := 'ce que';
+End;
+
 Function ObjectMode(Const VerbEn: String): Char;
 Begin
   If InList(VerbEn, 'speak talk') Then
@@ -2382,7 +2471,17 @@ Begin
         End
         Else
         Begin
-          AddClitic(Clit, ClitFr(Tk[I].W));
+          { verbe a deux complements : "give him the book" -> lui }
+          J := I + 1;
+          While (J <= Last) And Not (Tk[J].Tag In ['N', 'D', 'S', 'T', 'Q', 'U', 'Z']) Do
+            Inc(J);
+          If InList(VerbEn, 'give send show tell bring teach write offer sell lend') And (J <= Last) And
+             (J = I + 1) And InList(Tk[I].W, 'him her them it') Then
+          Begin
+            If Tk[I].W = 'them' Then AddClitic(Clit, 'leur') Else AddClitic(Clit, 'lui');
+          End
+          Else
+            AddClitic(Clit, ClitFr(Tk[I].W));
           Inc(I);
         End;
       End;
@@ -2414,7 +2513,24 @@ Begin
       'E': Res := Join(Res, TranslatePP(I));
       'N', 'D', 'S', 'T', 'Q', 'U', 'Z':
       Begin
-        If ParseNP(I, Mode, NP) Then
+        If InList(VerbEn, 'give send show tell bring teach write offer sell lend') And ParseNP(I, Mode, NP) And
+           (I + NP.Used <= Last) And (Tk[I + NP.Used].Tag In ['N', 'D', 'S', 'T', 'Q', 'U']) Then
+        Begin
+          { give the woman a flower -> donner une fleur a la femme }
+          T := NP.Text;
+          J := I + NP.Used;
+          If ParseNP(J, Mode, NP) Then
+          Begin
+            Res := Join(Res, Join(NP.Text, 'à ' + T));
+            I := J + NP.Used;
+          End
+          Else
+          Begin
+            Res := Join(Res, T);
+            I := J;
+          End;
+        End
+        Else If ParseNP(I, Mode, NP) Then
         Begin
           T := NP.Text;
           { metier apres etre : pas d'article }
@@ -2490,6 +2606,20 @@ Begin
       End;
       'G':
       Begin
+        Inc(I);
+      End;
+      'W':
+      Begin
+        Res := Join(Res, WhTailFr(Tk[I].W));
+        Inc(I);
+      End;
+      'X':
+      Begin
+        If Tk[I].W = 'is' Then Res := Join(Res, 'est')
+        Else If Tk[I].W = 'are' Then Res := Join(Res, 'sont')
+        Else If Tk[I].W = 'was' Then Res := Join(Res, 'était')
+        Else If Tk[I].W = 'were' Then Res := Join(Res, 'étaient')
+        Else If Tk[I].W = 'am' Then Res := Join(Res, 'suis');
         Inc(I);
       End;
     Else
@@ -2672,6 +2802,7 @@ Begin
   If A > B Then Exit;
   Wh := '';
   WhW := '';
+  FillChar(Subj, SizeOf(Subj), 0);
   Inverted := False;
   Imperative := False;
   Please := False;
@@ -2717,6 +2848,12 @@ Begin
       Wh := 'combien';
       If Tk[A + 1].W = 'many' Then Wh := 'combien de';
       Inc(A, 2);
+      If (Wh = 'combien de') And (A <= B) And (Tk[A].Tag = 'N') And
+         Not ((B - A >= 2) And IsBeForm(Tk[B - 1].W) And (Tk[B].W = 'there')) Then
+      Begin
+        Wh := 'combien de ' + NounForm(Tk[A].N, True);
+        Inc(A);
+      End;
     End
     Else If ((WhW = 'what') Or (WhW = 'which')) And (A < B) And (Tk[A + 1].Tag = 'N') Then
     Begin
@@ -2787,7 +2924,8 @@ Begin
   { impératif }
   If Not Inverted Then
   Begin
-    If (Tk[A].Tag = 'V') And (Tk[A].VForm In ['b', 'y']) And (Wh = '') And Not IsQ Then
+    If (Tk[A].Tag = 'V') And (Tk[A].VForm In ['b', 'y']) And (Wh = '') And Not IsQ And
+       Not ((Tk[A].W = 'let') And (A < B) And (Tk[A + 1].W = 'us')) Then
       Imperative := True
     Else If (Tk[A].W = 'do') And (A + 2 <= B) And (Tk[A + 1].Tag = 'G') And (Tk[A + 2].Tag = 'V') And
             (Wh = '') Then
@@ -2848,8 +2986,21 @@ Begin
     Exit;
   End;
 
+  { who / what sujet : "Who lives here ?" }
+  If (Not Inverted) And (Wh <> '') And ((WhW = 'who') Or (WhW = 'what')) And (A <= B) And
+     (Tk[A].Tag = 'V') And (Tk[A].VForm In ['s', 'b']) Then
+  Begin
+    FillChar(Subj, SizeOf(Subj), 0);
+    Subj.Found := True;
+    Subj.IsWh := True;
+    Subj.Slot := 3;
+    Subj.Gen := 'm';
+    Subj.Used := 0;
+    If WhW = 'who' Then Subj.Text := 'qui' Else Subj.Text := 'qu''est-ce qui';
+    Wh := '';
+  End;
   { sujet }
-  If Not Inverted Then
+  If (Not Inverted) And (Not Subj.Found) Then
   Begin
     If Not ParseSubject(A, Subj) Then
     Begin
@@ -2942,6 +3093,15 @@ Begin
     While (K <= B) And Not (Tk[K].Tag = 'N') Do
       Inc(K);
     If (K <= B) And (Tk[K].N > 0) And IsMealNoun(Lex[Tk[K].N].En) Then Inf0 := 'prendre';
+  End;
+  If VG.BeMain And (Next + 2 <= B) And (Tk[Next].Tag = 'U') And InList(Tk[Next + 1].W, 'year years') And
+     (Tk[Next + 2].W = 'old') And Not (Subj.IsIt Or Subj.IsThere) Then
+  Begin
+    Inf0 := 'avoir';
+    If Tk[Next].W[1] In ['0'..'9'] Then Idiom := Tk[Next].W + ' ans' Else Idiom := NumberWord(Tk[Next].W) + ' ans';
+    VG.BeMain := False;
+    VG.HaveMain := True;
+    Inc(Next, 3);
   End;
   If (VerbEn = 'know') And (Next <= B) And (Tk[Next].Tag In ['Z', 'O']) Then Inf0 := 'connaître';
   If (VerbEn = 'leave') And (Next <= B) And (Tk[Next].Tag In ['D', 'S', 'N', 'Z', 'O']) Then
@@ -3733,7 +3893,9 @@ End;
 
 Function IsDeCountry(Const W: String): Boolean;
 Begin
-  IsDeCountry := InList(W, 'germany france spain italy england canada switzerland austria belgium portugal china japan russia brazil mexico india america africa europe asia australia ireland scotland sweden norway denmark poland greece turkey egypt morocco usa');
+  IsDeCountry := InList(W, 'germany france spain italy england canada switzerland austria belgium portugal china '+
+                           'japan russia brazil mexico india america africa europe asia australia ireland scotland '+
+                           'sweden norway denmark poland greece turkey egypt morocco usa');
 End;
 
 { ------------------------------------------------------------------ }
@@ -8683,6 +8845,6025 @@ Begin
 End;
 
 { ------------------------------------------------------------------ }
+{ ALLEMAND -> ANGLAIS : jetons et classes de mots                     }
+{ ------------------------------------------------------------------ }
+
+Type
+  TGTok = Record
+    W, Orig: String[34];
+    Cap, Punct: Boolean;
+    Cat: Char;          { voir PickDeCat }
+    L, LInf, LPart: Integer;
+    Cases: String[4];
+    Gen: Char;
+    Plu, CanInf, CanPart: Boolean;
+    Tns: Char;          { p i c : verbe fini }
+    Slot: Integer;
+    Kind: Char;
+    En, EnObj: String[34];
+  End;
+
+Var
+  GT: Array[0..MaxTokens + 1] Of TGTok;
+  GN: Integer;
+  GEnd: Char;
+  SourceDe, DeToEn, DePivot, DeEmbed: Boolean;
+
+Function DeLow(Const S: String): String;
+Begin
+  DeLow := FrLower(S);
+End;
+
+Function DeEnglishOf(L: Integer): String;
+Var
+  Inf: String;
+Begin
+  DeEnglishOf := '';
+  If L <= 0 Then Exit;
+  If Lex[L].En <> '' Then
+  Begin
+    DeEnglishOf := Lex[L].En;
+    Exit;
+  End;
+  Inf := Lex[L].De;
+  If Inf = 'sein' Then DeEnglishOf := 'be'
+  Else If Inf = 'haben' Then DeEnglishOf := 'have'
+  Else If Inf = 'werden' Then DeEnglishOf := 'become'
+  Else If Inf = 'können' Then DeEnglishOf := 'can'
+  Else If Inf = 'müssen' Then DeEnglishOf := 'must'
+  Else If Inf = 'wollen' Then DeEnglishOf := 'want'
+  Else If Inf = 'sollen' Then DeEnglishOf := 'should'
+  Else If Inf = 'dürfen' Then DeEnglishOf := 'may'
+  Else If Inf = 'mögen' Then DeEnglishOf := 'like'
+  Else If Inf = 'möchten' Then DeEnglishOf := 'like'
+  Else If Inf = 'wissen' Then DeEnglishOf := 'know'
+  Else If Inf = 'kennen' Then DeEnglishOf := 'know'
+  Else If Inf = 'heißen' Then DeEnglishOf := 'be called'
+  Else If Inf = 'suchen' Then DeEnglishOf := 'look for'
+  Else If Inf = 'geben' Then DeEnglishOf := 'give'
+  Else If Inf = 'machen' Then DeEnglishOf := 'do'
+  Else If Inf = 'fahren' Then DeEnglishOf := 'drive'
+  Else DeEnglishOf := Inf;
+End;
+
+Function DeProperTry(Const Orig, Keys: String): String;
+Var
+  Rest, Key: String;
+  P: Integer;
+Begin
+  DeProperTry := '';
+  Rest := Keys;
+  While Rest <> '' Do
+  Begin
+    P := Pos(' ', Rest);
+    If P = 0 Then
+    Begin
+      Key := Rest;
+      Rest := '';
+    End
+    Else
+    Begin
+      Key := Copy(Rest, 1, P - 1);
+      Delete(Rest, 1, P);
+    End;
+    If ProperDe(Key) = Orig Then
+    Begin
+      DeProperTry := UpperFirst(Key);
+      Exit;
+    End;
+  End;
+End;
+
+Function DeProperEnOf(Const Orig: String): String;
+Var
+  R: String;
+Begin
+  R := DeProperTry(Orig, 'germany france spain italy england canada switzerland austria belgium portugal china japan russia brazil mexico india america africa europe');
+  If R = '' Then
+    R := DeProperTry(Orig, 'asia australia ireland scotland sweden norway denmark poland greece turkey egypt morocco london brussels geneva moscow vienna lisbon athens cairo rome munich cologne prague');
+  If Orig = 'Schweiz' Then R := 'Switzerland';
+  If Orig = 'USA' Then R := 'the United States';
+  DeProperEnOf := R;
+End;
+
+Function DeNumberEnOf(Const W: String): String;
+Const
+  Keys = 'two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty thirty forty fifty sixty seventy eighty ninety hundred thousand';
+Var
+  Rest, Key: String;
+  P: Integer;
+Begin
+  DeNumberEnOf := '';
+  If W = 'eins' Then
+  Begin
+    DeNumberEnOf := 'one';
+    Exit;
+  End;
+  Rest := Keys;
+  While Rest <> '' Do
+  Begin
+    P := Pos(' ', Rest);
+    If P = 0 Then
+    Begin
+      Key := Rest;
+      Rest := '';
+    End
+    Else
+    Begin
+      Key := Copy(Rest, 1, P - 1);
+      Delete(Rest, 1, P);
+    End;
+    If DeLow(DeNumber(Key)) = W Then
+    Begin
+      If Key = 'hundred' Then DeNumberEnOf := 'one hundred'
+      Else If Key = 'thousand' Then DeNumberEnOf := 'one thousand'
+      Else DeNumberEnOf := Key;
+      Exit;
+    End;
+  End;
+End;
+
+{ ---- recherche dans le lexique ---- }
+
+Function DeLexExact(Const W: String; Const Kinds: String): Integer;
+Var
+  I: Integer;
+Begin
+  DeLexExact := 0;
+  For I := 1 To LexCount Do
+    If (Lex[I].De <> '') And (Pos(Lex[I].Pos, Kinds) > 0) And (DeLow(Lex[I].De) = W) Then
+    Begin
+      DeLexExact := I;
+      Exit;
+    End;
+End;
+
+Function DeFindNoun(Const W: String; Var Plu: Boolean): Integer;
+Var
+  I: Integer;
+  C: Char;
+  P: Boolean;
+Begin
+  DeFindNoun := 0;
+  C := 'n';
+  For I := 1 To LexCount Do
+    If (Lex[I].Pos = 'n') And (Lex[I].De <> '') Then
+    Begin
+      If DeLow(NounDe(I, False, 'n')) = W Then
+      Begin
+        DeFindNoun := I;
+        Plu := False;
+        Exit;
+      End;
+      If DeLow(NounDe(I, True, 'n')) = W Then
+      Begin
+        DeFindNoun := I;
+        Plu := True;
+        Exit;
+      End;
+    End;
+  For I := 1 To LexCount Do
+    If (Lex[I].Pos = 'n') And (Lex[I].De <> '') Then
+      For P := True Downto False Do
+        If DeLow(NounDe(I, P, 'd')) = W Then
+        Begin
+          DeFindNoun := I;
+          Plu := P;
+          Exit;
+        End;
+End;
+
+Function DeFindAdj(Const W: String; Var Ending: String): Integer;
+Var
+  I: Integer;
+  Stem, Rest: String;
+Begin
+  DeFindAdj := 0;
+  For I := 1 To LexCount Do
+    If (Lex[I].Pos = 'a') And (Lex[I].De <> '') Then
+    Begin
+      If DeLow(Lex[I].De) = W Then
+      Begin
+        Ending := '';
+        DeFindAdj := I;
+        Exit;
+      End;
+      If Pos('i', Lex[I].DeFlags) = 0 Then
+      Begin
+        If Lex[I].DePl <> '' Then Stem := DeLow(Lex[I].DePl)
+        Else
+        Begin
+          Stem := DeLow(Lex[I].De);
+          If EndsWith(Stem, 'el') And (Length(Stem) > 3) Then Stem := Copy(Stem, 1, Length(Stem) - 2) + 'l';
+        End;
+        If (Length(W) > Length(Stem)) And (Copy(W, 1, Length(Stem)) = Stem) Then
+        Begin
+          Rest := Copy(W, Length(Stem) + 1, 5);
+          If (Rest = 'e') Or (Rest = 'en') Or (Rest = 'er') Or (Rest = 'es') Or (Rest = 'em') Then
+          Begin
+            Ending := Rest;
+            DeFindAdj := I;
+            Exit;
+          End;
+        End;
+      End;
+    End;
+End;
+
+{ Formes verbales : L = forme conjuguee, LInf, LPart. }
+Function DeMatchVerb(Const W: String; Var T: TGTok): Boolean;
+Var
+  I, S: Integer;
+  Form: String;
+  Found: Boolean;
+Begin
+  Found := False;
+  T.CanInf := False;
+  T.CanPart := False;
+  For I := 1 To LexCount Do
+    If (Lex[I].Pos = 'v') And (Lex[I].De <> '') Then
+    Begin
+      If (Lex[I].DeSep <> '') And (T.Kind <> 'A') Then
+      Begin
+        { forme conjuguee avec le prefixe colle (proposition subordonnee) }
+        For S := 1 To 6 Do
+          If (T.Kind <> 'A') And (DeLow(Lex[I].DeSep + DeFinite(I, S, 'p')) = W) Then
+          Begin
+            T.L := I;
+            T.Tns := 'p';
+            T.Slot := S;
+            T.Kind := 'A';
+          End;
+        For S := 1 To 6 Do
+          If (T.Kind <> 'A') And (DeLow(Lex[I].DeSep + DeFinite(I, S, 'i')) = W) Then
+          Begin
+            T.L := I;
+            T.Tns := 'i';
+            T.Slot := S;
+            T.Kind := 'A';
+          End;
+      End;
+      If (T.L = 0) Then
+      Begin
+        For S := 1 To 6 Do
+          If (T.L = 0) And (DeLow(DeFinite(I, S, 'p')) = W) Then
+          Begin
+            T.L := I;
+            T.Tns := 'p';
+            T.Slot := S;
+          End;
+        For S := 1 To 6 Do
+          If (T.L = 0) And (DeLow(DeFinite(I, S, 'i')) = W) Then
+          Begin
+            T.L := I;
+            T.Tns := 'i';
+            T.Slot := S;
+          End;
+        If IsDeSpecial(Lex[I].De) Then
+          For S := 1 To 6 Do
+            If (T.L = 0) And (DeLow(DeFinite(I, S, 'c')) = W) Then
+            Begin
+              T.L := I;
+              T.Tns := 'c';
+              T.Slot := S;
+            End;
+      End;
+      If (Not T.CanInf) And (DeLow(DeFullInf(I)) = W) Then
+      Begin
+        T.CanInf := True;
+        T.LInf := I;
+      End;
+      If (Not T.CanPart) And (DeLow(DeParticiple(I)) = W) Then
+      Begin
+        T.CanPart := True;
+        T.LPart := I;
+      End;
+    End;
+  Form := '';
+  DeMatchVerb := (T.L > 0) Or T.CanInf Or T.CanPart;
+  If Found Then Form := '';
+End;
+
+{ ---- tokenisation ---- }
+
+Procedure GPush(Const W, Orig: String; Cap, Punct: Boolean);
+Begin
+  If GN >= MaxTokens Then Exit;
+  Inc(GN);
+  FillChar(GT[GN], SizeOf(TGTok), 0);
+  GT[GN].W := W;
+  GT[GN].Orig := Orig;
+  GT[GN].Cap := Cap;
+  GT[GN].Punct := Punct;
+  GT[GN].Gen := 'n';
+  GT[GN].Tns := ' ';
+End;
+
+Procedure GSplitWord(Const Raw: String; Cap: Boolean);
+Var
+  LW: String;
+Begin
+  LW := DeLow(Raw);
+  If LW = 'im' Then
+  Begin
+    GPush('in', 'in', False, False);
+    GPush('dem', 'dem', False, False);
+  End
+  Else If LW = 'am' Then
+  Begin
+    GPush('an', 'an', False, False);
+    GPush('dem', 'dem', False, False);
+  End
+  Else If LW = 'zum' Then
+  Begin
+    GPush('zu', 'zu', False, False);
+    GPush('dem', 'dem', False, False);
+  End
+  Else If LW = 'zur' Then
+  Begin
+    GPush('zu', 'zu', False, False);
+    GPush('der', 'der', False, False);
+  End
+  Else If LW = 'vom' Then
+  Begin
+    GPush('von', 'von', False, False);
+    GPush('dem', 'dem', False, False);
+  End
+  Else If LW = 'beim' Then
+  Begin
+    GPush('bei', 'bei', False, False);
+    GPush('dem', 'dem', False, False);
+  End
+  Else If LW = 'ins' Then
+  Begin
+    GPush('in', 'in', False, False);
+    GPush('das', 'das', False, False);
+  End
+  Else If LW = 'ans' Then
+  Begin
+    GPush('an', 'an', False, False);
+    GPush('das', 'das', False, False);
+  End
+  Else
+    GPush(LW, Raw, Cap, False);
+  If (Cap) And (GN > 0) And (Raw = 'Sie') Then GT[GN].Orig := 'Sie';
+End;
+
+Procedure GTokenize(Const S0: String);
+Var
+  S, Word1: String;
+  I, L: Integer;
+  C: Char;
+  Cap: Boolean;
+Begin
+  GN := 0;
+  GEnd := #0;
+  S := '';
+  I := 1;
+  While I <= Length(S0) Do
+  Begin
+    If (S0[I] = #$E2) And (I + 2 <= Length(S0)) And (S0[I + 1] = #$80) And
+       ((S0[I + 2] = #$99) Or (S0[I + 2] = #$98)) Then
+    Begin
+      S := S + '''';
+      Inc(I, 3);
+    End
+    Else If (S0[I] = #$C2) And (I < Length(S0)) And
+            ((S0[I + 1] = #$AB) Or (S0[I + 1] = #$BB) Or (S0[I + 1] = #$A0)) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 2);
+    End
+    Else
+    Begin
+      S := S + S0[I];
+      Inc(I);
+    End;
+  End;
+  L := Length(S);
+  I := 1;
+  While I <= L Do
+  Begin
+    C := S[I];
+    If FrWordByte(C) Then
+    Begin
+      Word1 := '';
+      While (I <= L) And (FrWordByte(S[I]) Or
+            ((S[I] = '-') And (Word1 <> '') And (I < L) And FrWordByte(S[I + 1]))) Do
+      Begin
+        Word1 := Word1 + S[I];
+        Inc(I);
+      End;
+      Cap := (Word1 <> '') And (((Word1[1] >= 'A') And (Word1[1] <= 'Z')) Or
+             ((Word1[1] = #$C3) And (Length(Word1) > 1) And (Word1[2] >= #$80) And (Word1[2] <= #$9E)));
+      GSplitWord(Word1, Cap);
+    End
+    Else
+    Begin
+      If (C = '.') Or (C = '?') Or (C = '!') Then
+      Begin
+        If GEnd = #0 Then GEnd := C;
+        If C = '?' Then GEnd := '?';
+      End
+      Else If (C = ',') Or (C = ';') Or (C = ':') Then
+      Begin
+        GPush(',', ',', False, True);
+        GT[GN].Cat := ',';
+      End;
+      Inc(I);
+    End;
+  End;
+End;
+
+Procedure GMergeMultiword;
+Var
+  I, K, Len, L: Integer;
+  Key: String;
+  Bad, Found: Boolean;
+Begin
+  I := 1;
+  While I < GN Do
+  Begin
+    Found := False;
+    For Len := 3 Downto 2 Do
+      If (Not Found) And (I + Len - 1 <= GN) Then
+      Begin
+        Key := '';
+        Bad := False;
+        For K := I To I + Len - 1 Do
+        Begin
+          If GT[K].Punct Then Bad := True;
+          Key := Join(Key, GT[K].W);
+        End;
+        If Not Bad Then
+        Begin
+          L := DeLexExact(Key, 'rpcj');
+          If (L > 0) And (Length(Key) <= 34) Then
+          Begin
+            Found := True;
+            GT[I].W := Key;
+            GT[I].Orig := Key;
+            For K := I + 1 To GN - Len + 1 Do
+              GT[K] := GT[K + Len - 1];
+            Dec(GN, Len - 1);
+          End;
+        End;
+      End;
+    Inc(I);
+  End;
+End;
+
+{ ------------------------------------------------------------------ }
+{ ALLEMAND -> ANGLAIS : classification                                }
+{ ------------------------------------------------------------------ }
+
+{ Determinants : renvoie le genre de determinant (d defini, i indefini, k kein, s possessif,
+  t demonstratif, q quantificateur, w welch) et la terminaison. }
+Function DeDetInfo(Const W: String; Var Kind: Char; Var Ending: String; Var Stem: String): Boolean;
+Const
+  EinStems = 'ein kein mein dein sein ihr unser euer';
+  OtherStems = 'dies jed welch all manch solch viel wenig einig mehrer beid';
+Var
+  Rest, S: String;
+  P, K: Integer;
+  E: String;
+Begin
+  DeDetInfo := False;
+  Ending := '';
+  Stem := '';
+  If InList(W, 'der die das den dem des') Then
+  Begin
+    Kind := 'd';
+    Stem := W;
+    DeDetInfo := True;
+    Exit;
+  End;
+  Rest := EinStems;
+  While Rest <> '' Do
+  Begin
+    P := Pos(' ', Rest);
+    If P = 0 Then
+    Begin
+      S := Rest;
+      Rest := '';
+    End
+    Else
+    Begin
+      S := Copy(Rest, 1, P - 1);
+      Delete(Rest, 1, P);
+    End;
+    If (W = S) Or ((Length(W) > Length(S)) And (Copy(W, 1, Length(S)) = S) And
+       InList(Copy(W, Length(S) + 1, 3), 'e en em er es')) Then
+    Begin
+      Ending := Copy(W, Length(S) + 1, 3);
+      Stem := S;
+      If S = 'ein' Then Kind := 'i'
+      Else If S = 'kein' Then Kind := 'k'
+      Else Kind := 's';
+      DeDetInfo := True;
+      Exit;
+    End;
+  End;
+  Rest := OtherStems;
+  While Rest <> '' Do
+  Begin
+    P := Pos(' ', Rest);
+    If P = 0 Then
+    Begin
+      S := Rest;
+      Rest := '';
+    End
+    Else
+    Begin
+      S := Copy(Rest, 1, P - 1);
+      Delete(Rest, 1, P);
+    End;
+    If (Length(W) > Length(S)) And (Copy(W, 1, Length(S)) = S) And
+       InList(Copy(W, Length(S) + 1, 3), 'e en em er es') Then
+    Begin
+      Ending := Copy(W, Length(S) + 1, 3);
+      Stem := S;
+      If S = 'dies' Then Kind := 't'
+      Else If S = 'welch' Then Kind := 'w'
+      Else Kind := 'q';
+      DeDetInfo := True;
+      Exit;
+    End;
+  End;
+  K := 0;
+  E := '';
+End;
+
+Function DetCases(Const W: String; Kind: Char; Const Ending: String; Gen: Char; Plu: Boolean): String;
+Begin
+  DetCases := 'nadg';
+  If Kind = 'd' Then
+  Begin
+    If W = 'der' Then
+    Begin
+      If Plu Then DetCases := 'g'
+      Else If Gen = 'f' Then DetCases := 'dg'
+      Else DetCases := 'n';
+    End
+    Else If (W = 'die') Or (W = 'das') Then DetCases := 'na'
+    Else If W = 'den' Then
+    Begin
+      If Plu Then DetCases := 'd' Else DetCases := 'a';
+    End
+    Else If W = 'dem' Then DetCases := 'd'
+    Else DetCases := 'g';
+    Exit;
+  End;
+  If Ending = '' Then
+  Begin
+    If (Gen = 'm') And (Not Plu) Then DetCases := 'n' Else DetCases := 'na';
+  End
+  Else If Ending = 'e' Then DetCases := 'na'
+  Else If Ending = 'en' Then
+  Begin
+    If Plu Then DetCases := 'd' Else DetCases := 'a';
+  End
+  Else If Ending = 'em' Then DetCases := 'd'
+  Else If Ending = 'er' Then
+  Begin
+    If Plu Then DetCases := 'g'
+    Else If (Gen = 'm') And (Kind <> 'i') And (Kind <> 'k') And (Kind <> 's') Then DetCases := 'n'
+    Else DetCases := 'dg';
+  End
+  Else If Ending = 'es' Then
+  Begin
+    If (Gen = 'n') And (Kind <> 'i') And (Kind <> 'k') And (Kind <> 's') Then DetCases := 'na'
+    Else DetCases := 'g';
+  End;
+End;
+
+Function DePossEn(Const Stem: String): String;
+Begin
+  If Stem = 'mein' Then DePossEn := 'my'
+  Else If Stem = 'dein' Then DePossEn := 'your'
+  Else If Stem = 'sein' Then DePossEn := 'his'
+  Else If Stem = 'ihr' Then DePossEn := 'her'
+  Else If Stem = 'unser' Then DePossEn := 'our'
+  Else DePossEn := 'your';
+End;
+
+Function DeQuantEn(Const Stem, Ending: String): String;
+Begin
+  If Stem = 'jed' Then DeQuantEn := 'each'
+  Else If Stem = 'all' Then DeQuantEn := 'all'
+  Else If Stem = 'manch' Then DeQuantEn := 'some'
+  Else If Stem = 'viel' Then DeQuantEn := 'many'
+  Else If Stem = 'wenig' Then DeQuantEn := 'few'
+  Else If Stem = 'einig' Then DeQuantEn := 'some'
+  Else If Stem = 'mehrer' Then DeQuantEn := 'several'
+  Else If Stem = 'beid' Then DeQuantEn := 'both'
+  Else If Stem = 'solch' Then DeQuantEn := 'such'
+  Else DeQuantEn := 'some';
+  If Ending = '#' Then DeQuantEn := '';
+End;
+
+Function DePronounInfo(Const W: String; Var T: TGTok): Boolean;
+Begin
+  DePronounInfo := True;
+  T.Slot := 0;
+  If W = 'ich' Then Begin T.En := 'I'; T.EnObj := 'me'; T.Cases := 'n'; T.Slot := 1; End
+  Else If W = 'mich' Then Begin T.En := 'me'; T.EnObj := 'me'; T.Cases := 'a'; T.Slot := 1; End
+  Else If W = 'mir' Then Begin T.En := 'me'; T.EnObj := 'me'; T.Cases := 'd'; T.Slot := 1; End
+  Else If W = 'du' Then Begin T.En := 'you'; T.EnObj := 'you'; T.Cases := 'n'; T.Slot := 2; End
+  Else If W = 'dich' Then Begin T.En := 'you'; T.EnObj := 'you'; T.Cases := 'a'; T.Slot := 2; End
+  Else If W = 'dir' Then Begin T.En := 'you'; T.EnObj := 'you'; T.Cases := 'd'; T.Slot := 2; End
+  Else If W = 'er' Then Begin T.En := 'he'; T.EnObj := 'him'; T.Cases := 'n'; T.Slot := 3; End
+  Else If W = 'ihn' Then Begin T.En := 'him'; T.EnObj := 'him'; T.Cases := 'a'; T.Slot := 3; End
+  Else If W = 'ihm' Then Begin T.En := 'him'; T.EnObj := 'him'; T.Cases := 'd'; T.Slot := 3; End
+  Else If W = 'es' Then Begin T.En := 'it'; T.EnObj := 'it'; T.Cases := 'na'; T.Slot := 3; End
+  Else If W = 'wir' Then Begin T.En := 'we'; T.EnObj := 'us'; T.Cases := 'n'; T.Slot := 4; End
+  Else If W = 'uns' Then Begin T.En := 'us'; T.EnObj := 'us'; T.Cases := 'ad'; T.Slot := 4; End
+  Else If W = 'euch' Then Begin T.En := 'you'; T.EnObj := 'you'; T.Cases := 'ad'; T.Slot := 5; End
+  Else If W = 'ihnen' Then Begin T.En := 'them'; T.EnObj := 'them'; T.Cases := 'd'; T.Slot := 6; End
+  Else If W = 'sie' Then Begin T.En := 'she'; T.EnObj := 'her'; T.Cases := 'na'; T.Slot := 3; End
+  Else If W = 'man' Then Begin T.En := 'one'; T.EnObj := 'one'; T.Cases := 'n'; T.Slot := 3; End
+  Else DePronounInfo := False;
+End;
+
+Function DeWhEn(Const W: String): String;
+Begin
+  If W = 'wer' Then DeWhEn := 'who'
+  Else If W = 'wen' Then DeWhEn := 'whom'
+  Else If W = 'wem' Then DeWhEn := 'whom'
+  Else If W = 'was' Then DeWhEn := 'what'
+  Else If W = 'wo' Then DeWhEn := 'where'
+  Else If W = 'wann' Then DeWhEn := 'when'
+  Else If (W = 'warum') Or (W = 'wieso') Then DeWhEn := 'why'
+  Else If W = 'wie' Then DeWhEn := 'how'
+  Else If W = 'woher' Then DeWhEn := 'where from'
+  Else If W = 'wohin' Then DeWhEn := 'where'
+  Else If W = 'wessen' Then DeWhEn := 'whose'
+  Else DeWhEn := '';
+End;
+
+Function DeConjEn(Const W: String; Var Sub: Boolean): String;
+Begin
+  Sub := False;
+  DeConjEn := '';
+  If W = 'und' Then DeConjEn := 'and'
+  Else If W = 'oder' Then DeConjEn := 'or'
+  Else If W = 'aber' Then DeConjEn := 'but'
+  Else If W = 'sondern' Then DeConjEn := 'but'
+  Else If W = 'denn' Then DeConjEn := 'because'
+  Else
+  Begin
+    Sub := True;
+    If W = 'weil' Then DeConjEn := 'because'
+    Else If W = 'dass' Then DeConjEn := 'that'
+    Else If W = 'wenn' Then DeConjEn := 'if'
+    Else If W = 'ob' Then DeConjEn := 'whether'
+    Else If W = 'als' Then DeConjEn := 'when'
+    Else If W = 'obwohl' Then DeConjEn := 'although'
+    Else If W = 'während' Then DeConjEn := 'while'
+    Else If W = 'bevor' Then DeConjEn := 'before'
+    Else If W = 'nachdem' Then DeConjEn := 'after'
+    Else If W = 'damit' Then DeConjEn := 'so that'
+    Else
+      Sub := False;
+  End;
+End;
+
+Function DePrepEn(Const W: String; L: Integer): String;
+Begin
+  If W = 'zu' Then DePrepEn := 'to'
+  Else If W = 'nach' Then DePrepEn := 'to'
+  Else If W = 'von' Then DePrepEn := 'of'
+  Else If W = 'bei' Then DePrepEn := 'at'
+  Else If W = 'an' Then DePrepEn := 'at'
+  Else If W = 'um' Then DePrepEn := 'at'
+  Else If W = 'aus' Then DePrepEn := 'from'
+  Else If W = 'seit' Then DePrepEn := 'since'
+  Else If W = 'für' Then DePrepEn := 'for'
+  Else If W = 'mit' Then DePrepEn := 'with'
+  Else If W = 'ohne' Then DePrepEn := 'without'
+  Else If W = 'auf' Then DePrepEn := 'on'
+  Else If W = 'in' Then DePrepEn := 'in'
+  Else If W = 'über' Then DePrepEn := 'over'
+  Else If W = 'unter' Then DePrepEn := 'under'
+  Else If W = 'vor' Then DePrepEn := 'in front of'
+  Else If W = 'hinter' Then DePrepEn := 'behind'
+  Else If W = 'neben' Then DePrepEn := 'next to'
+  Else If W = 'zwischen' Then DePrepEn := 'between'
+  Else If W = 'durch' Then DePrepEn := 'through'
+  Else If W = 'gegen' Then DePrepEn := 'against'
+  Else If W = 'bis' Then DePrepEn := 'until'
+  Else If L > 0 Then DePrepEn := Lex[L].En
+  Else DePrepEn := W;
+End;
+
+Function NextDeIsVerbish(I: Integer): Boolean;
+Var
+  T: TGTok;
+  W: String;
+Begin
+  NextDeIsVerbish := False;
+  If I > GN Then Exit;
+  If GT[I].Punct Then Exit;
+  If GT[I].Cap Then Exit;
+  W := GT[I].W;
+  FillChar(T, SizeOf(T), 0);
+  NextDeIsVerbish := DeMatchVerb(W, T) And (T.CanInf);
+End;
+
+Function NextDeIsNounish(I: Integer): Boolean;
+Var
+  Plu: Boolean;
+  Ending, Stem: String;
+  K: Char;
+  W: String;
+Begin
+  NextDeIsNounish := False;
+  If I > GN Then Exit;
+  If GT[I].Punct Then Exit;
+  W := GT[I].W;
+  If GT[I].Cap Then
+  Begin
+    NextDeIsNounish := True;
+    Exit;
+  End;
+  If DeDetInfo(W, K, Ending, Stem) Then
+  Begin
+    NextDeIsNounish := True;
+    Exit;
+  End;
+  If DeFindAdj(W, Ending) > 0 Then NextDeIsNounish := True;
+  Plu := False;
+End;
+
+Procedure PickDeCat(I: Integer);
+Var
+  W, Ending, Stem, Orig: String;
+  Kind: Char;
+  L, K: Integer;
+  Plu, Sub: Boolean;
+  T: TGTok;
+  PrevCat: Char;
+  T2: TGTok;
+  HasNoun, HasAdj, HasVerb, HasAdv, HasPrep: Boolean;
+  LN, LA, LR, LP: Integer;
+  Eg: String;
+Begin
+  W := GT[I].W;
+  Orig := GT[I].Orig;
+  If I > 1 Then PrevCat := GT[I - 1].Cat Else PrevCat := '.';
+  If GT[I].Punct Then
+  Begin
+    GT[I].Cat := ',';
+    Exit;
+  End;
+  If IsDigitsOnly(W) Then
+  Begin
+    GT[I].Cat := 'U';
+    GT[I].En := W;
+    Exit;
+  End;
+  If (DeNumberEnOf(W) <> '') And (W <> 'eins') Then
+  Begin
+    GT[I].Cat := 'U';
+    GT[I].En := DeNumberEnOf(W);
+    Exit;
+  End;
+  If W = 'nicht' Then
+  Begin
+    GT[I].Cat := 'G';
+    Exit;
+  End;
+  If (W = 'nie') Or (W = 'niemals') Then
+  Begin
+    GT[I].Cat := 'R';
+    GT[I].En := 'never';
+    Exit;
+  End;
+  If W = 'sich' Then
+  Begin
+    GT[I].Cat := 'O';
+    Exit;
+  End;
+  If DeConjEn(W, Sub) <> '' Then
+  Begin
+    GT[I].Cat := 'C';
+    GT[I].En := DeConjEn(W, Sub);
+    GT[I].Kind := 'c';
+    If Sub Then GT[I].Kind := 'S';
+    Exit;
+  End;
+  If (DeWhEn(W) <> '') And ((W <> 'wie') Or Not ((I < GN) And (GT[I + 1].W = 'viele'))) Then
+  Begin
+    GT[I].Cat := 'W';
+    GT[I].En := DeWhEn(W);
+    Exit;
+  End;
+  If (W = 'wie') Then
+  Begin
+    GT[I].Cat := 'W';
+    GT[I].En := 'how';
+    Exit;
+  End;
+  { pronoms }
+  If DePronounInfo(W, GT[I]) Then
+  Begin
+    GT[I].Cat := 'P';
+    If ((W = 'sie') Or (W = 'ihnen')) And (I > 1) And (Orig[1] = 'S') Or (Orig = 'Ihnen') Then
+    Begin
+      GT[I].En := 'you';
+      GT[I].EnObj := 'you';
+      GT[I].Slot := 6;
+    End;
+    Exit;
+  End;
+  If (W = 'ihr') Then
+  Begin
+    If NextDeIsNounish(I + 1) Then
+    Begin
+      GT[I].Cat := 'D';
+      GT[I].Kind := 's';
+      GT[I].En := 'her';
+      If (Orig = 'Ihr') And (I > 1) Then GT[I].En := 'your';
+      GT[I].Slot := 0;
+    End
+    Else
+    Begin
+      GT[I].Cat := 'P';
+      GT[I].En := 'you';
+      GT[I].EnObj := 'her';
+      GT[I].Cases := 'nd';
+      GT[I].Slot := 5;
+    End;
+    Exit;
+  End;
+  If (W = 'morgen') And (I = 1) Then
+  Begin
+    GT[I].Cat := 'R';
+    GT[I].En := 'tomorrow';
+    Exit;
+  End;
+  If W = 'gern' Then
+  Begin
+    GT[I].Cat := 'R';
+    GT[I].En := 'gladly';
+    Exit;
+  End;
+  If ((W = 'das') Or (W = 'dies') Or (W = 'dieses')) And (Not NextDeIsNounish(I + 1)) Then
+  Begin
+    GT[I].Cat := 'P';
+    GT[I].En := 'this';
+    GT[I].EnObj := 'this';
+    GT[I].Cases := 'na';
+    GT[I].Slot := 3;
+    Exit;
+  End;
+  { determinants }
+  If DeDetInfo(W, Kind, Ending, Stem) Then
+  Begin
+    If (W = 'sein') And (Not NextDeIsNounish(I + 1)) Then
+      Kind := 'v'
+    Else If (W = 'viel') Or (W = 'wenig') Then
+      Kind := 'v'
+    Else
+    Begin
+      GT[I].Cat := 'D';
+      GT[I].Kind := Kind;
+      GT[I].Slot := 0;
+      GT[I].Cases := Ending;
+      If Kind = 'd' Then GT[I].En := 'the'
+      Else If Kind = 'i' Then GT[I].En := 'a'
+      Else If Kind = 'k' Then GT[I].En := 'no'
+      Else If Kind = 's' Then
+      Begin
+        GT[I].En := DePossEn(Stem);
+        If (Stem = 'ihr') And (Orig = 'Ihr') Then GT[I].En := 'your';
+        If (Stem = 'ihr') And (Orig[1] = 'I') Then GT[I].En := 'your';
+      End
+      Else If Kind = 't' Then GT[I].En := 'this'
+      Else If Kind = 'w' Then GT[I].En := 'which'
+      Else GT[I].En := DeQuantEn(Stem, Ending);
+      GT[I].EnObj := Stem;
+      Exit;
+    End;
+  End;
+  { zu + infinitif }
+  If (W = 'zu') And NextDeIsVerbish(I + 1) Then
+  Begin
+    GT[I].Cat := 'K';
+    Exit;
+  End;
+  { classes lexicales }
+  FillChar(T, SizeOf(T), 0);
+  HasNoun := False;
+  LN := 0;
+  If GT[I].Cap Or (I = 1) Then
+  Begin
+    LN := DeFindNoun(W, Plu);
+    If (LN = 0) And EndsWith(W, 'in') And (Length(W) > 4) Then LN := DeFindNoun(Copy(W, 1, Length(W) - 2), Plu);
+    If (LN = 0) And EndsWith(W, 'innen') And (Length(W) > 7) Then
+    Begin
+      LN := DeFindNoun(Copy(W, 1, Length(W) - 5), Plu);
+      Plu := True;
+    End;
+    HasNoun := LN > 0;
+  End;
+  LP := DeLexExact(W, 'p');
+  HasPrep := (LP > 0) And Not GT[I].Cap;
+  HasVerb := False;
+  If Not GT[I].Cap Or (I = 1) Then HasVerb := DeMatchVerb(W, T);
+  LA := 0;
+  Eg := '';
+  If Not GT[I].Cap Then LA := DeFindAdj(W, Eg);
+  HasAdj := LA > 0;
+  LR := 0;
+  If Not GT[I].Cap Or (I = 1) Then LR := DeLexExact(W, 'r');
+  HasAdv := LR > 0;
+  If GT[I].Cap And (I > 1) And (Not HasNoun) Then
+  Begin
+    GT[I].Cat := 'Z';
+    Exit;
+  End;
+  { choix }
+  If HasNoun And HasVerb And (I = 1) And (GN >= 2) Then
+  Begin
+    FillChar(T2, SizeOf(T2), 0);
+    If DePronounInfo(GT[2].W, T2) Then HasNoun := False;
+  End;
+  If HasNoun Then
+  Begin
+    GT[I].Cat := 'N';
+    GT[I].L := LN;
+    GT[I].Plu := Plu;
+    GT[I].Gen := Lex[LN].DeG;
+    If GT[I].Gen = 'P' Then
+    Begin
+      GT[I].Gen := 'n';
+      GT[I].Plu := True;
+    End;
+    GT[I].Cases := 'nadg';
+    GT[I].En := Lex[LN].En;
+    Exit;
+  End;
+  If HasPrep Then
+  Begin
+    GT[I].Cat := 'E';
+    GT[I].L := LP;
+    GT[I].En := DePrepEn(W, LP);
+    Exit;
+  End;
+  If HasVerb And HasAdj And (PrevCat In ['D', 'A', 'U']) Then HasVerb := False;
+  If HasVerb And HasAdv And (PrevCat = 'V') And (T.CanInf = False) Then HasVerb := False;
+  If HasVerb Then
+  Begin
+    GT[I].Cat := 'V';
+    GT[I].L := T.L;
+    GT[I].LInf := T.LInf;
+    GT[I].LPart := T.LPart;
+    GT[I].CanInf := T.CanInf;
+    GT[I].CanPart := T.CanPart;
+    GT[I].Tns := T.Tns;
+    GT[I].Slot := T.Slot;
+    If T.L > 0 Then GT[I].En := DeEnglishOf(T.L)
+    Else If T.LInf > 0 Then GT[I].En := DeEnglishOf(T.LInf)
+    Else GT[I].En := DeEnglishOf(T.LPart);
+    Exit;
+  End;
+  If HasAdj And HasAdv Then
+  Begin
+    If (PrevCat = 'V') Or NextDeIsNounish(I + 1) Then HasAdv := False Else HasAdj := False;
+  End;
+  If HasAdj Then
+  Begin
+    GT[I].Cat := 'A';
+    GT[I].L := LA;
+    GT[I].En := Lex[LA].En;
+    GT[I].Cases := Eg;
+    Exit;
+  End;
+  If HasAdv Then
+  Begin
+    GT[I].Cat := 'R';
+    GT[I].L := LR;
+    GT[I].En := Lex[LR].En;
+    Exit;
+  End;
+  K := DeLexExact(W, 'j');
+  If K > 0 Then
+  Begin
+    GT[I].Cat := 'J';
+    GT[I].L := K;
+    GT[I].En := Lex[K].En;
+    Exit;
+  End;
+  K := DeLexExact(W, 'c');
+  If K > 0 Then
+  Begin
+    GT[I].Cat := 'C';
+    GT[I].L := K;
+    GT[I].En := Lex[K].En;
+    GT[I].Kind := 'c';
+    If Lex[K].DeFlags = 'S' Then GT[I].Kind := 'S';
+    Exit;
+  End;
+  GT[I].Cat := 'Z';
+End;
+
+Procedure DeClassify;
+Var
+  I: Integer;
+Begin
+  GMergeMultiword;
+  For I := 1 To GN Do
+    PickDeCat(I);
+End;
+
+{ ------------------------------------------------------------------ }
+{ ALLEMAND -> ANGLAIS : groupes nominaux et elements                  }
+{ ------------------------------------------------------------------ }
+
+Type
+  TDNP = Record
+    Found, Proper, Plural, Neg, Pron: Boolean;
+    Used: Integer;
+    Kind: Char;
+    DetTok, Head, PronTok: Integer;
+    Adjs: Array[1..4] Of Integer;
+    AdjAdv: Array[1..4] Of String[10];
+    AdjN: Integer;
+    Gen: Char;
+    Cases: String[4];
+    Text: String[60];
+  End;
+
+  TDItem = Record
+    Kind: Char;           { N groupe nominal, E groupe prepositionnel, A adjectif, R adverbe, G nicht, O reflechi }
+    Cases: String[4];
+    Text, TextObj: String[90];
+    Pron, Plural, Neg, Proper: Boolean;
+    First, Last: Integer;
+    Person: Integer;
+    PronTok: Integer;
+    HeadEn: String[30];
+  End;
+
+Var
+  DI: Array[1..24] Of TDItem;
+  DIN: Integer;
+
+Function InterCases(Const A, B: String): String;
+Var
+  I: Integer;
+  R: String;
+Begin
+  R := '';
+  For I := 1 To Length(A) Do
+    If Pos(A[I], B) > 0 Then R := R + A[I];
+  If R = '' Then R := A;
+  InterCases := R;
+End;
+
+Function ParseNPIn(Start: Integer; Var NP: TDNP): Boolean;
+Var
+  I: Integer;
+  Ending: String;
+Begin
+  FillChar(NP, SizeOf(NP), 0);
+  NP.Kind := '0';
+  NP.Gen := 'm';
+  NP.Cases := 'nadg';
+  ParseNPIn := False;
+  I := Start;
+  If I > GN Then Exit;
+  If GT[I].Cat = 'P' Then
+  Begin
+    NP.Found := True;
+    NP.Pron := True;
+    NP.PronTok := I;
+    NP.Cases := GT[I].Cases;
+    NP.Used := 1;
+    ParseNPIn := True;
+    Exit;
+  End;
+  If GT[I].Cat = 'D' Then
+  Begin
+    NP.DetTok := I;
+    NP.Kind := GT[I].Kind;
+    If NP.Kind = 'k' Then NP.Neg := True;
+    Inc(I);
+  End
+  Else If GT[I].Cat = 'U' Then
+  Begin
+    NP.Kind := 'n';
+    NP.Text := GT[I].En;
+    NP.Plural := GT[I].En <> 'one';
+    Inc(I);
+  End;
+  While I <= GN Do
+  Begin
+    If GT[I].Cat = 'A' Then
+    Begin
+      If NP.AdjN < 4 Then
+      Begin
+        Inc(NP.AdjN);
+        NP.Adjs[NP.AdjN] := I;
+      End;
+      Inc(I);
+    End
+    Else If (GT[I].Cat = 'R') And (I < GN) And (GT[I + 1].Cat = 'A') Then
+    Begin
+      If NP.AdjN < 4 Then
+      Begin
+        Inc(NP.AdjN);
+        NP.Adjs[NP.AdjN] := I + 1;
+        NP.AdjAdv[NP.AdjN] := GT[I].En;
+      End;
+      Inc(I, 2);
+    End
+    Else
+      Break;
+  End;
+  If (I <= GN) And (GT[I].Cat = 'N') Then
+  Begin
+    NP.Head := I;
+    NP.Plural := GT[I].Plu;
+    NP.Gen := GT[I].Gen;
+    If (NP.Gen <> 'm') And (NP.Gen <> 'f') Then NP.Gen := 'n';
+    Inc(I);
+    If NP.DetTok > 0 Then
+    Begin
+      Ending := GT[NP.DetTok].Cases;
+      NP.Cases := DetCases(GT[NP.DetTok].W, NP.Kind, Ending, NP.Gen, NP.Plural);
+    End;
+  End
+  Else If (I <= GN) And (GT[I].Cat = 'Z') Then
+  Begin
+    NP.Proper := True;
+    While (I <= GN) And (GT[I].Cat = 'Z') Do
+    Begin
+      If DeProperEnOf(GT[I].Orig) <> '' Then
+        NP.Text := Join(NP.Text, DeProperEnOf(GT[I].Orig))
+      Else
+        NP.Text := Join(NP.Text, GT[I].Orig);
+      Inc(I);
+    End;
+  End
+  Else If (NP.Kind = 'n') And (NP.AdjN = 0) Then
+  Begin
+  End
+  Else If (NP.Kind = 'q') And (NP.AdjN = 0) Then
+  Begin
+  End
+  Else
+    Exit;
+  If NP.Kind = 'q' Then NP.Plural := NP.Plural Or InList(GT[NP.DetTok].EnObj, 'all viel wenig einig mehrer beid');
+  NP.Found := True;
+  NP.Used := I - Start;
+  ParseNPIn := True;
+End;
+
+Function DeAdjText(Const NP: TDNP): String;
+Var
+  K: Integer;
+  R, A: String;
+Begin
+  R := '';
+  For K := 1 To NP.AdjN Do
+  Begin
+    A := GT[NP.Adjs[K]].En;
+    If NP.AdjAdv[K] <> '' Then A := NP.AdjAdv[K] + ' ' + A;
+    R := Join(R, A);
+  End;
+  DeAdjText := R;
+End;
+
+Function DeNounText(Const NP: TDNP): String;
+Var
+  N: String;
+Begin
+  N := GT[NP.Head].En;
+  If NP.Plural And ((Not IsMassNoun(N)) Or (NP.Kind = 'n')) Then N := EnPlural(N);
+  If IsCalendar(N) And (Not InList(N, 'may')) Then N := UpperFirst(N);
+  DeNounText := N;
+End;
+
+Function RenderNPIn(Const NP: TDNP; AsObject: Boolean): String;
+Var
+  Det, Core: String;
+Begin
+  If NP.Pron Then
+  Begin
+    If AsObject Then RenderNPIn := GT[NP.PronTok].EnObj Else RenderNPIn := GT[NP.PronTok].En;
+    Exit;
+  End;
+  If NP.Proper Then
+  Begin
+    RenderNPIn := NP.Text;
+    Exit;
+  End;
+  If NP.Head = 0 Then
+  Begin
+    If NP.DetTok > 0 Then RenderNPIn := GT[NP.DetTok].En Else RenderNPIn := NP.Text;
+    Exit;
+  End;
+  Core := Join(DeAdjText(NP), DeNounText(NP));
+  Det := '';
+  Case NP.Kind Of
+    'd': Det := 'the';
+    'i':
+      If Not NP.Plural Then Det := 'a';
+    'k':
+      If NP.Plural Or IsMassNoun(GT[NP.Head].En) Then Det := 'any' Else Det := 'a';
+    's': Det := GT[NP.DetTok].En;
+    't':
+      If NP.Plural Then Det := 'these' Else Det := 'this';
+    'n': Det := NP.Text;
+    'q', 'w': Det := GT[NP.DetTok].En;
+  End;
+  If Det = 'a' Then Det := EnArticle(Core);
+  RenderNPIn := Join(Det, Core);
+End;
+
+{ Les elements d'une proposition : groupes nominaux, prepositionnels, adjectifs, adverbes. }
+Procedure ParseItems(A, B: Integer);
+Var
+  I, J: Integer;
+  NP, NP2: TDNP;
+  Prep, Txt: String;
+
+  Function NewItem(K: Char): Integer;
+  Begin
+    If DIN < 24 Then Inc(DIN);
+    FillChar(DI[DIN], SizeOf(TDItem), 0);
+    DI[DIN].Kind := K;
+    DI[DIN].Cases := 'nadg';
+    DI[DIN].First := I;
+    NewItem := DIN;
+  End;
+Begin
+  DIN := 0;
+  I := A;
+  While I <= B Do
+  Begin
+    Case GT[I].Cat Of
+      'D', 'N', 'U', 'P':
+      Begin
+        If ParseNPIn(I, NP) Then
+        Begin
+          J := NewItem('N');
+          If (NP.Head > 0) Or NP.Pron Then
+            If (I + NP.Used + 1 <= B) And (GT[I + NP.Used].Cat = 'C') And (GT[I + NP.Used].Kind = 'c') And
+               (GT[I + NP.Used].En <> 'but') And (GT[I + NP.Used + 1].Cat In ['D', 'N', 'U']) And
+               ParseNPIn(I + NP.Used + 1, NP2) Then
+            Begin
+              DI[J].Cases := InterCases(NP.Cases, NP2.Cases);
+              DI[J].Text := RenderNPIn(NP, False) + ' ' + GT[I + NP.Used].En + ' ' + RenderNPIn(NP2, False);
+              DI[J].TextObj := RenderNPIn(NP, True) + ' ' + GT[I + NP.Used].En + ' ' + RenderNPIn(NP2, True);
+              DI[J].Plural := True;
+              DI[J].Person := 6;
+              DI[J].Last := I + NP.Used + NP2.Used;
+              Inc(I, NP.Used + 1 + NP2.Used);
+              Continue;
+            End;
+          DI[J].Cases := NP.Cases;
+          DI[J].Text := RenderNPIn(NP, False);
+          DI[J].TextObj := RenderNPIn(NP, True);
+          DI[J].Pron := NP.Pron;
+          DI[J].Plural := NP.Plural;
+          DI[J].Neg := NP.Neg;
+          DI[J].Proper := NP.Proper;
+          DI[J].PronTok := NP.PronTok;
+          If NP.Head > 0 Then DI[J].HeadEn := GT[NP.Head].En;
+          If NP.Pron Then DI[J].Person := GT[NP.PronTok].Slot Else If NP.Plural Then DI[J].Person := 6 Else DI[J].Person := 3;
+          DI[J].Last := I + NP.Used - 1;
+          Inc(I, NP.Used);
+        End
+        Else
+          Inc(I);
+      End;
+      'Z':
+      Begin
+        If ParseNPIn(I, NP) Then
+        Begin
+          J := NewItem('N');
+          DI[J].Text := NP.Text;
+          DI[J].TextObj := NP.Text;
+          DI[J].Proper := True;
+          DI[J].Person := 3;
+          DI[J].Last := I + NP.Used - 1;
+          Inc(I, NP.Used);
+        End
+        Else Inc(I);
+      End;
+      'E':
+      Begin
+        Prep := GT[I].En;
+        J := I + 1;
+        If (GT[I].W = 'nach') And (J <= B) And (GT[J].W = 'hause') Then
+        Begin
+          J := NewItem('E');
+          If DePivot Then DI[J].Text := 'to the house' Else DI[J].Text := 'home';
+          DI[J].Last := I + 1;
+          Inc(I, 2);
+          Continue;
+        End;
+        { l'heure : um 7 Uhr }
+        If (GT[I].W = 'um') And (J + 1 <= B) And (GT[J].Cat = 'U') And (GT[J + 1].W = 'uhr') Then
+        Begin
+          J := NewItem('E');
+          Txt := GT[I + 1].En;
+          If Txt = 'one' Then Txt := '1' Else If Txt = 'two' Then Txt := '2' Else If Txt = 'three' Then Txt := '3'
+          Else If Txt = 'four' Then Txt := '4' Else If Txt = 'five' Then Txt := '5' Else If Txt = 'six' Then Txt := '6'
+          Else If Txt = 'seven' Then Txt := '7' Else If Txt = 'eight' Then Txt := '8' Else If Txt = 'nine' Then Txt := '9'
+          Else If Txt = 'ten' Then Txt := '10' Else If Txt = 'eleven' Then Txt := '11' Else If Txt = 'twelve' Then Txt := '12';
+          DI[J].Text := 'at ' + Txt + ' o''clock';
+          DI[J].Last := I + 2;
+          Inc(I, 3);
+        End
+        Else If (J <= B) And (GT[J].Cat In ['D', 'N', 'U', 'P', 'A', 'Z']) And ParseNPIn(J, NP) Then
+        Begin
+          If (NP.Kind = 'd') And (NP.Head > 0) And (Not NP.Plural) And (NP.AdjN = 0) And (Not DePivot) And
+             InList(Prep, 'to at in') And InList(GT[NP.Head].En, 'school church bed work prison university') Then
+            NP.Kind := '0';
+          If (GT[I].W = 'mit') And (NP.Head > 0) And (Not NP.Plural) And
+             InList(GT[NP.Head].En, 'bus car train plane bike boat') Then
+          Begin
+            Prep := 'by';
+            NP.Kind := '0';
+          End;
+          Txt := RenderNPIn(NP, True);
+          If (GT[I].W = 'an') And (NP.Head > 0) Then
+            If InList(GT[NP.Head].En, 'monday tuesday wednesday thursday friday saturday sunday') Then Prep := 'on';
+          If (GT[I].W = 'nach') And (NP.Head > 0) Then Prep := 'after';
+          If (GT[I].W = 'von') And (NP.Head = 0) And NP.Proper Then Prep := 'from';
+          If (GT[I].W = 'um') Then Prep := 'around';
+          If (GT[I].W = 'zu') And (NP.Head > 0) And (GT[NP.Head].En = 'home') Then Prep := 'at';
+          J := NewItem('E');
+          DI[J].Text := Join(Prep, Txt);
+          DI[J].Last := I + NP.Used;
+          Inc(I, 1 + NP.Used);
+        End
+        Else
+        Begin
+          J := NewItem('E');
+          DI[J].Text := Prep;
+          DI[J].Last := I;
+          Inc(I);
+        End;
+      End;
+      'A':
+      Begin
+        If ParseNPIn(I, NP) Then
+        Begin
+          J := NewItem('N');
+          DI[J].Text := RenderNPIn(NP, False);
+          DI[J].TextObj := DI[J].Text;
+          DI[J].Person := 3;
+          DI[J].Last := I + NP.Used - 1;
+          Inc(I, NP.Used);
+        End
+        Else
+        Begin
+          J := NewItem('A');
+          DI[J].Text := GT[I].En;
+          DI[J].Last := I;
+          Inc(I);
+        End;
+      End;
+      'R':
+      Begin
+        If (I < B) And (GT[I + 1].Cat = 'A') And (GT[I].En = 'very') Then
+        Begin
+          J := NewItem('A');
+          DI[J].Text := 'very ' + GT[I + 1].En;
+          DI[J].Last := I + 1;
+          Inc(I, 2);
+        End
+        Else
+        Begin
+          J := NewItem('R');
+          DI[J].Text := GT[I].En;
+          DI[J].Last := I;
+          Inc(I);
+        End;
+      End;
+      'G':
+      Begin
+        J := NewItem('G');
+        DI[J].Last := I;
+        Inc(I);
+      End;
+      'O':
+      Begin
+        J := NewItem('O');
+        DI[J].Last := I;
+        Inc(I);
+      End;
+      'W':
+      Begin
+        J := NewItem('R');
+        DI[J].Text := GT[I].En;
+        DI[J].Last := I;
+        Inc(I);
+      End;
+      'C':
+      Begin
+        J := NewItem('C');
+        DI[J].Text := GT[I].En;
+        DI[J].Last := I;
+        Inc(I);
+      End;
+    Else
+      Inc(I);
+    End;
+  End;
+End;
+
+Const
+  PhrasesDeIn: Array[0..39] Of String = (
+    'guten morgen|Good morning',
+    'guten tag|Hello',
+    'guten abend|Good evening',
+    'gute nacht|Good night',
+    'vielen dank|Thank you very much',
+    'danke schön|Thank you very much',
+    'bitte schön|You are welcome',
+    'wie geht es ihnen|How are you',
+    'wie geht es dir|How are you',
+    'wie geht''s|How are you',
+    'wie heißen sie|What is your name',
+    'wie heißt du|What is your name',
+    'wie alt sind sie|How old are you',
+    'wie alt bist du|How old are you',
+    'woher kommen sie|Where are you from',
+    'woher kommst du|Where are you from',
+    'wie spät ist es|What time is it',
+    'wie viel kostet es|How much does it cost',
+    'es tut mir leid|I am sorry',
+    'ich weiß es nicht|I do not know',
+    'ich weiß nicht|I do not know',
+    'ich verstehe nicht|I do not understand',
+    'ich liebe dich|I love you',
+    'ich vermisse dich|I miss you',
+    'bis morgen|See you tomorrow',
+    'bis bald|See you soon',
+    'bis später|See you later',
+    'auf wiedersehen|Goodbye',
+    'viel glück|Good luck',
+    'alles gute zum geburtstag|Happy birthday',
+    'frohe weihnachten|Merry Christmas',
+    'prost|Cheers',
+    'entschuldigung|Excuse me',
+    'mir geht es gut|I am fine',
+    'es geht mir gut|I am fine',
+    'ich habe keine zeit|I do not have time',
+    'ich spreche kein deutsch|I do not speak German',
+    'sprechen sie englisch|Do you speak English',
+    'wo ist die toilette|Where is the bathroom',
+    'was ist das|What is this'
+  );
+
+Function GPhraseKey(A, B: Integer): String;
+Var
+  K: Integer;
+  R: String;
+Begin
+  R := '';
+  For K := A To B Do
+  Begin
+    If GT[K].Punct Then
+    Begin
+      GPhraseKey := '#';
+      Exit;
+    End;
+    R := Join(R, GT[K].W);
+  End;
+  GPhraseKey := R;
+End;
+
+Function FindPhraseDe(Const Key: String): String;
+Var
+  N: Integer;
+  Pair, K: String;
+Begin
+  FindPhraseDe := '';
+  If Key = '#' Then Exit;
+  For N := 0 To High(PhrasesDeIn) Do
+  Begin
+    Pair := PhrasesDeIn[N];
+    K := CopyUntil(Pair, '|');
+    If K = Key Then
+    Begin
+      FindPhraseDe := Pair;
+      Exit;
+    End;
+  End;
+End;
+
+
+{ ------------------------------------------------------------------ }
+{ ALLEMAND -> ANGLAIS : proposition                                   }
+{ ------------------------------------------------------------------ }
+
+Function DeClauseHasFinite(A, B: Integer): Boolean;
+Var
+  I: Integer;
+Begin
+  DeClauseHasFinite := False;
+  For I := A To B Do
+    If (GT[I].Cat = 'V') And (GT[I].L > 0) And (GT[I].Tns In ['p', 'i', 'c']) Then
+      If (I = 1) Or (GT[I - 1].Cat <> 'K') Then DeClauseHasFinite := True;
+End;
+
+Function DeIsFreqEn(Const En: String): Boolean;
+Begin
+  DeIsFreqEn := InList(En, 'always never often sometimes usually already just also only still');
+End;
+
+Function DeIdiomPred(Const Orig: String): String;
+Begin
+  If Orig = 'hunger' Then DeIdiomPred := 'hungry'
+  Else If Orig = 'durst' Then DeIdiomPred := 'thirsty'
+  Else If Orig = 'angst' Then DeIdiomPred := 'afraid'
+  Else If Orig = 'recht' Then DeIdiomPred := 'right'
+  Else DeIdiomPred := '';
+End;
+
+Procedure DeConsume(I: Integer);
+Begin
+  GT[I].Cat := ' ';
+End;
+
+Function TranslateClauseDeIn(A, B: Integer; IsQ, Final: Boolean): String;
+Var
+  I, J, K, Vf, PV, IV, SubjIdx, PreIdx: Integer;
+  Wh, WhText, Res, Tail, SubjText, Aux, Rest, LexBase, Post, Freq, AuxN, VerbEn, Pred, Name: String;
+  LexTns: Char;
+  G: TFVG;
+  NP: TDNP;
+  Please, Imperative, WhSubject, DoQ, Neg, Gern, HasSubj, IsThere: Boolean;
+  Sp, L, L2: Integer;
+  Inf, InfStr, ObjTxt, IObj, DObj, Pp, Adv: String;
+  Slot: Integer;
+  T: TGTok;
+  Ending: String;
+  Cnt: Integer;
+  Embedded: Boolean;
+Begin
+  TranslateClauseDeIn := '';
+  If A > B Then Exit;
+  Embedded := DeEmbed;
+  DeEmbed := False;
+  Please := False;
+  Imperative := False;
+  WhSubject := False;
+  Wh := '';
+  WhText := '';
+  Freq := '';
+  Neg := False;
+  Gern := False;
+  IsThere := False;
+
+  { mots de liaison et interjections en tete }
+  If (GT[A].Cat = 'J') And (A < B) And (GT[A].W = 'bitte') Then
+  Begin
+    Please := True;
+    DeConsume(A);
+    Inc(A);
+    If (A <= B) And (GT[A].Cat = ',') Then Inc(A);
+  End
+  Else If (GT[A].Cat = 'J') And (A < B) Then
+  Begin
+    TranslateClauseDeIn := GT[A].En + ' ' + TranslateClauseDeIn(A + 1, B, IsQ, Final);
+    Exit;
+  End
+  Else If (GT[A].Cat = 'J') And (A = B) Then
+  Begin
+    TranslateClauseDeIn := GT[A].En;
+    Exit;
+  End;
+  If (GT[A].Cat = 'C') And (A < B) Then
+  Begin
+    TranslateClauseDeIn := GT[A].En + ' ' + TranslateClauseDeIn(A + 1, B, IsQ, GT[A].Kind = 'S');
+    Exit;
+  End;
+
+  { mot interrogatif }
+  If (GT[A].Cat = 'W') Then
+  Begin
+    WhText := GT[A].En;
+    Wh := GT[A].W;
+    DeConsume(A);
+    If (Wh = 'wie') And (A < B) And (GT[A + 1].Cat = 'D') And (GT[A + 1].EnObj = 'viel') Then
+    Begin
+      DeConsume(A + 1);
+      If ParseNPIn(A + 2, NP) And (NP.Head > 0) Then
+      Begin
+        NP.Plural := True;
+        WhText := 'how many ' + DeNounText(NP);
+        For K := A + 2 To A + 1 + NP.Used Do DeConsume(K);
+      End
+      Else WhText := 'how many';
+    End;
+  End
+  Else If (GT[A].Cat = 'D') And (GT[A].Kind = 'w') Then
+  Begin
+    If ParseNPIn(A, NP) And (NP.Head > 0) Then
+    Begin
+      WhText := 'which ' + Join(DeAdjText(NP), DeNounText(NP));
+      Wh := 'welch';
+      For K := A To A + NP.Used - 1 Do DeConsume(K);
+    End;
+  End;
+  If Wh <> '' Then IsQ := True;
+
+  { le verbe fini }
+  Vf := 0;
+  If Final Then
+  Begin
+    For I := A To B Do
+      If (GT[I].Cat = 'V') And (GT[I].L > 0) And (GT[I].Tns In ['p', 'i', 'c']) And
+         ((I = 1) Or (GT[I - 1].Cat <> 'K')) Then Vf := I;
+  End
+  Else
+  Begin
+    For I := B Downto A Do
+      If (GT[I].Cat = 'V') And (GT[I].L > 0) And (GT[I].Tns In ['p', 'i', 'c']) And
+         ((I = 1) Or (GT[I - 1].Cat <> 'K')) Then Vf := I;
+  End;
+  If Vf = 0 Then
+  Begin
+    { pas de verbe fini : on traduit les elements }
+    ParseItems(A, B);
+    Res := '';
+    For I := 1 To DIN Do Res := Join(Res, DI[I].Text);
+    TranslateClauseDeIn := Join(WhText, Res);
+    Exit;
+  End;
+  L := GT[Vf].L;
+  Slot := GT[Vf].Slot;
+  Inf := Lex[L].De;
+
+  { prefixe separable : on cherche le verbe avec prefixe qui convient }
+  If GT[Vf].Kind <> 'A' Then
+  Begin
+    L2 := 0;
+    For K := 1 To LexCount Do
+      If (Lex[K].Pos = 'v') And (Lex[K].De = Inf) And (Lex[K].DeSep <> '') And (L2 = 0) Then
+        For J := A To B Do
+          If (J <> Vf) And (L2 = 0) And (GT[J].Cat <> 'V') And (GT[J].Cat <> ' ') And
+             (GT[J].W = DeLow(Lex[K].DeSep)) And (J > Vf) And (J >= B - 1) Then
+          Begin
+            L2 := K;
+            DeConsume(J);
+          End;
+    If L2 > 0 Then L := L2
+    Else If Lex[L].DeSep <> '' Then
+    Begin
+      { le prefixe est absent : verbe simple de meme nom }
+      For K := 1 To LexCount Do
+        If (Lex[K].Pos = 'v') And (Lex[K].De = Inf) And (Lex[K].DeSep = '') And (L2 = 0) Then L2 := K;
+      If L2 > 0 Then L := L2;
+    End;
+  End;
+  Inf := Lex[L].De;
+  VerbEn := DeEnglishOf(L);
+  DeConsume(Vf);
+
+  { les autres verbes : participe ou infinitif }
+  PV := 0;
+  IV := 0;
+  For I := A To B Do
+    If (GT[I].Cat = 'V') And (I <> Vf) Then
+    Begin
+      If GT[I].CanPart And (PV = 0) And ((Inf = 'haben') Or (Inf = 'sein')) Then
+      Begin
+        PV := I;
+        DeConsume(I);
+      End
+      Else If GT[I].CanInf And (IV = 0) Then
+      Begin
+        IV := I;
+        DeConsume(I);
+      End
+      Else If GT[I].CanPart And (PV = 0) Then
+      Begin
+        PV := I;
+        DeConsume(I);
+      End;
+    End;
+  { "zu" devant un infinitif }
+  For I := A To B Do
+    If GT[I].Cat = 'K' Then DeConsume(I);
+
+  ParseItems(A, B);
+
+  { le sujet }
+  SubjIdx := 0;
+  PreIdx := 0;
+  For I := 1 To DIN Do
+    If (DI[I].Kind In ['N', 'A']) And (PreIdx = 0) And (DI[I].First < Vf) Then PreIdx := I;
+  If (PreIdx > 0) And (DI[PreIdx].Kind = 'N') And (Pos('n', DI[PreIdx].Cases) > 0) And
+     (Not Final) Then SubjIdx := PreIdx;
+  If SubjIdx = 0 Then
+    For I := 1 To DIN Do
+      If (SubjIdx = 0) And (DI[I].Kind = 'N') And (Pos('n', DI[I].Cases) > 0) Then
+        If (DI[I].Text <> '') Then SubjIdx := I;
+  HasSubj := SubjIdx > 0;
+
+  { forme de la phrase : question, imperatif }
+  If (Not Final) And (Wh = '') Then
+    If (DIN = 0) Or (DI[1].First > Vf) Then
+    Begin
+      { verbe en tete }
+      If HasSubj Then
+      Begin
+        If GEnd = '?' Then IsQ := True
+        Else If DI[SubjIdx].Pron Then
+        Begin
+          If (GT[DI[SubjIdx].PronTok].W = 'wir') Or
+             ((GT[DI[SubjIdx].PronTok].W = 'sie') And (GT[DI[SubjIdx].PronTok].Orig = 'Sie')) Then
+            Imperative := True;
+        End;
+      End
+      Else If GEnd <> '?' Then
+        Imperative := True;
+    End;
+  If (Not Final) And (GEnd = '?') Then IsQ := True;
+
+  { le sujet interrogatif : wer / was }
+  If (Wh = 'wer') Or (Wh = 'was') Then
+  Begin
+    If Not HasSubj Then WhSubject := True
+    Else If (Wh = 'was') And (DI[SubjIdx].Text <> '') Then
+    Begin
+      { "Was ist das ?" : le sujet est le groupe nominal }
+    End;
+  End;
+
+  { la construction verbale }
+  FillChar(G, SizeOf(G), 0);
+  G.Mode := 's';
+  G.Tns := GT[Vf].Tns;
+  If G.Tns = 'c' Then G.Tns := 'c';
+  G.MainEn := VerbEn;
+  Neg := False;
+  For I := 1 To DIN Do
+    If DI[I].Kind = 'G' Then Neg := True;
+  For I := 1 To DIN Do
+    If (DI[I].Kind = 'N') And DI[I].Neg Then Neg := True;
+  G.Neg := Neg;
+  For I := 1 To DIN Do
+    If (DI[I].Kind = 'R') And DeIsFreqEn(DI[I].Text) Then Freq := Join(Freq, DI[I].Text);
+  For I := 1 To DIN Do
+    If (DI[I].Kind = 'R') And (DI[I].Text = 'never') Then
+    Begin
+      G.Neg := Neg;
+    End;
+  For I := 1 To GN Do
+    If (GT[I].Cat = 'R') And (GT[I].W = 'gern') Then
+    Begin
+      Gern := True;
+    End;
+  If (Inf = 'werden') And (GT[Vf].Tns = 'i') Then
+    For I := 1 To GN Do
+      If (GT[I].Cat = 'A') And (GT[I].En = 'born') Then
+      Begin
+        Inf := 'sein';
+        G.Tns := 'i';
+      End;
+  If Inf = 'sein' Then
+  Begin
+    If (PV > 0) And (GT[PV].LPart > 0) And (Lex[GT[PV].LPart].De = 'sein') Then
+    Begin
+      G.Mode := 'b';
+      G.MainEn := 'be';
+      G.Perf := G.Tns = 'p';
+    End
+    Else If (PV > 0) And (GT[PV].LPart > 0) And DeUsesSein(GT[PV].LPart) Then
+    Begin
+      G.Mode := 'c';
+      G.MainEn := DeEnglishOf(GT[PV].LPart);
+    End
+    Else If PV > 0 Then
+    Begin
+      G.Mode := 'p';
+      G.MainEn := DeEnglishOf(GT[PV].LPart);
+    End
+    Else
+    Begin
+      G.Mode := 'b';
+      G.MainEn := 'be';
+    End;
+  End
+  Else If Inf = 'haben' Then
+  Begin
+    If PV > 0 Then
+    Begin
+      G.Mode := 'c';
+      G.MainEn := DeEnglishOf(GT[PV].LPart);
+      If (Pos('already', Freq) > 0) Or (Pos('never', Freq) > 0) Or (Pos('just', Freq) > 0) Then G.Perf := True;
+    End
+    Else
+    Begin
+      G.Mode := 'h';
+      G.MainEn := 'have';
+    End;
+  End
+  Else If Inf = 'werden' Then
+  Begin
+    If PV > 0 Then
+    Begin
+      G.Mode := 'p';
+      G.MainEn := DeEnglishOf(GT[PV].LPart);
+    End
+    Else If IV > 0 Then
+    Begin
+      G.Mode := 's';
+      G.MainEn := DeEnglishOf(GT[IV].LInf);
+      If G.Tns = 'c' Then G.Tns := 'c' Else G.Tns := 'f';
+    End
+    Else
+    Begin
+      G.Mode := 's';
+      G.MainEn := 'become';
+    End;
+  End
+  Else If InList(Inf, 'können dürfen müssen sollen wollen möchten mögen') Then
+  Begin
+    If IV > 0 Then
+    Begin
+      G.Mode := 'm';
+      G.MainEn := DeEnglishOf(GT[IV].LInf);
+      If (Inf = 'können') Or (Inf = 'dürfen') Then G.Modal := 'pouvoir'
+      Else If Inf = 'müssen' Then G.Modal := 'devoir'
+      Else If Inf = 'sollen' Then
+      Begin
+        G.Modal := 'devoir';
+        If G.Tns = 'p' Then G.Tns := 'c';
+      End
+      Else
+      Begin
+        G.Modal := 'vouloir';
+        If Inf = 'möchten' Then G.Tns := 'c';
+      End;
+    End
+    Else
+    Begin
+      If Inf = 'möchten' Then
+      Begin
+        G.Mode := 's';
+        G.MainEn := 'like';
+        G.Tns := 'c';
+      End
+      Else If Inf = 'mögen' Then G.MainEn := 'like'
+      Else If Inf = 'wollen' Then G.MainEn := 'want'
+      Else
+      Begin
+        G.Mode := 'm';
+        G.MainEn := '';
+        If (Inf = 'können') Or (Inf = 'dürfen') Then G.Modal := 'pouvoir'
+        Else G.Modal := 'devoir';
+      End;
+    End;
+  End
+  Else If (Inf = 'geben') And (SubjIdx > 0) And DI[SubjIdx].Pron And (GT[DI[SubjIdx].PronTok].W = 'es') And
+          (Slot = 3) And (G.Tns In ['p', 'i']) Then
+  Begin
+    G.Mode := 't';
+    G.MainEn := 'be';
+    IsThere := True;
+  End;
+  If (G.Mode = 's') And Gern And (IV = 0) Then G.MainEn := 'like to ' + G.MainEn;
+  If (G.Mode = 's') And (G.MainEn = 'rain') And (G.Tns = 'p') And (Not Final) Then G.Rain := True;
+  If (G.Mode = 's') And (G.MainEn = 'go') And (G.Tns = 'p') And (Wh = 'wohin') Then G.Rain := True;
+  If (G.Mode = 's') And (G.MainEn = 'listen') Then G.MainEn := 'listen to';
+  If (G.Mode = 's') And (G.MainEn = 'drive') Then
+    For I := 1 To DIN Do
+      If (DI[I].Kind = 'E') And (Copy(DI[I].Text, 1, 3) = 'by ') Then G.MainEn := 'go';
+  { Wie geht es Ihnen ? }
+  If (Wh = 'wie') And (Inf = 'gehen') And (G.Tns = 'p') And HasSubj Then
+  Begin
+    For I := 1 To DIN Do
+      If (I <> SubjIdx) And (DI[I].Kind = 'N') And DI[I].Pron Then
+      Begin
+        If DI[I].TextObj = 'me' Then Res := 'am I'
+        Else If DI[I].TextObj = 'him' Then Res := 'is he'
+        Else If DI[I].TextObj = 'her' Then Res := 'is she'
+        Else If DI[I].TextObj = 'it' Then Res := 'is it'
+        Else If DI[I].TextObj = 'us' Then Res := 'are we'
+        Else If DI[I].TextObj = 'them' Then Res := 'are they'
+        Else Res := 'are you';
+        Adv := '';
+        For K := 1 To DIN Do
+          If DI[K].Kind = 'R' Then Adv := Join(Adv, DI[K].Text);
+        TranslateClauseDeIn := Join('how ' + Res, Adv);
+        Exit;
+      End;
+  End;
+
+  { avoir faim, soif... }
+  Pred := '';
+  If G.Mode = 'h' Then
+    For I := 1 To GN Do
+      If (GT[I].Cat In ['N', 'Z', 'A', 'R']) And (DeIdiomPred(GT[I].W) <> '') Then
+      Begin
+        Pred := DeIdiomPred(GT[I].W);
+        G.Mode := 'b';
+        G.MainEn := 'be';
+        DeConsume(I);
+        ParseItems(A, B);
+        SubjIdx := 0;
+        For K := 1 To DIN Do
+          If (SubjIdx = 0) And (DI[K].Kind = 'N') And (Pos('n', DI[K].Cases) > 0) And (DI[K].Text <> '') Then SubjIdx := K;
+      End;
+
+  HasSubj := SubjIdx > 0;
+  { "Ich heisse X" }
+  If Inf = 'heißen' Then
+  Begin
+    Name := '';
+    For I := 1 To DIN Do
+      If (DI[I].Kind = 'N') And (I <> SubjIdx) Then Name := Join(Name, DI[I].Text);
+    If IsQ Then
+      TranslateClauseDeIn := 'What is your name'
+    Else If (SubjIdx > 0) And DI[SubjIdx].Pron Then
+    Begin
+      Sp := GT[DI[SubjIdx].PronTok].Slot;
+      If Sp = 1 Then Res := 'My name is'
+      Else If Sp = 3 Then
+      Begin
+        If DI[SubjIdx].Text = 'she' Then Res := 'Her name is' Else Res := 'His name is';
+      End
+      Else Res := 'Your name is';
+      TranslateClauseDeIn := Join(Res, Name);
+    End
+    Else If SubjIdx > 0 Then
+      TranslateClauseDeIn := Join(Join(DI[SubjIdx].Text, 'is called'), Name)
+    Else
+      TranslateClauseDeIn := Name;
+    Exit;
+  End;
+
+  { sujet : texte et personne }
+  SubjText := '';
+  Sp := 3;
+  If HasSubj Then
+  Begin
+    SubjText := DI[SubjIdx].Text;
+    If DI[SubjIdx].Pron Then
+    Begin
+      Sp := GT[DI[SubjIdx].PronTok].Slot;
+      If GT[DI[SubjIdx].PronTok].W = 'sie' Then
+      Begin
+        If (Slot In [4, 6]) And (SubjText = 'she') Then
+        Begin
+          SubjText := 'they';
+          Sp := 6;
+        End;
+        If SubjText = 'you' Then Sp := 2;
+      End;
+      If Sp = 0 Then Sp := 3;
+    End
+    Else If DI[SubjIdx].Plural Then Sp := 6
+    Else Sp := 3;
+    If (SubjText = 'you') Then Sp := 2;
+    If (SubjText = 'they') Then Sp := 6;
+  End;
+  If IsThere Then
+  Begin
+    SubjText := 'there';
+    Sp := 3;
+    For I := 1 To DIN Do
+      If (DI[I].Kind = 'N') And (I <> SubjIdx) And DI[I].Plural Then Sp := 6;
+  End;
+  If WhSubject Then
+  Begin
+    SubjText := WhText;
+    Sp := 3;
+  End;
+
+  { complements }
+  IObj := '';
+  DObj := '';
+  Pp := '';
+  Adv := '';
+  Cnt := 0;
+  For I := 1 To DIN Do
+  Begin
+    If (I = SubjIdx) Then Continue;
+    Case DI[I].Kind Of
+      'N':
+      Begin
+        If DI[I].Text = '' Then Continue;
+        ObjTxt := DI[I].TextObj;
+        If (G.Mode = 'b') Or (G.Mode = 'p') Then
+        Begin
+          If (G.Mode = 'b') And (Not DI[I].Pron) And (Not DI[I].Proper) And (Pos(' ', ObjTxt) = 0) And
+             (DI[I].HeadEn <> '') And (Not IsMassNoun(DI[I].HeadEn)) And (Not DI[I].Plural) And
+             (Not IsLanguage(DI[I].HeadEn)) Then
+            ObjTxt := EnArticle(ObjTxt) + ' ' + ObjTxt;
+          If (G.Mode = 'b') And (DI[I].Cases = 'd') Then DObj := Join(DObj, ObjTxt)
+          Else DObj := Join(DObj, ObjTxt);
+        End
+        Else If (Pos('d', DI[I].Cases) > 0) And (Pos('a', DI[I].Cases) = 0) Then
+          IObj := Join(IObj, ObjTxt)
+        Else If (Pos('d', DI[I].Cases) > 0) And (Pos('n', DI[I].Cases) = 0) And (Pos('a', DI[I].Cases) = 0) Then
+          IObj := Join(IObj, ObjTxt)
+        Else
+          DObj := Join(DObj, ObjTxt);
+      End;
+      'A':
+      Begin
+        If (SubjIdx > 0) And (DI[SubjIdx].HeadEn = 'weather') And (DI[I].Text = 'beautiful') Then DI[I].Text := 'nice';
+        If (G.Mode = 's') And (DI[I].Text = 'good') Then DI[I].Text := 'well';
+        Pred := Join(Pred, DI[I].Text);
+      End;
+      'E': Pp := Join(Pp, DI[I].Text);
+      'R':
+        If (Not DeIsFreqEn(DI[I].Text)) And (DI[I].Text <> 'gladly') Then
+        Begin
+          If DI[I].Text = 'never' Then Freq := Join(Freq, 'never')
+          Else Adv := Join(Adv, DI[I].Text);
+        End;
+      'C':
+        If Pred <> '' Then Pred := Join(Pred, DI[I].Text) Else Pp := Join(Pp, DI[I].Text);
+    End;
+    Inc(Cnt);
+  End;
+  If Neg And InList(G.MainEn, 'like love hate prefer enjoy') Then
+  Begin
+    If Copy(DObj, 1, 4) = 'any ' Then Delete(DObj, 1, 4);
+    If Copy(DObj, 1, 2) = 'a ' Then Delete(DObj, 1, 2);
+  End;
+  Tail := Join(IObj, Join(DObj, Join(Pred, Join(Pp, Adv))));
+  If G.Mode = 'p' Then Tail := Join(Join(IObj, DObj), Join(Pred, Join(Pp, Adv)));
+  If Please Then Tail := Tail;
+
+  { imperatif }
+  If Imperative Then
+  Begin
+    Res := '';
+    If (HasSubj) And DI[SubjIdx].Pron And (GT[DI[SubjIdx].PronTok].W = 'wir') And DePivot Then
+      Res := 'let us'
+    Else If (HasSubj) And DI[SubjIdx].Pron And (GT[DI[SubjIdx].PronTok].W = 'wir') Then
+      Res := 'let''s'
+    Else If Neg Then Res := 'don''t'
+    Else If Please Then Res := 'please';
+    If Neg And (Res = 'let''s') Then Res := 'let''s not';
+    If Neg And (Res = 'don''t') And Please Then Res := 'please don''t';
+    If (Inf = 'sein') Then VerbEn := 'be';
+    TranslateClauseDeIn := Join(Res, Join(Freq, Join(VerbEn, Tail)));
+    Exit;
+  End;
+
+  BuildEn(G, Sp, Aux, Rest, LexBase, Post, LexTns);
+  If WhSubject Then WhText := '';
+  DoQ := IsQ And (Not WhSubject) And (Not Embedded);
+  If (HasSubj) And (SubjText = '') Then DoQ := False;
+  Res := '';
+  Wh := WhText;
+  If DoQ Then
+  Begin
+    If Aux = '' Then
+    Begin
+      Aux := DoFormEn(Sp, LexTns);
+      Rest := Join(LexBase, Post);
+      Post := '';
+      LexBase := '';
+    End;
+    If Neg Then AuxN := NegContract(Aux) Else AuxN := Aux;
+    Res := Join(Wh, Join(AuxN, Join(SubjText, Join(Freq, Join(Rest, Join(Post, Tail))))));
+  End
+  Else
+  Begin
+    If Neg Then
+    Begin
+      If Aux = '' Then
+      Begin
+        Aux := DoFormEn(Sp, LexTns);
+        Rest := Join(LexBase, Post);
+        Post := '';
+        LexBase := '';
+      End;
+      If Aux = 'am' Then AuxN := 'am not' Else AuxN := NegContract(Aux);
+      Res := Join(Wh, Join(SubjText, Join(AuxN, Join(Freq, Join(Rest, Tail)))));
+    End
+    Else If Aux <> '' Then
+      Res := Join(Wh, Join(SubjText, Join(Aux, Join(Freq, Join(Rest, Tail)))))
+    Else
+      Res := Join(Wh, Join(SubjText, Join(Freq, Join(FiniteEn(LexBase, LexTns, Sp), Join(Post, Tail)))));
+  End;
+  If Please Then Res := 'please ' + Res;
+  TranslateClauseDeIn := Res;
+End;
+
+{ Proposition infinitive : "ein Buch zu lesen" -> "to read a book" }
+Function TranslateInfClauseDe(A, B: Integer): String;
+Var
+  I, IV: Integer;
+  Res: String;
+Begin
+  IV := 0;
+  For I := A To B Do
+    If (GT[I].Cat = 'V') And (GT[I].CanInf) And (IV = 0) Then IV := I;
+  If IV = 0 Then
+  Begin
+    TranslateInfClauseDe := '';
+    Exit;
+  End;
+  DeConsume(IV);
+  For I := A To B Do
+    If GT[I].Cat = 'K' Then DeConsume(I);
+  ParseItems(A, B);
+  Res := '';
+  For I := 1 To DIN Do
+    If DI[I].Kind = 'N' Then Res := Join(Res, DI[I].TextObj)
+    Else Res := Join(Res, DI[I].Text);
+  TranslateInfClauseDe := Join('to ' + DeEnglishOf(GT[IV].LInf), Res);
+End;
+
+Function TranslateTokensDeIn(A, B: Integer; IsQ: Boolean): String;
+Var
+  K: Integer;
+  Left, Right, Conj: String;
+Begin
+  If A > B Then
+  Begin
+    TranslateTokensDeIn := '';
+    Exit;
+  End;
+  Left := FindPhraseDe(GPhraseKey(A, B));
+  If Left <> '' Then
+  Begin
+    If (A > 1) And (Copy(Left, 1, 2) <> 'I ') Then Left := LowerFirst(Left);
+    TranslateTokensDeIn := Left;
+    Exit;
+  End;
+  { virgule : deux propositions, ou proposition + infinitive }
+  For K := A + 1 To B - 1 Do
+    If GT[K].Cat = ',' Then
+    Begin
+      If ((K - A = 1) And (GT[A].Cat = 'J')) Or
+         (DeClauseHasFinite(A, K - 1) And DeClauseHasFinite(K + 1, B)) Then
+      Begin
+        If (GT[K + 1].Cat = 'W') And (Not DePivot) And DeClauseHasFinite(A, K - 1) Then
+        Begin
+          Left := TranslateTokensDeIn(A, K - 1, False);
+          DeEmbed := True;
+          TranslateTokensDeIn := Left + ' ' + TranslateClauseDeIn(K + 1, B, False, False);
+          DeEmbed := False;
+        End
+        Else If (GT[K + 1].Cat = 'C') And (GT[K + 1].Kind = 'S') Then
+          TranslateTokensDeIn := TranslateTokensDeIn(A, K - 1, False) + ' ' + TranslateTokensDeIn(K + 1, B, IsQ)
+        Else
+          TranslateTokensDeIn := TranslateTokensDeIn(A, K - 1, False) + ', ' + TranslateTokensDeIn(K + 1, B, IsQ);
+        Exit;
+      End;
+      If DeClauseHasFinite(A, K - 1) And (Not DeClauseHasFinite(K + 1, B)) Then
+      Begin
+        Right := TranslateInfClauseDe(K + 1, B);
+        If Right <> '' Then
+        Begin
+          TranslateTokensDeIn := TranslateTokensDeIn(A, K - 1, IsQ) + ' ' + Right;
+          Exit;
+        End;
+      End;
+    End;
+  For K := A + 1 To B - 1 Do
+    If (GT[K].Cat = 'C') And DeClauseHasFinite(A, K - 1) And DeClauseHasFinite(K + 1, B) Then
+    Begin
+      Conj := GT[K].En;
+      If GT[K].Kind = 'S' Then
+        TranslateTokensDeIn := TranslateTokensDeIn(A, K - 1, False) + ', ' + Conj + ' ' +
+                               TranslateClauseDeIn(K + 1, B, False, True)
+      Else If Conj = 'but' Then
+        TranslateTokensDeIn := TranslateTokensDeIn(A, K - 1, False) + ', ' + Conj + ' ' +
+                               TranslateTokensDeIn(K + 1, B, IsQ)
+      Else
+        TranslateTokensDeIn := TranslateTokensDeIn(A, K - 1, False) + ' ' + Conj + ' ' +
+                               TranslateTokensDeIn(K + 1, B, IsQ);
+      Left := '';
+      Exit;
+    End;
+  TranslateTokensDeIn := TranslateClauseDeIn(A, B, IsQ, False);
+End;
+
+{ ------------------------------------------------------------------ }
+{ ALLEMAND -> ANGLAIS : phrases toutes faites et phrase complete      }
+{ ------------------------------------------------------------------ }
+
+Procedure InitDeSpecials;
+Const
+  List = 'sein haben werden können müssen wollen sollen dürfen mögen möchten wissen kennen heißen suchen geben';
+Var
+  Rest, Item: String;
+  P, Dummy: Integer;
+Begin
+  Rest := List;
+  While Rest <> '' Do
+  Begin
+    P := Pos(' ', Rest);
+    If P = 0 Then
+    Begin
+      Item := Rest;
+      Rest := '';
+    End
+    Else
+    Begin
+      Item := Copy(Rest, 1, P - 1);
+      Delete(Rest, 1, P);
+    End;
+    Dummy := DeVerb(Item);
+  End;
+End;
+
+{ Traduit une phrase allemande en anglais (avec ponctuation finale). }
+Function DeTranslateSentence(Const Sentence: String): String;
+Var
+  Res: String;
+  Question: Boolean;
+Begin
+  GTokenize(Sentence);
+  If GN = 0 Then
+  Begin
+    DeTranslateSentence := '';
+    Exit;
+  End;
+  DeClassify;
+  Question := GEnd = '?';
+  Res := FindPhraseDe(GPhraseKey(1, GN));
+  If Res = '' Then Res := TranslateTokensDeIn(1, GN, Question);
+  Res := UpperFirst(FixEnglish(Res));
+  If GEnd <> #0 Then Res := Res + GEnd;
+  DeTranslateSentence := Res;
+End;
+
+{ ------------------------------------------------------------------ }
+{ JAPONAIS (romaji) -> ANGLAIS : lexique, formes et jetons            }
+{ ------------------------------------------------------------------ }
+
+Type
+  TJa = Record
+    Ro: String[26];
+    En: String[28];
+    Pos: String[3];
+  End;
+
+  TJTok = Record
+    W, Orig: String[34];
+    Cap, Punct: Boolean;
+    Cat: Char;     { N nom, V verbe, A adjectif, P particule, C copule, R adverbe, W interrogatif,
+                     J interjection, U nombre, K compteur, L nom relationnel, S pronom, Z inconnu }
+    Idx: Integer;
+    Form: Char;
+    En: String[30];
+    Pos: String[3];
+  End;
+
+Var
+  JaLex: Array[1..720] Of TJa;
+  JaCount: Integer;
+  JT: Array[0..MaxTokens + 1] Of TJTok;
+  JN: Integer;
+  JEnd: Char;
+  SourceJa: Boolean;
+
+Function ReplaceChar(Const S: String; A, B: Char): String;
+Var
+  I: Integer;
+  R: String;
+Begin
+  R := S;
+  For I := 1 To Length(R) Do
+    If R[I] = A Then R[I] := B;
+  ReplaceChar := R;
+End;
+
+Procedure LoadJapanese;
+Var
+  I: Integer;
+  Line, Item, Ro, Rest: String;
+Begin
+  JaCount := 0;
+  For I := 0 To High(JaData) Do
+  Begin
+    Line := JaData[I];
+    While Line <> '' Do
+    Begin
+      Item := CopyUntil(Line, ';');
+      If (Item <> '') And (JaCount < 720) Then
+      Begin
+        Ro := CopyUntil(Item, '=');
+        Rest := CopyUntil(Item, ':');
+        Inc(JaCount);
+        JaLex[JaCount].Ro := ReplaceChar(Ro, '_', ' ');
+        JaLex[JaCount].En := ReplaceChar(Rest, '_', ' ');
+        JaLex[JaCount].Pos := Item;
+      End;
+    End;
+  End;
+End;
+
+{ ---- formes verbales japonaises ---- }
+
+Function JaIsVerbPos(Const P: String): Boolean;
+Begin
+  JaIsVerbPos := (P = 'v1') Or (P = 'v5') Or (P = 'vs') Or (P = 'vk') Or (P = 'va') Or (P = 'vi');
+End;
+
+Function JaVStem(Const Ro, Cls: String): String;
+Var
+  L: Integer;
+Begin
+  L := Length(Ro);
+  If (Cls = 'v1') Or (Cls = 'vi') Then JaVStem := Copy(Ro, 1, L - 2)
+  Else If Cls = 'vs' Then JaVStem := 'shi'
+  Else If Cls = 'vk' Then JaVStem := 'ki'
+  Else If EndsWith(Ro, 'tsu') Then JaVStem := Copy(Ro, 1, L - 3) + 'chi'
+  Else If EndsWith(Ro, 'su') Then JaVStem := Copy(Ro, 1, L - 2) + 'shi'
+  Else JaVStem := Copy(Ro, 1, L - 1) + 'i';
+End;
+
+Function JaVTe(Const Ro, Cls: String; Past: Boolean): String;
+Var
+  L: Integer;
+  R: String;
+Begin
+  L := Length(Ro);
+  If (Cls = 'v1') Or (Cls = 'vi') Then R := Copy(Ro, 1, L - 2) + 'te'
+  Else If Cls = 'vs' Then R := 'shite'
+  Else If Cls = 'vk' Then R := 'kite'
+  Else If Ro = 'iku' Then R := 'itte'
+  Else If EndsWith(Ro, 'tsu') Then R := Copy(Ro, 1, L - 3) + 'tte'
+  Else If EndsWith(Ro, 'ru') Then R := Copy(Ro, 1, L - 2) + 'tte'
+  Else If EndsWith(Ro, 'mu') Or EndsWith(Ro, 'nu') Or EndsWith(Ro, 'bu') Then R := Copy(Ro, 1, L - 2) + 'nde'
+  Else If EndsWith(Ro, 'ku') Then R := Copy(Ro, 1, L - 2) + 'ite'
+  Else If EndsWith(Ro, 'gu') Then R := Copy(Ro, 1, L - 2) + 'ide'
+  Else If EndsWith(Ro, 'su') Then R := Copy(Ro, 1, L - 2) + 'shite'
+  Else R := Copy(Ro, 1, L - 1) + 'tte';
+  If Past Then
+  Begin
+    If EndsWith(R, 'e') Then R := Copy(R, 1, Length(R) - 1) + 'a';
+  End;
+  JaVTe := R;
+End;
+
+Function JaVNai(Const Ro, Cls: String): String;
+Var
+  L: Integer;
+  C: Char;
+Begin
+  L := Length(Ro);
+  If (Cls = 'v1') Or (Cls = 'vi') Then JaVNai := Copy(Ro, 1, L - 2) + 'nai'
+  Else If Cls = 'vs' Then JaVNai := 'shinai'
+  Else If Cls = 'vk' Then JaVNai := 'konai'
+  Else If Cls = 'va' Then JaVNai := 'nai'
+  Else
+  Begin
+    C := Ro[L - 1];
+    If C In ['a', 'e', 'i', 'o', 'u'] Then JaVNai := Copy(Ro, 1, L - 1) + 'wanai'
+    Else If EndsWith(Ro, 'tsu') Then JaVNai := Copy(Ro, 1, L - 3) + 'tanai'
+    Else If EndsWith(Ro, 'su') Then JaVNai := Copy(Ro, 1, L - 2) + 'sanai'
+    Else JaVNai := Copy(Ro, 1, L - 1) + 'anai';
+    If C = 'k' Then JaVNai := Copy(Ro, 1, L - 2) + 'kanai';
+    If C = 'g' Then JaVNai := Copy(Ro, 1, L - 2) + 'ganai';
+    If C = 'm' Then JaVNai := Copy(Ro, 1, L - 2) + 'manai';
+    If C = 'n' Then JaVNai := Copy(Ro, 1, L - 2) + 'nanai';
+    If C = 'b' Then JaVNai := Copy(Ro, 1, L - 2) + 'banai';
+    If C = 'r' Then JaVNai := Copy(Ro, 1, L - 2) + 'ranai';
+  End;
+End;
+
+{ Reconnait un mot comme forme d'un verbe ; Form : d m n a v t p k q i }
+Function JaMatchVerb(Const W: String; Var Idx: Integer; Var Form: Char): Boolean;
+Var
+  I: Integer;
+  R, Cls, St: String;
+Begin
+  JaMatchVerb := False;
+  For I := 1 To JaCount Do
+    If JaIsVerbPos(JaLex[I].Pos) Then
+    Begin
+      R := JaLex[I].Ro;
+      Cls := JaLex[I].Pos;
+      St := JaVStem(R, Cls);
+      Form := ' ';
+      If W = R Then Form := 'd'
+      Else If W = St + 'masu' Then Form := 'm'
+      Else If W = St + 'masen' Then Form := 'n'
+      Else If W = St + 'mashita' Then Form := 'a'
+      Else If W = St + 'mashou' Then Form := 'v'
+      Else If W = JaVTe(R, Cls, False) Then Form := 't'
+      Else If W = JaVTe(R, Cls, True) Then Form := 'p'
+      Else If W = JaVNai(R, Cls) Then Form := 'k'
+      Else If W = Copy(JaVNai(R, Cls), 1, Length(JaVNai(R, Cls)) - 1) + 'katta' Then Form := 'q'
+      Else If W = St + 'tai' Then Form := 'i';
+      If Form <> ' ' Then
+      Begin
+        Idx := I;
+        JaMatchVerb := True;
+        Exit;
+      End;
+    End;
+End;
+
+Function JaAdjStem(Const Ro: String): String;
+Begin
+  If Ro = 'ii' Then JaAdjStem := 'yo'
+  Else JaAdjStem := Copy(Ro, 1, Length(Ro) - 1);
+End;
+
+Function JaMatchAdj(Const W: String; Var Idx: Integer; Var Form: Char): Boolean;
+Var
+  I: Integer;
+  St: String;
+Begin
+  JaMatchAdj := False;
+  For I := 1 To JaCount Do
+    If (JaLex[I].Pos = 'ia') Or (JaLex[I].Pos = 'ii') Then
+    Begin
+      St := JaAdjStem(JaLex[I].Ro);
+      Form := ' ';
+      If W = JaLex[I].Ro Then Form := 'd'
+      Else If W = St + 'kunai' Then Form := 'k'
+      Else If W = St + 'katta' Then Form := 'p'
+      Else If W = St + 'kunakatta' Then Form := 'q'
+      Else If W = St + 'ku' Then Form := 'r'
+      Else If W = St + 'kute' Then Form := 't';
+      If Form <> ' ' Then
+      Begin
+        Idx := I;
+        JaMatchAdj := True;
+        Exit;
+      End;
+    End;
+End;
+
+Function JaFind(Const W: String; Const Kinds: String): Integer;
+Var
+  I: Integer;
+Begin
+  JaFind := 0;
+  For I := 1 To JaCount Do
+    If (JaLex[I].Ro = W) And (Pos(JaLex[I].Pos, Kinds) > 0) Then
+    Begin
+      JaFind := I;
+      Exit;
+    End;
+End;
+
+Function JaIsParticle(Const W: String): Boolean;
+Begin
+  JaIsParticle := InList(W, 'wa ga o wo ni de to no e mo ka ya kara made yori ne yo na');
+End;
+
+Function JaNumberEn(Const W: String): String;
+Begin
+  JaNumberEn := '';
+  If W = 'ichi' Then JaNumberEn := '1'
+  Else If W = 'ni' Then JaNumberEn := '2'
+  Else If W = 'san' Then JaNumberEn := '3'
+  Else If (W = 'yon') Or (W = 'shi') Then JaNumberEn := '4'
+  Else If W = 'go' Then JaNumberEn := '5'
+  Else If W = 'roku' Then JaNumberEn := '6'
+  Else If (W = 'nana') Or (W = 'shichi') Then JaNumberEn := '7'
+  Else If W = 'hachi' Then JaNumberEn := '8'
+  Else If (W = 'kyuu') Or (W = 'ku') Then JaNumberEn := '9'
+  Else If W = 'juu' Then JaNumberEn := '10'
+  Else If W = 'juuichi' Then JaNumberEn := '11'
+  Else If W = 'juuni' Then JaNumberEn := '12'
+  Else If W = 'hyaku' Then JaNumberEn := '100'
+  Else If W = 'sen' Then JaNumberEn := '1000'
+  Else If W = 'hitotsu' Then JaNumberEn := '1'
+  Else If W = 'futatsu' Then JaNumberEn := '2'
+  Else If W = 'mittsu' Then JaNumberEn := '3'
+  Else If W = 'yottsu' Then JaNumberEn := '4'
+  Else If W = 'itsutsu' Then JaNumberEn := '5'
+  Else If W = 'hitori' Then JaNumberEn := '1'
+  Else If W = 'futari' Then JaNumberEn := '2';
+End;
+
+Function JaCounterEn(Const W: String): String;
+Begin
+  If W = 'nin' Then JaCounterEn := 'people'
+  Else If (W = 'hon') Or (W = 'mai') Or (W = 'ko') Or (W = 'satsu') Or (W = 'dai') Or (W = 'hiki') Or
+          (W = 'kai') Or (W = 'ji') Then JaCounterEn := '*'
+  Else JaCounterEn := '';
+End;
+
+{ ---- tokenisation ---- }
+
+Procedure JPush(Const W, Orig: String; Cap, Punct: Boolean);
+Begin
+  If JN >= MaxTokens Then Exit;
+  Inc(JN);
+  FillChar(JT[JN], SizeOf(TJTok), 0);
+  JT[JN].W := W;
+  JT[JN].Orig := Orig;
+  JT[JN].Cap := Cap;
+  JT[JN].Punct := Punct;
+End;
+
+Procedure JTokenize(Const S0: String);
+Var
+  S, Word1: String;
+  I, L: Integer;
+  C: Char;
+  Cap: Boolean;
+Begin
+  JN := 0;
+  JEnd := #0;
+  { normalisation : macrons et ponctuation japonaise }
+  S := '';
+  I := 1;
+  While I <= Length(S0) Do
+  Begin
+    If (S0[I] = #$C4) And (I < Length(S0)) And (S0[I + 1] = #$81) Then begin S := S + 'aa'; Inc(I, 2); end
+    Else If (S0[I] = #$C4) And (I < Length(S0)) And (S0[I + 1] = #$AB) Then begin S := S + 'ii'; Inc(I, 2); end
+    Else If (S0[I] = #$C5) And (I < Length(S0)) And (S0[I + 1] = #$AB) Then begin S := S + 'uu'; Inc(I, 2); end
+    Else If (S0[I] = #$C4) And (I < Length(S0)) And (S0[I + 1] = #$93) Then begin S := S + 'ee'; Inc(I, 2); end
+    Else If (S0[I] = #$C5) And (I < Length(S0)) And (S0[I + 1] = #$8D) Then begin S := S + 'ou'; Inc(I, 2); end
+    Else If (S0[I] = #$E3) And (I + 2 <= Length(S0)) And (S0[I + 1] = #$80) And (S0[I + 2] = #$82) Then begin S := S + '.'; Inc(I, 3); end
+    Else If (S0[I] = #$E3) And (I + 2 <= Length(S0)) And (S0[I + 1] = #$80) And (S0[I + 2] = #$81) Then begin S := S + ','; Inc(I, 3); end
+    Else If (S0[I] = #$EF) And (I + 2 <= Length(S0)) And (S0[I + 1] = #$BC) And (S0[I + 2] = #$9F) Then begin S := S + '?'; Inc(I, 3); end
+    Else If (S0[I] = #$EF) And (I + 2 <= Length(S0)) And (S0[I + 1] = #$BC) And (S0[I + 2] = #$81) Then begin S := S + '!'; Inc(I, 3); end
+    Else If S0[I] = '''' Then Inc(I)
+    Else
+    Begin
+      S := S + S0[I];
+      Inc(I);
+    End;
+  End;
+  L := Length(S);
+  I := 1;
+  While I <= L Do
+  Begin
+    C := S[I];
+    If C In ['A'..'Z', 'a'..'z', '0'..'9'] Then
+    Begin
+      Word1 := '';
+      While (I <= L) And (S[I] In ['A'..'Z', 'a'..'z', '0'..'9']) Do
+      Begin
+        Word1 := Word1 + S[I];
+        Inc(I);
+      End;
+      Cap := (Word1[1] >= 'A') And (Word1[1] <= 'Z');
+      JPush(LowerAscii(Word1), Word1, Cap, False);
+    End
+    Else
+    Begin
+      If (C = '.') Or (C = '?') Or (C = '!') Then
+      Begin
+        If JEnd = #0 Then JEnd := C;
+        If C = '?' Then JEnd := '?';
+      End
+      Else If (C = ',') Or (C = ';') Or (C = ':') Then
+      Begin
+        JPush(',', ',', False, True);
+        JT[JN].Cat := ',';
+      End;
+      Inc(I);
+    End;
+  End;
+End;
+
+{ Fusionne les locutions du lexique (otoko no hito, ohayou gozaimasu...). }
+Procedure JMergeMultiword;
+Var
+  I, K, Len, L: Integer;
+  Key: String;
+  Bad, Found: Boolean;
+Begin
+  I := 1;
+  While I < JN Do
+  Begin
+    Found := False;
+    For Len := 4 Downto 2 Do
+      If (Not Found) And (I + Len - 1 <= JN) Then
+      Begin
+        Key := '';
+        Bad := False;
+        For K := I To I + Len - 1 Do
+        Begin
+          If JT[K].Punct Then Bad := True;
+          Key := Join(Key, JT[K].W);
+        End;
+        If Not Bad Then
+        Begin
+          L := JaFind(Key, 'n l r w j s');
+          If L > 0 Then
+          Begin
+            Found := True;
+            JT[I].W := Key;
+            JT[I].Orig := Key;
+            For K := I + 1 To JN - Len + 1 Do
+              JT[K] := JT[K + Len - 1];
+            Dec(JN, Len - 1);
+          End;
+        End;
+      End;
+    Inc(I);
+  End;
+End;
+
+{ ------------------------------------------------------------------ }
+{ JAPONAIS -> ANGLAIS : classification                                }
+{ ------------------------------------------------------------------ }
+
+Function JaPronoun(Const W: String; Var En, Poss: String; Var Person: Integer): Boolean;
+Begin
+  JaPronoun := True;
+  Person := 3;
+  If (W = 'watashi') Or (W = 'boku') Or (W = 'ore') Or (W = 'atashi') Then Begin En := 'I'; Poss := 'my'; Person := 1; End
+  Else If (W = 'anata') Or (W = 'kimi') Or (W = 'omae') Then Begin En := 'you'; Poss := 'your'; Person := 2; End
+  Else If W = 'kare' Then Begin En := 'he'; Poss := 'his'; End
+  Else If W = 'kanojo' Then Begin En := 'she'; Poss := 'her'; End
+  Else If (W = 'watashitachi') Or (W = 'bokutachi') Or (W = 'wareware') Then Begin En := 'we'; Poss := 'our'; Person := 4; End
+  Else If (W = 'anatatachi') Or (W = 'minasan') Then Begin En := 'you'; Poss := 'your'; Person := 5; End
+  Else If (W = 'karera') Or (W = 'kanojotachi') Then Begin En := 'they'; Poss := 'their'; Person := 6; End
+  Else If W = 'kore' Then Begin En := 'this'; Poss := 'this'; End
+  Else If (W = 'sore') Or (W = 'are') Then Begin En := 'that'; Poss := 'that'; End
+  Else JaPronoun := False;
+End;
+
+Procedure JClassify;
+Var
+  I, Idx: Integer;
+  W, En, Poss: String;
+  Form: Char;
+  P: Integer;
+  Next: String;
+Begin
+  JMergeMultiword;
+  For I := 1 To JN Do
+  Begin
+    W := JT[I].W;
+    JT[I].Idx := 0;
+    JT[I].Form := ' ';
+    If JT[I].Punct Then
+    Begin
+      JT[I].Cat := ',';
+      Continue;
+    End;
+    If I < JN Then Next := JT[I + 1].W Else Next := '';
+    { nombres }
+    If IsDigitsOnly(W) Then
+    Begin
+      JT[I].Cat := 'U';
+      JT[I].En := W;
+      Continue;
+    End;
+    If (JaNumberEn(W) <> '') And ((I = 1) Or Not (JT[I - 1].Cat In ['N', 'L', 'Z', 'S'])) And ((JaCounterEn(Next) <> '') Or (Copy(W, 1, 4) = 'futa') Or
+       (Copy(W, 1, 4) = 'hito') Or (Copy(W, 1, 4) = 'mitt') Or (Copy(W, 1, 4) = 'yott') Or
+       (Copy(W, 1, 4) = 'itsu') Or ((I < JN) And (Next = 'ji'))) Then
+    Begin
+      JT[I].Cat := 'U';
+      JT[I].En := JaNumberEn(W);
+      Continue;
+    End;
+    If (JaCounterEn(W) <> '') And (I > 1) And (JT[I - 1].Cat = 'U') Then
+    Begin
+      JT[I].Cat := 'K';
+      JT[I].En := JaCounterEn(W);
+      Continue;
+    End;
+    If (W = 'san') Or (W = 'kun') Or (W = 'chan') Or (W = 'sama') Then
+    Begin
+      If (I > 1) And (JT[I - 1].Cat = 'Z') Then
+      Begin
+        JT[I].Cat := 'H';
+        Continue;
+      End;
+    End;
+    { particules et copule }
+    If InList(W, 'desu da deshita datta deshou darou') Then
+    Begin
+      JT[I].Cat := 'C';
+      If (W = 'deshita') Or (W = 'datta') Then JT[I].Form := 'a' Else JT[I].Form := 'd';
+      Continue;
+    End;
+    If (W = 'janai') Or (W = 'dewanai') Then
+    Begin
+      JT[I].Cat := 'C';
+      JT[I].Form := 'k';
+      Continue;
+    End;
+    If ((W = 'dewa') Or (W = 'ja')) And (I < JN) And ((Next = 'arimasen') Or (Next = 'nai')) Then
+    Begin
+      JT[I].Cat := 'D';
+      Continue;
+    End;
+    If JaIsParticle(W) And (W <> 'na') Then
+    Begin
+      JT[I].Cat := 'P';
+      Continue;
+    End;
+    If (W = 'na') And (I > 1) And (JT[I - 1].Cat = 'A') Then
+    Begin
+      JT[I].Cat := 'P';
+      Continue;
+    End;
+    { pronoms }
+    If JaPronoun(W, En, Poss, P) Then
+    Begin
+      JT[I].Cat := 'S';
+      JT[I].En := En;
+      JT[I].Idx := P;
+      Continue;
+    End;
+    If (W = 'kono') Or (W = 'sono') Or (W = 'ano') Then
+    Begin
+      JT[I].Cat := 'T';
+      If W = 'kono' Then JT[I].En := 'this' Else JT[I].En := 'that';
+      Continue;
+    End;
+    { lexique exact }
+    Idx := JaFind(W, 'n l r w j s');
+    If Idx > 0 Then
+    Begin
+      JT[I].Idx := Idx;
+      JT[I].En := JaLex[Idx].En;
+      JT[I].Pos := JaLex[Idx].Pos;
+      Case JaLex[Idx].Pos[1] Of
+        'n', 's': JT[I].Cat := 'N';
+        'l': JT[I].Cat := 'L';
+        'r': JT[I].Cat := 'R';
+        'w': JT[I].Cat := 'W';
+        'j': JT[I].Cat := 'J';
+      End;
+      If JaLex[Idx].Pos = 's' Then JT[I].Cat := 'N';
+      Continue;
+    End;
+    If JaMatchVerb(W, Idx, Form) Then
+    Begin
+      JT[I].Cat := 'V';
+      JT[I].Idx := Idx;
+      JT[I].Form := Form;
+      JT[I].En := JaLex[Idx].En;
+      JT[I].Pos := JaLex[Idx].Pos;
+      Continue;
+    End;
+    If JaMatchAdj(W, Idx, Form) Then
+    Begin
+      JT[I].Cat := 'A';
+      JT[I].Idx := Idx;
+      JT[I].Form := Form;
+      JT[I].En := JaLex[Idx].En;
+      JT[I].Pos := 'ia';
+      Continue;
+    End;
+    Idx := JaFind(W, 'na');
+    If Idx > 0 Then
+    Begin
+      JT[I].Cat := 'A';
+      JT[I].Idx := Idx;
+      JT[I].Form := 'n';
+      JT[I].En := JaLex[Idx].En;
+      JT[I].Pos := 'na';
+      Continue;
+    End;
+    JT[I].Cat := 'Z';
+  End;
+End;
+
+{ ------------------------------------------------------------------ }
+{ JAPONAIS -> ANGLAIS : groupes nominaux                              }
+{ ------------------------------------------------------------------ }
+
+Type
+  TJSeg = Record
+    Text: String[110];
+    Head: String[30];
+    Found, Pron, Plural, IsPerson, IsWh, IsProper, IsTime, IsRel: Boolean;
+    Pers: Integer;
+    Poss: String[8];
+  End;
+
+  TJChunk = Record
+    Ptc: String[8];
+    Seg: TJSeg;
+    First, Last: Integer;
+  End;
+
+Var
+  JC: Array[1..16] Of TJChunk;
+  JCN: Integer;
+
+Function JaFindExact(Const W, P: String): Integer;
+Var
+  I: Integer;
+Begin
+  JaFindExact := 0;
+  For I := 1 To JaCount Do
+    If (JaLex[I].Ro = W) And (JaLex[I].Pos = P) Then
+    Begin
+      JaFindExact := I;
+      Exit;
+    End;
+End;
+
+Function JaRelPrep(Const En: String): String;
+Begin
+  If En = 'top' Then JaRelPrep := 'on'
+  Else If En = 'bottom' Then JaRelPrep := 'under'
+  Else If En = 'inside' Then JaRelPrep := 'in'
+  Else If En = 'front' Then JaRelPrep := 'in front of'
+  Else If En = 'back' Then JaRelPrep := 'behind'
+  Else If En = 'next' Then JaRelPrep := 'next to'
+  Else JaRelPrep := 'near';
+End;
+
+Function JaIsPersonEn(Const En: String): Boolean;
+Begin
+  JaIsPersonEn := InList(En, 'person man woman boy girl child friend family mother father brother sister son daughter husband wife teacher student doctor nurse employee');
+End;
+
+{ Un segment sans 'no' : determinant, adjectifs, nom }
+Procedure JaRenderSimple(First, Last: Integer; Const Art: String; Generic: Boolean; Var Seg: TJSeg);
+Var
+  I: Integer;
+  Det, Adjs, Noun, Qty, Dem: String;
+  Plural, HasNoun, Mass: Boolean;
+  Idx: Integer;
+Begin
+  FillChar(Seg, SizeOf(Seg), 0);
+  Det := '';
+  Adjs := '';
+  Noun := '';
+  Qty := '';
+  Dem := '';
+  Plural := False;
+  HasNoun := False;
+  I := First;
+  While I <= Last Do
+  Begin
+    Case JT[I].Cat Of
+      'U':
+      Begin
+        Qty := JT[I].En;
+        If (I < Last) And (JT[I + 1].Cat = 'K') Then
+        Begin
+          If JT[I + 1].W = 'ji' Then
+          Begin
+            Seg.Text := Qty + ' o''clock';
+            Seg.IsTime := True;
+            Seg.Found := True;
+            Exit;
+          End;
+          If JT[I + 1].En = 'people' Then
+          Begin
+            Noun := 'people';
+            HasNoun := True;
+            Seg.IsPerson := True;
+          End;
+          Inc(I);
+        End;
+        If (Qty <> '1') And (Qty <> '') Then Plural := True;
+        If Qty = '1' Then Qty := '';
+      End;
+      'T':
+        Dem := JT[I].En;
+      'S':
+      Begin
+        If (I = Last) And (First = Last) Then
+        Begin
+          Seg.Pron := True;
+          Seg.Text := JT[I].En;
+          Seg.Pers := JT[I].Idx;
+          Seg.Found := True;
+          If JT[I].En = 'I' Then Seg.Poss := 'my'
+          Else If JT[I].En = 'you' Then Seg.Poss := 'your'
+          Else If JT[I].En = 'he' Then Seg.Poss := 'his'
+          Else If JT[I].En = 'she' Then Seg.Poss := 'her'
+          Else If JT[I].En = 'we' Then Seg.Poss := 'our'
+          Else If JT[I].En = 'they' Then Seg.Poss := 'their'
+          Else Seg.Poss := JT[I].En;
+          Exit;
+        End;
+        Dem := JT[I].En;
+      End;
+      'A':
+      Begin
+        If JT[I].Pos = 'ia' Then Adjs := Join(Adjs, JT[I].En)
+        Else If JT[I].Pos = 'ii' Then Adjs := Join(Adjs, JT[I].En)
+        Else Adjs := Join(Adjs, JT[I].En);
+      End;
+      'N':
+      Begin
+        Noun := JT[I].En;
+        HasNoun := True;
+        Seg.IsPerson := JaIsPersonEn(Noun);
+        If (Noun <> '') And (Noun[1] >= 'A') And (Noun[1] <= 'Z') And (Not IsLanguage(LowerAscii(Noun))) Then
+          Seg.IsProper := True;
+      End;
+      'Z':
+      Begin
+        Seg.IsProper := True;
+        Noun := Join(Noun, JT[I].Orig);
+        HasNoun := True;
+      End;
+      'W':
+      Begin
+        Seg.IsWh := True;
+        Noun := JT[I].En;
+        HasNoun := True;
+      End;
+      'R':
+      Begin
+        Seg.IsTime := True;
+        Noun := JT[I].En;
+        HasNoun := True;
+      End;
+    End;
+    Inc(I);
+  End;
+  If Not HasNoun Then
+  Begin
+    Seg.Text := Join(Dem, Join(Qty, Adjs));
+    Seg.Found := Seg.Text <> '';
+    Exit;
+  End;
+  Seg.Found := True;
+  Seg.Head := Noun;
+  Seg.Plural := Plural;
+  If Seg.IsWh Or Seg.IsTime Or Seg.IsProper Then
+  Begin
+    Seg.Text := Noun;
+    Exit;
+  End;
+  Mass := IsMassNoun(Noun) Or IsLanguage(LowerAscii(Noun)) Or InList(Noun, 'sushi tempura ramen');
+  Idx := 0;
+  If Generic And (Dem = '') And (Qty = '') Then
+  Begin
+    Plural := True;
+    Seg.Plural := True;
+  End;
+  If Plural And (Not Mass) And (Noun <> 'people') Then Noun := EnPlural(Noun);
+  If Dem <> '' Then Det := Dem
+  Else If Qty <> '' Then Det := Qty
+  Else If Generic Then Det := ''
+  Else If Mass Then Det := ''
+  Else If Art = 'a' Then
+  Begin
+    If Plural Then Det := '' Else Det := 'a';
+  End
+  Else Det := Art;
+  If (Det = '') And (Noun = 'weather') And (Not Generic) Then Det := 'the';
+  If Det = 'a' Then Det := EnArticle(Join(Adjs, Noun));
+  If IsLanguage(LowerAscii(Noun)) Then Noun := UpperFirst(LowerAscii(Noun));
+  Seg.Text := Join(Det, Join(Adjs, Noun));
+  Idx := 0;
+End;
+
+{ Groupe nominal complet avec 'no' (possessif) et noms relationnels. }
+Procedure JaRenderNP(First, Last: Integer; Const Art: String; Generic: Boolean; Var Seg: TJSeg);
+Var
+  I, SegStart, NoPos: Integer;
+  Mods, Head: TJSeg;
+  ModText, HeadArt: String;
+  Rel: Boolean;
+Begin
+  FillChar(Seg, SizeOf(Seg), 0);
+  NoPos := 0;
+  For I := First To Last Do
+    If (JT[I].Cat = 'P') And (JT[I].W = 'no') Then NoPos := I;
+  If NoPos = 0 Then
+  Begin
+    JaRenderSimple(First, Last, Art, Generic, Seg);
+    Exit;
+  End;
+  { relatif : teeburu no ue }
+  If (Last = NoPos + 1) And (JT[Last].Cat = 'L') Then
+  Begin
+    JaRenderNP(First, NoPos - 1, 'the', False, Mods);
+    Seg.Found := True;
+    Seg.IsRel := True;
+    Seg.Text := JaRelPrep(JT[Last].En) + ' ' + Mods.Text;
+    Exit;
+  End;
+  JaRenderNP(First, NoPos - 1, '', False, Mods);
+  If Mods.Pron Then
+  Begin
+    JaRenderSimple(NoPos + 1, Last, '', Generic, Head);
+    If (Not Head.Found) Then Head.Text := '';
+    Seg := Head;
+    Seg.Text := Join(Mods.Poss, Head.Text);
+    Seg.Found := True;
+    Exit;
+  End;
+  ModText := Mods.Text;
+  If Mods.IsPerson Or Mods.IsProper Then
+  Begin
+    JaRenderSimple(NoPos + 1, Last, '', Generic, Head);
+    Seg := Head;
+    Seg.Text := ModText + '''s ' + Head.Text;
+    Seg.Found := True;
+    Exit;
+  End;
+  JaRenderSimple(NoPos + 1, Last, Art, Generic, Head);
+  Seg := Head;
+  Seg.Text := Join(ModText, Head.Text);
+  Seg.Found := True;
+End;
+
+{ ------------------------------------------------------------------ }
+{ JAPONAIS -> ANGLAIS : proposition                                   }
+{ ------------------------------------------------------------------ }
+
+Function JaIsMotion(Const En: String): Boolean;
+Begin
+  JaIsMotion := InList(En, 'go come return enter arrive get_off leave ride');
+End;
+
+Function JaIsVehicle(Const En: String): Boolean;
+Begin
+  JaIsVehicle := InList(En, 'car train bus plane bike boat');
+End;
+
+Function JaPlacePrep(Const Head: String): String;
+Begin
+  If InList(Head, 'Tokyo Kyoto Osaka Paris London') Then JaPlacePrep := 'in'
+  Else JaPlacePrep := 'in';
+End;
+
+Function JaChunkWh(Const C: TJChunk): String;
+Begin
+  If C.Seg.IsWh Then JaChunkWh := C.Seg.Text Else JaChunkWh := '';
+End;
+
+Function JaTranslateClause(A, B: Integer; Q: Boolean): String;
+Var
+  I, K, PredIdx, PendStart, SubjC, ObjC: Integer;
+  Seg: TJSeg;
+  Ptc: String;
+  Role: Char;
+  Art: String;
+  PKind: Char;
+  PIdx: Integer;
+  PForm: Char;
+  PNeg, PPast, PProg, PReq, PTai, PLet, PPerm, PQ, Done: Boolean;
+  PredNP: TJSeg;
+  VerbEn, Wh, Res, Tail, ObjTxt, Pp, Adv, Freq, SubjText, Aux, Rest, LexBase, Post, AuxN: String;
+  LexTns: Char;
+  G: TFVG;
+  Sp: Integer;
+  HasSubj, WhSubject, DoQ, Future, Stative, IsExist, Gen: Boolean;
+  Txt, Prep: String;
+  IObj: String;
+  Too: Boolean;
+  Nxt: Integer;
+  LocC: Integer;
+Begin
+  JaTranslateClause := '';
+  If A > B Then Exit;
+  { particules finales }
+  PQ := Q;
+  While (B >= A) And (JT[B].Cat = 'P') And InList(JT[B].W, 'ka ne yo') Do
+  Begin
+    If JT[B].W = 'ka' Then PQ := True;
+    Dec(B);
+  End;
+  If A > B Then Exit;
+  If (JT[B].Cat = 'J') And (JT[B].W = 'kudasai') And (B - 2 >= A) And (JT[B - 1].W = 'o') Then
+  Begin
+    JaRenderNP(A, B - 2, 'a', False, Seg);
+    JaTranslateClause := 'please give me ' + Seg.Text;
+    Exit;
+  End;
+  If (JT[A].Cat = 'J') And (A < B) And (JT[A].W <> 'kudasai') Then
+  Begin
+    JaTranslateClause := JT[A].En + ', ' + LowerFirst(JaTranslateClause(A + 1, B, PQ));
+    Exit;
+  End;
+  If (JT[A].Cat = 'J') And (A = B) Then
+  Begin
+    JaTranslateClause := JT[A].En;
+    Exit;
+  End;
+
+  { decoupage en groupes : groupe nominal + particule }
+  JCN := 0;
+  PendStart := A;
+  PredIdx := 0;
+  I := A;
+  While I <= B Do
+  Begin
+    Done := False;
+    Case JT[I].Cat Of
+      'P':
+      Begin
+        If JT[I].W = 'no' Then
+          Done := True
+        Else If (JT[I].W = 'na') Then
+          Done := True
+        Else
+        Begin
+          If (I > PendStart) And (JCN < 16) Then
+          Begin
+            Inc(JCN);
+            JC[JCN].Ptc := JT[I].W;
+            If JC[JCN].Ptc = 'wo' Then JC[JCN].Ptc := 'o';
+            JC[JCN].First := PendStart;
+            JC[JCN].Last := I - 1;
+            Role := 'x';
+            If JC[JCN].Ptc = 'wa' Then Role := 's'
+            Else If JC[JCN].Ptc = 'ga' Then Role := 'g'
+            Else If JC[JCN].Ptc = 'o' Then Role := 'o';
+            Art := 'the';
+            If Role = 'g' Then Art := 'a';
+            If Role = 'o' Then Art := 'a';
+            JaRenderNP(PendStart, I - 1, Art, False, JC[JCN].Seg);
+            If (Role = 's') And InList(JC[JCN].Seg.Head, 'mother father sister brother son daughter husband wife') And
+               (Copy(JC[JCN].Seg.Text, 1, 4) = 'the ') Then
+              JC[JCN].Seg.Text := 'my ' + Copy(JC[JCN].Seg.Text, 5, 100);
+            If (Role = 'x') And JC[JCN].Seg.IsPerson And (Not JC[JCN].Seg.IsProper) And (Not JC[JCN].Seg.Pron) Then
+              JaRenderNP(PendStart, I - 1, 'a', False, JC[JCN].Seg);
+            If (Not DePivot) And (Role = 'x') And (JC[JCN].Ptc <> 'to') And
+               InList(JC[JCN].Seg.Head, 'school university work church bed') Then
+              JaRenderNP(PendStart, I - 1, '', False, JC[JCN].Seg);
+          End;
+          PendStart := I + 1;
+          Done := True;
+        End;
+      End;
+      'V', 'C', 'D':
+      Begin
+        PredIdx := I;
+        Break;
+      End;
+      'A':
+      Begin
+        If (I < B) And ((JT[I + 1].Cat In ['N', 'Z', 'S', 'L']) Or ((JT[I + 1].Cat = 'P') And (JT[I + 1].W = 'na'))) And
+           (JT[I].Form In ['d', 'n']) Then
+          Done := True
+        Else
+        Begin
+          PredIdx := I;
+          Break;
+        End;
+      End;
+      'R':
+      Begin
+        If (I = PendStart) And ((I = B) Or Not ((JT[I + 1].Cat = 'P') And (JT[I + 1].W <> 'no'))) And
+           (JCN < 16) Then
+        Begin
+          Inc(JCN);
+          JC[JCN].Ptc := 'r';
+          JC[JCN].First := I;
+          JC[JCN].Last := I;
+          JaRenderSimple(I, I, '', False, JC[JCN].Seg);
+          PendStart := I + 1;
+          Done := True;
+        End;
+      End;
+    End;
+    Inc(I);
+  End;
+
+  { predicat }
+  PKind := ' ';
+  PIdx := 0;
+  PForm := ' ';
+  PNeg := False;
+  PPast := False;
+  PProg := False;
+  PReq := False;
+  PTai := False;
+  PLet := False;
+  PPerm := False;
+  FillChar(PredNP, SizeOf(PredNP), 0);
+  VerbEn := '';
+  If PredIdx = 0 Then
+  Begin
+    { pas de predicat : simple groupe nominal }
+    JaRenderNP(PendStart, B, '', False, Seg);
+    Res := '';
+    For K := 1 To JCN Do Res := Join(Res, JC[K].Seg.Text);
+    JaTranslateClause := Join(Res, Seg.Text);
+    Exit;
+  End;
+  If JT[PredIdx].Cat = 'V' Then
+  Begin
+    PKind := 'V';
+    PIdx := JT[PredIdx].Idx;
+    PForm := JT[PredIdx].Form;
+    VerbEn := JT[PredIdx].En;
+    { nom + suru }
+    If (JT[PredIdx].Pos = 'vs') And (PendStart < PredIdx) And (JT[PredIdx - 1].Cat = 'N') And
+       (JT[PredIdx - 1].Pos = 's') Then
+    Begin
+      VerbEn := JT[PredIdx - 1].En;
+      Dec(PredIdx);
+      JT[PredIdx].Cat := ' ';
+      Inc(PredIdx);
+      PendStart := PendStart;
+      If (PredIdx - 1 > PendStart) Then
+      Begin
+        JaRenderNP(PendStart, PredIdx - 2, '', False, Seg);
+        If (JCN < 16) And Seg.Found Then
+        Begin
+          Inc(JCN);
+          JC[JCN].Ptc := 'r';
+          JC[JCN].Seg := Seg;
+        End;
+      End;
+      PendStart := PredIdx;
+    End
+    Else If PendStart < PredIdx Then
+    Begin
+      JaRenderNP(PendStart, PredIdx - 1, '', False, Seg);
+      If (JCN < 16) And Seg.Found Then
+      Begin
+        Inc(JCN);
+        JC[JCN].Ptc := 'r';
+        JC[JCN].Seg := Seg;
+      End;
+    End;
+    Case PForm Of
+      'n', 'k': PNeg := True;
+      'a', 'p': PPast := True;
+      'q': Begin PNeg := True; PPast := True; End;
+      'v': PLet := True;
+      'i': PTai := True;
+    End;
+    If (PForm = 'n') And (PredIdx < B) And (JT[PredIdx + 1].Cat = 'C') And (JT[PredIdx + 1].W = 'deshita') Then PPast := True;
+    If (PForm = 't') And (PredIdx < B) Then
+    Begin
+      If (JT[PredIdx + 1].Cat = 'V') And (JT[PredIdx + 1].Pos = 'vi') Then
+      Begin
+        PProg := True;
+        If JT[PredIdx + 1].Form = 'a' Then PPast := True;
+        If JT[PredIdx + 1].Form = 'n' Then PNeg := True;
+      End
+      Else If (JT[PredIdx + 1].Cat = 'J') And (JT[PredIdx + 1].W = 'kudasai') Then
+        PReq := True
+      Else If (JT[PredIdx + 1].Cat = 'P') And (JT[PredIdx + 1].W = 'mo') Then
+        PPerm := True;
+    End;
+    If PForm = 'p' Then PPast := True;
+  End
+  Else If JT[PredIdx].Cat = 'A' Then
+  Begin
+    PKind := 'A';
+    PIdx := JT[PredIdx].Idx;
+    PForm := JT[PredIdx].Form;
+    VerbEn := JT[PredIdx].En;
+    If PendStart < PredIdx Then
+    Begin
+      JaRenderNP(PendStart, PredIdx - 1, '', False, Seg);
+      If (JCN < 16) And Seg.Found Then
+      Begin
+        Inc(JCN);
+        JC[JCN].Ptc := 'r';
+        JC[JCN].Seg := Seg;
+      End;
+    End;
+    Case PForm Of
+      'k': PNeg := True;
+      'p': PPast := True;
+      'q': Begin PNeg := True; PPast := True; End;
+    End;
+    If (PredIdx < B) And (JT[PredIdx + 1].Cat = 'C') Then
+    Begin
+      If JT[PredIdx + 1].Form = 'a' Then PPast := True;
+      If JT[PredIdx + 1].Form = 'k' Then PNeg := True;
+    End;
+    If (PredIdx < B) And (JT[PredIdx + 1].Cat = 'D') Then PNeg := True;
+  End
+  Else
+  Begin
+    { copule : le groupe nominal qui precede est le predicat }
+    PKind := 'N';
+    JaRenderNP(PendStart, PredIdx - 1, 'a', False, PredNP);
+    If JT[PredIdx].Cat = 'D' Then
+    Begin
+      PNeg := True;
+      If (PredIdx + 2 <= B) And (JT[PredIdx + 2].W = 'deshita') Then PPast := True;
+    End
+    Else
+    Begin
+      If JT[PredIdx].Form = 'a' Then PPast := True;
+      If JT[PredIdx].Form = 'k' Then PNeg := True;
+    End;
+  End;
+
+  { sujet }
+  SubjC := 0;
+  For K := 1 To JCN Do
+    If (SubjC = 0) And (JC[K].Ptc = 'wa') And (Not JC[K].Seg.IsTime) And (Not JC[K].Seg.IsRel) Then SubjC := K;
+  If (SubjC = 0) And (Not InList(VerbEn, 'understand like dislike love want can')) Then
+    For K := 1 To JCN Do
+      If (SubjC = 0) And (JC[K].Ptc = 'ga') Then SubjC := K;
+  If SubjC = 0 Then
+    For K := 1 To JCN Do
+      If (SubjC = 0) And (JC[K].Ptc = 'mo') And (JC[K].Seg.Pron Or JC[K].Seg.IsPerson) Then SubjC := K;
+  HasSubj := SubjC > 0;
+  WhSubject := HasSubj And JC[SubjC].Seg.IsWh;
+  Too := HasSubj And (JC[SubjC].Ptc = 'mo');
+
+  { existence : aru / iru }
+  IsExist := (PKind = 'V') And ((JT[PredIdx].Pos = 'va') Or (JT[PredIdx].Pos = 'vi')) And (PForm <> 't');
+  Future := False;
+  For K := 1 To JCN Do
+    If JC[K].Seg.IsTime And ((JC[K].Seg.Head = 'tomorrow') Or (JC[K].Seg.Head = 'tonight')) Then Future := True;
+
+  FillChar(G, SizeOf(G), 0);
+  G.Mode := 's';
+  G.Tns := 'p';
+  If PPast Then G.Tns := 'i'
+  Else If Future And (PKind = 'V') Then G.Tns := 'f';
+  G.Neg := PNeg;
+  G.MainEn := VerbEn;
+  Wh := '';
+  Tail := '';
+  Pp := '';
+  Adv := '';
+  IObj := '';
+  ObjTxt := '';
+  Freq := '';
+  Stative := InList(VerbEn, 'live know have wear exist do');
+  ObjC := 0;
+  For K := 1 To JCN Do
+    If (ObjC = 0) And ((JC[K].Ptc = 'o') Or ((JC[K].Ptc = 'ga') And (K <> SubjC))) Then ObjC := K;
+
+  If PKind = 'N' Then
+  Begin
+    G.Mode := 'b';
+    G.MainEn := 'be';
+    Tail := PredNP.Text;
+    If PredNP.IsWh Then
+    Begin
+      Wh := PredNP.Text;
+      Tail := '';
+      PQ := True;
+    End;
+  End
+  Else If PKind = 'A' Then
+  Begin
+    If (JT[PredIdx].Pos = 'ia') And (VerbEn = 'want') And (ObjC > 0) Then
+    Begin
+      G.Mode := 's';
+      G.MainEn := 'want';
+    End
+    Else If (JT[PredIdx].Pos = 'na') And InList(VerbEn, 'like dislike love') And (ObjC > 0) Then
+    Begin
+      G.Mode := 's';
+      G.MainEn := VerbEn;
+    End
+    Else
+    Begin
+      G.Mode := 'b';
+      G.MainEn := 'be';
+      Tail := VerbEn;
+      If (InList(VerbEn, 'good bad')) And (JT[PredIdx].Pos = 'na') And (ObjC > 0) Then Tail := VerbEn + ' at';
+    End;
+  End
+  Else
+  Begin
+    If PTai Then
+    Begin
+      G.Mode := 'm';
+      G.Modal := 'vouloir';
+      G.Tns := 'p';
+      If PPast Then G.Tns := 'i';
+    End
+    Else If PPerm Then
+    Begin
+      G.Mode := 'm';
+      G.Modal := 'pouvoir';
+      G.Tns := 'p';
+      PQ := True;
+    End
+    Else If IsExist Then
+    Begin
+      G.MainEn := 'be';
+      G.Mode := 'b';
+    End
+    Else If PProg And (Not Stative) Then
+    Begin
+      If PPast Then G.Tns := 'i' Else G.Rain := True;
+    End
+    Else If InList(VerbEn, 'can') Then
+    Begin
+      G.Mode := 'm';
+      G.Modal := 'pouvoir';
+      G.MainEn := 'do';
+    End;
+  End;
+
+  { complements : un par groupe }
+  For K := 1 To JCN Do
+  Begin
+    If (K = SubjC) Then Continue;
+    Seg := JC[K].Seg;
+    If Not Seg.Found Then Continue;
+    Ptc := JC[K].Ptc;
+    If Seg.IsWh And (Ptc = 'kara') Then
+    Begin
+      Wh := Seg.Text;
+      Pp := Join(Pp, 'from');
+      Continue;
+    End;
+    If Seg.IsWh And (Ptc <> 'ga') And (Ptc <> 'wa') Then
+    Begin
+      If (Ptc = 'o') Or (Ptc = 'ni') Or (Ptc = 'de') Or (Ptc = 'e') Or (Ptc = 'to') Then
+      Begin
+        Wh := Seg.Text;
+        Continue;
+      End;
+    End;
+    If (Ptc = 'o') Or ((Ptc = 'ga') And (K = ObjC)) Or ((VerbEn = 'meet') And (Ptc = 'ni')) Then
+    Begin
+      If InList(VerbEn, 'like dislike love want') Then
+      Begin
+        JaRenderNP(JC[K].First, JC[K].Last, '', True, Seg);
+      End;
+      ObjTxt := Join(ObjTxt, Seg.Text);
+    End
+    Else If (Ptc = 'ga') And (SubjC = 0) Then
+      ObjTxt := ObjTxt
+    Else If Ptc = 'ni' Then
+    Begin
+      If Seg.IsRel Then Pp := Join(Pp, Seg.Text)
+      Else If Seg.IsTime Then Pp := Join(Pp, 'at ' + Seg.Text)
+      Else If JaIsMotion(VerbEn) Or InList(VerbEn, 'give show teach send call tell') Then
+        IObj := Join(IObj, 'to ' + Seg.Text)
+      Else If VerbEn = 'receive' Then Pp := Join(Pp, 'from ' + Seg.Text)
+      Else If IsExist Then Pp := Join(Pp, 'in ' + Seg.Text)
+      Else Pp := Join(Pp, 'at ' + Seg.Text);
+    End
+    Else If Ptc = 'e' Then
+      Pp := Join(Pp, 'to ' + Seg.Text)
+    Else If Ptc = 'de' Then
+    Begin
+      If JaIsVehicle(Seg.Head) Then Pp := Join(Pp, 'by ' + Seg.Head)
+      Else If Seg.IsRel Then Pp := Join(Pp, Seg.Text)
+      Else Pp := Join(Pp, 'at ' + Seg.Text);
+    End
+    Else If Ptc = 'to' Then Pp := Join(Pp, 'with ' + Seg.Text)
+    Else If Ptc = 'kara' Then Pp := Join(Pp, 'from ' + Seg.Text)
+    Else If Ptc = 'made' Then Pp := Join(Pp, 'to ' + Seg.Text)
+    Else If Ptc = 'yori' Then Pp := Join(Pp, 'than ' + Seg.Text)
+    Else If Ptc = 'mo' Then Pp := Join(Pp, Seg.Text + ' too')
+    Else If (Ptc = 'wa') Then
+    Begin
+      If Seg.IsTime Then Adv := Join(Adv, Seg.Text) Else Pp := Join(Pp, Seg.Text);
+    End
+    Else If Ptc = 'r' Then
+    Begin
+      If IsFreqAdverb(Seg.Text) Or (Seg.Text = 'often') Or (Seg.Text = 'sometimes') Then Freq := Join(Freq, Seg.Text)
+      Else If Seg.Text = 'very' Then Freq := Freq
+      Else Adv := Join(Adv, Seg.Text);
+    End
+    Else
+      Pp := Join(Pp, Seg.Text);
+  End;
+  If Too Then Adv := Join(Adv, 'too');
+  If (PKind = 'V') And IsExist And (ObjC > 0) Then
+  Begin
+    { il y a / X a Y }
+    If HasSubj And (JC[SubjC].Seg.IsPerson Or JC[SubjC].Seg.Pron) And (JC[SubjC].Ptc = 'wa') Then
+    Begin
+      G.Mode := 'h';
+      G.MainEn := 'have';
+    End
+    Else
+    Begin
+      G.Mode := 't';
+      G.MainEn := 'be';
+    End;
+  End;
+  If (PKind = 'V') And IsExist And (ObjC = 0) And HasSubj And (JC[SubjC].Ptc = 'ga') Then
+  Begin
+    { Hon ga arimasu : there is a book }
+    G.Mode := 't';
+    G.MainEn := 'be';
+    ObjTxt := JC[SubjC].Seg.Text;
+    HasSubj := False;
+  End;
+  If (G.Mode = 'b') And IsExist And (Not HasSubj) And (ObjC = 0) Then G.Mode := 't';
+
+  { sujet : texte et personne }
+  Sp := 3;
+  SubjText := '';
+  If (G.MainEn = 'rain') And (PKind = 'V') Then
+  Begin
+    HasSubj := False;
+    SubjText := 'it';
+    G.Mode := 's';
+    If G.Tns = 'p' Then G.Rain := False;
+  End;
+  If HasSubj Then
+  Begin
+    Seg := JC[SubjC].Seg;
+    SubjText := Seg.Text;
+    If Seg.Pron Then Sp := Seg.Pers Else If Seg.Plural Then Sp := 6 Else Sp := 3;
+    If (Seg.Pron) And (Seg.Text = 'I') Then Sp := 1;
+    If (Seg.Pron) And (Seg.Text = 'you') Then Sp := 2;
+    If Seg.IsWh Then
+    Begin
+      WhSubject := True;
+      Sp := 3;
+    End;
+    If (PKind = 'A') Or (PKind = 'N') Then
+      If (Seg.Text = 'this') Or (Seg.Text = 'that') Then Sp := 3;
+  End
+  Else If SubjText = 'it' Then
+    Sp := 3
+  Else If (PKind = 'A') And InList(VerbEn, 'cold hot warm cool') And (Not PQ) Then
+  Begin
+    SubjText := 'it';
+    Sp := 3;
+  End
+  Else If G.Mode = 't' Then
+  Begin
+    SubjText := 'there';
+    Sp := 3;
+  End
+  Else If (PKind = 'N') And (Wh <> '') Then
+  Begin
+    SubjText := 'it';
+    Sp := 3;
+  End
+  Else If PReq Or PLet Then
+    SubjText := ''
+  Else If PQ Then
+  Begin
+    SubjText := 'you';
+    Sp := 2;
+  End
+  Else
+  Begin
+    SubjText := 'I';
+    Sp := 1;
+  End;
+  If (G.Mode = 't') And (ObjTxt <> '') Then
+    If Pos('s', ObjTxt) = Length(ObjTxt) Then Sp := 6;
+
+  { imperatif : te kudasai, mashou }
+  If PReq Then
+  Begin
+    Res := Join('please', Join(VerbEn, Join(IObj, Join(ObjTxt, Join(Pp, Adv)))));
+    JaTranslateClause := Res;
+    Exit;
+  End;
+  If PLet Then
+  Begin
+    If DePivot Then Res := 'let us' Else Res := 'let''s';
+    If PNeg Then Res := Res + ' not';
+    JaTranslateClause := Join(Res, Join(VerbEn, Join(IObj, Join(ObjTxt, Join(Pp, Adv)))));
+    Exit;
+  End;
+  If (PKind = 'V') And (PForm = 'd') And (Not PQ) And (Not HasSubj) And False Then Exit;
+
+  Tail := Join(Tail, Join(IObj, Join(ObjTxt, Join(Pp, Adv))));
+  If (G.Mode = 'm') And (PKind = 'V') Then G.MainEn := VerbEn;
+  If (G.Mode = 'm') And (G.Modal = 'pouvoir') And (VerbEn = 'do') Then G.MainEn := 'do';
+  BuildEn(G, Sp, Aux, Rest, LexBase, Post, LexTns);
+  DoQ := PQ And (Not WhSubject);
+  If WhSubject Then
+  Begin
+    If Wh = '' Then Wh := '';
+  End;
+  If DoQ Then
+  Begin
+    If Aux = '' Then
+    Begin
+      Aux := DoFormEn(Sp, LexTns);
+      Rest := Join(LexBase, Post);
+      Post := '';
+      LexBase := '';
+    End;
+    If G.Neg Then AuxN := NegContract(Aux) Else AuxN := Aux;
+    Res := Join(Wh, Join(AuxN, Join(SubjText, Join(Freq, Join(Rest, Join(Post, Tail))))));
+  End
+  Else
+  Begin
+    If G.Neg Then
+    Begin
+      If Aux = '' Then
+      Begin
+        Aux := DoFormEn(Sp, LexTns);
+        Rest := Join(LexBase, Post);
+        Post := '';
+        LexBase := '';
+      End;
+      If Aux = 'am' Then AuxN := 'am not' Else AuxN := NegContract(Aux);
+      Res := Join(Wh, Join(SubjText, Join(AuxN, Join(Freq, Join(Rest, Tail)))));
+    End
+    Else If Aux <> '' Then
+      Res := Join(Wh, Join(SubjText, Join(Aux, Join(Freq, Join(Rest, Tail)))))
+    Else
+      Res := Join(Wh, Join(SubjText, Join(Freq, Join(FiniteEn(LexBase, LexTns, Sp), Join(Post, Tail)))));
+  End;
+  JaTranslateClause := Res;
+  Nxt := 0;
+  LocC := 0;
+  Txt := '';
+  Prep := '';
+  Gen := False;
+End;
+
+{ ------------------------------------------------------------------ }
+{ JAPONAIS -> ANGLAIS : phrases toutes faites et phrase complete      }
+{ ------------------------------------------------------------------ }
+
+Const
+  PhrasesJa: Array[0..17] Of String = (
+    'konnichiwa|Hello',
+    'konbanwa|Good evening',
+    'ohayou gozaimasu|Good morning',
+    'ohayou|Good morning',
+    'oyasumi nasai|Good night',
+    'sayounara|Goodbye',
+    'arigatou gozaimasu|Thank you',
+    'doumo arigatou gozaimasu|Thank you very much',
+    'arigatou|Thank you',
+    'sumimasen|Excuse me',
+    'gomen nasai|I am sorry',
+    'hajimemashite|Nice to meet you',
+    'o genki desu ka|How are you',
+    'genki desu ka|How are you',
+    'genki desu|I am fine',
+    'onamae wa nan desu ka|What is your name',
+    'douitashimashite|You are welcome',
+    'ganbatte|Good luck'
+  );
+
+Function JaPhraseKey(A, B: Integer): String;
+Var
+  K: Integer;
+  R: String;
+Begin
+  R := '';
+  For K := A To B Do
+  Begin
+    If JT[K].Punct Then
+    Begin
+      JaPhraseKey := '#';
+      Exit;
+    End;
+    R := Join(R, JT[K].W);
+  End;
+  JaPhraseKey := R;
+End;
+
+Function FindPhraseJa(Const Key: String): String;
+Var
+  N: Integer;
+  Pair, K: String;
+Begin
+  FindPhraseJa := '';
+  If Key = '#' Then Exit;
+  For N := 0 To High(PhrasesJa) Do
+  Begin
+    Pair := PhrasesJa[N];
+    K := CopyUntil(Pair, '|');
+    If K = Key Then
+    Begin
+      FindPhraseJa := Pair;
+      Exit;
+    End;
+  End;
+End;
+
+Function JaHasPredicate(A, B: Integer): Boolean;
+Var
+  I: Integer;
+Begin
+  JaHasPredicate := False;
+  For I := A To B Do
+    If JT[I].Cat In ['V', 'C', 'D'] Then JaHasPredicate := True;
+End;
+
+Function JaTranslateTokens(A, B: Integer; Q: Boolean): String;
+Var
+  K: Integer;
+  Key: String;
+Begin
+  If A > B Then
+  Begin
+    JaTranslateTokens := '';
+    Exit;
+  End;
+  Key := FindPhraseJa(JaPhraseKey(A, B));
+  If Key <> '' Then
+  Begin
+    If A > 1 Then Key := LowerFirst(Key);
+    JaTranslateTokens := Key;
+    Exit;
+  End;
+  For K := A + 1 To B - 1 Do
+    If JT[K].Cat = ',' Then
+      If ((K - A = 1) And (JT[A].Cat = 'J')) Or (JaHasPredicate(A, K - 1) And JaHasPredicate(K + 1, B)) Then
+      Begin
+        JaTranslateTokens := JaTranslateTokens(A, K - 1, False) + ', ' + JaTranslateTokens(K + 1, B, Q);
+        Exit;
+      End;
+  JaTranslateTokens := JaTranslateClause(A, B, Q);
+End;
+
+Function JaTranslateSentence(Const Sentence: String): String;
+Var
+  Res: String;
+Begin
+  JTokenize(Sentence);
+  If JN = 0 Then
+  Begin
+    JaTranslateSentence := '';
+    Exit;
+  End;
+  JClassify;
+  Res := JaTranslateTokens(1, JN, JEnd = '?');
+  Res := UpperFirst(FixEnglish(Res));
+  If JEnd <> #0 Then Res := Res + JEnd;
+  JaTranslateSentence := Res;
+End;
+
+{ ------------------------------------------------------------------ }
+{ ESPAGNOL -> ANGLAIS : lexique, morphologie et jetons                }
+{ ------------------------------------------------------------------ }
+
+Type
+  TSp = Record
+    Es: String[26];
+    En: String[28];
+    Pos: String[3];
+  End;
+
+  TSTok = Record
+    W, Orig: String[34];
+    Cap, Punct, Acc: Boolean;
+    Cat: Char;      { N nom, A adjectif, V verbe, R adverbe, E preposition, C conjonction, J interjection,
+                      W interrogatif, D article, S possessif, T demonstratif, Q quantificateur, U nombre,
+                      P pronom sujet, O pronom complement, G negation, Z inconnu }
+    Idx: Integer;
+    Tns: Char;      { p present, i preterit, m imparfait, f futur, c conditionnel, P participe, G gerondif, I infinitif, M imperatif }
+    Slot: Integer;
+    Plu: Boolean;
+    En: String[30];
+    Kind: Char;
+    Cl: String[8];
+  End;
+
+Var
+  SpLex: Array[1..640] Of TSp;
+  SpCount: Integer;
+  ST: Array[0..MaxTokens + 1] Of TSTok;
+  SN: Integer;
+  SEnd: Char;
+  SourceEs: Boolean;
+
+Procedure LoadSpanish;
+Var
+  I: Integer;
+  Line, Item, Es, Rest: String;
+Begin
+  SpCount := 0;
+  For I := 0 To High(SpData) Do
+  Begin
+    Line := SpData[I];
+    While Line <> '' Do
+    Begin
+      Item := CopyUntil(Line, ';');
+      If (Item <> '') And (SpCount < 640) Then
+      Begin
+        Es := CopyUntil(Item, '=');
+        Rest := CopyUntil(Item, ':');
+        Inc(SpCount);
+        SpLex[SpCount].Es := ReplaceChar(Es, '_', ' ');
+        SpLex[SpCount].En := ReplaceChar(Rest, '_', ' ');
+        SpLex[SpCount].Pos := Item;
+      End;
+    End;
+  End;
+End;
+
+{ Supprime les accents aigus et le trema (la ñ est conservee). }
+Function SpPlain(Const S: String): String;
+Var
+  I: Integer;
+  R: String;
+Begin
+  R := '';
+  I := 1;
+  While I <= Length(S) Do
+  Begin
+    If (S[I] = #$C3) And (I < Length(S)) Then
+    Begin
+      Case S[I + 1] Of
+        #$A1: R := R + 'a';
+        #$A9: R := R + 'e';
+        #$AD: R := R + 'i';
+        #$B3: R := R + 'o';
+        #$BA: R := R + 'u';
+        #$BC: R := R + 'u';
+      Else
+        R := R + S[I] + S[I + 1];
+      End;
+      Inc(I, 2);
+    End
+    Else
+    Begin
+      R := R + S[I];
+      Inc(I);
+    End;
+  End;
+  SpPlain := R;
+End;
+
+{ ---- formes des noms et des adjectifs ---- }
+
+Function SpPlural(Const S: String): String;
+Var
+  L: Integer;
+Begin
+  L := Length(S);
+  If L = 0 Then
+    SpPlural := S
+  Else If InList(S, 'lunes martes miercoles jueves viernes') Then
+    SpPlural := S
+  Else If S[L] In ['a', 'e', 'i', 'o', 'u'] Then
+    SpPlural := S + 's'
+  Else If S[L] = 'z' Then
+    SpPlural := Copy(S, 1, L - 1) + 'ces'
+  Else
+    SpPlural := S + 'es';
+End;
+
+Function SpFindNoun(Const W: String; Var Plu: Boolean): Integer;
+Var
+  I: Integer;
+  P: String;
+Begin
+  SpFindNoun := 0;
+  For I := 1 To SpCount Do
+    If SpLex[I].Pos = 'n' Then
+    Begin
+      P := SpPlain(SpLex[I].Es);
+      If P = W Then
+      Begin
+        Plu := False;
+        SpFindNoun := I;
+        Exit;
+      End;
+    End;
+  For I := 1 To SpCount Do
+    If SpLex[I].Pos = 'n' Then
+    Begin
+      P := SpPlain(SpLex[I].Es);
+      If SpPlural(P) = W Then
+      Begin
+        Plu := True;
+        SpFindNoun := I;
+        Exit;
+      End;
+    End;
+End;
+
+Function SpFindAdj(Const W: String; Var Plu: Boolean): Integer;
+Var
+  I, L: Integer;
+  B, Stem: String;
+Begin
+  SpFindAdj := 0;
+  For I := 1 To SpCount Do
+    If SpLex[I].Pos = 'a' Then
+    Begin
+      B := SpPlain(SpLex[I].Es);
+      L := Length(B);
+      Plu := False;
+      If W = B Then
+      Begin
+        SpFindAdj := I;
+        Exit;
+      End;
+      If B[L] = 'o' Then
+      Begin
+        Stem := Copy(B, 1, L - 1);
+        If W = Stem + 'a' Then Begin SpFindAdj := I; Exit; End;
+        Plu := True;
+        If (W = Stem + 'os') Or (W = Stem + 'as') Then Begin SpFindAdj := I; Exit; End;
+        Plu := False;
+        If (B = 'bueno') And (W = 'buen') Then Begin SpFindAdj := I; Exit; End;
+        If (B = 'malo') And (W = 'mal') Then Begin SpFindAdj := I; Exit; End;
+        If (B = 'primero') And (W = 'primer') Then Begin SpFindAdj := I; Exit; End;
+      End
+      Else
+      Begin
+        Plu := True;
+        If W = SpPlural(B) Then Begin SpFindAdj := I; Exit; End;
+        Plu := False;
+        If W = B + 'a' Then Begin SpFindAdj := I; Exit; End;
+        Plu := True;
+        If W = B + 'as' Then Begin SpFindAdj := I; Exit; End;
+        Plu := False;
+        If (B = 'grande') And (W = 'gran') Then Begin SpFindAdj := I; Exit; End;
+      End;
+    End;
+End;
+
+Function SpFind(Const W: String; Const Kinds: String): Integer;
+Var
+  I: Integer;
+  P: String;
+Begin
+  SpFind := 0;
+  For I := 1 To SpCount Do
+    If (Pos(SpLex[I].Pos, Kinds) > 0) Then
+    Begin
+      P := SpPlain(SpLex[I].Es);
+      If P = W Then
+      Begin
+        SpFind := I;
+        Exit;
+      End;
+    End;
+End;
+
+{ ---- conjugaison espagnole ---- }
+
+Function SpStemCode(Const Inf: String): Char;
+Begin
+  If InList(Inf, 'querer pensar entender sentir empezar cerrar perder preferir tener venir') Then SpStemCode := 'e'
+  Else If InList(Inf, 'encontrar poder dormir volver mostrar costar recordar morir llover') Then SpStemCode := 'o'
+  Else If InList(Inf, 'pedir elegir decir') Then SpStemCode := 'i'
+  Else If Inf = 'jugar' Then SpStemCode := 'u'
+  Else SpStemCode := ' ';
+End;
+
+Function SpChangeStem(Const Stem: String; Code: Char): String;
+Var
+  I: Integer;
+Begin
+  SpChangeStem := Stem;
+  For I := Length(Stem) Downto 1 Do
+  Begin
+    If (Code = 'e') And (Stem[I] = 'e') Then
+    Begin
+      SpChangeStem := Copy(Stem, 1, I - 1) + 'ie' + Copy(Stem, I + 1, 20);
+      Exit;
+    End;
+    If (Code = 'i') And (Stem[I] = 'e') Then
+    Begin
+      SpChangeStem := Copy(Stem, 1, I - 1) + 'i' + Copy(Stem, I + 1, 20);
+      Exit;
+    End;
+    If (Code = 'o') And (Stem[I] = 'o') Then
+    Begin
+      SpChangeStem := Copy(Stem, 1, I - 1) + 'ue' + Copy(Stem, I + 1, 20);
+      Exit;
+    End;
+    If (Code = 'u') And (Stem[I] = 'u') Then
+    Begin
+      SpChangeStem := Copy(Stem, 1, I - 1) + 'ue' + Copy(Stem, I + 1, 20);
+      Exit;
+    End;
+  End;
+End;
+
+Function SpChangeO(Const Stem: String): String;
+Var
+  I: Integer;
+Begin
+  SpChangeO := Stem;
+  For I := Length(Stem) Downto 1 Do
+    If Stem[I] = 'o' Then
+    Begin
+      SpChangeO := Copy(Stem, 1, I - 1) + 'u' + Copy(Stem, I + 1, 20);
+      Exit;
+    End;
+End;
+
+Function SpYoPres(Const Inf, Default: String): String;
+Begin
+  If Inf = 'tener' Then SpYoPres := 'tengo'
+  Else If Inf = 'venir' Then SpYoPres := 'vengo'
+  Else If Inf = 'poner' Then SpYoPres := 'pongo'
+  Else If Inf = 'salir' Then SpYoPres := 'salgo'
+  Else If Inf = 'hacer' Then SpYoPres := 'hago'
+  Else If Inf = 'decir' Then SpYoPres := 'digo'
+  Else If Inf = 'traer' Then SpYoPres := 'traigo'
+  Else If Inf = 'conocer' Then SpYoPres := 'conozco'
+  Else If Inf = 'conducir' Then SpYoPres := 'conduzco'
+  Else If Inf = 'parecer' Then SpYoPres := 'parezco'
+  Else If Inf = 'nacer' Then SpYoPres := 'nazco'
+  Else If Inf = 'saber' Then SpYoPres := 'se'
+  Else If Inf = 'elegir' Then SpYoPres := 'elijo'
+  Else If Inf = 'construir' Then SpYoPres := 'construyo'
+  Else SpYoPres := Default;
+End;
+
+Function SpPretStem(Const Inf: String): String;
+Begin
+  If Inf = 'tener' Then SpPretStem := 'tuv'
+  Else If Inf = 'estar' Then SpPretStem := 'estuv'
+  Else If Inf = 'poder' Then SpPretStem := 'pud'
+  Else If Inf = 'poner' Then SpPretStem := 'pus'
+  Else If Inf = 'saber' Then SpPretStem := 'sup'
+  Else If Inf = 'querer' Then SpPretStem := 'quis'
+  Else If Inf = 'haber' Then SpPretStem := 'hub'
+  Else If Inf = 'venir' Then SpPretStem := 'vin'
+  Else If Inf = 'hacer' Then SpPretStem := 'hic'
+  Else If Inf = 'decir' Then SpPretStem := 'dij'
+  Else If Inf = 'traer' Then SpPretStem := 'traj'
+  Else If Inf = 'conducir' Then SpPretStem := 'conduj'
+  Else SpPretStem := '';
+End;
+
+Function SpFutStem(Const Inf: String): String;
+Begin
+  If Inf = 'tener' Then SpFutStem := 'tendr'
+  Else If Inf = 'venir' Then SpFutStem := 'vendr'
+  Else If Inf = 'poner' Then SpFutStem := 'pondr'
+  Else If Inf = 'salir' Then SpFutStem := 'saldr'
+  Else If Inf = 'hacer' Then SpFutStem := 'har'
+  Else If Inf = 'decir' Then SpFutStem := 'dir'
+  Else If Inf = 'poder' Then SpFutStem := 'podr'
+  Else If Inf = 'querer' Then SpFutStem := 'querr'
+  Else If Inf = 'saber' Then SpFutStem := 'sabr'
+  Else If Inf = 'haber' Then SpFutStem := 'habr'
+  Else SpFutStem := Inf;
+End;
+
+Function SpParticiple(Const Inf: String): String;
+Var
+  Stem: String;
+Begin
+  Stem := Copy(Inf, 1, Length(Inf) - 2);
+  If Inf = 'hacer' Then SpParticiple := 'hecho'
+  Else If Inf = 'decir' Then SpParticiple := 'dicho'
+  Else If Inf = 'ver' Then SpParticiple := 'visto'
+  Else If Inf = 'poner' Then SpParticiple := 'puesto'
+  Else If Inf = 'escribir' Then SpParticiple := 'escrito'
+  Else If Inf = 'abrir' Then SpParticiple := 'abierto'
+  Else If Inf = 'volver' Then SpParticiple := 'vuelto'
+  Else If Inf = 'romper' Then SpParticiple := 'roto'
+  Else If Inf = 'morir' Then SpParticiple := 'muerto'
+  Else If EndsWith(Inf, 'ar') Then SpParticiple := Stem + 'ado'
+  Else SpParticiple := Stem + 'ido';
+End;
+
+Function SpGerund(Const Inf: String): String;
+Var
+  Stem: String;
+  L: Integer;
+Begin
+  Stem := Copy(Inf, 1, Length(Inf) - 2);
+  L := Length(Stem);
+  If Inf = 'ir' Then SpGerund := 'yendo'
+  Else If Inf = 'decir' Then SpGerund := 'diciendo'
+  Else If Inf = 'venir' Then SpGerund := 'viniendo'
+  Else If Inf = 'poder' Then SpGerund := 'pudiendo'
+  Else If Inf = 'reir' Then SpGerund := 'riendo'
+  Else If Inf = 'dormir' Then SpGerund := 'durmiendo'
+  Else If Inf = 'morir' Then SpGerund := 'muriendo'
+  Else If Inf = 'pedir' Then SpGerund := 'pidiendo'
+  Else If Inf = 'sentir' Then SpGerund := 'sintiendo'
+  Else If Inf = 'preferir' Then SpGerund := 'prefiriendo'
+  Else If Inf = 'elegir' Then SpGerund := 'eligiendo'
+  Else If EndsWith(Inf, 'ar') Then SpGerund := Stem + 'ando'
+  Else If (L > 0) And (Stem[L] In ['a', 'e', 'o']) Then SpGerund := Stem + 'yendo'
+  Else If EndsWith(Inf, 'uir') Then SpGerund := Stem + 'yendo'
+  Else SpGerund := Stem + 'iendo';
+End;
+
+{ Reconnait un mot comme forme d'un verbe : temps et personne. }
+Function SpMatchVerb(Const W: String; Var Idx: Integer; Var Tns: Char; Var Slot: Integer; PreferPast: Boolean): Boolean;
+Const
+  EndAr: Array[1..6] Of String[6] = ('o', 'as', 'a', 'amos', 'ais', 'an');
+  EndEr: Array[1..6] Of String[6] = ('o', 'es', 'e', 'emos', 'eis', 'en');
+  EndIr: Array[1..6] Of String[6] = ('o', 'es', 'e', 'imos', 'is', 'en');
+  PretAr: Array[1..6] Of String[8] = ('e', 'aste', 'o', 'amos', 'asteis', 'aron');
+  PretEr: Array[1..6] Of String[8] = ('i', 'iste', 'io', 'imos', 'isteis', 'ieron');
+  PretIrr: Array[1..6] Of String[8] = ('e', 'iste', 'o', 'imos', 'isteis', 'ieron');
+  ImpAr: Array[1..6] Of String[8] = ('aba', 'abas', 'aba', 'abamos', 'abais', 'aban');
+  ImpEr: Array[1..6] Of String[8] = ('ia', 'ias', 'ia', 'iamos', 'iais', 'ian');
+  FutE: Array[1..6] Of String[6] = ('e', 'as', 'a', 'emos', 'eis', 'an');
+  CondE: Array[1..6] Of String[8] = ('ia', 'ias', 'ia', 'iamos', 'iais', 'ian');
+  SerP: Array[1..6] Of String[6] = ('soy', 'eres', 'es', 'somos', 'sois', 'son');
+  SerI: Array[1..6] Of String[6] = ('fui', 'fuiste', 'fue', 'fuimos', 'fuisteis', 'fueron');
+  SerM: Array[1..6] Of String[6] = ('era', 'eras', 'era', 'eramos', 'erais', 'eran');
+  EstarP: Array[1..6] Of String[8] = ('estoy', 'estas', 'esta', 'estamos', 'estais', 'estan');
+  IrP: Array[1..6] Of String[6] = ('voy', 'vas', 'va', 'vamos', 'vais', 'van');
+  IrM: Array[1..6] Of String[6] = ('iba', 'ibas', 'iba', 'ibamos', 'ibais', 'iban');
+  HaberP: Array[1..6] Of String[8] = ('he', 'has', 'ha', 'hemos', 'habeis', 'han');
+  DarP: Array[1..6] Of String[6] = ('doy', 'das', 'da', 'damos', 'dais', 'dan');
+  DarI: Array[1..6] Of String[8] = ('di', 'diste', 'dio', 'dimos', 'disteis', 'dieron');
+  VerP: Array[1..6] Of String[6] = ('veo', 'ves', 've', 'vemos', 'veis', 'ven');
+  VerI: Array[1..6] Of String[8] = ('vi', 'viste', 'vio', 'vimos', 'visteis', 'vieron');
+  VerM: Array[1..6] Of String[8] = ('veia', 'veias', 'veia', 'veiamos', 'veiais', 'veian');
+  OirP: Array[1..6] Of String[6] = ('oigo', 'oyes', 'oye', 'oimos', 'ois', 'oyen');
+Var
+  I, Q: Integer;
+  Inf, Stem, Cls, Ch, YoP, PS, FS, Form: String;
+  Code: Char;
+  Found, Past1: Boolean;
+
+  Function TryF(Const Cand: String; T: Char; Sl: Integer): Boolean;
+  Begin
+    TryF := False;
+    If Cand = W Then
+    Begin
+      Idx := I;
+      Tns := T;
+      Slot := Sl;
+      TryF := True;
+    End;
+  End;
+
+Begin
+  SpMatchVerb := True;
+  For I := 1 To SpCount Do
+    If SpLex[I].Pos = 'v' Then
+    Begin
+      Inf := SpPlain(SpLex[I].Es);
+      Stem := Copy(Inf, 1, Length(Inf) - 2);
+      Cls := Copy(Inf, Length(Inf) - 1, 2);
+      Code := SpStemCode(Inf);
+      Past1 := False;
+      If PreferPast Then
+      Begin
+        { forme accentuee : preterit ou futur d'abord (llego/llego : llego est present, llego accentue = preterit) }
+        PS := SpPretStem(Inf);
+        For Q := 1 To 6 Do
+        Begin
+          If Inf = 'ser' Then Form := SerI[Q]
+          Else If Inf = 'ir' Then Form := SerI[Q]
+          Else If Inf = 'dar' Then Form := DarI[Q]
+          Else If Inf = 'ver' Then Form := VerI[Q]
+          Else If PS <> '' Then Form := PS + PretIrr[Q]
+          Else If Cls = 'ar' Then Form := Stem + PretAr[Q]
+          Else Form := Stem + PretEr[Q];
+          If (Q In [3, 1]) And (Cls = 'ar') Then
+            If TryF(Form, 'i', Q) Then Exit;
+          If (Q In [1, 3]) And (Cls <> 'ar') Then
+            If TryF(Form, 'i', Q) Then Exit;
+        End;
+        FS := SpFutStem(Inf);
+        For Q := 1 To 6 Do
+          If (Q = 1) Or (Q = 3) Then
+            If TryF(FS + FutE[Q], 'f', Q) Then Exit;
+        { pas de correspondance accentuee : on continue normalement }
+        Past1 := True;
+      End;
+      { present }
+      For Q := 1 To 6 Do
+      Begin
+        Form := '';
+        If Inf = 'ser' Then Form := SerP[Q]
+        Else If Inf = 'estar' Then Form := EstarP[Q]
+        Else If Inf = 'ir' Then Form := IrP[Q]
+        Else If Inf = 'haber' Then Form := HaberP[Q]
+        Else If Inf = 'dar' Then Form := DarP[Q]
+        Else If Inf = 'ver' Then Form := VerP[Q]
+        Else If Inf = 'oir' Then Form := OirP[Q]
+        Else
+        Begin
+          If Cls = 'ar' Then Ch := EndAr[Q] Else If Cls = 'er' Then Ch := EndEr[Q] Else Ch := EndIr[Q];
+          If (Code <> ' ') And (Q In [2, 3, 6]) Then Form := SpChangeStem(Stem, Code) + Ch
+          Else If (Code <> ' ') And (Q = 1) Then Form := SpChangeStem(Stem, Code) + Ch
+          Else Form := Stem + Ch;
+          If Q = 1 Then Form := SpYoPres(Inf, Form);
+        End;
+        If TryF(Form, 'p', Q) Then Exit;
+      End;
+      If (Inf = 'haber') And TryF('hay', 'p', 3) Then Exit;
+      { preterit }
+      PS := SpPretStem(Inf);
+      For Q := 1 To 6 Do
+      Begin
+        If Inf = 'ser' Then Form := SerI[Q]
+        Else If Inf = 'ir' Then Form := SerI[Q]
+        Else If Inf = 'dar' Then Form := DarI[Q]
+        Else If Inf = 'ver' Then Form := VerI[Q]
+        Else If PS <> '' Then
+        Begin
+          Form := PS + PretIrr[Q];
+          If (Q = 6) And (PS[Length(PS)] = 'j') Then Form := PS + 'eron';
+          If (Inf = 'hacer') And (Q = 3) Then Form := 'hizo';
+        End
+        Else
+        Begin
+          If Cls = 'ar' Then Form := Stem + PretAr[Q] Else Form := Stem + PretEr[Q];
+          If (Cls = 'ar') And (Q = 1) Then
+          Begin
+            If Stem[Length(Stem)] = 'g' Then Form := Stem + 'ue'
+            Else If Stem[Length(Stem)] = 'z' Then Form := Copy(Stem, 1, Length(Stem) - 1) + 'ce'
+            Else If Stem[Length(Stem)] = 'c' Then Form := Copy(Stem, 1, Length(Stem) - 1) + 'que';
+          End;
+          If (Cls = 'ir') And (Q In [3, 6]) And (Code In ['e', 'o', 'i']) Then
+          Begin
+            If Code = 'o' Then Form := SpChangeO(Stem) Else Form := SpChangeStem(Stem, 'i');
+            If Q = 3 Then Form := Form + 'io' Else Form := Form + 'ieron';
+          End;
+          If (Cls <> 'ar') And (Q In [3, 6]) And (Stem <> '') And (Stem[Length(Stem)] In ['a', 'e', 'o', 'u']) Then
+          Begin
+            If Q = 3 Then Form := Stem + 'yo' Else Form := Stem + 'yeron';
+          End;
+        End;
+        If TryF(Form, 'i', Q) Then Exit;
+      End;
+      { imparfait }
+      For Q := 1 To 6 Do
+      Begin
+        If Inf = 'ser' Then Form := SerM[Q]
+        Else If Inf = 'ir' Then Form := IrM[Q]
+        Else If Inf = 'ver' Then Form := VerM[Q]
+        Else If Cls = 'ar' Then Form := Stem + ImpAr[Q]
+        Else Form := Stem + ImpEr[Q];
+        If TryF(Form, 'm', Q) Then Exit;
+      End;
+      { futur et conditionnel }
+      FS := SpFutStem(Inf);
+      For Q := 1 To 6 Do
+        If TryF(FS + FutE[Q], 'f', Q) Then Exit;
+      For Q := 1 To 6 Do
+        If TryF(FS + CondE[Q], 'c', Q) Then Exit;
+      If TryF(SpParticiple(Inf), 'P', 0) Then Exit;
+      If TryF(Copy(SpParticiple(Inf), 1, Length(SpParticiple(Inf)) - 1) + 'a', 'P', 0) Then Exit;
+      If TryF(Copy(SpParticiple(Inf), 1, Length(SpParticiple(Inf)) - 1) + 'os', 'P', 0) Then Exit;
+      If TryF(Copy(SpParticiple(Inf), 1, Length(SpParticiple(Inf)) - 1) + 'as', 'P', 0) Then Exit;
+      If TryF(SpGerund(Inf), 'G', 0) Then Exit;
+      If TryF(Inf, 'I', 0) Then Exit;
+      { imperatif de politesse (usted / ustedes) et de nosotros }
+      YoP := '';
+      If Inf = 'ser' Then YoP := 'se' Else If Inf = 'estar' Then YoP := 'est' Else If Inf = 'ir' Then YoP := 'vay'
+      Else If Inf = 'haber' Then YoP := 'hay' Else If Inf = 'saber' Then YoP := 'sep' Else If Inf = 'dar' Then YoP := 'd'
+      Else
+      Begin
+        YoP := SpYoPres(Inf, Stem + 'o');
+        If Code <> ' ' Then YoP := SpChangeStem(Stem, Code) + 'o';
+        YoP := SpYoPres(Inf, YoP);
+        YoP := Copy(YoP, 1, Length(YoP) - 1);
+      End;
+      If Cls = 'ar' Then
+      Begin
+        If TryF(YoP + 'e', 'M', 3) Or TryF(YoP + 'en', 'M', 6) Then Exit;
+      End
+      Else If TryF(YoP + 'a', 'M', 3) Or TryF(YoP + 'an', 'M', 6) Then Exit;
+    End;
+  SpMatchVerb := False;
+  Found := False;
+End;
+
+{ ------------------------------------------------------------------ }
+{ ESPAGNOL -> ANGLAIS : tokenisation et classification               }
+{ ------------------------------------------------------------------ }
+
+Procedure SPush(Const W, Orig: String; Cap, Punct, Acc: Boolean);
+Begin
+  If SN >= MaxTokens Then Exit;
+  Inc(SN);
+  FillChar(ST[SN], SizeOf(TSTok), 0);
+  ST[SN].W := W;
+  ST[SN].Orig := Orig;
+  ST[SN].Cap := Cap;
+  ST[SN].Punct := Punct;
+  ST[SN].Acc := Acc;
+  ST[SN].Tns := ' ';
+End;
+
+Procedure STokenize(Const S0: String);
+Var
+  S, Word1, Low, Plain: String;
+  I, L: Integer;
+  C: Char;
+  Cap: Boolean;
+Begin
+  SN := 0;
+  SEnd := #0;
+  S := '';
+  I := 1;
+  While I <= Length(S0) Do
+  Begin
+    If (S0[I] = #$C2) And (I < Length(S0)) And ((S0[I + 1] = #$BF) Or (S0[I + 1] = #$A1)) Then
+      Inc(I, 2)
+    Else If (S0[I] = #$C2) And (I < Length(S0)) And ((S0[I + 1] = #$AB) Or (S0[I + 1] = #$BB) Or (S0[I + 1] = #$A0)) Then
+    Begin
+      S := S + ' ';
+      Inc(I, 2);
+    End
+    Else If (S0[I] = #$E2) And (I + 2 <= Length(S0)) And (S0[I + 1] = #$80) And
+            ((S0[I + 2] = #$99) Or (S0[I + 2] = #$98)) Then
+    Begin
+      Inc(I, 3);
+    End
+    Else
+    Begin
+      S := S + S0[I];
+      Inc(I);
+    End;
+  End;
+  L := Length(S);
+  I := 1;
+  While I <= L Do
+  Begin
+    C := S[I];
+    If FrWordByte(C) Then
+    Begin
+      Word1 := '';
+      While (I <= L) And FrWordByte(S[I]) Do
+      Begin
+        Word1 := Word1 + S[I];
+        Inc(I);
+      End;
+      Cap := (Word1 <> '') And (((Word1[1] >= 'A') And (Word1[1] <= 'Z')) Or
+             ((Word1[1] = #$C3) And (Length(Word1) > 1) And (Word1[2] >= #$80) And (Word1[2] <= #$9E)));
+      Low := FrLower(Word1);
+      Plain := SpPlain(Low);
+      If Plain = 'del' Then
+      Begin
+        SPush('de', 'de', False, False, False);
+        SPush('el', 'el', False, False, False);
+      End
+      Else If Plain = 'al' Then
+      Begin
+        SPush('a', 'a', False, False, False);
+        SPush('el', 'el', False, False, False);
+      End
+      Else
+        SPush(Plain, Word1, Cap, False, Plain <> Low);
+    End
+    Else
+    Begin
+      If (C = '.') Or (C = '?') Or (C = '!') Then
+      Begin
+        If SEnd = #0 Then SEnd := C;
+        If C = '?' Then SEnd := '?';
+      End
+      Else If (C = ',') Or (C = ';') Or (C = ':') Then
+      Begin
+        SPush(',', ',', False, True, False);
+        ST[SN].Cat := ',';
+      End;
+      Inc(I);
+    End;
+  End;
+End;
+
+Procedure SMergeMultiword;
+Var
+  I, K, Len, L: Integer;
+  Key: String;
+  Bad, Found: Boolean;
+Begin
+  I := 1;
+  While I < SN Do
+  Begin
+    Found := False;
+    For Len := 4 Downto 2 Do
+      If (Not Found) And (I + Len - 1 <= SN) Then
+      Begin
+        Key := '';
+        Bad := False;
+        For K := I To I + Len - 1 Do
+        Begin
+          If ST[K].Punct Then Bad := True;
+          Key := Join(Key, ST[K].W);
+        End;
+        If Not Bad Then
+        Begin
+          L := SpFind(Key, 'rpcjw');
+          If L > 0 Then
+          Begin
+            Found := True;
+            ST[I].W := Key;
+            ST[I].Orig := Key;
+            For K := I + 1 To SN - Len + 1 Do
+              ST[K] := ST[K + Len - 1];
+            Dec(SN, Len - 1);
+          End;
+        End;
+      End;
+    Inc(I);
+  End;
+End;
+
+Function SpNumberEn(Const W: String): String;
+Begin
+  SpNumberEn := '';
+  If W = 'dos' Then SpNumberEn := 'two'
+  Else If W = 'tres' Then SpNumberEn := 'three'
+  Else If W = 'cuatro' Then SpNumberEn := 'four'
+  Else If W = 'cinco' Then SpNumberEn := 'five'
+  Else If W = 'seis' Then SpNumberEn := 'six'
+  Else If W = 'siete' Then SpNumberEn := 'seven'
+  Else If W = 'ocho' Then SpNumberEn := 'eight'
+  Else If W = 'nueve' Then SpNumberEn := 'nine'
+  Else If W = 'diez' Then SpNumberEn := 'ten'
+  Else If W = 'once' Then SpNumberEn := 'eleven'
+  Else If W = 'doce' Then SpNumberEn := 'twelve'
+  Else If W = 'trece' Then SpNumberEn := 'thirteen'
+  Else If W = 'catorce' Then SpNumberEn := 'fourteen'
+  Else If W = 'quince' Then SpNumberEn := 'fifteen'
+  Else If W = 'dieciseis' Then SpNumberEn := 'sixteen'
+  Else If W = 'diecisiete' Then SpNumberEn := 'seventeen'
+  Else If W = 'dieciocho' Then SpNumberEn := 'eighteen'
+  Else If W = 'diecinueve' Then SpNumberEn := 'nineteen'
+  Else If W = 'veinte' Then SpNumberEn := 'twenty'
+  Else If W = 'treinta' Then SpNumberEn := 'thirty'
+  Else If W = 'cuarenta' Then SpNumberEn := 'forty'
+  Else If W = 'cincuenta' Then SpNumberEn := 'fifty'
+  Else If W = 'sesenta' Then SpNumberEn := 'sixty'
+  Else If W = 'setenta' Then SpNumberEn := 'seventy'
+  Else If W = 'ochenta' Then SpNumberEn := 'eighty'
+  Else If W = 'noventa' Then SpNumberEn := 'ninety'
+  Else If W = 'cien' Then SpNumberEn := 'one hundred'
+  Else If W = 'mil' Then SpNumberEn := 'one thousand';
+End;
+
+Function SpPersonOfPron(Const W: String): Integer;
+Begin
+  If W = 'yo' Then SpPersonOfPron := 1
+  Else If W = 'tu' Then SpPersonOfPron := 2
+  Else If (W = 'nosotros') Or (W = 'nosotras') Then SpPersonOfPron := 4
+  Else If (W = 'vosotros') Or (W = 'vosotras') Then SpPersonOfPron := 5
+  Else If (W = 'ellos') Or (W = 'ellas') Or (W = 'ustedes') Then SpPersonOfPron := 6
+  Else SpPersonOfPron := 3;
+End;
+
+Function SpIsStrongCat(Const C: Char): Boolean;
+Begin
+  SpIsStrongCat := C In ['D', 'S', 'T', 'Q', 'U'];
+End;
+
+Function SpNextIsVerbal(I: Integer): Boolean;
+Var
+  Idx, Sl: Integer;
+  T: Char;
+Begin
+  SpNextIsVerbal := False;
+  If I > SN Then Exit;
+  If ST[I].Punct Then Exit;
+  If InList(ST[I].W, 'no me te se lo la le nos os los las les') Then
+  Begin
+    SpNextIsVerbal := True;
+    Exit;
+  End;
+  SpNextIsVerbal := SpMatchVerb(ST[I].W, Idx, T, Sl, ST[I].Acc) And (T In ['p', 'i', 'm', 'f', 'c', 'M']);
+End;
+
+Function SpNextIsNounish(I: Integer): Boolean;
+Var
+  Plu: Boolean;
+Begin
+  SpNextIsNounish := False;
+  If I > SN Then Exit;
+  If ST[I].Punct Then Exit;
+  SpNextIsNounish := (SpFindNoun(ST[I].W, Plu) > 0) Or (SpFindAdj(ST[I].W, Plu) > 0) Or
+                     InList(ST[I].W, 'mejor peor mayor menor gran buen mal');
+End;
+
+Procedure PickSpCat(I: Integer);
+Var
+  W: String;
+  Prev: Char;
+  Idx, Sl: Integer;
+  Plu, IsVerb, IsNoun, IsAdj: Boolean;
+  T: Char;
+  LA, LN: Integer;
+  QStart: Boolean;
+  Ch2: String;
+  Cnt: Integer;
+Begin
+  W := ST[I].W;
+  If I > 1 Then Prev := ST[I - 1].Cat Else Prev := '.';
+  QStart := (SEnd = '?') And ((I = 1) Or (ST[I - 1].Cat = ','));
+  If ST[I].Punct Then
+  Begin
+    ST[I].Cat := ',';
+    Exit;
+  End;
+  If IsDigitsOnly(W) Then
+  Begin
+    ST[I].Cat := 'U';
+    ST[I].En := W;
+    Exit;
+  End;
+  If SpNumberEn(W) <> '' Then
+  Begin
+    ST[I].Cat := 'U';
+    ST[I].En := SpNumberEn(W);
+    Exit;
+  End;
+  { negation }
+  If W = 'no' Then
+  Begin
+    ST[I].Cat := 'G';
+    Exit;
+  End;
+  If (W = 'nunca') Or (W = 'jamas') Then
+  Begin
+    ST[I].Cat := 'R';
+    ST[I].En := 'never';
+    Exit;
+  End;
+  If (W = 'nada') Or (W = 'nadie') Or (W = 'tampoco') Then
+  Begin
+    ST[I].Cat := 'g';
+    If W = 'nada' Then ST[I].En := 'anything' Else If W = 'nadie' Then ST[I].En := 'anyone' Else ST[I].En := 'either';
+    Exit;
+  End;
+  { pronoms sujets }
+  If InList(W, 'yo ella usted ustedes nosotros nosotras vosotros vosotras ellos ellas') Or
+     ((W = 'tu') And ST[I].Acc) Or ((W = 'el') And ST[I].Acc) Then
+  Begin
+    ST[I].Cat := 'P';
+    ST[I].Slot := SpPersonOfPron(W);
+    If W = 'yo' Then ST[I].En := 'I'
+    Else If W = 'tu' Then ST[I].En := 'you'
+    Else If W = 'el' Then ST[I].En := 'he'
+    Else If W = 'ella' Then ST[I].En := 'she'
+    Else If (W = 'usted') Or (W = 'ustedes') Or (W = 'vosotros') Or (W = 'vosotras') Then ST[I].En := 'you'
+    Else If (W = 'nosotros') Or (W = 'nosotras') Then ST[I].En := 'we'
+    Else ST[I].En := 'they';
+    If W = 'usted' Then ST[I].Slot := 3;
+    If W = 'ustedes' Then ST[I].Slot := 6;
+    Exit;
+  End;
+  { pronoms apres une preposition }
+  If ((W = 'mi') And ST[I].Acc) Or ((W = 'mi') And (Prev = 'E') And (Not SpNextIsNounish(I + 1))) Then
+  Begin
+    ST[I].Cat := 'B';
+    ST[I].En := 'me';
+    Exit;
+  End;
+  If (W = 'ti') Or (W = 'contigo') Or (W = 'conmigo') Then
+  Begin
+    ST[I].Cat := 'B';
+    If W = 'ti' Then ST[I].En := 'you' Else If W = 'contigo' Then ST[I].En := 'with you' Else ST[I].En := 'with me';
+    Exit;
+  End;
+  { articles et determinants }
+  If InList(W, 'el la los las') Then
+  Begin
+    If (InList(W, 'lo la los las')) And (Not SpNextIsNounish(I + 1)) And SpNextIsVerbal(I + 1) Then
+    Begin
+      ST[I].Cat := 'O';
+      If W = 'lo' Then ST[I].En := 'it' Else If W = 'la' Then ST[I].En := 'her' Else ST[I].En := 'them';
+      If (W = 'los') Or (W = 'las') Then ST[I].En := 'them';
+      Exit;
+    End;
+    ST[I].Cat := 'D';
+    ST[I].Kind := 'd';
+    ST[I].Plu := (W = 'los') Or (W = 'las');
+    Exit;
+  End;
+  If W = 'lo' Then
+  Begin
+    ST[I].Cat := 'O';
+    ST[I].En := 'it';
+    Exit;
+  End;
+  If InList(W, 'un una') Then
+  Begin
+    ST[I].Cat := 'D';
+    ST[I].Kind := 'i';
+    Exit;
+  End;
+  If InList(W, 'unos unas') Then
+  Begin
+    ST[I].Cat := 'D';
+    ST[I].Kind := 'i';
+    ST[I].Plu := True;
+    ST[I].En := 'some';
+    Exit;
+  End;
+  If InList(W, 'mi mis tu tus su sus nuestro nuestra nuestros nuestras vuestro vuestra vuestros vuestras') Then
+  Begin
+    ST[I].Cat := 'S';
+    If (W = 'mi') Or (W = 'mis') Then ST[I].En := 'my'
+    Else If (W = 'tu') Or (W = 'tus') Then ST[I].En := 'your'
+    Else If (W = 'su') Or (W = 'sus') Then ST[I].En := 'his'
+    Else If Copy(W, 1, 3) = 'nue' Then ST[I].En := 'our'
+    Else ST[I].En := 'your';
+    ST[I].Plu := EndsWith(W, 's');
+    Exit;
+  End;
+  If InList(W, 'este esta esto estos estas ese esa eso esos esas aquel aquella aquello aquellos aquellas') And
+     Not (ST[I].Acc Or ((Copy(W, 1, 3) = 'est') And (Not SpNextIsNounish(I + 1)) And (W <> 'esto'))) Then
+  Begin
+    ST[I].Cat := 'T';
+    If Copy(W, 1, 3) = 'est' Then ST[I].En := 'this' Else ST[I].En := 'that';
+    ST[I].Plu := EndsWith(W, 's');
+    If ST[I].Plu Then
+      If ST[I].En = 'this' Then ST[I].En := 'these' Else ST[I].En := 'those';
+    If (W = 'esto') Or (W = 'eso') Or (W = 'aquello') Then ST[I].Kind := 'p';
+    Exit;
+  End;
+  If InList(W, 'todo toda todos todas cada algunos algunas alguno alguna ningun ninguno ninguna varios varias otros otras bastante demasiado') Or
+     ((InList(W, 'mucho mucha muchos muchas poco poca pocos pocas')) And SpNextIsNounish(I + 1)) Then
+  Begin
+    ST[I].Cat := 'Q';
+    ST[I].Plu := EndsWith(W, 's');
+    If Copy(W, 1, 4) = 'todo' Then ST[I].En := 'all'
+    Else If W = 'cada' Then ST[I].En := 'each'
+    Else If Copy(W, 1, 4) = 'much' Then ST[I].En := 'many'
+    Else If Copy(W, 1, 4) = 'poco' Then ST[I].En := 'few'
+    Else If Copy(W, 1, 3) = 'alg' Then ST[I].En := 'some'
+    Else If Copy(W, 1, 3) = 'nin' Then ST[I].En := 'no'
+    Else If Copy(W, 1, 3) = 'var' Then ST[I].En := 'several'
+    Else If Copy(W, 1, 3) = 'otr' Then ST[I].En := 'other'
+    Else ST[I].En := 'enough';
+    If (ST[I].En = 'many') And (Not ST[I].Plu) Then ST[I].En := 'much';
+    Exit;
+  End;
+  { pronoms complements }
+  If (InList(W, 'me nos os les le se') And Not ((W = 'se') And ST[I].Acc)) Or ((W = 'te') And (Prev <> 'D')) Then
+  Begin
+    ST[I].Cat := 'O';
+    If W = 'me' Then ST[I].En := 'me'
+    Else If W = 'te' Then ST[I].En := 'you'
+    Else If W = 'nos' Then ST[I].En := 'us'
+    Else If W = 'os' Then ST[I].En := 'you'
+    Else If W = 'les' Then ST[I].En := 'them'
+    Else If W = 'le' Then ST[I].En := 'him'
+    Else ST[I].En := '';
+    Exit;
+  End;
+  { mots grammaticaux du lexique }
+  Idx := SpFind(W, 'w');
+  If (Idx > 0) And (ST[I].Acc Or QStart) Then
+  Begin
+    ST[I].Cat := 'W';
+    ST[I].Idx := Idx;
+    ST[I].En := SpLex[Idx].En;
+    Exit;
+  End;
+  If (W = 'sí') Or ((W = 'si') And ST[I].Acc) Then
+  Begin
+    ST[I].Cat := 'J';
+    ST[I].En := 'Yes';
+    Exit;
+  End;
+  Idx := SpFind(W, 'p');
+  If Idx > 0 Then
+  Begin
+    ST[I].Cat := 'E';
+    ST[I].Idx := Idx;
+    ST[I].En := SpLex[Idx].En;
+    Exit;
+  End;
+  Idx := SpFind(W, 'c');
+  If (Idx > 0) And (W = 'como') And (Not ST[I].Acc) And (Not SpNextIsVerbal(I + 1)) And
+     ((I = 1) Or (Prev In ['P', 'G'])) And (Not QStart) Then Idx := 0;
+  If (Idx > 0) And Not ((W = 'como') And QStart) Then
+  Begin
+    ST[I].Cat := 'C';
+    ST[I].Idx := Idx;
+    ST[I].En := SpLex[Idx].En;
+    Exit;
+  End;
+  Idx := SpFind(W, 'j');
+  If Idx > 0 Then
+  Begin
+    ST[I].Cat := 'J';
+    ST[I].Idx := Idx;
+    ST[I].En := SpLex[Idx].En;
+    Exit;
+  End;
+  Idx := SpFind(W, 'w');
+  If (Idx > 0) And Not ((W = 'como') And (Not ST[I].Acc) And (Not QStart) And (Not SpNextIsVerbal(I + 1))) Then
+  Begin
+    ST[I].Cat := 'W';
+    ST[I].Idx := Idx;
+    ST[I].En := SpLex[Idx].En;
+    Exit;
+  End;
+  Idx := SpFind(W, 'r');
+  If Idx > 0 Then
+  Begin
+    If (Prev = 'D') And ((W = 'mañana') Or (W = 'tarde')) Then
+    Begin
+      ST[I].Cat := 'N';
+      If W = 'mañana' Then ST[I].En := 'morning' Else ST[I].En := 'afternoon';
+      Exit;
+    End;
+    ST[I].Cat := 'R';
+    ST[I].Idx := Idx;
+    ST[I].En := SpLex[Idx].En;
+    If SpNextIsNounish(I + 1) And InList(W, 'mucho poco') Then ST[I].Cat := 'Q';
+    Exit;
+  End;
+  { noms, adjectifs, verbes }
+  LN := SpFindNoun(W, Plu);
+  IsNoun := LN > 0;
+  If IsNoun Then ST[I].Plu := Plu;
+  LA := SpFindAdj(W, Plu);
+  IsAdj := LA > 0;
+  IsVerb := SpMatchVerb(W, Idx, T, Sl, ST[I].Acc);
+  If (W = 'te') And (Prev = 'D') Then IsVerb := False;
+  If IsVerb And IsNoun And SpIsStrongCat(Prev) Then IsVerb := False;
+  If IsVerb And IsAdj And SpIsStrongCat(Prev) Then IsVerb := False;
+  If IsVerb And (Not (T In ['p', 'i', 'm', 'f', 'c', 'M'])) And (IsNoun Or IsAdj) And (Prev <> 'V') Then IsVerb := False;
+  If IsVerb And (T = 'P') And IsAdj Then IsVerb := False;
+  If IsVerb Then
+  Begin
+    SpMatchVerb(W, Idx, T, Sl, ST[I].Acc);
+    ST[I].Cat := 'V';
+    ST[I].Idx := Idx;
+    ST[I].Tns := T;
+    ST[I].Slot := Sl;
+    ST[I].En := SpLex[Idx].En;
+    Exit;
+  End;
+  If IsNoun And IsAdj Then
+  Begin
+    If SpIsStrongCat(Prev) Or (Prev = 'A') Then IsAdj := False Else IsNoun := False;
+  End;
+  If IsNoun Then
+  Begin
+    SpFindNoun(W, Plu);
+    ST[I].Cat := 'N';
+    ST[I].Idx := LN;
+    ST[I].Plu := Plu;
+    ST[I].En := SpLex[LN].En;
+    Exit;
+  End;
+  If IsAdj Then
+  Begin
+    SpFindAdj(W, Plu);
+    ST[I].Cat := 'A';
+    ST[I].Idx := LA;
+    ST[I].Plu := Plu;
+    ST[I].En := SpLex[LA].En;
+    Exit;
+  End;
+  { verbe suivi d'un pronom enclitique : ayudarme, dandolo }
+  For Sl := 1 To 11 Do
+  Begin
+    Case Sl Of
+      1: Ch2 := 'me';
+      2: Ch2 := 'te';
+      3: Ch2 := 'lo';
+      4: Ch2 := 'la';
+      5: Ch2 := 'le';
+      6: Ch2 := 'los';
+      7: Ch2 := 'las';
+      8: Ch2 := 'les';
+      9: Ch2 := 'nos';
+      10: Ch2 := 'os';
+    Else
+      Ch2 := 'se';
+    End;
+    If (Length(W) > Length(Ch2) + 3) And (Copy(W, Length(W) - Length(Ch2) + 1, 5) = Ch2) Then
+      If SpMatchVerb(Copy(W, 1, Length(W) - Length(Ch2)), Idx, T, Cnt, False) And (T In ['I', 'G']) Then
+      Begin
+        ST[I].Cat := 'V';
+        ST[I].Idx := Idx;
+        ST[I].Tns := T;
+        ST[I].En := SpLex[Idx].En;
+        If Ch2 = 'me' Then ST[I].Cl := 'me'
+        Else If Ch2 = 'te' Then ST[I].Cl := 'you'
+        Else If Ch2 = 'lo' Then ST[I].Cl := 'it'
+        Else If Ch2 = 'la' Then ST[I].Cl := 'her'
+        Else If Ch2 = 'le' Then ST[I].Cl := 'him'
+        Else If (Ch2 = 'los') Or (Ch2 = 'las') Or (Ch2 = 'les') Then ST[I].Cl := 'them'
+        Else If Ch2 = 'nos' Then ST[I].Cl := 'us'
+        Else If Ch2 = 'os' Then ST[I].Cl := 'you'
+        Else ST[I].Cl := ' ';
+        Exit;
+      End;
+  End;
+  ST[I].Cat := 'Z';
+End;
+
+Procedure SpClassify;
+Var
+  I: Integer;
+Begin
+  SMergeMultiword;
+  For I := 1 To SN Do
+    PickSpCat(I);
+End;
+
+{ ------------------------------------------------------------------ }
+{ ESPAGNOL -> ANGLAIS : groupes nominaux et elements                  }
+{ ------------------------------------------------------------------ }
+
+Type
+  TSNP = Record
+    Found, Proper, Plural, Pron, Poss: Boolean;
+    Used: Integer;
+    Kind: Char;
+    DetTok, Head, PronTok: Integer;
+    Adjs: Array[1..4] Of Integer;
+    AdjAdv: Array[1..4] Of String[10];
+    AdjN: Integer;
+    Text: String[70];
+    Owner: String[40];
+  End;
+
+  TSItem = Record
+    Kind: Char;     { N groupe nominal, E groupe prepositionnel, A adjectif, R adverbe, W interrogatif }
+    Text: String[100];
+    Pron, Plural, Proper, Person: Boolean;
+    First, Last: Integer;
+    Pers: Integer;
+    HeadEn: String[30];
+    Prep: String[16];
+  End;
+
+Var
+  SI: Array[1..24] Of TSItem;
+  SIN: Integer;
+
+Function IsExistLikeMotion(Const En: String): Boolean;
+Begin
+  IsExistLikeMotion := InList(En, 'go come arrive return enter leave travel walk run drive');
+End;
+
+Function SpPlainOrig(Const S: String): String;
+Begin
+  SpPlainOrig := S;
+End;
+
+Function SpProperEn(Const W, Orig: String): String;
+Begin
+  If W = 'paris' Then SpProperEn := 'Paris'
+  Else If W = 'londres' Then SpProperEn := 'London'
+  Else If W = 'roma' Then SpProperEn := 'Rome'
+  Else If W = 'lisboa' Then SpProperEn := 'Lisbon'
+  Else If W = 'españa' Then SpProperEn := 'Spain'
+  Else If W = 'francia' Then SpProperEn := 'France'
+  Else If W = 'alemania' Then SpProperEn := 'Germany'
+  Else If W = 'italia' Then SpProperEn := 'Italy'
+  Else If W = 'inglaterra' Then SpProperEn := 'England'
+  Else If W = 'japon' Then SpProperEn := 'Japan'
+  Else If W = 'mexico' Then SpProperEn := 'Mexico'
+  Else If W = 'estados unidos' Then SpProperEn := 'the United States'
+  Else If W = 'nueva york' Then SpProperEn := 'New York'
+  Else SpProperEn := SpPlainOrig(Orig);
+End;
+
+Function SpIsPersonEn(Const En: String): Boolean;
+Begin
+  SpIsPersonEn := InList(En, 'person man woman boy girl child friend family mother father brother sister son daughter husband wife teacher student doctor nurse people');
+End;
+
+Function ParseNPEs(Start: Integer; Var NP: TSNP): Boolean;
+Var
+  I: Integer;
+  Owner: TSNP;
+Begin
+  FillChar(NP, SizeOf(NP), 0);
+  NP.Kind := '0';
+  ParseNPEs := False;
+  I := Start;
+  If I > SN Then Exit;
+  If ST[I].Cat In ['P', 'B'] Then
+  Begin
+    NP.Found := True;
+    NP.Pron := True;
+    NP.PronTok := I;
+    NP.Used := 1;
+    ParseNPEs := True;
+    Exit;
+  End;
+  If (ST[I].Cat = 'Q') And (ST[I].En = 'all') And (I < SN) And (ST[I + 1].Cat = 'D') Then
+  Begin
+    NP.Kind := 'q';
+    NP.DetTok := I;
+    Inc(I);
+    NP.Plural := ST[I - 1].Plu;
+  End;
+  Case ST[I].Cat Of
+    'D', 'S', 'T', 'Q':
+    Begin
+      If NP.DetTok = 0 Then
+      Begin
+        NP.DetTok := I;
+        If ST[I].Cat = 'D' Then NP.Kind := ST[I].Kind
+        Else If ST[I].Cat = 'S' Then NP.Kind := 's'
+        Else If ST[I].Cat = 'T' Then NP.Kind := 't'
+        Else NP.Kind := 'q';
+        NP.Plural := ST[I].Plu;
+      End;
+      Inc(I);
+    End;
+    'U':
+    Begin
+      NP.DetTok := I;
+      NP.Kind := 'n';
+      NP.Text := ST[I].En;
+      NP.Plural := ST[I].En <> '1';
+      Inc(I);
+    End;
+  End;
+  While I <= SN Do
+  Begin
+    If ST[I].Cat = 'A' Then
+    Begin
+      If NP.AdjN < 4 Then
+      Begin
+        Inc(NP.AdjN);
+        NP.Adjs[NP.AdjN] := I;
+      End;
+      Inc(I);
+    End
+    Else If (ST[I].Cat = 'R') And (I < SN) And (ST[I + 1].Cat = 'A') And (ST[I].En = 'very') Then
+    Begin
+      If NP.AdjN < 4 Then
+      Begin
+        Inc(NP.AdjN);
+        NP.Adjs[NP.AdjN] := I + 1;
+        NP.AdjAdv[NP.AdjN] := 'very';
+      End;
+      Inc(I, 2);
+    End
+    Else
+      Break;
+  End;
+  If (I <= SN) And (ST[I].Cat = 'N') Then
+  Begin
+    NP.Head := I;
+    NP.Plural := ST[I].Plu;
+    If (NP.DetTok > 0) And (ST[NP.DetTok].Cat = 'D') Then
+      NP.Plural := ST[NP.DetTok].Plu;
+    If (NP.Kind = 'n') And (NP.Text <> '1') Then NP.Plural := True;
+    Inc(I);
+    While I <= SN Do
+    Begin
+      If ST[I].Cat = 'A' Then
+      Begin
+        If NP.AdjN < 4 Then
+        Begin
+          Inc(NP.AdjN);
+          NP.Adjs[NP.AdjN] := I;
+        End;
+        Inc(I);
+      End
+      Else If (ST[I].Cat = 'R') And (I < SN) And (ST[I + 1].Cat = 'A') And (ST[I].En = 'very') Then
+      Begin
+        If NP.AdjN < 4 Then
+        Begin
+          Inc(NP.AdjN);
+          NP.Adjs[NP.AdjN] := I + 1;
+          NP.AdjAdv[NP.AdjN] := 'very';
+        End;
+        Inc(I, 2);
+      End
+      Else
+        Break;
+    End;
+    { le livre de Juan }
+    If (I < SN) And (ST[I].Cat = 'E') And (ST[I].W = 'de') And (ST[I + 1].Cat = 'Z') Then
+    Begin
+      NP.Poss := True;
+      NP.Owner := '';
+      Inc(I);
+      While (I <= SN) And (ST[I].Cat = 'Z') Do
+      Begin
+        NP.Owner := Join(NP.Owner, ST[I].Orig);
+        Inc(I);
+      End;
+    End;
+  End
+  Else If (I <= SN) And (ST[I].Cat = 'Z') Then
+  Begin
+    NP.Proper := True;
+    While (I <= SN) And (ST[I].Cat = 'Z') Do
+    Begin
+      NP.Text := Join(NP.Text, SpProperEn(ST[I].W, ST[I].Orig));
+      Inc(I);
+    End;
+  End
+  Else If (NP.Kind = 'n') And (NP.AdjN = 0) Then
+  Begin
+  End
+  Else If (NP.Kind = 'q') And (NP.AdjN = 0) Then
+  Begin
+  End
+  Else
+    Exit;
+  NP.Found := True;
+  NP.Used := I - Start;
+  ParseNPEs := True;
+End;
+
+Function SpAdjText(Const NP: TSNP): String;
+Var
+  K: Integer;
+  R, A: String;
+Begin
+  R := '';
+  For K := 1 To NP.AdjN Do
+  Begin
+    A := ST[NP.Adjs[K]].En;
+    If NP.AdjAdv[K] <> '' Then A := NP.AdjAdv[K] + ' ' + A;
+    R := Join(R, A);
+  End;
+  SpAdjText := R;
+End;
+
+Function SpNounText(Const NP: TSNP): String;
+Var
+  N: String;
+Begin
+  N := ST[NP.Head].En;
+  If NP.Plural And ((Not IsMassNoun(N)) Or (NP.Kind = 'n')) And (N <> 'people') Then N := EnPlural(N);
+  SpNounText := N;
+End;
+
+Function SpPossEn(Const SubjPoss: String; Const W: String): String;
+Begin
+  If W = 'his' Then
+  Begin
+    If SubjPoss <> '' Then SpPossEn := SubjPoss Else SpPossEn := 'his';
+  End
+  Else SpPossEn := W;
+End;
+
+Function RenderNPEs(Const NP: TSNP; AsObject, Generic: Boolean; Const SubjPoss: String): String;
+Var
+  Det, Core, N: String;
+Begin
+  If NP.Pron Then
+  Begin
+    RenderNPEs := ST[NP.PronTok].En;
+    If AsObject Then
+    Begin
+      N := ST[NP.PronTok].En;
+      If N = 'I' Then N := 'me'
+      Else If N = 'he' Then N := 'him'
+      Else If N = 'she' Then N := 'her'
+      Else If N = 'we' Then N := 'us'
+      Else If N = 'they' Then N := 'them';
+      RenderNPEs := N;
+    End;
+    Exit;
+  End;
+  If NP.Proper Then
+  Begin
+    RenderNPEs := NP.Text;
+    Exit;
+  End;
+  If NP.Head = 0 Then
+  Begin
+    If NP.DetTok > 0 Then RenderNPEs := Join(ST[NP.DetTok].En, NP.Text) Else RenderNPEs := NP.Text;
+    Exit;
+  End;
+  Core := Join(SpAdjText(NP), SpNounText(NP));
+  If NP.Poss Then
+  Begin
+    RenderNPEs := NP.Owner + '''s ' + Core;
+    Exit;
+  End;
+  Det := '';
+  Case NP.Kind Of
+    'd':
+      If Generic Or IsLanguage(LowerAscii(ST[NP.Head].En)) Then Det := '' Else Det := 'the';
+    'i':
+    Begin
+      If NP.Plural Then
+        Det := ST[NP.DetTok].En
+      Else
+        Det := 'a';
+    End;
+    's': Det := SpPossEn(SubjPoss, ST[NP.DetTok].En);
+    't': Det := ST[NP.DetTok].En;
+    'n': Det := NP.Text;
+    'q': Det := ST[NP.DetTok].En;
+  End;
+  If Det = 'a' Then Det := EnArticle(Core);
+  If (NP.Kind = 'q') And (NP.DetTok > 0) And (ST[NP.DetTok].En = 'all') And (NP.Head > 0) Then Det := 'all the';
+  RenderNPEs := Join(Det, Core);
+End;
+
+Const
+  PhrasesEs: Array[0..39] Of String = (
+    'hola|Hello',
+    'buenos dias|Good morning',
+    'buenas tardes|Good afternoon',
+    'buenas noches|Good night',
+    'como estas|How are you',
+    'como esta usted|How are you',
+    'como estan ustedes|How are you',
+    'que tal|How are you',
+    'como te llamas|What is your name',
+    'como se llama|What is your name',
+    'como se llama usted|What is your name',
+    'mucho gusto|Nice to meet you',
+    'encantado|Nice to meet you',
+    'de nada|You are welcome',
+    'muchas gracias|Thank you very much',
+    'gracias|Thank you',
+    'lo siento|I am sorry',
+    'perdon|Excuse me',
+    'adios|Goodbye',
+    'hasta luego|See you later',
+    'hasta mañana|See you tomorrow',
+    'hasta pronto|See you soon',
+    'buena suerte|Good luck',
+    'feliz cumpleaños|Happy birthday',
+    'feliz navidad|Merry Christmas',
+    'salud|Cheers',
+    'no entiendo|I do not understand',
+    'no se|I do not know',
+    'te quiero|I love you',
+    'te amo|I love you',
+    'cuanto cuesta|How much does it cost',
+    'que hora es|What time is it',
+    'habla usted ingles|Do you speak English',
+    'hablas ingles|Do you speak English',
+    'de donde eres|Where are you from',
+    'de donde es usted|Where are you from',
+    'estoy bien|I am fine',
+    'estoy perdido|I am lost',
+    'no tengo tiempo|I do not have time',
+    'donde esta el baño|Where is the bathroom'
+  );
+
+Function SpPhraseKey(A, B: Integer): String;
+Var
+  K: Integer;
+  R: String;
+Begin
+  R := '';
+  For K := A To B Do
+  Begin
+    If ST[K].Punct Then
+    Begin
+      SpPhraseKey := '#';
+      Exit;
+    End;
+    R := Join(R, ST[K].W);
+  End;
+  SpPhraseKey := R;
+End;
+
+Function FindPhraseEs(Const Key: String): String;
+Var
+  N: Integer;
+  Pair, K: String;
+Begin
+  FindPhraseEs := '';
+  If Key = '#' Then Exit;
+  For N := 0 To High(PhrasesEs) Do
+  Begin
+    Pair := PhrasesEs[N];
+    K := CopyUntil(Pair, '|');
+    If K = Key Then
+    Begin
+      FindPhraseEs := Pair;
+      Exit;
+    End;
+  End;
+End;
+
+
+{ ------------------------------------------------------------------ }
+{ ESPAGNOL -> ANGLAIS : proposition                                   }
+{ ------------------------------------------------------------------ }
+
+Function SpTenerIdiom(Const W: String): String;
+Begin
+  If W = 'hambre' Then SpTenerIdiom := 'hungry'
+  Else If W = 'sed' Then SpTenerIdiom := 'thirsty'
+  Else If W = 'frio' Then SpTenerIdiom := 'cold'
+  Else If W = 'calor' Then SpTenerIdiom := 'hot'
+  Else If W = 'sueño' Then SpTenerIdiom := 'sleepy'
+  Else If W = 'miedo' Then SpTenerIdiom := 'afraid'
+  Else If W = 'razon' Then SpTenerIdiom := 'right'
+  Else If W = 'prisa' Then SpTenerIdiom := 'in a hurry'
+  Else If W = 'verguenza' Then SpTenerIdiom := 'ashamed'
+  Else SpTenerIdiom := '';
+End;
+
+Function SpHasFinite(A, B: Integer): Boolean;
+Var
+  I: Integer;
+Begin
+  SpHasFinite := False;
+  For I := A To B Do
+    If (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'i', 'm', 'f', 'c', 'M']) Then SpHasFinite := True;
+End;
+
+Function SpIsPlaceInstitution(Const En: String): Boolean;
+Begin
+  SpIsPlaceInstitution := InList(En, 'school university work church bed home');
+End;
+
+{ Elements de la proposition (groupes nominaux, prepositionnels, adjectifs, adverbes). }
+Procedure ParseItemsEs(A, B: Integer; Const SubjPoss: String; Generic: Boolean);
+Var
+  I, J, K: Integer;
+  NP, NP2: TSNP;
+  Prep, Txt: String;
+
+  Function NewItem(C: Char): Integer;
+  Begin
+    If SIN < 24 Then Inc(SIN);
+    FillChar(SI[SIN], SizeOf(TSItem), 0);
+    SI[SIN].Kind := C;
+    SI[SIN].First := I;
+    NewItem := SIN;
+  End;
+Begin
+  SIN := 0;
+  I := A;
+  While I <= B Do
+  Begin
+    Case ST[I].Cat Of
+      'D', 'S', 'T', 'Q', 'U', 'N', 'P', 'B', 'Z':
+      Begin
+        If ParseNPEs(I, NP) Then
+        Begin
+          J := NewItem('N');
+          SI[J].Text := RenderNPEs(NP, True, Generic, SubjPoss);
+          SI[J].Pron := NP.Pron;
+          SI[J].Plural := NP.Plural;
+          SI[J].Proper := NP.Proper;
+          If NP.Pron Then
+          Begin
+            SI[J].Pers := ST[NP.PronTok].Slot;
+            SI[J].Text := RenderNPEs(NP, False, Generic, SubjPoss);
+            SI[J].Prep := RenderNPEs(NP, True, Generic, SubjPoss);
+          End
+          Else
+          Begin
+            If NP.Plural Then SI[J].Pers := 6 Else SI[J].Pers := 3;
+            SI[J].Prep := SI[J].Text;
+          End;
+          If NP.Head > 0 Then
+          Begin
+            SI[J].HeadEn := ST[NP.Head].En;
+            SI[J].Person := SpIsPersonEn(ST[NP.Head].En);
+          End;
+          SI[J].Last := I + NP.Used - 1;
+          Inc(I, NP.Used);
+        End
+        Else
+          Inc(I);
+      End;
+      'E':
+      Begin
+        Prep := ST[I].En;
+        { a las ocho }
+        If (ST[I].W = 'a') And (I + 2 <= B) And (ST[I + 1].Cat = 'D') And (ST[I + 2].Cat = 'U') Then
+        Begin
+          J := NewItem('E');
+          SI[J].Text := 'at ' + ST[I + 2].En + ' o''clock';
+          SI[J].Last := I + 2;
+          Inc(I, 3);
+        End
+        Else If (I < B) And ParseNPEs(I + 1, NP) Then
+        Begin
+          Txt := RenderNPEs(NP, True, False, SubjPoss);
+          { lieux : sans article pour certaines institutions }
+          If (NP.Head > 0) And (NP.Kind = 'd') And (Not NP.Plural) And (NP.AdjN = 0) And (Not DePivot) And
+             SpIsPlaceInstitution(ST[NP.Head].En) And InList(ST[I].W, 'a en') Then
+          Begin
+            NP.Kind := '0';
+            Txt := RenderNPEs(NP, True, False, SubjPoss);
+          End;
+          If (ST[I].W = 'en') And (NP.Head > 0) And InList(ST[NP.Head].En, 'car bus train plane bike boat') Then
+          Begin
+            Prep := 'by';
+            NP.Kind := '0';
+            Txt := RenderNPEs(NP, True, False, SubjPoss);
+          End;
+          If (ST[I].W = 'en') And (NP.Head > 0) And (ST[NP.Head].En = 'home') Then Prep := 'at';
+          If (ST[I].W = 'en') And (NP.Head > 0) And InList(ST[NP.Head].En, 'table floor wall roof') Then Prep := 'on';
+          If (ST[I].W = 'por') And (NP.Head > 0) And InList(ST[NP.Head].En, 'morning afternoon night evening') Then
+          Begin
+            Prep := 'in';
+            If ST[NP.Head].En = 'night' Then Prep := 'at';
+          End;
+          If (ST[I].W = 'para') And (NP.Pron Or (NP.Head > 0)) Then Prep := 'for';
+          J := NewItem('E');
+          SI[J].Text := Join(Prep, Txt);
+          SI[J].Prep := ST[I].W;
+          SI[J].Pron := NP.Pron;
+          SI[J].Proper := NP.Proper;
+          SI[J].Person := NP.Proper Or NP.Pron Or ((NP.Head > 0) And SpIsPersonEn(ST[NP.Head].En));
+          SI[J].HeadEn := '';
+          If NP.Head > 0 Then SI[J].HeadEn := ST[NP.Head].En;
+          SI[J].Pers := 0;
+          SI[J].Last := I + NP.Used;
+          { texte de l'objet seul, pour "a" personnel }
+          SI[J].Pers := I + 1;
+          Inc(I, 1 + NP.Used);
+        End
+        Else If (I < B) And (ST[I].W = 'a') And (ST[I + 1].Cat = 'V') And (ST[I + 1].Tns = 'I') Then
+        Begin
+          { a + infinitif }
+          J := NewItem('E');
+          SI[J].Text := '';
+          SI[J].Last := I;
+          Inc(I);
+        End
+        Else
+        Begin
+          J := NewItem('E');
+          SI[J].Text := Prep;
+          SI[J].Last := I;
+          Inc(I);
+        End;
+      End;
+      'A':
+      Begin
+        J := NewItem('A');
+        SI[J].Text := ST[I].En;
+        SI[J].Last := I;
+        Inc(I);
+      End;
+      'R':
+      Begin
+        If (I < B) And (ST[I].En = 'very') And (ST[I + 1].Cat = 'A') Then
+        Begin
+          J := NewItem('A');
+          SI[J].Text := 'very ' + ST[I + 1].En;
+          SI[J].Last := I + 1;
+          Inc(I, 2);
+        End
+        Else
+        Begin
+          J := NewItem('R');
+          SI[J].Text := ST[I].En;
+          SI[J].Last := I;
+          Inc(I);
+        End;
+      End;
+      'W':
+      Begin
+        J := NewItem('R');
+        SI[J].Text := ST[I].En;
+        SI[J].Last := I;
+        Inc(I);
+      End;
+      'C':
+      Begin
+        J := NewItem('C');
+        SI[J].Text := ST[I].En;
+        SI[J].Last := I;
+        Inc(I);
+      End;
+    Else
+      Inc(I);
+    End;
+  End;
+  K := 0;
+End;
+
+Function SpNom(Const S: String): String;
+Begin
+  If S = 'me' Then SpNom := 'I'
+  Else If S = 'him' Then SpNom := 'he'
+  Else If S = 'her' Then SpNom := 'she'
+  Else If S = 'us' Then SpNom := 'we'
+  Else If S = 'them' Then SpNom := 'they'
+  Else SpNom := S;
+End;
+
+Function TranslateClauseEs(A, B: Integer; IsQ: Boolean; Final: Boolean): String;
+Var
+  I, J, K, Vf, V2, Next, SubjI: Integer;
+  Wh, WhText, Res, Tail, ObjTxt, Pp, Adv, Freq, SubjText, Aux, Rest, LexBase, Post, AuxN, VerbEn, Pred, Inf, Inf2: String;
+  LexTns: Char;
+  G: TFVG;
+  NP: TSNP;
+  Neg, Please, Imperative, LetUs, WhSubject, DoQ, Impers, HasSubj, Never: Boolean;
+  Sp, Slot: Integer;
+  Clit, Experiencer, SubjPoss, Txt, ClitEn: String;
+  Tns: Char;
+  PreSubj: Integer;
+Begin
+  TranslateClauseEs := '';
+  If A > B Then Exit;
+  Tail := '';
+  ObjTxt := '';
+  Pp := '';
+  Adv := '';
+  Res := '';
+  SubjText := '';
+  Txt := '';
+  Aux := '';
+  Rest := '';
+  LexBase := '';
+  Post := '';
+  AuxN := '';
+  VerbEn := '';
+  Inf := '';
+  Inf2 := '';
+  SubjPoss := '';
+  Wh := '';
+  WhText := '';
+  Freq := '';
+  Pred := '';
+  Neg := False;
+  Never := False;
+  Imperative := False;
+  LetUs := False;
+  WhSubject := False;
+  Impers := False;
+  Please := False;
+  Clit := '';
+  Experiencer := '';
+
+  { interjection ou conjonction en tete }
+  If (ST[A].Cat = 'J') And (A < B) And (ST[A].En = 'please') Then
+  Begin
+    Please := True;
+    ST[A].Cat := ' ';
+    Inc(A);
+    If (A <= B) And (ST[A].Cat = ',') Then Inc(A);
+  End
+  Else If (ST[A].Cat = 'J') And (A < B) Then
+  Begin
+    TranslateClauseEs := ST[A].En + ' ' + TranslateClauseEs(A + 1, B, IsQ, Final);
+    Exit;
+  End
+  Else If (ST[A].Cat = 'J') And (A = B) Then
+  Begin
+    TranslateClauseEs := ST[A].En;
+    Exit;
+  End;
+  If (ST[A].Cat = 'C') And (A < B) Then
+  Begin
+    TranslateClauseEs := ST[A].En + ' ' + TranslateClauseEs(A + 1, B, IsQ, Final);
+    Exit;
+  End;
+  { "por favor" en fin de phrase }
+  If (B > A) And (ST[B].Cat = 'J') And (ST[B].En = 'please') Then
+  Begin
+    Please := True;
+    Dec(B);
+    If (B > A) And (ST[B].Cat = ',') Then Dec(B);
+  End;
+
+  { mot interrogatif }
+  If ST[A].Cat = 'W' Then
+  Begin
+    WhText := ST[A].En;
+    Wh := ST[A].W;
+    ST[A].Cat := ' ';
+    If ((Wh = 'cuantos') Or (Wh = 'cuantas')) And (A < B) And ParseNPEs(A + 1, NP) And (NP.Head > 0) Then
+    Begin
+      NP.Plural := True;
+      NP.Kind := '0';
+      WhText := 'how many ' + SpNounText(NP);
+      For K := A + 1 To A + NP.Used Do ST[K].Cat := ' ';
+    End
+    Else If (Wh = 'cual') And (A < B) And (ST[A + 1].Cat = 'N') Then
+    Begin
+      WhText := 'which ' + ST[A + 1].En;
+      ST[A + 1].Cat := ' ';
+    End
+    Else If (Wh = 'que') And (A < B) And (ST[A + 1].Cat = 'N') Then
+    Begin
+      WhText := 'what ' + ST[A + 1].En;
+      ST[A + 1].Cat := ' ';
+    End;
+    IsQ := True;
+  End;
+
+  { verbe fini : le premier verbe conjugue }
+  Vf := 0;
+  For I := A To B Do
+    If (Vf = 0) And (ST[I].Cat = 'V') And (ST[I].Tns In ['p', 'i', 'm', 'f', 'c', 'M']) Then Vf := I;
+  If Vf = 0 Then
+  Begin
+    ParseItemsEs(A, B, '', False);
+    Res := '';
+    For I := 1 To SIN Do Res := Join(Res, SI[I].Text);
+    TranslateClauseEs := Join(WhText, Res);
+    Exit;
+  End;
+  Slot := ST[Vf].Slot;
+  Inf := SpPlain(SpLex[ST[Vf].Idx].Es);
+  Tns := ST[Vf].Tns;
+  VerbEn := ST[Vf].En;
+  ST[Vf].Cat := ' ';
+
+  { negation et pronoms complements avant le verbe }
+  For I := A To B Do
+  Begin
+    If (ST[I].Cat = 'G') And (I < Vf) Then
+    Begin
+      Neg := True;
+      ST[I].Cat := ' ';
+    End
+    Else If (ST[I].Cat = 'O') And (I < Vf) Then
+    Begin
+      If InList(ST[I].W, 'me te se') Then Clit := Join(Clit, ':' + ST[I].W)
+      Else If (ST[I].W = 'se') Or (ST[I].En = '') Then
+        Clit := Join(Clit, ':' + ST[I].W)
+      Else
+        Clit := Join(Clit, ST[I].En);
+      ST[I].Cat := ' ';
+    End;
+  End;
+
+  { deuxieme verbe : participe, gerondif, infinitif }
+  V2 := 0;
+  For I := Vf + 1 To B Do
+    If (V2 = 0) And (ST[I].Cat = 'V') And (ST[I].Tns In ['P', 'G', 'I']) Then V2 := I;
+  { pronoms enclitiques }
+  If (V2 > 0) And (ST[V2].Cl <> '') And (ST[V2].Cl <> ' ') Then Clit := Join(Clit, ST[V2].Cl);
+  If (ST[Vf].Cl <> '') And (ST[Vf].Cl <> ' ') Then Clit := Join(Clit, ST[Vf].Cl);
+  { fui, fue... : ser ou ir }
+  If (SpPlain(SpLex[ST[Vf].Idx].Es) = 'ser') And (ST[Vf].Tns = 'i') And (Vf < B) And
+     (ST[Vf + 1].Cat = 'E') And (ST[Vf + 1].W = 'a') Then
+    For I := 1 To SpCount Do
+      If SpPlain(SpLex[I].Es) = 'ir' Then
+      Begin
+        ST[Vf].Idx := I;
+        ST[Vf].En := SpLex[I].En;
+        Inf := 'ir';
+        VerbEn := SpLex[I].En;
+      End;
+
+  FillChar(G, SizeOf(G), 0);
+  G.Mode := 's';
+  Case Tns Of
+    'i', 'm': G.Tns := 'i';
+    'f': G.Tns := 'f';
+    'c': G.Tns := 'c';
+  Else
+    G.Tns := 'p';
+  End;
+  G.MainEn := VerbEn;
+  Next := Vf + 1;
+
+  { tournures }
+  If (Inf = 'haber') And ((ST[Vf].W = 'hay') Or ((V2 = 0) And (Slot = 3))) Then
+  Begin
+    G.Mode := 't';
+    G.MainEn := 'be';
+    Impers := True;
+  End
+  Else If (Inf = 'haber') And (V2 > 0) And (ST[V2].Tns = 'P') Then
+  Begin
+    G.Mode := 'c';
+    G.MainEn := ST[V2].En;
+    If Tns = 'p' Then G.Perf := True;
+    ST[V2].Cat := ' ';
+  End
+  Else If (Inf = 'estar') And (V2 > 0) And (ST[V2].Tns = 'G') Then
+  Begin
+    G.Mode := 's';
+    G.MainEn := ST[V2].En;
+    If G.Tns = 'p' Then G.Rain := True;
+    If ST[V2].En = 'rain' Then Impers := True;
+    ST[V2].Cat := ' ';
+  End
+  Else If (Inf = 'ser') And (V2 > 0) And (ST[V2].Tns = 'P') Then
+  Begin
+    G.Mode := 'p';
+    G.MainEn := ST[V2].En;
+    ST[V2].Cat := ' ';
+  End
+  Else If (Inf = 'ir') And (V2 > 0) And (ST[V2].Tns = 'I') And (V2 >= 2) And (ST[V2 - 1].W = 'a') Then
+  Begin
+    If ST[Vf].W = 'vamos' Then
+      LetUs := True
+    Else
+      G.Mode := 'g';
+    G.MainEn := ST[V2].En;
+    ST[V2 - 1].Cat := ' ';
+    ST[V2].Cat := ' ';
+  End
+  Else If (Inf = 'acabar') And (V2 > 0) And (ST[V2].Tns = 'I') And (ST[V2 - 1].W = 'de') Then
+  Begin
+    G.Mode := 'j';
+    G.MainEn := ST[V2].En;
+    ST[V2 - 1].Cat := ' ';
+    ST[V2].Cat := ' ';
+  End
+  Else If (Inf = 'tener') And (V2 > 0) And (ST[V2].Tns = 'I') And (V2 >= 2) And (ST[V2 - 1].W = 'que') Then
+  Begin
+    G.Mode := 'm';
+    G.Modal := 'devoir';
+    G.MainEn := ST[V2].En;
+    ST[V2 - 1].Cat := ' ';
+    ST[V2].Cat := ' ';
+  End
+  Else If InList(Inf, 'poder saber querer deber') And (V2 > 0) And (ST[V2].Tns = 'I') And (ST[V2].Idx <> 0) Then
+  Begin
+    G.Mode := 'm';
+    If (Inf = 'poder') Or (Inf = 'saber') Then G.Modal := 'pouvoir'
+    Else If Inf = 'querer' Then G.Modal := 'vouloir'
+    Else G.Modal := 'devoir';
+    G.MainEn := ST[V2].En;
+    ST[V2].Cat := ' ';
+  End
+  Else If (Inf = 'necesitar') And (V2 > 0) And (ST[V2].Tns = 'I') Then
+  Begin
+    G.MainEn := 'need to ' + ST[V2].En;
+    ST[V2].Cat := ' ';
+  End
+  Else If (Inf = 'empezar') And (V2 > 0) And (ST[V2].Tns = 'I') And (ST[V2 - 1].W = 'a') Then
+  Begin
+    G.MainEn := 'begin to ' + ST[V2].En;
+    ST[V2 - 1].Cat := ' ';
+    ST[V2].Cat := ' ';
+  End
+  Else If InList(Inf, 'gustar') Then
+  Begin
+    G.MainEn := 'like';
+  End
+  Else If Inf = 'llover' Then
+  Begin
+    G.MainEn := 'rain';
+    If G.Tns = 'p' Then G.Rain := True;
+    Impers := True;
+  End
+  Else If (Inf = 'ser') Or (Inf = 'estar') Then
+  Begin
+    G.Mode := 'b';
+    G.MainEn := 'be';
+  End
+  Else If Inf = 'tener' Then
+  Begin
+    G.Mode := 'h';
+    G.MainEn := 'have';
+  End
+  Else If (V2 > 0) And (ST[V2].Tns = 'I') And (Not InList(Inf, 'ir venir')) Then
+  Begin
+    { verbe + infinitif : aimer lire, preferer partir... }
+    G.MainEn := VerbEn + ' to ' + ST[V2].En;
+    ST[V2].Cat := ' ';
+  End;
+  { tener + idiome ; hacer + temps }
+  If (G.Mode = 'h') And (Next <= B) Then
+  Begin
+    If SpTenerIdiom(ST[Next].W) <> '' Then
+    Begin
+      Pred := SpTenerIdiom(ST[Next].W);
+      G.Mode := 'b';
+      G.MainEn := 'be';
+      ST[Next].Cat := ' ';
+    End
+    Else If (ST[Next].Cat = 'A') And (SpTenerIdiom(ST[Next].W) <> '') Then
+    Begin
+      Pred := SpTenerIdiom(ST[Next].W);
+      G.Mode := 'b';
+      G.MainEn := 'be';
+      ST[Next].Cat := ' ';
+    End
+    Else If (ST[Next].Cat = 'U') And (Next < B) And (ST[Next + 1].W = 'años') Then
+    Begin
+      Pred := ST[Next].En + ' years old';
+      G.Mode := 'b';
+      G.MainEn := 'be';
+      ST[Next].Cat := ' ';
+      ST[Next + 1].Cat := ' ';
+    End;
+  End;
+  If (Inf = 'hacer') And (Next <= B) And (ST[Next].Cat = 'A') And InList(ST[Next].En, 'cold hot warm') Then
+  Begin
+    G.Mode := 'b';
+    G.MainEn := 'be';
+    Impers := True;
+  End;
+  If (Inf = 'ser') And (Next < B) And (ST[Next].Cat = 'D') And (ST[Next + 1].Cat = 'U') Then
+  Begin
+    Pred := ST[Next + 1].En + ' o''clock';
+    Impers := True;
+    ST[Next].Cat := ' ';
+    ST[Next + 1].Cat := ' ';
+  End;
+  { me llamo X }
+  If (Inf = 'llamar') And (Pos(':', Clit) > 0) Then
+  Begin
+    Tail := '';
+    For I := Next To B Do
+      If ST[I].Cat In ['Z', 'N'] Then Tail := Join(Tail, ST[I].Orig);
+    If Slot = 1 Then Res := 'My name is'
+    Else If Slot = 2 Then Res := 'Your name is'
+    Else Res := 'His name is';
+    TranslateClauseEs := Join(Res, Tail);
+    Exit;
+  End;
+
+  { elements restants }
+  ParseItemsEs(A, B, '', False);
+  { sujet }
+  SubjI := 0;
+  PreSubj := 0;
+  For I := 1 To SIN Do
+    If (SubjI = 0) And (SI[I].Kind = 'N') And (SI[I].First < Vf) Then SubjI := I;
+  If (SubjI = 0) And ((Inf = 'gustar') Or ((Wh <> '') And (Wh <> 'quien')) Or (((Wh <> '') Or IsQ Or (SEnd = '?')) And (G.Mode = 'b'))) Then
+    For I := 1 To SIN Do
+      If (SubjI = 0) And (SI[I].Kind = 'N') And (SI[I].First > Vf) Then SubjI := I;
+  If (Inf = 'gustar') Then
+  Begin
+    { le sujet espagnol est ce qui plait : c'est l'objet en anglais }
+    Experiencer := Clit;
+    If Pos(':', Experiencer) > 0 Then
+    Begin
+      Experiencer := Copy(Experiencer, Pos(':', Experiencer) + 1, 10);
+      If Experiencer = 'me' Then Experiencer := 'me' Else If Experiencer = 'te' Then Experiencer := 'you' Else Experiencer := 'him';
+    End;
+    If Experiencer = '' Then
+      For I := 1 To SIN Do
+        If (SI[I].Kind = 'E') And (SI[I].Prep = 'a') Then Experiencer := SpNom(Copy(SI[I].Text, 4, 60));
+    If Pos(' ', Experiencer) > 0 Then Experiencer := Copy(Experiencer, 1, Pos(' ', Experiencer) - 1);
+  End;
+  HasSubj := SubjI > 0;
+
+  { possessif de la troisieme personne }
+  SubjPoss := '';
+  If HasSubj Then
+  Begin
+    If SI[SubjI].Pron Then
+    Begin
+      If SI[SubjI].Text = 'she' Then SubjPoss := 'her'
+      Else If SI[SubjI].Text = 'they' Then SubjPoss := 'their'
+      Else If SI[SubjI].Text = 'we' Then SubjPoss := 'our'
+      Else If SI[SubjI].Text = 'I' Then SubjPoss := 'my'
+      Else If SI[SubjI].Text = 'you' Then SubjPoss := 'your';
+    End
+    Else If SI[SubjI].Plural Then SubjPoss := 'their';
+  End
+  Else If Slot = 6 Then SubjPoss := 'their'
+  Else If Slot = 4 Then SubjPoss := 'our';
+
+  { sujet implicite }
+  If (Inf = 'gustar') Then
+  Begin
+    SubjText := Experiencer;
+    If SubjText = 'me' Then SubjText := 'I' Else If SubjText = 'him' Then SubjText := 'he'
+    Else If SubjText = 'us' Then SubjText := 'we' Else If SubjText = 'them' Then SubjText := 'they';
+    If SubjText = '' Then SubjText := 'I';
+    Sp := 3;
+    If SubjText = 'I' Then Sp := 1 Else If SubjText = 'you' Then Sp := 2
+    Else If SubjText = 'we' Then Sp := 4 Else If SubjText = 'they' Then Sp := 6;
+  End
+  Else If HasSubj Then
+  Begin
+    SubjText := SI[SubjI].Text;
+    Sp := SI[SubjI].Pers;
+    If Sp < 1 Then Sp := 3;
+    If SubjText = 'you' Then Sp := 2;
+    If SubjText = 'I' Then Sp := 1;
+  End
+  Else If G.Mode = 't' Then
+  Begin
+    SubjText := 'there';
+    Sp := 3;
+  End
+  Else If Impers Then
+  Begin
+    SubjText := 'it';
+    Sp := 3;
+  End
+  Else
+  Begin
+    Sp := Slot;
+    If Sp < 1 Then Sp := 3;
+    Case Sp Of
+      1: SubjText := 'I';
+      2: SubjText := 'you';
+      3: SubjText := 'he';
+      4: SubjText := 'we';
+      5: SubjText := 'you';
+    Else
+      SubjText := 'they';
+    End;
+    If (Inf = 'ser') And (Sp = 3) And (Tns = 'p') And (Pred <> '') Then SubjText := 'it';
+    If Sp = 5 Then Sp := 2;
+  End;
+  If (SubjText = 'it') Or (SubjText = 'he') Or (SubjText = 'she') Then Sp := 3;
+  If (SubjText = 'they') Then Sp := 6;
+  If (SubjText = 'we') Then Sp := 4;
+
+  { impératif }
+  If (Tns = 'M') Or ((Tns = 'p') And (Not HasSubj) And (Slot = 3) And (Not IsQ) And (Wh = '') And
+     (SEnd <> '?') And (Vf = A) And (Not Final) And (SpLex[ST[Vf].Idx].Pos = 'v') And
+     (G.Mode = 's') And (Clit = '') And (V2 = 0) And (SIN > 0) And (Not Neg)) Then
+    Imperative := True;
+  If Never Then Never := False;
+
+  { negation par les mots negatifs }
+  For I := A To B Do
+    If (ST[I].Cat = 'g') Then
+    Begin
+      If ST[I].En = 'either' Then Adv := Join(Adv, 'either') Else ObjTxt := Join(ObjTxt, ST[I].En);
+      Neg := True;
+    End;
+  For I := A To B Do
+    If (ST[I].Cat = 'R') And (ST[I].En = 'never') Then
+    Begin
+      Neg := False;
+      Freq := Join(Freq, 'never');
+    End;
+  G.Neg := Neg;
+
+  { complements }
+  Pp := '';
+  Txt := '';
+  If (Inf = 'gustar') And HasSubj Then
+    If ParseNPEs(SI[SubjI].First, NP) Then ObjTxt := RenderNPEs(NP, True, True, '');
+  For I := 1 To SIN Do
+  Begin
+    If I = SubjI Then Continue;
+    Case SI[I].Kind Of
+      'N':
+      Begin
+        If (G.Mode = 'b') Or (G.Mode = 'p') Then
+        Begin
+          Txt := SI[I].Text;
+          If (G.Mode = 'b') And (Not SI[I].Pron) And (Not SI[I].Proper) And (SI[I].HeadEn <> '') And
+             (Not SI[I].Plural) And (Pos(' ', Txt) = 0) And (Not IsMassNoun(SI[I].HeadEn)) And
+             (Not IsLanguage(LowerAscii(SI[I].HeadEn))) Then
+            Txt := EnArticle(Txt) + ' ' + Txt;
+          If SI[I].Pron Then Txt := SI[I].Prep;
+          Pred := Join(Pred, Txt);
+        End
+        Else
+        Begin
+          If SI[I].Pron Then ObjTxt := Join(ObjTxt, SI[I].Prep) Else ObjTxt := Join(ObjTxt, SI[I].Text);
+        End;
+      End;
+      'A':
+        Pred := Join(Pred, SI[I].Text);
+      'E':
+      Begin
+        If SI[I].Prep = 'a' Then
+        Begin
+          { a personnel : directement un objet }
+          If SI[I].Person And (Not IsExistLikeMotion(VerbEn)) And (Inf <> 'gustar') Then
+            ObjTxt := Join(ObjTxt, Copy(SI[I].Text, 4, 80))
+          Else If Inf = 'gustar' Then
+            Pp := Pp
+          Else
+            Pp := Join(Pp, SI[I].Text);
+        End
+        Else
+          Pp := Join(Pp, SI[I].Text);
+      End;
+      'R':
+        If IsFreqAdverb(SI[I].Text) Or InList(SI[I].Text, 'often sometimes already also only still') Then
+          Freq := Join(Freq, SI[I].Text)
+        Else If (SI[I].Text = 'never') Then
+          Freq := Freq
+        Else
+          Adv := Join(Adv, SI[I].Text);
+      'C':
+        Pp := Join(Pp, SI[I].Text);
+    End;
+  End;
+  Sp := Sp;
+  ClitEn := '';
+  Txt := Clit;
+  While Txt <> '' Do
+  Begin
+    K := Pos(' ', Txt);
+    If K = 0 Then
+    Begin
+      Inf2 := Txt;
+      Txt := '';
+    End
+    Else
+    Begin
+      Inf2 := Copy(Txt, 1, K - 1);
+      Delete(Txt, 1, K);
+    End;
+    If (Inf2 <> '') And (Inf2[1] <> ':') Then ClitEn := Join(ClitEn, Inf2);
+  End;
+  If Inf = 'gustar' Then ClitEn := '';
+  Tail := Join(ClitEn, Join(ObjTxt, Join(Pred, Join(Pp, Adv))));
+  If Impers And (Inf = 'llover') Then SubjText := 'it';
+
+  If Imperative Or LetUs Then
+  Begin
+    Res := '';
+    If LetUs Then
+    Begin
+      If DePivot Then Res := 'let us' Else Res := 'let''s';
+    End
+    Else If Neg Then Res := 'don''t'
+    Else If Please Then Res := 'please';
+    TranslateClauseEs := Join(Res, Join(Freq, Join(G.MainEn, Tail)));
+    Exit;
+  End;
+
+  BuildEn(G, Sp, Aux, Rest, LexBase, Post, LexTns);
+  WhSubject := False;
+  DoQ := IsQ Or (SEnd = '?');
+  If (Wh = 'quien') And (Not HasSubj) And (Slot = 3) And (Inf <> 'ser') And (Inf <> 'estar') Then
+  Begin
+    WhSubject := True;
+    SubjText := WhText;
+    WhText := '';
+  End;
+  If WhSubject Then DoQ := False;
+  If Final Then DoQ := False;
+  Res := '';
+  Wh := WhText;
+  If DoQ Then
+  Begin
+    If Aux = '' Then
+    Begin
+      Aux := DoFormEn(Sp, LexTns);
+      Rest := Join(LexBase, Post);
+      Post := '';
+      LexBase := '';
+    End;
+    If G.Neg Then AuxN := NegContract(Aux) Else AuxN := Aux;
+    Res := Join(Wh, Join(AuxN, Join(SubjText, Join(Freq, Join(Rest, Join(Post, Tail))))));
+  End
+  Else
+  Begin
+    If G.Neg Then
+    Begin
+      If Aux = '' Then
+      Begin
+        Aux := DoFormEn(Sp, LexTns);
+        Rest := Join(LexBase, Post);
+        Post := '';
+        LexBase := '';
+      End;
+      If Aux = 'am' Then AuxN := 'am not' Else AuxN := NegContract(Aux);
+      Res := Join(Wh, Join(SubjText, Join(AuxN, Join(Freq, Join(Rest, Tail)))));
+    End
+    Else If Aux <> '' Then
+      Res := Join(Wh, Join(SubjText, Join(Aux, Join(Freq, Join(Rest, Tail)))))
+    Else
+      Res := Join(Wh, Join(SubjText, Join(Freq, Join(FiniteEn(LexBase, LexTns, Sp), Join(Post, Tail)))));
+  End;
+  If Please Then Res := 'please ' + Res;
+  TranslateClauseEs := Res;
+  Inf2 := '';
+  Slot := Slot + 0;
+End;
+
+Function TranslateTokensEs(A, B: Integer; IsQ: Boolean): String;
+Var
+  K: Integer;
+  Key: String;
+Begin
+  If A > B Then
+  Begin
+    TranslateTokensEs := '';
+    Exit;
+  End;
+  Key := FindPhraseEs(SpPhraseKey(A, B));
+  If Key <> '' Then
+  Begin
+    If A > 1 Then Key := LowerFirst(Key);
+    TranslateTokensEs := Key;
+    Exit;
+  End;
+  For K := A + 1 To B Do
+    If (ST[K].Cat = 'W') And SpHasFinite(A, K - 1) And SpHasFinite(K, B) And (ST[A].Cat <> 'W') And
+       (ST[K - 1].Cat <> ',') Then
+    Begin
+      If DePivot Then
+        TranslateTokensEs := TranslateTokensEs(A, K - 1, False) + ' ' + TranslateClauseEs(K, B, True, False)
+      Else
+        TranslateTokensEs := TranslateTokensEs(A, K - 1, False) + ' ' + TranslateClauseEs(K, B, False, True);
+      Exit;
+    End;
+  For K := A + 1 To B - 1 Do
+    If ST[K].Cat = ',' Then
+      If ((K - A = 1) And (ST[A].Cat = 'J')) Or (SpHasFinite(A, K - 1) And SpHasFinite(K + 1, B)) Then
+      Begin
+        TranslateTokensEs := TranslateTokensEs(A, K - 1, False) + ', ' + TranslateTokensEs(K + 1, B, IsQ);
+        Exit;
+      End;
+  For K := A + 1 To B - 1 Do
+    If (ST[K].Cat = 'C') And SpHasFinite(A, K - 1) And SpHasFinite(K + 1, B) Then
+    Begin
+      If ST[K].En = 'but' Then
+        TranslateTokensEs := TranslateTokensEs(A, K - 1, False) + ', ' + ST[K].En + ' ' + TranslateTokensEs(K + 1, B, IsQ)
+      Else
+        TranslateTokensEs := TranslateTokensEs(A, K - 1, False) + ' ' + ST[K].En + ' ' + TranslateTokensEs(K + 1, B, IsQ);
+      Exit;
+    End;
+  TranslateTokensEs := TranslateClauseEs(A, B, IsQ, False);
+End;
+
+{ ------------------------------------------------------------------ }
+{ ESPAGNOL -> ANGLAIS : phrase complete                               }
+{ ------------------------------------------------------------------ }
+
+Function EsTranslateSentence(Const Sentence: String): String;
+Var
+  Res: String;
+  P: String;
+Begin
+  STokenize(Sentence);
+  If SN = 0 Then
+  Begin
+    EsTranslateSentence := '';
+    Exit;
+  End;
+  SpClassify;
+  P := FindPhraseEs(SpPhraseKey(1, SN));
+  If P <> '' Then
+    Res := P
+  Else
+    Res := TranslateTokensEs(1, SN, SEnd = '?');
+  Res := UpperFirst(FixEnglish(Res));
+  If SEnd <> #0 Then Res := Res + SEnd;
+  EsTranslateSentence := Res;
+End;
+
+{ ------------------------------------------------------------------ }
 { Phrases toutes faites                                               }
 { ------------------------------------------------------------------ }
 
@@ -8958,7 +15139,30 @@ Var
   Key, Res, Pair, En: String;
   I, N: Integer;
   Question: Boolean;
+  SD, SJ, SE: Boolean;
 Begin
+  If SourceDe Or SourceJa Or SourceEs Then
+  Begin
+    If SourceJa Then Res := JaTranslateSentence(Sentence)
+    Else If SourceEs Then Res := EsTranslateSentence(Sentence)
+    Else Res := DeTranslateSentence(Sentence);
+    If Not DeToEn Then
+    Begin
+      { pivot : langue source -> anglais -> francais }
+      SD := SourceDe;
+      SJ := SourceJa;
+      SE := SourceEs;
+      SourceDe := False;
+      SourceJa := False;
+      SourceEs := False;
+      Res := TranslateSentence(Res);
+      SourceDe := SD;
+      SourceJa := SJ;
+      SourceEs := SE;
+    End;
+    TranslateSentence := Res;
+    Exit;
+  End;
   If TargetEn Then
   Begin
     TranslateSentence := FrTranslateSentence(Sentence);
@@ -9067,7 +15271,7 @@ Begin
   Writeln('  ARGOS-TRANSLATE /?');
   Writeln;
   Writeln('Options :');
-  Writeln('  -f, --from-lang  Code ISO 639-1 de la langue source (en, fr).');
+  Writeln('  -f, --from-lang  Code ISO 639-1 de la langue source (en, fr, de, ja en romaji, es).');
   Writeln('  -t, --to-lang    Code ISO 639-1 de la langue cible (fr, de, en).');
   Writeln('  -l, --list       Affiche les paires de langues disponibles.');
   Writeln('  -V, --version    Affiche la version.');
@@ -9090,6 +15294,8 @@ BEGIN
   LoadIrregular;
   LoadEnglish;
   LoadGermanVerbs;
+  LoadJapanese;
+  LoadSpanish;
   FromLang := '';
   ToLang := '';
   TextArg := '';
@@ -9145,6 +15351,12 @@ BEGIN
     Writeln('en -> fr');
     Writeln('en -> de');
     Writeln('fr -> en');
+    Writeln('de -> fr');
+    Writeln('de -> en');
+    Writeln('ja -> fr (romaji)');
+    Writeln('ja -> en (romaji)');
+    Writeln('es -> fr');
+    Writeln('es -> en');
     Halt(0);
   End;
   If (FromLang = '') Or (ToLang = '') Then
@@ -9153,12 +15365,21 @@ BEGIN
     Halt(2);
   End;
   If Not (((FromLang = 'en') And ((ToLang = 'fr') Or (ToLang = 'de'))) Or
-          ((FromLang = 'fr') And (ToLang = 'en'))) Then
+          ((FromLang = 'fr') And (ToLang = 'en')) Or
+          ((FromLang = 'de') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
+          ((FromLang = 'ja') And ((ToLang = 'fr') Or (ToLang = 'en'))) Or
+          ((FromLang = 'es') And ((ToLang = 'fr') Or (ToLang = 'en')))) Then
   Begin
     Writeln('Erreur : aucun modele de traduction de ', FromLang, ' vers ', ToLang,
-            ' n''est installe (paires disponibles : en -> fr, en -> de, fr -> en).');
+            ' n''est installe (paires disponibles : en -> fr, en -> de, fr -> en, de -> fr, de -> en, ja -> fr, ja -> en, es -> fr, es -> en).');
     Halt(1);
   End;
+  SourceDe := FromLang = 'de';
+  SourceJa := FromLang = 'ja';
+  SourceEs := FromLang = 'es';
+  DeToEn := (SourceDe Or SourceJa Or SourceEs) And (ToLang = 'en');
+  DePivot := (SourceDe Or SourceJa Or SourceEs) And (Not DeToEn);
+  If SourceDe Then InitDeSpecials;
   TargetDe := ToLang = 'de';
   TargetEn := ToLang = 'en';
 
